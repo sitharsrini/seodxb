@@ -4,18 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
-// ── EmailJS config ──────────────────────────────────────────────────────────
-// 1. Sign up at https://www.emailjs.com (free – 200 emails/month)
-// 2. Create a Service (Gmail/Outlook) → copy the Service ID
-// 3. Create an Email Template → copy the Template ID
-// 4. Go to Account → API Keys → copy your Public Key
-// 5. Replace the three placeholder strings below
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
-// ────────────────────────────────────────────────────────────────────────────
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -23,18 +11,21 @@ export function Contact() {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [status, setStatus] = React.useState<Status>("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
     setStatus("sending");
+    const data = Object.fromEntries(new FormData(formRef.current));
+
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
       setStatus("success");
       formRef.current.reset();
     } catch {
