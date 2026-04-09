@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/SEODXB_HD_1775726631117.webp";
+import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);

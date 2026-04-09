@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import logoImg from "@assets/SEODXB_HD_1775726631117.webp";
+import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
 
 export function Footer() {
   return (

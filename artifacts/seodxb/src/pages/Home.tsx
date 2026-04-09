@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import logoImg from "@assets/SEODXB_HD_1775726631117.webp";
+import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
 
 const testimonials = [
   { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong.", company: "xxxxxx Management" },
