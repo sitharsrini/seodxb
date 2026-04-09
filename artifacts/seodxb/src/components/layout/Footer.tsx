@@ -11,8 +11,7 @@ export function Footer() {
               <img
                 src={logoImg}
                 alt="SEODXB"
-                className="brightness-0 invert"
-                style={{ height: '36px', width: '180px', objectFit: 'cover', objectPosition: 'center 50%' }}
+                style={{ height: '36px', width: '180px', objectFit: 'cover', objectPosition: 'center 50%', filter: 'invert(1)' }}
               />
             </Link>
             <p className="text-gray-400 max-w-sm mb-6">
