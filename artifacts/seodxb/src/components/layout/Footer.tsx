@@ -16,7 +16,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 max-w-sm mb-6">
-              As specialists in On-Page SEO and AI Search Engine Optimization, we solve the biggest problem most websites face—lack of traffic.
+              As specialists in On-Page SEO and AI Search Engine Optimization, we solve the biggest problem most websites face: a lack of traffic.
             </p>
             <a href="mailto:hey@seodxb.com" className="text-lg font-medium hover:text-primary transition-colors">
               hey@seodxb.com

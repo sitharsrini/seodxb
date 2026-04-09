@@ -177,7 +177,7 @@ export function Pricing() {
               { q: "How long does SEO take to show results in Dubai?", a: "Most businesses see measurable ranking improvements within 60 to 90 days. Strong competitive growth typically becomes visible between months 4 and 6." },
               { q: "Do you specialise in specific industries in Dubai?", a: "Yes, we tailor every strategy to your industry's unique search behaviour, competitor landscape, and customer intent rather than using generic templates." },
               { q: "What does a free SEO audit include?", a: "A comprehensive technical review, on-page analysis, keyword gap assessment, competitor benchmarking, and actionable recommendations." },
-              { q: "Why choose your SEODXB agency in Dubai?", a: "We're one of the few agencies offering the full SEO, AEO, and GEO trilogy — future-proofing your visibility across traditional and AI-powered search surfaces." },
+              { q: "Why choose your SEODXB agency in Dubai?", a: "We are one of the few agencies offering the full SEO, AEO, and GEO trilogy, future-proofing your visibility across traditional and AI-powered search surfaces." },
               { q: "How competitive is SEO in Dubai?", a: "Highly competitive. Dubai's market demands precision, niche targeting, and consistent quality content to achieve and maintain top rankings." },
               { q: "What is the difference between SEO, AEO, and GEO?", a: "SEO targets traditional search engines. AEO optimizes for answer engines (voice, featured snippets, PAA). GEO ensures your brand is cited by generative AI models like ChatGPT and Gemini." },
             ].map((faq, i) => (

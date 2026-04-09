@@ -200,7 +200,7 @@ export function Home() {
               We Help The Right People Find Your Website.
             </motion.h1>
             <motion.p variants={itemVariants} className="text-base text-gray-500 leading-relaxed max-w-lg">
-              As specialists in On-Page SEO and AI Search Engine Optimization, we solve the biggest problem most websites face—lack of traffic. We help the right people find you, trust you, and come to you organically.
+              As specialists in On-Page SEO and AI Search Engine Optimization, we solve the biggest problem most websites face: a lack of traffic. We help the right people find you, trust you, and come to you organically.
             </motion.p>
             <motion.div variants={itemVariants}>
               <Button
@@ -304,7 +304,7 @@ export function Home() {
               </h2>
               <div className="flex flex-col gap-4">
                 {[
-                  { title: "SEO", time: "3-6 Weeks Delivery", desc: "Niche-focused keyword strategy, technical excellence, and content authority that places your Dubai business at the top of Google Search — where high-intent buyers are actively looking." },
+                  { title: "SEO", time: "3-6 Weeks Delivery", desc: "Niche-focused keyword strategy, technical excellence, and content authority that places your Dubai business at the top of Google Search, where high-intent buyers are actively looking." },
                   { title: "AEO", time: "1 Week Delivery", desc: "Optimize your content to be the answer in voice search, featured snippets, Google's People Also Ask, and AI-generated responses. Become the authority your niche turns to." },
                   { title: "GEO", time: "2-4 Weeks Delivery", desc: "Ensure your brand is cited, recommended, and surfaced by AI tools like ChatGPT, Google Gemini, Perplexity, and Claude when users ask about your industry in Dubai." }
                 ].map((s, i) => (
@@ -380,7 +380,7 @@ export function Home() {
           <div className="text-center mb-16">
             <span className="text-xs font-bold text-[#C8FF00] tracking-widest uppercase mb-4 block">Future-Proof Approach</span>
             <h2 className="text-2xl md:text-3xl font-light italic leading-relaxed max-w-3xl mx-auto text-white/80">
-              "While others optimize for yesterday's Google, we prepare your brand for AI search, voice, and generative results — the surfaces defining tomorrow's traffic."
+              "While others optimize for yesterday's Google, we prepare your brand for AI search, voice, and generative results. These are the surfaces defining tomorrow's traffic."
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 mt-12">
@@ -390,7 +390,7 @@ export function Home() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  { title: "The Full Search Trilogy", sub: "SEO, AEO, and GEO under one roof — every visibility surface covered from Google to ChatGPT." },
+                  { title: "The Full Search Trilogy", sub: "SEO, AEO, and GEO under one roof. Every visibility surface covered from Google to ChatGPT." },
                   { title: "Answer Engine Ready", sub: "Optimized for featured snippets, voice search, People Also Ask, and AI-generated answer boxes." },
                   { title: "Deep Technical Mastery", sub: "Full crawl audit, Core Web Vitals, schema markup, site architecture, and indexing health covered." },
                   { title: "Ongoing Competitive Intelligence", sub: "Monthly gap analysis tracking competitor keyword gains, content moves, and backlink acquisitions." },
@@ -412,8 +412,8 @@ export function Home() {
               <ul className="space-y-4">
                 {[
                   { title: "SEO Only", sub: "SEO only, sometimes PPC bolted on. AI search surfaces completely ignored." },
-                  { title: "AEO?", sub: "Most agencies don't offer AEO — many don't even know what it stands for." },
-                  { title: "Surface-Level Fixes", sub: "Basic on-page tweaks — title tags, meta descriptions, and very little else." },
+                  { title: "AEO?", sub: "Most agencies don't offer AEO. Many don't even know what it stands for." },
+                  { title: "Surface-Level Fixes", sub: "Basic on-page tweaks: title tags, meta descriptions, and very little else." },
                   { title: "One-Time Audit", sub: "A competitor overview done at onboarding and never revisited, even as the landscape shifts." },
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
@@ -466,7 +466,7 @@ export function Home() {
               { q: "How long does SEO take to show results in Dubai?", a: "Most businesses see measurable ranking improvements within 60 to 90 days. Strong competitive growth typically becomes visible between months 4 and 6." },
               { q: "Do you specialise in specific industries in Dubai?", a: "Yes, we tailor every strategy to your industry's unique search behaviour, competitor landscape, and customer intent rather than using generic templates." },
               { q: "What does a free SEO audit include?", a: "A comprehensive technical review, on-page analysis, keyword gap assessment, competitor benchmarking, and actionable recommendations." },
-              { q: "Why choose your SEODXB agency in Dubai?", a: "We're one of the few agencies offering the full SEO, AEO, and GEO trilogy — future-proofing your visibility across traditional and AI-powered search surfaces." },
+              { q: "Why choose your SEODXB agency in Dubai?", a: "We are one of the few agencies offering the full SEO, AEO, and GEO trilogy, future-proofing your visibility across traditional and AI-powered search surfaces." },
               { q: "How competitive is SEO in Dubai?", a: "Highly competitive. Dubai's market demands precision, niche targeting, and consistent quality content to achieve and maintain top rankings." },
               { q: "What is the difference between SEO, AEO, and GEO?", a: "SEO targets traditional search engines. AEO optimizes for answer engines (voice, featured snippets, PAA). GEO ensures your brand is cited by generative AI models like ChatGPT and Gemini." }
             ].map((faq, i) => (
@@ -503,7 +503,7 @@ export function Home() {
               <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
                 <div className="flex text-[#C8FF00] mb-3 text-sm">★★★★★</div>
                 <p className="italic mb-3 text-sm leading-relaxed text-white/80">"SEO DXB helped us rank higher and attract better quality enquiries."</p>
-                <p className="font-bold text-sm">— Yuok Yong., xxxxxx Management</p>
+                <p className="font-bold text-sm">Yuok Yong., xxxxxx Management</p>
               </div>
             </div>
             <div className="bg-white text-black rounded-2xl p-7 shadow-xl">
