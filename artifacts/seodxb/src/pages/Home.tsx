@@ -7,12 +7,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
+import logoImg from "@assets/seodxb_logo.png";
+import { SiGoogle, SiMeta, SiHubspot, SiNotion, SiShopify } from "react-icons/si";
 
 const testimonials = [
-  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong.", company: "xxxxxx Management" },
-  { text: "Ripple's exceptional team created a remarkable and awesome website with professionalism and creativity.", author: "Ava Moreno", company: "NovaTech Solutions" },
-  { text: "Ripple's creative team delivered a remarkable & awesome website that surpassed expectations.", author: "Ethan Sawyer", company: "Listi" }
+  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong", company: "xxxxxx Management", initials: "YY", color: "from-violet-500 to-purple-600" },
+  { text: "Ripple's exceptional team created a remarkable and awesome website with professionalism and creativity.", author: "Ava Moreno", company: "NovaTech Solutions", initials: "AM", color: "from-rose-400 to-pink-600" },
+  { text: "Ripple's creative team delivered a remarkable & awesome website that surpassed expectations.", author: "Ethan Sawyer", company: "Listi", initials: "ES", color: "from-blue-400 to-cyan-600" }
 ];
 
 const containerVariants = {
@@ -215,9 +216,11 @@ export function Home() {
             <motion.div variants={itemVariants} className="mt-4 w-full">
               <p className="text-xs font-medium text-gray-400 mb-4 uppercase tracking-wider">Trusted by Leading Brands:</p>
               <div className="flex flex-wrap items-center gap-6 opacity-40 grayscale">
-                {["N", "◎", "LOGO", "✦", "|||"].map((brand, i) => (
-                  <div key={i} className="h-7 flex items-center justify-center font-black text-lg text-gray-800 w-12">{brand}</div>
-                ))}
+                <SiGoogle size={22} className="text-gray-700" />
+                <SiMeta size={22} className="text-gray-700" />
+                <SiHubspot size={22} className="text-gray-700" />
+                <SiNotion size={22} className="text-gray-700" />
+                <SiShopify size={22} className="text-gray-700" />
               </div>
             </motion.div>
           </motion.div>
@@ -235,7 +238,7 @@ export function Home() {
                 <img
                   src={logoImg}
                   alt="SEODXB"
-                  style={{ height: '44px', width: '220px', objectFit: 'cover', objectPosition: 'center 50%' }}
+                  style={{ height: '44px', width: 'auto' }}
                 />
               </div>
               {/* Navigation arrows */}
@@ -257,8 +260,8 @@ export function Home() {
                         {t.text.replace("SEO DXB ", "")}
                       </p>
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full bg-gray-200 shrink-0 overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+                        <div className={`w-9 h-9 rounded-full shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center`}>
+                          <span className="text-white text-xs font-bold">{t.initials}</span>
                         </div>
                         <div>
                           <p className="text-sm font-bold text-black">{t.author}</p>
