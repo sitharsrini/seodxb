@@ -289,52 +289,185 @@ export function Home() {
       </div>
 
       {/* 3. Services Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={containerVariants}
-            className="grid lg:grid-cols-2 gap-16"
-          >
-            <div>
-              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-4 flex items-center gap-2">
-                <span className="inline-block w-6 border-t-2 border-primary"></span> Services
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Header row */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5 }}
+            >
+              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-3 flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-primary"><rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor" opacity="0.4"/><rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/><rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor" opacity="0.4"/></svg>
+                Services
+                <span className="flex-1 border-t border-gray-200"></span>
               </p>
-              <h2 className="text-4xl md:text-5xl font-black mb-12 leading-tight tracking-[-0.02em]">
-                The New Trilogy of <br /><em className="font-normal text-primary not-italic">Search Dominance</em>
+              <h2 className="text-3xl md:text-4xl font-black leading-tight tracking-[-0.02em]">
+                The New Trilogy of <br />
+                <em className="not-italic font-black italic text-gray-800">Search Dominance</em>
               </h2>
-              <div className="flex flex-col gap-4">
-                {[
-                  { title: "SEO", time: "3-6 Weeks Delivery", desc: "Niche-focused keyword strategy, technical excellence, and content authority that places your Dubai business at the top of Google Search, where high-intent buyers are actively looking." },
-                  { title: "AEO", time: "1 Week Delivery", desc: "Optimize your content to be the answer in voice search, featured snippets, Google's People Also Ask, and AI-generated responses. Become the authority your niche turns to." },
-                  { title: "GEO", time: "2-4 Weeks Delivery", desc: "Ensure your brand is cited, recommended, and surfaced by AI tools like ChatGPT, Google Gemini, Perplexity, and Claude when users ask about your industry in Dubai." }
-                ].map((s, i) => (
-                  <motion.div key={i} variants={itemVariants} className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm group hover:border-primary/30 hover:shadow-md transition-all cursor-pointer">
-                    <div className="flex justify-between items-center mb-3">
-                      <h3 className="text-2xl font-black">{s.title}</h3>
-                      <span className="text-xs font-semibold px-3 py-1 bg-gray-100 text-gray-500 rounded-full">{s.time}</span>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-                  </motion.div>
-                ))}
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-gray-500 text-sm leading-relaxed pt-2"
+            >
+              Search is no longer just blue links. Your customers are asking AI assistants, getting instant answers, and expecting your brand to appear across every search surface from Google's AI Overviews to ChatGPT. SEODXB masters all three layers of modern search visibility, customized to your niche.
+            </motion.p>
+          </div>
+
+          {/* Cards grid */}
+          <div className="grid lg:grid-cols-2 gap-5">
+            {/* Left: SEO card with animated globe */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.55 }}
+              whileHover={{ y: -3 }}
+              className="bg-white border border-gray-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" fill="#1D64FF" opacity="0.5"/><rect x="9" y="1" width="6" height="6" rx="1" fill="#1D64FF"/><rect x="1" y="9" width="6" height="6" rx="1" fill="#1D64FF"/><rect x="9" y="9" width="6" height="6" rx="1" fill="#1D64FF" opacity="0.5"/></svg>
+                  </div>
+                  <span className="text-base font-black text-primary">SEO</span>
+                </div>
+                <span className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">3-6 Weeks Delivery</span>
               </div>
-            </div>
-            <div className="relative">
-              <div className="sticky top-32 flex flex-wrap gap-3 content-start">
-                {["Keyword Research", "Technical Audit", "On-Page SEO", "Local SEO", "AI Visibility", "Schema Markup", "FAQ Optimization", "AI Citations", "Featured Snippets", "LLM Training Signals"].map((tag, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                    className="px-4 py-2 bg-white border border-gray-200 shadow-sm rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
-                  >
-                    {tag}
-                  </motion.span>
-                ))}
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                Niche-focused keyword strategy, technical excellence, and content authority that places your Dubai business at the top of Google Search, where high-intent buyers are actively looking.
+              </p>
+
+              {/* Animated Globe */}
+              <div className="relative flex flex-col items-center justify-center py-6">
+                <div className="relative w-48 h-48">
+                  {/* Globe base */}
+                  <div className="globe-spin absolute inset-0 rounded-full border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center overflow-hidden">
+                    <svg viewBox="0 0 100 100" className="w-full h-full opacity-25">
+                      <ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="#9ca3af" strokeWidth="0.8"/>
+                      <ellipse cx="50" cy="50" rx="30" ry="48" fill="none" stroke="#9ca3af" strokeWidth="0.8"/>
+                      <ellipse cx="50" cy="50" rx="48" ry="20" fill="none" stroke="#9ca3af" strokeWidth="0.8"/>
+                      <line x1="2" y1="50" x2="98" y2="50" stroke="#9ca3af" strokeWidth="0.8"/>
+                      <line x1="50" y1="2" x2="50" y2="98" stroke="#9ca3af" strokeWidth="0.8"/>
+                    </svg>
+                  </div>
+
+                  {/* Orbiting icons via CSS - negative animationDelay is valid in CSS */}
+                  <div className="orbit-icon" style={{ backgroundColor: "#ec4899", animationDelay: "0s" }}>♥</div>
+                  <div className="orbit-icon" style={{ backgroundColor: "#22c55e", animationDelay: "-2.25s" }}>⚡</div>
+                  <div className="orbit-icon" style={{ backgroundColor: "#f59e0b", animationDelay: "-4.5s" }}>✉</div>
+                  <div className="orbit-icon" style={{ backgroundColor: "#3b82f6", animationDelay: "-6.75s" }}>⟳</div>
+
+                  {/* Center pulse dot */}
+                  <div className="pulse-glow absolute top-1/2 left-1/2 w-7 h-7 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold"
+                    style={{ marginLeft: -14, marginTop: -14 }}>
+                    ≡
+                  </div>
+                </div>
+
+                <p className="mt-6 font-black text-base text-black">SEO Optimization</p>
+                <p className="text-xs text-gray-400 mt-1">Boosting your website's search engine visibility.</p>
               </div>
+            </motion.div>
+
+            {/* Right column: AEO + GEO + Preview */}
+            <div className="flex flex-col gap-5">
+              {/* AEO Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.1 }}
+                whileHover={{ y: -3 }}
+                className="bg-white border border-gray-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <motion.div
+                      className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                      animate={{ rotate: [0, 5, -5, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2L14 8L8 14" stroke="#1D64FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M2 8H14" stroke="#1D64FF" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    </motion.div>
+                    <span className="text-base font-black text-primary">AEO</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">1 Week Delivery</span>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Optimize your content to be the answer in voice search, featured snippets, Google's People Also Ask, and AI-generated responses. Become the authority your niche turns to.
+                </p>
+              </motion.div>
+
+              {/* GEO Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
+                whileHover={{ y: -3 }}
+                className="bg-white border border-gray-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <motion.div
+                      className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="6" stroke="#1D64FF" strokeWidth="1.5"/>
+                        <path d="M8 2C8 2 6 5 6 8C6 11 8 14 8 14" stroke="#1D64FF" strokeWidth="1.5"/>
+                        <path d="M8 2C8 2 10 5 10 8C10 11 8 14 8 14" stroke="#1D64FF" strokeWidth="1.5"/>
+                        <path d="M2 8H14" stroke="#1D64FF" strokeWidth="1.5"/>
+                      </svg>
+                    </motion.div>
+                    <span className="text-base font-black text-primary">GEO</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">2-4 Weeks Delivery</span>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  The frontier of search. Ensure your brand is cited, recommended, and surfaced by AI tools like ChatGPT, Google Gemini, Perplexity, and Claude when users ask about your industry in Dubai.
+                </p>
+              </motion.div>
+
+              {/* Preview card: Google AI Overviews */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
+                whileHover={{ y: -3 }}
+                className="bg-white border border-gray-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow overflow-hidden relative"
+              >
+                <div className="relative z-10">
+                  <p className="text-xl font-black leading-snug mb-4">
+                    Will <span className="text-primary">Google's AI</span>{" "}
+                    <span className="text-primary">Overviews</span> impact your business?
+                  </p>
+                  <p className="text-sm text-gray-400 mb-4">We help you stay visible in every AI-generated search result.</p>
+                  <div className="flex items-center gap-2">
+                    <motion.span
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary border border-primary/30 bg-primary/5 px-3 py-1.5 rounded-full"
+                      animate={{ scale: [1, 1.04, 1] }}
+                      transition={{ duration: 2.5, repeat: Infinity }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+                      GEO Strategy Included
+                    </motion.span>
+                  </div>
+                </div>
+                {/* Decorative animated dots */}
+                <div className="absolute bottom-0 right-0 flex gap-2 p-5 opacity-20">
+                  {[0,1,2].map(i => (
+                    <motion.div
+                      key={i}
+                      className="w-16 h-24 bg-gray-300 rounded-xl"
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 2 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
