@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
+import logoImg from "@assets/seodxb_logo.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -36,7 +36,7 @@ export function Navbar() {
           <img
             src={logoImg}
             alt="SEODXB"
-            style={{ height: '36px', width: '180px', objectFit: 'cover', objectPosition: 'center 50%' }}
+            style={{ height: '36px', width: 'auto' }}
           />
         </Link>
 

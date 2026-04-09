@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
+import logoImg from "@assets/seodxb_logo.png";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
               <img
                 src={logoImg}
                 alt="SEODXB"
-                style={{ height: '36px', width: '180px', objectFit: 'cover', objectPosition: 'center 50%', filter: 'invert(1)' }}
+                style={{ height: '36px', width: 'auto', filter: 'brightness(0) invert(1)' }}
               />
             </Link>
             <p className="text-gray-400 max-w-sm mb-6">
