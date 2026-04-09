@@ -24,7 +24,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Email Us</p>
-                <p className="text-lg font-bold">hey@seodxb.com</p>
+                <p className="text-lg font-bold">hi@Listi.ae</p>
               </div>
             </div>
             

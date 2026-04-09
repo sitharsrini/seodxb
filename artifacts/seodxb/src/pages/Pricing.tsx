@@ -157,7 +157,7 @@ export function Pricing() {
           <p className="text-xl font-black">Still Can't Decide? Let Us Help you Make the Right Decision.</p>
           <div className="flex gap-4 justify-center flex-wrap mt-4">
             <Button variant="outline" className="rounded-full px-7 py-5 font-semibold" asChild>
-              <a href="mailto:hey@seodxb.com">Send Us an Email</a>
+              <a href="mailto:hi@Listi.ae">Send Us an Email</a>
             </Button>
             <Button className="rounded-full px-7 py-5 bg-primary font-semibold" asChild>
               <Link href="/contact">Schedule a Call</Link>

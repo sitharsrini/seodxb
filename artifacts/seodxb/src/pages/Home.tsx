@@ -580,7 +580,7 @@ export function Home() {
         <div className="text-center mt-12 space-y-3">
           <p className="text-lg font-bold">Still Can't Decide? Let Us Help you Make the Right Decision.</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button variant="outline" className="rounded-full px-6" asChild><a href="mailto:hey@seodxb.com">Send Us an Email</a></Button>
+            <Button variant="outline" className="rounded-full px-6" asChild><a href="mailto:hi@Listi.ae">Send Us an Email</a></Button>
             <Button className="rounded-full px-6 bg-primary" asChild><Link href="/contact">Schedule a Call</Link></Button>
           </div>
         </div>
