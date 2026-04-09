@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -11,7 +12,7 @@ import logoImg from "@assets/seodxb_logo.png";
 import { SiGoogle, SiMeta, SiHubspot, SiNotion, SiShopify } from "react-icons/si";
 
 const testimonials = [
-  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong", company: "xxxxxx Management", initials: "YY", color: "from-violet-500 to-purple-600" },
+  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong", company: "Orion Capital Group", initials: "YY", color: "from-violet-500 to-purple-600" },
   { text: "Ripple's exceptional team created a remarkable and awesome website with professionalism and creativity.", author: "Ava Moreno", company: "NovaTech Solutions", initials: "AM", color: "from-rose-400 to-pink-600" },
   { text: "Ripple's creative team delivered a remarkable & awesome website that surpassed expectations.", author: "Ethan Sawyer", company: "Listi", initials: "ES", color: "from-blue-400 to-cyan-600" }
 ];
@@ -179,6 +180,15 @@ export function Home() {
   }, [emblaApi]);
 
   return (
+    <>
+      <Helmet>
+        <title>SEODXB — SEO Agency Dubai | On-Page SEO, AEO & GEO</title>
+        <meta name="description" content="SEODXB is Dubai's leading SEO agency. We help businesses rank on Google, get cited by ChatGPT & Perplexity, and dominate AI-powered search. Transparent pricing, no contracts." />
+        <link rel="canonical" href="https://seodxb.com/" />
+        <meta property="og:title" content="SEODXB — SEO Agency Dubai | On-Page SEO, AEO & GEO" />
+        <meta property="og:description" content="Dubai's leading SEO agency specialising in On-Page SEO, AEO, and GEO. Get found everywhere your customers search." />
+        <meta property="og:url" content="https://seodxb.com/" />
+      </Helmet>
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 px-4 container mx-auto">
@@ -238,6 +248,7 @@ export function Home() {
                 <img
                   src={logoImg}
                   alt="SEODXB"
+                  loading="lazy"
                   style={{ height: '44px', width: 'auto' }}
                 />
               </div>
@@ -639,7 +650,7 @@ export function Home() {
               <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
                 <div className="flex text-[#C8FF00] mb-3 text-sm">★★★★★</div>
                 <p className="italic mb-3 text-sm leading-relaxed text-white/80">"SEO DXB helped us rank higher and attract better quality enquiries."</p>
-                <p className="font-bold text-sm">Yuok Yong., xxxxxx Management</p>
+                <p className="font-bold text-sm">Yuok Yong., Orion Capital Group</p>
               </div>
             </div>
             <div className="bg-white text-black rounded-2xl p-7 shadow-xl">
@@ -676,5 +687,6 @@ export function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,15 @@ const customServices = [
 
 export function Pricing() {
   return (
+    <>
+      <Helmet>
+        <title>SEO Pricing Dubai — Transparent Plans for On-Page SEO & AEO | SEODXB</title>
+        <meta name="description" content="Clear, transparent SEO pricing for Dubai businesses. No contracts, no hidden fees. Choose from Starter, Growth, or Authority plans. Pause or cancel anytime." />
+        <link rel="canonical" href="https://seodxb.com/pricing" />
+        <meta property="og:title" content="SEO Pricing Dubai — Transparent Plans | SEODXB" />
+        <meta property="og:description" content="No contracts. No surprises. Transparent SEO pricing for Dubai businesses starting from $999/month." />
+        <meta property="og:url" content="https://seodxb.com/pricing" />
+      </Helmet>
     <div className="pt-32 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4">
 
@@ -202,5 +212,6 @@ export function Pricing() {
         </div>
       </div>
     </div>
+    </>
   );
 }

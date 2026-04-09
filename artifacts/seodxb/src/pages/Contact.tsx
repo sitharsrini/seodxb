@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,15 @@ export function Contact() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Contact SEODXB — Get a Free SEO Consultation | Dubai SEO Agency</title>
+        <meta name="description" content="Get in touch with SEODXB, Dubai's leading SEO agency. Book a free consultation to discuss your SEO strategy, pricing, and how we can grow your organic traffic." />
+        <link rel="canonical" href="https://seodxb.com/contact" />
+        <meta property="og:title" content="Contact SEODXB — Free SEO Consultation Dubai" />
+        <meta property="og:description" content="Book a free SEO consultation with SEODXB. Tell us about your business and we'll help you dominate search." />
+        <meta property="og:url" content="https://seodxb.com/contact" />
+      </Helmet>
     <div className="pt-32 pb-24 container mx-auto px-4 max-w-6xl">
       <div className="grid lg:grid-cols-2 gap-16">
         <motion.div
@@ -61,7 +71,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Call Us</p>
-                <p className="text-lg font-bold">+971 50 123 4567</p>
+                <p className="text-lg font-bold">+971 52 155 1198</p>
               </div>
             </div>
 
@@ -148,5 +158,6 @@ export function Contact() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -65,6 +66,15 @@ const categoryColors: Record<string, string> = {
 
 export function Blog() {
   return (
+    <>
+      <Helmet>
+        <title>SEO Blog Dubai — Insights on SEO, AEO & AI Search | SEODXB</title>
+        <meta name="description" content="Expert SEO insights for Dubai businesses. Learn about On-Page SEO, Answer Engine Optimisation, Generative Engine Optimisation, Core Web Vitals, and local SEO strategies." />
+        <link rel="canonical" href="https://seodxb.com/blog" />
+        <meta property="og:title" content="SEO Blog Dubai — Insights on SEO, AEO & AI Search | SEODXB" />
+        <meta property="og:description" content="Expert SEO insights and guides for Dubai businesses covering modern search optimisation strategies." />
+        <meta property="og:url" content="https://seodxb.com/blog" />
+      </Helmet>
     <div className="pt-32 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -112,5 +122,6 @@ export function Blog() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "wouter";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -311,6 +312,17 @@ export function BlogPost() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>{post.title} | SEODXB Blog</title>
+        <meta name="description" content={post.excerpt || `${post.title} — Expert SEO insights from SEODXB, Dubai's leading SEO agency.`} />
+        <link rel="canonical" href={`https://seodxb.com/blog/${slug}`} />
+        <meta property="og:title" content={`${post.title} | SEODXB Blog`} />
+        <meta property="og:description" content={post.excerpt || post.title} />
+        <meta property="og:url" content={`https://seodxb.com/blog/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.date} />
+      </Helmet>
     <div className="pt-28 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.div
@@ -368,5 +380,6 @@ export function BlogPost() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

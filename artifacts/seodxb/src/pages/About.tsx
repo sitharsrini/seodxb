@@ -1,10 +1,20 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export function About() {
   return (
+    <>
+      <Helmet>
+        <title>About SEODXB — Dubai SEO Agency | On-Page SEO & AI Search Specialists</title>
+        <meta name="description" content="Learn about SEODXB, a premier SEO agency based in Dubai, UAE. Specialists in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO)." />
+        <link rel="canonical" href="https://seodxb.com/about" />
+        <meta property="og:title" content="About SEODXB — Dubai SEO Agency" />
+        <meta property="og:description" content="A premier SEO agency based in Dubai dedicated to transforming online visibility through cutting-edge On-Page SEO, AEO, and GEO." />
+        <meta property="og:url" content="https://seodxb.com/about" />
+      </Helmet>
     <div className="pt-24 pb-20">
       <section className="bg-slate-50 py-20">
         <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -67,5 +77,6 @@ export function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }
