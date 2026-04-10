@@ -1,6 +1,6 @@
 # SEODXB
 
-> Dubai's leading SEO agency specialising in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). We help businesses get found on Google, cited by ChatGPT, Perplexity, Gemini, and every AI-powered search surface.
+> A global SEO agency based in Dubai, specialising in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). We help businesses worldwide get found on Google, cited by ChatGPT, Perplexity, Gemini, and every AI-powered search surface.
 
 ## What We Do
 
@@ -10,7 +10,7 @@ SEODXB solves the biggest problem most websites face: a lack of organic traffic.
 - **AEO (Answer Engine Optimisation)** — Targeting featured snippets, People Also Ask, and voice search to achieve Position Zero
 - **GEO (Generative Engine Optimisation)** — Ensuring your brand is cited, recommended, and surfaced by AI tools like ChatGPT, Gemini, Perplexity, and Claude
 
-Based in Dubai, UAE. Serving clients across the UAE and MENA region.
+Based in Dubai, UAE. Serving clients globally — UAE, UK, US, Europe, and beyond.
 
 ## Key Pages
 

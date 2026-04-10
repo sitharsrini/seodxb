@@ -182,11 +182,11 @@ export function Home() {
   return (
     <>
       <Helmet>
-        <title>SEODXB — SEO Agency Dubai | On-Page SEO, AEO & GEO</title>
-        <meta name="description" content="SEODXB is Dubai's leading SEO agency. We help businesses rank on Google, get cited by ChatGPT & Perplexity, and dominate AI-powered search. Transparent pricing, no contracts." />
+        <title>SEODXB — Global SEO Agency | On-Page SEO, AEO & GEO</title>
+        <meta name="description" content="SEODXB is a global SEO agency based in Dubai. We help businesses worldwide rank on Google, get cited by ChatGPT & Perplexity, and dominate AI-powered search. Transparent pricing, no contracts." />
         <link rel="canonical" href="https://seodxb.com/" />
-        <meta property="og:title" content="SEODXB — SEO Agency Dubai | On-Page SEO, AEO & GEO" />
-        <meta property="og:description" content="Dubai's leading SEO agency specialising in On-Page SEO, AEO, and GEO. Get found everywhere your customers search." />
+        <meta property="og:title" content="SEODXB — Global SEO Agency | On-Page SEO, AEO & GEO" />
+        <meta property="og:description" content="A global SEO agency based in Dubai specialising in On-Page SEO, AEO, and GEO. Get found everywhere your customers search." />
         <meta property="og:url" content="https://seodxb.com/" />
       </Helmet>
     <div className="flex flex-col min-h-screen">
