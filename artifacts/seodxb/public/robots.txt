@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://seodxb.com/sitemap.xml
+LLMs: https://seodxb.com/llms.txt
