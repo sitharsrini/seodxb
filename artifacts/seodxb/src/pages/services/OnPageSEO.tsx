@@ -53,22 +53,21 @@ export function OnPageSEO() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="bg-slate-950 text-white py-24">
+        <section className="bg-slate-50 py-24">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-block bg-primary/20 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">On-Page SEO</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight">
-                Turn Every Page Into a<br />
-                <span className="text-[#C8FF00]">Ranking Asset</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">On-Page SEO</span>
+              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                Turn Every Page Into a<br />Ranking Asset
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
                 We optimise every element on your pages — content, headings, meta tags, schema, and internal links — so Google ranks you above competitors for the searches that drive revenue.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-8" asChild>
+                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
                   <Link href="/contact">Get a Free Audit <ArrowRight size={16} className="ml-2" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 px-8" asChild>
+                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
                   <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>
@@ -77,9 +76,9 @@ export function OnPageSEO() {
         </section>
 
         {/* Stats */}
-        <section className="py-12 bg-slate-900 text-white border-b border-slate-800">
+        <section className="py-12 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
               {[
                 { value: "3.5×", label: "Avg. organic traffic increase" },
                 { value: "93%", label: "Of pages we touch rank in 90 days" },
@@ -87,8 +86,8 @@ export function OnPageSEO() {
                 { value: "100%", label: "Transparent monthly reporting" },
               ].map((s, i) => (
                 <div key={i}>
-                  <p className="text-3xl font-black text-[#C8FF00]">{s.value}</p>
-                  <p className="text-sm text-white/60 mt-1">{s.label}</p>
+                  <p className="text-3xl font-black text-primary">{s.value}</p>
+                  <p className="text-sm text-gray-500 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -120,19 +119,19 @@ export function OnPageSEO() {
         </section>
 
         {/* Process */}
-        <section className="py-24 bg-slate-950 text-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-heading font-bold mb-4">Our On-Page SEO Process</h2>
-              <p className="text-white/60 text-lg">Systematic, repeatable, and built for long-term compounding gains.</p>
+              <p className="text-gray-500 text-lg">Systematic, repeatable, and built for long-term compounding gains.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {process.map((p, i) => (
-                <div key={i} className="flex gap-6">
-                  <span className="text-5xl font-black text-[#C8FF00] opacity-30 leading-none">{p.step}</span>
+                <div key={i} className="flex gap-6 bg-white rounded-2xl p-7 border border-gray-100">
+                  <span className="text-5xl font-black text-primary/20 leading-none">{p.step}</span>
                   <div>
                     <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-                    <p className="text-white/60 leading-relaxed">{p.desc}</p>
+                    <p className="text-gray-500 leading-relaxed">{p.desc}</p>
                   </div>
                 </div>
               ))}
@@ -151,9 +150,9 @@ export function OnPageSEO() {
               "Monthly deliverables with clear before/after comparisons — you always know what we changed and why.",
               "No lock-in contracts. Cancel anytime (though most clients stay years).",
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
+              <li key={i} className="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
                 <CheckCircle2 size={20} className="text-primary mt-0.5 shrink-0" />
-                <p className="text-muted-foreground">{item}</p>
+                <p className="text-gray-700">{item}</p>
               </li>
             ))}
           </ul>

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle2, Zap, Globe2, MessageSquare, BookOpen, TrendingUp, ArrowRight } from "lucide-react";
-import { SiOpenai, SiGoogle, SiPerplexity } from "react-icons/si";
 
 const geoServices = [
   { icon: <BookOpen size={22} />, title: "Citation-Ready Content", desc: "We write content in the formats that LLMs prefer to cite: authoritative, well-structured, factually dense, and clearly attributed." },
@@ -56,22 +55,21 @@ export function GEO() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="bg-slate-950 text-white py-24">
+        <section className="bg-slate-50 py-24">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/20 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Generative Engine Optimisation</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight">
-                Get Cited by AI.<br />
-                <span className="text-[#C8FF00]">Dominate the New Search Layer.</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Generative Engine Optimisation</span>
+              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                Get Cited by AI.<br />Dominate the New Search Layer.
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
                 ChatGPT, Perplexity, Gemini, and Google AI Overviews are changing how people find businesses. GEO ensures your brand is named, recommended, and trusted by every major AI engine.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-8" asChild>
+                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
                   <Link href="/contact">Check My AI Visibility <ArrowRight size={16} className="ml-2" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 px-8" asChild>
+                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
                   <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>
@@ -80,14 +78,14 @@ export function GEO() {
         </section>
 
         {/* AI Engines */}
-        <section className="py-16 bg-slate-900 text-white">
+        <section className="py-16 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-center text-white/50 text-sm uppercase tracking-widest mb-8">We Optimise for Visibility Across</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <p className="text-center text-gray-400 text-xs uppercase tracking-widest mb-8">We Optimise for Visibility Across</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {aiEngines.map((e, i) => (
-                <div key={i} className="bg-slate-800/50 rounded-xl p-5 border border-slate-700">
-                  <p className="font-bold text-white mb-1">{e.name}</p>
-                  <p className="text-xs text-white/50">{e.desc}</p>
+                <div key={i} className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                  <p className="font-bold text-black mb-1">{e.name}</p>
+                  <p className="text-xs text-gray-500">{e.desc}</p>
                 </div>
               ))}
             </div>
@@ -119,22 +117,22 @@ export function GEO() {
         </section>
 
         {/* Why now */}
-        <section className="py-24 bg-slate-950 text-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-heading font-bold mb-6 text-center">Why GEO Matters Right Now</h2>
-            <p className="text-white/60 text-lg text-center max-w-2xl mx-auto mb-12">
+            <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">
               Early movers in GEO are establishing brand authority that will compound for years. Brands that wait will have to fight harder and spend more to break into AI's recommended set.
             </p>
-            <div className="space-y-5">
+            <div className="space-y-4">
               {[
                 "Google AI Overviews now appear for over 25% of all queries — that's billions of searches per day where your organic listing is pushed below the fold.",
                 "ChatGPT processes over 100 million queries daily. Users ask it for product, service, and vendor recommendations.",
                 "Perplexity and Claude are growing fastest among high-income, educated users — exactly the audience most B2B and premium brands want.",
                 "GEO is still nascent. The window to establish brand authority before it becomes a crowded field is now.",
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <CheckCircle2 size={20} className="text-[#C8FF00] shrink-0 mt-0.5" />
-                  <p className="text-white/70">{item}</p>
+                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-4 border border-gray-100">
+                  <CheckCircle2 size={20} className="text-primary shrink-0 mt-0.5" />
+                  <p className="text-gray-700">{item}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +140,7 @@ export function GEO() {
         </section>
 
         {/* FAQ */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">GEO FAQ</h2>
             <Accordion type="single" collapsible className="space-y-3">

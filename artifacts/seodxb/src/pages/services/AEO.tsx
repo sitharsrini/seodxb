@@ -47,22 +47,21 @@ export function AEO() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="bg-slate-950 text-white py-24">
+        <section className="bg-slate-50 py-24">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/20 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Answer Engine Optimisation</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight">
-                Rank at Position Zero.<br />
-                <span className="text-[#C8FF00]">Be the Answer.</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Answer Engine Optimisation</span>
+              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                Rank at Position Zero.<br />Be the Answer.
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Search is shifting from a list of links to a single answer. AEO ensures your brand is that answer — displayed in featured snippets, PAA boxes, and voice results before any competitor.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-8" asChild>
+                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
                   <Link href="/contact">Start Winning Snippets <ArrowRight size={16} className="ml-2" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 px-8" asChild>
+                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
                   <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>
@@ -71,9 +70,9 @@ export function AEO() {
         </section>
 
         {/* Stat bar */}
-        <section className="py-12 bg-slate-900 text-white border-b border-slate-800">
+        <section className="py-12 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
               {[
                 { value: "8.6%", label: "Avg. CTR of featured snippets vs 2.8% for #1 organic" },
                 { value: "Position 0", label: "Shown above all paid & organic results" },
@@ -81,8 +80,8 @@ export function AEO() {
                 { value: "50%+", label: "Searches now end without a click — own the answer" },
               ].map((s, i) => (
                 <div key={i}>
-                  <p className="text-2xl font-black text-[#C8FF00]">{s.value}</p>
-                  <p className="text-xs text-white/60 mt-1">{s.label}</p>
+                  <p className="text-2xl font-black text-primary">{s.value}</p>
+                  <p className="text-xs text-gray-500 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -114,10 +113,10 @@ export function AEO() {
         </section>
 
         {/* How snippets are won */}
-        <section className="py-24 bg-slate-950 text-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">How We Win Featured Snippets</h2>
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 { step: "1", title: "Identify snippet-eligible queries", desc: "We use rank tracking and SERP analysis to find queries where a featured snippet exists and you rank in the top 20." },
                 { step: "2", title: "Analyse the winning format", desc: "Each snippet type (paragraph, list, table) has a distinct format. We reverse-engineer what Google is currently showing." },
@@ -125,11 +124,11 @@ export function AEO() {
                 { step: "4", title: "Add FAQ & structured data", desc: "Schema markup and FAQ sections increase machine-readability, making it easier for Google to extract your answer." },
                 { step: "5", title: "Track & iterate", desc: "Weekly snippet monitoring. When we win one, we target the next. When a competitor takes one, we recapture it." },
               ].map((s, i) => (
-                <div key={i} className="flex gap-6 items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#C8FF00] text-black font-black text-lg flex items-center justify-center shrink-0">{s.step}</div>
+                <div key={i} className="flex gap-5 items-start bg-white rounded-2xl p-6 border border-gray-100">
+                  <div className="w-9 h-9 rounded-full bg-primary text-white font-black text-sm flex items-center justify-center shrink-0">{s.step}</div>
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{s.title}</h3>
-                    <p className="text-white/60">{s.desc}</p>
+                    <h3 className="text-lg font-bold mb-1">{s.title}</h3>
+                    <p className="text-gray-500 text-sm">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -138,7 +137,7 @@ export function AEO() {
         </section>
 
         {/* FAQ */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">AEO FAQ</h2>
             <Accordion type="single" collapsible className="space-y-3">

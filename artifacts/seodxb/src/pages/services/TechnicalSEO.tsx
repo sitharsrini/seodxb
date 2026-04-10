@@ -46,22 +46,21 @@ export function TechnicalSEO() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="bg-slate-950 text-white py-24">
+        <section className="bg-slate-50 py-24">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/20 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Technical SEO</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight">
-                Fix the Foundation.<br />
-                <span className="text-[#C8FF00]">Everything Ranks Better.</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Technical SEO</span>
+              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                Fix the Foundation.<br />Everything Ranks Better.
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-                No amount of great content can compensate for a crawl error, a 4-second load time, or a missing canonical. We find and fix every technical issue that's silently holding your site back.
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                No amount of great content can compensate for a crawl error, a 4-second load time, or a missing canonical. We find and fix every technical issue silently holding your site back.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-8" asChild>
+                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
                   <Link href="/contact">Get a Free Technical Audit <ArrowRight size={16} className="ml-2" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 px-8" asChild>
+                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
                   <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>
@@ -94,7 +93,7 @@ export function TechnicalSEO() {
         </section>
 
         {/* Checklist */}
-        <section className="py-24 bg-slate-950 text-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">200+ Technical Checks Include</h2>
             <div className="grid md:grid-cols-2 gap-4">
@@ -105,9 +104,9 @@ export function TechnicalSEO() {
                 "Structured data validation", "Google Search Console error resolution", "404 error mapping & redirects",
                 "Page speed (mobile & desktop)", "Browser caching & compression", "Internal link depth analysis",
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-white/80">
-                  <CheckCircle2 size={16} className="text-[#C8FF00] shrink-0" />
-                  <span className="text-sm">{item}</span>
+                <div key={i} className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-100">
+                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+                  <span className="text-sm text-gray-700">{item}</span>
                 </div>
               ))}
             </div>
@@ -115,7 +114,7 @@ export function TechnicalSEO() {
         </section>
 
         {/* FAQ */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">Technical SEO FAQ</h2>
             <Accordion type="single" collapsible className="space-y-3">
