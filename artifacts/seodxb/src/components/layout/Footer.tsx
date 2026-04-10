@@ -47,8 +47,8 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
           <p>© {new Date().getFullYear()} SEODXB. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <a href="mailto:hi@Listi.ae?subject=Privacy%20Policy%20request" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="mailto:hi@Listi.ae?subject=Terms%20of%20Service%20request" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

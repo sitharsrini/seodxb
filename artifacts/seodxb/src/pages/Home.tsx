@@ -10,9 +10,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import logoImg from "@assets/SEODXB_HD_1775726631117.svg";
 
 const testimonials = [
-  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong.", company: "xxxxxx Management" },
-  { text: "Ripple's exceptional team created a remarkable and awesome website with professionalism and creativity.", author: "Ava Moreno", company: "NovaTech Solutions" },
-  { text: "Ripple's creative team delivered a remarkable & awesome website that surpassed expectations.", author: "Ethan Sawyer", company: "Listi" }
+  { text: "SEO DXB helped us rank higher and attract better quality enquiries.", author: "Yuok Yong", company: "Property Management Client" },
+  { text: "Their team delivered a remarkable and awesome website with professionalism and creativity.", author: "Ava Moreno", company: "NovaTech Solutions" },
+  { text: "SEODXB's creative team delivered a remarkable website that surpassed expectations.", author: "Ethan Sawyer", company: "Listi" }
 ];
 
 const containerVariants = {
@@ -89,7 +89,13 @@ function PricingCard() {
               <Plane size={14} />
               <span>Looking for new website +$799</span>
             </div>
-            <button className="text-xs font-bold text-primary border border-primary rounded-full px-3 py-1 hover:bg-primary hover:text-white transition-colors">+ Add</button>
+            <button
+              type="button"
+              aria-label="Add website build to Startup plan"
+              className="text-xs font-bold text-primary border border-primary rounded-full px-3 py-1 hover:bg-primary hover:text-white transition-colors"
+            >
+              + Add
+            </button>
           </div>
           <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-white py-6 font-semibold text-base" asChild>
             <Link href="/contact">Get Started Today <ArrowRight size={16} className="ml-2" /></Link>
@@ -176,6 +182,34 @@ export function Home() {
     }, 4000);
     return () => clearInterval(interval);
   }, [emblaApi]);
+
+  const [form, setForm] = React.useState({
+    name: "",
+    phone: "",
+    email: "",
+    url: "",
+    message: "",
+  });
+
+  const updateField = (key: keyof typeof form) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => setForm((prev) => ({ ...prev, [key]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = `New enquiry from ${form.name}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      `Email: ${form.email}`,
+      `Company URL: ${form.url}`,
+      "",
+      form.message,
+    ].join("\n");
+    window.location.href = `mailto:hi@Listi.ae?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -636,35 +670,92 @@ export function Home() {
               <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
                 <div className="flex text-[#C8FF00] mb-3 text-sm">★★★★★</div>
                 <p className="italic mb-3 text-sm leading-relaxed text-white/80">"SEO DXB helped us rank higher and attract better quality enquiries."</p>
-                <p className="font-bold text-sm">Yuok Yong., xxxxxx Management</p>
+                <p className="font-bold text-sm">Yuok Yong, Property Management Client</p>
               </div>
             </div>
             <div className="bg-white text-black rounded-2xl p-7 shadow-xl">
               <h3 className="text-xl font-black mb-5">Send us a message</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Name</label>
-                    <Input placeholder="John Doe" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-name" />
+                    <label htmlFor="home-name" className="text-xs font-bold text-gray-600 uppercase tracking-wider">Name</label>
+                    <Input
+                      id="home-name"
+                      name="name"
+                      type="text"
+                      autoComplete="name"
+                      required
+                      value={form.name}
+                      onChange={updateField("name")}
+                      placeholder="John Doe"
+                      className="bg-gray-50 rounded-xl border-gray-200"
+                      data-testid="input-name"
+                    />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Contact number</label>
-                    <Input placeholder="+971 50..." className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-phone" />
+                    <label htmlFor="home-phone" className="text-xs font-bold text-gray-600 uppercase tracking-wider">Contact number</label>
+                    <Input
+                      id="home-phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      required
+                      value={form.phone}
+                      onChange={updateField("phone")}
+                      placeholder="+971 50..."
+                      className="bg-gray-50 rounded-xl border-gray-200"
+                      data-testid="input-phone"
+                    />
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Email</label>
-                  <Input type="email" placeholder="john@company.com" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-email" />
+                  <label htmlFor="home-email" className="text-xs font-bold text-gray-600 uppercase tracking-wider">Email</label>
+                  <Input
+                    id="home-email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    value={form.email}
+                    onChange={updateField("email")}
+                    placeholder="john@company.com"
+                    className="bg-gray-50 rounded-xl border-gray-200"
+                    data-testid="input-email"
+                  />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Company URL</label>
-                  <Input placeholder="https://example.com" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-url" />
+                  <label htmlFor="home-url" className="text-xs font-bold text-gray-600 uppercase tracking-wider">Company URL</label>
+                  <Input
+                    id="home-url"
+                    name="url"
+                    type="url"
+                    autoComplete="url"
+                    value={form.url}
+                    onChange={updateField("url")}
+                    placeholder="https://example.com"
+                    className="bg-gray-50 rounded-xl border-gray-200"
+                    data-testid="input-url"
+                  />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Message</label>
-                  <Textarea placeholder="How can we help you?" className="bg-gray-50 rounded-xl border-gray-200 min-h-[90px]" data-testid="input-message" />
+                  <label htmlFor="home-message" className="text-xs font-bold text-gray-600 uppercase tracking-wider">Message</label>
+                  <Textarea
+                    id="home-message"
+                    name="message"
+                    required
+                    value={form.message}
+                    onChange={updateField("message")}
+                    placeholder="How can we help you?"
+                    className="bg-gray-50 rounded-xl border-gray-200 min-h-[90px]"
+                    data-testid="input-message"
+                  />
                 </div>
-                <Button className="w-full rounded-full bg-black hover:bg-black/90 text-white py-6 text-base font-bold" data-testid="button-submit">
+                <Button
+                  type="submit"
+                  className="w-full rounded-full bg-black hover:bg-black/90 text-white py-6 text-base font-bold"
+                  data-testid="button-submit"
+                >
                   Submit
                 </Button>
               </form>

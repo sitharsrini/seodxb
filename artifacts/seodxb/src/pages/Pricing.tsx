@@ -85,7 +85,13 @@ export function Pricing() {
                   <Plane size={14} />
                   <span>Looking for new website +$799</span>
                 </div>
-                <button className="text-xs font-bold text-primary border border-primary rounded-full px-3 py-1 hover:bg-primary hover:text-white transition-colors">+ Add</button>
+                <button
+                  type="button"
+                  aria-label="Add website build to Startup plan"
+                  className="text-xs font-bold text-primary border border-primary rounded-full px-3 py-1 hover:bg-primary hover:text-white transition-colors"
+                >
+                  + Add
+                </button>
               </div>
               <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-white py-6 font-semibold text-base" asChild data-testid="button-startup-cta">
                 <Link href="/contact">Get Started Today <ArrowRight size={16} className="ml-2" /></Link>
