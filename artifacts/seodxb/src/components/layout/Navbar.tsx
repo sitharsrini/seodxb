@@ -11,6 +11,23 @@ const serviceLinks = [
   { name: "GEO — Generative AI", path: "/geo" },
   { name: "Local SEO", path: "/local-seo" },
   { name: "International SEO", path: "/international-seo" },
+  { name: "SEO Audit (Free)", path: "/seo-audit" },
+  { name: "SEO Packages", path: "/seo-packages" },
+];
+
+const locationLinks = [
+  { name: "SEO Dubai", path: "/seo-dubai" },
+  { name: "SEO Abu Dhabi", path: "/seo-abu-dhabi" },
+  { name: "SEO UAE", path: "/seo-uae" },
+];
+
+const industryLinks = [
+  { name: "E-commerce SEO", path: "/ecommerce-seo" },
+  { name: "Real Estate SEO", path: "/real-estate-seo" },
+  { name: "B2B & Startup SEO", path: "/b2b-seo" },
+  { name: "Restaurant & Hotel SEO", path: "/seo-for-restaurants" },
+  { name: "Healthcare SEO", path: "/seo-for-healthcare" },
+  { name: "Legal SEO", path: "/seo-for-law-firms" },
 ];
 
 export function Navbar() {
@@ -36,7 +53,8 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isServiceActive = serviceLinks.some((l) => location === l.path);
+  const allServicePaths = [...serviceLinks, ...locationLinks, ...industryLinks];
+  const isServiceActive = allServicePaths.some((l) => location === l.path);
 
   const navLinks = [
     { name: "About", path: "/about" },
@@ -70,18 +88,26 @@ export function Navbar() {
               <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+                <p className="px-4 pt-1 pb-1 text-xs font-bold text-gray-400 uppercase tracking-widest">Services</p>
                 {serviceLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    href={link.path}
-                    className={`block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${
-                      location === link.path ? "text-primary font-semibold" : "text-foreground"
-                    }`}
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
+                  <Link key={link.path} href={link.path}
+                    className={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                    onClick={() => setServicesOpen(false)}>{link.name}</Link>
+                ))}
+                <div className="border-t border-gray-100 my-1" />
+                <p className="px-4 pt-1 pb-1 text-xs font-bold text-gray-400 uppercase tracking-widest">By Location</p>
+                {locationLinks.map((link) => (
+                  <Link key={link.path} href={link.path}
+                    className={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                    onClick={() => setServicesOpen(false)}>{link.name}</Link>
+                ))}
+                <div className="border-t border-gray-100 my-1" />
+                <p className="px-4 pt-1 pb-1 text-xs font-bold text-gray-400 uppercase tracking-widest">By Industry</p>
+                {industryLinks.map((link) => (
+                  <Link key={link.path} href={link.path}
+                    className={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                    onClick={() => setServicesOpen(false)}>{link.name}</Link>
                 ))}
               </div>
             )}
@@ -127,16 +153,23 @@ export function Navbar() {
             Home
           </Link>
           <div className="px-2 pt-2 pb-1">
-            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Services</p>
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-1">Services</p>
             {serviceLinks.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
+              <Link key={link.path} href={link.path}
                 className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
+                onClick={() => setIsOpen(false)}>{link.name}</Link>
+            ))}
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-3 mb-1">By Location</p>
+            {locationLinks.map((link) => (
+              <Link key={link.path} href={link.path}
+                className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                onClick={() => setIsOpen(false)}>{link.name}</Link>
+            ))}
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-3 mb-1">By Industry</p>
+            {industryLinks.map((link) => (
+              <Link key={link.path} href={link.path}
+                className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                onClick={() => setIsOpen(false)}>{link.name}</Link>
             ))}
           </div>
           {navLinks.map((link) => (

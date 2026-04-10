@@ -1,22 +1,27 @@
 # SEODXB
 
-> A global SEO agency based in Dubai, specialising in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). We help businesses worldwide get found on Google, cited by ChatGPT, Perplexity, Gemini, and every AI-powered search surface.
+> A global SEO agency based in Dubai, specialising in On-Page SEO, Technical SEO, Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), Local SEO, and International SEO. We help businesses worldwide get found on Google, cited by ChatGPT, Perplexity, Gemini, and every AI-powered search surface.
 
 ## What We Do
 
 SEODXB solves the biggest problem most websites face: a lack of organic traffic. We prepare brands for three layers of modern search:
 
 - **On-Page SEO** — Technical audits, keyword strategy, content optimisation, Core Web Vitals, schema markup, and internal linking
+- **Technical SEO** — Site speed, crawlability, structured data, Core Web Vitals, and indexation
 - **AEO (Answer Engine Optimisation)** — Targeting featured snippets, People Also Ask, and voice search to achieve Position Zero
 - **GEO (Generative Engine Optimisation)** — Ensuring your brand is cited, recommended, and surfaced by AI tools like ChatGPT, Gemini, Perplexity, and Claude
+- **Local SEO** — Google Business Profile, Map Pack rankings, citations, and review management
+- **International SEO** — Hreflang, multilingual content, and multi-market strategies
 
-Based in Dubai, UAE. Serving clients globally — UAE, UK, US, Europe, and beyond.
+Based in Dubai, UAE. Serving clients across Dubai, Abu Dhabi, UAE, and globally.
 
 ## Key Pages
 
 - Homepage: https://seodxb.com/
 - About: https://seodxb.com/about
 - Pricing Plans: https://seodxb.com/pricing
+- SEO Packages: https://seodxb.com/seo-packages
+- Free SEO Audit: https://seodxb.com/seo-audit
 - Blog: https://seodxb.com/blog
 - Contact: https://seodxb.com/contact
 
@@ -28,21 +33,39 @@ Based in Dubai, UAE. Serving clients globally — UAE, UK, US, Europe, and beyon
 - GEO (Generative Engine Optimisation): https://seodxb.com/geo
 - Local SEO: https://seodxb.com/local-seo
 - International SEO: https://seodxb.com/international-seo
+- Free SEO Audit: https://seodxb.com/seo-audit
+- SEO Packages & Pricing: https://seodxb.com/seo-packages
+
+## Location Pages
+
+- SEO Agency Dubai: https://seodxb.com/seo-dubai
+- SEO Agency Abu Dhabi: https://seodxb.com/seo-abu-dhabi
+- SEO Agency UAE: https://seodxb.com/seo-uae
+
+## Industry Pages
+
+- E-commerce SEO Dubai: https://seodxb.com/ecommerce-seo
+- Real Estate SEO Dubai: https://seodxb.com/real-estate-seo
+- B2B & Startup SEO Dubai: https://seodxb.com/b2b-seo
+- Restaurant & Hotel SEO Dubai: https://seodxb.com/seo-for-restaurants
+- Healthcare SEO Dubai: https://seodxb.com/seo-for-healthcare
+- Legal SEO Dubai: https://seodxb.com/seo-for-law-firms
 
 ## Blog Articles
 
 - https://seodxb.com/blog/future-of-search-generative-ai-dubai — The Future of Search: Preparing for Generative AI in Dubai
-- https://seodxb.com/blog/core-web-vitals-dubai — Why Core Web Vitals Matter More Than Ever
-- https://seodxb.com/blog/answer-engine-optimisation — Optimizing for Answer Engines: Position Zero Explained
-- https://seodxb.com/blog/local-seo-dubai — Local SEO for Dubai Businesses: The Complete Guide
-- https://seodxb.com/blog/seo-metrics-that-matter — The SEO Metrics That Actually Matter for Business Growth
+- https://seodxb.com/blog/core-web-vitals-matter — Why Core Web Vitals Matter More Than Ever
+- https://seodxb.com/blog/answer-engines-position-zero — Optimizing for Answer Engines: Position Zero Explained
+- https://seodxb.com/blog/local-search-dubai — Local SEO for Dubai Businesses: The Complete Guide
+- https://seodxb.com/blog/semantic-seo-entities-keywords — Semantic SEO: Why Entities Matter More Than Keywords
+- https://seodxb.com/blog/tracking-seo-metrics-revenue — The SEO Metrics That Actually Matter for Business Growth
 
 ## Pricing
 
 Three transparent plans with no contracts and no hidden fees:
-- **Starter ($999/mo)** — On-Page SEO foundations for growing businesses
-- **Growth ($2,999/mo)** — Full SEO + AEO + GEO for scaling brands
-- **Authority (custom)** — Enterprise-level search domination
+- **Startup ($999/mo)** — On-Page SEO foundations for new businesses entering Dubai search
+- **Business ($2,499/mo)** — Full SEO + AEO + GEO + link building for established businesses
+- **Enterprise (custom)** — Enterprise-level multi-location and large site SEO
 
 ## Contact
 

@@ -40,6 +40,17 @@ import { AEO } from "@/pages/services/AEO";
 import { GEO } from "@/pages/services/GEO";
 import { LocalSEO } from "@/pages/services/LocalSEO";
 import { InternationalSEO } from "@/pages/services/InternationalSEO";
+import { SEOAudit } from "@/pages/services/SEOAudit";
+import { SEOPackages } from "@/pages/services/SEOPackages";
+import { SEODubai } from "@/pages/locations/SEODubai";
+import { SEOAbuDhabi } from "@/pages/locations/SEOAbuDhabi";
+import { SEOUAE } from "@/pages/locations/SEOUAE";
+import { EcommerceSEO } from "@/pages/industries/EcommerceSEO";
+import { RealEstateSEO } from "@/pages/industries/RealEstateSEO";
+import { B2BSEO } from "@/pages/industries/B2BSEO";
+import { HospitalitySEO } from "@/pages/industries/HospitalitySEO";
+import { HealthcareSEO } from "@/pages/industries/HealthcareSEO";
+import { LegalSEO } from "@/pages/industries/LegalSEO";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +69,17 @@ function Router() {
       <Route path="/geo" component={GEO} />
       <Route path="/local-seo" component={LocalSEO} />
       <Route path="/international-seo" component={InternationalSEO} />
+      <Route path="/seo-audit" component={SEOAudit} />
+      <Route path="/seo-packages" component={SEOPackages} />
+      <Route path="/seo-dubai" component={SEODubai} />
+      <Route path="/seo-abu-dhabi" component={SEOAbuDhabi} />
+      <Route path="/seo-uae" component={SEOUAE} />
+      <Route path="/ecommerce-seo" component={EcommerceSEO} />
+      <Route path="/real-estate-seo" component={RealEstateSEO} />
+      <Route path="/b2b-seo" component={B2BSEO} />
+      <Route path="/seo-for-restaurants" component={HospitalitySEO} />
+      <Route path="/seo-for-healthcare" component={HealthcareSEO} />
+      <Route path="/seo-for-law-firms" component={LegalSEO} />
       <Route component={NotFound} />
     </Switch>
   );

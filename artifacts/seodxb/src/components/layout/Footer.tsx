@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+          <div className="col-span-1 md:col-span-2" style={{gridColumn: "span 2"}}>
             <Link href="/" className="inline-flex items-center mb-6">
               <img
                 src={logoImg}
@@ -34,14 +34,34 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6">Services</h4>
-            <ul className="flex flex-col gap-4 text-gray-400">
+            <h4 className="font-heading font-bold text-lg mb-4">Services</h4>
+            <ul className="flex flex-col gap-2.5 text-gray-400 text-sm">
               <li><Link href="/on-page-seo" className="hover:text-white transition-colors">On-Page SEO</Link></li>
               <li><Link href="/technical-seo" className="hover:text-white transition-colors">Technical SEO</Link></li>
               <li><Link href="/aeo" className="hover:text-white transition-colors">AEO — Answer Engines</Link></li>
               <li><Link href="/geo" className="hover:text-white transition-colors">GEO — Generative AI</Link></li>
               <li><Link href="/local-seo" className="hover:text-white transition-colors">Local SEO</Link></li>
               <li><Link href="/international-seo" className="hover:text-white transition-colors">International SEO</Link></li>
+              <li><Link href="/seo-audit" className="hover:text-white transition-colors">Free SEO Audit</Link></li>
+              <li><Link href="/seo-packages" className="hover:text-white transition-colors">SEO Packages</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-heading font-bold text-lg mb-4">Locations</h4>
+            <ul className="flex flex-col gap-2.5 text-gray-400 text-sm">
+              <li><Link href="/seo-dubai" className="hover:text-white transition-colors">SEO Dubai</Link></li>
+              <li><Link href="/seo-abu-dhabi" className="hover:text-white transition-colors">SEO Abu Dhabi</Link></li>
+              <li><Link href="/seo-uae" className="hover:text-white transition-colors">SEO UAE</Link></li>
+            </ul>
+            <h4 className="font-heading font-bold text-lg mt-6 mb-4">Industries</h4>
+            <ul className="flex flex-col gap-2.5 text-gray-400 text-sm">
+              <li><Link href="/ecommerce-seo" className="hover:text-white transition-colors">E-commerce SEO</Link></li>
+              <li><Link href="/real-estate-seo" className="hover:text-white transition-colors">Real Estate SEO</Link></li>
+              <li><Link href="/b2b-seo" className="hover:text-white transition-colors">B2B & Startup SEO</Link></li>
+              <li><Link href="/seo-for-restaurants" className="hover:text-white transition-colors">Restaurant & Hotel SEO</Link></li>
+              <li><Link href="/seo-for-healthcare" className="hover:text-white transition-colors">Healthcare SEO</Link></li>
+              <li><Link href="/seo-for-law-firms" className="hover:text-white transition-colors">Legal SEO</Link></li>
             </ul>
           </div>
         </div>
