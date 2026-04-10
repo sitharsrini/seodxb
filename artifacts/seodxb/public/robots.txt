@@ -1,0 +1,35 @@
+# robots.txt for SEODXB
+# https://seodxb.com
+
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /not-found
+
+# AI / answer-engine crawlers — allowed (GEO/AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://seodxb.com/sitemap.xml
+Host: https://seodxb.com
