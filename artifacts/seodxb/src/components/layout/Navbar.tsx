@@ -1,24 +1,44 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImg from "@assets/seodxb_logo.png";
 
+const serviceLinks = [
+  { name: "On-Page SEO", path: "/on-page-seo" },
+  { name: "Technical SEO", path: "/technical-seo" },
+  { name: "AEO — Answer Engines", path: "/aeo" },
+  { name: "GEO — Generative AI", path: "/geo" },
+  { name: "Local SEO", path: "/local-seo" },
+  { name: "International SEO", path: "/international-seo" },
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [servicesOpen, setServicesOpen] = React.useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = React.useState(false);
+  const servicesRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  React.useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isServiceActive = serviceLinks.some((l) => location === l.path);
+
   const navLinks = [
-    { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
     { name: "Pricing", path: "/pricing" },
@@ -33,15 +53,40 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center" data-testid="link-logo">
-          <img
-            src={logoImg}
-            alt="SEODXB"
-            style={{ height: '36px', width: 'auto' }}
-          />
+          <img src={logoImg} alt="SEODXB" style={{ height: "36px", width: "auto" }} />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+          {/* Services dropdown */}
+          <div ref={servicesRef} className="relative">
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${
+                isServiceActive ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Services
+              <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    className={`block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${
+                      location === link.path ? "text-primary font-semibold" : "text-foreground"
+                    }`}
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -73,12 +118,32 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t py-4 px-4 flex flex-col gap-4 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t py-4 px-4 flex flex-col gap-1 md:hidden">
+          <Link
+            href="/"
+            className={`text-base font-medium px-2 py-2.5 rounded-md ${location === "/" ? "bg-primary/10 text-primary" : "text-foreground"}`}
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <div className="px-2 pt-2 pb-1">
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Services</p>
+            {serviceLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.path}
-              className={`text-lg font-medium px-2 py-2 rounded-md ${
+              className={`text-base font-medium px-2 py-2.5 rounded-md ${
                 location === link.path ? "bg-primary/10 text-primary" : "text-foreground"
               }`}
               onClick={() => setIsOpen(false)}

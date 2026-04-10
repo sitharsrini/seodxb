@@ -34,6 +34,12 @@ import { Blog } from "@/pages/Blog";
 import { BlogPost } from "@/pages/BlogPost";
 import { Pricing } from "@/pages/Pricing";
 import { Contact } from "@/pages/Contact";
+import { OnPageSEO } from "@/pages/services/OnPageSEO";
+import { TechnicalSEO } from "@/pages/services/TechnicalSEO";
+import { AEO } from "@/pages/services/AEO";
+import { GEO } from "@/pages/services/GEO";
+import { LocalSEO } from "@/pages/services/LocalSEO";
+import { InternationalSEO } from "@/pages/services/InternationalSEO";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +52,12 @@ function Router() {
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/contact" component={Contact} />
+      <Route path="/on-page-seo" component={OnPageSEO} />
+      <Route path="/technical-seo" component={TechnicalSEO} />
+      <Route path="/aeo" component={AEO} />
+      <Route path="/geo" component={GEO} />
+      <Route path="/local-seo" component={LocalSEO} />
+      <Route path="/international-seo" component={InternationalSEO} />
       <Route component={NotFound} />
     </Switch>
   );
