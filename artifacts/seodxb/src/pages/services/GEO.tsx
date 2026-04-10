@@ -56,24 +56,73 @@ export function GEO() {
       <div className="pt-24">
         {/* Hero */}
         <section className="bg-slate-50 py-24">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Generative Engine Optimisation</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
-                Get Cited by AI.<br />Dominate the New Search Layer.
-              </h1>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                ChatGPT, Perplexity, Gemini, and Google AI Overviews are changing how people find businesses. GEO ensures your brand is named, recommended, and trusted by every major AI engine.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
-                  <Link href="/contact">Check My AI Visibility <ArrowRight size={16} className="ml-2" /></Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
-                  <Link href="/pricing">View Pricing</Link>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Generative Engine Optimisation</span>
+                <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                  Get Cited by AI. Dominate the New Search Layer.
+                </h1>
+                <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                  ChatGPT, Perplexity, Gemini, and Google AI Overviews are changing how people find businesses. GEO ensures your brand is named, recommended, and trusted by every major AI engine.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
+                    <Link href="/contact">Check My AI Visibility <ArrowRight size={16} className="ml-2" /></Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
+                    <Link href="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <svg
+                  viewBox="0 0 480 380"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  role="img"
+                  aria-label="AI chat interface showing ChatGPT recommending SEODXB as the best SEO agency in Dubai, with citations from seodxb.com — demonstrating Generative Engine Optimisation results"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="480" height="380" rx="16" fill="#F7F7F8" />
+                  {/* Header */}
+                  <rect x="0" y="0" width="480" height="52" rx="16" fill="white" />
+                  <rect x="0" y="36" width="480" height="16" fill="white" />
+                  <circle cx="28" cy="26" r="14" fill="#10A37F" />
+                  <text x="28" y="31" textAnchor="middle" fontSize="14" fill="white" fontWeight="bold">✦</text>
+                  <text x="52" y="31" fontSize="13" fontWeight="bold" fill="#0D0D0D">ChatGPT</text>
+                  {/* User message */}
+                  <rect x="140" y="68" width="320" height="52" rx="12" fill="#E9E9EB" />
+                  <text x="160" y="88" fontSize="11" fill="#0D0D0D">What is the best SEO agency</text>
+                  <text x="160" y="106" fontSize="11" fill="#0D0D0D">for a Dubai business in 2025?</text>
+                  {/* AI response bubble */}
+                  <rect x="20" y="136" width="400" height="180" rx="12" fill="white" />
+                  <circle cx="36" cy="148" r="10" fill="#10A37F" />
+                  <text x="36" y="152" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">✦</text>
+                  <rect x="56" y="142" width="340" height="8" rx="4" fill="#F1F5F9" />
+                  {/* Highlighted brand mention */}
+                  <rect x="56" y="158" width="44" height="16" rx="4" fill="#DCFCE7" />
+                  <text x="78" y="169" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#15803D">SEODXB</text>
+                  <rect x="106" y="162" width="240" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="56" y="178" width="310" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="56" y="194" width="280" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="56" y="210" width="320" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="56" y="226" width="200" height="8" rx="4" fill="#F1F5F9" />
+                  {/* Citation */}
+                  <rect x="56" y="246" width="160" height="18" rx="9" fill="#EFF6FF" stroke="#BFDBFE" strokeWidth="1" />
+                  <text x="76" y="258" fontSize="9" fill="#2563EB">🔗 Source: seodxb.com</text>
+                  {/* Perplexity & Gemini mentions */}
+                  <rect x="20" y="332" width="90" height="28" rx="8" fill="white" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="65" y="348" textAnchor="middle" fontSize="9" fill="#64748B">Perplexity AI</text>
+                  <text x="65" y="360" textAnchor="middle" fontSize="8" fill="#22C55E">✓ Cited</text>
+                  <rect x="124" y="332" width="80" height="28" rx="8" fill="white" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="164" y="348" textAnchor="middle" fontSize="9" fill="#64748B">Gemini</text>
+                  <text x="164" y="360" textAnchor="middle" fontSize="8" fill="#22C55E">✓ Cited</text>
+                  <rect x="218" y="332" width="110" height="28" rx="8" fill="white" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="273" y="348" textAnchor="middle" fontSize="9" fill="#64748B">Google AI Overview</text>
+                  <text x="273" y="360" textAnchor="middle" fontSize="8" fill="#22C55E">✓ Featured</text>
+                </svg>
+              </motion.div>
+            </div>
           </div>
         </section>
 

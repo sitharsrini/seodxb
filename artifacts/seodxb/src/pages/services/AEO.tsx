@@ -48,24 +48,70 @@ export function AEO() {
       <div className="pt-24">
         {/* Hero */}
         <section className="bg-slate-50 py-24">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Answer Engine Optimisation</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
-                Rank at Position Zero.<br />Be the Answer.
-              </h1>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Search is shifting from a list of links to a single answer. AEO ensures your brand is that answer — displayed in featured snippets, PAA boxes, and voice results before any competitor.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
-                  <Link href="/contact">Start Winning Snippets <ArrowRight size={16} className="ml-2" /></Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
-                  <Link href="/pricing">View Pricing</Link>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Answer Engine Optimisation</span>
+                <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                  Rank at Position Zero. Be the Answer.
+                </h1>
+                <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                  Search is shifting from a list of links to a single answer. AEO ensures your brand is that answer — displayed in featured snippets, PAA boxes, and voice results before any competitor.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
+                    <Link href="/contact">Start Winning Snippets <ArrowRight size={16} className="ml-2" /></Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
+                    <Link href="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <svg
+                  viewBox="0 0 480 380"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  role="img"
+                  aria-label="Google search results page showing a featured snippet at Position Zero for 'best SEO agency Dubai' with SEODXB listed above all organic results, demonstrating Answer Engine Optimisation success"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="480" height="380" rx="16" fill="#FFFFFF" />
+                  {/* Search bar */}
+                  <rect x="20" y="20" width="440" height="44" rx="22" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1.5" />
+                  <text x="52" y="47" fontSize="22" fill="#4285F4">G</text>
+                  <text x="80" y="46" fontSize="12" fill="#5F6368">best SEO agency Dubai</text>
+                  <rect x="418" y="32" width="28" height="20" rx="10" fill="#4285F4" />
+                  <text x="432" y="45" textAnchor="middle" fontSize="10" fill="white">🔍</text>
+                  {/* Position Zero badge */}
+                  <rect x="20" y="80" width="100" height="18" rx="9" fill="#FEF9C3" />
+                  <text x="70" y="92" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#92400E">📌 Position Zero</text>
+                  {/* Featured Snippet box */}
+                  <rect x="20" y="104" width="440" height="110" rx="10" fill="white" stroke="#DADCE0" strokeWidth="1.5" />
+                  <rect x="20" y="104" width="440" height="4" rx="2" fill="#4285F4" />
+                  <text x="36" y="128" fontSize="10" fill="#4285F4">seodxb.com › about</text>
+                  <text x="36" y="146" fontSize="13" fontWeight="bold" fill="#1558D6">SEODXB — Dubai's Top-Rated SEO Agency</text>
+                  <rect x="36" y="156" width="360" height="7" rx="4" fill="#F1F5F9" />
+                  <rect x="36" y="170" width="300" height="7" rx="4" fill="#F1F5F9" />
+                  <rect x="36" y="184" width="340" height="7" rx="4" fill="#F1F5F9" />
+                  <text x="36" y="204" fontSize="9" fill="#70757A">SEODXB specialises in On-Page SEO, AEO, and GEO for businesses worldwide...</text>
+                  {/* PAA section */}
+                  <text x="20" y="234" fontSize="11" fontWeight="bold" fill="#202124">People also ask</text>
+                  {[
+                    "What does an SEO agency do?",
+                    "How much does SEO cost in Dubai?",
+                    "Which is the best SEO company?",
+                  ].map((q, i) => (
+                    <g key={i}>
+                      <rect x="20" y={244 + i * 34} width="440" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
+                      <text x="36" y={262 + i * 34} fontSize="11" fill="#202124">{q}</text>
+                      <text x="446" y={262 + i * 34} textAnchor="end" fontSize="14" fill="#70757A">⌄</text>
+                    </g>
+                  ))}
+                  {/* Organic result (below fold) */}
+                  <text x="20" y="362" fontSize="9" fill="#A0AEC0">↓ Organic results begin here</text>
+                </svg>
+              </motion.div>
+            </div>
           </div>
         </section>
 

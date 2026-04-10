@@ -54,24 +54,83 @@ export function OnPageSEO() {
       <div className="pt-24">
         {/* Hero */}
         <section className="bg-slate-50 py-24">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">On-Page SEO</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
-                Turn Every Page Into a<br />Ranking Asset
-              </h1>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                We optimise every element on your pages — content, headings, meta tags, schema, and internal links — so Google ranks you above competitors for the searches that drive revenue.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
-                  <Link href="/contact">Get a Free Audit <ArrowRight size={16} className="ml-2" /></Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
-                  <Link href="/pricing">View Pricing</Link>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">On-Page SEO</span>
+                <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                  Turn Every Page Into a Ranking Asset
+                </h1>
+                <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                  We optimise every element on your pages — content, headings, meta tags, schema, and internal links — so Google ranks you above competitors for the searches that drive revenue.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
+                    <Link href="/contact">Get a Free Audit <ArrowRight size={16} className="ml-2" /></Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
+                    <Link href="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <svg
+                  viewBox="0 0 480 360"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  role="img"
+                  aria-label="On-page SEO diagram showing optimised webpage structure with H1 heading, meta description, keyword-rich paragraphs, internal links, and schema markup"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Browser chrome */}
+                  <rect width="480" height="360" rx="16" fill="#F8FAFC" />
+                  <rect x="0" y="0" width="480" height="44" rx="16" fill="#E2E8F0" />
+                  <rect x="0" y="28" width="480" height="16" fill="#E2E8F0" />
+                  <circle cx="20" cy="22" r="6" fill="#FC8181" />
+                  <circle cx="38" cy="22" r="6" fill="#F6AD55" />
+                  <circle cx="56" cy="22" r="6" fill="#68D391" />
+                  {/* URL bar */}
+                  <rect x="80" y="12" width="280" height="20" rx="10" fill="white" />
+                  <text x="220" y="26" textAnchor="middle" fontSize="10" fill="#94A3B8">seodxb.com/your-page</text>
+                  {/* Page content */}
+                  <rect x="24" y="58" width="432" height="288" rx="8" fill="white" />
+                  {/* H1 tag badge */}
+                  <rect x="36" y="72" width="30" height="18" rx="4" fill="#DBEAFE" />
+                  <text x="51" y="84" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#2563EB">H1</text>
+                  {/* H1 text */}
+                  <rect x="72" y="72" width="200" height="18" rx="3" fill="#EFF6FF" />
+                  <text x="82" y="84" fontSize="11" fontWeight="bold" fill="#1E40AF">Best SEO Agency in Dubai</text>
+                  {/* Meta badge */}
+                  <rect x="36" y="102" width="42" height="16" rx="4" fill="#F0FDF4" />
+                  <text x="57" y="113" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#16A34A">META</text>
+                  {/* Meta text */}
+                  <rect x="84" y="102" width="240" height="16" rx="3" fill="#F0FDF4" />
+                  <text x="94" y="113" fontSize="9" fill="#15803D">Award-winning SEO agency based in Dubai...</text>
+                  {/* Divider */}
+                  <line x1="36" y1="130" x2="432" y2="130" stroke="#E2E8F0" strokeWidth="1" />
+                  {/* Body paragraph lines */}
+                  <rect x="36" y="142" width="380" height="8" rx="4" fill="#F1F5F9" />
+                  {/* Keyword highlight */}
+                  <rect x="36" y="158" width="140" height="8" rx="4" fill="#FEF9C3" />
+                  <rect x="182" y="158" width="200" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="36" y="174" width="320" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="36" y="190" width="260" height="8" rx="4" fill="#F1F5F9" />
+                  {/* H2 */}
+                  <rect x="36" y="212" width="20" height="14" rx="3" fill="#EDE9FE" />
+                  <text x="46" y="222" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#7C3AED">H2</text>
+                  <rect x="62" y="212" width="160" height="14" rx="3" fill="#EDE9FE" />
+                  <text x="72" y="222" fontSize="10" fontWeight="bold" fill="#5B21B6">Our Core SEO Services</text>
+                  {/* More lines */}
+                  <rect x="36" y="236" width="370" height="8" rx="4" fill="#F1F5F9" />
+                  <rect x="36" y="252" width="300" height="8" rx="4" fill="#F1F5F9" />
+                  {/* Internal link */}
+                  <rect x="36" y="270" width="130" height="16" rx="4" fill="#DBEAFE" />
+                  <text x="44" y="281" fontSize="10" fill="#2563EB">→ View Our Pricing Plans</text>
+                  {/* Schema badge */}
+                  <rect x="340" y="308" width="96" height="20" rx="10" fill="#FEF3C7" />
+                  <text x="388" y="321" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#92400E">✦ Schema Markup</text>
+                </svg>
+              </motion.div>
+            </div>
           </div>
         </section>
 

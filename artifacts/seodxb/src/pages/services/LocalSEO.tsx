@@ -49,24 +49,86 @@ export function LocalSEO() {
       <div className="pt-24">
         {/* Hero */}
         <section className="bg-slate-50 py-24">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Local SEO</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
-                Own the Map Pack.<br />Win Local Customers.
-              </h1>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                When someone searches for your service in Dubai — or any city you serve — we make sure your business appears in the top 3 map results, above your competitors and below the ads.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
-                  <Link href="/contact">Boost My Local Visibility <ArrowRight size={16} className="ml-2" /></Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
-                  <Link href="/pricing">View Pricing</Link>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Local SEO</span>
+                <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                  Own the Map Pack. Win Local Customers.
+                </h1>
+                <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                  When someone searches for your service in Dubai — or any city you serve — we make sure your business appears in the top 3 map results, above your competitors and below the ads.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
+                    <Link href="/contact">Boost My Local Visibility <ArrowRight size={16} className="ml-2" /></Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
+                    <Link href="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <svg
+                  viewBox="0 0 480 380"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  role="img"
+                  aria-label="Google Map Pack showing 3 local business listings in Dubai with SEODXB ranked first, displaying star ratings, address, and distance, alongside a map with location pins"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="480" height="380" rx="16" fill="white" />
+                  {/* Map background */}
+                  <rect x="240" y="0" width="240" height="380" rx="0" fill="#E8F5E9" />
+                  <rect x="456" y="0" width="24" height="380" rx="0" fill="#E8F5E9" />
+                  <rect x="440" y="0" width="40" height="380" rx="16" fill="#E8F5E9" />
+                  {/* Map roads */}
+                  <line x1="240" y1="120" x2="480" y2="120" stroke="#FFFFFF" strokeWidth="6" />
+                  <line x1="240" y1="220" x2="480" y2="220" stroke="#FFFFFF" strokeWidth="6" />
+                  <line x1="330" y1="0" x2="330" y2="380" stroke="#FFFFFF" strokeWidth="4" />
+                  <line x1="400" y1="0" x2="400" y2="380" stroke="#FFFFFF" strokeWidth="4" />
+                  {/* Map pins */}
+                  <circle cx="350" cy="150" r="14" fill="#EA4335" />
+                  <text x="350" y="155" textAnchor="middle" fontSize="12" fill="white">1</text>
+                  <circle cx="420" cy="100" r="10" fill="#4285F4" opacity="0.7" />
+                  <text x="420" y="104" textAnchor="middle" fontSize="9" fill="white">2</text>
+                  <circle cx="370" cy="270" r="10" fill="#4285F4" opacity="0.7" />
+                  <text x="370" y="274" textAnchor="middle" fontSize="9" fill="white">3</text>
+                  {/* Map pack listing panel */}
+                  <rect x="0" y="0" width="248" height="380" rx="16" fill="white" />
+                  <rect x="248" y="0" width="8" height="380" fill="white" />
+                  {/* Search bar */}
+                  <rect x="12" y="12" width="224" height="34" rx="17" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="30" y="33" fontSize="11" fill="#5F6368">SEO agency Dubai</text>
+                  {/* #1 listing - highlighted */}
+                  <rect x="12" y="56" width="224" height="90" rx="10" fill="#EFF6FF" stroke="#BFDBFE" strokeWidth="1.5" />
+                  <rect x="12" y="56" width="4" height="90" rx="2" fill="#2563EB" />
+                  <text x="28" y="75" fontSize="11" fontWeight="bold" fill="#1E40AF">SEODXB</text>
+                  <text x="200" y="75" textAnchor="end" fontSize="9" fontWeight="bold" fill="#16A34A">OPEN</text>
+                  <text x="28" y="91" fontSize="9" fill="#F59E0B">★★★★★</text>
+                  <text x="88" y="91" fontSize="9" fill="#64748B">4.9 (127)</text>
+                  <text x="28" y="106" fontSize="9" fill="#64748B">SEO Agency · Business Bay</text>
+                  <text x="28" y="120" fontSize="9" fill="#64748B">+971 52 155 1198</text>
+                  <rect x="28" y="130" width="52" height="10" rx="5" fill="#DBEAFE" />
+                  <text x="54" y="138" textAnchor="middle" fontSize="7" fill="#2563EB">Website →</text>
+                  {/* #2 listing */}
+                  <rect x="12" y="158" width="224" height="80" rx="10" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="28" y="177" fontSize="10" fontWeight="bold" fill="#0F172A">Competitor Agency</text>
+                  <text x="28" y="192" fontSize="9" fill="#F59E0B">★★★★</text>
+                  <text x="80" y="192" fontSize="9" fill="#64748B">4.2 (58)</text>
+                  <text x="28" y="207" fontSize="9" fill="#64748B">SEO Agency · DIFC</text>
+                  <text x="28" y="222" fontSize="9" fill="#94A3B8">+971 4 XXX XXXX</text>
+                  {/* #3 listing */}
+                  <rect x="12" y="250" width="224" height="80" rx="10" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="28" y="269" fontSize="10" fontWeight="bold" fill="#0F172A">Another Agency</text>
+                  <text x="28" y="284" fontSize="9" fill="#F59E0B">★★★★</text>
+                  <text x="80" y="284" fontSize="9" fill="#64748B">4.0 (31)</text>
+                  <text x="28" y="299" fontSize="9" fill="#64748B">Marketing Agency · JLT</text>
+                  <text x="28" y="314" fontSize="9" fill="#94A3B8">+971 4 XXX XXXX</text>
+                  {/* More results */}
+                  <text x="124" y="354" textAnchor="middle" fontSize="9" fill="#2563EB">More businesses →</text>
+                </svg>
+              </motion.div>
+            </div>
           </div>
         </section>
 

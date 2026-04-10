@@ -47,24 +47,72 @@ export function TechnicalSEO() {
       <div className="pt-24">
         {/* Hero */}
         <section className="bg-slate-50 py-24">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Technical SEO</span>
-              <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
-                Fix the Foundation.<br />Everything Ranks Better.
-              </h1>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                No amount of great content can compensate for a crawl error, a 4-second load time, or a missing canonical. We find and fix every technical issue silently holding your site back.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
-                  <Link href="/contact">Get a Free Technical Audit <ArrowRight size={16} className="ml-2" /></Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
-                  <Link href="/pricing">View Pricing</Link>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">Technical SEO</span>
+                <h1 className="text-5xl md:text-6xl font-heading font-black mb-6 leading-tight text-black">
+                  Fix the Foundation. Everything Ranks Better.
+                </h1>
+                <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                  No amount of great content can compensate for a crawl error, a 4-second load time, or a missing canonical. We find and fix every technical issue silently holding your site back.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
+                    <Link href="/contact">Get a Free Technical Audit <ArrowRight size={16} className="ml-2" /></Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 px-8" asChild>
+                    <Link href="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <svg
+                  viewBox="0 0 480 360"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  role="img"
+                  aria-label="Technical SEO audit dashboard showing a 97/100 performance score with Core Web Vitals metrics: LCP 1.8s, CLS 0.02, INP 120ms all in green, plus crawl health indicators"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="480" height="360" rx="16" fill="#F8FAFC" />
+                  {/* Card */}
+                  <rect x="20" y="20" width="440" height="320" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="1" />
+                  <text x="36" y="50" fontSize="13" fontWeight="bold" fill="#0F172A">Technical SEO Audit Report</text>
+                  <rect x="36" y="60" width="80" height="18" rx="9" fill="#DCFCE7" />
+                  <text x="76" y="72" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#15803D">✓ All Systems Go</text>
+                  {/* Score circle */}
+                  <circle cx="240" cy="155" r="64" fill="none" stroke="#E2E8F0" strokeWidth="10" />
+                  <circle cx="240" cy="155" r="64" fill="none" stroke="#22C55E" strokeWidth="10"
+                    strokeDasharray="362" strokeDashoffset="25" strokeLinecap="round"
+                    transform="rotate(-90 240 155)" />
+                  <text x="240" y="148" textAnchor="middle" fontSize="32" fontWeight="900" fill="#0F172A">97</text>
+                  <text x="240" y="168" textAnchor="middle" fontSize="11" fill="#64748B">Performance Score</text>
+                  {/* Core Web Vitals */}
+                  <text x="36" y="246" fontSize="11" fontWeight="bold" fill="#64748B">CORE WEB VITALS</text>
+                  {/* LCP */}
+                  <rect x="36" y="256" width="120" height="48" rx="8" fill="#F0FDF4" stroke="#BBF7D0" strokeWidth="1" />
+                  <text x="96" y="274" textAnchor="middle" fontSize="9" fill="#16A34A">LCP (Load)</text>
+                  <text x="96" y="292" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#15803D">1.8s</text>
+                  {/* CLS */}
+                  <rect x="170" y="256" width="120" height="48" rx="8" fill="#F0FDF4" stroke="#BBF7D0" strokeWidth="1" />
+                  <text x="230" y="274" textAnchor="middle" fontSize="9" fill="#16A34A">CLS (Stability)</text>
+                  <text x="230" y="292" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#15803D">0.02</text>
+                  {/* INP */}
+                  <rect x="304" y="256" width="120" height="48" rx="8" fill="#F0FDF4" stroke="#BBF7D0" strokeWidth="1" />
+                  <text x="364" y="274" textAnchor="middle" fontSize="9" fill="#16A34A">INP (Response)</text>
+                  <text x="364" y="292" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#15803D">120ms</text>
+                  {/* Crawl status */}
+                  <rect x="36" y="318" width="60" height="14" rx="7" fill="#DBEAFE" />
+                  <text x="66" y="328" textAnchor="middle" fontSize="8" fill="#2563EB">✓ Indexed</text>
+                  <rect x="106" y="318" width="72" height="14" rx="7" fill="#DBEAFE" />
+                  <text x="142" y="328" textAnchor="middle" fontSize="8" fill="#2563EB">✓ Mobile Pass</text>
+                  <rect x="188" y="318" width="80" height="14" rx="7" fill="#DBEAFE" />
+                  <text x="228" y="328" textAnchor="middle" fontSize="8" fill="#2563EB">✓ Schema Valid</text>
+                  <rect x="278" y="318" width="76" height="14" rx="7" fill="#DBEAFE" />
+                  <text x="316" y="328" textAnchor="middle" fontSize="8" fill="#2563EB">✓ HTTPS OK</text>
+                </svg>
+              </motion.div>
+            </div>
           </div>
         </section>
 
