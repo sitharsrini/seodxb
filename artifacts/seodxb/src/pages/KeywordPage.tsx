@@ -378,6 +378,20 @@ export function KeywordPage() {
     "description": config.metaDesc,
     "areaServed": config.areaServed ?? "Dubai, UAE",
     "url": `https://seodxb.com/${slug}`,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".faq-section"]
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seodxb.com/" },
+      { "@type": "ListItem", "position": 2, "name": "SEO Services", "item": "https://seodxb.com/seo-dubai" },
+      { "@type": "ListItem", "position": 3, "name": config.h1, "item": `https://seodxb.com/${slug}` }
+    ]
   };
 
   return (
@@ -390,8 +404,17 @@ export function KeywordPage() {
         <meta property="og:description" content={config.metaDesc} />
         <meta property="og:url" content={`https://seodxb.com/${slug}`} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://seodxb.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SEODXB" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={config.title} />
+        <meta name="twitter:description" content={config.metaDesc} />
+        <meta name="twitter:image" content="https://seodxb.com/opengraph.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <div className="pt-24">
@@ -496,7 +519,7 @@ export function KeywordPage() {
         </section>
 
         {/* FAQ - AEO / LLM optimised */}
-        <section className="py-24 bg-white">
+        <section className="faq-section py-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-heading font-bold mb-3 text-center">{config.faqTitle ?? "Frequently Asked Questions"}</h2>
             <p className="text-center text-gray-500 mb-10">Straight answers about {config.keyword}.</p>

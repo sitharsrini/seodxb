@@ -58,11 +58,42 @@
         "addressRegion": "Dubai",
         "addressCountry": "AE"
       },
-      "areaServed": "Worldwide",
+      "telephone": "+971521551198",
       "email": "hi@Listi.ae",
-      "sameAs": [],
+      "areaServed": "Worldwide",
+      "sameAs": [
+        "https://seodxb.com",
+        "https://www.linkedin.com/company/seodxb",
+        "https://twitter.com/seodxb"
+      ],
       "priceRange": "$$",
-      "serviceType": ["SEO", "AEO", "GEO", "Technical SEO", "Local SEO", "International SEO"]
+      "serviceType": ["SEO", "AEO", "GEO", "Technical SEO", "Local SEO", "International SEO"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971521551198",
+        "contactType": "sales",
+        "email": "hi@Listi.ae",
+        "availableLanguage": ["English", "Arabic"]
+      }
+    }
+    </script>
+
+    <!-- WebSite Schema — enables Sitelinks Searchbox -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SEODXB",
+      "url": "https://seodxb.com",
+      "description": "A global SEO agency based in Dubai specialising in On-Page SEO, AEO, and GEO.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://seodxb.com/seo-audit?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
   </head>
