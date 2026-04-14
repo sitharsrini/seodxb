@@ -8,11 +8,11 @@ import { CheckCircle2, TrendingUp, Globe, BarChart2, Search, Zap, ArrowRight } f
 
 const services = [
   { icon: <Search size={22} />, title: "Keyword Research", desc: "Deep analysis of what Dubai customers search for. We map keywords to every page, targeting high-volume, commercial-intent terms in your market." },
-  { icon: <TrendingUp size={22} />, title: "On-Page Optimisation", desc: "Title tags, meta descriptions, headings, internal links, and content — every element tuned for Google's UAE crawlers." },
+  { icon: <TrendingUp size={22} />, title: "On-Page Optimisation", desc: "Title tags, meta descriptions, headings, internal links, and content - every element tuned for Google's UAE crawlers." },
   { icon: <Globe size={22} />, title: "Local SEO & Map Pack", desc: "Google Business Profile, citations across UAE directories, and location pages that put you in the top 3 Map Pack results." },
   { icon: <Zap size={22} />, title: "Technical SEO", desc: "Core Web Vitals, crawlability, schema markup, and site speed fixes that form the foundation of lasting rankings." },
   { icon: <BarChart2 size={22} />, title: "Link Building", desc: "High-authority backlinks from UAE news sites, local directories, and industry publications that build domain trust." },
-  { icon: <CheckCircle2 size={22} />, title: "Monthly Reporting", desc: "Transparent reports showing rankings, traffic, leads generated, and ROI — no vanity metrics, only what matters to your business." },
+  { icon: <CheckCircle2 size={22} />, title: "Monthly Reporting", desc: "Transparent reports showing rankings, traffic, leads generated, and ROI - no vanity metrics, only what matters to your business." },
 ];
 
 const stats = [
@@ -25,16 +25,16 @@ const stats = [
 const faqs = [
   { q: "How long does SEO take to show results in Dubai?", a: "Most Dubai businesses start seeing measurable ranking improvements within 3–4 months. Significant traffic increases typically appear at 6 months, with compounding growth through month 12. Competitive industries like real estate, legal, and finance can take longer due to established players. We share honest timelines during your free audit." },
   { q: "What makes SEO in Dubai different from other markets?", a: "Dubai's search landscape is unique: a multilingual audience (English and Arabic), high mobile usage (87%+ of searches), a competitive landscape of global and regional businesses, and Google's UAE-specific algorithm signals including local business verification. We account for all of this in every campaign." },
-  { q: "Do you work with businesses across all industries?", a: "Yes. We work across real estate, hospitality, healthcare, legal, e-commerce, B2B, retail, and professional services. Each campaign is built around your specific industry's competitive landscape and buyer journey — not a one-size-fits-all template." },
+  { q: "Do you work with businesses across all industries?", a: "Yes. We work across real estate, hospitality, healthcare, legal, e-commerce, B2B, retail, and professional services. Each campaign is built around your specific industry's competitive landscape and buyer journey - not a one-size-fits-all template." },
   { q: "What's included in your Dubai SEO service?", a: "Every campaign includes: full technical audit and fixes, keyword research and mapping, on-page optimisation, local SEO and GBP management, link building, monthly content, and detailed reporting. Optional add-ons include AEO (featured snippets), GEO (AI search visibility), and paid search." },
-  { q: "Can you guarantee first page rankings?", a: "No ethical SEO agency can guarantee specific rankings — Google's algorithm is their property. What we guarantee is applying every proven best practice, providing full transparency on progress, and delivering measurable improvements in traffic and leads. Our average client sees a 3.1x increase in organic traffic within 12 months." },
+  { q: "Can you guarantee first page rankings?", a: "No ethical SEO agency can guarantee specific rankings - Google's algorithm is their property. What we guarantee is applying every proven best practice, providing full transparency on progress, and delivering measurable improvements in traffic and leads. Our average client sees a 3.1x increase in organic traffic within 12 months." },
 ];
 
 export function SEODubai() {
   return (
     <>
       <Helmet>
-        <title>SEO Agency Dubai — #1 Rated SEO Company in Dubai, UAE | SEODXB</title>
+        <title>SEO Agency Dubai - #1 Rated SEO Company in Dubai, UAE | SEODXB</title>
         <meta name="description" content="Dubai's results-driven SEO agency. We rank businesses on Google's first page with proven on-page SEO, technical SEO, local SEO, and link building strategies." />
         <link rel="canonical" href="https://seodxb.com/seo-dubai" />
         <meta property="og:title" content="SEO Agency Dubai | #1 SEO Company Dubai | SEODXB" />
@@ -43,7 +43,7 @@ export function SEODubai() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "SEODXB — SEO Agency Dubai",
+          "name": "SEODXB - SEO Agency Dubai",
           "description": "Dubai's leading SEO agency delivering first-page Google rankings, increased organic traffic, and measurable business growth.",
           "url": "https://seodxb.com/seo-dubai",
           "areaServed": { "@type": "City", "name": "Dubai" },
@@ -64,7 +64,7 @@ export function SEODubai() {
                   Dubai's SEO Agency. Real Rankings. Real Revenue.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  We help Dubai businesses rank on Google's first page, attract qualified traffic, and convert visitors into customers — with SEO strategies built specifically for the UAE market.
+                  We help Dubai businesses rank on Google's first page, attract qualified traffic, and convert visitors into customers - with SEO strategies built specifically for the UAE market.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -92,7 +92,7 @@ export function SEODubai() {
                   <rect x="20" y="100" width="440" height="88" rx="8" fill="#F0FDF4" stroke="#BBF7D0" strokeWidth="1.5" />
                   <rect x="20" y="100" width="4" height="88" rx="2" fill="#16A34A" />
                   <text x="36" y="118" fontSize="9" fill="#16A34A">seodxb.com › seo-dubai</text>
-                  <text x="36" y="134" fontSize="13" fontWeight="bold" fill="#1D4ED8">SEODXB — #1 SEO Agency in Dubai, UAE</text>
+                  <text x="36" y="134" fontSize="13" fontWeight="bold" fill="#1D4ED8">SEODXB - #1 SEO Agency in Dubai, UAE</text>
                   <rect x="36" y="142" width="320" height="6" rx="3" fill="#DCFCE7" />
                   <rect x="36" y="154" width="280" height="6" rx="3" fill="#DCFCE7" />
                   <text x="36" y="173" fontSize="9" fill="#F59E0B">★★★★★</text>
@@ -158,11 +158,11 @@ export function SEODubai() {
             <h2 className="text-4xl font-heading font-bold mb-6 text-center">Why Dubai Businesses Choose SEODXB</h2>
             <div className="grid md:grid-cols-2 gap-4 mt-12">
               {[
-                { title: "Dubai-First Strategy", desc: "We know the UAE market — Arabic search behaviour, local ranking factors, and the competitive landscape of Business Bay to DIFC." },
+                { title: "Dubai-First Strategy", desc: "We know the UAE market - Arabic search behaviour, local ranking factors, and the competitive landscape of Business Bay to DIFC." },
                 { title: "No Lock-In Contracts", desc: "Monthly rolling agreements. We keep your business because of results, not because you're stuck in a 12-month contract." },
-                { title: "Transparent Reporting", desc: "Weekly rank updates, monthly traffic reports, and direct access to your team — no black boxes, ever." },
-                { title: "AEO + GEO Included", desc: "We optimise for Google's AI Overviews and ChatGPT citations — the search layer your competitors aren't targeting yet." },
-                { title: "Human-Written Content", desc: "Every blog post, landing page, and meta description is written by SEO specialists — no AI-spun filler content." },
+                { title: "Transparent Reporting", desc: "Weekly rank updates, monthly traffic reports, and direct access to your team - no black boxes, ever." },
+                { title: "AEO + GEO Included", desc: "We optimise for Google's AI Overviews and ChatGPT citations - the search layer your competitors aren't targeting yet." },
+                { title: "Human-Written Content", desc: "Every blog post, landing page, and meta description is written by SEO specialists - no AI-spun filler content." },
                 { title: "Results-Linked Reporting", desc: "We tie every SEO metric back to leads and revenue. Rankings matter. What they generate matters more." },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100">

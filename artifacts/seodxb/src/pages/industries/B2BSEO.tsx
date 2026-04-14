@@ -7,26 +7,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Briefcase, Search, TrendingUp, Globe2, BarChart2, Zap, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "B2B Keyword Strategy", desc: "We target decision-maker search queries — C-suite, procurement managers, and technical buyers — not mass-market terms that attract the wrong audience." },
+  { icon: <Search size={22} />, title: "B2B Keyword Strategy", desc: "We target decision-maker search queries - C-suite, procurement managers, and technical buyers - not mass-market terms that attract the wrong audience." },
   { icon: <Briefcase size={22} />, title: "Solution & Service Pages", desc: "Deep, authoritative service pages that rank for 'enterprise [solution] Dubai' queries and clearly communicate ROI to B2B buyers." },
   { icon: <Globe2 size={22} />, title: "Thought Leadership Content", desc: "SEO-led whitepapers, guides, and industry reports that rank for informational queries and position your brand as the authority in your sector." },
-  { icon: <TrendingUp size={22} />, title: "Lead Generation SEO", desc: "Every page is built to convert qualified leads — demo requests, consultation bookings, and form submissions — not just rack up traffic." },
-  { icon: <Zap size={22} />, title: "LinkedIn + Google Integration", desc: "We align your SEO with your LinkedIn presence — ensuring brand consistency across the channels your B2B buyers use most." },
-  { icon: <BarChart2 size={22} />, title: "Pipeline Attribution", desc: "We track organic leads through your CRM to measure SEO's contribution to pipeline and closed revenue — not just top-of-funnel metrics." },
+  { icon: <TrendingUp size={22} />, title: "Lead Generation SEO", desc: "Every page is built to convert qualified leads - demo requests, consultation bookings, and form submissions - not just rack up traffic." },
+  { icon: <Zap size={22} />, title: "LinkedIn + Google Integration", desc: "We align your SEO with your LinkedIn presence - ensuring brand consistency across the channels your B2B buyers use most." },
+  { icon: <BarChart2 size={22} />, title: "Pipeline Attribution", desc: "We track organic leads through your CRM to measure SEO's contribution to pipeline and closed revenue - not just top-of-funnel metrics." },
 ];
 
 const faqs = [
-  { q: "Does SEO work for B2B companies in Dubai?", a: "Yes — and it's underutilised by most Dubai B2B companies, making it a significant competitive advantage for early movers. B2B buyers in the UAE do extensive Google research before reaching out. Being present at every stage of that research journey — from awareness to vendor comparison — puts you inside the buying process before the RFP is issued." },
-  { q: "How do you measure B2B SEO ROI?", a: "We track organic leads (form fills, demo requests, calls), pipeline value generated from organic leads (via CRM integration where available), and closed revenue attributed to organic. Monthly reports map every organic conversion to a keyword, page, and business value — no vanity metrics." },
-  { q: "What about startups — is SEO right for an early-stage business?", a: "Yes, but with the right strategy. Startups should focus on long-tail, high-intent keywords where they can rank quickly, invest in category-defining content to own informational search, and build domain authority systematically. Our Startup SEO package is designed exactly for this stage." },
-  { q: "Can SEO generate leads in a niche B2B market?", a: "Especially in niche markets. Lower search volume means less competition, faster rankings, and higher lead quality — because anyone searching for your specific service is already a qualified prospect. A B2B company that ranks for 10 niche keywords with 200 monthly searches each can generate 20+ qualified leads per month." },
+  { q: "Does SEO work for B2B companies in Dubai?", a: "Yes - and it's underutilised by most Dubai B2B companies, making it a significant competitive advantage for early movers. B2B buyers in the UAE do extensive Google research before reaching out. Being present at every stage of that research journey - from awareness to vendor comparison - puts you inside the buying process before the RFP is issued." },
+  { q: "How do you measure B2B SEO ROI?", a: "We track organic leads (form fills, demo requests, calls), pipeline value generated from organic leads (via CRM integration where available), and closed revenue attributed to organic. Monthly reports map every organic conversion to a keyword, page, and business value - no vanity metrics." },
+  { q: "What about startups - is SEO right for an early-stage business?", a: "Yes, but with the right strategy. Startups should focus on long-tail, high-intent keywords where they can rank quickly, invest in category-defining content to own informational search, and build domain authority systematically. Our Startup SEO package is designed exactly for this stage." },
+  { q: "Can SEO generate leads in a niche B2B market?", a: "Especially in niche markets. Lower search volume means less competition, faster rankings, and higher lead quality - because anyone searching for your specific service is already a qualified prospect. A B2B company that ranks for 10 niche keywords with 200 monthly searches each can generate 20+ qualified leads per month." },
 ];
 
 export function B2BSEO() {
   return (
     <>
       <Helmet>
-        <title>B2B SEO Agency Dubai — Startup & Enterprise SEO UAE | SEODXB</title>
+        <title>B2B SEO Agency Dubai - Startup & Enterprise SEO UAE | SEODXB</title>
         <meta name="description" content="B2B SEO services in Dubai for startups, scale-ups, and enterprise. Generate qualified leads from organic search with targeted B2B keyword strategies." />
         <link rel="canonical" href="https://seodxb.com/b2b-seo" />
         <meta property="og:title" content="B2B SEO Agency Dubai | Startup & Enterprise SEO | SEODXB" />
@@ -54,7 +54,7 @@ export function B2BSEO() {
                   SEO That Fills Your B2B Pipeline.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  B2B buyers in Dubai Google their vendors before they ever pick up the phone. We make sure your solution ranks at every stage of their research — so you're in the room before the RFP lands.
+                  B2B buyers in Dubai Google their vendors before they ever pick up the phone. We make sure your solution ranks at every stage of their research - so you're in the room before the RFP lands.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -67,10 +67,10 @@ export function B2BSEO() {
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                 <svg viewBox="0 0 480 340" className="w-full h-auto rounded-2xl shadow-lg" role="img"
-                  aria-label="B2B SEO funnel showing awareness to conversion stages: 847 organic visitors at top, 124 qualified leads in middle, 18 demo bookings, and 7 closed deals at bottom — demonstrating B2B pipeline generation from SEO"
+                  aria-label="B2B SEO funnel showing awareness to conversion stages: 847 organic visitors at top, 124 qualified leads in middle, 18 demo bookings, and 7 closed deals at bottom - demonstrating B2B pipeline generation from SEO"
                   xmlns="http://www.w3.org/2000/svg">
                   <rect width="480" height="340" rx="16" fill="#F8FAFC" />
-                  <text x="240" y="32" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#0F172A">B2B SEO Pipeline — This Month</text>
+                  <text x="240" y="32" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#0F172A">B2B SEO Pipeline - This Month</text>
                   {/* Funnel stages */}
                   {[
                     { label: "Organic Visitors", value: "847", color: "#DBEAFE", border: "#93C5FD", text: "#1D4ED8", w: 420, x: 30 },

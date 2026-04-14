@@ -7,19 +7,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Building2, Search, MapPin, TrendingUp, Globe, BarChart2, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "Property Keyword Research", desc: "We target buyer and renter intent keywords — 'villas for sale in Palm Jumeirah', 'off-plan apartments Dubai' — matching search demand to your listings." },
-  { icon: <Building2 size={22} />, title: "Development & Project Pages", desc: "SEO-optimised landing pages for every development, tower, or community you sell — each targeting specific location, property type, and buyer stage." },
-  { icon: <MapPin size={22} />, title: "Area & Community Pages", desc: "Dedicated pages for Dubai Marina, Downtown, JVC, JBR, and every neighbourhood you operate in — the pages buyers use to research locations." },
-  { icon: <TrendingUp size={22} />, title: "Agent & Agency Profile SEO", desc: "Agent profile pages optimised to rank for personal name searches — the digital calling card that wins mandate-ready clients." },
+  { icon: <Search size={22} />, title: "Property Keyword Research", desc: "We target buyer and renter intent keywords - 'villas for sale in Palm Jumeirah', 'off-plan apartments Dubai' - matching search demand to your listings." },
+  { icon: <Building2 size={22} />, title: "Development & Project Pages", desc: "SEO-optimised landing pages for every development, tower, or community you sell - each targeting specific location, property type, and buyer stage." },
+  { icon: <MapPin size={22} />, title: "Area & Community Pages", desc: "Dedicated pages for Dubai Marina, Downtown, JVC, JBR, and every neighbourhood you operate in - the pages buyers use to research locations." },
+  { icon: <TrendingUp size={22} />, title: "Agent & Agency Profile SEO", desc: "Agent profile pages optimised to rank for personal name searches - the digital calling card that wins mandate-ready clients." },
   { icon: <Globe size={22} />, title: "International Buyer Targeting", desc: "Multilingual SEO targeting UK, European, Russian, Indian, and Chinese buyer audiences who research Dubai property from abroad." },
   { icon: <BarChart2 size={22} />, title: "Property Schema & Rich Results", desc: "RealEstateListing schema, FAQ schema, and breadcrumb markup that get your listings rich snippets in Google search results." },
 ];
 
 const faqs = [
   { q: "How competitive is real estate SEO in Dubai?", a: "Extremely competitive. Property Finder, Bayut, and Dubizzle dominate high-volume queries. However, long-tail property searches ('2-bedroom off-plan in Sobha Hartland 2'), neighbourhood research queries, and developer brand searches all offer strong ranking opportunities for individual agencies and developers." },
-  { q: "Can you help rank against Property Finder and Bayut?", a: "We can't outrank portals for their own brand terms, but we can rank alongside them for specific developments, communities, and long-tail buyer queries. The strategy is to capture the 60% of property searches that portals don't rank for — neighbourhood guides, project-specific pages, and buyer journey content." },
-  { q: "Can you target international property buyers?", a: "Yes. We build multilingual landing pages targeting buyers from the UK, India, Russia, China, and Europe. This includes geo-targeted content, hreflang tags, and link building from international property media — the same strategy used by Dubai's largest developers." },
-  { q: "How do you measure success for real estate SEO?", a: "We track: rankings for target property keywords, organic form submissions and valuation requests, organic phone calls (via call tracking), and enquiry quality (lead scoring). The goal is qualified buyer and seller enquiries — not just traffic." },
+  { q: "Can you help rank against Property Finder and Bayut?", a: "We can't outrank portals for their own brand terms, but we can rank alongside them for specific developments, communities, and long-tail buyer queries. The strategy is to capture the 60% of property searches that portals don't rank for - neighbourhood guides, project-specific pages, and buyer journey content." },
+  { q: "Can you target international property buyers?", a: "Yes. We build multilingual landing pages targeting buyers from the UK, India, Russia, China, and Europe. This includes geo-targeted content, hreflang tags, and link building from international property media - the same strategy used by Dubai's largest developers." },
+  { q: "How do you measure success for real estate SEO?", a: "We track: rankings for target property keywords, organic form submissions and valuation requests, organic phone calls (via call tracking), and enquiry quality (lead scoring). The goal is qualified buyer and seller enquiries - not just traffic." },
   { q: "Do you work with developers or agencies?", a: "Both. Developers need project-level SEO for off-plan launches. Agencies need area pages, agent profiles, and a secondary search channel alongside portals. We've built SEO campaigns for boutique agencies and large developer teams." },
 ];
 
@@ -27,7 +27,7 @@ export function RealEstateSEO() {
   return (
     <>
       <Helmet>
-        <title>Real Estate SEO Dubai — Property SEO Agency UAE | SEODXB</title>
+        <title>Real Estate SEO Dubai - Property SEO Agency UAE | SEODXB</title>
         <meta name="description" content="Real estate SEO services in Dubai. Rank your property listings, development pages, and agency website on Google to attract serious buyers and renters." />
         <link rel="canonical" href="https://seodxb.com/real-estate-seo" />
         <meta property="og:title" content="Real Estate SEO Dubai | Property SEO Agency UAE | SEODXB" />
@@ -55,7 +55,7 @@ export function RealEstateSEO() {
                   Property SEO That Brings Buyers to You.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  Over 80% of Dubai property searches start online. We put your agency, developments, and listings in front of buyers and investors the moment they search — without paying for every click.
+                  Over 80% of Dubai property searches start online. We put your agency, developments, and listings in front of buyers and investors the moment they search - without paying for every click.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -79,7 +79,7 @@ export function RealEstateSEO() {
                   <rect x="16" y="68" width="290" height="130" rx="10" fill="#E8F4FD" stroke="#BFDBFE" strokeWidth="1" />
                   <text x="30" y="86" fontSize="9" fontWeight="bold" fill="#1D4ED8">📍 Top Properties Near Palm Jumeirah</text>
                   {[
-                    { name: "Luxury Villa — SEODXB Client", price: "AED 8.5M", beds: "5 BR" },
+                    { name: "Luxury Villa - SEODXB Client", price: "AED 8.5M", beds: "5 BR" },
                     { name: "Beachfront Residence", price: "AED 12M", beds: "6 BR" },
                     { name: "Palm View Mansion", price: "AED 15M", beds: "7 BR" },
                   ].map((prop, i) => (

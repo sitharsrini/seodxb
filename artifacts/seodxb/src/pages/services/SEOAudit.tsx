@@ -7,20 +7,20 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Zap, Search, Globe, Shield, BarChart2, AlertTriangle, ArrowRight } from "lucide-react";
 
 const auditAreas = [
-  { icon: <Zap size={22} />, title: "Technical Health Check", desc: "Core Web Vitals, crawlability, indexation errors, redirect chains, HTTPS, robots.txt, and XML sitemap — 80+ technical checks." },
+  { icon: <Zap size={22} />, title: "Technical Health Check", desc: "Core Web Vitals, crawlability, indexation errors, redirect chains, HTTPS, robots.txt, and XML sitemap - 80+ technical checks." },
   { icon: <Search size={22} />, title: "On-Page SEO Analysis", desc: "Title tags, meta descriptions, heading structure, keyword usage, internal linking, image optimisation, and content quality scoring." },
-  { icon: <Globe size={22} />, title: "Competitor Gap Analysis", desc: "We compare your rankings, backlinks, and content against your top 3 competitors to identify exactly where they outperform you — and how to close the gap." },
-  { icon: <Shield size={22} />, title: "Backlink Profile Audit", desc: "Full analysis of your current backlink profile — toxic links, anchor text diversity, and link building opportunities your competitors are exploiting." },
-  { icon: <BarChart2 size={22} />, title: "Keyword Opportunity Map", desc: "We identify every keyword within your ranking reach — current rankings, estimated traffic value, and which pages need to be created or optimised." },
-  { icon: <AlertTriangle size={22} />, title: "Priority Action Plan", desc: "Every audit ends with a ranked, actionable list of fixes — sorted by impact and effort. You know exactly what to do first." },
+  { icon: <Globe size={22} />, title: "Competitor Gap Analysis", desc: "We compare your rankings, backlinks, and content against your top 3 competitors to identify exactly where they outperform you - and how to close the gap." },
+  { icon: <Shield size={22} />, title: "Backlink Profile Audit", desc: "Full analysis of your current backlink profile - toxic links, anchor text diversity, and link building opportunities your competitors are exploiting." },
+  { icon: <BarChart2 size={22} />, title: "Keyword Opportunity Map", desc: "We identify every keyword within your ranking reach - current rankings, estimated traffic value, and which pages need to be created or optimised." },
+  { icon: <AlertTriangle size={22} />, title: "Priority Action Plan", desc: "Every audit ends with a ranked, actionable list of fixes - sorted by impact and effort. You know exactly what to do first." },
 ];
 
 const faqs = [
-  { q: "What is included in a free SEO audit?", a: "Our free SEO audit covers: top-level technical health (Core Web Vitals, indexation, crawl errors), on-page scoring for your top 5 landing pages, current keyword rankings snapshot, a competitor comparison for 2 main competitors, and a priority action summary. It's a genuine analysis — not a lead-gen report with no substance." },
+  { q: "What is included in a free SEO audit?", a: "Our free SEO audit covers: top-level technical health (Core Web Vitals, indexation, crawl errors), on-page scoring for your top 5 landing pages, current keyword rankings snapshot, a competitor comparison for 2 main competitors, and a priority action summary. It's a genuine analysis - not a lead-gen report with no substance." },
   { q: "How long does an SEO audit take?", a: "Our free audit is delivered within 48–72 business hours. A full comprehensive audit (200+ checks, full keyword gap analysis, complete backlink profile) takes 5–7 business days and is included in our paid retainers or available as a standalone project." },
-  { q: "Do I need to give you access to my website?", a: "For the free audit, we only need your domain URL. For a comprehensive audit, Google Search Console and Google Analytics read access allows us to use your first-party data alongside our tools — giving much more accurate and actionable results." },
-  { q: "What happens after the audit?", a: "We deliver the audit in a clear report with a ranked action list. If you'd like us to implement the fixes, we discuss a retainer proposal. If you want to implement them yourself, you keep the report — no strings attached. Most clients start seeing ranking improvements within 4–8 weeks of implementing audit recommendations." },
-  { q: "How is your audit different from free tools like SEMrush or Ubersuggest?", a: "Free tools give you data — our audit gives you interpretation and a priority plan. We don't just list issues; we tell you which ones actually impact your rankings, in what order to fix them, and specifically how to fix them for your site. That contextual expertise is what makes the difference between knowing you have a problem and fixing it." },
+  { q: "Do I need to give you access to my website?", a: "For the free audit, we only need your domain URL. For a comprehensive audit, Google Search Console and Google Analytics read access allows us to use your first-party data alongside our tools - giving much more accurate and actionable results." },
+  { q: "What happens after the audit?", a: "We deliver the audit in a clear report with a ranked action list. If you'd like us to implement the fixes, we discuss a retainer proposal. If you want to implement them yourself, you keep the report - no strings attached. Most clients start seeing ranking improvements within 4–8 weeks of implementing audit recommendations." },
+  { q: "How is your audit different from free tools like SEMrush or Ubersuggest?", a: "Free tools give you data - our audit gives you interpretation and a priority plan. We don't just list issues; we tell you which ones actually impact your rankings, in what order to fix them, and specifically how to fix them for your site. That contextual expertise is what makes the difference between knowing you have a problem and fixing it." },
 ];
 
 const whatYouGet = [
@@ -38,8 +38,8 @@ export function SEOAudit() {
   return (
     <>
       <Helmet>
-        <title>Free SEO Audit Dubai — Website SEO Audit UAE | SEODXB</title>
-        <meta name="description" content="Get a free, comprehensive SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a prioritised action plan — delivered in 48 hours." />
+        <title>Free SEO Audit Dubai - Website SEO Audit UAE | SEODXB</title>
+        <meta name="description" content="Get a free, comprehensive SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a prioritised action plan - delivered in 48 hours." />
         <link rel="canonical" href="https://seodxb.com/seo-audit" />
         <meta property="og:title" content="Free SEO Audit Dubai | Website SEO Analysis UAE | SEODXB" />
         <meta property="og:description" content="Free SEO audit: technical health check, keyword opportunity mapping, competitor gap analysis, and priority action plan for Dubai businesses." />
@@ -67,7 +67,7 @@ export function SEOAudit() {
                   See Exactly What's Holding Your Site Back.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  Our free SEO audit reveals the technical issues, content gaps, and competitor advantages that are suppressing your Google rankings — with a clear, prioritised action plan to fix them.
+                  Our free SEO audit reveals the technical issues, content gaps, and competitor advantages that are suppressing your Google rankings - with a clear, prioritised action plan to fix them.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -84,7 +84,7 @@ export function SEOAudit() {
                   xmlns="http://www.w3.org/2000/svg">
                   <rect width="480" height="360" rx="16" fill="white" />
                   <rect x="20" y="20" width="440" height="320" rx="12" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
-                  <text x="36" y="46" fontSize="13" fontWeight="bold" fill="#0F172A">SEO Audit Report — yourdomain.com</text>
+                  <text x="36" y="46" fontSize="13" fontWeight="bold" fill="#0F172A">SEO Audit Report - yourdomain.com</text>
                   <rect x="36" y="54" width="90" height="18" rx="9" fill="#FEF3C7" />
                   <text x="81" y="66" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#92400E">⚠ Needs Work</text>
                   {/* Score */}
@@ -116,7 +116,7 @@ export function SEOAudit() {
                   <rect x="36" y="236" width="404" height="88" rx="10" fill="white" stroke="#E2E8F0" strokeWidth="1" />
                   <text x="50" y="254" fontSize="10" fontWeight="bold" fill="#0F172A">Priority Action Plan</text>
                   {[
-                    { action: "Fix LCP — compress images & enable caching", impact: "+18% traffic", effort: "Low" },
+                    { action: "Fix LCP - compress images & enable caching", impact: "+18% traffic", effort: "Low" },
                     { action: "Write meta descriptions for 23 pages", impact: "+12% CTR", effort: "Low" },
                     { action: "Implement Product & FAQ schema markup", impact: "+Rich snippets", effort: "Medium" },
                   ].map((action, i) => (
@@ -187,7 +187,7 @@ export function SEOAudit() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Your Free SEO Audit is Ready in 48 Hours</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              No credit card. No obligation. Just a clear picture of why your site isn't ranking — and exactly how to fix it.
+              No credit card. No obligation. Just a clear picture of why your site isn't ranking - and exactly how to fix it.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Request My Free Audit <ArrowRight size={18} className="ml-2" /></Link>

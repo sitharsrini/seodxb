@@ -9,24 +9,24 @@ import { CheckCircle2, Star, MapPin, Globe, Search, BarChart2, ArrowRight } from
 const services = [
   { icon: <Search size={22} />, title: "Restaurant & Hotel Keywords", desc: "We target 'best [cuisine] restaurant Dubai', 'hotels near [attraction]', and high-intent booking searches that bring in ready-to-convert customers." },
   { icon: <MapPin size={22} />, title: "Google Map Pack Domination", desc: "Full Google Business Profile optimisation, photo strategy, review management, and local citations that put your venue in the top 3 Map Pack results." },
-  { icon: <Star size={22} />, title: "Review Strategy & Management", desc: "Ethical review generation, professional response management, and review schema markup — reviews are Google's #1 local ranking signal." },
+  { icon: <Star size={22} />, title: "Review Strategy & Management", desc: "Ethical review generation, professional response management, and review schema markup - reviews are Google's #1 local ranking signal." },
   { icon: <Globe size={22} />, title: "Menu & Experience Pages", desc: "SEO-optimised menu pages, event pages, and experience landing pages that rank for 'brunch Dubai', 'private dining Dubai', and niche dining searches." },
   { icon: <BarChart2 size={22} />, title: "Booking & Reservation SEO", desc: "Reservation CTAs, OpenTable/SevenRooms schema integration, and conversion-optimised pages that turn search traffic into seated guests." },
-  { icon: <CheckCircle2 size={22} />, title: "Tourism & Travel SEO", desc: "Targeting UAE and international tourist searches — Google Travel, Tripadvisor integration, and content that reaches visitors before they land in Dubai." },
+  { icon: <CheckCircle2 size={22} />, title: "Tourism & Travel SEO", desc: "Targeting UAE and international tourist searches - Google Travel, Tripadvisor integration, and content that reaches visitors before they land in Dubai." },
 ];
 
 const faqs = [
   { q: "How important is local SEO for restaurants in Dubai?", a: "Critical. 78% of restaurant searches in Dubai happen on mobile, and the searcher visits within the hour. The Google Map Pack (top 3 local results) captures 70%+ of clicks for 'restaurant near me' and cuisine-specific searches. Being in the Map Pack is essentially being in the consideration set for every nearby diner." },
-  { q: "How do reviews affect restaurant and hotel SEO?", a: "Reviews are one of the top 3 local ranking factors for Google's Map Pack. More reviews, higher average rating, and timely responses all improve your position. We help you build a sustainable review strategy — through post-visit follow-up, QR codes, and staff training — that generates authentic reviews at scale." },
-  { q: "Can you help rank for tourist searches from outside the UAE?", a: "Yes. Pre-trip research happens months before arrival. We target high-intent tourism keywords in the UK, India, Russia, and China — ensuring your venue is in travellers' plans before they book flights. This includes Tripadvisor co-optimisation and Google Travel integration." },
-  { q: "What results should I expect for a new restaurant or hotel?", a: "New venues typically see Map Pack improvements within 4–8 weeks of a full GBP optimisation. Organic content rankings take 3–6 months. Review velocity and citation building compound over time — the businesses that invest in SEO from launch consistently outperform those who start late." },
+  { q: "How do reviews affect restaurant and hotel SEO?", a: "Reviews are one of the top 3 local ranking factors for Google's Map Pack. More reviews, higher average rating, and timely responses all improve your position. We help you build a sustainable review strategy - through post-visit follow-up, QR codes, and staff training - that generates authentic reviews at scale." },
+  { q: "Can you help rank for tourist searches from outside the UAE?", a: "Yes. Pre-trip research happens months before arrival. We target high-intent tourism keywords in the UK, India, Russia, and China - ensuring your venue is in travellers' plans before they book flights. This includes Tripadvisor co-optimisation and Google Travel integration." },
+  { q: "What results should I expect for a new restaurant or hotel?", a: "New venues typically see Map Pack improvements within 4–8 weeks of a full GBP optimisation. Organic content rankings take 3–6 months. Review velocity and citation building compound over time - the businesses that invest in SEO from launch consistently outperform those who start late." },
 ];
 
 export function HospitalitySEO() {
   return (
     <>
       <Helmet>
-        <title>SEO for Restaurants & Hotels Dubai — Hospitality SEO Agency UAE | SEODXB</title>
+        <title>SEO for Restaurants & Hotels Dubai - Hospitality SEO Agency UAE | SEODXB</title>
         <meta name="description" content="SEO for restaurants and hotels in Dubai. Google Map Pack rankings, review management, and booking-focused SEO that fills tables and rooms." />
         <link rel="canonical" href="https://seodxb.com/seo-for-restaurants" />
         <meta property="og:title" content="Restaurant & Hotel SEO Dubai | Hospitality SEO UAE | SEODXB" />
@@ -54,7 +54,7 @@ export function HospitalitySEO() {
                   Fill Tables and Rooms from Google Search.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  Diners and guests search before they book. We put your restaurant or hotel in front of them at the exact moment they decide where to go — with Map Pack rankings, reviews, and tourist-ready content.
+                  Diners and guests search before they book. We put your restaurant or hotel in front of them at the exact moment they decide where to go - with Map Pack rankings, reviews, and tourist-ready content.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -156,7 +156,7 @@ export function HospitalitySEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">More Covers. More Bookings. From Google.</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              Free hospitality SEO audit — we'll show you your Map Pack ranking opportunities and review strategy gaps.
+              Free hospitality SEO audit - we'll show you your Map Pack ranking opportunities and review strategy gaps.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Get Hospitality SEO Audit <ArrowRight size={18} className="ml-2" /></Link>

@@ -7,8 +7,8 @@ import logoImg from "@assets/seodxb_logo.png";
 const serviceLinks = [
   { name: "On-Page SEO", path: "/on-page-seo" },
   { name: "Technical SEO", path: "/technical-seo" },
-  { name: "AEO — Answer Engines", path: "/aeo" },
-  { name: "GEO — Generative AI", path: "/geo" },
+  { name: "AEO - Answer Engines", path: "/aeo" },
+  { name: "GEO - Generative AI", path: "/geo" },
   { name: "Local SEO", path: "/local-seo" },
   { name: "International SEO", path: "/international-seo" },
   { name: "SEO Audit (Free)", path: "/seo-audit" },

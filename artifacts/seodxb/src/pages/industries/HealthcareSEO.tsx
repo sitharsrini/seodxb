@@ -7,17 +7,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Heart, Search, MapPin, Shield, BarChart2, Star, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "Medical Keyword Research", desc: "We target condition-specific, treatment-specific, and doctor-search queries — 'best cardiologist Dubai', 'IVF clinic UAE' — with the intent and sensitivity healthcare searches demand." },
+  { icon: <Search size={22} />, title: "Medical Keyword Research", desc: "We target condition-specific, treatment-specific, and doctor-search queries - 'best cardiologist Dubai', 'IVF clinic UAE' - with the intent and sensitivity healthcare searches demand." },
   { icon: <MapPin size={22} />, title: "Local Medical SEO", desc: "Google Business Profile for clinics and hospitals, medical directory citations (Doctify, Vezeeta, Bayut Health), and Map Pack rankings for 'clinic near me' searches." },
   { icon: <Shield size={22} />, title: "E-E-A-T & Medical Authority", desc: "Google applies stricter quality standards to healthcare content (YMYL). We build the Experience, Expertise, Authoritativeness, and Trust signals that protect and improve healthcare rankings." },
-  { icon: <Heart size={22} />, title: "Doctor & Specialist Profiles", desc: "Optimised doctor profile pages that rank for name searches and specialty queries — 'Dr [Name] Dubai', 'best [specialty] specialist UAE'." },
-  { icon: <Star size={22} />, title: "Patient Review Strategy", desc: "HIPAA-compliant review generation strategy across Google, Doctify, and Healthgrades — more positive reviews, better Map Pack position, more patient bookings." },
+  { icon: <Heart size={22} />, title: "Doctor & Specialist Profiles", desc: "Optimised doctor profile pages that rank for name searches and specialty queries - 'Dr [Name] Dubai', 'best [specialty] specialist UAE'." },
+  { icon: <Star size={22} />, title: "Patient Review Strategy", desc: "HIPAA-compliant review generation strategy across Google, Doctify, and Healthgrades - more positive reviews, better Map Pack position, more patient bookings." },
   { icon: <BarChart2 size={22} />, title: "Appointment Booking SEO", desc: "Conversion-optimised landing pages with appointment CTAs, schema markup, and tracking that measures SEO's direct contribution to new patient acquisition." },
 ];
 
 const faqs = [
-  { q: "Is SEO safe for healthcare websites — won't Google penalise medical content?", a: "SEO done correctly is not just safe for healthcare — it's essential. Google applies higher scrutiny to 'Your Money or Your Life' (YMYL) content, which means you need stronger E-E-A-T signals than other industries. We build those signals: doctor credentials on content, clinical review processes, authoritative medical references, and trust-building structured data." },
-  { q: "What are the most important SEO opportunities for Dubai clinics?", a: "Three areas: (1) Map Pack rankings for 'clinic near me' and specialty searches — this is where most patient acquisition happens. (2) Doctor profile pages for name searches — patients often search for a specific doctor. (3) Condition and treatment pages that answer the questions patients ask before they book." },
+  { q: "Is SEO safe for healthcare websites - won't Google penalise medical content?", a: "SEO done correctly is not just safe for healthcare - it's essential. Google applies higher scrutiny to 'Your Money or Your Life' (YMYL) content, which means you need stronger E-E-A-T signals than other industries. We build those signals: doctor credentials on content, clinical review processes, authoritative medical references, and trust-building structured data." },
+  { q: "What are the most important SEO opportunities for Dubai clinics?", a: "Three areas: (1) Map Pack rankings for 'clinic near me' and specialty searches - this is where most patient acquisition happens. (2) Doctor profile pages for name searches - patients often search for a specific doctor. (3) Condition and treatment pages that answer the questions patients ask before they book." },
   { q: "Can you help with multilingual medical SEO in the UAE?", a: "Yes. UAE patients search in English, Arabic, Hindi, Tagalog, and Russian. We offer multilingual medical content in English and Arabic as standard, with additional language support available. Multilingual medical SEO significantly expands the addressable patient base." },
   { q: "How do you handle sensitive medical topics in content?", a: "All medical content is written by qualified health writers, reviewed for clinical accuracy, and authored or co-authored by your medical professionals. We comply with UAE health authority guidelines and Dubai Health Authority (DHA) digital marketing rules for licensed healthcare providers." },
 ];
@@ -26,8 +26,8 @@ export function HealthcareSEO() {
   return (
     <>
       <Helmet>
-        <title>Healthcare SEO Dubai — SEO for Clinics, Hospitals & Doctors UAE | SEODXB</title>
-        <meta name="description" content="Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors — Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." />
+        <title>Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB</title>
+        <meta name="description" content="Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors - Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." />
         <link rel="canonical" href="https://seodxb.com/seo-for-healthcare" />
         <meta property="og:title" content="Healthcare SEO Dubai | Medical SEO for Clinics & Hospitals | SEODXB" />
         <meta property="og:description" content="Attract more patients from Google. Map Pack rankings, doctor profile SEO, and YMYL-compliant content for Dubai healthcare providers." />
@@ -53,7 +53,7 @@ export function HealthcareSEO() {
                   More Patients Find You. More Book You.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  76% of patients search online before choosing a healthcare provider. We make sure your clinic, hospital, or practice appears when they do — with medically compliant content that ranks and converts.
+                  76% of patients search online before choosing a healthcare provider. We make sure your clinic, hospital, or practice appears when they do - with medically compliant content that ranks and converts.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -76,7 +76,7 @@ export function HealthcareSEO() {
                   <rect x="16" y="64" width="448" height="90" rx="10" fill="#FFF9F0" stroke="#FED7AA" strokeWidth="1.5" />
                   <rect x="16" y="64" width="448" height="4" rx="2" fill="#EA580C" />
                   <text x="32" y="82" fontSize="8" fill="#EA580C">seodxb-client.com › cardiology</text>
-                  <text x="32" y="96" fontSize="11" fontWeight="bold" fill="#1D4ED8">Dubai Cardiac Centre — Top-Rated Cardiology Specialists</text>
+                  <text x="32" y="96" fontSize="11" fontWeight="bold" fill="#1D4ED8">Dubai Cardiac Centre - Top-Rated Cardiology Specialists</text>
                   <text x="32" y="112" fontSize="9" fill="#374151">Board-certified cardiologists with 20+ years experience. Same-day appointments available.</text>
                   <text x="32" y="128" fontSize="9" fill="#F59E0B">★★★★★</text>
                   <text x="90" y="128" fontSize="9" fill="#64748B">4.9 · 218 reviews · Cardiology Clinic</text>
@@ -149,7 +149,7 @@ export function HealthcareSEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Grow Your Practice with Organic Patient Acquisition</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              Free healthcare SEO audit — we'll identify your top patient-acquisition keyword opportunities and ranking gaps.
+              Free healthcare SEO audit - we'll identify your top patient-acquisition keyword opportunities and ranking gaps.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Get Healthcare SEO Audit <ArrowRight size={18} className="ml-2" /></Link>

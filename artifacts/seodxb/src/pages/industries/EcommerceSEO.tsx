@@ -7,9 +7,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, ShoppingCart, Search, TrendingUp, Zap, BarChart2, Star, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "Product & Category Keywords", desc: "We identify high-commercial-intent keywords for every product and category page — including long-tail buyer queries that drive direct sales." },
+  { icon: <Search size={22} />, title: "Product & Category Keywords", desc: "We identify high-commercial-intent keywords for every product and category page - including long-tail buyer queries that drive direct sales." },
   { icon: <ShoppingCart size={22} />, title: "Product Page Optimisation", desc: "Title tags, schema markup (Product, Review, Price), image alt text, and structured descriptions that rank product pages and trigger rich snippets." },
-  { icon: <Zap size={22} />, title: "Technical SEO for E-commerce", desc: "Faceted navigation, pagination, duplicate content from variants, crawl budget optimisation, and Core Web Vitals — the technical foundations that make or break e-commerce SEO." },
+  { icon: <Zap size={22} />, title: "Technical SEO for E-commerce", desc: "Faceted navigation, pagination, duplicate content from variants, crawl budget optimisation, and Core Web Vitals - the technical foundations that make or break e-commerce SEO." },
   { icon: <TrendingUp size={22} />, title: "Shopify & WooCommerce SEO", desc: "Platform-specific optimisation for Shopify, WooCommerce, Magento, and custom storefronts. We know every platform's SEO quirks and how to fix them." },
   { icon: <Star size={22} />, title: "Review & UGC Signals", desc: "Structured review markup, star ratings in search results, and user-generated content strategies that boost both rankings and conversion rates." },
   { icon: <BarChart2 size={22} />, title: "E-commerce Link Building", desc: "Backlinks from product review sites, comparison platforms, and niche retailers that build the authority needed to rank in competitive product categories." },
@@ -19,9 +19,9 @@ const platforms = ["Shopify", "WooCommerce", "Magento", "BigCommerce", "Custom R
 
 const faqs = [
   { q: "Why is SEO important for e-commerce in Dubai?", a: "Over 70% of UAE e-commerce journeys start with a Google search. Paid ads stop the moment you stop paying. SEO builds a sustainable channel that generates consistent revenue month after month. For high-competition categories like fashion, electronics, and beauty, ranking on page 1 can generate 10–50x the ROI of equivalent paid spend over 24 months." },
-  { q: "Can you optimise thousands of product pages?", a: "Yes. We build scalable SEO frameworks for large catalogues — using templated optimisation rules, automated schema generation, and priority-based crawl management. We've worked with stores from 50 to 50,000 SKUs." },
+  { q: "Can you optimise thousands of product pages?", a: "Yes. We build scalable SEO frameworks for large catalogues - using templated optimisation rules, automated schema generation, and priority-based crawl management. We've worked with stores from 50 to 50,000 SKUs." },
   { q: "Do you work with Shopify stores specifically?", a: "Yes. Shopify has specific SEO limitations (duplicate content from /collections/, /products/ URL structures, paginated pages) that require platform-specific fixes. We know every Shopify SEO issue and how to resolve it within Shopify's constraints." },
-  { q: "How do you measure e-commerce SEO success?", a: "We track: organic revenue (not just traffic), keyword rankings for product/category pages, organic conversion rate, organic sessions, crawl health, and rich snippet coverage. Revenue-attributed reporting is standard — every month you see exactly how much organic SEO contributed to your bottom line." },
+  { q: "How do you measure e-commerce SEO success?", a: "We track: organic revenue (not just traffic), keyword rankings for product/category pages, organic conversion rate, organic sessions, crawl health, and rich snippet coverage. Revenue-attributed reporting is standard - every month you see exactly how much organic SEO contributed to your bottom line." },
   { q: "Can you help with Arabic-language e-commerce SEO in UAE?", a: "Yes. Arabic-language product searches are significantly less competitive in UAE e-commerce. We offer bilingual product and category optimisation in both English and Arabic, with proper RTL implementation and Arabic keyword research." },
 ];
 
@@ -29,7 +29,7 @@ export function EcommerceSEO() {
   return (
     <>
       <Helmet>
-        <title>E-commerce SEO Dubai — Shopify, WooCommerce & Online Store SEO | SEODXB</title>
+        <title>E-commerce SEO Dubai - Shopify, WooCommerce & Online Store SEO | SEODXB</title>
         <meta name="description" content="E-commerce SEO services in Dubai. Rank your products on Google, increase organic sales, and drive more conversions from Shopify, WooCommerce, and custom stores." />
         <link rel="canonical" href="https://seodxb.com/ecommerce-seo" />
         <meta property="og:title" content="E-commerce SEO Dubai | Shopify & WooCommerce SEO | SEODXB" />
@@ -57,7 +57,7 @@ export function EcommerceSEO() {
                   Turn Google Traffic into E-commerce Revenue.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  Your products need to appear when buyers are actively searching. We rank Dubai e-commerce stores on the first page of Google — with SEO that drives sales, not just clicks.
+                  Your products need to appear when buyers are actively searching. We rank Dubai e-commerce stores on the first page of Google - with SEO that drives sales, not just clicks.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>

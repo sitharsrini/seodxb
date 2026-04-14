@@ -7,16 +7,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Scale, Search, MapPin, Shield, BarChart2, Globe, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "Legal Keyword Research", desc: "We target high-value legal searches: 'divorce lawyer Dubai', 'UAE corporate law firm', 'criminal defence attorney Dubai' — the queries that bring high-value client enquiries." },
-  { icon: <Scale size={22} />, title: "Practice Area Pages", desc: "Authoritative, SEO-optimised pages for each practice area — corporate law, family law, criminal defence, IP, real estate law — each targeting the specific searches your clients use." },
+  { icon: <Search size={22} />, title: "Legal Keyword Research", desc: "We target high-value legal searches: 'divorce lawyer Dubai', 'UAE corporate law firm', 'criminal defence attorney Dubai' - the queries that bring high-value client enquiries." },
+  { icon: <Scale size={22} />, title: "Practice Area Pages", desc: "Authoritative, SEO-optimised pages for each practice area - corporate law, family law, criminal defence, IP, real estate law - each targeting the specific searches your clients use." },
   { icon: <Globe size={22} />, title: "International Client Targeting", desc: "Dubai attracts international legal matters. We target expat clients, foreign investors, and international corporations searching for UAE-qualified legal counsel." },
   { icon: <Shield size={22} />, title: "Legal E-E-A-T Signals", desc: "Lawyer bios with credentials, bar admissions, publications, and case results build the authority signals Google requires for legal content to rank well." },
   { icon: <MapPin size={22} />, title: "Local Legal SEO", desc: "Google Business Profile for your firm, legal directory citations (Lawyers.ae, LegalAdviceDubai), and Map Pack rankings for '[practice area] lawyer near me' searches." },
-  { icon: <BarChart2 size={22} />, title: "Client Acquisition Tracking", desc: "We track organic consultation requests, phone calls, and form submissions — mapping every lead back to the keyword, page, and content piece that generated it." },
+  { icon: <BarChart2 size={22} />, title: "Client Acquisition Tracking", desc: "We track organic consultation requests, phone calls, and form submissions - mapping every lead back to the keyword, page, and content piece that generated it." },
 ];
 
 const faqs = [
-  { q: "Can law firms advertise on Google in the UAE?", a: "Yes, though UAE bar regulations restrict certain claims in legal advertising. SEO has no such restrictions — you can rank for any query without paid advertising rules applying. This makes SEO the primary long-term channel for most UAE law firms, with none of the compliance restrictions that affect paid ads." },
+  { q: "Can law firms advertise on Google in the UAE?", a: "Yes, though UAE bar regulations restrict certain claims in legal advertising. SEO has no such restrictions - you can rank for any query without paid advertising rules applying. This makes SEO the primary long-term channel for most UAE law firms, with none of the compliance restrictions that affect paid ads." },
   { q: "What legal keywords have the highest value in Dubai?", a: "The highest-value legal queries (by client potential) include: corporate law and M&A, real estate legal disputes, criminal defence, family law/divorce, employment law, and IP/trademark. These typically have lower search volumes but extremely high per-client value. Ranking #1 for 'M&A lawyer Dubai' is worth significantly more than most commercial keywords." },
   { q: "How do you build authority for a law firm's SEO?", a: "Legal authority is built through: lawyer credential pages (qualifications, admissions, publications), case study content (where ethically permissible), legal guide content that demonstrates expertise, citations from legal directories and bar association pages, and media mentions in UAE legal publications." },
   { q: "How quickly can a Dubai law firm rank on Google?", a: "Law firm SEO is competitive for the biggest practice areas but offers fast opportunities in niches. Most firms see meaningful movement in 4–6 months. Niche practice areas (specific offshore jurisdictions, specialist disputes) can rank in 2–3 months. Longtail queries like 'labour dispute lawyer Business Bay' can show results in 4–8 weeks." },
@@ -26,7 +26,7 @@ export function LegalSEO() {
   return (
     <>
       <Helmet>
-        <title>SEO for Law Firms Dubai — Legal SEO Agency UAE | SEODXB</title>
+        <title>SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB</title>
         <meta name="description" content="Legal SEO services for Dubai law firms. Rank for high-value client queries, build authority with E-E-A-T content, and generate consultation requests from organic search." />
         <link rel="canonical" href="https://seodxb.com/seo-for-law-firms" />
         <meta property="og:title" content="SEO for Law Firms Dubai | Legal SEO Agency UAE | SEODXB" />
@@ -76,7 +76,7 @@ export function LegalSEO() {
                   <rect x="16" y="64" width="448" height="80" rx="10" fill="#F8FAFC" stroke="#DADCE0" strokeWidth="1.5" />
                   <rect x="16" y="64" width="448" height="4" rx="2" fill="#4285F4" />
                   <text x="32" y="80" fontSize="8" fill="#4285F4">lawfirm-dubai.com › corporate-law</text>
-                  <text x="32" y="94" fontSize="11" fontWeight="bold" fill="#1D4ED8">Al Rafid & Associates — DIFC Corporate Law Specialists</text>
+                  <text x="32" y="94" fontSize="11" fontWeight="bold" fill="#1D4ED8">Al Rafid & Associates - DIFC Corporate Law Specialists</text>
                   <rect x="32" y="102" width="340" height="6" rx="3" fill="#E2E8F0" />
                   <rect x="32" y="114" width="300" height="6" rx="3" fill="#E2E8F0" />
                   <rect x="380" y="78" width="72" height="38" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
@@ -151,7 +151,7 @@ export function LegalSEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Rank for the Clients Worth Winning</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              Free legal SEO audit — we'll show you the high-value client queries your firm is missing and how to capture them.
+              Free legal SEO audit - we'll show you the high-value client queries your firm is missing and how to capture them.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Get Legal SEO Audit <ArrowRight size={18} className="ml-2" /></Link>

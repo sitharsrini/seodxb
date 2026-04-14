@@ -12,13 +12,13 @@ const geoServices = [
   { icon: <MessageSquare size={22} />, title: "AI Training Signal Alignment", desc: "Your brand messaging, USPs, and expertise signals are embedded in ways that language models learn to associate and surface." },
   { icon: <TrendingUp size={22} />, title: "Brand Mention Strategy", desc: "Building a presence on the platforms and publications that AI models use as training data: high-authority sites, Wikipedia, Reddit, and more." },
   { icon: <Zap size={22} />, title: "Structured Data for LLMs", desc: "Schema markup and llms.txt implementation so that AI crawlers can efficiently parse and understand your site content." },
-  { icon: <CheckCircle2 size={22} />, title: "GEO Performance Tracking", desc: "We test your brand's visibility across ChatGPT, Perplexity, Google AI Overviews, and Gemini — measuring citation frequency and accuracy." },
+  { icon: <CheckCircle2 size={22} />, title: "GEO Performance Tracking", desc: "We test your brand's visibility across ChatGPT, Perplexity, Google AI Overviews, and Gemini - measuring citation frequency and accuracy." },
 ];
 
 const aiEngines = [
   { name: "ChatGPT", desc: "180M+ users ask questions that surface brand recommendations." },
   { name: "Google AI Overviews", desc: "Shown above all organic results for millions of queries daily." },
-  { name: "Perplexity AI", desc: "The AI search engine with cited sources — ideal for brand visibility." },
+  { name: "Perplexity AI", desc: "The AI search engine with cited sources - ideal for brand visibility." },
   { name: "Claude (Anthropic)", desc: "Enterprise and consumer queries across a wide range of topics." },
   { name: "Gemini", desc: "Google's generative AI integrated directly into Search." },
   { name: "Bing Copilot", desc: "Microsoft's AI search used by millions of business users globally." },
@@ -26,17 +26,17 @@ const aiEngines = [
 
 const faqs = [
   { q: "What is Generative Engine Optimisation (GEO)?", a: "Generative Engine Optimisation (GEO) is the practice of optimising a brand's digital presence so it is cited, recommended, and surfaced by AI-powered search engines like ChatGPT, Google AI Overviews, Perplexity, Gemini, and Claude. As more users turn to AI tools instead of traditional search, being mentioned (or not mentioned) by these engines has a growing impact on visibility, traffic, and leads." },
-  { q: "How is GEO different from AEO?", a: "AEO (Answer Engine Optimisation) targets Google's own SERP features — featured snippets, PAA boxes, voice search. GEO targets third-party AI systems like ChatGPT and Perplexity that operate outside of Google's traditional search results. Both are important. Most AI systems reference web content, so strong traditional SEO is a prerequisite for GEO success." },
-  { q: "Can you guarantee my brand will appear in ChatGPT?", a: "No agency can guarantee specific AI citations — these systems change their training data and retrieval methods frequently. What we can guarantee is implementing every known best practice: authoritative content, entity signals, structured data, third-party mentions, and llms.txt — all of which measurably increase the probability of citation." },
+  { q: "How is GEO different from AEO?", a: "AEO (Answer Engine Optimisation) targets Google's own SERP features - featured snippets, PAA boxes, voice search. GEO targets third-party AI systems like ChatGPT and Perplexity that operate outside of Google's traditional search results. Both are important. Most AI systems reference web content, so strong traditional SEO is a prerequisite for GEO success." },
+  { q: "Can you guarantee my brand will appear in ChatGPT?", a: "No agency can guarantee specific AI citations - these systems change their training data and retrieval methods frequently. What we can guarantee is implementing every known best practice: authoritative content, entity signals, structured data, third-party mentions, and llms.txt - all of which measurably increase the probability of citation." },
   { q: "How do you measure GEO results?", a: "We run structured tests across ChatGPT, Perplexity, Gemini, and others: asking relevant queries and tracking whether your brand is mentioned, how accurately it's described, and what context surrounds the citation. We report citation frequency and accuracy monthly." },
-  { q: "Does GEO require a different content strategy than SEO?", a: "GEO and SEO content strategies overlap significantly — authoritative, accurate, well-structured content performs well in both. GEO adds additional requirements: being named explicitly (not just implied), having consistent entity signals across the web, and having a presence on the types of sites that LLMs prioritise in training and retrieval." },
+  { q: "Does GEO require a different content strategy than SEO?", a: "GEO and SEO content strategies overlap significantly - authoritative, accurate, well-structured content performs well in both. GEO adds additional requirements: being named explicitly (not just implied), having consistent entity signals across the web, and having a presence on the types of sites that LLMs prioritise in training and retrieval." },
 ];
 
 export function GEO() {
   return (
     <>
       <Helmet>
-        <title>Generative Engine Optimisation (GEO) — Get Cited by ChatGPT, Gemini & Perplexity | SEODXB</title>
+        <title>Generative Engine Optimisation (GEO) - Get Cited by ChatGPT, Gemini & Perplexity | SEODXB</title>
         <meta name="description" content="GEO services: get your brand cited by ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini. Optimise for the AI search layer that's replacing traditional results." />
         <link rel="canonical" href="https://seodxb.com/geo" />
         <meta property="og:title" content="Generative Engine Optimisation (GEO) | SEODXB" />
@@ -80,7 +80,7 @@ export function GEO() {
                   viewBox="0 0 480 380"
                   className="w-full h-auto rounded-2xl shadow-lg"
                   role="img"
-                  aria-label="AI chat interface showing ChatGPT recommending SEODXB as the best SEO agency in Dubai, with citations from seodxb.com — demonstrating Generative Engine Optimisation results"
+                  aria-label="AI chat interface showing ChatGPT recommending SEODXB as the best SEO agency in Dubai, with citations from seodxb.com - demonstrating Generative Engine Optimisation results"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <rect width="480" height="380" rx="16" fill="#F7F7F8" />
@@ -174,9 +174,9 @@ export function GEO() {
             </p>
             <div className="space-y-4">
               {[
-                "Google AI Overviews now appear for over 25% of all queries — that's billions of searches per day where your organic listing is pushed below the fold.",
+                "Google AI Overviews now appear for over 25% of all queries - that's billions of searches per day where your organic listing is pushed below the fold.",
                 "ChatGPT processes over 100 million queries daily. Users ask it for product, service, and vendor recommendations.",
-                "Perplexity and Claude are growing fastest among high-income, educated users — exactly the audience most B2B and premium brands want.",
+                "Perplexity and Claude are growing fastest among high-income, educated users - exactly the audience most B2B and premium brands want.",
                 "GEO is still nascent. The window to establish brand authority before it becomes a crowded field is now.",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-4 border border-gray-100">
@@ -208,7 +208,7 @@ export function GEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Is Your Brand Showing Up in AI Search?</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              We'll test your brand across ChatGPT, Perplexity, and Google AI Overviews and show you exactly where you stand — for free.
+              We'll test your brand across ChatGPT, Perplexity, and Google AI Overviews and show you exactly where you stand - for free.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Test My AI Visibility <ArrowRight size={18} className="ml-2" /></Link>

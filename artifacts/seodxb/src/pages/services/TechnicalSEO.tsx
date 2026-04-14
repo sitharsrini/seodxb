@@ -8,30 +8,30 @@ import { CheckCircle2, Zap, Globe, Shield, BarChart2, Code2, Smartphone, ArrowRi
 
 const audits = [
   { icon: <Zap size={22} />, title: "Core Web Vitals", desc: "LCP, CLS, and INP measured and fixed. Faster load times directly correlate with higher rankings and lower bounce rates." },
-  { icon: <Globe size={22} />, title: "Crawlability & Indexation", desc: "We ensure Google can discover, crawl, and index every important page — and that nothing that should be hidden is visible." },
+  { icon: <Globe size={22} />, title: "Crawlability & Indexation", desc: "We ensure Google can discover, crawl, and index every important page - and that nothing that should be hidden is visible." },
   { icon: <Code2 size={22} />, title: "Structured Data / Schema", desc: "Implement JSON-LD schema for your site type: products, articles, FAQs, breadcrumbs, local business, and more." },
   { icon: <Shield size={22} />, title: "Site Architecture & URLs", desc: "Clean URL structures, logical site hierarchy, and canonical tags that prevent duplicate content diluting your authority." },
   { icon: <Smartphone size={22} />, title: "Mobile Usability", desc: "Google uses mobile-first indexing. We verify your site passes all mobile usability tests in Google Search Console." },
-  { icon: <BarChart2 size={22} />, title: "Log File Analysis", desc: "Advanced crawl budget analysis using server logs — understanding exactly how Google's bots traverse your site." },
+  { icon: <BarChart2 size={22} />, title: "Log File Analysis", desc: "Advanced crawl budget analysis using server logs - understanding exactly how Google's bots traverse your site." },
 ];
 
 const faqs = [
   { q: "What is Technical SEO?", a: "Technical SEO refers to improvements made to the infrastructure of a website that help search engines crawl, render, and index it correctly. This includes site speed, mobile usability, HTTPS, crawl budget, structured data, canonical tags, XML sitemaps, and more. It's the foundation that on-page and off-page SEO efforts build upon." },
   { q: "How do I know if my site has technical SEO issues?", a: "Common signs include: pages not appearing in Google despite being published, low click-through rates on search listings, Google Search Console errors, slow load times, duplicate content warnings, and sudden drops in organic traffic. We offer a free technical audit to identify every issue on your site." },
   { q: "How long does a technical SEO audit take?", a: "A comprehensive audit for a standard site (under 10,000 pages) typically takes 5–7 business days. We deliver a prioritised report with exact recommendations, not just a list of issues. Implementation timelines depend on the number and complexity of fixes required." },
-  { q: "Do you fix the issues or just report them?", a: "Both. We deliver a detailed audit report AND implement all the fixes — directly in your CMS, codebase, or via your developer team. You choose the level of involvement you prefer." },
-  { q: "Is technical SEO a one-time task?", a: "No. Sites evolve — new pages are added, redesigns happen, plugins update. We include ongoing technical monitoring in our monthly retainers to catch issues before they cause ranking drops." },
+  { q: "Do you fix the issues or just report them?", a: "Both. We deliver a detailed audit report AND implement all the fixes - directly in your CMS, codebase, or via your developer team. You choose the level of involvement you prefer." },
+  { q: "Is technical SEO a one-time task?", a: "No. Sites evolve - new pages are added, redesigns happen, plugins update. We include ongoing technical monitoring in our monthly retainers to catch issues before they cause ranking drops." },
 ];
 
 export function TechnicalSEO() {
   return (
     <>
       <Helmet>
-        <title>Technical SEO Services — Site Audits, Core Web Vitals & Schema | SEODXB</title>
+        <title>Technical SEO Services - Site Audits, Core Web Vitals & Schema | SEODXB</title>
         <meta name="description" content="Expert Technical SEO: site audits, Core Web Vitals optimisation, crawlability fixes, schema markup, and mobile usability. For businesses worldwide." />
         <link rel="canonical" href="https://seodxb.com/technical-seo" />
         <meta property="og:title" content="Technical SEO Services | SEODXB" />
-        <meta property="og:description" content="Fix the technical foundations of your site. Crawlability, Core Web Vitals, structured data, and more — the bedrock of lasting SEO gains." />
+        <meta property="og:description" content="Fix the technical foundations of your site. Crawlability, Core Web Vitals, structured data, and more - the bedrock of lasting SEO gains." />
         <meta property="og:url" content="https://seodxb.com/technical-seo" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

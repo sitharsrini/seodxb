@@ -7,10 +7,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Globe, Languages, BarChart2, Search, Map, ArrowRight } from "lucide-react";
 
 const intlServices = [
-  { icon: <Globe size={22} />, title: "Hreflang Implementation", desc: "Correct hreflang tags signal to Google which version of your content targets which country and language — preventing duplicate content penalties." },
+  { icon: <Globe size={22} />, title: "Hreflang Implementation", desc: "Correct hreflang tags signal to Google which version of your content targets which country and language - preventing duplicate content penalties." },
   { icon: <Languages size={22} />, title: "International Keyword Research", desc: "Keywords vary significantly by country and language. We research search volumes and intent for each target market independently." },
   { icon: <Map size={22} />, title: "Country Targeting Strategy", desc: "Should you use ccTLDs, subdomains, or subdirectories? We advise the right structure for your goals, team size, and budget." },
-  { icon: <Search size={22} />, title: "Global Content Strategy", desc: "Localised content for each market — not just translated, but adapted for cultural relevance, local idioms, and market-specific search intent." },
+  { icon: <Search size={22} />, title: "Global Content Strategy", desc: "Localised content for each market - not just translated, but adapted for cultural relevance, local idioms, and market-specific search intent." },
   { icon: <BarChart2 size={22} />, title: "Multi-Market Rank Tracking", desc: "We track rankings separately in each target country, with Google data centres simulated per region so results reflect real local SERPs." },
   { icon: <CheckCircle2 size={22} />, title: "International Technical SEO", desc: "Sitemaps, canonical strategy, URL structures, and crawl budget management optimised for multi-country site architectures." },
 ];
@@ -26,17 +26,17 @@ const markets = [
 
 const faqs = [
   { q: "What is International SEO?", a: "International SEO is the process of optimising a website to rank in multiple countries and/or languages. It involves technical configurations (hreflang tags, international URL structures), market-specific keyword research, localised content, and building authority in each target market. It's essential for any business that serves customers across more than one country." },
-  { q: "What is an hreflang tag and why does it matter?", a: "Hreflang is an HTML attribute that tells search engines which language and country a page targets. Without correct hreflang implementation, Google may show the wrong version of your page to international users — for example, showing your US English page to French speakers in France. Incorrect hreflang is one of the most common and costly international SEO mistakes." },
+  { q: "What is an hreflang tag and why does it matter?", a: "Hreflang is an HTML attribute that tells search engines which language and country a page targets. Without correct hreflang implementation, Google may show the wrong version of your page to international users - for example, showing your US English page to French speakers in France. Incorrect hreflang is one of the most common and costly international SEO mistakes." },
   { q: "Should I use ccTLDs, subdomains, or subdirectories for international SEO?", a: "ccTLDs (example.co.uk) send the strongest geographic signal to Google and users, but require separate domain authority building. Subdirectories (example.com/uk/) share the main domain's authority and are easiest to manage. Subdomains (uk.example.com) are a middle ground. We recommend subdirectories for most businesses, ccTLDs for strong brand investments in key markets." },
-  { q: "Do you offer content translation as part of international SEO?", a: "We partner with native-speaker translators and locally-based content writers in each market. We go beyond translation — content is adapted for local search intent, cultural context, and market-specific keyword opportunities. Machine translation alone is not sufficient for international SEO." },
-  { q: "We already have traffic from international markets. Do we still need international SEO?", a: "Yes, especially if you're not actively targeting those markets. You're likely capturing a fraction of the available traffic. Proper international SEO — with localised content, correct hreflang, and market-specific keyword targeting — can typically 3–5× the organic traffic from markets you're already incidentally appearing in." },
+  { q: "Do you offer content translation as part of international SEO?", a: "We partner with native-speaker translators and locally-based content writers in each market. We go beyond translation - content is adapted for local search intent, cultural context, and market-specific keyword opportunities. Machine translation alone is not sufficient for international SEO." },
+  { q: "We already have traffic from international markets. Do we still need international SEO?", a: "Yes, especially if you're not actively targeting those markets. You're likely capturing a fraction of the available traffic. Proper international SEO - with localised content, correct hreflang, and market-specific keyword targeting - can typically 3–5× the organic traffic from markets you're already incidentally appearing in." },
 ];
 
 export function InternationalSEO() {
   return (
     <>
       <Helmet>
-        <title>International SEO Services — Global Organic Traffic for Businesses Worldwide | SEODXB</title>
+        <title>International SEO Services - Global Organic Traffic for Businesses Worldwide | SEODXB</title>
         <meta name="description" content="International SEO: hreflang, multi-country strategy, global keyword research, and localised content. Rank in Google across the UAE, UK, US, Europe, and beyond." />
         <link rel="canonical" href="https://seodxb.com/international-seo" />
         <meta property="og:title" content="International SEO Services | SEODXB" />
@@ -207,10 +207,10 @@ export function InternationalSEO() {
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">Why SEODXB for International SEO</h2>
             <div className="space-y-4">
               {[
-                "Based in Dubai — a global crossroads — gives us natural fluency in multi-market, cross-cultural business contexts.",
+                "Based in Dubai - a global crossroads - gives us natural fluency in multi-market, cross-cultural business contexts.",
                 "We serve clients in 20+ countries simultaneously, managing complex multi-market SEO campaigns from a single team.",
                 "Our team includes native-speaker content writers and SEO specialists for Arabic, English, French, German, and more.",
-                "We combine international SEO with AEO and GEO — your brand ranks on traditional search AND in AI engines globally.",
+                "We combine international SEO with AEO and GEO - your brand ranks on traditional search AND in AI engines globally.",
                 "No lock-in. Transparent pricing. Monthly reporting that shows traffic, rankings, and conversions broken down by country.",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-4 border border-gray-100">

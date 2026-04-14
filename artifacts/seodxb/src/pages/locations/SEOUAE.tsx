@@ -16,16 +16,16 @@ const emirates = [
 ];
 
 const services = [
-  { icon: <Search size={22} />, title: "UAE-Wide Keyword Strategy", desc: "We map keywords across all seven emirates — identifying where your customers search and what intent drives them to buy." },
+  { icon: <Search size={22} />, title: "UAE-Wide Keyword Strategy", desc: "We map keywords across all seven emirates - identifying where your customers search and what intent drives them to buy." },
   { icon: <MapPin size={22} />, title: "Multi-Emirate Local SEO", desc: "Separate GBP profiles, local landing pages, and citation networks for each emirate you operate in." },
   { icon: <Globe size={22} />, title: "Bilingual SEO (EN + AR)", desc: "Dual-language content strategy targeting both English expat and Arabic national audiences across the UAE." },
-  { icon: <Zap size={22} />, title: "Technical SEO Foundation", desc: "Hreflang, site speed, crawlability, and schema across all your UAE location pages — built for multi-location businesses." },
+  { icon: <Zap size={22} />, title: "Technical SEO Foundation", desc: "Hreflang, site speed, crawlability, and schema across all your UAE location pages - built for multi-location businesses." },
   { icon: <BarChart2 size={22} />, title: "Nationwide Link Building", desc: "Backlinks from UAE national media (Gulf News, Khaleej Times, The National), industry bodies, and free zone directories." },
-  { icon: <CheckCircle2 size={22} />, title: "GEO + AEO for UAE", desc: "Appear in Google AI Overviews and ChatGPT citations for UAE-relevant queries — the fastest-growing new search channel in the region." },
+  { icon: <CheckCircle2 size={22} />, title: "GEO + AEO for UAE", desc: "Appear in Google AI Overviews and ChatGPT citations for UAE-relevant queries - the fastest-growing new search channel in the region." },
 ];
 
 const faqs = [
-  { q: "Can you manage SEO across multiple UAE locations?", a: "Yes — this is one of our specialisms. We manage multi-location SEO for businesses with 2 to 200+ locations across the UAE. Each location gets its own Google Business Profile, local landing page, and citation strategy, all managed under a unified SEO framework." },
+  { q: "Can you manage SEO across multiple UAE locations?", a: "Yes - this is one of our specialisms. We manage multi-location SEO for businesses with 2 to 200+ locations across the UAE. Each location gets its own Google Business Profile, local landing page, and citation strategy, all managed under a unified SEO framework." },
   { q: "Should I target Arabic keywords for UAE SEO?", a: "Yes for most businesses. Arabic-language searches in the UAE have significantly less competition than English equivalents, and Arabic speakers represent a large, underserved audience. We recommend bilingual SEO for any business serving UAE nationals and the GCC market." },
   { q: "Which UAE emirate has the most SEO opportunity?", a: "Dubai has the highest search volume but the most competition. Abu Dhabi has large untapped search demand in Arabic. Sharjah, RAK, and the Northern Emirates have low competition and fast ranking potential. We tailor the strategy to where your opportunity is greatest." },
   { q: "Is UAE SEO different from international SEO?", a: "The UAE market has unique characteristics: Google.ae as the dominant engine, high mobile search rates, bilingual audience, and Google My Business critical for local conversions. International SEO techniques still apply, but local market knowledge is essential to get the most out of any UAE campaign." },
@@ -35,16 +35,16 @@ export function SEOUAE() {
   return (
     <>
       <Helmet>
-        <title>SEO Agency UAE — SEO Services Across All 7 Emirates | SEODXB</title>
+        <title>SEO Agency UAE - SEO Services Across All 7 Emirates | SEODXB</title>
         <meta name="description" content="UAE-wide SEO services covering Dubai, Abu Dhabi, Sharjah, and all emirates. Bilingual English & Arabic SEO, multi-location strategy, and AI search optimisation." />
         <link rel="canonical" href="https://seodxb.com/seo-uae" />
-        <meta property="og:title" content="SEO Agency UAE — All 7 Emirates | SEODXB" />
+        <meta property="og:title" content="SEO Agency UAE - All 7 Emirates | SEODXB" />
         <meta property="og:description" content="Complete UAE SEO coverage. Multi-emirate strategy, bilingual Arabic/English targeting, and AI search visibility across Dubai, Abu Dhabi, and beyond." />
         <meta property="og:url" content="https://seodxb.com/seo-uae" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "SEODXB — SEO Agency UAE",
+          "name": "SEODXB - SEO Agency UAE",
           "description": "UAE-wide SEO services across all seven emirates. Bilingual SEO, multi-location strategy, and AI search optimisation.",
           "url": "https://seodxb.com/seo-uae",
           "areaServed": { "@type": "Country", "name": "United Arab Emirates" }
@@ -62,7 +62,7 @@ export function SEOUAE() {
                   SEO Across All 7 Emirates. One Unified Strategy.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  Whether you operate in one emirate or all seven, SEODXB delivers a coordinated UAE-wide SEO strategy — with bilingual targeting, multi-location Google Business Profiles, and national authority building.
+                  Whether you operate in one emirate or all seven, SEODXB delivers a coordinated UAE-wide SEO strategy - with bilingual targeting, multi-location Google Business Profiles, and national authority building.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>

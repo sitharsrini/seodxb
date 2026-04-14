@@ -38,8 +38,8 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5 text-gray-400 text-sm">
               <li><Link href="/on-page-seo" className="hover:text-white transition-colors">On-Page SEO</Link></li>
               <li><Link href="/technical-seo" className="hover:text-white transition-colors">Technical SEO</Link></li>
-              <li><Link href="/aeo" className="hover:text-white transition-colors">AEO — Answer Engines</Link></li>
-              <li><Link href="/geo" className="hover:text-white transition-colors">GEO — Generative AI</Link></li>
+              <li><Link href="/aeo" className="hover:text-white transition-colors">AEO - Answer Engines</Link></li>
+              <li><Link href="/geo" className="hover:text-white transition-colors">GEO - Generative AI</Link></li>
               <li><Link href="/local-seo" className="hover:text-white transition-colors">Local SEO</Link></li>
               <li><Link href="/international-seo" className="hover:text-white transition-colors">International SEO</Link></li>
               <li><Link href="/seo-audit" className="hover:text-white transition-colors">Free SEO Audit</Link></li>

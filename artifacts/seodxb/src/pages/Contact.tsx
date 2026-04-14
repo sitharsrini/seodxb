@@ -37,10 +37,10 @@ export function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact SEODXB — Get a Free SEO Consultation | Dubai SEO Agency</title>
+        <title>Contact SEODXB - Get a Free SEO Consultation | Dubai SEO Agency</title>
         <meta name="description" content="Get in touch with SEODXB, Dubai's leading SEO agency. Book a free consultation to discuss your SEO strategy, pricing, and how we can grow your organic traffic." />
         <link rel="canonical" href="https://seodxb.com/contact" />
-        <meta property="og:title" content="Contact SEODXB — Free SEO Consultation Dubai" />
+        <meta property="og:title" content="Contact SEODXB - Free SEO Consultation Dubai" />
         <meta property="og:description" content="Book a free SEO consultation with SEODXB. Tell us about your business and we'll help you dominate search." />
         <meta property="og:url" content="https://seodxb.com/contact" />
       </Helmet>

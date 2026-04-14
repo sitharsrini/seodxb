@@ -7,34 +7,34 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Search, FileText, BarChart2, Globe, Zap, Layout, Link2, ArrowRight } from "lucide-react";
 
 const benefits = [
-  { icon: <Search size={22} />, title: "Keyword Strategy", desc: "We identify the exact queries your customers type, map them to pages, and optimise for search intent — not just volume." },
-  { icon: <FileText size={22} />, title: "Content Optimisation", desc: "Every page title, H1, meta description, and body paragraph is tuned to rank — while remaining compelling for real readers." },
+  { icon: <Search size={22} />, title: "Keyword Strategy", desc: "We identify the exact queries your customers type, map them to pages, and optimise for search intent - not just volume." },
+  { icon: <FileText size={22} />, title: "Content Optimisation", desc: "Every page title, H1, meta description, and body paragraph is tuned to rank - while remaining compelling for real readers." },
   { icon: <Layout size={22} />, title: "On-Page Structure", desc: "Correct heading hierarchy (H1–H4), semantic HTML, and clear content structure that search engines can parse at a glance." },
   { icon: <Link2 size={22} />, title: "Internal Linking", desc: "Strategic links between your pages pass authority where it matters most and guide visitors deeper into your site." },
-  { icon: <Zap size={22} />, title: "Core Web Vitals", desc: "LCP, CLS, INP scores optimised so Google sees a fast, stable experience — a direct ranking signal since 2021." },
+  { icon: <Zap size={22} />, title: "Core Web Vitals", desc: "LCP, CLS, INP scores optimised so Google sees a fast, stable experience - a direct ranking signal since 2021." },
   { icon: <Globe size={22} />, title: "Schema Markup", desc: "Structured data that makes your listings stand out with rich snippets: stars, FAQs, prices, and breadcrumbs." },
 ];
 
 const process = [
   { step: "01", title: "Technical Crawl", desc: "We audit your site with enterprise-grade crawlers to find every indexability issue, broken link, and missed opportunity." },
   { step: "02", title: "Keyword Mapping", desc: "Each page gets a primary keyword and a cluster of supporting terms matched to the right search intent." },
-  { step: "03", title: "On-Page Fixes", desc: "We rewrite titles, descriptions, headings, and body content — and implement schema markup and internal links." },
+  { step: "03", title: "On-Page Fixes", desc: "We rewrite titles, descriptions, headings, and body content - and implement schema markup and internal links." },
   { step: "04", title: "Monitor & Iterate", desc: "Monthly ranking reports track progress. We adjust targeting as search trends evolve so you never fall behind." },
 ];
 
 const faqs = [
   { q: "What is On-Page SEO?", a: "On-Page SEO is the practice of optimising individual web pages to rank higher in search engines. It covers content, HTML elements (title tags, meta descriptions, headings), URL structure, internal linking, images, and page speed. Unlike off-page SEO (backlinks), on-page SEO is entirely within your control." },
   { q: "How long does it take to see results from On-Page SEO?", a: "Most clients see measurable ranking improvements within 4–12 weeks. Competitive keywords on newer domains may take 3–6 months. On-page changes are typically faster to see than link building, because they directly affect how Google crawls and evaluates your pages." },
-  { q: "How is On-Page SEO different from Technical SEO?", a: "On-Page SEO focuses on content and HTML elements visible to users and search engines. Technical SEO covers the server-side infrastructure — crawlability, indexation, site speed, Core Web Vitals, and mobile usability. Our service combines both for maximum impact." },
+  { q: "How is On-Page SEO different from Technical SEO?", a: "On-Page SEO focuses on content and HTML elements visible to users and search engines. Technical SEO covers the server-side infrastructure - crawlability, indexation, site speed, Core Web Vitals, and mobile usability. Our service combines both for maximum impact." },
   { q: "Do you work with any CMS?", a: "Yes. We've optimised sites built on WordPress, Shopify, Webflow, Squarespace, Wix, custom React/Next.js apps, and enterprise platforms like Sitecore and Adobe Experience Manager." },
-  { q: "Can I do On-Page SEO myself?", a: "You can handle the basics — writing a keyword-rich title tag, adding alt text to images. But high-performance on-page SEO requires deep keyword research, competitive analysis, content strategy, schema implementation, and an understanding of search intent nuances that take years to develop." },
+  { q: "Can I do On-Page SEO myself?", a: "You can handle the basics - writing a keyword-rich title tag, adding alt text to images. But high-performance on-page SEO requires deep keyword research, competitive analysis, content strategy, schema implementation, and an understanding of search intent nuances that take years to develop." },
 ];
 
 export function OnPageSEO() {
   return (
     <>
       <Helmet>
-        <title>On-Page SEO Services — Keyword Optimisation & Content Strategy | SEODXB</title>
+        <title>On-Page SEO Services - Keyword Optimisation & Content Strategy | SEODXB</title>
         <meta name="description" content="Professional On-Page SEO services: keyword research, content optimisation, meta tags, schema markup, Core Web Vitals, and internal linking. Serving businesses globally." />
         <link rel="canonical" href="https://seodxb.com/on-page-seo" />
         <meta property="og:title" content="On-Page SEO Services | SEODXB" />
@@ -62,7 +62,7 @@ export function OnPageSEO() {
                   Turn Every Page Into a Ranking Asset
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  We optimise every element on your pages — content, headings, meta tags, schema, and internal links — so Google ranks you above competitors for the searches that drive revenue.
+                  We optimise every element on your pages - content, headings, meta tags, schema, and internal links - so Google ranks you above competitors for the searches that drive revenue.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -203,10 +203,10 @@ export function OnPageSEO() {
           <h2 className="text-4xl font-heading font-bold mb-8 text-center">Why Choose SEODXB for On-Page SEO</h2>
           <ul className="space-y-4">
             {[
-              "We combine on-page with AEO & GEO — your content ranks on Google AND gets cited by AI engines like ChatGPT and Perplexity.",
+              "We combine on-page with AEO & GEO - your content ranks on Google AND gets cited by AI engines like ChatGPT and Perplexity.",
               "No black-hat tactics. Every optimisation follows Google's Quality Rater Guidelines.",
               "We work across all time zones and serve clients from the UAE, UK, US, Europe, Australia, and beyond.",
-              "Monthly deliverables with clear before/after comparisons — you always know what we changed and why.",
+              "Monthly deliverables with clear before/after comparisons - you always know what we changed and why.",
               "No lock-in contracts. Cancel anytime (though most clients stay years).",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
@@ -237,7 +237,7 @@ export function OnPageSEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Ready to Rank Higher?</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              Get a free on-page SEO audit. We'll identify every issue holding your pages back — no strings attached.
+              Get a free on-page SEO audit. We'll identify every issue holding your pages back - no strings attached.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Request Your Free Audit <ArrowRight size={18} className="ml-2" /></Link>

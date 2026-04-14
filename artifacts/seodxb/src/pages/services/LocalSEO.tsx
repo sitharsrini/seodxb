@@ -7,17 +7,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, MapPin, Star, Globe, Building2, BarChart2, ArrowRight } from "lucide-react";
 
 const localServices = [
-  { icon: <Building2 size={22} />, title: "Google Business Profile", desc: "Full optimisation of your GBP listing — category selection, service areas, photos, posts, Q&A, and review strategy." },
+  { icon: <Building2 size={22} />, title: "Google Business Profile", desc: "Full optimisation of your GBP listing - category selection, service areas, photos, posts, Q&A, and review strategy." },
   { icon: <MapPin size={22} />, title: "Local Citations & NAP", desc: "Consistent Name, Address, Phone across 50+ directories. Inconsistent citations confuse Google and suppress local rankings." },
-  { icon: <Star size={22} />, title: "Review Management", desc: "Strategies to ethically earn more positive reviews and respond professionally to all feedback — a direct local ranking signal." },
+  { icon: <Star size={22} />, title: "Review Management", desc: "Strategies to ethically earn more positive reviews and respond professionally to all feedback - a direct local ranking signal." },
   { icon: <Globe size={22} />, title: "Local Landing Pages", desc: "Geo-targeted pages for each location or neighbourhood you serve, with unique content that Google can rank locally." },
-  { icon: <BarChart2 size={22} />, title: "Local Schema Markup", desc: "LocalBusiness schema with your exact address, phone, hours, and geo-coordinates — the data Google uses for map listings." },
+  { icon: <BarChart2 size={22} />, title: "Local Schema Markup", desc: "LocalBusiness schema with your exact address, phone, hours, and geo-coordinates - the data Google uses for map listings." },
   { icon: <CheckCircle2 size={22} />, title: "Local Link Building", desc: "Citations and backlinks from local chambers, directories, newspapers, and community sites that boost local authority." },
 ];
 
 const faqs = [
-  { q: "What is Local SEO?", a: "Local SEO is the process of optimising a business's online presence to appear in local search results — specifically the Google Map Pack (the 3 map listings shown for searches with local intent like 'SEO agency Dubai' or 'plumber near me'). It involves optimising your Google Business Profile, ensuring consistent citations, earning local backlinks, and creating locally relevant content." },
-  { q: "How is Local SEO different from standard SEO?", a: "Standard SEO targets organic rankings in the 10 blue links. Local SEO specifically targets the Google Map Pack and the local knowledge panel. Local SEO relies more heavily on your Google Business Profile, reviews, and local citations — factors that don't affect standard organic rankings much. The two strategies complement each other." },
+  { q: "What is Local SEO?", a: "Local SEO is the process of optimising a business's online presence to appear in local search results - specifically the Google Map Pack (the 3 map listings shown for searches with local intent like 'SEO agency Dubai' or 'plumber near me'). It involves optimising your Google Business Profile, ensuring consistent citations, earning local backlinks, and creating locally relevant content." },
+  { q: "How is Local SEO different from standard SEO?", a: "Standard SEO targets organic rankings in the 10 blue links. Local SEO specifically targets the Google Map Pack and the local knowledge panel. Local SEO relies more heavily on your Google Business Profile, reviews, and local citations - factors that don't affect standard organic rankings much. The two strategies complement each other." },
   { q: "How long does Local SEO take to show results?", a: "Local SEO typically shows results faster than standard SEO. Most businesses see improvement in their Map Pack rankings within 2–8 weeks of a full optimisation. Google Business Profile changes can have an effect within days. Building consistent citations and reviews takes longer but compounds significantly over time." },
   { q: "Do I need a physical address to do Local SEO?", a: "A physical address (or service-area setup in Google Business Profile) is required to appear in the Map Pack. Service-area businesses (those that travel to customers) can hide their address in GBP but still rank locally for their service areas. Virtual offices and PO boxes violate Google's guidelines and can get your listing suspended." },
   { q: "Can you help with multiple locations?", a: "Yes. We manage multi-location local SEO for businesses across Dubai, UAE, and internationally. Each location gets its own Google Business Profile optimisation, local landing page, and citation strategy. We have experience scaling local SEO from 2 to 200+ locations." },
@@ -29,7 +29,7 @@ export function LocalSEO() {
   return (
     <>
       <Helmet>
-        <title>Local SEO Services Dubai — Google Business Profile & Map Pack Ranking | SEODXB</title>
+        <title>Local SEO Services Dubai - Google Business Profile & Map Pack Ranking | SEODXB</title>
         <meta name="description" content="Local SEO services in Dubai and across the UAE. Google Business Profile optimisation, Map Pack rankings, local citations, and review management." />
         <link rel="canonical" href="https://seodxb.com/local-seo" />
         <meta property="og:title" content="Local SEO Services Dubai | SEODXB" />
@@ -57,7 +57,7 @@ export function LocalSEO() {
                   Own the Map Pack. Win Local Customers.
                 </h1>
                 <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                  When someone searches for your service in Dubai — or any city you serve — we make sure your business appears in the top 3 map results, above your competitors and below the ads.
+                  When someone searches for your service in Dubai - or any city you serve - we make sure your business appears in the top 3 map results, above your competitors and below the ads.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary/90 font-bold px-8" asChild>
@@ -174,7 +174,7 @@ export function LocalSEO() {
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-heading font-bold mb-6 text-center">Why the Map Pack Is Worth Fighting For</h2>
             <p className="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">
-              The Google Map Pack captures 44% of all clicks for local searches — more than the entire first page of organic results combined.
+              The Google Map Pack captures 44% of all clicks for local searches - more than the entire first page of organic results combined.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -212,7 +212,7 @@ export function LocalSEO() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Rank #1 in Your City</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              Get a free local SEO audit. We'll show you exactly why competitors outrank you in the Map Pack — and how to fix it.
+              Get a free local SEO audit. We'll show you exactly why competitors outrank you in the Map Pack - and how to fix it.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Get My Local SEO Audit <ArrowRight size={18} className="ml-2" /></Link>

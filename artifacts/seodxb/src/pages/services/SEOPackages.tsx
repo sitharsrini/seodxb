@@ -68,19 +68,19 @@ const packages = [
 ];
 
 const faqs = [
-  { q: "Are your SEO packages monthly retainers or one-time?", a: "All packages are monthly retainers — SEO is an ongoing process, not a one-time fix. There are no long-term lock-in contracts; we work on a rolling monthly basis. You can pause or cancel with 30 days' notice." },
+  { q: "Are your SEO packages monthly retainers or one-time?", a: "All packages are monthly retainers - SEO is an ongoing process, not a one-time fix. There are no long-term lock-in contracts; we work on a rolling monthly basis. You can pause or cancel with 30 days' notice." },
   { q: "What currency are your prices in?", a: "Prices are in USD. AED equivalents are available on request. We accept bank transfers, cards, and have payment options in AED for UAE-based clients." },
   { q: "Can I upgrade my package?", a: "Yes, at any time. Most clients start on Startup or Business and upgrade as their site grows and they see ROI. We pro-rate any upgrade mid-month." },
-  { q: "What's included in the 'human-written articles'?", a: "Each article is researched, written, and optimised by our SEO content team — not AI-generated. Articles are 800–2,000 words, fully optimised for target keywords, structured for featured snippet capture, and written in your brand voice. We handle topic research, outline, writing, and on-page optimisation." },
+  { q: "What's included in the 'human-written articles'?", a: "Each article is researched, written, and optimised by our SEO content team - not AI-generated. Articles are 800–2,000 words, fully optimised for target keywords, structured for featured snippet capture, and written in your brand voice. We handle topic research, outline, writing, and on-page optimisation." },
   { q: "How long before I see results?", a: "Most clients see measurable ranking improvements within 3–4 months and significant traffic increases by month 6. Results vary by market competitiveness, site age, and existing domain authority. We share honest projections during your free audit." },
-  { q: "Is there a setup fee?", a: "No setup fees. The first month includes a comprehensive onboarding audit, keyword mapping, and technical baseline assessment — all within your monthly retainer. You pay the same rate from day one." },
+  { q: "Is there a setup fee?", a: "No setup fees. The first month includes a comprehensive onboarding audit, keyword mapping, and technical baseline assessment - all within your monthly retainer. You pay the same rate from day one." },
 ];
 
 export function SEOPackages() {
   return (
     <>
       <Helmet>
-        <title>SEO Packages Dubai — SEO Pricing & Monthly Plans UAE | SEODXB</title>
+        <title>SEO Packages Dubai - SEO Pricing & Monthly Plans UAE | SEODXB</title>
         <meta name="description" content="Transparent SEO packages for Dubai businesses. Startup from $999/mo, Business from $2,499/mo. No lock-in contracts. Monthly SEO retainers with real results." />
         <link rel="canonical" href="https://seodxb.com/seo-packages" />
         <meta property="og:title" content="SEO Packages Dubai | Monthly SEO Pricing UAE | SEODXB" />
@@ -166,13 +166,13 @@ export function SEOPackages() {
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Every Package Includes</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { title: "Keyword Research & Mapping", desc: "Target keywords assigned to every page — no guessing." },
-                { title: "On-Page SEO", desc: "Titles, metas, headings, content, internal links — all optimised." },
-                { title: "Technical SEO Fixes", desc: "Speed, crawlability, schema, and indexation — resolved." },
+                { title: "Keyword Research & Mapping", desc: "Target keywords assigned to every page - no guessing." },
+                { title: "On-Page SEO", desc: "Titles, metas, headings, content, internal links - all optimised." },
+                { title: "Technical SEO Fixes", desc: "Speed, crawlability, schema, and indexation - resolved." },
                 { title: "Local SEO", desc: "GBP management, citations, and Map Pack strategies." },
-                { title: "GEO & AEO", desc: "AI search and featured snippet optimisation — standard." },
+                { title: "GEO & AEO", desc: "AI search and featured snippet optimisation - standard." },
                 { title: "Link Building", desc: "Authority backlinks from relevant, trustworthy sources." },
-                { title: "Monthly Reports", desc: "Rankings, traffic, leads, and ROI — every month, clearly." },
+                { title: "Monthly Reports", desc: "Rankings, traffic, leads, and ROI - every month, clearly." },
                 { title: "Dedicated Team", desc: "A real team that knows your business and is reachable." },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100">
@@ -207,7 +207,7 @@ export function SEOPackages() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-heading font-bold mb-6">Not Sure Which Package? Start with a Free Audit.</h2>
             <p className="text-xl text-white/70 max-w-xl mx-auto mb-10">
-              We'll audit your site and recommend the right package for your goals and competitive landscape — at no cost.
+              We'll audit your site and recommend the right package for your goals and competitive landscape - at no cost.
             </p>
             <Button size="lg" className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-bold px-10 py-6 text-lg" asChild>
               <Link href="/contact">Get Free Audit + Package Recommendation <ArrowRight size={18} className="ml-2" /></Link>

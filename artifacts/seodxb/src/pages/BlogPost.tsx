@@ -315,7 +315,7 @@ export function BlogPost() {
     <>
       <Helmet>
         <title>{post.title} | SEODXB Blog</title>
-        <meta name="description" content={post.excerpt || `${post.title} — Expert SEO insights from SEODXB, Dubai's leading SEO agency.`} />
+        <meta name="description" content={post.excerpt || `${post.title} - Expert SEO insights from SEODXB, Dubai's leading SEO agency.`} />
         <link rel="canonical" href={`https://seodxb.com/blog/${slug}`} />
         <meta property="og:title" content={`${post.title} | SEODXB Blog`} />
         <meta property="og:description" content={post.excerpt || post.title} />

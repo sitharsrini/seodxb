@@ -7,9 +7,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, MapPin, Globe, BarChart2, Search, TrendingUp, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: <Search size={22} />, title: "Abu Dhabi Keyword Research", desc: "We identify the exact search terms Abu Dhabi customers use — from Khalidiyah to Yas Island — mapping intent to every page on your site." },
+  { icon: <Search size={22} />, title: "Abu Dhabi Keyword Research", desc: "We identify the exact search terms Abu Dhabi customers use - from Khalidiyah to Yas Island - mapping intent to every page on your site." },
   { icon: <MapPin size={22} />, title: "Local SEO Abu Dhabi", desc: "Google Business Profile setup, Abu Dhabi directory citations, and neighbourhood-level landing pages that dominate the local Map Pack." },
-  { icon: <TrendingUp size={22} />, title: "On-Page Optimisation", desc: "Every meta tag, heading, and content block optimised for Abu Dhabi's competitive market — plus bilingual targeting for Arabic-speaking audiences." },
+  { icon: <TrendingUp size={22} />, title: "On-Page Optimisation", desc: "Every meta tag, heading, and content block optimised for Abu Dhabi's competitive market - plus bilingual targeting for Arabic-speaking audiences." },
   { icon: <Globe size={22} />, title: "Government & Enterprise SEO", desc: "Abu Dhabi has a large government and enterprise sector. We understand the decision-making journey and build SEO that reaches the right audience." },
   { icon: <BarChart2 size={22} />, title: "Link Authority Building", desc: "Backlinks from Abu Dhabi-specific news sites, ADNEC, ADGM directories, and government-linked publications that build local trust." },
   { icon: <CheckCircle2 size={22} />, title: "AI Search Optimisation", desc: "AEO and GEO strategies that put your Abu Dhabi business in featured snippets and AI-generated answers in ChatGPT, Gemini, and Google AI Overviews." },
@@ -19,14 +19,14 @@ const faqs = [
   { q: "Is the Abu Dhabi SEO market different from Dubai?", a: "Yes. Abu Dhabi's search landscape has a higher proportion of Arabic-language searches, a stronger government and enterprise buyer base, and less competition in many niches compared to Dubai. This means faster ranking opportunities in Abu Dhabi for businesses that invest in SEO early." },
   { q: "Do you have experience with Abu Dhabi government or free-zone clients?", a: "Yes. We work with businesses in ADGM, Masdar City, Yas Creative Hub, and Khalifa Industrial Zone. We understand the procurement and digital visibility needs of regulated and government-adjacent businesses in the emirate." },
   { q: "Can you target both English and Arabic searches in Abu Dhabi?", a: "Absolutely. Abu Dhabi has a higher percentage of Arabic-first searches than Dubai. We offer bilingual keyword research and content strategies targeting both English and Arabic speakers to maximise your market coverage." },
-  { q: "How long does SEO take in Abu Dhabi?", a: "Similar to Dubai — 3–6 months for meaningful ranking improvements, 6–12 months for significant organic traffic growth. Abu Dhabi niches with less incumbent competition can see results faster." },
+  { q: "How long does SEO take in Abu Dhabi?", a: "Similar to Dubai - 3–6 months for meaningful ranking improvements, 6–12 months for significant organic traffic growth. Abu Dhabi niches with less incumbent competition can see results faster." },
 ];
 
 export function SEOAbuDhabi() {
   return (
     <>
       <Helmet>
-        <title>SEO Agency Abu Dhabi — SEO Company & Services in Abu Dhabi UAE | SEODXB</title>
+        <title>SEO Agency Abu Dhabi - SEO Company & Services in Abu Dhabi UAE | SEODXB</title>
         <meta name="description" content="Expert SEO services in Abu Dhabi. Local SEO, keyword research, on-page optimisation, and Google Map Pack rankings for Abu Dhabi businesses." />
         <link rel="canonical" href="https://seodxb.com/seo-abu-dhabi" />
         <meta property="og:title" content="SEO Agency Abu Dhabi | SEODXB" />
@@ -35,7 +35,7 @@ export function SEOAbuDhabi() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "SEODXB — SEO Agency Abu Dhabi",
+          "name": "SEODXB - SEO Agency Abu Dhabi",
           "description": "SEO services for Abu Dhabi businesses: local SEO, keyword research, on-page optimisation, and AI search visibility.",
           "url": "https://seodxb.com/seo-abu-dhabi",
           "areaServed": { "@type": "City", "name": "Abu Dhabi" },
@@ -92,12 +92,12 @@ export function SEOAbuDhabi() {
                   <text x="70" y="46" fontSize="11" fill="#5F6368">SEO company Abu Dhabi</text>
                   {/* Result 1 */}
                   <rect x="52" y="66" width="265" height="30" rx="6" fill="#F0FDF4" stroke="#BBF7D0" strokeWidth="1" />
-                  <text x="64" y="82" fontSize="9" fontWeight="bold" fill="#1D4ED8">SEODXB — Abu Dhabi SEO Agency</text>
+                  <text x="64" y="82" fontSize="9" fontWeight="bold" fill="#1D4ED8">SEODXB - Abu Dhabi SEO Agency</text>
                   <text x="64" y="91" fontSize="8" fill="#F59E0B">★★★★★</text>
                   <text x="100" y="91" fontSize="8" fill="#64748B">4.9 · SEO Agency</text>
                   {/* Arabic result */}
                   <rect x="52" y="104" width="265" height="24" rx="6" fill="#EFF6FF" stroke="#BFDBFE" strokeWidth="1" />
-                  <text x="64" y="119" fontSize="9" fill="#1D4ED8">شركة SEO في أبوظبي — SEODXB</text>
+                  <text x="64" y="119" fontSize="9" fill="#1D4ED8">شركة SEO في أبوظبي - SEODXB</text>
                   {/* Abu Dhabi badge */}
                   <rect x="345" y="24" width="100" height="54" rx="8" fill="white" stroke="#E2E8F0" strokeWidth="1" />
                   <text x="395" y="46" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#0F172A">Abu Dhabi</text>

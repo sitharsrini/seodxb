@@ -68,10 +68,10 @@ export function Blog() {
   return (
     <>
       <Helmet>
-        <title>SEO Blog Dubai — Insights on SEO, AEO & AI Search | SEODXB</title>
+        <title>SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB</title>
         <meta name="description" content="Expert SEO insights for Dubai businesses. Learn about On-Page SEO, Answer Engine Optimisation, Generative Engine Optimisation, Core Web Vitals, and local SEO strategies." />
         <link rel="canonical" href="https://seodxb.com/blog" />
-        <meta property="og:title" content="SEO Blog Dubai — Insights on SEO, AEO & AI Search | SEODXB" />
+        <meta property="og:title" content="SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB" />
         <meta property="og:description" content="Expert SEO insights and guides for Dubai businesses covering modern search optimisation strategies." />
         <meta property="og:url" content="https://seodxb.com/blog" />
       </Helmet>
