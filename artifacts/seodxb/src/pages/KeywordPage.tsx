@@ -312,7 +312,18 @@ export function KeywordPage() {
                 </div>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-                <SvgComponent keyword={config.keyword} />
+                {config.imageUrl ? (
+                  <img
+                    src={config.imageUrl}
+                    alt={config.h1}
+                    className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
+                    loading="lazy"
+                    width={640}
+                    height={480}
+                  />
+                ) : (
+                  <SvgComponent keyword={config.keyword} />
+                )}
               </motion.div>
             </div>
           </div>
