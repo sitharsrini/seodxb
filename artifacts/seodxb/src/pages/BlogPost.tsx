@@ -1,9 +1,31 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "wouter";
-import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+
+const AUTHOR = {
+  name: "Srinivasan R",
+  title: "SEO Strategist & Founder, SEODXB",
+  bio: "Srinivasan is the founder of SEODXB and a specialist in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). He helps businesses across Dubai and the UAE dominate search across Google, ChatGPT, and Perplexity.",
+  linkedin: "https://www.linkedin.com/in/rsrinivasan163",
+  url: "https://www.linkedin.com/in/rsrinivasan163",
+};
+
+const authorSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": AUTHOR.name,
+  "jobTitle": AUTHOR.title,
+  "url": AUTHOR.url,
+  "sameAs": [AUTHOR.linkedin],
+  "worksFor": {
+    "@type": "ProfessionalService",
+    "name": "SEODXB",
+    "url": "https://seodxb.com"
+  }
+};
 
 const posts: Record<string, {
   category: string;
@@ -317,11 +339,34 @@ export function BlogPost() {
         <title>{post.title} | SEODXB Blog</title>
         <meta name="description" content={post.excerpt || `${post.title} - Expert SEO insights from SEODXB, Dubai's leading SEO agency.`} />
         <link rel="canonical" href={`https://seodxb.com/blog/${slug}`} />
+        <meta name="author" content={AUTHOR.name} />
         <meta property="og:title" content={`${post.title} | SEODXB Blog`} />
         <meta property="og:description" content={post.excerpt || post.title} />
         <meta property="og:url" content={`https://seodxb.com/blog/${slug}`} />
         <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://seodxb.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SEODXB" />
         <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={AUTHOR.linkedin} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | SEODXB Blog`} />
+        <meta name="twitter:description" content={post.excerpt || post.title} />
+        <meta name="twitter:image" content="https://seodxb.com/opengraph.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": post.title,
+          "description": post.excerpt,
+          "url": `https://seodxb.com/blog/${slug}`,
+          "datePublished": post.date,
+          "author": { "@type": "Person", "name": AUTHOR.name, "url": AUTHOR.url },
+          "publisher": { "@type": "Organization", "name": "SEODXB", "url": "https://seodxb.com", "logo": { "@type": "ImageObject", "url": "https://seodxb.com/favicon.png" } },
+          "image": "https://seodxb.com/opengraph.jpg",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://seodxb.com/blog/${slug}` }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify(authorSchema)}</script>
       </Helmet>
     <div className="pt-28 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
@@ -343,9 +388,11 @@ export function BlogPost() {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-gray-400 mb-10 border-b border-gray-100 pb-8">
+          <div className="flex items-center gap-5 text-sm text-gray-400 mb-10 border-b border-gray-100 pb-8">
             <span className="flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
             <span className="flex items-center gap-1.5"><Clock size={14} /> {post.time}</span>
+            <span className="text-gray-300">|</span>
+            <span className="flex items-center gap-1.5 text-gray-500 font-medium">By {AUTHOR.name}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed
@@ -359,7 +406,31 @@ export function BlogPost() {
             {post.content}
           </div>
 
-          <div className="mt-16 border-t border-gray-100 pt-12">
+          {/* Author Bio */}
+          <div className="mt-14 border-t border-gray-100 pt-10">
+            <div className="flex items-start gap-5 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shrink-0">
+                <span className="text-white font-black text-lg">SR</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-1 flex-wrap">
+                  <p className="font-bold text-gray-900">{AUTHOR.name}</p>
+                  <a
+                    href={AUTHOR.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
+                  >
+                    <Linkedin size={12} /> LinkedIn
+                  </a>
+                </div>
+                <p className="text-xs text-primary font-semibold mb-2">{AUTHOR.title}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{AUTHOR.bio}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 border-t border-gray-100 pt-12">
             <div className="bg-primary text-white rounded-3xl p-8 text-center">
               <p className="text-xs font-bold tracking-widest uppercase mb-3 text-primary-foreground/70">Ready to Grow?</p>
               <h3 className="text-2xl font-black mb-3">Want results like these for your Dubai business?</h3>
