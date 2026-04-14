@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/seodxb_logo.png";
 
 const serviceLinks = [
   { name: "On-Page SEO", path: "/on-page-seo" },
@@ -71,7 +70,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center" data-testid="link-logo">
-          <img src={logoImg} alt="SEODXB" style={{ height: "36px", width: "auto" }} />
+          <span className="text-2xl font-black tracking-tight text-primary">SEODXB</span>
         </Link>
 
         {/* Desktop Nav */}
