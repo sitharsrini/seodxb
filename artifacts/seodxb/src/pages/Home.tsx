@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity as InfinityIcon, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { SiGoogle, SiMeta, SiHubspot, SiNotion, SiShopify } from "react-icons/si";
@@ -30,7 +30,7 @@ function PricingCard() {
   const startupFeatures = [
     { icon: <Search size={15} />, text: "Keyword Research & Brand Analysis", highlight: true },
     { icon: <FileText size={15} />, text: "Upto 10 - 15 pages", highlight: true },
-    { icon: <Infinity size={15} />, text: "Upto 20 Keywords Tracked" },
+    { icon: <InfinityIcon size={15} />, text: "Upto 20 Keywords Tracked" },
     { icon: <Star size={15} />, text: "GEO & AEO Optimisation" },
     { icon: <BarChart2 size={15} />, text: "Monthly reports" },
     { icon: <Wrench size={15} />, text: "Technical & Local SEO" },
@@ -40,7 +40,7 @@ function PricingCard() {
   const businessFeatures = [
     { icon: <Search size={15} />, text: "Keyword Research & Brand Analysis", highlight: true },
     { icon: <FileText size={15} />, text: "Upto 50 pages", highlight: true },
-    { icon: <Infinity size={15} />, text: "Upto 75 Keywords Tracked" },
+    { icon: <InfinityIcon size={15} />, text: "Upto 75 Keywords Tracked" },
     { icon: <Star size={15} />, text: "GEO & AEO Optimisation" },
     { icon: <BarChart2 size={15} />, text: "Monthly reports" },
     { icon: <Wrench size={15} />, text: "Technical & Local SEO" },

@@ -1,3 +1,5 @@
+import { uaeKeywordPages } from "./keywordPagesUAE";
+
 export interface KeywordPageConfig {
   slug: string;
   keyword: string;
@@ -20,7 +22,7 @@ export interface KeywordPageConfig {
   areaServed?: string;
 }
 
-export const keywordPages: Record<string, KeywordPageConfig> = {
+const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
 
   "seo-agency-dubai": {
     slug: "seo-agency-dubai",
@@ -3767,4 +3769,9 @@ export const keywordPages: Record<string, KeywordPageConfig> = {
     areaServed: "Dubai, UAE",
   },
 
+};
+
+export const keywordPages: Record<string, KeywordPageConfig> = {
+  ...dubaiKeywordPages,
+  ...uaeKeywordPages,
 };

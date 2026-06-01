@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, CheckCircle, ArrowRight, Loader2, AlertCircle } from "lucide-react";
+import { CheckCircle2, CheckCircle, ArrowRight, Loader2, AlertCircle, Phone, MessageCircle } from "lucide-react";
 import { keywordPages, KeywordPageConfig } from "@/data/keywordPages";
 import NotFound from "@/pages/not-found";
 
@@ -281,13 +281,29 @@ function ContactForm({ ctaTitle, ctaDesc, ctaButton, keyword }: { ctaTitle: stri
             <h2 className="text-4xl font-heading font-bold mb-5">{ctaTitle}</h2>
             <p className="text-xl text-white/70 mb-8">{ctaDesc}</p>
             <ul className="space-y-3">
-              {["Free initial consultation", "No lock-in contracts", "Response within 24 hours", "Dubai-based SEO specialists"].map((item) => (
+              {["Free initial consultation", "No lock-in contracts", "Response within 24 hours", "UAE-based SEO specialists"].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-white/80">
                   <CheckCircle2 size={16} className="text-[#C8FF00] shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
+            <div className="flex flex-col sm:flex-row gap-3 mt-8">
+              <a
+                href={`https://wa.me/971521551198?text=${encodeURIComponent(`Hi SEODXB, I'm interested in ${keyword}.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-6 py-3.5 transition-all hover:scale-[1.02]"
+              >
+                <MessageCircle size={18} /> WhatsApp Us
+              </a>
+              <a
+                href="tel:+971521551198"
+                className="flex items-center justify-center gap-2 rounded-full border border-white/30 text-white hover:bg-white/10 font-bold px-6 py-3.5 transition-all"
+              >
+                <Phone size={18} /> +971 52 155 1198
+              </a>
+            </div>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             {status === "success" ? (

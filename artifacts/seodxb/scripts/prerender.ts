@@ -64,6 +64,18 @@ function faqSchema(page: KeywordPageConfig): string {
   });
 }
 
+function breadcrumbSchema(page: KeywordPageConfig): string {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "SEO Services", item: `${SITE}/seo-dubai` },
+      { "@type": "ListItem", position: 3, name: page.h1, item: `${SITE}/${page.slug}` },
+    ],
+  });
+}
+
 function buildHead(page: KeywordPageConfig, shell: string): string {
   const canonical = `${SITE}/${page.slug}`;
   const injection = [
@@ -136,7 +148,7 @@ function buildHead(page: KeywordPageConfig, shell: string): string {
       // Inject Service + FAQ JSON-LD before </head>
       .replace(
         "</head>",
-        `  <script type="application/ld+json">${serviceSchema(page)}</script>\n  <script type="application/ld+json">${faqSchema(page)}</script>\n</head>`,
+        `  <script type="application/ld+json">${serviceSchema(page)}</script>\n  <script type="application/ld+json">${faqSchema(page)}</script>\n  <script type="application/ld+json">${breadcrumbSchema(page)}</script>\n</head>`,
       )
   );
 }
@@ -151,7 +163,7 @@ function buildBody(page: KeywordPageConfig, html: string): string {
     <section>
       <h2>${escape(page.featuresTitle ?? "Our Services")}</h2>
       <ul>
-        ${page.features.map((f) => `<li><strong>${escape(f.title)}</strong> — ${escape(f.desc)}</li>`).join("\n        ")}
+        ${page.features.map((f) => `<li><strong>${escape(f.title)}</strong> - ${escape(f.desc)}</li>`).join("\n        ")}
       </ul>
     </section>
     <section>
