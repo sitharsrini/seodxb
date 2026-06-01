@@ -1,4 +1,10 @@
 import { uaeKeywordPages } from "./keywordPagesUAE";
+import { usKeywordPages } from "./keywordPagesUS";
+import { ukKeywordPages } from "./keywordPagesUK";
+import { euKeywordPages } from "./keywordPagesEU";
+import { apacKeywordPages } from "./keywordPagesAPAC";
+import { gccKeywordPages } from "./keywordPagesGCC";
+import { globalKeywordPages } from "./keywordPagesGlobal";
 
 export interface KeywordPageConfig {
   slug: string;
@@ -3771,7 +3777,17 @@ const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
 
 };
 
+function toRecord(arr: KeywordPageConfig[]): Record<string, KeywordPageConfig> {
+  return Object.fromEntries(arr.map((p) => [p.slug, p]));
+}
+
 export const keywordPages: Record<string, KeywordPageConfig> = {
   ...dubaiKeywordPages,
   ...uaeKeywordPages,
+  ...toRecord(usKeywordPages),
+  ...toRecord(ukKeywordPages),
+  ...toRecord(euKeywordPages),
+  ...toRecord(apacKeywordPages),
+  ...toRecord(gccKeywordPages),
+  ...toRecord(globalKeywordPages),
 };
