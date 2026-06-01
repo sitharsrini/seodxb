@@ -8,7 +8,65 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle2, CheckCircle, ArrowRight, Loader2, AlertCircle, Phone, MessageCircle } from "lucide-react";
 import { keywordPages, KeywordPageConfig } from "@/data/keywordPages";
+import { track } from "@/lib/track";
 import NotFound from "@/pages/not-found";
+
+/* ─────────────── Internal linking ─────────────── */
+
+const LINK_STOPWORDS = new Set([
+  "seo", "for", "the", "in", "a", "and", "services", "service",
+  "agency", "company", "best", "top", "hire", "marketing", "digital",
+]);
+
+function slugTokens(slug: string): string[] {
+  return slug.split("-").filter((t) => !LINK_STOPWORDS.has(t));
+}
+
+// Score other pages by how many meaningful slug tokens they share with the
+// current page (industry + location overlap). Used to build contextual
+// internal links, which spread link equity and reduce doorway-page risk.
+export function getRelatedPages(slug: string, limit = 6): KeywordPageConfig[] {
+  const mine = new Set(slugTokens(slug));
+  const scored = Object.values(keywordPages)
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      p,
+      score: slugTokens(p.slug).reduce((n, t) => n + (mine.has(t) ? 1 : 0), 0),
+    }))
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score);
+  return scored.slice(0, limit).map((x) => x.p);
+}
+
+function RelatedLinks({ slug }: { slug: string }) {
+  const related = getRelatedPages(slug, 6);
+  if (related.length === 0) return null;
+  return (
+    <section className="py-20 bg-slate-50 border-t border-gray-100">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="text-2xl font-heading font-bold mb-2 text-center">Related SEO Services</h2>
+        <p className="text-center text-gray-500 mb-10">Explore more of what we deliver across the UAE.</p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {related.map((r) => (
+            <Link
+              key={r.slug}
+              href={`/${r.slug}`}
+              className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:border-primary hover:shadow-md transition-all"
+            >
+              <span className="font-semibold text-sm text-gray-800 group-hover:text-primary">{r.keyword}</span>
+              <ArrowRight size={15} className="text-gray-300 group-hover:text-primary shrink-0" />
+            </Link>
+          ))}
+        </div>
+        <div className="text-center mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold text-primary">
+          <Link href="/seo-services-dubai" className="hover:underline">All SEO services</Link>
+          <Link href="/seo-agency-uae" className="hover:underline">SEO across the UAE</Link>
+          <Link href="/blog" className="hover:underline">SEO insights &amp; guides</Link>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ─────────────── SVG Variants ─────────────── */
 
@@ -267,6 +325,7 @@ function ContactForm({ ctaTitle, ctaDesc, ctaButton, keyword }: { ctaTitle: stri
       });
       if (!res.ok) throw new Error("failed");
       setStatus("success");
+      track("generate_lead", { method: "contact_form", keyword });
       formRef.current.reset();
     } catch {
       setStatus("error");
@@ -293,12 +352,14 @@ function ContactForm({ ctaTitle, ctaDesc, ctaButton, keyword }: { ctaTitle: stri
                 href={`https://wa.me/971521551198?text=${encodeURIComponent(`Hi SEODXB, I'm interested in ${keyword}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("whatsapp_click", { keyword })}
                 className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-6 py-3.5 transition-all hover:scale-[1.02]"
               >
                 <MessageCircle size={18} /> WhatsApp Us
               </a>
               <a
                 href="tel:+971521551198"
+                onClick={() => track("call_click", { keyword })}
                 className="flex items-center justify-center gap-2 rounded-full border border-white/30 text-white hover:bg-white/10 font-bold px-6 py-3.5 transition-all"
               >
                 <Phone size={18} /> +971 52 155 1198
@@ -549,6 +610,9 @@ export function KeywordPage() {
             </Accordion>
           </div>
         </section>
+
+        {/* Related pages - internal linking */}
+        <RelatedLinks slug={slug} />
 
         {/* Contact Form / CTA */}
         <ContactForm

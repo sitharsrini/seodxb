@@ -11,7 +11,7 @@ const posts = [
     title: "The Future of Search: Preparing for Generative AI in Dubai",
     excerpt: "Learn how generative engine optimization (GEO) is changing the landscape of search visibility for businesses in the UAE.",
     time: "5 min read",
-    date: "Oct 12, 2023"
+    date: "Nov 10, 2025"
   },
   {
     slug: "core-web-vitals-matter",
@@ -19,7 +19,7 @@ const posts = [
     title: "Why Core Web Vitals Matter More Than Ever",
     excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial ranking factors for your website.",
     time: "8 min read",
-    date: "Sep 28, 2023"
+    date: "Oct 28, 2025"
   },
   {
     slug: "answer-engines-position-zero",
@@ -27,7 +27,7 @@ const posts = [
     title: "Optimizing for Answer Engines: Position Zero Explained",
     excerpt: "How to structure your content so it gets picked up by voice assistants and featured snippets.",
     time: "6 min read",
-    date: "Sep 15, 2023"
+    date: "Dec 5, 2025"
   },
   {
     slug: "local-search-dubai",
@@ -35,7 +35,7 @@ const posts = [
     title: "Dominating Local Search in Dubai: A Practical Guide",
     excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility.",
     time: "7 min read",
-    date: "Aug 30, 2023"
+    date: "Sep 30, 2025"
   },
   {
     slug: "semantic-seo-entities-keywords",
@@ -43,7 +43,7 @@ const posts = [
     title: "Semantic SEO: Writing for Entities, Not Just Keywords",
     excerpt: "Move beyond keyword stuffing and learn how to build topical authority through entity-based content optimization.",
     time: "10 min read",
-    date: "Aug 14, 2023"
+    date: "Jan 14, 2026"
   },
   {
     slug: "tracking-seo-metrics-revenue",
@@ -51,7 +51,7 @@ const posts = [
     title: "Tracking What Matters: Metrics That Actually Drive Revenue",
     excerpt: "Stop focusing on vanity metrics. Here is how to measure SEO ROI effectively.",
     time: "4 min read",
-    date: "Jul 22, 2023"
+    date: "Feb 22, 2026"
   },
 ];
 

@@ -1,5 +1,26 @@
 User-agent: *
 Allow: /
 
+# AI / answer-engine crawlers (explicitly welcomed for AEO/GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://seodxb.com/sitemap.xml
+Sitemap: https://seodxb.com/sitemap-pages.xml
+Sitemap: https://seodxb.com/sitemap-blog.xml
 LLMs: https://seodxb.com/llms.txt

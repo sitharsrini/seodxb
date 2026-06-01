@@ -33,8 +33,8 @@ export default {
                 <table style="width:100%">
                   <tr><td style="color:#666;width:140px">Name</td><td><strong>${from_name}</strong></td></tr>
                   <tr><td style="color:#666">Email</td><td><a href="mailto:${reply_to}">${reply_to}</a></td></tr>
-                  <tr><td style="color:#666">Phone</td><td>${phone || "—"}</td></tr>
-                  <tr><td style="color:#666">Company URL</td><td>${company_url || "—"}</td></tr>
+                  <tr><td style="color:#666">Phone</td><td>${phone || "-"}</td></tr>
+                  <tr><td style="color:#666">Company URL</td><td>${company_url || "-"}</td></tr>
                 </table>
                 <hr style="margin:24px 0"/>
                 <p style="white-space:pre-wrap">${message}</p>

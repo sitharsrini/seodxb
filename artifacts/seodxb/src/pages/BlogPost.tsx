@@ -31,6 +31,8 @@ const posts: Record<string, {
   category: string;
   title: string;
   date: string;
+  iso: string;
+  updated: string;
   time: string;
   excerpt: string;
   content: React.ReactNode;
@@ -38,7 +40,9 @@ const posts: Record<string, {
   "future-of-search-generative-ai-dubai": {
     category: "SEO Strategy",
     title: "The Future of Search: Preparing for Generative AI in Dubai",
-    date: "Oct 12, 2023",
+    date: "Nov 10, 2025",
+    iso: "2025-11-10",
+    updated: "2026-05-22",
     time: "5 min read",
     excerpt: "Learn how generative engine optimization (GEO) is changing the landscape of search visibility for businesses in the UAE.",
     content: (
@@ -88,7 +92,9 @@ const posts: Record<string, {
   "core-web-vitals-matter": {
     category: "Technical SEO",
     title: "Why Core Web Vitals Matter More Than Ever",
-    date: "Sep 28, 2023",
+    date: "Oct 28, 2025",
+    iso: "2025-10-28",
+    updated: "2026-05-18",
     time: "8 min read",
     excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial ranking factors for your website.",
     content: (
@@ -129,7 +135,9 @@ const posts: Record<string, {
   "answer-engines-position-zero": {
     category: "AEO",
     title: "Optimizing for Answer Engines: Position Zero Explained",
-    date: "Sep 15, 2023",
+    date: "Dec 5, 2025",
+    iso: "2025-12-05",
+    updated: "2026-05-25",
     time: "6 min read",
     excerpt: "How to structure your content so it gets picked up by voice assistants and featured snippets.",
     content: (
@@ -171,7 +179,9 @@ const posts: Record<string, {
   "local-search-dubai": {
     category: "Local SEO",
     title: "Dominating Local Search in Dubai: A Practical Guide",
-    date: "Aug 30, 2023",
+    date: "Sep 30, 2025",
+    iso: "2025-09-30",
+    updated: "2026-04-30",
     time: "7 min read",
     excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility.",
     content: (
@@ -217,7 +227,9 @@ const posts: Record<string, {
   "semantic-seo-entities-keywords": {
     category: "Content",
     title: "Semantic SEO: Writing for Entities, Not Just Keywords",
-    date: "Aug 14, 2023",
+    date: "Jan 14, 2026",
+    iso: "2026-01-14",
+    updated: "2026-05-15",
     time: "10 min read",
     excerpt: "Move beyond keyword stuffing and learn how to build topical authority through entity-based content optimization.",
     content: (
@@ -268,7 +280,9 @@ const posts: Record<string, {
   "tracking-seo-metrics-revenue": {
     category: "Analytics",
     title: "Tracking What Matters: Metrics That Actually Drive Revenue",
-    date: "Jul 22, 2023",
+    date: "Feb 22, 2026",
+    iso: "2026-02-22",
+    updated: "2026-05-28",
     time: "4 min read",
     excerpt: "Stop focusing on vanity metrics. Here is how to measure SEO ROI effectively.",
     content: (
@@ -348,7 +362,8 @@ export function BlogPost() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="SEODXB" />
-        <meta property="article:published_time" content={post.date} />
+        <meta property="article:published_time" content={post.iso} />
+        <meta property="article:modified_time" content={post.updated} />
         <meta property="article:author" content={AUTHOR.linkedin} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | SEODXB Blog`} />
@@ -360,7 +375,8 @@ export function BlogPost() {
           "headline": post.title,
           "description": post.excerpt,
           "url": `https://seodxb.com/blog/${slug}`,
-          "datePublished": post.date,
+          "datePublished": post.iso,
+          "dateModified": post.updated,
           "author": { "@type": "Person", "name": AUTHOR.name, "url": AUTHOR.url },
           "publisher": { "@type": "Organization", "name": "SEODXB", "url": "https://seodxb.com", "logo": { "@type": "ImageObject", "url": "https://seodxb.com/favicon.png" } },
           "image": "https://seodxb.com/opengraph.jpg",
@@ -393,6 +409,8 @@ export function BlogPost() {
             <span className="flex items-center gap-1.5"><Clock size={14} /> {post.time}</span>
             <span className="text-gray-300">|</span>
             <span className="flex items-center gap-1.5 text-gray-500 font-medium">By {AUTHOR.name}</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-gray-400">Updated {new Date(post.updated).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed
