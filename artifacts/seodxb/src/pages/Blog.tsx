@@ -3,8 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { generatedBlogPosts } from "@/data/blogPosts";
 
-const posts = [
+const inlinePosts = [
   {
     slug: "future-of-search-generative-ai-dubai",
     category: "SEO Strategy",
@@ -59,10 +60,26 @@ const categoryColors: Record<string, string> = {
   "SEO Strategy": "text-blue-600 bg-blue-50",
   "Technical SEO": "text-purple-600 bg-purple-50",
   "AEO": "text-green-600 bg-green-50",
+  "GEO": "text-indigo-600 bg-indigo-50",
   "Local SEO": "text-orange-600 bg-orange-50",
   "Content": "text-pink-600 bg-pink-50",
   "Analytics": "text-teal-600 bg-teal-50",
+  "Link Building": "text-amber-600 bg-amber-50",
+  "Ecommerce SEO": "text-rose-600 bg-rose-50",
 };
+
+// Merge hand-written posts with the generated SEO, AEO, and GEO library.
+// Inline posts (the original 6) appear first, then generated posts newest-first.
+const generatedListing = generatedBlogPosts.map((p) => ({
+  slug: p.slug,
+  category: p.category,
+  title: p.title,
+  excerpt: p.excerpt,
+  time: p.time,
+  date: p.date,
+}));
+const inlineSlugs = new Set(inlinePosts.map((p) => p.slug));
+const posts = [...inlinePosts, ...generatedListing.filter((p) => !inlineSlugs.has(p.slug))];
 
 export function Blog() {
   return (

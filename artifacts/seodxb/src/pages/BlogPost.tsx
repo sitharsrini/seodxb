@@ -4,6 +4,7 @@ import { Link, useParams } from "wouter";
 import { ArrowLeft, Clock, Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { generatedBlogPosts, type GenBlogPost } from "@/data/blogPosts";
 
 const AUTHOR = {
   name: "Srinivasan R",
@@ -329,6 +330,49 @@ const posts: Record<string, {
     )
   }
 };
+
+// Render a data-driven generated post into the same prose structure the inline
+// posts use, then merge it into the lookup so both render identically.
+function renderGenerated(p: GenBlogPost): React.ReactNode {
+  return (
+    <div className="prose prose-lg max-w-none">
+      {p.intro.map((para, i) => (
+        <p key={`intro-${i}`}>{para}</p>
+      ))}
+      {p.sections.map((s, i) => (
+        <React.Fragment key={`sec-${i}`}>
+          <h2>{s.h}</h2>
+          {s.p.map((para, j) => (
+            <p key={`sec-${i}-p-${j}`}>{para}</p>
+          ))}
+          {s.list && (
+            <ul>
+              {s.list.map((li, j) => (
+                <li key={`sec-${i}-li-${j}`}>{li}</li>
+              ))}
+            </ul>
+          )}
+        </React.Fragment>
+      ))}
+      <h2>The Bottom Line</h2>
+      <p>{p.takeaway}</p>
+    </div>
+  );
+}
+
+for (const gp of generatedBlogPosts) {
+  if (posts[gp.slug]) continue; // never overwrite a hand-written post
+  posts[gp.slug] = {
+    category: gp.category,
+    title: gp.title,
+    date: gp.date,
+    iso: gp.iso,
+    updated: gp.updated,
+    time: gp.time,
+    excerpt: gp.excerpt,
+    content: renderGenerated(gp),
+  };
+}
 
 export function BlogPost() {
   const params = useParams<{ slug: string }>();
