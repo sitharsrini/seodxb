@@ -23,12 +23,14 @@ export interface GenBlogPost {
   intro: string[];
   sections: BlogSection[];
   takeaway: string;
+  imageUrl?: string;
+  faqs?: { q: string; a: string }[];
 }
 
 // ─── shared helpers ─────────────────────────────────────────────────────────
 
 // Trim a meta excerpt to land within 100-128 chars on a clean word boundary.
-function clampExcerpt(input: string, max = 128): string {
+export function clampExcerpt(input: string, max = 128): string {
   const s = input.replace(/\s+/g, " ").trim();
   if (s.length <= max) return s;
   let cut = s.slice(0, max);
@@ -50,8 +52,8 @@ function readingTime(post: { intro: string[]; sections: BlogSection[]; takeaway:
 
 // Spread publish dates backwards from a fixed recent anchor so the feed looks
 // naturally built over time rather than dumped on one day.
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-function dateFor(index: number): { date: string; iso: string; updated: string } {
+export const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+export function dateFor(index: number): { date: string; iso: string; updated: string } {
   // Anchor: 2026-05-20. Step back ~2 days per post.
   const anchor = new Date("2026-05-20T00:00:00Z");
   const d = new Date(anchor.getTime() - index * 2 * 24 * 60 * 60 * 1000);

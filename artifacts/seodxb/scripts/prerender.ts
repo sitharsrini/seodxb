@@ -16,6 +16,7 @@ import { resolve, join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { keywordPages, clampMetaDesc, type KeywordPageConfig } from "../src/data/keywordPages";
 import { generatedBlogMeta } from "../src/data/blogPosts";
+import { generatedBlogMeta2 } from "../src/data/blogPosts2";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -255,9 +256,10 @@ const BLOG_META: Record<string, { title: string; desc: string }> = {
   "local-search-dubai": { title: "Dominating Local Search in Dubai: A Practical Guide | SEODXB Blog", desc: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility in Dubai search." },
   "semantic-seo-entities-keywords": { title: "Semantic SEO: Writing for Entities, Not Just Keywords | SEODXB Blog", desc: "Move beyond keyword stuffing and build topical authority through entity-based, semantic content optimisation." },
   "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Stop chasing vanity metrics. Learn how to measure SEO ROI and the metrics that actually drive business revenue." },
-  // Merge the 200 generated SEO, AEO, and GEO posts. Inline entries above win
-  // on any slug collision because the spread comes second only for new keys.
+  // Merge the 200 + 500 generated posts. Inline entries above always win on
+  // any slug collision because the spread comes second only for new keys.
   ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
+  ...Object.fromEntries(Object.entries(generatedBlogMeta2).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
 };
 
 // Bake correct title/description/canonical/OG/Twitter into a copy of the shell.
@@ -324,6 +326,20 @@ function prerender() {
     );
   }
   console.log(`  ✓ ${Object.keys(STATIC_META).length} static + ${Object.keys(BLOG_META).length} blog pages`);
+
+  // Regenerate sitemap-blog.xml from the full BLOG_META set so it always stays
+  // in sync with the actual post count without manual maintenance.
+  const today = new Date().toISOString().split("T")[0];
+  const sitemapBlog = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...Object.keys(BLOG_META).map((slug) =>
+      `<url>\n    <loc>${SITE}/blog/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+    ),
+    "</urlset>",
+  ].join("\n");
+  writeFileSync(join(DIST, "sitemap-blog.xml"), sitemapBlog, "utf-8");
+  console.log(`  ✓ sitemap-blog.xml with ${Object.keys(BLOG_META).length} URLs`);
 
   // Real 404 page so unknown URLs return a 404 status, not a soft 200.
   const notFound = shell

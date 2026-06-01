@@ -5,6 +5,7 @@ import { ArrowLeft, Clock, Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { generatedBlogPosts, type GenBlogPost } from "@/data/blogPosts";
+import { generatedBlogPosts2 } from "@/data/blogPosts2";
 
 const AUTHOR = {
   name: "Srinivasan R",
@@ -37,6 +38,8 @@ const posts: Record<string, {
   time: string;
   excerpt: string;
   content: React.ReactNode;
+  imageUrl?: string;
+  faqs?: { q: string; a: string }[];
 }> = {
   "future-of-search-generative-ai-dubai": {
     category: "SEO Strategy",
@@ -356,11 +359,24 @@ function renderGenerated(p: GenBlogPost): React.ReactNode {
       ))}
       <h2>The Bottom Line</h2>
       <p>{p.takeaway}</p>
+      {p.faqs && p.faqs.length > 0 && (
+        <React.Fragment>
+          <h2>Frequently Asked Questions</h2>
+          <div className="space-y-6 not-prose mt-6">
+            {p.faqs.map((faq, i) => (
+              <div key={`faq-${i}`} className="border border-gray-100 rounded-2xl p-6 bg-slate-50">
+                <h3 className="font-bold text-gray-900 text-base mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </React.Fragment>
+      )}
     </div>
   );
 }
 
-for (const gp of generatedBlogPosts) {
+for (const gp of [...generatedBlogPosts, ...generatedBlogPosts2]) {
   if (posts[gp.slug]) continue; // never overwrite a hand-written post
   posts[gp.slug] = {
     category: gp.category,
@@ -371,6 +387,8 @@ for (const gp of generatedBlogPosts) {
     time: gp.time,
     excerpt: gp.excerpt,
     content: renderGenerated(gp),
+    imageUrl: gp.imageUrl,
+    faqs: gp.faqs,
   };
 }
 
@@ -402,7 +420,7 @@ export function BlogPost() {
         <meta property="og:description" content={post.excerpt || post.title} />
         <meta property="og:url" content={`https://seodxb.com/blog/${slug}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://seodxb.com/opengraph.jpg" />
+        <meta property="og:image" content={post.imageUrl ?? "https://seodxb.com/opengraph.jpg"} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="SEODXB" />
@@ -412,7 +430,7 @@ export function BlogPost() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | SEODXB Blog`} />
         <meta name="twitter:description" content={post.excerpt || post.title} />
-        <meta name="twitter:image" content="https://seodxb.com/opengraph.jpg" />
+        <meta name="twitter:image" content={post.imageUrl ?? "https://seodxb.com/opengraph.jpg"} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
@@ -423,10 +441,21 @@ export function BlogPost() {
           "dateModified": post.updated,
           "author": { "@type": "Person", "name": AUTHOR.name, "url": AUTHOR.url },
           "publisher": { "@type": "Organization", "name": "SEODXB", "url": "https://seodxb.com", "logo": { "@type": "ImageObject", "url": "https://seodxb.com/favicon.png" } },
-          "image": "https://seodxb.com/opengraph.jpg",
+          "image": post.imageUrl ?? "https://seodxb.com/opengraph.jpg",
           "mainEntityOfPage": { "@type": "WebPage", "@id": `https://seodxb.com/blog/${slug}` }
         })}</script>
         <script type="application/ld+json">{JSON.stringify(authorSchema)}</script>
+        {post.faqs && post.faqs.length > 0 && (
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": post.faqs.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a },
+            })),
+          })}</script>
+        )}
       </Helmet>
     <div className="pt-28 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
@@ -448,7 +477,7 @@ export function BlogPost() {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-5 text-sm text-gray-400 mb-10 border-b border-gray-100 pb-8">
+          <div className="flex items-center gap-5 text-sm text-gray-400 mb-8 border-b border-gray-100 pb-8 flex-wrap">
             <span className="flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
             <span className="flex items-center gap-1.5"><Clock size={14} /> {post.time}</span>
             <span className="text-gray-300">|</span>
@@ -456,6 +485,17 @@ export function BlogPost() {
             <span className="text-gray-300">|</span>
             <span className="text-gray-400">Updated {new Date(post.updated).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</span>
           </div>
+
+          {post.imageUrl && (
+            <div className="mb-10 rounded-3xl overflow-hidden aspect-[16/7] bg-gray-100">
+              <img
+                src={post.imageUrl}
+                alt={post.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
 
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed
             [&_h2]:text-2xl [&_h2]:font-black [&_h2]:text-black [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:tracking-tight

@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { generatedBlogPosts } from "@/data/blogPosts";
+import { generatedBlogPosts2 } from "@/data/blogPosts2";
 
 const inlinePosts = [
   {
@@ -68,16 +69,24 @@ const categoryColors: Record<string, string> = {
   "Ecommerce SEO": "text-rose-600 bg-rose-50",
 };
 
-// Merge hand-written posts with the generated SEO, AEO, and GEO library.
-// Inline posts (the original 6) appear first, then generated posts newest-first.
-const generatedListing = generatedBlogPosts.map((p) => ({
-  slug: p.slug,
-  category: p.category,
-  title: p.title,
-  excerpt: p.excerpt,
-  time: p.time,
-  date: p.date,
-}));
+// Merge hand-written posts with both generated libraries.
+// Inline posts first, then generated posts newest-first (deduped by slug).
+const allGenerated = [...generatedBlogPosts, ...generatedBlogPosts2];
+const seenSlugs = new Set<string>();
+const generatedListing = allGenerated
+  .filter((p) => {
+    if (seenSlugs.has(p.slug)) return false;
+    seenSlugs.add(p.slug);
+    return true;
+  })
+  .map((p) => ({
+    slug: p.slug,
+    category: p.category,
+    title: p.title,
+    excerpt: p.excerpt,
+    time: p.time,
+    date: p.date,
+  }));
 const inlineSlugs = new Set(inlinePosts.map((p) => p.slug));
 const posts = [...inlinePosts, ...generatedListing.filter((p) => !inlineSlugs.has(p.slug))];
 
