@@ -30,7 +30,7 @@ export function LocalSEO() {
     <>
       <Helmet>
         <title>Local SEO Services Dubai - Google Business Profile & Map Pack Ranking | SEODXB</title>
-        <meta name="description" content="Local SEO services in Dubai and across the UAE. Google Business Profile optimisation, Map Pack rankings, local citations, and review management." />
+        <meta name="description" content="Local SEO in Dubai and across the UAE: Google Business Profile, Map Pack rankings, citations, and review management." />
         <link rel="canonical" href="https://seodxb.com/local-seo" />
         <meta property="og:title" content="Local SEO Services Dubai | SEODXB" />
         <meta property="og:description" content="Dominate Google's Map Pack in Dubai and across the UAE. Full local SEO: GBP, citations, reviews, local landing pages, and schema markup." />

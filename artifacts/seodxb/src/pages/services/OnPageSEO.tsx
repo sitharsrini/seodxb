@@ -35,7 +35,7 @@ export function OnPageSEO() {
     <>
       <Helmet>
         <title>On-Page SEO Services - Keyword Optimisation & Content Strategy | SEODXB</title>
-        <meta name="description" content="Professional On-Page SEO services: keyword research, content optimisation, meta tags, schema markup, Core Web Vitals, and internal linking. Serving businesses globally." />
+        <meta name="description" content="On-Page SEO services: keyword research, content optimisation, meta tags, schema markup, and internal linking that ranks." />
         <link rel="canonical" href="https://seodxb.com/on-page-seo" />
         <meta property="og:title" content="On-Page SEO Services | SEODXB" />
         <meta property="og:description" content="Turn every page into a ranking asset. Expert On-Page SEO covering keyword strategy, content, schema, and Core Web Vitals for global businesses." />

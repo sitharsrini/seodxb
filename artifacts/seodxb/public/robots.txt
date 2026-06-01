@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 
 # AI / answer-engine crawlers (explicitly welcomed for AEO/GEO)
 User-agent: GPTBot

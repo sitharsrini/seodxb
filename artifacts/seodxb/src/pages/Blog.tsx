@@ -9,7 +9,7 @@ const posts = [
     slug: "future-of-search-generative-ai-dubai",
     category: "SEO Strategy",
     title: "The Future of Search: Preparing for Generative AI in Dubai",
-    excerpt: "Learn how generative engine optimization (GEO) is changing the landscape of search visibility for businesses in the UAE.",
+    excerpt: "How generative engine optimisation (GEO) is reshaping search visibility for businesses across Dubai and the UAE.",
     time: "5 min read",
     date: "Nov 10, 2025"
   },
@@ -17,7 +17,7 @@ const posts = [
     slug: "core-web-vitals-matter",
     category: "Technical SEO",
     title: "Why Core Web Vitals Matter More Than Ever",
-    excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial ranking factors for your website.",
+    excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial Google ranking factors for your website.",
     time: "8 min read",
     date: "Oct 28, 2025"
   },
@@ -25,7 +25,7 @@ const posts = [
     slug: "answer-engines-position-zero",
     category: "AEO",
     title: "Optimizing for Answer Engines: Position Zero Explained",
-    excerpt: "How to structure your content so it gets picked up by voice assistants and featured snippets.",
+    excerpt: "How to structure content so answer engines, voice assistants, and featured snippets surface it at Position Zero.",
     time: "6 min read",
     date: "Dec 5, 2025"
   },
@@ -33,7 +33,7 @@ const posts = [
     slug: "local-search-dubai",
     category: "Local SEO",
     title: "Dominating Local Search in Dubai: A Practical Guide",
-    excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility.",
+    excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility in Dubai search.",
     time: "7 min read",
     date: "Sep 30, 2025"
   },
@@ -41,7 +41,7 @@ const posts = [
     slug: "semantic-seo-entities-keywords",
     category: "Content",
     title: "Semantic SEO: Writing for Entities, Not Just Keywords",
-    excerpt: "Move beyond keyword stuffing and learn how to build topical authority through entity-based content optimization.",
+    excerpt: "Move beyond keyword stuffing and build topical authority through entity-based, semantic content optimisation.",
     time: "10 min read",
     date: "Jan 14, 2026"
   },
@@ -49,7 +49,7 @@ const posts = [
     slug: "tracking-seo-metrics-revenue",
     category: "Analytics",
     title: "Tracking What Matters: Metrics That Actually Drive Revenue",
-    excerpt: "Stop focusing on vanity metrics. Here is how to measure SEO ROI effectively.",
+    excerpt: "Stop chasing vanity metrics. Learn how to measure SEO ROI and the metrics that actually drive business revenue.",
     time: "4 min read",
     date: "Feb 22, 2026"
   },
@@ -69,7 +69,7 @@ export function Blog() {
     <>
       <Helmet>
         <title>SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB</title>
-        <meta name="description" content="Expert SEO insights for Dubai businesses. Learn about On-Page SEO, Answer Engine Optimisation, Generative Engine Optimisation, Core Web Vitals, and local SEO strategies." />
+        <meta name="description" content="Expert SEO insights for Dubai businesses: On-Page SEO, AEO, GEO, Core Web Vitals, and local search strategies that rank." />
         <link rel="canonical" href="https://seodxb.com/blog" />
         <meta property="og:title" content="SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB" />
         <meta property="og:description" content="Expert SEO insights and guides for Dubai businesses covering modern search optimisation strategies." />

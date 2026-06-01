@@ -81,7 +81,7 @@ export function SEOPackages() {
     <>
       <Helmet>
         <title>SEO Packages Dubai - SEO Pricing & Monthly Plans UAE | SEODXB</title>
-        <meta name="description" content="Transparent SEO packages for Dubai businesses. Startup from $999/mo, Business from $2,499/mo. No lock-in contracts. Monthly SEO retainers with real results." />
+        <meta name="description" content="Transparent SEO packages for Dubai businesses. Startup from $999/mo, Business from $2,499/mo. No lock-in contracts." />
         <link rel="canonical" href="https://seodxb.com/seo-packages" />
         <meta property="og:title" content="SEO Packages Dubai | Monthly SEO Pricing UAE | SEODXB" />
         <meta property="og:description" content="Affordable SEO packages for Dubai businesses. No setup fees, no long-term contracts. Choose from Startup, Business, or Enterprise SEO monthly retainers." />

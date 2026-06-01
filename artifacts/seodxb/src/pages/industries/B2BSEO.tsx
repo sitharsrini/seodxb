@@ -27,7 +27,7 @@ export function B2BSEO() {
     <>
       <Helmet>
         <title>B2B SEO Agency Dubai - Startup & Enterprise SEO UAE | SEODXB</title>
-        <meta name="description" content="B2B SEO services in Dubai for startups, scale-ups, and enterprise. Generate qualified leads from organic search with targeted B2B keyword strategies." />
+        <meta name="description" content="B2B SEO in Dubai for startups, scale-ups, and enterprise. Generate qualified leads from targeted organic search strategies." />
         <link rel="canonical" href="https://seodxb.com/b2b-seo" />
         <meta property="og:title" content="B2B SEO Agency Dubai | Startup & Enterprise SEO | SEODXB" />
         <meta property="og:description" content="SEO built for B2B. Target decision-maker keywords, rank solution pages, and generate qualified pipeline from organic search in Dubai and across the UAE." />

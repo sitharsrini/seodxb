@@ -9,7 +9,7 @@ export function About() {
     <>
       <Helmet>
         <title>About SEODXB - Dubai SEO Agency | On-Page SEO & AI Search Specialists</title>
-        <meta name="description" content="Learn about SEODXB, a premier SEO agency based in Dubai, UAE. Specialists in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO)." />
+        <meta name="description" content="Meet SEODXB, a Dubai SEO agency specialising in On-Page SEO, Answer Engine Optimisation, and Generative Engine Optimisation." />
         <link rel="canonical" href="https://seodxb.com/about" />
         <meta property="og:title" content="About SEODXB - Dubai SEO Agency" />
         <meta property="og:description" content="A premier SEO agency based in Dubai dedicated to transforming online visibility through cutting-edge On-Page SEO, AEO, and GEO." />

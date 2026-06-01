@@ -35,7 +35,7 @@ export function SEODubai() {
     <>
       <Helmet>
         <title>SEO Agency Dubai - #1 Rated SEO Company in Dubai, UAE | SEODXB</title>
-        <meta name="description" content="Dubai's results-driven SEO agency. We rank businesses on Google's first page with proven on-page SEO, technical SEO, local SEO, and link building strategies." />
+        <meta name="description" content="Dubai's results-driven SEO agency. Rank on Google page one with on-page, technical, local SEO, and link building." />
         <link rel="canonical" href="https://seodxb.com/seo-dubai" />
         <meta property="og:title" content="SEO Agency Dubai | #1 SEO Company Dubai | SEODXB" />
         <meta property="og:description" content="Top-rated SEO agency in Dubai. First page rankings, more organic traffic, and measurable leads. Get your free SEO audit today." />

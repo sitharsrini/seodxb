@@ -37,7 +37,7 @@ export function GEO() {
     <>
       <Helmet>
         <title>Generative Engine Optimisation (GEO) - Get Cited by ChatGPT, Gemini & Perplexity | SEODXB</title>
-        <meta name="description" content="GEO services: get your brand cited by ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini. Optimise for the AI search layer that's replacing traditional results." />
+        <meta name="description" content="GEO services to get your brand cited by ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini in AI search results." />
         <link rel="canonical" href="https://seodxb.com/geo" />
         <meta property="og:title" content="Generative Engine Optimisation (GEO) | SEODXB" />
         <meta property="og:description" content="Be recommended by AI. GEO strategies that get your brand cited in ChatGPT, Perplexity, Google AI Overviews, and every major AI search surface." />

@@ -28,7 +28,7 @@ export function TechnicalSEO() {
     <>
       <Helmet>
         <title>Technical SEO Services - Site Audits, Core Web Vitals & Schema | SEODXB</title>
-        <meta name="description" content="Expert Technical SEO: site audits, Core Web Vitals optimisation, crawlability fixes, schema markup, and mobile usability. For businesses worldwide." />
+        <meta name="description" content="Technical SEO services: site audits, Core Web Vitals, crawlability fixes, schema markup, and mobile usability for any site." />
         <link rel="canonical" href="https://seodxb.com/technical-seo" />
         <meta property="og:title" content="Technical SEO Services | SEODXB" />
         <meta property="og:description" content="Fix the technical foundations of your site. Crawlability, Core Web Vitals, structured data, and more - the bedrock of lasting SEO gains." />

@@ -28,7 +28,7 @@ export function RealEstateSEO() {
     <>
       <Helmet>
         <title>Real Estate SEO Dubai - Property SEO Agency UAE | SEODXB</title>
-        <meta name="description" content="Real estate SEO services in Dubai. Rank your property listings, development pages, and agency website on Google to attract serious buyers and renters." />
+        <meta name="description" content="Real estate SEO in Dubai. Rank property listings, development pages, and agency sites to attract serious buyers and renters." />
         <link rel="canonical" href="https://seodxb.com/real-estate-seo" />
         <meta property="og:title" content="Real Estate SEO Dubai | Property SEO Agency UAE | SEODXB" />
         <meta property="og:description" content="SEO for Dubai real estate agencies and developers. Rank for property searches, attract international buyers, and reduce portal dependence." />

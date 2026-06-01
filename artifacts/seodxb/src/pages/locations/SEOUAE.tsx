@@ -36,7 +36,7 @@ export function SEOUAE() {
     <>
       <Helmet>
         <title>SEO Agency UAE - SEO Services Across All 7 Emirates | SEODXB</title>
-        <meta name="description" content="UAE-wide SEO services covering Dubai, Abu Dhabi, Sharjah, and all emirates. Bilingual English & Arabic SEO, multi-location strategy, and AI search optimisation." />
+        <meta name="description" content="UAE-wide SEO across Dubai, Abu Dhabi, Sharjah, and all emirates. Bilingual English and Arabic SEO with AI optimisation." />
         <link rel="canonical" href="https://seodxb.com/seo-uae" />
         <meta property="og:title" content="SEO Agency UAE - All 7 Emirates | SEODXB" />
         <meta property="og:description" content="Complete UAE SEO coverage. Multi-emirate strategy, bilingual Arabic/English targeting, and AI search visibility across Dubai, Abu Dhabi, and beyond." />

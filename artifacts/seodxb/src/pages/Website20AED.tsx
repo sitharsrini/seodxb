@@ -188,7 +188,7 @@ export function Website20AED() {
     <>
       <Helmet>
         <title>Professional Website from 5 AED | Listi.ae Business Offer | SEODXB</title>
-        <meta name="description" content="Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan: 20 AED (1 page). Flexi/Growth plans: 5 AED (3-5 pages). Secure hosting, HTTPS, and email lead capture included." />
+        <meta name="description" content="Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan 20 AED, one page. Terms apply." />
         <link rel="canonical" href="https://seodxb.com/website-20-aed" />
         <meta property="og:title" content="Professional Website from 5 AED | Listi.ae Business Offer" />
         <meta property="og:description" content="Listi.ae business users: professional website from just 5 AED. Paid plans 5 AED, Free plan 20 AED. Secure hosting, HTTPS, lead capture included." />

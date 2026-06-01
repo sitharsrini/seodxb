@@ -27,7 +27,7 @@ export function HealthcareSEO() {
     <>
       <Helmet>
         <title>Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB</title>
-        <meta name="description" content="Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors - Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." />
+        <meta name="description" content="Medical SEO in Dubai for clinics, hospitals, and doctors. Map Pack rankings, E-E-A-T content, and patient acquisition." />
         <link rel="canonical" href="https://seodxb.com/seo-for-healthcare" />
         <meta property="og:title" content="Healthcare SEO Dubai | Medical SEO for Clinics & Hospitals | SEODXB" />
         <meta property="og:description" content="Attract more patients from Google. Map Pack rankings, doctor profile SEO, and YMYL-compliant content for Dubai healthcare providers." />

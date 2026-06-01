@@ -29,7 +29,7 @@ export function AEO() {
     <>
       <Helmet>
         <title>Answer Engine Optimisation (AEO) - Position Zero & Featured Snippets | SEODXB</title>
-        <meta name="description" content="AEO services: win featured snippets, People Also Ask boxes, and voice search results. Rank at Position Zero for queries your customers are already asking." />
+        <meta name="description" content="AEO services to win featured snippets, People Also Ask boxes, and voice search. Rank at Position Zero for buyer questions." />
         <link rel="canonical" href="https://seodxb.com/aeo" />
         <meta property="og:title" content="Answer Engine Optimisation (AEO) | SEODXB" />
         <meta property="og:description" content="Win Position Zero. Featured snippets, PAA boxes, and voice search optimisation for businesses targeting AI-powered search results." />

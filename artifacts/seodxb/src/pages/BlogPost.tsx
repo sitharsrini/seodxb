@@ -44,7 +44,7 @@ const posts: Record<string, {
     iso: "2025-11-10",
     updated: "2026-05-22",
     time: "5 min read",
-    excerpt: "Learn how generative engine optimization (GEO) is changing the landscape of search visibility for businesses in the UAE.",
+    excerpt: "How generative engine optimisation (GEO) is reshaping search visibility for businesses across Dubai and the UAE.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>Search is no longer just blue links. In Dubai's hyper-competitive digital market, businesses that rely solely on traditional Google rankings are already behind. Generative AI tools like ChatGPT, Google Gemini, and Perplexity are fundamentally changing how people discover businesses, compare services, and make decisions.</p>
@@ -96,7 +96,7 @@ const posts: Record<string, {
     iso: "2025-10-28",
     updated: "2026-05-18",
     time: "8 min read",
-    excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial ranking factors for your website.",
+    excerpt: "A deep dive into site speed, interactivity, and visual stability as crucial Google ranking factors for your website.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>Google's Core Web Vitals have moved from a "nice to have" to a direct ranking signal. For businesses in Dubai competing in high-value niches, a slow or visually unstable website is not just a user experience problem. It is a search visibility problem.</p>
@@ -139,7 +139,7 @@ const posts: Record<string, {
     iso: "2025-12-05",
     updated: "2026-05-25",
     time: "6 min read",
-    excerpt: "How to structure your content so it gets picked up by voice assistants and featured snippets.",
+    excerpt: "How to structure content so answer engines, voice assistants, and featured snippets surface it at Position Zero.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>Position Zero is the single most valuable real estate in Google Search. It is the result that appears above all organic listings, inside a dedicated box, answering a user's question directly on the results page. Winning Position Zero does not just drive traffic. It establishes your brand as the definitive authority on a topic.</p>
@@ -183,7 +183,7 @@ const posts: Record<string, {
     iso: "2025-09-30",
     updated: "2026-04-30",
     time: "7 min read",
-    excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility.",
+    excerpt: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility in Dubai search.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>For businesses operating in Dubai, local search is not optional. It is the primary channel through which high-intent customers find, evaluate, and contact service providers. A strong local SEO foundation is the difference between appearing at the top of the map pack and being invisible to customers who are ready to buy.</p>
@@ -231,7 +231,7 @@ const posts: Record<string, {
     iso: "2026-01-14",
     updated: "2026-05-15",
     time: "10 min read",
-    excerpt: "Move beyond keyword stuffing and learn how to build topical authority through entity-based content optimization.",
+    excerpt: "Move beyond keyword stuffing and build topical authority through entity-based, semantic content optimisation.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>The era of keyword stuffing is long over. Today, Google's algorithm understands language, context, entities, and intent at a level that makes traditional keyword-focused content strategies not just ineffective, but actively counterproductive. Semantic SEO is the approach that aligns your content with how Google actually understands meaning.</p>
@@ -284,7 +284,7 @@ const posts: Record<string, {
     iso: "2026-02-22",
     updated: "2026-05-28",
     time: "4 min read",
-    excerpt: "Stop focusing on vanity metrics. Here is how to measure SEO ROI effectively.",
+    excerpt: "Stop chasing vanity metrics. Learn how to measure SEO ROI and the metrics that actually drive business revenue.",
     content: (
       <div className="prose prose-lg max-w-none">
         <p>Organic impressions are up 40%. Click-through rate has improved by 15%. Average ranking for target keywords is now position 7. All of these sound like wins, and they might be. But if revenue has not moved, none of those metrics matter to your business. The ability to connect SEO activity to business outcomes is what separates effective SEO programmes from expensive reports.</p>

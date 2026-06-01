@@ -27,7 +27,7 @@ export function LegalSEO() {
     <>
       <Helmet>
         <title>SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB</title>
-        <meta name="description" content="Legal SEO services for Dubai law firms. Rank for high-value client queries, build authority with E-E-A-T content, and generate consultation requests from organic search." />
+        <meta name="description" content="Legal SEO for Dubai law firms. Rank for high-value client queries and generate consultations with E-E-A-T content." />
         <link rel="canonical" href="https://seodxb.com/seo-for-law-firms" />
         <meta property="og:title" content="SEO for Law Firms Dubai | Legal SEO Agency UAE | SEODXB" />
         <meta property="og:description" content="Attract high-value legal clients from Google. Practice area pages, lawyer profile SEO, and local rankings for Dubai law firms and solicitors." />

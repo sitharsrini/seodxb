@@ -27,7 +27,7 @@ export function SEOAbuDhabi() {
     <>
       <Helmet>
         <title>SEO Agency Abu Dhabi - SEO Company & Services in Abu Dhabi UAE | SEODXB</title>
-        <meta name="description" content="Expert SEO services in Abu Dhabi. Local SEO, keyword research, on-page optimisation, and Google Map Pack rankings for Abu Dhabi businesses." />
+        <meta name="description" content="Expert SEO services in Abu Dhabi: local SEO, keyword research, on-page optimisation, and Google Map Pack rankings." />
         <link rel="canonical" href="https://seodxb.com/seo-abu-dhabi" />
         <meta property="og:title" content="SEO Agency Abu Dhabi | SEODXB" />
         <meta property="og:description" content="Abu Dhabi SEO services that drive first-page rankings, organic traffic, and measurable leads. Bilingual English & Arabic SEO strategies." />

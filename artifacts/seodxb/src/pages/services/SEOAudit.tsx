@@ -39,7 +39,7 @@ export function SEOAudit() {
     <>
       <Helmet>
         <title>Free SEO Audit Dubai - Website SEO Audit UAE | SEODXB</title>
-        <meta name="description" content="Get a free, comprehensive SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a prioritised action plan - delivered in 48 hours." />
+        <meta name="description" content="Free, comprehensive SEO audit for your Dubai website: technical health, keyword gaps, and a prioritised 48-hour action plan." />
         <link rel="canonical" href="https://seodxb.com/seo-audit" />
         <meta property="og:title" content="Free SEO Audit Dubai | Website SEO Analysis UAE | SEODXB" />
         <meta property="og:description" content="Free SEO audit: technical health check, keyword opportunity mapping, competitor gap analysis, and priority action plan for Dubai businesses." />

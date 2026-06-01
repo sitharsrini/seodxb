@@ -3781,7 +3781,37 @@ function toRecord(arr: KeywordPageConfig[]): Record<string, KeywordPageConfig> {
   return Object.fromEntries(arr.map((p) => [p.slug, p]));
 }
 
-export const keywordPages: Record<string, KeywordPageConfig> = {
+/**
+ * Clamp a meta description to the SEO-recommended 100 to 128 character range.
+ * Prefers a sentence boundary, then a clause (comma) boundary, then a word
+ * boundary, so descriptions never end mid-word. Descriptions already in range
+ * are returned untouched. Applied to every page so the value used by both
+ * react-helmet and the prerenderer is identical.
+ */
+export function clampMetaDesc(input: string, min = 100, max = 128): string {
+  const s = input.replace(/\s+/g, " ").trim();
+  if (s.length <= max) return s;
+  const slice = s.slice(0, max + 1);
+  const dot = slice.lastIndexOf(". ");
+  if (dot >= min) return s.slice(0, dot + 1).trim();
+  const comma = slice.lastIndexOf(", ");
+  if (comma >= min) return s.slice(0, comma).trim().replace(/[\s,;:.\-]+$/g, "");
+  let cut = s.slice(0, max);
+  const sp = cut.lastIndexOf(" ");
+  if (sp >= min) cut = cut.slice(0, sp);
+  cut = cut.replace(/[\s,;:.\-]+$/g, "").trim();
+  cut = cut.replace(/\s+(and|or|with|to|for|the|a|of|in|on|that|where|plus|we|our|your)$/i, "");
+  return cut.trim();
+}
+
+function normalize(rec: Record<string, KeywordPageConfig>): Record<string, KeywordPageConfig> {
+  for (const key of Object.keys(rec)) {
+    rec[key] = { ...rec[key], metaDesc: clampMetaDesc(rec[key].metaDesc) };
+  }
+  return rec;
+}
+
+export const keywordPages: Record<string, KeywordPageConfig> = normalize({
   ...dubaiKeywordPages,
   ...uaeKeywordPages,
   ...toRecord(usKeywordPages),
@@ -3790,4 +3820,4 @@ export const keywordPages: Record<string, KeywordPageConfig> = {
   ...toRecord(apacKeywordPages),
   ...toRecord(gccKeywordPages),
   ...toRecord(globalKeywordPages),
-};
+});

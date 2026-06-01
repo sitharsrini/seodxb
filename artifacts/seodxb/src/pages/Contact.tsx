@@ -38,7 +38,7 @@ export function Contact() {
     <>
       <Helmet>
         <title>Contact SEODXB - Get a Free SEO Consultation | Dubai SEO Agency</title>
-        <meta name="description" content="Get in touch with SEODXB, Dubai's leading SEO agency. Book a free consultation to discuss your SEO strategy, pricing, and how we can grow your organic traffic." />
+        <meta name="description" content="Contact SEODXB, Dubai's leading SEO agency. Book a free consultation on strategy, pricing, and growing your organic traffic." />
         <link rel="canonical" href="https://seodxb.com/contact" />
         <meta property="og:title" content="Contact SEODXB - Free SEO Consultation Dubai" />
         <meta property="og:description" content="Book a free SEO consultation with SEODXB. Tell us about your business and we'll help you dominate search." />

@@ -27,7 +27,7 @@ export function HospitalitySEO() {
     <>
       <Helmet>
         <title>SEO for Restaurants & Hotels Dubai - Hospitality SEO Agency UAE | SEODXB</title>
-        <meta name="description" content="SEO for restaurants and hotels in Dubai. Google Map Pack rankings, review management, and booking-focused SEO that fills tables and rooms." />
+        <meta name="description" content="SEO for restaurants and hotels in Dubai. Map Pack rankings, review management, and booking-focused SEO that fills seats." />
         <link rel="canonical" href="https://seodxb.com/seo-for-restaurants" />
         <meta property="og:title" content="Restaurant & Hotel SEO Dubai | Hospitality SEO UAE | SEODXB" />
         <meta property="og:description" content="Fill your restaurant or hotel with organic search traffic. Map Pack rankings, review strategy, and tourist-targeting SEO for Dubai hospitality." />

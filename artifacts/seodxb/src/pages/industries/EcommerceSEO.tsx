@@ -30,7 +30,7 @@ export function EcommerceSEO() {
     <>
       <Helmet>
         <title>E-commerce SEO Dubai - Shopify, WooCommerce & Online Store SEO | SEODXB</title>
-        <meta name="description" content="E-commerce SEO services in Dubai. Rank your products on Google, increase organic sales, and drive more conversions from Shopify, WooCommerce, and custom stores." />
+        <meta name="description" content="E-commerce SEO in Dubai. Rank products on Google and grow organic sales from Shopify, WooCommerce, and custom stores." />
         <link rel="canonical" href="https://seodxb.com/ecommerce-seo" />
         <meta property="og:title" content="E-commerce SEO Dubai | Shopify & WooCommerce SEO | SEODXB" />
         <meta property="og:description" content="Increase organic revenue from your online store. Product SEO, category rankings, Shopify SEO, and schema markup for Dubai e-commerce businesses." />

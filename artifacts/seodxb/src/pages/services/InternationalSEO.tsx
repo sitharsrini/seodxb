@@ -37,7 +37,7 @@ export function InternationalSEO() {
     <>
       <Helmet>
         <title>International SEO Services - Global Organic Traffic for Businesses Worldwide | SEODXB</title>
-        <meta name="description" content="International SEO: hreflang, multi-country strategy, global keyword research, and localised content. Rank in Google across the UAE, UK, US, Europe, and beyond." />
+        <meta name="description" content="International SEO: hreflang, multi-country strategy, global keyword research, and localised content for worldwide reach." />
         <link rel="canonical" href="https://seodxb.com/international-seo" />
         <meta property="og:title" content="International SEO Services | SEODXB" />
         <meta property="og:description" content="Rank in every market you serve. International SEO strategy for hreflang, global keyword research, multi-country site architecture, and localised content." />

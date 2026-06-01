@@ -204,7 +204,7 @@ export function Home() {
     <>
       <Helmet>
         <title>SEODXB - Global SEO Agency | On-Page SEO, AEO & GEO</title>
-        <meta name="description" content="SEODXB is a global SEO agency based in Dubai. We help businesses worldwide rank on Google, get cited by ChatGPT & Perplexity, and dominate AI-powered search. Transparent pricing, no contracts." />
+        <meta name="description" content="SEODXB is a global SEO agency in Dubai helping businesses rank on Google and get cited by ChatGPT, Perplexity, and AI search." />
         <link rel="canonical" href="https://seodxb.com/" />
         <meta property="og:title" content="SEODXB - Global SEO Agency | On-Page SEO, AEO & GEO" />
         <meta property="og:description" content="A global SEO agency based in Dubai specialising in On-Page SEO, AEO, and GEO. Get found everywhere your customers search." />
