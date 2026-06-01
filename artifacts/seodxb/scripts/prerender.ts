@@ -243,6 +243,8 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "seo-for-restaurants": { title: "SEO for Restaurants & Hotels Dubai - Hospitality SEO Agency UAE | SEODXB", desc: "SEO for restaurants and hotels in Dubai. Google Map Pack rankings, review management, and booking-focused SEO that fills tables and rooms." },
   "seo-for-healthcare": { title: "Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB", desc: "Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors - Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." },
   "seo-for-law-firms": { title: "SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB", desc: "Legal SEO services for Dubai law firms. Rank for high-value client queries, build authority with E-E-A-T content, and generate consultation requests from organic search." },
+  "website-20-aed": { title: "Get Your Business Website for AED 20 | Dubai Only | SEODXB", desc: "Dubai businesses only: get a professional, SEO-ready website built for just AED 20. Mobile-optimised, fast, and includes basic SEO setup. Terms and conditions apply. Limited availability." },
+  "admin": { title: "Site Index | SEODXB Admin", desc: "" },
 };
 
 const BLOG_META: Record<string, { title: string; desc: string }> = {
@@ -296,10 +298,15 @@ function prerender() {
   // prerendered file - existsSync guards against overwriting them.)
   // Each route gets its OWN title/description/self-canonical baked into the
   // raw HTML, so SEO tools and crawlers don't see the homepage canonical.
+  const NOINDEX_ROUTES = new Set(["admin"]);
   for (const [route, meta] of Object.entries(STATIC_META)) {
     const file = join(DIST, `${route}.html`);
     if (!existsSync(file)) {
-      writeFileSync(file, buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc), "utf-8");
+      let html = buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc);
+      if (NOINDEX_ROUTES.has(route)) {
+        html = html.replace(/<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="noindex, nofollow" />`);
+      }
+      writeFileSync(file, html, "utf-8");
     }
   }
   mkdirSync(join(DIST, "blog"), { recursive: true });
@@ -325,13 +332,6 @@ function prerender() {
     );
   writeFileSync(join(DIST, "404.html"), notFound, "utf-8");
   console.log(`  ✓ /404.html`);
-
-  // Admin/site-index page: 200 shell, but kept out of the index.
-  const admin = shell
-    .replace(/<title>[^<]*<\/title>/, "<title>Site Index | SEODXB Admin</title>")
-    .replace(/<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="noindex, nofollow" />`);
-  writeFileSync(join(DIST, "admin.html"), admin, "utf-8");
-  console.log(`  ✓ /admin`);
 
   console.log(`\n✅ Prerendered ${count} pages to dist/public/\n`);
 }

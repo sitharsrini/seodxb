@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity as InfinityIcon, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity as InfinityIcon, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, CheckCircle, AlertCircle, Loader2, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { SiGoogle, SiMeta, SiHubspot, SiNotion, SiShopify } from "react-icons/si";
@@ -317,6 +317,38 @@ export function Home() {
           STUDIO + STRATEGY + BRANDING + DIGITAL AGENCY + TYPOGRAPHY + DESIGN + INTERACTION + DIGITAL STUDIO + SOLUTION + DEVELOPMENT + STUDIO + STRATEGY + BRANDING + DIGITAL AGENCY + TYPOGRAPHY + DESIGN + INTERACTION + DIGITAL STUDIO + SOLUTION + DEVELOPMENT +&nbsp;
         </div>
       </div>
+
+      {/* ── 20 AED Website Offer Banner ── */}
+      <section className="bg-black text-white py-10 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/10 rounded-2xl px-8 py-7 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+            <div className="relative z-10 text-center sm:text-left">
+              <span className="inline-block bg-[#C8FF00] text-black text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full mb-3">Dubai Businesses Only</span>
+              <h2 className="text-2xl md:text-3xl font-black leading-tight">
+                Get Your Website for Just <span className="text-[#C8FF00]">AED 20</span>
+              </h2>
+              <p className="text-white/60 text-sm mt-1">Professional, mobile-ready, SEO-built. Terms apply. Limited spots.</p>
+            </div>
+            <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
+              <Button
+                className="rounded-full bg-[#C8FF00] text-black hover:bg-[#b3e600] font-black px-7 py-5 text-base"
+                asChild
+              >
+                <Link href="/website-20-aed">Claim Offer <ArrowRight size={16} className="ml-1" /></Link>
+              </Button>
+              <a
+                href="https://wa.me/971521551198?text=Hi%20SEODXB%2C%20I%27m%20interested%20in%20the%20AED%2020%20website%20offer."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-6 py-3 transition-all text-sm"
+              >
+                <MessageCircle size={16} /> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 3. Services Section */}
       <section className="py-24 bg-white border-t border-gray-100">
