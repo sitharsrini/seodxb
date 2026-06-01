@@ -326,9 +326,9 @@ export function Home() {
             <div className="relative z-10 text-center sm:text-left">
               <span className="inline-block bg-[#C8FF00] text-black text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full mb-3">Dubai Businesses Only</span>
               <h2 className="text-2xl md:text-3xl font-black leading-tight">
-                Get Your Website for Just <span className="text-[#C8FF00]">AED 20</span>
+                Professional Website from <span className="text-[#C8FF00]">Just 5 AED</span>
               </h2>
-              <p className="text-white/60 text-sm mt-1">Professional, mobile-ready, SEO-built. Terms apply. Limited spots.</p>
+              <p className="text-white/60 text-sm mt-1">For Listi.ae business users. Flexi/Growth: 5 AED. Free plan: 20 AED. Terms apply.</p>
             </div>
             <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
               <Button

@@ -243,7 +243,7 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "seo-for-restaurants": { title: "SEO for Restaurants & Hotels Dubai - Hospitality SEO Agency UAE | SEODXB", desc: "SEO for restaurants and hotels in Dubai. Google Map Pack rankings, review management, and booking-focused SEO that fills tables and rooms." },
   "seo-for-healthcare": { title: "Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB", desc: "Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors - Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." },
   "seo-for-law-firms": { title: "SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB", desc: "Legal SEO services for Dubai law firms. Rank for high-value client queries, build authority with E-E-A-T content, and generate consultation requests from organic search." },
-  "website-20-aed": { title: "Get Your Business Website for AED 20 | Dubai Only | SEODXB", desc: "Dubai businesses only: get a professional, SEO-ready website built for just AED 20. Mobile-optimised, fast, and includes basic SEO setup. Terms and conditions apply. Limited availability." },
+  "website-20-aed": { title: "Professional Website from 5 AED | Listi.ae Business Offer | SEODXB", desc: "Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan: 20 AED (1 page). Flexi/Growth plans: 5 AED (3-5 pages). Secure hosting, HTTPS, and email lead capture included. Terms apply." },
   "admin": { title: "Site Index | SEODXB Admin", desc: "" },
 };
 
