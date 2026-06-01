@@ -5,6 +5,7 @@ import { euKeywordPages } from "./keywordPagesEU";
 import { apacKeywordPages } from "./keywordPagesAPAC";
 import { gccKeywordPages } from "./keywordPagesGCC";
 import { globalKeywordPages } from "./keywordPagesGlobal";
+import { leadsKeywordPages } from "./keywordPagesLeads";
 
 export interface KeywordPageConfig {
   slug: string;
@@ -3820,4 +3821,5 @@ export const keywordPages: Record<string, KeywordPageConfig> = normalize({
   ...toRecord(apacKeywordPages),
   ...toRecord(gccKeywordPages),
   ...toRecord(globalKeywordPages),
+  ...toRecord(leadsKeywordPages),
 });
