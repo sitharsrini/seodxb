@@ -52,6 +52,7 @@ import { HospitalitySEO } from "@/pages/industries/HospitalitySEO";
 import { HealthcareSEO } from "@/pages/industries/HealthcareSEO";
 import { LegalSEO } from "@/pages/industries/LegalSEO";
 import { KeywordPage } from "@/pages/KeywordPage";
+import { Admin } from "@/pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -81,6 +82,7 @@ function Router() {
       <Route path="/seo-for-restaurants" component={HospitalitySEO} />
       <Route path="/seo-for-healthcare" component={HealthcareSEO} />
       <Route path="/seo-for-law-firms" component={LegalSEO} />
+      <Route path="/admin" component={Admin} />
       <Route path="/:slug" component={KeywordPage} />
       <Route component={NotFound} />
     </Switch>

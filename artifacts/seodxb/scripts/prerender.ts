@@ -217,6 +217,57 @@ function buildBody(page: KeywordPageConfig, html: string, related: KeywordPageCo
   return html.replace('<div id="root"></div>', `<div id="root"></div>${noscript}`);
 }
 
+// ─── static + blog page metadata ────────────────────────────────────────────
+// Title/description for non-keyword routes, mirroring each component's <Helmet>
+// so the prerendered HTML carries correct meta + a self-referencing canonical.
+
+const STATIC_META: Record<string, { title: string; desc: string }> = {
+  "about": { title: "About SEODXB - Dubai SEO Agency | On-Page SEO & AI Search Specialists", desc: "Learn about SEODXB, a premier SEO agency based in Dubai, UAE. Specialists in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO)." },
+  "blog": { title: "SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB", desc: "Expert SEO insights for Dubai businesses. Learn about On-Page SEO, Answer Engine Optimisation, Generative Engine Optimisation, Core Web Vitals, and local SEO strategies." },
+  "pricing": { title: "SEO Pricing Dubai - Transparent Plans for On-Page SEO & AEO | SEODXB", desc: "Clear, transparent SEO pricing for Dubai businesses. No contracts, no hidden fees. Choose from Starter, Growth, or Authority plans. Pause or cancel anytime." },
+  "contact": { title: "Contact SEODXB - Get a Free SEO Consultation | Dubai SEO Agency", desc: "Get in touch with SEODXB, Dubai's leading SEO agency. Book a free consultation to discuss your SEO strategy, pricing, and how we can grow your organic traffic." },
+  "on-page-seo": { title: "On-Page SEO Services - Keyword Optimisation & Content Strategy | SEODXB", desc: "Professional On-Page SEO services: keyword research, content optimisation, meta tags, schema markup, Core Web Vitals, and internal linking. Serving businesses globally." },
+  "technical-seo": { title: "Technical SEO Services - Site Audits, Core Web Vitals & Schema | SEODXB", desc: "Expert Technical SEO: site audits, Core Web Vitals optimisation, crawlability fixes, schema markup, and mobile usability. For businesses worldwide." },
+  "aeo": { title: "Answer Engine Optimisation (AEO) - Position Zero & Featured Snippets | SEODXB", desc: "AEO services: win featured snippets, People Also Ask boxes, and voice search results. Rank at Position Zero for queries your customers are already asking." },
+  "geo": { title: "Generative Engine Optimisation (GEO) - Get Cited by ChatGPT, Gemini & Perplexity | SEODXB", desc: "GEO services: get your brand cited by ChatGPT, Google AI Overviews, Perplexity, Claude, and Gemini. Optimise for the AI search layer that's replacing traditional results." },
+  "local-seo": { title: "Local SEO Services Dubai - Google Business Profile & Map Pack Ranking | SEODXB", desc: "Local SEO services in Dubai and across the UAE. Google Business Profile optimisation, Map Pack rankings, local citations, and review management." },
+  "international-seo": { title: "International SEO Services - Global Organic Traffic for Businesses Worldwide | SEODXB", desc: "International SEO: hreflang, multi-country strategy, global keyword research, and localised content. Rank in Google across the UAE, UK, US, Europe, and beyond." },
+  "seo-audit": { title: "Free SEO Audit Dubai - Website SEO Audit UAE | SEODXB", desc: "Get a free, comprehensive SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a prioritised action plan - delivered in 48 hours." },
+  "seo-packages": { title: "SEO Packages Dubai - SEO Pricing & Monthly Plans UAE | SEODXB", desc: "Transparent SEO packages for Dubai businesses. Startup from $999/mo, Business from $2,499/mo. No lock-in contracts. Monthly SEO retainers with real results." },
+  "seo-dubai": { title: "SEO Agency Dubai - #1 Rated SEO Company in Dubai, UAE | SEODXB", desc: "Dubai's results-driven SEO agency. We rank businesses on Google's first page with proven on-page SEO, technical SEO, local SEO, and link building strategies." },
+  "seo-abu-dhabi": { title: "SEO Agency Abu Dhabi - SEO Company & Services in Abu Dhabi UAE | SEODXB", desc: "Expert SEO services in Abu Dhabi. Local SEO, keyword research, on-page optimisation, and Google Map Pack rankings for Abu Dhabi businesses." },
+  "seo-uae": { title: "SEO Agency UAE - SEO Services Across All 7 Emirates | SEODXB", desc: "UAE-wide SEO services covering Dubai, Abu Dhabi, Sharjah, and all emirates. Bilingual English & Arabic SEO, multi-location strategy, and AI search optimisation." },
+  "ecommerce-seo": { title: "E-commerce SEO Dubai - Shopify, WooCommerce & Online Store SEO | SEODXB", desc: "E-commerce SEO services in Dubai. Rank your products on Google, increase organic sales, and drive more conversions from Shopify, WooCommerce, and custom stores." },
+  "real-estate-seo": { title: "Real Estate SEO Dubai - Property SEO Agency UAE | SEODXB", desc: "Real estate SEO services in Dubai. Rank your property listings, development pages, and agency website on Google to attract serious buyers and renters." },
+  "b2b-seo": { title: "B2B SEO Agency Dubai - Startup & Enterprise SEO UAE | SEODXB", desc: "B2B SEO services in Dubai for startups, scale-ups, and enterprise. Generate qualified leads from organic search with targeted B2B keyword strategies." },
+  "seo-for-restaurants": { title: "SEO for Restaurants & Hotels Dubai - Hospitality SEO Agency UAE | SEODXB", desc: "SEO for restaurants and hotels in Dubai. Google Map Pack rankings, review management, and booking-focused SEO that fills tables and rooms." },
+  "seo-for-healthcare": { title: "Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB", desc: "Medical SEO services in Dubai. SEO for clinics, hospitals, and doctors - Map Pack rankings, E-E-A-T content, and patient acquisition from organic search." },
+  "seo-for-law-firms": { title: "SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB", desc: "Legal SEO services for Dubai law firms. Rank for high-value client queries, build authority with E-E-A-T content, and generate consultation requests from organic search." },
+};
+
+const BLOG_META: Record<string, { title: string; desc: string }> = {
+  "future-of-search-generative-ai-dubai": { title: "The Future of Search: Preparing for Generative AI in Dubai | SEODXB Blog", desc: "Learn how generative engine optimization (GEO) is changing the landscape of search visibility for businesses in the UAE." },
+  "core-web-vitals-matter": { title: "Why Core Web Vitals Matter More Than Ever | SEODXB Blog", desc: "A deep dive into site speed, interactivity, and visual stability as crucial ranking factors for your website." },
+  "answer-engines-position-zero": { title: "Optimizing for Answer Engines: Position Zero Explained | SEODXB Blog", desc: "How to structure your content so it gets picked up by voice assistants and featured snippets." },
+  "local-search-dubai": { title: "Dominating Local Search in Dubai: A Practical Guide | SEODXB Blog", desc: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility." },
+  "semantic-seo-entities-keywords": { title: "Semantic SEO: Writing for Entities, Not Just Keywords | SEODXB Blog", desc: "Move beyond keyword stuffing and learn how to build topical authority through entity-based content optimization." },
+  "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Stop focusing on vanity metrics. Here is how to measure SEO ROI effectively." },
+};
+
+// Bake correct title/description/canonical/OG/Twitter into a copy of the shell.
+function buildStaticHead(shell: string, url: string, title: string, desc: string, ogType = "website"): string {
+  return shell
+    .replace(/<title>[^<]*<\/title>/, `<title>${escape(title)}</title>`)
+    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escape(desc)}" />`)
+    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
+    .replace(/<meta property="og:type" content="[^"]*" \/>/, `<meta property="og:type" content="${ogType}" />`)
+    .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escape(title)}" />`)
+    .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escape(desc)}" />`)
+    .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`)
+    .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${escape(title)}" />`)
+    .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escape(desc)}" />`);
+}
+
 // ─── main ─────────────────────────────────────────────────────────────────────
 
 function prerender() {
@@ -243,28 +294,23 @@ function prerender() {
   // so we must emit a 200 shell for every known route or they would 404.
   // (Keyword-page slugs that collide, e.g. seo-abu-dhabi, keep their richer
   // prerendered file - existsSync guards against overwriting them.)
-  const STATIC_ROUTES = [
-    "about", "blog", "pricing", "contact",
-    "on-page-seo", "technical-seo", "aeo", "geo", "local-seo",
-    "international-seo", "seo-audit", "seo-packages",
-    "seo-dubai", "seo-abu-dhabi", "seo-uae",
-    "ecommerce-seo", "real-estate-seo", "b2b-seo",
-    "seo-for-restaurants", "seo-for-healthcare", "seo-for-law-firms",
-  ];
-  const BLOG_SLUGS = [
-    "future-of-search-generative-ai-dubai", "core-web-vitals-matter",
-    "answer-engines-position-zero", "local-search-dubai",
-    "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue",
-  ];
-  for (const route of STATIC_ROUTES) {
+  // Each route gets its OWN title/description/self-canonical baked into the
+  // raw HTML, so SEO tools and crawlers don't see the homepage canonical.
+  for (const [route, meta] of Object.entries(STATIC_META)) {
     const file = join(DIST, `${route}.html`);
-    if (!existsSync(file)) writeFileSync(file, shell, "utf-8");
+    if (!existsSync(file)) {
+      writeFileSync(file, buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc), "utf-8");
+    }
   }
   mkdirSync(join(DIST, "blog"), { recursive: true });
-  for (const slug of BLOG_SLUGS) {
-    writeFileSync(join(DIST, "blog", `${slug}.html`), shell, "utf-8");
+  for (const [slug, meta] of Object.entries(BLOG_META)) {
+    writeFileSync(
+      join(DIST, "blog", `${slug}.html`),
+      buildStaticHead(shell, `${SITE}/blog/${slug}`, meta.title, meta.desc, "article"),
+      "utf-8",
+    );
   }
-  console.log(`  ✓ ${STATIC_ROUTES.length} static + ${BLOG_SLUGS.length} blog shells`);
+  console.log(`  ✓ ${Object.keys(STATIC_META).length} static + ${Object.keys(BLOG_META).length} blog pages`);
 
   // Real 404 page so unknown URLs return a 404 status, not a soft 200.
   const notFound = shell
@@ -279,6 +325,13 @@ function prerender() {
     );
   writeFileSync(join(DIST, "404.html"), notFound, "utf-8");
   console.log(`  ✓ /404.html`);
+
+  // Admin/site-index page: 200 shell, but kept out of the index.
+  const admin = shell
+    .replace(/<title>[^<]*<\/title>/, "<title>Site Index | SEODXB Admin</title>")
+    .replace(/<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="noindex, nofollow" />`);
+  writeFileSync(join(DIST, "admin.html"), admin, "utf-8");
+  console.log(`  ✓ /admin`);
 
   console.log(`\n✅ Prerendered ${count} pages to dist/public/\n`);
 }
