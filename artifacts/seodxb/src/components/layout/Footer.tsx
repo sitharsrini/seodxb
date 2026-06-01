@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import logoImg from "@assets/seodxb_logo.png";
 
 export function Footer() {
   return (
@@ -8,11 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           <div className="col-span-1 md:col-span-2" style={{gridColumn: "span 2"}}>
             <Link href="/" className="inline-flex items-center mb-6">
-              <img
-                src={logoImg}
-                alt="SEODXB"
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)" }}
-              />
+              <span className="text-2xl font-black tracking-tight text-primary">SEODXB</span>
             </Link>
             <p className="text-gray-400 max-w-sm mb-6">
               A global SEO agency based in Dubai. We help businesses worldwide dominate traditional search, AI answer engines, and generative results.
