@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Search, FileText, Infinity, Star, BarChart2, Wrench, Globe, PenSquare, Plane, Globe2, Camera, Heart, Plus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import logoImg from "@assets/seodxb_logo.png";
 import { SiGoogle, SiMeta, SiHubspot, SiNotion, SiShopify } from "react-icons/si";
 
 const testimonials = [
@@ -163,6 +162,28 @@ function PricingCard() {
 export function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
+  const homeFormRef = React.useRef<HTMLFormElement>(null);
+  const [homeFormStatus, setHomeFormStatus] = React.useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleHomeSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!homeFormRef.current) return;
+    setHomeFormStatus("sending");
+    const data = Object.fromEntries(new FormData(homeFormRef.current));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("failed");
+      setHomeFormStatus("success");
+      homeFormRef.current.reset();
+    } catch {
+      setHomeFormStatus("error");
+    }
+  };
+
   const scrollPrev = React.useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -245,12 +266,7 @@ export function Home() {
             <div className="bg-white border border-gray-100 rounded-3xl shadow-xl overflow-hidden relative z-10">
               {/* Big logo area */}
               <div className="flex items-center justify-center py-10 px-8 border-b border-gray-100 bg-gray-50/50">
-                <img
-                  src={logoImg}
-                  alt="SEODXB"
-                  loading="lazy"
-                  style={{ height: '44px', width: 'auto' }}
-                />
+                <span className="text-3xl font-black tracking-tight text-primary">SEODXB</span>
               </div>
               {/* Navigation arrows */}
               <div className="flex items-center gap-4 px-6 py-3 border-b border-gray-100">
@@ -655,33 +671,47 @@ export function Home() {
             </div>
             <div className="bg-white text-black rounded-2xl p-7 shadow-xl">
               <h3 className="text-xl font-black mb-5">Send us a message</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Name</label>
-                    <Input placeholder="John Doe" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-name" />
+              {homeFormStatus === "success" ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
+                  <CheckCircle size={48} className="text-green-500" />
+                  <p className="text-xl font-bold">Message sent!</p>
+                  <p className="text-gray-500 text-sm">We'll get back to you within 24 hours.</p>
+                  <Button variant="outline" className="mt-3 rounded-full text-sm" onClick={() => setHomeFormStatus("idle")}>Send another</Button>
+                </div>
+              ) : (
+                <form ref={homeFormRef} className="space-y-4" onSubmit={handleHomeSubmit}>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Name</label>
+                      <Input name="from_name" placeholder="John Doe" className="bg-gray-50 rounded-xl border-gray-200" required data-testid="input-name" />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Contact number</label>
+                      <Input name="phone" placeholder="+971 50..." className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-phone" />
+                    </div>
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Contact number</label>
-                    <Input placeholder="+971 50..." className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-phone" />
+                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Email</label>
+                    <Input name="reply_to" type="email" placeholder="john@company.com" className="bg-gray-50 rounded-xl border-gray-200" required data-testid="input-email" />
                   </div>
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Email</label>
-                  <Input type="email" placeholder="john@company.com" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-email" />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Company URL</label>
-                  <Input placeholder="https://example.com" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-url" />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Message</label>
-                  <Textarea placeholder="How can we help you?" className="bg-gray-50 rounded-xl border-gray-200 min-h-[90px]" data-testid="input-message" />
-                </div>
-                <Button className="w-full rounded-full bg-black hover:bg-black/90 text-white py-6 text-base font-bold" data-testid="button-submit">
-                  Submit
-                </Button>
-              </form>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Company URL</label>
+                    <Input name="company_url" placeholder="https://example.com" className="bg-gray-50 rounded-xl border-gray-200" data-testid="input-url" />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-gray-600 uppercase tracking-wider">Message</label>
+                    <Textarea name="message" placeholder="How can we help you?" className="bg-gray-50 rounded-xl border-gray-200 min-h-[90px]" required data-testid="input-message" />
+                  </div>
+                  {homeFormStatus === "error" && (
+                    <div className="flex items-center gap-2 text-red-600 text-xs bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                      <AlertCircle size={14} /> Something went wrong. Email us at hi@Listi.ae
+                    </div>
+                  )}
+                  <Button type="submit" disabled={homeFormStatus === "sending"} className="w-full rounded-full bg-black hover:bg-black/90 text-white py-6 text-base font-bold disabled:opacity-70" data-testid="button-submit">
+                    {homeFormStatus === "sending" ? <span className="flex items-center gap-2"><Loader2 size={18} className="animate-spin" /> Sending…</span> : "Submit"}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>
