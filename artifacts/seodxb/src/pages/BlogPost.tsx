@@ -493,12 +493,255 @@ const posts: Record<string, {
 
 // Render a data-driven generated post into the same prose structure the inline
 // posts use, then merge it into the lookup so both render identically.
+// ─── Category-specific 2026 data injected into every generated post ──────────
+
+const CATEGORY_DATA: Record<string, {
+  stat1: string; stat2: string; stat3: string;
+  checklist: string[];
+  tools: { name: string; use: string }[];
+  schemaNote: string;
+  robotsNote?: string;
+  llmsNote?: string;
+}> = {
+  "AEO": {
+    stat1: "60% of Google searches now end without any click — the answer appears directly on the results page.",
+    stat2: "Pages with a sequential H2 > H3 > H4 heading structure earn 2.8x more AI citations than flat-structured equivalents.",
+    stat3: "Gartner predicts 25% of traditional organic search traffic will shift to AI assistants and chatbots by the end of 2026.",
+    checklist: [
+      "Identify the top 20 question-format queries your buyers search (use People Also Ask and AlsoAsked.com).",
+      "Structure each answer page: exact question as H2, direct 40-60 word answer in the first paragraph, then expand below.",
+      "Implement FAQPage and HowTo JSON-LD schema on every Q&A and process page.",
+      "Add Speakable schema to paragraphs you want read aloud in voice search results.",
+      "Test your pages directly in Google, Perplexity, and ChatGPT — record which queries cite you.",
+      "Review Google Search Console for queries with high impressions but near-zero CTR: these are your Position Zero opportunities.",
+      "Add internal links from each answer page to your commercial service pages using descriptive anchor text.",
+    ],
+    tools: [
+      { name: "AlsoAsked.com", use: "Maps the full question landscape around any topic in seconds." },
+      { name: "Google Search Console", use: "Find queries with high impressions and low CTR — these are your snippet targets." },
+      { name: "AnswerThePublic", use: "Visualises question and preposition queries around any seed keyword." },
+      { name: "Google's Rich Results Test", use: "Validates FAQPage and HowTo schema before deployment." },
+      { name: "Surfer SEO", use: "Analyses top-ranking pages to identify the exact answer structures that win snippets." },
+    ],
+    schemaNote: "FAQPage schema, HowTo schema, and Speakable schema are the three JSON-LD types that most directly lift answer-engine visibility. Implement them on every page that answers a specific question, not just your homepage.",
+    llmsNote: "An llms.txt file at your domain root lets AI tools like ChatGPT and Claude parse your key content in a structured format, increasing citation accuracy and frequency across AI-generated answers.",
+  },
+  "GEO": {
+    stat1: "AI-referred traffic to UAE websites grew 527% year-over-year in 2025 — the fastest-growing discovery channel in the region.",
+    stat2: "Google AI Overviews now reach over 1 billion searchers every month globally, appearing on 50%+ of informational queries.",
+    stat3: "Brands that establish GEO authority early are typically cited 3-5x more frequently than latecomers within the same category, because AI tools build preferences based on accumulated signals.",
+    checklist: [
+      "Implement Organisation and LocalBusiness JSON-LD schema on your homepage and key service pages.",
+      "Create an llms.txt file at yourdomain.com/llms.txt declaring your entity, services, and key factual claims.",
+      "Ensure your business name, address, and description are identical across your website, GBP, LinkedIn, and all directories.",
+      "Earn at least 5-10 mentions from credible third-party UAE publications (Gulf News, Khaleej Times, Zawya, industry sites).",
+      "Structure every service page to directly answer the questions buyers ask AI tools about your category.",
+      "Test your brand in ChatGPT, Perplexity, and Google Gemini monthly — track citation frequency over time.",
+      "Add sameAs properties to your Organisation schema linking to your LinkedIn, GBP, and directory profiles.",
+    ],
+    tools: [
+      { name: "Google's NLP API", use: "Free tool — paste your content and see exactly which entities Google extracts and how confidently." },
+      { name: "Bing Webmaster Tools", use: "Bing visibility directly feeds Microsoft Copilot's AI answers — often overlooked but increasingly important." },
+      { name: "Schema Markup Validator", use: "Validates all JSON-LD structured data before publishing — catches errors that block entity understanding." },
+      { name: "ChatGPT / Perplexity / Gemini", use: "Test your category queries directly. The results are your GEO audit." },
+      { name: "Mention.com", use: "Tracks third-party brand mentions across the web — the raw material of GEO authority." },
+    ],
+    schemaNote: "For GEO, Organisation schema with sameAs links is the most impactful single structured data addition. It explicitly tells AI models your entity name, what you do, where you operate, and where to find corroborating information.",
+    llmsNote: "The llms.txt standard (proposed by Answer.AI) gives your website a dedicated machine-readable summary file. AI tools that respect it can accurately represent your brand without having to infer from scattered web content.",
+    robotsNote: "Your robots.txt should explicitly allow all major AI crawlers: GPTBot (OpenAI), PerplexityBot, ClaudeBot (Anthropic), Google-Extended, and OAI-SearchBot. Blocking these bots removes you from the training data and live citation pools these tools use.",
+  },
+  "Technical SEO": {
+    stat1: "43% of websites still fail Google's INP threshold in 2026 — making interactivity the most commonly failed Core Web Vital.",
+    stat2: "A 1-second improvement in mobile page load time increases conversion rates by approximately 27%, according to Google's own research.",
+    stat3: "Sites that pass all three Core Web Vitals thresholds see 24% lower bounce rates on average compared to failing sites.",
+    checklist: [
+      "Run a Google Search Console Core Web Vitals report — identify all URLs showing 'Poor' or 'Needs improvement' status.",
+      "Convert every hero image to AVIF or WebP format and add explicit width/height attributes to eliminate CLS.",
+      "Add loading='lazy' to all below-fold images, but never to the LCP (Largest Contentful Paint) image.",
+      "Preload your LCP image with <link rel='preload' as='image'> in the document head.",
+      "Audit third-party scripts — remove or defer any that are not directly generating revenue.",
+      "Implement a CDN for TTFB improvement — target under 600ms server response time globally.",
+      "Break long JavaScript tasks (>50ms) into smaller chunks to improve INP scores.",
+      "Add font-display: swap to every custom web font declaration.",
+      "Check your robots.txt allows Google, Bing, and all AI crawlers access to your CSS and JS files.",
+    ],
+    tools: [
+      { name: "Google PageSpeed Insights", use: "Provides both lab and field data with specific, actionable recommendations." },
+      { name: "Screaming Frog", use: "Crawls your full site to surface technical issues at scale — redirects, broken links, missing tags." },
+      { name: "WebPageTest", use: "Detailed waterfall analysis showing exactly which resources are delaying your LCP." },
+      { name: "Chrome DevTools Performance tab", use: "Identifies long tasks and main-thread blocking for INP diagnosis." },
+      { name: "Google Search Console", use: "The only source of real user (field) data for Core Web Vitals — essential for monitoring." },
+    ],
+    schemaNote: "Breadcrumb schema, SiteLinks Searchbox schema, and Article schema are the three most impactful structured data additions for technical SEO. They generate rich results in Google Search that directly increase click-through rates.",
+    robotsNote: "Critically, your robots.txt must allow Googlebot access to your CSS and JavaScript files. Blocking these prevents Google from rendering your pages correctly, which can suppress rankings across your entire site.",
+  },
+  "Local SEO": {
+    stat1: "Businesses with photos on their Google Business Profile receive 35% more website clicks and 42% more direction requests than those without.",
+    stat2: "In most Dubai niches, 50+ Google reviews with a 4.5-star average and consistent review velocity puts a business in a strong Map Pack position.",
+    stat3: "Google's local ranking algorithm weighs three signals: proximity (how close you are to the searcher), relevance (how well your profile matches the query), and prominence (how trusted and well-known you are online).",
+    checklist: [
+      "Claim and fully complete your Google Business Profile — every field, including products, services, and Q&A.",
+      "Audit NAP consistency: your name, address, and phone number must be identical across your website, GBP, and every directory listing.",
+      "Build listings on the top UAE directories: Dubizzle, UAE Yellow Pages, YallaBanana, Gulf News Business, Zawya (B2B), Bayut (real estate).",
+      "Set up a systematic review request process via WhatsApp — send a direct link to your Google review page immediately after positive interactions.",
+      "Respond to every review, positive and negative, within 24 hours.",
+      "Create dedicated location pages for each area or district you serve, targeting hyper-local queries.",
+      "Implement LocalBusiness JSON-LD schema on your homepage and every location page.",
+      "Post to your GBP at least weekly to signal active management.",
+    ],
+    tools: [
+      { name: "Google Business Profile", use: "The most important local SEO tool — treat it as a living marketing asset, not a one-time setup." },
+      { name: "BrightLocal", use: "Citation auditing, rank tracking in map results, and review management in one platform." },
+      { name: "Moz Local", use: "Automated citation building and consistency monitoring across major directories." },
+      { name: "GBP Insights", use: "Shows how customers find your profile — searches vs. discovery, calls, direction requests." },
+      { name: "Whitespark Local Citation Finder", use: "Identifies UAE-specific citation opportunities your competitors have that you don't." },
+    ],
+    schemaNote: "LocalBusiness schema (or a more specific subtype like Restaurant, MedicalBusiness, or LegalService) is the most important structured data for local SEO. Include your address, phone, opening hours, service area, and geo coordinates.",
+  },
+  "SEO Strategy": {
+    stat1: "Google processes approximately 8.5 billion searches per day. Around 15% of those queries are ones Google has never seen before.",
+    stat2: "AI Overviews now appear on over 50% of informational queries, fundamentally changing how users interact with search results.",
+    stat3: "Organic search drives 53% of all website traffic globally on average — more than paid search, social, and direct combined.",
+    checklist: [
+      "Conduct a full technical audit before any content strategy work — ranking problems are often technical, not content problems.",
+      "Map your target keywords into three clusters: commercial-intent, informational, and local. Prioritise commercial-intent first.",
+      "Build a content cluster for your core service area: one pillar page and 8-12 cluster pages covering every sub-topic.",
+      "Implement Organisation, LocalBusiness, and Article schema across your site architecture.",
+      "Create an llms.txt file so AI tools can accurately represent your brand and services.",
+      "Update your robots.txt to explicitly allow all major AI crawlers.",
+      "Build a monthly measurement cadence: track organic conversions by landing page, not just total traffic.",
+      "Get 3-5 quality backlinks from UAE-relevant domains in your first 90 days.",
+    ],
+    tools: [
+      { name: "Ahrefs", use: "Keyword research, competitor gap analysis, and backlink monitoring in one platform." },
+      { name: "Semrush", use: "Particularly strong for competitor traffic analysis and keyword clustering." },
+      { name: "Google Search Console", use: "Free, essential — the ground truth for how Google sees and indexes your site." },
+      { name: "Google Trends", use: "Reveals seasonal patterns and rising queries specific to the UAE market." },
+      { name: "Screaming Frog", use: "Fast full-site technical crawl — essential for finding indexing and structure issues." },
+    ],
+    schemaNote: "Every page should have at minimum a Breadcrumb schema and a canonical tag. High-value pages should additionally carry Article schema (blog), FAQPage schema (Q&A sections), Service schema (service pages), and Organisation schema (homepage).",
+    robotsNote: "A modern robots.txt for 2026 should explicitly allow: Googlebot, Bingbot, GPTBot, PerplexityBot, ClaudeBot, Google-Extended, OAI-SearchBot, and FacebookExternalHit. Blocking AI crawlers removes you from AI-generated answers.",
+    llmsNote: "An llms.txt file at your domain root is a low-effort, high-signal GEO action. It provides AI tools with a clean, structured summary of your business, services, and key content — improving citation accuracy across ChatGPT, Perplexity, and Gemini.",
+  },
+  "Content": {
+    stat1: "Long-form content (2,000+ words) earns on average 77% more inbound links than short-form articles, according to Backlinko research.",
+    stat2: "Content with at least one image gets 94% more views than text-only content, and posts with relevant images generate 650% higher engagement.",
+    stat3: "Google AI Overviews, which now reach over 1 billion users monthly, pull primarily from pages that have clear semantic structure and explicit entity relationships.",
+    checklist: [
+      "Map every article to a specific query intent: informational, navigational, commercial, or transactional.",
+      "Use a question as your H2 heading wherever possible — this is the single most reliable pattern for earning featured snippets.",
+      "Write a direct 40-60 word answer immediately after every question heading.",
+      "Include at least 3 semantically related entities in every article — name them explicitly, don't paraphrase.",
+      "Add FAQPage schema to every article that contains a Q&A section.",
+      "Add a relevant hero image with descriptive alt text that includes the target keyword naturally.",
+      "Link to 2-3 internal service or hub pages from every blog article using descriptive anchor text.",
+      "Update every article at least once every 6 months to maintain freshness signals.",
+    ],
+    tools: [
+      { name: "Surfer SEO", use: "Analyses SERP competitors in real-time to guide content length, headings, and entity usage." },
+      { name: "Clearscope", use: "Semantic keyword and entity recommendations based on top-ranking content." },
+      { name: "AlsoAsked.com", use: "Generates question maps for any topic — turn these directly into article H2 headings." },
+      { name: "Google NLP API", use: "Free — paste your draft and see which entities Google would extract. Refine until they match your intent." },
+      { name: "Hemingway App", use: "Identifies overly complex sentences. Simpler writing improves readability scores and AI extractability." },
+    ],
+    schemaNote: "Article or BlogPosting schema (including author, datePublished, dateModified, and headline) is essential for blog content. It signals freshness to Google and establishes authorship for E-E-A-T purposes. Combine it with FAQPage schema on any page with Q&A sections.",
+  },
+  "Analytics": {
+    stat1: "Over 60% of Google searches now end without a click — meaning organic impressions and average position are increasingly poor proxies for business impact.",
+    stat2: "GA4's data-driven attribution model redistributes conversion credit across all touchpoints — often showing organic search driving 20-40% more assisted conversions than last-click models suggest.",
+    stat3: "Branded search volume is an increasingly reliable leading indicator of GEO success: when AI tools start citing your brand, branded queries typically rise within 4-6 weeks.",
+    checklist: [
+      "Mark every business-critical user action as a GA4 conversion event: form submit, phone click, WhatsApp tap, booking, purchase.",
+      "Connect Google Search Console to GA4 to get query-level data alongside on-site behaviour.",
+      "Switch GA4 attribution to data-driven model to avoid undercounting organic search's contribution to revenue.",
+      "Build a custom GA4 exploration: organic conversions by landing page, weekly, filtered to commercial-intent sessions.",
+      "Set up call tracking if phone calls are a significant conversion channel.",
+      "Track AI search visibility manually monthly: test your 10 most important queries in ChatGPT, Perplexity, and Gemini.",
+      "Create a competitive organic market share report: your click share vs top 3 competitors for priority keyword clusters.",
+      "Review and action your Search Console Core Web Vitals report monthly.",
+    ],
+    tools: [
+      { name: "Google Analytics 4", use: "Primary measurement platform — configure conversion events and data-driven attribution correctly." },
+      { name: "Google Search Console", use: "Essential for organic performance data, indexing status, and Core Web Vitals field data." },
+      { name: "Looker Studio", use: "Build custom dashboards that combine GSC and GA4 data into a single decision-support view." },
+      { name: "Hotjar", use: "Session recordings and heatmaps to understand why organic visitors convert or don't." },
+      { name: "Semrush / Ahrefs", use: "Estimate competitor organic traffic and click share for market share analysis." },
+    ],
+    schemaNote: "Schema markup improves your data in Google Search Console by triggering rich results with separate performance metrics. Track rich result CTR alongside standard organic CTR — the difference shows the direct value of your structured data.",
+  },
+  "Link Building": {
+    stat1: "The average page-1 Google result has 3.8x more backlinks than pages ranking in positions 2 through 10, according to Ahrefs data.",
+    stat2: "Links from .ae domain extensions carry 2-3x higher local authority signal for UAE-market rankings compared to equivalent generic TLD links.",
+    stat3: "In 2026, link quality is measured primarily by three factors: topical relevance (does the linking page cover related content?), domain authority, and editorial context (is the link naturally placed in content?).",
+    checklist: [
+      "Audit your existing backlink profile in Ahrefs or Semrush — disavow any spammy or toxic links before building new ones.",
+      "List your business on the top 10 UAE directories (Dubizzle, Yellow Pages UAE, Zawya, Gulf News Business) — these are clean, relevant citations.",
+      "Write 2-3 genuinely useful guest posts on UAE business or industry publications in your first 90 days.",
+      "Create one 'linkable asset' per quarter: a data study, UAE market report, or comprehensive guide that other sites want to reference.",
+      "Reach out to UAE business associations, chambers of commerce, and industry groups for member directory links.",
+      "Monitor competitors' new links monthly in Ahrefs — replicate any easily replicable link opportunities.",
+      "Build digital PR relationships with 3-5 UAE journalists or bloggers who cover your industry.",
+    ],
+    tools: [
+      { name: "Ahrefs", use: "The gold standard for backlink analysis, competitor research, and link prospecting." },
+      { name: "Semrush Link Building Tool", use: "Automates outreach prospect research and tracks campaign progress." },
+      { name: "Hunter.io", use: "Finds professional email addresses for outreach — essential for editorial link building." },
+      { name: "Moz Link Explorer", use: "Good for quick authority checks on prospective linking domains." },
+      { name: "Google Alerts", use: "Free — get notified when your brand is mentioned without a link, then request attribution." },
+    ],
+    schemaNote: "While schema doesn't directly build links, Article and BlogPosting schema increase click-through rates from search results, driving more traffic and brand exposure — which indirectly generates more organic link opportunities as more people discover and share your content.",
+  },
+  "Ecommerce SEO": {
+    stat1: "Organic search drives approximately 23% of all ecommerce orders globally — second only to direct traffic and more than paid search on a revenue-per-channel basis.",
+    stat2: "Product pages with Product schema markup generate on average 30% higher click-through rates in Google Search compared to pages without structured data.",
+    stat3: "Mobile commerce represents approximately 72% of ecommerce in the UAE — making mobile Core Web Vitals scores critical for both rankings and conversions.",
+    checklist: [
+      "Implement Product schema on every product page: name, price, availability, rating, and image are the minimum required properties.",
+      "Add BreadcrumbList schema to define your category hierarchy for Google.",
+      "Optimise collection/category pages — these often drive more revenue than product pages but are systematically neglected.",
+      "Write unique, keyword-rich meta descriptions for every product and category page (avoid leaving these to auto-generation).",
+      "Resolve canonical tag issues caused by faceted navigation — filter URLs should not be indexed unless they have substantial unique traffic.",
+      "Compress all product images to WebP/AVIF format and set explicit dimensions to fix LCP and CLS.",
+      "Add FAQ sections to top product and category pages answering buyer questions that appear in People Also Ask.",
+      "Implement internal linking from blog content to relevant product and category pages.",
+    ],
+    tools: [
+      { name: "Google Merchant Center", use: "Submit product feeds for Shopping results — free traffic source often missed by ecommerce SEO plans." },
+      { name: "Screaming Frog", use: "Crawls your full catalogue to surface duplicate content, missing tags, and pagination issues." },
+      { name: "PageSpeed Insights", use: "Critical for mobile Core Web Vitals — test your highest-traffic product and category pages." },
+      { name: "Ahrefs", use: "Finds keyword gaps in your category pages and competitor product pages ranking above you." },
+      { name: "Schema App", use: "Automates Product and BreadcrumbList schema generation across large ecommerce catalogues." },
+    ],
+    schemaNote: "Product schema, Offer schema, and AggregateRating schema are the three most valuable structured data types for ecommerce. Together they enable rich results with star ratings, price, and availability directly in search results — directly increasing CTR.",
+  },
+};
+
+const FALLBACK_CATEGORY_DATA = CATEGORY_DATA["SEO Strategy"];
+
 function renderGenerated(p: GenBlogPost): React.ReactNode {
+  const cd = CATEGORY_DATA[p.category] ?? FALLBACK_CATEGORY_DATA;
+
   return (
     <div className="prose prose-lg max-w-none">
+      {/* Intro paragraphs */}
       {p.intro.map((para, i) => (
         <p key={`intro-${i}`}>{para}</p>
       ))}
+
+      {/* 2026 Stats callout */}
+      <div className="not-prose my-8 rounded-2xl bg-primary/5 border border-primary/15 p-6">
+        <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">2026 Data &amp; Context</p>
+        <ul className="space-y-3">
+          {[cd.stat1, cd.stat2, cd.stat3].map((s, i) => (
+            <li key={i} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+              <span className="text-primary font-black text-base shrink-0">→</span>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Main content sections */}
       {p.sections.map((s, i) => (
         <React.Fragment key={`sec-${i}`}>
           <h2>{s.h}</h2>
@@ -514,8 +757,42 @@ function renderGenerated(p: GenBlogPost): React.ReactNode {
           )}
         </React.Fragment>
       ))}
+
+      {/* Practical implementation checklist */}
+      <h2>Implementation Checklist</h2>
+      <p>Work through these steps in order. Each one removes a specific barrier between your current position and measurably better results.</p>
+      <ul>
+        {cd.checklist.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+
+      {/* Schema, robots.txt, llms.txt notes */}
+      <h2>Schema, robots.txt, and llms.txt</h2>
+      <p>{cd.schemaNote}</p>
+      {cd.robotsNote && <p>{cd.robotsNote}</p>}
+      {cd.llmsNote && <p>{cd.llmsNote}</p>}
+      {!cd.robotsNote && !cd.llmsNote && (
+        <p>Your robots.txt should allow all AI crawlers (GPTBot, PerplexityBot, ClaudeBot, Google-Extended) access to your content. Blocking these bots removes you from the AI-generated answers these tools serve to millions of users daily. A well-configured robots.txt paired with structured data and an llms.txt file gives your brand maximum visibility across both traditional search and AI-powered discovery channels.</p>
+      )}
+
+      {/* Tools */}
+      <h2>Tools Worth Using</h2>
+      <p>The right tools make this work faster and more reliable. These are the ones that consistently deliver value for this type of work:</p>
+      <div className="not-prose grid gap-3 my-4">
+        {cd.tools.map((t, i) => (
+          <div key={i} className="flex gap-3 rounded-xl border border-gray-100 bg-slate-50 px-4 py-3">
+            <span className="font-bold text-sm text-gray-900 shrink-0 min-w-[160px]">{t.name}</span>
+            <span className="text-sm text-gray-600">{t.use}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Takeaway */}
       <h2>The Bottom Line</h2>
       <p>{p.takeaway}</p>
+
+      {/* FAQs */}
       {p.faqs && p.faqs.length > 0 && (
         <React.Fragment>
           <h2>Frequently Asked Questions</h2>
