@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ExternalLink, Copy, Check } from "lucide-react";
 import { keywordPages } from "@/data/keywordPages";
+import { generatedBlogPosts } from "@/data/blogPosts";
+import { generatedBlogPosts2 } from "@/data/blogPosts2";
 
 const SITE = "https://seodxb.com";
 
@@ -44,7 +46,7 @@ const industryPages: Item[] = [
   { title: "Legal / Law Firms SEO", path: "/seo-for-law-firms" },
 ];
 
-const blogPosts: Item[] = [
+const inlineBlogPosts: Item[] = [
   { title: "The Future of Search: Preparing for Generative AI in Dubai", path: "/blog/future-of-search-generative-ai-dubai" },
   { title: "Why Core Web Vitals Matter More Than Ever", path: "/blog/core-web-vitals-matter" },
   { title: "Optimizing for Answer Engines: Position Zero Explained", path: "/blog/answer-engines-position-zero" },
@@ -52,6 +54,20 @@ const blogPosts: Item[] = [
   { title: "Semantic SEO: Writing for Entities, Not Just Keywords", path: "/blog/semantic-seo-entities-keywords" },
   { title: "Tracking What Matters: Metrics That Actually Drive Revenue", path: "/blog/tracking-seo-metrics-revenue" },
 ];
+
+const inlineSlugs = new Set(inlineBlogPosts.map((p) => p.path));
+const allGenerated = [...generatedBlogPosts, ...generatedBlogPosts2];
+const seenSlugs = new Set<string>();
+const generatedItems: Item[] = allGenerated
+  .filter((p) => {
+    if (seenSlugs.has(p.slug)) return false;
+    seenSlugs.add(p.slug);
+    return true;
+  })
+  .filter((p) => !inlineSlugs.has(`/blog/${p.slug}`))
+  .map((p) => ({ title: p.title, path: `/blog/${p.slug}` }));
+
+const blogPosts: Item[] = [...inlineBlogPosts, ...generatedItems];
 
 // Group the 200 keyword landing pages by region for easier scanning.
 function regionOf(slug: string): string {
