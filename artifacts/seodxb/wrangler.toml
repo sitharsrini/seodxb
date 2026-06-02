@@ -1,0 +1,11 @@
+name = "seodxb"
+compatibility_date = "2025-05-01"
+
+# Cloudflare Pages settings (set in dashboard):
+# Root directory: artifacts/seodxb
+# Build command: cd ../.. && pnpm install --frozen-lockfile && cd artifacts/seodxb && PORT=3000 BASE_PATH=/ pnpm run build
+# Output directory: dist/public
+
+[build]
+command = "cd ../.. && pnpm install --frozen-lockfile && cd artifacts/seodxb && PORT=3000 BASE_PATH=/ pnpm run build"
+pages_build_output_dir = "dist/public"
