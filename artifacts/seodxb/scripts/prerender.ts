@@ -250,12 +250,12 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
 };
 
 const BLOG_META: Record<string, { title: string; desc: string }> = {
-  "future-of-search-generative-ai-dubai": { title: "The Future of Search: Preparing for Generative AI in Dubai | SEODXB Blog", desc: "How generative engine optimisation (GEO) is reshaping search visibility for businesses across Dubai and the UAE." },
-  "core-web-vitals-matter": { title: "Why Core Web Vitals Matter More Than Ever | SEODXB Blog", desc: "A deep dive into site speed, interactivity, and visual stability as crucial Google ranking factors for your website." },
-  "answer-engines-position-zero": { title: "Optimizing for Answer Engines: Position Zero Explained | SEODXB Blog", desc: "How to structure content so answer engines, voice assistants, and featured snippets surface it at Position Zero." },
-  "local-search-dubai": { title: "Dominating Local Search in Dubai: A Practical Guide | SEODXB Blog", desc: "Actionable steps to improve your Google Business Profile and local citations for maximum visibility in Dubai search." },
-  "semantic-seo-entities-keywords": { title: "Semantic SEO: Writing for Entities, Not Just Keywords | SEODXB Blog", desc: "Move beyond keyword stuffing and build topical authority through entity-based, semantic content optimisation." },
-  "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Stop chasing vanity metrics. Learn how to measure SEO ROI and the metrics that actually drive business revenue." },
+  "future-of-search-generative-ai-dubai": { title: "The Future of Search: Preparing for Generative AI in Dubai | SEODXB Blog", desc: "AI-referred traffic in the UAE grew 527% YoY. How Dubai businesses can build GEO authority before competitors." },
+  "core-web-vitals-matter": { title: "Why Core Web Vitals Matter More Than Ever | SEODXB Blog", desc: "43% of sites still fail INP in 2026. Fix LCP, INP, and CLS with specific techniques that improve rankings." },
+  "answer-engines-position-zero": { title: "Optimizing for Answer Engines: Position Zero Explained | SEODXB Blog", desc: "60% of searches end without a click. How to structure content that wins featured snippets and AI citations." },
+  "local-search-dubai": { title: "Dominating Local Search in Dubai: A Practical Guide | SEODXB Blog", desc: "Google Business Profile, UAE citation strategy, and review generation to dominate Dubai Map Pack results." },
+  "semantic-seo-entities-keywords": { title: "Semantic SEO: Writing for Entities, Not Just Keywords | SEODXB Blog", desc: "Google AI Overviews reach 1B users monthly. Build topical authority and entity signals that earn citations." },
+  "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Average position and DA hide more than they reveal. The 2026 SEO metrics that actually connect to revenue." },
   // Merge the 200 + 500 generated posts. Inline entries above always win on
   // any slug collision because the spread comes second only for new keys.
   ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
