@@ -125,7 +125,10 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <Button asChild variant="outline" className="rounded-full px-5 font-semibold border-primary text-primary hover:bg-primary/5">
+            <Link href="/free-seo-audit">Free Audit</Link>
+          </Button>
           <Button asChild className="rounded-full px-6 font-semibold" data-testid="button-get-in-touch">
             <Link href="/contact">Get In Touch →</Link>
           </Button>

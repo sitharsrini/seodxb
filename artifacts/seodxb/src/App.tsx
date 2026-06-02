@@ -54,6 +54,7 @@ import { LegalSEO } from "@/pages/industries/LegalSEO";
 import { KeywordPage } from "@/pages/KeywordPage";
 import { Admin } from "@/pages/Admin";
 import { Website20AED } from "@/pages/Website20AED";
+import { FreeSEOAudit } from "@/pages/FreeSEOAudit";
 
 const queryClient = new QueryClient();
 
@@ -83,6 +84,7 @@ function Router() {
       <Route path="/seo-for-restaurants" component={HospitalitySEO} />
       <Route path="/seo-for-healthcare" component={HealthcareSEO} />
       <Route path="/seo-for-law-firms" component={LegalSEO} />
+      <Route path="/free-seo-audit" component={FreeSEOAudit} />
       <Route path="/admin" component={Admin} />
       <Route path="/website-20-aed" component={Website20AED} />
       <Route path="/:slug" component={KeywordPage} />

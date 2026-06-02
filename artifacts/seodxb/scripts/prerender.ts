@@ -246,6 +246,7 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "seo-for-healthcare": { title: "Healthcare SEO Dubai - SEO for Clinics, Hospitals & Doctors UAE | SEODXB", desc: "Medical SEO in Dubai for clinics, hospitals, and doctors. Map Pack rankings, E-E-A-T content, and patient acquisition." },
   "seo-for-law-firms": { title: "SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB", desc: "Legal SEO for Dubai law firms. Rank for high-value client queries and generate consultations with E-E-A-T content." },
   "website-20-aed": { title: "Professional Website from 5 AED | Listi.ae Business Offer | SEODXB", desc: "Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan 20 AED, one page. Terms apply." },
+  "free-seo-audit": { title: "Free SEO Audit Dubai - Request Your Report in 2 Minutes | SEODXB", desc: "Get a free SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a priority action list." },
   "admin": { title: "Site Index | SEODXB Admin", desc: "Internal site index of every SEODXB page and blog post. Private admin directory, not indexed by search engines." },
 };
 
