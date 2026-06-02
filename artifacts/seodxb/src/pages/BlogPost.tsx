@@ -1,8 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "wouter";
-import { ArrowLeft, Clock, Calendar, Linkedin } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Linkedin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { generatedBlogPosts, type GenBlogPost } from "@/data/blogPosts";
 import { generatedBlogPosts2 } from "@/data/blogPosts2";
@@ -392,6 +394,103 @@ for (const gp of [...generatedBlogPosts, ...generatedBlogPosts2]) {
   };
 }
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
+function BlogContactForm() {
+  const formRef = React.useRef<HTMLFormElement>(null);
+  const [status, setStatus] = React.useState<FormStatus>("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    setStatus("sending");
+    const data = Object.fromEntries(new FormData(formRef.current));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      formRef.current.reset();
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <div className="mt-10 border-t border-gray-100 pt-12">
+      <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+        <p className="text-xs font-bold tracking-widest uppercase text-primary mb-2">Free Consultation</p>
+        <h3 className="text-2xl font-black text-black mb-1">Talk to an SEO expert</h3>
+        <p className="text-gray-500 text-sm mb-7">Drop your details and we'll get back to you within 24 hours.</p>
+
+        {status === "success" ? (
+          <div className="flex flex-col items-center justify-center py-10 text-center gap-3">
+            <CheckCircle size={48} className="text-green-500" />
+            <p className="text-xl font-bold text-black">Message sent!</p>
+            <p className="text-gray-500 text-sm">We'll be in touch within 24 hours.</p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="mt-2 text-sm text-primary font-semibold underline underline-offset-2"
+            >
+              Send another message
+            </button>
+          </div>
+        ) : (
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-sm font-semibold text-gray-700">Name</label>
+                <Input name="from_name" placeholder="Your name" className="bg-white" required />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-semibold text-gray-700">Phone</label>
+                <Input name="phone" placeholder="+971 50..." className="bg-white" />
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-sm font-semibold text-gray-700">Email</label>
+              <Input name="reply_to" type="email" placeholder="you@company.com" className="bg-white" required />
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-sm font-semibold text-gray-700">Message</label>
+              <Textarea
+                name="message"
+                placeholder="Tell us about your website and goals..."
+                className="bg-white min-h-[100px] resize-none"
+                required
+              />
+            </div>
+
+            {status === "error" && (
+              <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                <AlertCircle size={15} />
+                Something went wrong. Email us at hi@Listi.ae
+              </div>
+            )}
+
+            <Button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full rounded-full bg-primary hover:bg-primary/90 text-white py-6 text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+            >
+              {status === "sending" ? (
+                <span className="flex items-center gap-2">
+                  <Loader2 size={18} className="animate-spin" /> Sending...
+                </span>
+              ) : (
+                "Get a Free SEO Consultation"
+              )}
+            </Button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function BlogPost() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug;
@@ -532,16 +631,7 @@ export function BlogPost() {
             </div>
           </div>
 
-          <div className="mt-10 border-t border-gray-100 pt-12">
-            <div className="bg-primary text-white rounded-3xl p-8 text-center">
-              <p className="text-xs font-bold tracking-widest uppercase mb-3 text-primary-foreground/70">Ready to Grow?</p>
-              <h3 className="text-2xl font-black mb-3">Want results like these for your Dubai business?</h3>
-              <p className="text-white/70 mb-6 max-w-md mx-auto text-sm">Book a call with the SEODXB team and find out exactly what it takes to dominate search in your niche.</p>
-              <Button asChild className="rounded-full bg-white text-primary hover:bg-white/90 font-semibold px-8 py-5">
-                <Link href="/contact">Book a Free Call</Link>
-              </Button>
-            </div>
-          </div>
+          <BlogContactForm />
 
           <div className="mt-10 text-center">
             <Button asChild variant="outline" className="rounded-full px-6">
