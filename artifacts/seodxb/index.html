@@ -95,22 +95,14 @@
       }
     }
     </script>
-    <!-- Analytics: dataLayer init so conversion events (WhatsApp, call, form) queue immediately. -->
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBV15T7MEK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QBV15T7MEK');
     </script>
-    <!--
-      TODO: connect analytics. Paste your GA4 snippet here (replace G-XXXXXXXXXX).
-      Conversion events (whatsapp_click, call_click, generate_lead) are already
-      pushed to window.dataLayer / gtag and will flow through automatically.
-
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-      <script>
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-      </script>
-    -->
   </head>
   <body>
     <div id="root"></div>
