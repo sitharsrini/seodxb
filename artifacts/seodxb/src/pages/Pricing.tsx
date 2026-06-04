@@ -41,10 +41,10 @@ export function Pricing() {
     <>
       <Helmet>
         <title>SEO Pricing Dubai - Transparent Plans for On-Page SEO & AEO | SEODXB</title>
-        <meta name="description" content="Transparent SEO pricing for Dubai businesses. No contracts, no hidden fees. Starter, Growth, and Authority plans available." />
+        <meta name="description" content="SEO pricing Dubai: Startup plan from $999/mo, Business from $2,999/mo. Transparent pricing, no lock-in contracts. Includes GEO and AEO." />
         <link rel="canonical" href="https://seodxb.com/pricing" />
-        <meta property="og:title" content="SEO Pricing Dubai - Transparent Plans | SEODXB" />
-        <meta property="og:description" content="No contracts. No surprises. Transparent SEO pricing for Dubai businesses starting from $999/month." />
+        <meta property="og:title" content="SEO Pricing Dubai - Transparent SEO Packages UAE | SEODXB" />
+        <meta property="og:description" content="Transparent SEO pricing for Dubai businesses. Startup from $999/mo, Business from $2,999/mo. No contracts, full GEO and AEO included." />
         <meta property="og:url" content="https://seodxb.com/pricing" />
       </Helmet>
     <div className="pt-32 pb-24 min-h-screen bg-white">
@@ -167,7 +167,7 @@ export function Pricing() {
           <p className="text-xl font-black">Still Can't Decide? Let Us Help you Make the Right Decision.</p>
           <div className="flex gap-4 justify-center flex-wrap mt-4">
             <Button variant="outline" className="rounded-full px-7 py-5 font-semibold" asChild>
-              <a href="mailto:hi@Listi.ae">Send Us an Email</a>
+              <a href="mailto:hi@seodxb.com">Send Us an Email</a>
             </Button>
             <Button className="rounded-full px-7 py-5 bg-primary font-semibold" asChild>
               <Link href="/contact">Schedule a Call</Link>

@@ -20,7 +20,7 @@ var onRequestPost = /* @__PURE__ */ __name(async ({ request, env }) => {
       },
       body: JSON.stringify({
         from: "SEODXB Contact <noreply@seodxb.com>",
-        to: ["hi@Listi.ae"],
+        to: ["hi@seodxb.com"],
         reply_to,
         subject: `New enquiry from ${from_name}`,
         html: `

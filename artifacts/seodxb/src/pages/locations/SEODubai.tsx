@@ -44,7 +44,7 @@ export function SEODubai() {
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           "name": "SEODXB - SEO Agency Dubai",
-          "description": "Dubai's leading SEO agency delivering first-page Google rankings, increased organic traffic, and measurable business growth.",
+          "description": "A Dubai-based SEO agency delivering first-page Google rankings, increased organic traffic, and measurable business growth.",
           "url": "https://seodxb.com/seo-dubai",
           "areaServed": { "@type": "City", "name": "Dubai" },
           "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" },

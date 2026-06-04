@@ -899,7 +899,7 @@ function BlogContactForm() {
             {status === "error" && (
               <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3">
                 <AlertCircle size={15} />
-                Something went wrong. Email us at hi@Listi.ae
+                Something went wrong. Email us at hi@seodxb.com
               </div>
             )}
 
@@ -944,7 +944,7 @@ export function BlogPost() {
     <>
       <Helmet>
         <title>{post.title} | SEODXB Blog</title>
-        <meta name="description" content={post.excerpt || `${post.title} - Expert SEO insights from SEODXB, Dubai's leading SEO agency.`} />
+        <meta name="description" content={post.excerpt || `${post.title} - Expert SEO insights from SEODXB, a specialist SEO agency based in Dubai.`} />
         <link rel="canonical" href={`https://seodxb.com/blog/${slug}`} />
         <meta name="author" content={AUTHOR.name} />
         <meta property="og:title" content={`${post.title} | SEODXB Blog`} />
@@ -1008,13 +1008,32 @@ export function BlogPost() {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-5 text-sm text-gray-400 mb-8 border-b border-gray-100 pb-8 flex-wrap">
+          <div className="flex items-center gap-5 text-sm text-gray-400 mb-6 flex-wrap">
             <span className="flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
             <span className="flex items-center gap-1.5"><Clock size={14} /> {post.time}</span>
             <span className="text-gray-300">|</span>
-            <span className="flex items-center gap-1.5 text-gray-500 font-medium">By {AUTHOR.name}</span>
-            <span className="text-gray-300">|</span>
             <span className="text-gray-400">Updated {new Date(post.updated).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</span>
+          </div>
+
+          {/* Author byline - top */}
+          <div className="flex items-center gap-4 mb-8 pb-8 border-b border-gray-100">
+            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+              <span className="text-white font-black text-sm">SR</span>
+            </div>
+            <div>
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="font-bold text-gray-900 text-sm">{AUTHOR.name}</span>
+                <a
+                  href={AUTHOR.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
+                >
+                  <Linkedin size={12} /> LinkedIn
+                </a>
+              </div>
+              <p className="text-xs text-primary font-medium mt-0.5">{AUTHOR.title}</p>
+            </div>
           </div>
 
           {post.imageUrl && (

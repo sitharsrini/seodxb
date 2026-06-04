@@ -226,7 +226,7 @@ function buildBody(page: KeywordPageConfig, html: string, related: KeywordPageCo
 const STATIC_META: Record<string, { title: string; desc: string }> = {
   "about": { title: "About SEODXB - Dubai SEO Agency | On-Page SEO & AI Search Specialists", desc: "Meet SEODXB, a Dubai SEO agency specialising in On-Page SEO, Answer Engine Optimisation, and Generative Engine Optimisation." },
   "blog": { title: "SEO Blog Dubai - Insights on SEO, AEO & AI Search | SEODXB", desc: "Expert SEO insights for Dubai businesses: On-Page SEO, AEO, GEO, Core Web Vitals, and local search strategies that rank." },
-  "pricing": { title: "SEO Pricing Dubai - Transparent Plans for On-Page SEO & AEO | SEODXB", desc: "Transparent SEO pricing for Dubai businesses. No contracts, no hidden fees. Starter, Growth, and Authority plans available." },
+  "pricing": { title: "SEO Pricing Dubai - Transparent Plans for On-Page SEO & AEO | SEODXB", desc: "SEO pricing Dubai: Startup plan from $999/mo, Business from $2,999/mo. Transparent pricing, no lock-in contracts. Includes GEO and AEO." },
   "contact": { title: "Contact SEODXB - Get a Free SEO Consultation | Dubai SEO Agency", desc: "Contact SEODXB, Dubai's leading SEO agency. Book a free consultation on strategy, pricing, and growing your organic traffic." },
   "on-page-seo": { title: "On-Page SEO Services - Keyword Optimisation & Content Strategy | SEODXB", desc: "On-Page SEO services: keyword research, content optimisation, meta tags, schema markup, and internal linking that ranks." },
   "technical-seo": { title: "Technical SEO Services - Site Audits, Core Web Vitals & Schema | SEODXB", desc: "Technical SEO services: site audits, Core Web Vitals, crawlability fixes, schema markup, and mobile usability for any site." },
@@ -262,6 +262,49 @@ const BLOG_META: Record<string, { title: string; desc: string }> = {
   ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
   ...Object.fromEntries(Object.entries(generatedBlogMeta2).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
 };
+
+// Return a hidden-but-crawlable HTML block for key static pages.
+// Wrapped in an off-screen div so it is invisible to sighted users but fully
+// readable by AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Googlebot).
+function buildStaticBody(slug: string): string {
+  const wrapperOpen = `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;">`;
+  const wrapperClose = `</div>`;
+
+  let inner = "";
+
+  if (slug === "" || slug === "index") {
+    inner = `
+<h1>SEODXB - SEO Agency Dubai | AEO and GEO Specialists</h1>
+<p>SEODXB is a Dubai-based SEO agency specialising in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). We help businesses across Dubai and the UAE rank on Google and get cited by ChatGPT, Perplexity, and Google AI Overviews.</p>
+<p>SEO packages start from $999 per month. No lock-in contracts. Free SEO audit available.</p>
+<p>Services: On-Page SEO, Technical SEO, Local SEO, International SEO, AEO, GEO, Link Building</p>
+<p>Locations served: Dubai, Abu Dhabi, Sharjah, UAE, Saudi Arabia, GCC</p>
+`;
+  } else if (slug === "about") {
+    inner = `
+<h1>About SEODXB - Dubai SEO Agency</h1>
+<p>SEODXB is a Dubai SEO agency founded by Srinivasan R, an SEO strategist specialising in Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO). We help UAE businesses dominate search across Google, ChatGPT, and Perplexity.</p>
+<p>Founder: Srinivasan R - SEO Strategist, AEO and GEO Specialist, Dubai UAE</p>
+<p>We specialise in the full SEO, AEO, and GEO trilogy - traditional search rankings, AI citation optimisation, and generative engine visibility.</p>
+`;
+  } else if (slug === "pricing") {
+    inner = `
+<h1>SEO Pricing Dubai - Transparent SEO Packages UAE</h1>
+<p>SEODXB offers transparent SEO pricing with no lock-in contracts. Startup plan from $999 per month (10-15 pages, 20 keywords, GEO and AEO included). Business plan from $2,999 per month (up to 50 pages, 75 keywords tracked).</p>
+<p>All plans include: Keyword Research, Technical SEO, Local SEO, GEO optimisation, AEO optimisation, Monthly Reports, Google Business Profile, Schema Markup, Human-written blog articles.</p>
+`;
+  }
+
+  if (!inner) return "";
+  return `${wrapperOpen}${inner}${wrapperClose}`;
+}
+
+// Inject static body content before <div id="root"> for crawler visibility.
+function injectStaticBody(html: string, slug: string): string {
+  const block = buildStaticBody(slug);
+  if (!block) return html;
+  return html.replace('<div id="root"></div>', `${block}\n<div id="root"></div>`);
+}
 
 // Bake correct title/description/canonical/OG/Twitter into a copy of the shell.
 function buildStaticHead(shell: string, url: string, title: string, descRaw: string, ogType = "website"): string {
@@ -307,11 +350,17 @@ function prerender() {
   // prerendered file - existsSync guards against overwriting them.)
   // Each route gets its OWN title/description/self-canonical baked into the
   // raw HTML, so SEO tools and crawlers don't see the homepage canonical.
+  // Patch the homepage (index.html) with static body content for AI crawlers.
+  const homepageFile = join(DIST, "index.html");
+  const homepageHtml = injectStaticBody(shell, "");
+  writeFileSync(homepageFile, homepageHtml, "utf-8");
+
   const NOINDEX_ROUTES = new Set(["admin"]);
   for (const [route, meta] of Object.entries(STATIC_META)) {
     const file = join(DIST, `${route}.html`);
     if (!existsSync(file)) {
       let html = buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc);
+      html = injectStaticBody(html, route);
       if (NOINDEX_ROUTES.has(route)) {
         html = html.replace(/<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="noindex, nofollow" />`);
       }
