@@ -61,7 +61,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Email Us</p>
-                <p className="text-lg font-bold">hi@seodxb.com</p>
+                <p className="text-lg font-bold">hi@Listi.ae</p>
               </div>
             </div>
 
@@ -136,7 +136,7 @@ export function Contact() {
               {status === "error" && (
                 <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
                   <AlertCircle size={16} />
-                  Something went wrong. Please email us directly at hi@seodxb.com
+                  Something went wrong. Please email us directly at hi@Listi.ae
                 </div>
               )}
 

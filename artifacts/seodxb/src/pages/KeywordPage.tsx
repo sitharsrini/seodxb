@@ -403,7 +403,7 @@ function ContactForm({ ctaTitle, ctaDesc, ctaButton, keyword }: { ctaTitle: stri
                 {status === "error" && (
                   <div className="flex items-center gap-2 text-red-400 text-sm bg-red-900/30 border border-red-500/30 rounded-lg px-4 py-3">
                     <AlertCircle size={16} />
-                    Something went wrong. Email us at hi@seodxb.com
+                    Something went wrong. Email us at hi@Listi.ae
                   </div>
                 )}
                 <Button

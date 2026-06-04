@@ -642,7 +642,7 @@ export function Home() {
         <div className="text-center mt-12 space-y-3">
           <p className="text-lg font-bold">Still Can't Decide? Let Us Help you Make the Right Decision.</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button variant="outline" className="rounded-full px-6" asChild><a href="mailto:hi@seodxb.com">Send Us an Email</a></Button>
+            <Button variant="outline" className="rounded-full px-6" asChild><a href="mailto:hi@Listi.ae">Send Us an Email</a></Button>
             <Button className="rounded-full px-6 bg-primary" asChild><Link href="/contact">Schedule a Call</Link></Button>
           </div>
         </div>
@@ -736,7 +736,7 @@ export function Home() {
                   </div>
                   {homeFormStatus === "error" && (
                     <div className="flex items-center gap-2 text-red-600 text-xs bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-                      <AlertCircle size={14} /> Something went wrong. Email us at hi@seodxb.com
+                      <AlertCircle size={14} /> Something went wrong. Email us at hi@Listi.ae
                     </div>
                   )}
                   <Button type="submit" disabled={homeFormStatus === "sending"} className="w-full rounded-full bg-black hover:bg-black/90 text-white py-6 text-base font-bold disabled:opacity-70" data-testid="button-submit">

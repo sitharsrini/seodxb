@@ -12,8 +12,8 @@ export function Footer() {
             <p className="text-gray-400 max-w-sm mb-6">
               A global SEO agency based in Dubai. We help businesses worldwide dominate traditional search, AI answer engines, and generative results.
             </p>
-            <a href="mailto:hi@seodxb.com" className="text-lg font-medium hover:text-primary transition-colors">
-              hi@seodxb.com
+            <a href="mailto:hi@Listi.ae" className="text-lg font-medium hover:text-primary transition-colors">
+              hi@Listi.ae
             </a>
           </div>
 

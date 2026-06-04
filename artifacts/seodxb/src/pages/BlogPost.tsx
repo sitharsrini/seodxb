@@ -899,7 +899,7 @@ function BlogContactForm() {
             {status === "error" && (
               <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3">
                 <AlertCircle size={15} />
-                Something went wrong. Email us at hi@seodxb.com
+                Something went wrong. Email us at hi@Listi.ae
               </div>
             )}
 

@@ -24,7 +24,7 @@ export default {
           },
           body: JSON.stringify({
             from: "SEODXB Contact <noreply@seodxb.com>",
-            to: ["hi@seodxb.com"],
+            to: ["hi@Listi.ae"],
             reply_to,
             subject: `New enquiry from ${from_name}`,
             html: `

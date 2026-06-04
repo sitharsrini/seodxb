@@ -53,7 +53,7 @@ Happy to walk you through the findings on a 15-minute call if useful.
 
 Best,
 [Your Name]
-SEODXB | hi@seodxb.com | +971 52 155 1198`,
+SEODXB | hi@Listi.ae | +971 52 155 1198`,
   },
   {
     id: "healthcare",
@@ -73,7 +73,7 @@ If you'd like to see what your competitors are doing differently, I'm happy to s
 
 Best,
 [Your Name]
-SEODXB | hi@seodxb.com`,
+SEODXB | hi@Listi.ae`,
   },
   {
     id: "restaurant",
@@ -291,7 +291,7 @@ export function FreeSEOAudit() {
                     {status === "error" && (
                       <div className="flex items-center gap-2 text-red-400 text-sm bg-red-900/30 border border-red-800 rounded-lg px-4 py-3">
                         <AlertCircle size={16} />
-                        Something went wrong. Email us at hi@seodxb.com
+                        Something went wrong. Email us at hi@Listi.ae
                       </div>
                     )}
 
