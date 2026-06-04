@@ -15,8 +15,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { keywordPages, clampMetaDesc, type KeywordPageConfig } from "../src/data/keywordPages";
-import { generatedBlogMeta } from "../src/data/blogPosts";
-import { generatedBlogMeta2 } from "../src/data/blogPosts2";
+import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
+import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -322,6 +322,28 @@ function buildStaticHead(shell: string, url: string, title: string, descRaw: str
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escape(desc)}" />`);
 }
 
+// Merge both blog content maps for lookup in the blog loop.
+const ALL_BLOG_CONTENT = { ...generatedBlogContent, ...generatedBlogContent2 };
+
+// Build an off-screen article body from the post's plain-text data so AI
+// crawlers and non-JS bots can read the article content without executing React.
+function buildBlogStaticBody(slug: string): string {
+  const c = ALL_BLOG_CONTENT[slug];
+  if (!c) return "";
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const parts: string[] = [];
+  for (const para of c.intro) parts.push(`<p>${esc(para)}</p>`);
+  for (const sec of c.sections) {
+    parts.push(`<h2>${esc(sec.h)}</h2>`);
+    for (const para of sec.p) parts.push(`<p>${esc(para)}</p>`);
+    if (sec.list) {
+      parts.push(`<ul>${sec.list.map((li) => `<li>${esc(li)}</li>`).join("")}</ul>`);
+    }
+  }
+  parts.push(`<p>${esc(c.takeaway)}</p>`);
+  return `<div id="blog-static-body" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><article>${parts.join("\n")}</article></div>`;
+}
+
 // ─── main ─────────────────────────────────────────────────────────────────────
 
 function prerender() {
@@ -369,11 +391,12 @@ function prerender() {
   }
   mkdirSync(join(DIST, "blog"), { recursive: true });
   for (const [slug, meta] of Object.entries(BLOG_META)) {
-    writeFileSync(
-      join(DIST, "blog", `${slug}.html`),
-      buildStaticHead(shell, `${SITE}/blog/${slug}`, meta.title, meta.desc, "article"),
-      "utf-8",
-    );
+    let blogHtml = buildStaticHead(shell, `${SITE}/blog/${slug}`, meta.title, meta.desc, "article");
+    const bodyBlock = buildBlogStaticBody(slug);
+    if (bodyBlock) {
+      blogHtml = blogHtml.replace('<div id="root"></div>', `${bodyBlock}\n<div id="root"></div>`);
+    }
+    writeFileSync(join(DIST, "blog", `${slug}.html`), blogHtml, "utf-8");
   }
   console.log(`  ✓ ${Object.keys(STATIC_META).length} static + ${Object.keys(BLOG_META).length} blog pages`);
 

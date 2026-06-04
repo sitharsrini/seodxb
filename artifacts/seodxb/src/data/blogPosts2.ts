@@ -934,3 +934,8 @@ export const generatedBlogPosts2: GenBlogPost[] = specs2
 export const generatedBlogMeta2: Record<string, { title: string; desc: string }> = Object.fromEntries(
   generatedBlogPosts2.map((p) => [p.slug, { title: `${p.title} | SEODXB Blog`, desc: p.excerpt }]),
 );
+
+import type { BlogSection } from "./blogPosts";
+export const generatedBlogContent2: Record<string, { intro: string[]; sections: BlogSection[]; takeaway: string }> = Object.fromEntries(
+  generatedBlogPosts2.map((p) => [p.slug, { intro: p.intro, sections: p.sections, takeaway: p.takeaway }]),
+);

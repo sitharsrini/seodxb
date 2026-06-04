@@ -262,8 +262,262 @@ const industries: { name: string; slug: string; angle: string; buyer: string }[]
   { name: "Professional Services", slug: "professional-services", angle: "credibility-led decisions made after research", buyer: "clients" },
 ];
 
+// Industry-specific GEO signal bullets (first two bullets are unique per industry)
+const industryGeoSignals: Record<string, string[]> = {
+  "real-estate": [
+    "Property and project descriptions that answer the price, location, and handover questions buyers ask AI tools directly.",
+    "Consistent presence across Bayut, Property Finder, and your own domain so AI engines can cross-reference your listings.",
+    "Third-party mentions in Gulf News property sections, Zawya, and verified developer directories.",
+    "Structured data clarifying your portfolio, areas served, and whether you are a developer, agent, or manager.",
+  ],
+  "healthcare": [
+    "Clinician and specialist profiles with clear credentials, conditions treated, and consultation formats explicitly stated.",
+    "Patient-facing content that answers the medical questions people actually type, at a readable level without jargon.",
+    "Verified mentions on DHA-recognised platforms and health publications AI tools are likely to cite.",
+    "MedicalBusiness and Physician schema that removes ambiguity about your specialisations and service location.",
+  ],
+  "law-firms": [
+    "Attorney profiles that state practice areas, jurisdiction, years of experience, and languages spoken in plain terms.",
+    "Legal explainers that answer the exact questions potential clients search before choosing a firm.",
+    "Mentions in Lexology, legal directories, and UAE bar association listings that AI tools recognise as credible.",
+    "LegalService schema that clearly identifies your firm type, location, and areas of law.",
+  ],
+  "ecommerce": [
+    "Product descriptions that answer buying questions directly: materials, dimensions, shipping times, return policy.",
+    "Review platform presence on Google, Trustpilot, and any relevant marketplace so AI tools can find third-party validation.",
+    "Shopping guide content that compares your category and positions your products as the logical choice.",
+    "Product and Offer schema with price, availability, and aggregate ratings so AI engines can accurately describe what you sell.",
+  ],
+  "saas": [
+    "Feature pages that explain what the software does in plain language, not marketing copy.",
+    "Presence on G2, Capterra, and GetApp with accurate descriptions so AI tools cite review site data about your product.",
+    "Integration and use-case content that matches the way software buyers research before a shortlist.",
+    "SoftwareApplication schema that defines your product category, pricing model, and compatible platforms.",
+  ],
+  "hospitality": [
+    "Room, suite, and experience descriptions that answer the questions guests ask before booking: amenities, views, proximity to landmarks.",
+    "Active profile management on TripAdvisor, Google Hotels, and Booking.com so AI engines can pull verified property data.",
+    "Travel media mentions and award citations from publications AI tools frequently reference.",
+    "LodgingBusiness or Hotel schema with accurate room counts, price range, and location coordinates.",
+  ],
+  "financial-services": [
+    "Service pages that explain products, eligibility, rates, and regulatory compliance in plain, client-facing language.",
+    "Listings on regulatory body directories (DFSA, CBUAE) and reputable financial comparison platforms.",
+    "Media mentions in The National Business, Arabian Business, and sector-specific financial publications.",
+    "FinancialProduct or ProfessionalService schema that identifies your licence type, jurisdiction, and service categories.",
+  ],
+  "construction": [
+    "Project portfolio pages that describe completed work by sector, value, and location so AI tools can describe your track record.",
+    "Listings on contractor registries, DEWA supplier lists, and relevant municipality-approved vendor databases.",
+    "Trade press mentions in Construction Week Middle East and sector procurement publications.",
+    "Organization schema that identifies your contractor classification, specialisations, and areas of operation.",
+  ],
+  "education": [
+    "Programme and course descriptions that answer prospective student questions about entry requirements, fees, outcomes, and duration.",
+    "Recognised listings on education comparison platforms (KHDA ratings, QS rankings, course discovery sites).",
+    "Alumni success stories and institutional mentions in education media that AI models are likely to have indexed.",
+    "EducationalOrganization schema with programme types, accreditation body, and campus location.",
+  ],
+  "manufacturing": [
+    "Capability and specification pages that describe materials, tolerances, certifications, and production capacity in technical terms.",
+    "Presence on B2B sourcing platforms and industry body member directories procurement teams use for shortlisting.",
+    "Trade publication mentions that validate your reputation among the buyers who research before tendering.",
+    "Organization and Product schema that identifies what you manufacture, where, and at what certifications.",
+  ],
+  "dental-practices": [
+    "Dentist profiles with qualifications, specialisations, and years of experience stated clearly for patients and AI alike.",
+    "Treatment pages that answer common patient questions: what the procedure involves, how long it takes, what it costs.",
+    "DHA-verified directory listings and patient review platforms that AI tools pull dental authority signals from.",
+    "Dentist schema with practitioner names, credentials, office hours, and accepted insurance types.",
+  ],
+  "fitness-gyms": [
+    "Class, facility, and membership descriptions that answer what visitors want to know before showing up.",
+    "Review site presence on Google, ClassPass, and fitness directories that AI tools reference for local gym recommendations.",
+    "Wellness and fitness media mentions that reinforce your position in the local fitness conversation.",
+    "SportsActivityLocation schema that identifies your gym type, facilities, class offerings, and location.",
+  ],
+  "travel-tourism": [
+    "Destination and experience descriptions that answer traveller questions: what to expect, how to get there, best time to visit.",
+    "Active presence on TripAdvisor, Google Travel, and booking platforms so AI engines can verify your offerings from multiple sources.",
+    "Travel editorial mentions in publications AI tools have strong training signal from.",
+    "TouristAttraction or TravelAgency schema that defines your entity type, location, and offering categories.",
+  ],
+  "automotive": [
+    "Model and service pages that answer buyer questions: specifications, pricing, availability, warranty, and service intervals.",
+    "Verified presence on automotive directories and manufacturer portals so AI tools can cross-reference dealer information.",
+    "Automotive media mentions and editorial coverage that build third-party credibility.",
+    "AutoDealer schema with your brands, service types, location, and operating hours.",
+  ],
+  "recruitment-agencies": [
+    "Sector and role-specific pages that explain what you recruit for, your placement process, and what candidates can expect.",
+    "Active presence on LinkedIn, Bayt, and GulfTalent so AI tools can verify your agency's specialisations from platform data.",
+    "HR and business publication mentions that establish your reputation among both hiring managers and job seekers.",
+    "EmploymentAgency schema that identifies your sectors, fee structure, and geographic coverage.",
+  ],
+  "beauty-cosmetics": [
+    "Treatment and product pages that answer questions about ingredients, suitability, results, and what to expect from a session.",
+    "Review presence on Google, Fresha, and beauty directories that AI tools draw on for salon and product recommendations.",
+    "Beauty editorial mentions in regional lifestyle media that AI models recognise as credible sources.",
+    "BeautySalon schema with service categories, price range, and practitioner credentials where relevant.",
+  ],
+  "logistics": [
+    "Capability pages that specify modes (road, air, sea, cross-docking), coverage areas, and certifications clearly.",
+    "Presence on freight forwarding directories, chamber of commerce listings, and sector trade directories.",
+    "Supply chain and logistics trade press mentions that reinforce your reputation among procurement teams.",
+    "Organization schema with your logistics categories, service area, certifications, and established-since date.",
+  ],
+  "insurance": [
+    "Policy and coverage pages that answer questions about what is included, excluded, how to claim, and who qualifies.",
+    "Verified listings on UAE Insurance Authority directories and comparison platforms buyers consult during research.",
+    "Financial media mentions in The National, Arabian Business, and MENA insurance trade publications.",
+    "InsuranceAgency schema that identifies your licence, product types, and regulated status.",
+  ],
+  "restaurants": [
+    "Menu pages that describe dishes clearly, including dietary notes, portion sizes, and any seasonal availability.",
+    "Active management of Google, TripAdvisor, and Zomato profiles so AI tools pull accurate, up-to-date dining information.",
+    "Food and lifestyle media mentions in Time Out, Michelin Guide (where applicable), and regional dining publications.",
+    "Restaurant schema with cuisine type, price range, opening hours, booking options, and geo coordinates.",
+  ],
+  "professional-services": [
+    "Service pages that define scope, process, typical timelines, and who the service is right for without vague marketing language.",
+    "Professional association listings, chamber of commerce directories, and sector-specific accreditation bodies.",
+    "Business media mentions that validate expertise and build the third-party credibility AI tools weight heavily.",
+    "ProfessionalService schema with your service categories, jurisdiction, and key contact and location details.",
+  ],
+};
+
+// AEO content structuring hints per industry (makes AEO articles feel less identical)
+const industryAeoHints: Record<string, string[]> = {
+  "real-estate": [
+    "Target questions like 'what is the average apartment price in Business Bay' and answer with a direct number plus context.",
+    "Use comparison tables for competing areas or property types - Google often pulls these as table snippets.",
+    "Add FAQPage schema to cover the regulatory, process, and cost questions buyers ask before engaging an agent.",
+    "Keep legal and financial terminology simple enough for a first-time buyer to understand without simplifying the facts.",
+  ],
+  "healthcare": [
+    "Answer symptom and condition questions with a clear paragraph before expanding into causes, treatment, and what to expect.",
+    "Use numbered lists for procedures and treatment steps - these often win How-To rich results in health searches.",
+    "Add FAQPage schema to patient-facing pages covering cost, preparation, recovery, and practitioner credentials.",
+    "Write for comprehension first: a patient who understands their options is more likely to book a consultation.",
+  ],
+  "law-firms": [
+    "Legal questions have precise answers - lead with the direct answer before adding context, jurisdiction caveats, and next steps.",
+    "Process questions like 'how long does a UAE visa application take' work well as numbered How-To snippets.",
+    "Add FAQPage schema to practice-area pages covering cost ranges, timelines, required documents, and likely outcomes.",
+    "Avoid ambiguous legal language that sounds authoritative but answers nothing - clarity wins snippets and trust.",
+  ],
+  "ecommerce": [
+    "Product questions like 'does X come in size Y' need a direct yes or no before any supporting detail.",
+    "Comparison questions deserve table snippets: structure product comparisons in HTML tables, not prose.",
+    "Add FAQPage schema to category pages covering shipping, returns, sizing, and material questions.",
+    "Buyers on mobile want fast answers - write product answers that land in one paragraph.",
+  ],
+  "saas": [
+    "Answer software comparison questions directly: 'X vs Y' posts should lead with the honest one-line summary.",
+    "How-To snippets work well for onboarding and setup questions - number every step and describe the outcome.",
+    "Add FAQPage schema to pricing, integration, and security pages where sales objections live.",
+    "Use the terminology your buyers actually type, not the internal product names your team uses.",
+  ],
+  "hospitality": [
+    "Answer location and proximity questions directly: 'how far is the hotel from the airport' should have a number in the first sentence.",
+    "Amenity and facilities questions work well as structured lists - clear, scannable, and easy to extract.",
+    "Add FAQPage schema covering check-in policies, pet allowances, parking, and dining options.",
+    "Review-style content that captures real guest experience signals earns trust with both humans and AI tools.",
+  ],
+  "financial-services": [
+    "Rate and eligibility questions demand direct answers: lead with the number or the criteria before any caveats.",
+    "Comparison content structured as a table earns table snippets for searches like 'best savings accounts UAE'.",
+    "Add FAQPage schema to product pages covering fees, minimum balances, account opening process, and documentation.",
+    "Regulated language is necessary but keep it at the end - the answer comes first, the disclaimer follows.",
+  ],
+  "construction": [
+    "Cost and timeline questions should open with realistic ranges before explaining what drives variation.",
+    "Process questions like 'how does a building permit work in Dubai' suit numbered How-To snippets well.",
+    "Add FAQPage schema to service pages covering project phases, required documents, and typical contractor responsibilities.",
+    "Technical content aimed at procurement teams should still be scannable - use headings and bullets, not dense paragraphs.",
+  ],
+  "education": [
+    "Admission and eligibility questions need a direct answer up front: requirements, deadlines, and the application process.",
+    "Programme comparison tables work well for searches across multiple courses or institutions.",
+    "Add FAQPage schema to course pages covering fees, scholarships, accreditation, career outcomes, and contact process.",
+    "Write for two audiences simultaneously: the student researching and the parent who will read the same page.",
+  ],
+  "manufacturing": [
+    "Specification and capability questions suit structured lists or tables - direct, scannable, and easy to compare.",
+    "Lead times, minimum order quantities, and certifications should appear in the first paragraph of any product page.",
+    "Add FAQPage schema to product and capability pages covering tolerances, quality standards, and RFQ process.",
+    "B2B buyers want data, not prose - use numbers, units, and specific claims rather than adjectives.",
+  ],
+  "dental-practices": [
+    "Procedure questions should answer the three things every patient wants to know: what happens, how long it takes, what it costs.",
+    "Pain and recovery questions are high-intent - a reassuring, factual answer earns both the click and the trust.",
+    "Add FAQPage schema to treatment pages covering anaesthesia options, preparation, aftercare, and follow-up.",
+    "Write at a level that removes anxiety, not at a clinical level that increases it.",
+  ],
+  "fitness-gyms": [
+    "Membership and pricing questions need a direct answer: lead with the tiers and costs before explaining what each includes.",
+    "Class schedule and timetable questions are high-intent local searches - structure these as clear lists or tables.",
+    "Add FAQPage schema covering induction process, cancellation policy, guest passes, and what to bring.",
+    "Motivational language is fine but buyers want specifics - answer the practical questions before the aspirational ones.",
+  ],
+  "travel-tourism": [
+    "Practical questions like 'do I need a visa to visit Dubai' have a binary answer - lead with it before the details.",
+    "Best-time-to-visit and itinerary questions suit numbered lists or structured tables well.",
+    "Add FAQPage schema to destination and tour pages covering group size, inclusions, cancellation, and what to pack.",
+    "Multi-stage travel research spans weeks - a page that answers follow-up questions earns repeat visits and citations.",
+  ],
+  "automotive": [
+    "Spec and comparison questions should lead with the numbers: engine size, fuel economy, boot capacity, and price.",
+    "Service and maintenance questions are evergreen search queries that suit clear How-To or explainer formats.",
+    "Add FAQPage schema to model and service pages covering warranty, insurance requirements, and ownership costs.",
+    "Buyers doing research want facts - give them the data and let the product sell itself.",
+  ],
+  "recruitment-agencies": [
+    "Candidate questions like 'how long does the recruitment process take' should have a direct timeline in the first sentence.",
+    "Job category pages work well as structured lists: roles, skills required, and typical salary ranges in the UAE market.",
+    "Add FAQPage schema covering placement fees, the interview process, work permit requirements, and sector coverage.",
+    "Write for two very different readers - the anxious candidate and the time-pressed hiring manager - with clear sections for each.",
+  ],
+  "beauty-cosmetics": [
+    "Before-and-after and results questions should answer honestly: realistic timelines, how many sessions, what to expect.",
+    "Treatment comparison questions suit side-by-side tables well - clear and scannable for buyers choosing between options.",
+    "Add FAQPage schema covering aftercare, contraindications, product ingredients, and booking process.",
+    "Buyers choosing beauty treatments need reassurance as much as information - tone and clarity both matter.",
+  ],
+  "logistics": [
+    "Cost and transit time questions should answer with realistic ranges before explaining what drives variation.",
+    "Customs and documentation questions are often searches by shippers facing a problem - answer procedurally and clearly.",
+    "Add FAQPage schema covering incoterms, insurance requirements, tracking access, and how RFQs work.",
+    "B2B logistics buyers want specifics, not generalities - publish the data that makes shortlisting you easy.",
+  ],
+  "insurance": [
+    "Coverage questions should state plainly what is included and what is excluded before any policy language.",
+    "Claims process questions suit numbered How-To snippets well - buyers want the steps, not the legal context first.",
+    "Add FAQPage schema covering premiums, excess levels, renewals, and how to file a claim quickly.",
+    "Plain language is a competitive advantage in insurance - the brand that explains clearly earns the quote request.",
+  ],
+  "restaurants": [
+    "Menu and dietary questions need direct answers: yes this dish is vegan, no it does not contain nuts.",
+    "Location and parking questions are high-intent local searches - answer with the specific street address and nearest landmark.",
+    "Add FAQPage schema covering reservation policy, dress code, group bookings, and what the chef recommends.",
+    "A hungry searcher is often a motivated buyer - answer the quick questions fast and make booking effortless.",
+  ],
+  "professional-services": [
+    "Project scope and cost questions should open with realistic ranges rather than 'it depends' non-answers.",
+    "Process and timeline questions work well as numbered steps - buyers want to understand the journey before they engage.",
+    "Add FAQPage schema covering what is included in the engagement, how progress is reported, and how to start.",
+    "Clients choosing professional services buy trust before they buy expertise - clarity and honesty build both.",
+  ],
+};
+
 // GEO for industry (all industries)
 for (const ind of industries) {
+  const geoSignals = industryGeoSignals[ind.slug] ?? [
+    `A clear description of who you serve, what you offer, and where you operate, stated consistently across your website and the web.`,
+    `Answer-first content that addresses the exact questions ${ind.buyer} ask before they decide.`,
+    "Third-party mentions in publications and directories AI models already recognise as credible sources.",
+    "Structured data that removes ambiguity about your services, location, and credentials.",
+  ];
   specs.push({
     slug: `geo-for-${ind.slug}`,
     category: "GEO",
@@ -275,51 +529,87 @@ for (const ind of industries) {
     ],
     sections: [
       { h: `Why GEO Matters for ${ind.name}`, p: [`${ind.name} involves ${ind.angle}. That research increasingly happens inside AI tools that synthesise an answer and name a few trusted brands. Being one of those named brands puts you in front of ${ind.buyer} at the moment of highest intent.`] },
-      { h: "The Signals AI Engines Reward", p: [`To earn citations in your category, ${ind.name.toLowerCase()} brands need to send clear, consistent signals across the web.`], list: ["A precise entity definition: what you do, who you serve, and where.", "Answer-first content addressing the exact questions your buyers ask.", "Mentions in the publications and directories AI models already trust.", "Structured data that removes ambiguity about your services and credentials."] },
-      { h: "Where to Start", p: [`Begin with the questions ${ind.buyer} ask before they buy. Build content that answers each one directly, mark it up with schema, and earn third-party mentions that reinforce your authority. Then track whether AI engines start naming you when those questions are asked.`] },
+      { h: `What AI Engines Need to See from ${ind.name} Brands`, p: [`To earn citations in your category, ${ind.name.toLowerCase()} brands need to send clear, specific signals across the web. Generic entity information is not enough.`], list: geoSignals },
+      { h: "Where to Begin", p: [`Start with the questions ${ind.buyer} actually ask before committing. Build pages that answer each one directly, mark them up with schema, and earn third-party mentions that reinforce your authority. Then test in ChatGPT, Perplexity, and Gemini monthly to track whether AI engines are starting to name you when those questions come up.`] },
     ],
-    takeaway: `GEO is the new front door for ${ind.name.toLowerCase()}. Build clear entities and citable content now and you will own AI visibility while competitors are still relying on yesterday's playbook.`,
+    takeaway: `GEO is the new front door for ${ind.name.toLowerCase()}. Build clear entities and citable content now, and you will own AI visibility while competitors are still relying on yesterday's playbook.`,
   });
 }
 
 // AEO for industry (all industries)
 for (const ind of industries) {
+  const aeoHints = industryAeoHints[ind.slug] ?? [
+    `Pose every buying question as a heading and answer it directly in the first sentence below.`,
+    "Use concise lists and definitions that map cleanly to how featured snippets display.",
+    "Add FAQPage schema to make the question-answer structure explicit for both Google and AI tools.",
+    "Keep answers factual, specific, and free of filler - every unnecessary sentence is one more the engine may skip.",
+  ];
   specs.push({
     slug: `aeo-for-${ind.slug}`,
     category: "AEO",
     title: `Answer Engine Optimization for ${ind.name}`,
     excerpt: `How ${ind.name.toLowerCase()} businesses can win featured snippets, voice answers, and Position Zero for high-intent searches.`,
     hook: [
-      `${ind.buyer} ask questions before they commit. In ${ind.name.toLowerCase()}, where decisions are ${ind.angle}, the brand that answers those questions first earns the trust and the click.`,
+      `${ind.buyer} ask questions before they commit. In ${ind.name.toLowerCase()}, where decisions are ${ind.angle}, the brand that answers those questions first earns the trust and often the enquiry.`,
       `Answer Engine Optimization is how you become that brand.`,
     ],
     sections: [
-      { h: `The Questions ${ind.buyer} Actually Ask`, p: [`Effective AEO starts with the real questions ${ind.buyer} type and speak. Map them across the buying journey, from early research to final decision, and you have your content blueprint.`] },
-      { h: "Structuring Content to Win the Answer", p: ["Answer engines extract content that is structured for extraction."], list: ["Pose the question as a heading and answer it in the first sentence below.", "Use concise lists and definitions that map to how snippets display.", "Add FAQPage schema to make the question-answer structure explicit.", "Keep answers factual, specific, and free of fluff."] },
-      { h: "From Snippets to Voice and AI", p: [`The same structure that wins a featured snippet wins voice answers and feeds AI summaries. For ${ind.name.toLowerCase()} brands, that means one well-built page can capture visibility across every answer surface at once.`] },
+      { h: `The Questions ${ind.buyer} Are Actually Asking`, p: [`Effective AEO starts with the real questions ${ind.buyer} type and speak. Map them across the full buying journey, from first curiosity to ready-to-commit, and you have a content blueprint built on demand rather than assumption.`] },
+      { h: `How to Structure ${ind.name} Content for Extraction`, p: [`Answer engines pull content that is built for extraction, not content built to impress. In ${ind.name.toLowerCase()}, that means:`], list: aeoHints },
+      { h: "From Snippets to Voice and AI Answers", p: [`The same structure that wins a featured snippet wins voice answers and feeds AI summaries. For ${ind.name.toLowerCase()} brands, a single well-built page can capture visibility across every answer surface simultaneously. That is a meaningful multiplier on any content investment.`] },
     ],
-    takeaway: `In ${ind.name.toLowerCase()}, being the answer beats being a result. Structure your content for extraction and you win snippets, voice, and AI visibility together.`,
+    takeaway: `In ${ind.name.toLowerCase()}, being the answer beats being a result. Structure your content for extraction and you win snippets, voice, and AI visibility at the same time.`,
   });
 }
 
+// Industry-specific content types for SEO guides
+const industrySeoContentTypes: Record<string, string[]> = {
+  "real-estate": ["Project and development pages targeting search terms buyers use during active property search.", "Area guides for each location you operate in, answering the questions buyers ask about neighbourhoods.", "Market reports and price trend articles that build topical authority over time.", "Case studies showing past listings and successful transactions that prove track record."],
+  "healthcare": ["Condition and treatment pages that match the terms patients search when symptoms first appear.", "Practitioner bios that establish credentials and help the practice appear in specialist searches.", "Patient-facing guides covering procedures, preparation, and recovery written clearly without clinical jargon.", "FAQ pages that address cost, waiting times, and what to expect - the questions patients hesitate to ask in person."],
+  "law-firms": ["Practice area pages that target specific legal queries in the jurisdiction you cover.", "Legal guides that explain UAE law in plain terms, building trust before the first consultation.", "Case outcome content (within ethical boundaries) that demonstrates experience in specific matter types.", "FAQ sections that answer the questions prospective clients ask before picking up the phone."],
+  "ecommerce": ["Product pages with unique, keyword-rich descriptions that go beyond the manufacturer copy.", "Category pages targeting collection-level searches like 'men's running shoes Dubai'.", "Buying guide articles that help undecided shoppers and rank for comparison queries.", "Review and social proof sections that build on-page trust alongside ranking signals."],
+  "saas": ["Feature pages targeting software capability searches your competitors are missing.", "Comparison pages built around the 'X vs Y' queries buyers research during evaluation.", "Use case and industry-specific pages that expand your addressable keyword universe.", "Tutorial and documentation content that ranks for the problem-solving queries your users type."],
+  "hospitality": ["Room and suite pages with unique descriptions that go beyond generic amenity lists.", "Location pages covering proximity to attractions, airports, and business districts.", "Experience content covering dining, spa, and events that captures non-accommodation queries.", "Guest FAQ content that addresses the practical questions that delay bookings."],
+  "financial-services": ["Product pages targeting specific financial product searches with clear terms and eligibility.", "Educational content that explains financial concepts and builds trust before the sales conversation.", "Comparison and rate guide content that captures the research phase of financial decisions.", "Regulation and compliance explainers that demonstrate authority in a trust-critical sector."],
+  "construction": ["Project and portfolio pages showing completed work by type, sector, and location.", "Service pages targeting specific construction categories: fit-out, infrastructure, MEP, civil works.", "Technical guides and specification content that positions you as an expert with procurement teams.", "Subcontractor and supplier capability content for B2B audiences that search by specialism."],
+  "education": ["Programme pages with keyword-optimised descriptions of outcomes, curriculum, and entry requirements.", "Student life and campus content that captures the social and practical research beyond academics.", "Career outcome pages linking programmes to industry roles and salary benchmarks.", "Application guide content that answers the process questions prospective students search repeatedly."],
+  "manufacturing": ["Product and specification pages with the technical data procurement teams search for.", "Capability pages for each process, material, or sector you serve.", "Certification and standards content that builds credibility with buyers who require verified suppliers.", "Industry application pages that connect your manufacturing capability to the sectors that need it."],
+  "dental-practices": ["Treatment pages for each procedure with clear descriptions of what to expect.", "Dentist and specialist profile pages that target name searches and credential-based queries.", "Pricing guide content that answers the cost questions patients research before booking.", "Location and accessibility content for the areas your practice draws patients from."],
+  "fitness-gyms": ["Class and programme pages with schedules, instructors, and what each session delivers.", "Membership and pricing pages that answer cost questions without making visitors hunt.", "Trainer profile pages that build personal brand and capture name or speciality searches.", "Local pages for the neighbourhoods within your catchment area."],
+  "travel-tourism": ["Destination guide content that captures planning-phase searches well before booking intent.", "Tour and experience pages targeting specific activity searches.", "Practical travel guide content covering visas, transport, weather, and packing.", "Seasonal and event content that captures timely search traffic."],
+  "automotive": ["Vehicle model and specification pages targeting make, model, and year searches.", "Service and maintenance pages for each type of work performed at your dealership or workshop.", "Financing and insurance explainer content that captures the cost-related queries buyers research.", "Used car and certified pre-owned content targeting search terms for budget-conscious buyers."],
+  "recruitment-agencies": ["Sector and role-specific pages targeting job searches in your specialist areas.", "Employer services content for the business development side of your audience.", "Career advice and CV guides that build trust with candidates before they register.", "Salary guide content that attracts both candidates benchmarking offers and employers setting budgets."],
+  "beauty-cosmetics": ["Treatment pages for each service with honest descriptions of results, sessions needed, and downtime.", "Practitioner profile pages that build personal brand and answer 'best X in Dubai' queries.", "Before-and-after and results content that builds social proof alongside ranking signals.", "Product guide content for retail lines that captures search from buyers researching before purchase."],
+  "logistics": ["Service pages for each mode and route you operate, targeting specific trade lane searches.", "Industry-specific logistics pages for the sectors you serve: e-commerce, pharma, automotive.", "Regulatory and customs guide content that builds authority and captures research-phase queries.", "Technology and tracking capability content for buyers who prioritise supply chain visibility."],
+  "insurance": ["Product pages for each insurance line with clear coverage summaries.", "Comparison guides for the insurance decisions your buyers research most: health, motor, home.", "Claim process guides that build trust and reduce anxiety before the policy is even purchased.", "Regulatory and licensing content that establishes credibility in a compliance-heavy category."],
+  "restaurants": ["Menu pages with descriptive dish content that ranks for cuisine and dietary search queries.", "Location pages covering each area or district where you operate.", "Event and group dining content for private hire searches that are often high-value.", "Chef and story content that builds brand personality and captures food media attention."],
+  "professional-services": ["Service pages for each specialism with clear scope, process, and outcome descriptions.", "Case study and client result content (where permitted) that builds proof of track record.", "Industry-specific pages targeting the sectors your clients come from.", "Thought leadership articles that establish authority and earn the backlinks that reinforce it."],
+};
+
 // SEO guides for industry (all industries)
 for (const ind of industries) {
+  const contentTypes = industrySeoContentTypes[ind.slug] ?? [
+    "Service pages that target the commercial-intent keywords buyers search closest to a decision.",
+    "Guides and FAQs that answer the research questions your category generates before the buying conversation starts.",
+    "Proof content: case studies, credentials, and results that turn traffic into trust.",
+    "Local pages for the cities or districts you actively serve.",
+  ];
   specs.push({
     slug: `seo-guide-for-${ind.slug}`,
     category: "SEO Strategy",
     title: `The Complete SEO Guide for ${ind.name}`,
     excerpt: clampExcerpt(`A practical SEO playbook for ${ind.name.toLowerCase()}: keyword strategy, content, technical health, and the authority that ranks.`),
     hook: [
-      `Most ${ind.name.toLowerCase()} businesses treat SEO as an afterthought, then wonder why competitors capture the ${ind.buyer} they should be winning. ${ind.name} is defined by ${ind.angle}, which makes organic search one of the highest-leverage channels available.`,
-      `This guide breaks down exactly how to win it.`,
+      `Most ${ind.name.toLowerCase()} businesses treat SEO as an afterthought, then wonder why competitors capture the ${ind.buyer} they should be winning. ${ind.name} is defined by ${ind.angle}, which makes organic search one of the most leveraged channels available.`,
+      `Here is exactly how to approach it.`,
     ],
     sections: [
-      { h: "Keyword Strategy That Matches Intent", p: [`Start by mapping the searches ${ind.buyer} make at every stage, from early research to ready-to-buy. The highest-value keywords are rarely the highest-volume ones. They are the queries that signal someone is close to a decision.`] },
-      { h: "Content That Ranks and Converts", p: [`For ${ind.name.toLowerCase()}, content has to do two jobs: rank on Google and build the trust that turns a visitor into an enquiry.`], list: ["Service pages that target commercial-intent keywords directly.", "Guides and FAQs that answer the questions buyers research first.", "Proof: case studies, results, and credentials that establish authority.", "Local pages if you serve specific cities or regions."] },
-      { h: "Technical Foundations", p: ["No amount of content ranks on a broken site. Fast load times, mobile-first design, clean crawlable structure, and valid schema markup are the foundation everything else depends on."] },
-      { h: "Building Authority", p: [`Google rewards demonstrated expertise and trust. Earn backlinks from credible sources in your sector, keep your business information consistent across the web, and publish content that genuinely helps ${ind.buyer}. Authority compounds slowly, then decisively.`] },
+      { h: "Start With Intent, Not Volume", p: [`Map the searches ${ind.buyer} make at every stage of the decision, from early curiosity to ready to act. The highest-value keywords are rarely the highest-volume ones. They are the queries that signal someone close to committing, and those are the ones worth owning.`] },
+      { h: `The Content ${ind.name} Needs`, p: [`Content for ${ind.name.toLowerCase()} has to earn two things at once: a ranking and the trust that turns a visitor into an enquiry. That requires covering the full range of what ${ind.buyer} actually search.`], list: contentTypes },
+      { h: "Technical Foundations That Support Everything Else", p: ["A fast, mobile-first, crawlable site is not a competitive advantage. It is the baseline. Slow pages, broken structure, and missing schema do not just hurt rankings, they undermine every other investment you make in content and authority."] },
+      { h: "Building Authority That Compounds", p: [`Search authority in ${ind.name.toLowerCase()} builds slowly and then suddenly. Earn backlinks from credible sector sources, keep your business information consistent everywhere it appears, and publish content that genuinely helps ${ind.buyer}. The compounding effect usually becomes visible at the 3-6 month mark.`] },
     ],
-    takeaway: `SEO for ${ind.name.toLowerCase()} is not complicated, but it is cumulative. Match intent, build trust, fix the technical foundations, and earn authority. Do it consistently and organic search becomes your most reliable source of ${ind.buyer}.`,
+    takeaway: `SEO for ${ind.name.toLowerCase()} rewards consistency more than cleverness. Match intent, fix the foundations, publish content that actually helps ${ind.buyer}, and earn authority through credible mentions. Do that for long enough and organic search becomes your most reliable source of qualified enquiries.`,
   });
 }
 
@@ -1058,4 +1348,11 @@ export const generatedBlogPosts: GenBlogPost[] = specs
 
 export const generatedBlogMeta: Record<string, { title: string; desc: string }> = Object.fromEntries(
   generatedBlogPosts.map((p) => [p.slug, { title: `${p.title} | SEODXB Blog`, desc: p.excerpt }]),
+);
+
+// Plain-text body content for static prerender injection.
+// Includes intro, section headings + paragraphs, and takeaway so
+// non-JS crawlers and AI bots can read the article without executing React.
+export const generatedBlogContent: Record<string, { intro: string[]; sections: BlogSection[]; takeaway: string }> = Object.fromEntries(
+  generatedBlogPosts.map((p) => [p.slug, { intro: p.intro, sections: p.sections, takeaway: p.takeaway }]),
 );

@@ -721,16 +721,74 @@ const FALLBACK_CATEGORY_DATA = CATEGORY_DATA["SEO Strategy"];
 function renderGenerated(p: GenBlogPost): React.ReactNode {
   const cd = CATEGORY_DATA[p.category] ?? FALLBACK_CATEGORY_DATA;
 
+  // Stable hash from slug so headings and intros vary across posts without randomness
+  const h = p.slug.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const pick = (arr: string[], offset = 0) => arr[(h + offset) % arr.length];
+
+  const statsLabels = [
+    "Numbers worth sitting with",
+    "What the data actually shows",
+    "Context behind this",
+    "The research behind this",
+  ];
+
+  const checklistH2s = [
+    "What to do about it",
+    "How to put this into practice",
+    "A practical action plan",
+    "Getting this done",
+  ];
+
+  const checklistOpeners = [
+    "Not a wishlist. A sequence.",
+    "Start here, work through in order.",
+    "Each step builds on the last.",
+    "In order of impact:",
+  ];
+
+  const techH2s = [
+    "Schema and technical foundations",
+    "Getting the structure right",
+    "The technical side of this",
+    "Structured data and crawler access",
+  ];
+
+  const toolsH2s = [
+    "Tools that help with this",
+    "What practitioners actually use",
+    "A short list of useful tools",
+    "Worth knowing about before you start",
+  ];
+
+  const toolsOpeners = [
+    "Not exhaustive. Just the ones that earn their place:",
+    "A short list, because short lists get used:",
+    "Each one cuts the time it takes to do this properly:",
+    "The tools that come up again and again in this work:",
+  ];
+
+  const takeawayH2s = [
+    "To wrap up",
+    "The short version",
+    "Final thought",
+    "What this comes down to",
+  ];
+
+  const faqH2s = [
+    "Common questions",
+    "Questions people ask about this",
+    "Things we get asked a lot",
+    "A few questions worth answering",
+  ];
+
   return (
     <div className="prose prose-lg max-w-none">
-      {/* Intro paragraphs */}
       {p.intro.map((para, i) => (
         <p key={`intro-${i}`}>{para}</p>
       ))}
 
-      {/* 2026 Stats callout */}
       <div className="not-prose my-8 rounded-2xl bg-primary/5 border border-primary/15 p-6">
-        <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">2026 Data &amp; Context</p>
+        <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">{pick(statsLabels)}</p>
         <ul className="space-y-3">
           {[cd.stat1, cd.stat2, cd.stat3].map((s, i) => (
             <li key={i} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
@@ -741,7 +799,6 @@ function renderGenerated(p: GenBlogPost): React.ReactNode {
         </ul>
       </div>
 
-      {/* Main content sections */}
       {p.sections.map((s, i) => (
         <React.Fragment key={`sec-${i}`}>
           <h2>{s.h}</h2>
@@ -758,27 +815,24 @@ function renderGenerated(p: GenBlogPost): React.ReactNode {
         </React.Fragment>
       ))}
 
-      {/* Practical implementation checklist */}
-      <h2>Implementation Checklist</h2>
-      <p>Work through these steps in order. Each one removes a specific barrier between your current position and measurably better results.</p>
+      <h2>{pick(checklistH2s, 1)}</h2>
+      <p>{pick(checklistOpeners, 2)}</p>
       <ul>
         {cd.checklist.map((item, i) => (
           <li key={i}>{item}</li>
         ))}
       </ul>
 
-      {/* Schema, robots.txt, llms.txt notes */}
-      <h2>Schema, robots.txt, and llms.txt</h2>
+      <h2>{pick(techH2s, 3)}</h2>
       <p>{cd.schemaNote}</p>
       {cd.robotsNote && <p>{cd.robotsNote}</p>}
       {cd.llmsNote && <p>{cd.llmsNote}</p>}
       {!cd.robotsNote && !cd.llmsNote && (
-        <p>Your robots.txt should allow all AI crawlers (GPTBot, PerplexityBot, ClaudeBot, Google-Extended) access to your content. Blocking these bots removes you from the AI-generated answers these tools serve to millions of users daily. A well-configured robots.txt paired with structured data and an llms.txt file gives your brand maximum visibility across both traditional search and AI-powered discovery channels.</p>
+        <p>Your robots.txt should allow all major AI crawlers: GPTBot, PerplexityBot, ClaudeBot, and Google-Extended. Blocking them removes your content from the training pools and live citation sources these tools draw on. Pair that with structured data and an llms.txt file and you have given your brand the clearest possible signal across both traditional and AI-powered search.</p>
       )}
 
-      {/* Tools */}
-      <h2>Tools Worth Using</h2>
-      <p>The right tools make this work faster and more reliable. These are the ones that consistently deliver value for this type of work:</p>
+      <h2>{pick(toolsH2s, 4)}</h2>
+      <p>{pick(toolsOpeners, 5)}</p>
       <div className="not-prose grid gap-3 my-4">
         {cd.tools.map((t, i) => (
           <div key={i} className="flex gap-3 rounded-xl border border-gray-100 bg-slate-50 px-4 py-3">
@@ -788,14 +842,12 @@ function renderGenerated(p: GenBlogPost): React.ReactNode {
         ))}
       </div>
 
-      {/* Takeaway */}
-      <h2>The Bottom Line</h2>
+      <h2>{pick(takeawayH2s, 6)}</h2>
       <p>{p.takeaway}</p>
 
-      {/* FAQs */}
       {p.faqs && p.faqs.length > 0 && (
         <React.Fragment>
-          <h2>Frequently Asked Questions</h2>
+          <h2>{pick(faqH2s, 7)}</h2>
           <div className="space-y-6 not-prose mt-6">
             {p.faqs.map((faq, i) => (
               <div key={`faq-${i}`} className="border border-gray-100 rounded-2xl p-6 bg-slate-50">
