@@ -1,5 +1,5 @@
 // ============================================================================
-// blogPosts2.ts — 500 additional SEO, AEO, and GEO blog posts.
+// blogPosts2.ts - 500 additional SEO, AEO, and GEO blog posts.
 // Each post carries a hero image, FAQ block, and internal links to money pages.
 // Content is generated from topic tables so every article has a unique title,
 // hook, sections, excerpt, and FAQs while sharing the site's editorial voice.

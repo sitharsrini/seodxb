@@ -41,7 +41,7 @@ export function Pricing() {
     <>
       <Helmet>
         <title>SEO Pricing Dubai - Transparent Plans for On-Page SEO & AEO | SEODXB</title>
-        <meta name="description" content="SEO pricing Dubai: Startup plan from $999/mo, Business from $2,999/mo. Transparent pricing, no lock-in contracts. Includes GEO and AEO." />
+        <meta name="description" content="SEO pricing Dubai: Startup from $999/mo, Business from $2,999/mo. Transparent pricing, no lock-in contracts, GEO and AEO." />
         <link rel="canonical" href="https://seodxb.com/pricing" />
         <meta property="og:title" content="SEO Pricing Dubai - Transparent SEO Packages UAE | SEODXB" />
         <meta property="og:description" content="Transparent SEO pricing for Dubai businesses. Startup from $999/mo, Business from $2,999/mo. No contracts, full GEO and AEO included." />

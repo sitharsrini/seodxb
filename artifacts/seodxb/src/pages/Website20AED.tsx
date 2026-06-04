@@ -76,7 +76,7 @@ const HOW_IT_WORKS = [
 const CAN_CLAIM = [
   "Business accounts with a submitted and approved listing on Listi.ae",
   "Businesses on any active plan (Free, Flexi, or Growth)",
-  "One claim per business — first-time only",
+  "One claim per business - first-time only",
 ];
 
 const CANNOT_CLAIM = [
@@ -109,14 +109,14 @@ const WHAT_WE_DONT_BUILD = [
 ];
 
 const PAYMENT_TABLE = [
-  { item: "Website claim (Free plan)", fee: "20 AED", refund: "Yes — if rejected by Listi" },
-  { item: "Website claim (Flexi plan)", fee: "5 AED", refund: "Yes — if rejected by Listi" },
-  { item: "Website claim (Growth plan)", fee: "5 AED", refund: "Yes — if rejected by Listi" },
+  { item: "Website claim (Free plan)", fee: "20 AED", refund: "Yes - if rejected by Listi" },
+  { item: "Website claim (Flexi plan)", fee: "5 AED", refund: "Yes - if rejected by Listi" },
+  { item: "Website claim (Growth plan)", fee: "5 AED", refund: "Yes - if rejected by Listi" },
   { item: "Additional section or page", fee: "49 AED", refund: "No" },
   { item: "Change request (post-delivery)", fee: "49 AED / section", refund: "No (after implementation)" },
   { item: "Full redesign", fee: "999 AED", refund: "No" },
-  { item: "Maintenance — first 2 days", fee: "Free", refund: "N/A" },
-  { item: "Maintenance — after 2 days", fee: "99 AED / 30-day window", refund: "No" },
+  { item: "Maintenance - first 2 days", fee: "Free", refund: "N/A" },
+  { item: "Maintenance - after 2 days", fee: "99 AED / 30-day window", refund: "No" },
   { item: "Domain purchase (if needed)", fee: "Varies", refund: "No (paid by business user)" },
   { item: "Email configuration", fee: "99 AED one-time setup", refund: "No" },
   { item: "Email hosting", fee: "As per Google / Microsoft pricing", refund: "N/A" },
@@ -136,7 +136,7 @@ const QUICK_REF = [
   ["Lead capture", "Email notifications (750-1,000/month) + stored leads"],
   ["999 plan extras", "Blog + Admin panel access"],
   ["Eligibility", "Business accounts with approved listing only"],
-  ["Rejection", "Listi may reject — full refund of claim fee issued"],
+  ["Rejection", "Listi may reject - full refund of claim fee issued"],
   ["Changes after delivery", "49 AED per section"],
   ["Full redesign", "999 AED (via support)"],
   ["Free maintenance", "2 days (48 hours) from go-live"],
@@ -205,14 +205,14 @@ export function Website20AED() {
           <div className="container mx-auto px-4 max-w-5xl relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-block bg-[#C8FF00] text-black text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full mb-6">
-                Limited-Time Promotion — Listi.ae Business Users Only
+                Limited-Time Promotion - Listi.ae Business Users Only
               </span>
               <h1 className="text-5xl md:text-7xl font-black tracking-[-0.03em] mb-5 leading-none">
                 Professional Website<br />
                 <span className="text-[#C8FF00]">From Just 5 AED.</span>
               </h1>
               <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
-                Get a professionally designed service website with secure hosting, HTTPS, and email lead capture — all included. Paid plan users (Flexi/Growth) pay 5 AED. Free plan users pay 20 AED.
+                Get a professionally designed service website with secure hosting, HTTPS, and email lead capture - all included. Paid plan users (Flexi/Growth) pay 5 AED. Free plan users pay 20 AED.
               </p>
               <p className="text-white/40 text-sm mb-10">Additional sections available at 49 AED each. Terms and conditions apply.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -341,7 +341,7 @@ export function Website20AED() {
             <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6 flex gap-4">
               <AlertTriangle size={22} className="text-amber-500 shrink-0 mt-0.5" />
               <div>
-                <p className="font-black text-amber-800 mb-1">Duplicate and Fake Accounts — Permanent Ban</p>
+                <p className="font-black text-amber-800 mb-1">Duplicate and Fake Accounts - Permanent Ban</p>
                 <p className="text-sm text-amber-700 leading-relaxed">Creating duplicate, fake, or secondary accounts under the same business name, domain, or owner identity to claim this offer more than once is strictly prohibited. Any such attempt results in an immediate and permanent ban from the Listi platform, including suspension of all associated accounts and listings.</p>
               </div>
             </div>
@@ -351,7 +351,7 @@ export function Website20AED() {
         {/* ── Scope ── */}
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
-            <SectionHeader tag="Scope of Work" title="What We Build" sub="Listi builds professional static service pages only — clean, responsive websites designed to showcase your business." />
+            <SectionHeader tag="Scope of Work" title="What We Build" sub="Listi builds professional static service pages only - clean, responsive websites designed to showcase your business." />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-2xl p-8 border border-slate-100">
                 <h3 className="font-black text-lg mb-5 flex items-center gap-2"><CheckCircle2 size={18} className="text-primary" /> What We Build</h3>
@@ -376,7 +376,7 @@ export function Website20AED() {
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 { icon: Mail, title: "A New Gmail Account", desc: "Create a fresh Gmail account and share credentials. We use it to set up hosting, analytics, and integrations. You retain full ownership." },
-                { icon: FileText, title: "Website Brief Form", desc: "Business name, tagline, about, services, contact details, brand colors. This is a one-time form — ensure all content is accurate before submitting." },
+                { icon: FileText, title: "Website Brief Form", desc: "Business name, tagline, about, services, contact details, brand colors. This is a one-time form - ensure all content is accurate before submitting." },
                 { icon: Globe, title: "Your Domain Name", desc: "Provide your own domain, or request Listi to help with domain purchase (additional cost). We handle DNS pointing and configuration." },
                 { icon: MessageCircle, title: "WhatsApp Number", desc: "Your active WhatsApp for communication during the build and for your website's contact section." },
               ].map((item) => (
@@ -436,14 +436,14 @@ export function Website20AED() {
                 <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Eligibility</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 space-y-3 leading-relaxed">
                   <p>This offer is exclusively available to registered business users on Listi.ae who have an active business listing. Individual or personal accounts, referrers, and unverified businesses are not eligible.</p>
-                  <p><strong>Who Can Claim:</strong> Business accounts with a submitted and approved listing on Listi.ae. Businesses on any active plan (Free, Flexi, or Growth). One claim per business — first-time only.</p>
+                  <p><strong>Who Can Claim:</strong> Business accounts with a submitted and approved listing on Listi.ae. Businesses on any active plan (Free, Flexi, or Growth). One claim per business - first-time only.</p>
                   <p><strong>Who Cannot Claim:</strong> Referrer accounts or individual users. Businesses with listings in draft status (must be submitted first). Suspended or deactivated accounts. Businesses found in violation of Listi's policies. Businesses that have already claimed and received a website under this offer (even if plan was discontinued and re-purchased).</p>
                 </AccordionContent>
               </AccordionItem>
 
               {/* Duplicate accounts */}
               <AccordionItem value="duplicate" className="border border-amber-200 rounded-2xl px-6 shadow-sm bg-amber-50/30">
-                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline text-amber-800">Duplicate and Fake Accounts — Permanent Ban</AccordionTrigger>
+                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline text-amber-800">Duplicate and Fake Accounts - Permanent Ban</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 leading-relaxed">
                   Creating duplicate, fake, or secondary accounts under the same business name, domain name, or owner identity to claim this offer more than once is strictly prohibited. Any such attempt will result in an immediate and permanent ban from the Listi platform, including suspension of all associated accounts and listings. Listi reserves the right to reject any application and withhold refunds if fraudulent or duplicate account activity is detected.
                 </AccordionContent>
@@ -472,8 +472,8 @@ export function Website20AED() {
                 <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Refund Policy</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 space-y-3 leading-relaxed">
                   <p>If Listi rejects your application and determines your business is not eligible, a full refund of the claim fee (5 AED or 20 AED, depending on your plan) will be issued to the original payment method within 5-10 business days.</p>
-                  <p><strong>When Refunds Apply:</strong> Application rejected by Listi — full refund issued automatically. Technical error preventing delivery — full refund if Listi is unable to fulfil the claim.</p>
-                  <p><strong>When Refunds Do NOT Apply:</strong> User voluntarily cancels after payment. Brief form not submitted within 30 days (claim expires, no refund). Website already delivered and marked Live. Change request fees (49 AED per section) after implementation. Dissatisfaction with design style — the build follows the brief as submitted.</p>
+                  <p><strong>When Refunds Apply:</strong> Application rejected by Listi - full refund issued automatically. Technical error preventing delivery - full refund if Listi is unable to fulfil the claim.</p>
+                  <p><strong>When Refunds Do NOT Apply:</strong> User voluntarily cancels after payment. Brief form not submitted within 30 days (claim expires, no refund). Website already delivered and marked Live. Change request fees (49 AED per section) after implementation. Dissatisfaction with design style - the build follows the brief as submitted.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -499,7 +499,7 @@ export function Website20AED() {
               <AccordionItem value="domain" className="border border-slate-200 rounded-2xl px-6 shadow-sm">
                 <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Domain</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 leading-relaxed">
-                  A domain name is required for your website. In the brief form, indicate whether you already own a domain or need to purchase one. If you already have a domain, provide it in the form and Listi will handle DNS pointing. If you need a domain, Listi will contact you with pricing and availability — additional cost applies. Domain purchase cost is entirely borne by the business user. Listi acts only as a facilitator and does not guarantee specific domain availability or pricing.
+                  A domain name is required for your website. In the brief form, indicate whether you already own a domain or need to purchase one. If you already have a domain, provide it in the form and Listi will handle DNS pointing. If you need a domain, Listi will contact you with pricing and availability - additional cost applies. Domain purchase cost is entirely borne by the business user. Listi acts only as a facilitator and does not guarantee specific domain availability or pricing.
                 </AccordionContent>
               </AccordionItem>
 
@@ -525,12 +525,12 @@ export function Website20AED() {
 
               {/* Changes */}
               <AccordionItem value="changes" className="border border-slate-200 rounded-2xl px-6 shadow-sm">
-                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Additional Changes — 49 AED Per Section</AccordionTrigger>
+                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Additional Changes - 49 AED Per Section</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 space-y-3 leading-relaxed">
                   <p>After delivery, modifications can be requested at 49 AED per section. Each change request covers one section of your website.</p>
                   <p><strong>What counts as one change (49 AED):</strong> Update text/images/content in a single section. Replace logo or hero banner. Update contact info. Change colours or font styles. Add/modify social links. Add a new static section (FAQ, testimonials, gallery). Add a new static page. Domain change or DNS reconfiguration.</p>
                   <p><strong>What we will NOT do (even as a paid change):</strong> E-commerce, shopping carts, checkout flows, web apps, dashboards, login portals, payment gateways, booking/scheduling systems, custom forms with database storage, or any dynamic/backend-driven features.</p>
-                  <p><strong>Change Request Process:</strong> Business submits request from dashboard. Admin reviews feasibility. Admin sends a payment link (49 AED) — business sees a Pay 49 AED button on dashboard. Payment confirmed via Stripe. Change implemented in 2-3 business days.</p>
+                  <p><strong>Change Request Process:</strong> Business submits request from dashboard. Admin reviews feasibility. Admin sends a payment link (49 AED) - business sees a Pay 49 AED button on dashboard. Payment confirmed via Stripe. Change implemented in 2-3 business days.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -557,9 +557,9 @@ export function Website20AED() {
 
               {/* Ownership transfer */}
               <AccordionItem value="ownership" className="border border-slate-200 rounded-2xl px-6 shadow-sm">
-                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Ownership Transfer — 499 AED</AccordionTrigger>
+                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Ownership Transfer - 499 AED</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 space-y-2 leading-relaxed">
-                  <p>Businesses can request full ownership transfer — including source code, backend, hosting accounts, and all associated assets — for a one-time fee of 499 AED.</p>
+                  <p>Businesses can request full ownership transfer - including source code, backend, hosting accounts, and all associated assets - for a one-time fee of 499 AED.</p>
                   <p><strong>Included:</strong> Complete website source code and files. Backend and hosting account credentials. All media assets. DNS and domain configuration details. Lead/contact form submission data.</p>
                   <p><strong>After transfer:</strong> Listi will no longer provide hosting, maintenance, bug fixes, or website support. No further change requests or maintenance windows available through Listi. Annual renewal fee no longer applies. Your Listi business listing and other Listi services remain active and unaffected.</p>
                 </AccordionContent>
@@ -569,17 +569,17 @@ export function Website20AED() {
               <AccordionItem value="seo" className="border border-slate-200 rounded-2xl px-6 shadow-sm">
                 <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">SEO Services (Optional)</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 space-y-2 leading-relaxed">
-                  <p><strong>Basic On-Page SEO Setup — 99 AED (one-time):</strong> Includes meta titles, meta descriptions, heading structure, image alt tags, and basic schema markup. Results are not guaranteed.</p>
-                  <p><strong>Monthly SEO Package — 1,200 AED / month:</strong> Optional ongoing SEO. Billed monthly, can be cancelled at any time with 30 days notice. Contact Listi support to subscribe.</p>
-                  <p>Both SEO services are optional upsells — not required for the website claim. SEO pricing is subject to change. Results are not guaranteed — SEO outcomes depend on competition, industry, and search engine algorithms.</p>
+                  <p><strong>Basic On-Page SEO Setup - 99 AED (one-time):</strong> Includes meta titles, meta descriptions, heading structure, image alt tags, and basic schema markup. Results are not guaranteed.</p>
+                  <p><strong>Monthly SEO Package - 1,200 AED / month:</strong> Optional ongoing SEO. Billed monthly, can be cancelled at any time with 30 days notice. Contact Listi support to subscribe.</p>
+                  <p>Both SEO services are optional upsells - not required for the website claim. SEO pricing is subject to change. Results are not guaranteed - SEO outcomes depend on competition, industry, and search engine algorithms.</p>
                 </AccordionContent>
               </AccordionItem>
 
               {/* Business email */}
               <AccordionItem value="email" className="border border-slate-200 rounded-2xl px-6 shadow-sm">
-                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Business Email Configuration — 99 AED</AccordionTrigger>
+                <AccordionTrigger className="font-bold text-left py-5 hover:no-underline">Business Email Configuration - 99 AED</AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pb-5 leading-relaxed">
-                  If you require a professional business email (e.g. info@yourdomain.com), Listi can configure it for a one-time service charge of 99 AED. Email hosting costs are separate and paid entirely by the business user directly to the email provider — Google Workspace or Microsoft 365. Listi only handles the technical setup and DNS configuration. All ongoing email hosting subscription fees are the sole responsibility of the business user.
+                  If you require a professional business email (e.g. info@yourdomain.com), Listi can configure it for a one-time service charge of 99 AED. Email hosting costs are separate and paid entirely by the business user directly to the email provider - Google Workspace or Microsoft 365. Listi only handles the technical setup and DNS configuration. All ongoing email hosting subscription fees are the sole responsibility of the business user.
                 </AccordionContent>
               </AccordionItem>
 
@@ -591,7 +591,7 @@ export function Website20AED() {
                   <p><strong>Prohibited Content:</strong> Illegal, fraudulent, or misleading content. Hate speech or discriminatory material. Content violating UAE federal laws or regulations. Unauthorized copyrighted material. Adult, gambling, or prohibited substance content.</p>
                   <p><strong>Right to Stop Production:</strong> Listi reserves the right to stop website production at any stage at its sole discretion. If significant work has already been completed, a partial or no refund may apply.</p>
                   <p><strong>Termination:</strong> Account suspension may result in the website being taken offline. Listi may terminate this promotion at any time without prior notice. Businesses will be given 30 days' notice before any active website is taken offline due to policy changes.</p>
-                  <p><strong>Liability:</strong> Service provided "as is" — no warranties on uptime, performance, or SEO ranking. Maximum liability limited to total amount paid.</p>
+                  <p><strong>Liability:</strong> Service provided "as is" - no warranties on uptime, performance, or SEO ranking. Maximum liability limited to total amount paid.</p>
                   <p><strong>Governing Law:</strong> These terms are governed by the laws of the United Arab Emirates. Any disputes shall be resolved through the appropriate courts in Dubai, UAE.</p>
                 </AccordionContent>
               </AccordionItem>
