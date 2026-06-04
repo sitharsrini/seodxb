@@ -306,7 +306,7 @@ commercial("seo-company-europe", {
 
 commercial("best-seo-agency-europe", {
   keyword: "Best SEO Agency Europe", badge: "Among Europe's Top SEO Agencies",
-  title: "Best SEO Agency Europe | SEODXB - Top-Rated European SEO",
+  title: "Best SEO Agency Europe | SEODXB - Specialist European SEO",
   metaDesc: "Looking for the best SEO agency in Europe? SEODXB delivers proven Google rankings, AI search visibility, and qualified leads across EU markets. Transparent pricing.",
   h1: "The Best SEO Agency in Europe for Measurable Results",
   intro: "What makes the best SEO agency in Europe? Deep specialisation, multilingual capability, and results that transfer across borders. SEODXB focuses exclusively on SEO, AEO, and GEO, delivering rankings and leads for businesses across every major European market.",

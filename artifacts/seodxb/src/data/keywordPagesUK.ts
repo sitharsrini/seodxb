@@ -360,7 +360,7 @@ commercial("seo-uk", {
 
 // F. Commercial pages (25 + 14 extra = 39 total commercial)
 commercial("seo-agency-uk", {
-  keyword: "SEO Agency UK", badge: "Top-Rated SEO Agency for UK Businesses",
+  keyword: "SEO Agency UK", badge: "Specialist SEO Agency for UK Businesses",
   title: "SEO Agency UK | SEODXB - Results-Driven UK SEO",
   metaDesc: "SEODXB is a specialist SEO agency for UK businesses, delivering Google rankings, AI search citations, and qualified leads. Transparent pricing, no contracts.",
   h1: "The SEO Agency UK Businesses Choose for Real Results",
@@ -391,7 +391,7 @@ commercial("seo-company-uk", {
 
 commercial("best-seo-agency-uk", {
   keyword: "Best SEO Agency UK", badge: "Among the Top SEO Agencies in the UK",
-  title: "Best SEO Agency UK | SEODXB - Top-Rated UK SEO Specialists",
+  title: "Best SEO Agency UK | SEODXB - Specialist UK SEO Agency",
   metaDesc: "Looking for the best SEO agency in the UK? SEODXB delivers proven Google rankings, AI search citations, and qualified leads for UK businesses. Transparent pricing.",
   h1: "The Best SEO Agency in the UK for Measurable Results",
   intro: "What makes the best SEO agency in the UK? Specialisation, transparency, and results you can measure. SEODXB focuses exclusively on SEO, AEO, and GEO, delivering rankings and leads for UK businesses without the distractions of a generalist marketing agency.",

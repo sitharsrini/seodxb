@@ -89,7 +89,7 @@ export function AEO() {
                   <rect x="20" y="104" width="440" height="110" rx="10" fill="white" stroke="#DADCE0" strokeWidth="1.5" />
                   <rect x="20" y="104" width="440" height="4" rx="2" fill="#4285F4" />
                   <text x="36" y="128" fontSize="10" fill="#4285F4">seodxb.com › about</text>
-                  <text x="36" y="146" fontSize="13" fontWeight="bold" fill="#1558D6">SEODXB - Dubai's Top-Rated SEO Agency</text>
+                  <text x="36" y="146" fontSize="13" fontWeight="bold" fill="#1558D6">SEODXB - A Dubai-Based Specialist SEO Agency</text>
                   <rect x="36" y="156" width="360" height="7" rx="4" fill="#F1F5F9" />
                   <rect x="36" y="170" width="300" height="7" rx="4" fill="#F1F5F9" />
                   <rect x="36" y="184" width="340" height="7" rx="4" fill="#F1F5F9" />

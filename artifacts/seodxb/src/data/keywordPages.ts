@@ -73,7 +73,7 @@ const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
   "seo-company-dubai": {
     slug: "seo-company-dubai",
     keyword: "SEO Company Dubai",
-    badge: "Top-Rated SEO Company in Dubai",
+    badge: "Specialist SEO Company in Dubai",
     title: "SEO Company Dubai | SEODXB - Results-Driven SEO Services",
     metaDesc: "Looking for a reliable SEO company in Dubai? SEODXB delivers proven Google rankings, traffic growth, and AI search visibility. No contracts. Transparent pricing.",
     h1: "Dubai's Most Results-Focused SEO Company",
@@ -149,7 +149,7 @@ const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
   "best-seo-agency-dubai": {
     slug: "best-seo-agency-dubai",
     keyword: "Best SEO Agency Dubai",
-    badge: "Voted Best SEO Agency in Dubai",
+    badge: "Specialist SEO Agency in Dubai",
     title: "Best SEO Agency Dubai | SEODXB - Specialist SEO for Dubai Businesses",
     metaDesc: "Searching for a specialist SEO agency in Dubai? SEODXB delivers measurable Google rankings and AI search visibility. See why Dubai businesses choose us.",
     h1: "Why Dubai Businesses Choose SEODXB for SEO",
@@ -1916,14 +1916,14 @@ const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
   "best-seo-agency-uae": {
     slug: "best-seo-agency-uae",
     keyword: "Best SEO Agency UAE",
-    badge: "Top Rated SEO Agency - UAE",
-    title: "Best SEO Agency UAE | SEODXB - Ranked #1 for Results-Driven SEO Across the UAE",
+    badge: "Specialist SEO Agency - UAE",
+    title: "Best SEO Agency UAE | SEODXB - Results-Driven SEO Across the UAE",
     metaDesc: "SEODXB is a specialist SEO agency serving the UAE - delivering measurable rankings, traffic growth, and ROI for businesses across Dubai, Abu Dhabi, and the wider UAE market.",
     h1: "Best SEO Agency in the UAE - Proven Results Across Every Emirates",
     intro: "There are hundreds of agencies claiming to be the best SEO company in the UAE - but results separate the best from the rest. SEODXB has built its reputation on one thing: measurable outcomes. Rankings that move. Traffic that grows. Leads that convert. We serve businesses across Dubai, Abu Dhabi, Sharjah, and the wider UAE, with a track record of delivering real organic growth for clients in some of the most competitive search markets in the world.",
     svgVariant: "serp",
     imageUrl: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=640&h=480&fit=crop&q=80&auto=format",
-    featuresTitle: "Why SEODXB is the UAE's Best SEO Agency",
+    featuresTitle: "Why UAE Businesses Choose SEODXB for SEO",
     featuresSubtitle: "Results, not promises - every deliverable tied to business outcomes.",
     features: [
       { title: "Proven UAE Track Record", desc: "100+ UAE businesses ranked on Google's first page across competitive industries - with verified case studies and client references available." },

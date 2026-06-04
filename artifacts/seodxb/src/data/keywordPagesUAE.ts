@@ -284,7 +284,7 @@ locHub("seo-fujairah", "fujairah");
 locHub("seo-umm-al-quwain", "umm-al-quwain");
 locHub("seo-al-ain", "al-ain");
 commercial("seo-company-abu-dhabi", {
-  keyword: "SEO Company Abu Dhabi", badge: "Top-Rated SEO Company in Abu Dhabi",
+  keyword: "SEO Company Abu Dhabi", badge: "Specialist SEO Company in Abu Dhabi",
   title: "SEO Company Abu Dhabi | SEODXB - Results-Driven SEO",
   metaDesc: "SEODXB is a results-focused SEO company in Abu Dhabi delivering Google rankings, local visibility, and AI search citations. No contracts, transparent pricing.",
   h1: "Abu Dhabi's Most Results-Focused SEO Company",
@@ -452,7 +452,7 @@ commercial("affordable-seo-uae", {
 });
 commercial("best-seo-company-uae", {
   keyword: "Best SEO Company UAE", badge: "Among the UAE's Top SEO Companies",
-  title: "Best SEO Company UAE | SEODXB - Top-Rated SEO Specialists",
+  title: "Best SEO Company UAE | SEODXB - Specialist SEO Experts",
   metaDesc: "Looking for the best SEO company in the UAE? SEODXB delivers proven Google rankings, AI search citations, and qualified leads across all emirates.",
   h1: "The Best SEO Company in the UAE for Measurable Results",
   intro: "What makes the best SEO company in the UAE? Specialisation, transparency, and results. SEODXB focuses exclusively on SEO, AEO, and GEO - no diluted attention across a dozen services - delivering rankings and leads for businesses across every emirate.",

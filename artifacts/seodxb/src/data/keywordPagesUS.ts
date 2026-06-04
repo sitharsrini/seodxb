@@ -546,7 +546,7 @@ stateHub("seo-massachusetts", "massachusetts");
 
 // F. Commercial intent pages (40)
 commercial("seo-agency-usa", {
-  keyword: "SEO Agency USA", badge: "Top-Rated SEO Agency in the USA",
+  keyword: "SEO Agency USA", badge: "Specialist SEO Agency in the USA",
   title: "SEO Agency USA | SEODXB - Results-Driven US SEO",
   metaDesc: "SEODXB is a specialist SEO agency for US businesses, delivering Google rankings, AI search citations, and qualified leads. Transparent pricing, no contracts.",
   h1: "The SEO Agency US Businesses Choose for Real Results",
@@ -577,7 +577,7 @@ commercial("seo-company-usa", {
 
 commercial("best-seo-agency-usa", {
   keyword: "Best SEO Agency USA", badge: "Among the Top SEO Agencies in the USA",
-  title: "Best SEO Agency USA | SEODXB - Top-Rated US SEO Specialists",
+  title: "Best SEO Agency USA | SEODXB - Specialist US SEO Agency",
   metaDesc: "Looking for the best SEO agency in the USA? SEODXB delivers proven Google rankings, AI search citations, and qualified leads for US businesses. Transparent pricing.",
   h1: "The Best SEO Agency in the USA for Measurable Results",
   intro: "What makes the best SEO agency in the USA? Specialisation, transparency, and results you can measure. SEODXB focuses exclusively on SEO, AEO, and GEO, delivering rankings and leads for businesses from New York to Los Angeles without the distractions of a generalist agency.",
