@@ -257,10 +257,13 @@ const BLOG_META: Record<string, { title: string; desc: string }> = {
   "local-search-dubai": { title: "Dominating Local Search in Dubai: A Practical Guide | SEODXB Blog", desc: "Google Business Profile, UAE citation strategy, and review generation to dominate Dubai Map Pack results." },
   "semantic-seo-entities-keywords": { title: "Semantic SEO: Writing for Entities, Not Just Keywords | SEODXB Blog", desc: "Google AI Overviews reach 1B users monthly. Build topical authority and entity signals that earn citations." },
   "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Average position and DA hide more than they reveal. The 2026 SEO metrics that actually connect to revenue." },
+  "what-chatgpt-sees-when-it-looks-for-your-dubai-business": { title: "What ChatGPT Sees When Someone Asks It to Find Your Dubai Business | SEODXB Blog", desc: "A walk through what AI engines actually see when searching for Dubai businesses, and why most are invisible." },
+  "two-dubai-businesses-one-invisible-online": { title: "Two Dubai Businesses, Same Quality, One Invisible Online | SEODXB Blog", desc: "The gap between Dubai businesses that rank and those that do not is rarely quality. It is almost always visibility." },
+  "the-honest-guide-to-seo-timelines-in-dubai": { title: "The Honest Guide to SEO Timelines: What Dubai Businesses Should Actually Expect | SEODXB Blog", desc: "Specific, honest expectations for how long SEO takes in the Dubai market, month by month." },
   // Merge the 200 + 500 generated posts. Inline entries above always win on
   // any slug collision because the spread comes second only for new keys.
-  ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
-  ...Object.fromEntries(Object.entries(generatedBlogMeta2).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue"].includes(slug))),
+  ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue", "what-chatgpt-sees-when-it-looks-for-your-dubai-business", "two-dubai-businesses-one-invisible-online", "the-honest-guide-to-seo-timelines-in-dubai"].includes(slug))),
+  ...Object.fromEntries(Object.entries(generatedBlogMeta2).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue", "what-chatgpt-sees-when-it-looks-for-your-dubai-business", "two-dubai-businesses-one-invisible-online", "the-honest-guide-to-seo-timelines-in-dubai"].includes(slug))),
 };
 
 // Return a hidden-but-crawlable HTML block for key static pages.
@@ -292,6 +295,54 @@ function buildStaticBody(slug: string): string {
 <h1>SEO Pricing Dubai - Transparent SEO Packages UAE</h1>
 <p>SEODXB offers transparent SEO pricing with no lock-in contracts. Startup plan from $999 per month (10-15 pages, 20 keywords, GEO and AEO included). Business plan from $2,999 per month (up to 50 pages, 75 keywords tracked).</p>
 <p>All plans include: Keyword Research, Technical SEO, Local SEO, GEO optimisation, AEO optimisation, Monthly Reports, Google Business Profile, Schema Markup, Human-written blog articles.</p>
+`;
+  }
+
+  // Hand-written blog posts: inject their intro paragraphs as static body
+  // since their content is JSX in BlogPost.tsx and not in generatedBlogContent.
+  else if (slug === "what-chatgpt-sees-when-it-looks-for-your-dubai-business") {
+    inner = `
+<article>
+<h1>What ChatGPT Sees When Someone Asks It to Find Your Dubai Business</h1>
+<p>A few weeks ago I ran an experiment. I opened ChatGPT, Perplexity, and Google Gemini, and I typed variations of the same question into each one: "Who are the best physiotherapists in Dubai?" Then "Which property consultants are worth talking to in Business Bay?" Then "What SEO agencies in Dubai actually get results?"</p>
+<p>I did this for fifteen different service categories across Dubai. Then I went and visited the websites of every business that was named, and every business that was not named but should have been by any reasonable measure. The AI engines were not simply citing the most popular businesses. They were citing businesses that had made it easy to be cited.</p>
+<h2>The Problem With Invisible Confidence</h2>
+<p>When a business does not appear in an AI-generated answer, nobody sends them a notification. The enquiries that would have arrived simply never do. You cannot optimise for what you cannot see losing. And in the UAE market right now, a significant and growing share of service discovery is happening inside AI tools that most businesses have not even begun to think about.</p>
+<h2>What Got Businesses Named in My Tests</h2>
+<p>Three factors separated the cited from the uncited. Entity clarity at scale: described consistently and specifically across website, Google Business Profile, LinkedIn, and industry directories. Third-party mentions from trusted UAE sources: Gulf News, Khaleej Times, The National, Zawya, and sector-specific platforms. Content that answers specific buyer questions: not generic service listings but direct answers to the queries buyers actually type.</p>
+<h2>Why Dubai Businesses Are Particularly Exposed</h2>
+<p>Roughly 89% of Dubai's population is expatriate. Every year hundreds of thousands of new residents arrive with no existing network of trusted local recommendations. For an expat who landed in Dubai three months ago and needs a financial adviser, asking ChatGPT is the obvious first step. Whoever AI names in that answer gets the enquiry, often without any further research.</p>
+<p>The businesses that are most visible in AI search are not always the best in their category. But they are the ones that made it easiest for an AI to understand them, trust them, and name them with confidence.</p>
+</article>
+`;
+  } else if (slug === "two-dubai-businesses-one-invisible-online") {
+    inner = `
+<article>
+<h1>Two Dubai Businesses, Same Quality, One Invisible Online</h1>
+<p>A law firm came to me frustrated. Their work was genuinely excellent. Strong client retention, referrals from satisfied clients, a reputation in their specific practice area that their peers in the legal community knew well. But online, they were invisible. Searches for the exact services they offered, in the exact areas of Dubai they served, returned their competitors on the first page and buried my client somewhere on page four.</p>
+<p>Across town, a rival firm was visible everywhere. First-page Google rankings for a dozen relevant terms. Featured in AI answers on Perplexity. Cited in legal directories. This rival was not demonstrably better at the actual legal work. But they were infinitely better at being found.</p>
+<h2>What Visibility Infrastructure Actually Means</h2>
+<p>The visible firm had a website that loaded in under two seconds on mobile, had no broken pages, and had structured data markup on every important page. The invisible firm's website loaded in six seconds on mobile with broken internal links, pages not being indexed, and a page structure that Google could not parse into a coherent picture of what the firm did.</p>
+<h2>The Seven Differences</h2>
+<p>Page speed and Core Web Vitals. Indexed content volume and depth. Schema markup. Google Business Profile activity. Third-party mentions from credible sources. Review recency and volume. Content that answers buyer questions rather than describes the business to itself.</p>
+<p>These seven differences appear with remarkable consistency across every comparable business pair I have looked at. The gap between them is almost never about quality. It is almost entirely about visibility infrastructure.</p>
+</article>
+`;
+  } else if (slug === "the-honest-guide-to-seo-timelines-in-dubai") {
+    inner = `
+<article>
+<h1>The Honest Guide to SEO Timelines: What Dubai Businesses Should Actually Expect</h1>
+<p>The most common lie in SEO is also the most damaging. Not the lie told by bad agencies. The most damaging lie is the one businesses tell themselves: that SEO is a short project with a defined end point, after which the rankings appear and the enquiries flow.</p>
+<h2>Month One: You Are Mostly Cleaning Up</h2>
+<p>Technical audit, crawl analysis, indexing review, site speed assessment, schema implementation, Google Search Console cleanup. This work is not glamorous and it does not directly produce visible ranking improvements. But it is the reason that months four and five produce visible improvements instead of months eight and nine.</p>
+<h2>Months Two and Three: The First Content Goes Live</h2>
+<p>New service pages, revised existing pages structured for search intent, FAQ content targeting the questions your buyers actually research, blog articles targeting informational queries. Google starts seeing this new content and indexing it, but it does not immediately rank it.</p>
+<h2>Month Four: The First Real Signal</h2>
+<p>Around month four, pages built on solid keyword research start to move. Not to page one. But from page six to page three. From position forty to position eighteen. These movements are meaningful even when they do not yet produce traffic. They tell you Google is assessing the pages positively.</p>
+<h2>The Twelve-Month Inflection</h2>
+<p>Month twelve looks meaningfully different from month six in a way that month six did not look different from month three. The compounding has had enough time to work. Twelve months of consistent, well-structured SEO work typically results in meaningful first-page presence and organic leads that have shifted from a trickle to a consistent, predictable channel.</p>
+<p>The businesses in Dubai that have built strong organic positions did not get there by finding a shortcut. They got there by starting, staying consistent, and waiting out the months where the dashboard did not tell an exciting story.</p>
+</article>
 `;
   }
 
@@ -392,7 +443,8 @@ function prerender() {
   mkdirSync(join(DIST, "blog"), { recursive: true });
   for (const [slug, meta] of Object.entries(BLOG_META)) {
     let blogHtml = buildStaticHead(shell, `${SITE}/blog/${slug}`, meta.title, meta.desc, "article");
-    const bodyBlock = buildBlogStaticBody(slug);
+    // Try generated content first, then fall back to hand-written static body
+    const bodyBlock = buildBlogStaticBody(slug) || buildStaticBody(slug);
     if (bodyBlock) {
       blogHtml = blogHtml.replace('<div id="root"></div>', `${bodyBlock}\n<div id="root"></div>`);
     }
