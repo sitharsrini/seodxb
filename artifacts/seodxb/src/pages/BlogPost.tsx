@@ -15,8 +15,8 @@ const AUTHOR = {
   name: "Srinivasan R",
   title: "SEO Strategist & Founder, SEODXB",
   bio: "Srinivasan is the founder of SEODXB and a specialist in On-Page SEO, Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO). He helps businesses across Dubai and the UAE dominate search across Google, ChatGPT, and Perplexity.",
-  linkedin: "https://www.linkedin.com/in/rsrinivasan163",
-  url: "https://www.linkedin.com/in/rsrinivasan163",
+  linkedin: "https://www.linkedin.com/in/srinivasanram163/",
+  url: "https://www.linkedin.com/in/srinivasanram163/",
 };
 
 const authorSchema = {

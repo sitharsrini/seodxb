@@ -51,8 +51,8 @@ const personSchema = {
   "@type": "Person",
   name: "Srinivasan R",
   jobTitle: "SEO Strategist and Founder",
-  url: "https://www.linkedin.com/in/rsrinivasan163",
-  sameAs: ["https://www.linkedin.com/in/rsrinivasan163"],
+  url: "https://www.linkedin.com/in/srinivasanram163/",
+  sameAs: ["https://www.linkedin.com/in/srinivasanram163/"],
   worksFor: {
     "@type": "Organization",
     name: "SEODXB",
@@ -190,7 +190,7 @@ export function About() {
                 He handles strategy and execution directly. Clients talk to the person doing the work.
               </p>
               <a
-                href="https://www.linkedin.com/in/rsrinivasan163"
+                href="https://www.linkedin.com/in/srinivasanram163/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
