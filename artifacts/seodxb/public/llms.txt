@@ -326,6 +326,28 @@ SEODXB serves clients worldwide. We maintain 1,156 dedicated SEO landing pages a
 - https://seodxb.com/blog/semantic-seo-entities-keywords - Semantic SEO: Why Entities Matter More Than Keywords
 - https://seodxb.com/blog/tracking-seo-metrics-revenue - The SEO Metrics That Actually Matter for Business Growth
 
+## Featured Guides 2026 (in-depth, researched)
+
+- https://seodxb.com/blog/how-ai-search-engines-choose-which-brands-to-cite - How AI Search Engines Decide Which Brands to Cite
+- https://seodxb.com/blog/geo-strategy-playbook-2026 - The 2026 GEO Strategy Playbook for Earning AI Citations
+- https://seodxb.com/blog/llms-txt-implementation-guide-2026 - The 2026 llms.txt Implementation Guide for Business Websites
+- https://seodxb.com/blog/how-to-get-cited-in-google-ai-overviews - How to Get Your Pages Cited in Google AI Overviews
+- https://seodxb.com/blog/answer-engine-optimization-complete-guide-2026 - Answer Engine Optimization: A Complete 2026 Guide
+- https://seodxb.com/blog/featured-snippets-playbook - The Featured Snippets Playbook for Winning Position Zero
+- https://seodxb.com/blog/voice-search-optimization-2026 - Voice Search Optimization in 2026: What Still Works
+- https://seodxb.com/blog/core-web-vitals-2026-complete-guide - Core Web Vitals in 2026: The Complete LCP, INP, CLS Guide
+- https://seodxb.com/blog/fixing-inp-the-hardest-core-web-vital - Fixing INP: The Hardest Core Web Vital to Pass
+- https://seodxb.com/blog/schema-markup-implementation-guide - Schema Markup: A Practical Implementation Guide
+- https://seodxb.com/blog/robots-txt-for-ai-crawlers-2026 - Configuring robots.txt for AI Crawlers in 2026
+- https://seodxb.com/blog/eeat-2026-experience-first-content - E-E-A-T in 2026: Why Experience Now Leads
+- https://seodxb.com/blog/building-topical-authority - Building Topical Authority That Compounds
+- https://seodxb.com/blog/link-building-that-works-2026 - Link Building That Still Works in 2026
+- https://seodxb.com/blog/seo-for-real-estate-dubai-2026 - SEO for Real Estate in Dubai: A 2026 Field Guide
+- https://seodxb.com/blog/geo-for-healthcare-clinics-uae - GEO for Healthcare Clinics in the UAE
+- https://seodxb.com/blog/seo-for-financial-services-dubai - SEO for Financial Services in Dubai
+- https://seodxb.com/blog/ecommerce-seo-2026-growth-guide - Ecommerce SEO: A 2026 Growth Guide
+- https://seodxb.com/blog/international-seo-hreflang-guide - International SEO and hreflang, Demystified
+
 ## Pricing
 
 Three transparent plans with no contracts and no hidden fees:

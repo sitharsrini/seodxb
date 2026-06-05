@@ -17,6 +17,7 @@ import { fileURLToPath } from "url";
 import { keywordPages, clampMetaDesc, type KeywordPageConfig } from "../src/data/keywordPages";
 import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
 import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
+import { longFormMeta, longFormContent } from "../src/data/longform";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -264,6 +265,8 @@ const BLOG_META: Record<string, { title: string; desc: string }> = {
   // any slug collision because the spread comes second only for new keys.
   ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue", "what-chatgpt-sees-when-it-looks-for-your-dubai-business", "two-dubai-businesses-one-invisible-online", "the-honest-guide-to-seo-timelines-in-dubai"].includes(slug))),
   ...Object.fromEntries(Object.entries(generatedBlogMeta2).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue", "what-chatgpt-sees-when-it-looks-for-your-dubai-business", "two-dubai-businesses-one-invisible-online", "the-honest-guide-to-seo-timelines-in-dubai"].includes(slug))),
+  // 150 long-form researched articles win on their own unique slugs.
+  ...longFormMeta,
 };
 
 // Return a hidden-but-crawlable HTML block for key static pages.
@@ -373,8 +376,19 @@ function buildStaticHead(shell: string, url: string, title: string, descRaw: str
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escape(desc)}" />`);
 }
 
-// Merge both blog content maps for lookup in the blog loop.
-const ALL_BLOG_CONTENT = { ...generatedBlogContent, ...generatedBlogContent2 };
+// Merge all blog content maps for lookup in the blog loop. Long-form entries
+// carry FAQs too, which we render into the static body for AEO visibility.
+type BlogStaticContent = {
+  intro: string[];
+  sections: { h: string; p: string[]; list?: string[] }[];
+  takeaway: string;
+  faqs?: { q: string; a: string }[];
+};
+const ALL_BLOG_CONTENT: Record<string, BlogStaticContent> = {
+  ...generatedBlogContent,
+  ...generatedBlogContent2,
+  ...longFormContent,
+};
 
 // Build an off-screen article body from the post's plain-text data so AI
 // crawlers and non-JS bots can read the article content without executing React.
@@ -392,6 +406,12 @@ function buildBlogStaticBody(slug: string): string {
     }
   }
   parts.push(`<p>${esc(c.takeaway)}</p>`);
+  if (c.faqs && c.faqs.length > 0) {
+    parts.push(`<h2>Frequently asked questions</h2>`);
+    for (const f of c.faqs) {
+      parts.push(`<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`);
+    }
+  }
   return `<div id="blog-static-body" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><article>${parts.join("\n")}</article></div>`;
 }
 

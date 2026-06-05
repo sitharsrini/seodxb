@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { generatedBlogPosts, type GenBlogPost } from "@/data/blogPosts";
 import { generatedBlogPosts2 } from "@/data/blogPosts2";
+import { longFormArticles } from "@/data/longform";
+import type { LongFormArticle } from "@/data/longform/types";
 
 const AUTHOR = {
   name: "Srinivasan R",
@@ -1021,6 +1023,126 @@ for (const gp of [...generatedBlogPosts, ...generatedBlogPosts2]) {
     content: renderGenerated(gp),
     imageUrl: gp.imageUrl,
     faqs: gp.faqs,
+  };
+}
+
+// ── Long-form researched articles (images, video, references, FAQs) ──────────
+function renderLongForm(a: LongFormArticle): React.ReactNode {
+  return (
+    <div className="prose prose-lg max-w-none">
+      {a.intro.map((para, i) => (
+        <p key={`intro-${i}`}>{para}</p>
+      ))}
+
+      {a.keyStats.length > 0 && (
+        <div className="not-prose my-8 rounded-2xl bg-primary/5 border border-primary/15 p-6">
+          <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">Key numbers</p>
+          <ul className="space-y-3">
+            {a.keyStats.map((s, i) => (
+              <li key={i} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                <span className="text-primary font-black text-base shrink-0">→</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {a.sections.map((s, i) => (
+        <React.Fragment key={`sec-${i}`}>
+          <h2>{s.h}</h2>
+          {s.p.map((para, j) => (
+            <p key={`sec-${i}-p-${j}`}>{para}</p>
+          ))}
+          {s.list && (
+            <ul>
+              {s.list.map((li, j) => (
+                <li key={`sec-${i}-li-${j}`}>{li}</li>
+              ))}
+            </ul>
+          )}
+          {s.image && (
+            <figure className="not-prose my-8">
+              <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-[16/9]">
+                <img src={s.image.url} alt={s.image.alt} loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              {s.image.caption && (
+                <figcaption className="text-xs text-gray-400 mt-2 text-center">{s.image.caption}</figcaption>
+              )}
+            </figure>
+          )}
+
+          {/* Drop the video embed in after the second section */}
+          {i === 1 && a.youtubeId && (
+            <figure className="not-prose my-10">
+              <div className="rounded-2xl overflow-hidden bg-black aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube-nocookie.com/embed/${a.youtubeId}`}
+                  title={a.youtubeTitle ?? a.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              {a.youtubeTitle && (
+                <figcaption className="text-xs text-gray-400 mt-2 text-center">Watch: {a.youtubeTitle}</figcaption>
+              )}
+            </figure>
+          )}
+        </React.Fragment>
+      ))}
+
+      <h2>The bottom line</h2>
+      <p>{a.takeaway}</p>
+
+      {a.faqs.length > 0 && (
+        <React.Fragment>
+          <h2>Frequently asked questions</h2>
+          <div className="space-y-6 not-prose mt-6">
+            {a.faqs.map((faq, i) => (
+              <div key={`faq-${i}`} className="border border-gray-100 rounded-2xl p-6 bg-slate-50">
+                <h3 className="font-bold text-gray-900 text-base mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </React.Fragment>
+      )}
+
+      {a.references.length > 0 && (
+        <React.Fragment>
+          <h2>References and further reading</h2>
+          <ul className="not-prose mt-4 space-y-2">
+            {a.references.map((r, i) => (
+              <li key={`ref-${i}`} className="text-sm text-gray-600">
+                <a href={r.url} target="_blank" rel="noopener noreferrer nofollow" className="text-primary font-medium hover:underline">
+                  {r.title}
+                </a>
+                <span className="text-gray-400"> ({r.publisher})</span>
+              </li>
+            ))}
+          </ul>
+        </React.Fragment>
+      )}
+    </div>
+  );
+}
+
+for (const a of longFormArticles) {
+  if (posts[a.slug]) continue; // never overwrite an existing post
+  posts[a.slug] = {
+    category: a.category,
+    title: a.title,
+    date: a.date,
+    iso: a.iso,
+    updated: a.updated,
+    time: a.time,
+    excerpt: a.excerpt,
+    content: renderLongForm(a),
+    imageUrl: a.heroImage,
+    faqs: a.faqs,
   };
 }
 

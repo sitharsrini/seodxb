@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { generatedBlogPosts } from "@/data/blogPosts";
 import { generatedBlogPosts2 } from "@/data/blogPosts2";
+import { longFormArticles } from "@/data/longform";
 
 const inlinePosts = [
   {
@@ -87,8 +88,24 @@ const generatedListing = allGenerated
     time: p.time,
     date: p.date,
   }));
+// 150 researched long-form articles, featured right after the hand-written
+// posts as the freshest, deepest content in the library.
+const longFormListing = longFormArticles.map((a) => ({
+  slug: a.slug,
+  category: a.category,
+  title: a.title,
+  excerpt: a.excerpt,
+  time: a.time,
+  date: a.date,
+}));
+
 const inlineSlugs = new Set(inlinePosts.map((p) => p.slug));
-const posts = [...inlinePosts, ...generatedListing.filter((p) => !inlineSlugs.has(p.slug))];
+const longFormSlugs = new Set(longFormListing.map((p) => p.slug));
+const posts = [
+  ...inlinePosts,
+  ...longFormListing.filter((p) => !inlineSlugs.has(p.slug)),
+  ...generatedListing.filter((p) => !inlineSlugs.has(p.slug) && !longFormSlugs.has(p.slug)),
+];
 
 export function Blog() {
   return (
