@@ -73,3 +73,10 @@ export const longFormContent: Record<string, { intro: string[]; sections: Articl
   Object.fromEntries(
     longFormArticles.map((a) => [a.slug, { intro: a.intro, sections: a.sections, takeaway: a.takeaway, faqs: a.faqs }]),
   );
+
+// Schema data for static JSON-LD injection (Article, FAQPage, Breadcrumb) so the
+// structured data lives in raw HTML, not only in React-rendered Helmet tags.
+export const longFormSchemaData: Record<string, { title: string; excerpt: string; iso: string; updated: string; heroImage: string; faqs: ArticleFAQ[] }> =
+  Object.fromEntries(
+    longFormArticles.map((a) => [a.slug, { title: a.title, excerpt: a.excerpt, iso: a.iso, updated: a.updated, heroImage: a.heroImage, faqs: a.faqs }]),
+  );

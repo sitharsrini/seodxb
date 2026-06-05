@@ -17,7 +17,7 @@ import { fileURLToPath } from "url";
 import { keywordPages, clampMetaDesc, type KeywordPageConfig } from "../src/data/keywordPages";
 import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
 import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
-import { longFormMeta, longFormContent } from "../src/data/longform";
+import { longFormMeta, longFormContent, longFormSchemaData } from "../src/data/longform";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -360,6 +360,56 @@ function injectStaticBody(html: string, slug: string): string {
   return html.replace('<div id="root"></div>', `${block}\n<div id="root"></div>`);
 }
 
+const AUTHOR_NAME = "Srinivasan R";
+const AUTHOR_URL = "https://www.linkedin.com/in/srinivasanram163/";
+
+// Build raw-HTML JSON-LD (Article + BreadcrumbList + FAQPage) for a blog post so
+// the structured data lives in the served source, not only in React Helmet tags.
+// Only emitted for long-form articles where full data (dates, image, FAQs) exists.
+function buildBlogSchema(slug: string, url: string): string {
+  const d = longFormSchemaData[slug];
+  if (!d) return "";
+  const blocks: string[] = [];
+
+  blocks.push(JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: d.title,
+    description: d.excerpt,
+    url,
+    datePublished: d.iso,
+    dateModified: d.updated,
+    author: { "@type": "Person", name: AUTHOR_NAME, url: AUTHOR_URL },
+    publisher: { "@type": "Organization", name: "SEODXB", url: SITE, logo: { "@type": "ImageObject", url: `${SITE}/favicon.png` } },
+    image: d.heroImage,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  }));
+
+  blocks.push(JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: d.title, item: url },
+    ],
+  }));
+
+  if (d.faqs && d.faqs.length > 0) {
+    blocks.push(JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: d.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    }));
+  }
+
+  return blocks.map((b) => `<script type="application/ld+json">${b}</script>`).join("\n    ");
+}
+
 // Bake correct title/description/canonical/OG/Twitter into a copy of the shell.
 function buildStaticHead(shell: string, url: string, title: string, descRaw: string, ogType = "website"): string {
   // Guard: keep meta descriptions inside the 100 to 128 character SEO range.
@@ -392,11 +442,12 @@ const ALL_BLOG_CONTENT: Record<string, BlogStaticContent> = {
 
 // Build an off-screen article body from the post's plain-text data so AI
 // crawlers and non-JS bots can read the article content without executing React.
-function buildBlogStaticBody(slug: string): string {
+function buildBlogStaticBody(slug: string, title?: string): string {
   const c = ALL_BLOG_CONTENT[slug];
   if (!c) return "";
   const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const parts: string[] = [];
+  if (title) parts.push(`<h1>${esc(title)}</h1>`);
   for (const para of c.intro) parts.push(`<p>${esc(para)}</p>`);
   for (const sec of c.sections) {
     parts.push(`<h2>${esc(sec.h)}</h2>`);
@@ -462,9 +513,17 @@ function prerender() {
   }
   mkdirSync(join(DIST, "blog"), { recursive: true });
   for (const [slug, meta] of Object.entries(BLOG_META)) {
-    let blogHtml = buildStaticHead(shell, `${SITE}/blog/${slug}`, meta.title, meta.desc, "article");
-    // Try generated content first, then fall back to hand-written static body
-    const bodyBlock = buildBlogStaticBody(slug) || buildStaticBody(slug);
+    const blogUrl = `${SITE}/blog/${slug}`;
+    // Plain title without the " | SEODXB Blog" suffix for the H1.
+    const h1Title = meta.title.replace(/\s*\|\s*SEODXB Blog\s*$/, "");
+    let blogHtml = buildStaticHead(shell, blogUrl, meta.title, meta.desc, "article");
+    // Inject Article + Breadcrumb + FAQPage JSON-LD into raw HTML head where available.
+    const schema = buildBlogSchema(slug, blogUrl);
+    if (schema) {
+      blogHtml = blogHtml.replace("</head>", `    ${schema}\n  </head>`);
+    }
+    // Try generated content first, then fall back to hand-written static body.
+    const bodyBlock = buildBlogStaticBody(slug, h1Title) || buildStaticBody(slug);
     if (bodyBlock) {
       blogHtml = blogHtml.replace('<div id="root"></div>', `${bodyBlock}\n<div id="root"></div>`);
     }

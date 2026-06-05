@@ -1362,7 +1362,11 @@ export function BlogPost() {
                 src={post.imageUrl}
                 alt={post.title}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1200}
+                height={525}
               />
             </div>
           )}
