@@ -15,6 +15,7 @@ import { batch07 } from "./batch07";
 import { batch08 } from "./batch08";
 import { batch09 } from "./batch09";
 import { batch10 } from "./batch10";
+import { batch11 } from "./batch11";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -49,7 +50,15 @@ function readingTime(spec: LongFormSpec): string {
 const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
+  ...batch11,
 ];
+
+// Explicit publish dates for posts uploaded on a known day, so adding them
+// never shifts the synthetic dates already assigned to earlier articles.
+const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: string }> = {
+  "aeo-vs-seo-vs-geo-differences-explained": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
+  "audit-brand-ai-visibility-20-minutes": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
+};
 
 const seen = new Set<string>();
 export const longFormArticles: LongFormArticle[] = allSpecs
@@ -59,7 +68,7 @@ export const longFormArticles: LongFormArticle[] = allSpecs
     return true;
   })
   .map((spec, i) => {
-    const { date, iso, updated } = dateFor(i);
+    const { date, iso, updated } = DATE_OVERRIDES[spec.slug] ?? dateFor(i);
     return { ...spec, date, iso, updated, time: readingTime(spec) };
   });
 
