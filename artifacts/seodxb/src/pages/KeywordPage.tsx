@@ -451,14 +451,10 @@ export function KeywordPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": config.h1,
-    "provider": { "@type": "ProfessionalService", "name": "SEODXB", "url": "https://seodxb.com", "telephone": "+971521551198" },
+    "provider": { "@type": "Organization", "name": "SEODXB", "url": "https://seodxb.com", "telephone": "+971521551198" },
     "description": config.metaDesc,
     "areaServed": config.areaServed ?? "Dubai, UAE",
     "url": `https://seodxb.com/${slug}`,
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", ".faq-section"]
-    }
   };
 
   const breadcrumbSchema = {

@@ -40,14 +40,9 @@ function serviceSchema(page: KeywordPageConfig): string {
     "@type": "Service",
     name: page.keyword,
     provider: {
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       name: "SEODXB",
       url: SITE,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Dubai",
-        addressCountry: "AE",
-      },
     },
     areaServed: page.areaServed ?? "Dubai, UAE",
     url: `${SITE}/${page.slug}`,
@@ -104,84 +99,49 @@ function breadcrumbSchema(page: KeywordPageConfig): string {
 
 function buildHead(page: KeywordPageConfig, shell: string): string {
   const canonical = `${SITE}/${page.slug}`;
-  const injection = [
-    // Replace title
-    // (handled separately via string replace below)
-
-    // Meta
-    `<meta name="description" content="${escape(page.metaDesc)}" />`,
-    `<link rel="canonical" href="${canonical}" />`,
-
-    // OG
-    `<meta property="og:type" content="website" />`,
-    `<meta property="og:title" content="${escape(page.title)}" />`,
-    `<meta property="og:description" content="${escape(page.metaDesc)}" />`,
-    `<meta property="og:url" content="${canonical}" />`,
-    `<meta property="og:image" content="${SITE}/opengraph.jpg" />`,
-
-    // Twitter
-    `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${escape(page.title)}" />`,
-    `<meta name="twitter:description" content="${escape(page.metaDesc)}" />`,
-
-    // JSON-LD
-    `<script type="application/ld+json">${serviceSchema(page)}</script>`,
-    `<script type="application/ld+json">${faqSchema(page)}</script>`,
-  ].join("\n    ");
-
+  // Note: JSON-LD schemas are intentionally NOT injected here.
+  // KeywordPage.tsx adds Service + FAQPage + BreadcrumbList via React Helmet.
+  // Injecting them here too would create duplicate schemas in the rendered DOM.
   return (
     shell
-      // Replace the homepage title with the page-specific title
       .replace(
         /<title>[^<]*<\/title>/,
         `<title>${escape(page.title)}</title>`,
       )
-      // Replace homepage meta description
       .replace(
         /<meta name="description" content="[^"]*" \/>/,
         `<meta name="description" content="${escape(page.metaDesc)}" />`,
       )
-      // Replace canonical
       .replace(
         /<link rel="canonical" href="[^"]*" \/>/,
         `<link rel="canonical" href="${canonical}" />`,
       )
-      // Replace og:title
       .replace(
         /<meta property="og:title" content="[^"]*" \/>/,
         `<meta property="og:title" content="${escape(page.title)}" />`,
       )
-      // Replace og:description
       .replace(
         /<meta property="og:description" content="[^"]*" \/>/,
         `<meta property="og:description" content="${escape(page.metaDesc)}" />`,
       )
-      // Replace og:url
       .replace(
         /<meta property="og:url" content="[^"]*" \/>/,
         `<meta property="og:url" content="${canonical}" />`,
       )
-      // Replace twitter:title
       .replace(
         /<meta name="twitter:title" content="[^"]*" \/>/,
         `<meta name="twitter:title" content="${escape(page.title)}" />`,
       )
-      // Replace twitter:description
       .replace(
         /<meta name="twitter:description" content="[^"]*" \/>/,
         `<meta name="twitter:description" content="${escape(page.metaDesc)}" />`,
-      )
-      // Inject Service + FAQ JSON-LD before </head>
-      .replace(
-        "</head>",
-        `  <script type="application/ld+json">${serviceSchema(page)}</script>\n  <script type="application/ld+json">${faqSchema(page)}</script>\n  <script type="application/ld+json">${breadcrumbSchema(page)}</script>\n</head>`,
       )
   );
 }
 
 function buildBody(page: KeywordPageConfig, html: string, related: KeywordPageConfig[]): string {
-  const relatedLinks = related.length
-    ? `
+  // Always include core service links so every keyword page has outgoing links.
+  const relatedLinks = `
     <nav aria-label="Related SEO services">
       <h2>Related SEO Services</h2>
       <ul>
@@ -189,9 +149,9 @@ function buildBody(page: KeywordPageConfig, html: string, related: KeywordPageCo
         <li><a href="${SITE}/seo-services-dubai">All SEO services</a></li>
         <li><a href="${SITE}/seo-agency-uae">SEO across the UAE</a></li>
         <li><a href="${SITE}/blog">SEO insights and guides</a></li>
+        <li><a href="${SITE}/contact">Contact SEODXB</a></li>
       </ul>
-    </nav>`
-    : "";
+    </nav>`;
   // Inject a <noscript> block with key content for AI/no-JS crawlers
   const noscript = `
 <noscript>
@@ -440,6 +400,23 @@ const ALL_BLOG_CONTENT: Record<string, BlogStaticContent> = {
   ...longFormContent,
 };
 
+// Outgoing service links added to every blog static body so no blog page
+// is flagged as having zero outgoing links by audit tools.
+const BLOG_OUTGOING_LINKS = `
+<nav aria-label="SEO services">
+  <h2>SEO Services</h2>
+  <ul>
+    <li><a href="${SITE}/on-page-seo">On-Page SEO Services</a></li>
+    <li><a href="${SITE}/technical-seo">Technical SEO Services</a></li>
+    <li><a href="${SITE}/local-seo">Local SEO Services Dubai</a></li>
+    <li><a href="${SITE}/aeo">Answer Engine Optimisation (AEO)</a></li>
+    <li><a href="${SITE}/geo">Generative Engine Optimisation (GEO)</a></li>
+    <li><a href="${SITE}/seo-audit">Free SEO Audit</a></li>
+    <li><a href="${SITE}/blog">More SEO Insights</a></li>
+    <li><a href="${SITE}/contact">Get a Free SEO Consultation</a></li>
+  </ul>
+</nav>`;
+
 // Build an off-screen article body from the post's plain-text data so AI
 // crawlers and non-JS bots can read the article content without executing React.
 function buildBlogStaticBody(slug: string, title?: string): string {
@@ -463,6 +440,7 @@ function buildBlogStaticBody(slug: string, title?: string): string {
       parts.push(`<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`);
     }
   }
+  parts.push(BLOG_OUTGOING_LINKS);
   return `<div id="blog-static-body" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><article>${parts.join("\n")}</article></div>`;
 }
 
@@ -500,11 +478,22 @@ function prerender() {
   writeFileSync(homepageFile, homepageHtml, "utf-8");
 
   const NOINDEX_ROUTES = new Set(["admin"]);
+  // Routes that already have H1 injected via buildStaticBody()
+  const HAS_STATIC_BODY = new Set(["", "index", "about", "pricing",
+    "what-chatgpt-sees-when-it-looks-for-your-dubai-business",
+    "two-dubai-businesses-one-invisible-online",
+    "the-honest-guide-to-seo-timelines-in-dubai"]);
   for (const [route, meta] of Object.entries(STATIC_META)) {
     const file = join(DIST, `${route}.html`);
     if (!existsSync(file)) {
       let html = buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc);
       html = injectStaticBody(html, route);
+      // Inject a minimal H1 + service links for pages that don't already have a static body
+      if (!HAS_STATIC_BODY.has(route)) {
+        const h1Text = meta.title.replace(/\s*\|.*$/, "").trim();
+        const staticBlock = `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><h1>${escape(h1Text)}</h1><nav aria-label="SEO services"><ul><li><a href="${SITE}/on-page-seo">On-Page SEO</a></li><li><a href="${SITE}/technical-seo">Technical SEO</a></li><li><a href="${SITE}/aeo">AEO Services</a></li><li><a href="${SITE}/geo">GEO Services</a></li><li><a href="${SITE}/seo-dubai">SEO Dubai</a></li><li><a href="${SITE}/blog">SEO Blog</a></li><li><a href="${SITE}/contact">Contact SEODXB</a></li></ul></nav></div>`;
+        html = html.replace('<div id="root"></div>', `${staticBlock}\n<div id="root"></div>`);
+      }
       if (NOINDEX_ROUTES.has(route)) {
         html = html.replace(/<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="noindex, nofollow" />`);
       }
