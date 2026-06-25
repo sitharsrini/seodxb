@@ -29,7 +29,7 @@ export interface KeywordPageConfig {
   areaServed?: string;
 }
 
-const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
+export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
 
   "seo-agency-dubai": {
     slug: "seo-agency-dubai",

@@ -39,6 +39,7 @@ export function Footer() {
               <li><Link href="/international-seo" className="hover:text-white transition-colors">International SEO</Link></li>
               <li><Link href="/seo-audit" className="hover:text-white transition-colors">Free SEO Audit</Link></li>
               <li><Link href="/seo-packages" className="hover:text-white transition-colors">SEO Packages</Link></li>
+              <li><Link href="/seo-services" className="hover:text-white transition-colors">All SEO Services</Link></li>
             </ul>
           </div>
 

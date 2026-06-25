@@ -15,6 +15,14 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { keywordPages, clampMetaDesc, type KeywordPageConfig } from "../src/data/keywordPages";
+import { uaeKeywordPages } from "../src/data/keywordPagesUAE";
+import { gccKeywordPages } from "../src/data/keywordPagesGCC";
+import { usKeywordPages } from "../src/data/keywordPagesUS";
+import { ukKeywordPages } from "../src/data/keywordPagesUK";
+import { euKeywordPages } from "../src/data/keywordPagesEU";
+import { apacKeywordPages } from "../src/data/keywordPagesAPAC";
+import { globalKeywordPages } from "../src/data/keywordPagesGlobal";
+import { leadsKeywordPages } from "../src/data/keywordPagesLeads";
 import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
 import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
 import { longFormMeta, longFormContent, longFormSchemaData } from "../src/data/longform";
@@ -208,6 +216,7 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "seo-for-law-firms": { title: "SEO for Law Firms Dubai - Legal SEO Agency UAE | SEODXB", desc: "Legal SEO for Dubai law firms. Rank for high-value client queries and generate consultations with E-E-A-T content." },
   "website-20-aed": { title: "Professional Website from 5 AED | Listi.ae Business Offer | SEODXB", desc: "Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan 20 AED, one page. Terms apply." },
   "free-seo-audit": { title: "Free SEO Audit Dubai - Request Your Report in 2 Minutes | SEODXB", desc: "Get a free SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a priority action list." },
+  "seo-services": { title: "SEO Services Directory - All Locations and Industries | SEODXB", desc: "Browse all SEODXB SEO services by location and industry. Dubai, UAE cities, GCC, US, UK, Europe, APAC and global coverage." },
   "admin": { title: "Site Index | SEODXB Admin", desc: "Internal site index of every SEODXB page and blog post. Private admin directory, not indexed by search engines." },
 };
 
@@ -311,6 +320,41 @@ function buildStaticBody(slug: string): string {
 
   if (!inner) return "";
   return `${wrapperOpen}${inner}${wrapperClose}`;
+}
+
+// Build the services directory static body linking to all keyword pages by region.
+function buildServicesDirectoryBody(): string {
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const renderSection = (title: string, pages: { slug: string; keyword: string }[]) => {
+    if (pages.length === 0) return "";
+    const links = pages.map((p) => `<li><a href="${SITE}/${p.slug}">${esc(p.keyword)}</a></li>`).join("");
+    return `<h2>${esc(title)}</h2><ul>${links}</ul>`;
+  };
+  const knownUAE = new Set(Object.keys(uaeKeywordPages));
+  const knownGCC = new Set(gccKeywordPages.map((p) => p.slug));
+  const knownUS = new Set(usKeywordPages.map((p) => p.slug));
+  const knownUK = new Set(ukKeywordPages.map((p) => p.slug));
+  const knownEU = new Set(euKeywordPages.map((p) => p.slug));
+  const knownAPAC = new Set(apacKeywordPages.map((p) => p.slug));
+  const knownGlobal = new Set([...globalKeywordPages, ...leadsKeywordPages].map((p) => p.slug));
+  const allOtherSlugs = new Set([...knownUAE, ...knownGCC, ...knownUS, ...knownUK, ...knownEU, ...knownAPAC, ...knownGlobal]);
+  const dubaiPages = Object.values(keywordPages).filter((p) => !allOtherSlugs.has(p.slug));
+
+  const body = [
+    `<h1>SEO Services Directory</h1>`,
+    `<p>A complete index of every SEO, AEO, and GEO service SEODXB provides, organised by location and industry.</p>`,
+    renderSection("Dubai SEO Services", dubaiPages),
+    renderSection("UAE Cities, Emirates and Areas", Object.values(uaeKeywordPages)),
+    renderSection("Saudi Arabia and the Gulf (GCC)", gccKeywordPages),
+    renderSection("United States", usKeywordPages),
+    renderSection("United Kingdom", ukKeywordPages),
+    renderSection("Europe", euKeywordPages),
+    renderSection("Asia-Pacific", apacKeywordPages),
+    renderSection("Global and Specialist Services", [...globalKeywordPages, ...leadsKeywordPages]),
+    `<p><a href="${SITE}/contact">Book a free SEO consultation</a></p>`,
+    `<p><a href="${SITE}/seo-audit">Get a free SEO audit</a></p>`,
+  ].join("\n");
+  return `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;">${body}</div>`;
 }
 
 // Inject static body content before <div id="root"> for crawler visibility.
@@ -478,8 +522,9 @@ function prerender() {
   writeFileSync(homepageFile, homepageHtml, "utf-8");
 
   const NOINDEX_ROUTES = new Set(["admin"]);
-  // Routes that already have H1 injected via buildStaticBody()
+  // Routes that already have H1 injected via buildStaticBody() or a dedicated builder
   const HAS_STATIC_BODY = new Set(["", "index", "about", "pricing",
+    "seo-services",
     "what-chatgpt-sees-when-it-looks-for-your-dubai-business",
     "two-dubai-businesses-one-invisible-online",
     "the-honest-guide-to-seo-timelines-in-dubai"]);
@@ -487,7 +532,11 @@ function prerender() {
     const file = join(DIST, `${route}.html`);
     if (!existsSync(file)) {
       let html = buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc);
-      html = injectStaticBody(html, route);
+      if (route === "seo-services") {
+        html = html.replace('<div id="root"></div>', `${buildServicesDirectoryBody()}\n<div id="root"></div>`);
+      } else {
+        html = injectStaticBody(html, route);
+      }
       // Inject a minimal H1 + service links for pages that don't already have a static body
       if (!HAS_STATIC_BODY.has(route)) {
         const h1Text = meta.title.replace(/\s*\|.*$/, "").trim();

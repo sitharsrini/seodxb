@@ -52,6 +52,7 @@ import { HospitalitySEO } from "@/pages/industries/HospitalitySEO";
 import { HealthcareSEO } from "@/pages/industries/HealthcareSEO";
 import { LegalSEO } from "@/pages/industries/LegalSEO";
 import { KeywordPage } from "@/pages/KeywordPage";
+import { ServicesDirectory } from "@/pages/ServicesDirectory";
 import { Admin } from "@/pages/Admin";
 import { Website20AED } from "@/pages/Website20AED";
 import { FreeSEOAudit } from "@/pages/FreeSEOAudit";
@@ -85,6 +86,7 @@ function Router() {
       <Route path="/seo-for-healthcare" component={HealthcareSEO} />
       <Route path="/seo-for-law-firms" component={LegalSEO} />
       <Route path="/free-seo-audit" component={FreeSEOAudit} />
+      <Route path="/seo-services" component={ServicesDirectory} />
       <Route path="/admin" component={Admin} />
       <Route path="/website-20-aed" component={Website20AED} />
       <Route path="/:slug" component={KeywordPage} />
