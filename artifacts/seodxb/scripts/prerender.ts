@@ -502,6 +502,11 @@ function prerender() {
     let html = buildHead(page, shell);
     html = buildBody(page, html, related);
 
+    // Inline the page's own config so KeywordPage renders it without importing
+    // the ~1MB keywordPages dataset. Escaping < prevents a </script> breakout.
+    const kwData = JSON.stringify(page).replace(/</g, "\\u003c");
+    html = html.replace("</head>", `  <script>window.__KW_DATA__=${kwData}</script>\n  </head>`);
+
     // Flat <slug>.html so Cloudflare Pages serves it at /<slug> with a 200
     // (no trailing-slash 308), matching the canonical tag exactly.
     writeFileSync(join(DIST, `${page.slug}.html`), html, "utf-8");

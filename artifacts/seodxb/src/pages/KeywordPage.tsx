@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "wouter";
 import { motion } from "framer-motion";
@@ -7,9 +7,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle2, CheckCircle, ArrowRight, Loader2, AlertCircle, Phone, MessageCircle } from "lucide-react";
-import { keywordPages, KeywordPageConfig } from "@/data/keywordPages";
+import type { KeywordPageConfig } from "@/data/keywordPages";
+import { keywordIndex } from "@/data/keywordIndex";
 import { track } from "@/lib/track";
 import NotFound from "@/pages/not-found";
+
+// The page's own config is injected into the prerendered HTML as
+// window.__KW_DATA__ so a visitor landing here loads zero keyword data. The
+// full dataset is imported lazily only when navigating between keyword pages
+// client-side.
+declare global {
+  interface Window {
+    __KW_DATA__?: KeywordPageConfig;
+  }
+}
 
 /* ─────────────── Internal linking ─────────────── */
 
@@ -25,9 +36,10 @@ function slugTokens(slug: string): string[] {
 // Score other pages by how many meaningful slug tokens they share with the
 // current page (industry + location overlap). Used to build contextual
 // internal links, which spread link equity and reduce doorway-page risk.
-export function getRelatedPages(slug: string, limit = 6): KeywordPageConfig[] {
+// Reads the lightweight slug+keyword index, not the full keywordPages dataset.
+export function getRelatedPages(slug: string, limit = 6): { slug: string; keyword: string }[] {
   const mine = new Set(slugTokens(slug));
-  const scored = Object.values(keywordPages)
+  const scored = keywordIndex
     .filter((p) => p.slug !== slug)
     .map((p) => ({
       p,
@@ -428,12 +440,51 @@ function ContactForm({ ctaTitle, ctaDesc, ctaButton, keyword }: { ctaTitle: stri
 
 /* ─────────────── Main Component ─────────────── */
 
+// Resolve a keyword page's config. On a hard load the config is already in the
+// page (window.__KW_DATA__), so this returns synchronously with no data fetch.
+// On client-side navigation to a different keyword page, the full dataset is
+// imported once and cached; `undefined` means "still resolving".
+function useKeywordConfig(slug: string): KeywordPageConfig | null | undefined {
+  const readInjected = (): KeywordPageConfig | undefined => {
+    if (typeof window === "undefined") return undefined;
+    const injected = window.__KW_DATA__;
+    return injected && injected.slug === slug ? injected : undefined;
+  };
+
+  const [config, setConfig] = useState<KeywordPageConfig | null | undefined>(() => readInjected());
+
+  useEffect(() => {
+    if (config && config.slug === slug) return;
+    const injected = readInjected();
+    if (injected) {
+      setConfig(injected);
+      return;
+    }
+    let active = true;
+    setConfig(undefined);
+    import("@/data/keywordPages").then((m) => {
+      if (active) setConfig(m.keywordPages[slug] ?? null);
+    });
+    return () => {
+      active = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
+
+  // Don't render a previous page's config against a newer slug.
+  if (config && config.slug !== slug) return undefined;
+  return config;
+}
+
 export function KeywordPage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug ?? "";
-  const config: KeywordPageConfig | undefined = keywordPages[slug];
+  const config = useKeywordConfig(slug);
 
-  if (!config) return <NotFound />;
+  if (config === undefined) {
+    return <div className="min-h-[60vh]" aria-busy="true" />;
+  }
+  if (config === null) return <NotFound />;
 
   const SvgComponent = svgComponents[config.svgVariant ?? "serp"];
 
