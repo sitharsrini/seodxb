@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
@@ -28,39 +28,43 @@ function WhatsAppButton() {
   );
 }
 
-import { Home } from "@/pages/Home";
-import { About } from "@/pages/About";
-import { Blog } from "@/pages/Blog";
-import { BlogPost } from "@/pages/BlogPost";
-import { Pricing } from "@/pages/Pricing";
-import { Contact } from "@/pages/Contact";
-import { OnPageSEO } from "@/pages/services/OnPageSEO";
-import { TechnicalSEO } from "@/pages/services/TechnicalSEO";
-import { AEO } from "@/pages/services/AEO";
-import { GEO } from "@/pages/services/GEO";
-import { LocalSEO } from "@/pages/services/LocalSEO";
-import { InternationalSEO } from "@/pages/services/InternationalSEO";
-import { SEOAudit } from "@/pages/services/SEOAudit";
-import { SEOPackages } from "@/pages/services/SEOPackages";
-import { SEODubai } from "@/pages/locations/SEODubai";
-import { SEOAbuDhabi } from "@/pages/locations/SEOAbuDhabi";
-import { SEOUAE } from "@/pages/locations/SEOUAE";
-import { EcommerceSEO } from "@/pages/industries/EcommerceSEO";
-import { RealEstateSEO } from "@/pages/industries/RealEstateSEO";
-import { B2BSEO } from "@/pages/industries/B2BSEO";
-import { HospitalitySEO } from "@/pages/industries/HospitalitySEO";
-import { HealthcareSEO } from "@/pages/industries/HealthcareSEO";
-import { LegalSEO } from "@/pages/industries/LegalSEO";
-import { KeywordPage } from "@/pages/KeywordPage";
-import { ServicesDirectory } from "@/pages/ServicesDirectory";
-import { Admin } from "@/pages/Admin";
-import { Website20AED } from "@/pages/Website20AED";
-import { FreeSEOAudit } from "@/pages/FreeSEOAudit";
+// Route components are lazy-loaded so each page ships its own JS chunk. This
+// keeps the heavy data (keyword configs, blog content) out of the initial
+// bundle: a visitor only downloads the data for the page they actually open.
+const Home = lazy(() => import("@/pages/Home").then((m) => ({ default: m.Home })));
+const About = lazy(() => import("@/pages/About").then((m) => ({ default: m.About })));
+const Blog = lazy(() => import("@/pages/Blog").then((m) => ({ default: m.Blog })));
+const BlogPost = lazy(() => import("@/pages/BlogPost").then((m) => ({ default: m.BlogPost })));
+const Pricing = lazy(() => import("@/pages/Pricing").then((m) => ({ default: m.Pricing })));
+const Contact = lazy(() => import("@/pages/Contact").then((m) => ({ default: m.Contact })));
+const OnPageSEO = lazy(() => import("@/pages/services/OnPageSEO").then((m) => ({ default: m.OnPageSEO })));
+const TechnicalSEO = lazy(() => import("@/pages/services/TechnicalSEO").then((m) => ({ default: m.TechnicalSEO })));
+const AEO = lazy(() => import("@/pages/services/AEO").then((m) => ({ default: m.AEO })));
+const GEO = lazy(() => import("@/pages/services/GEO").then((m) => ({ default: m.GEO })));
+const LocalSEO = lazy(() => import("@/pages/services/LocalSEO").then((m) => ({ default: m.LocalSEO })));
+const InternationalSEO = lazy(() => import("@/pages/services/InternationalSEO").then((m) => ({ default: m.InternationalSEO })));
+const SEOAudit = lazy(() => import("@/pages/services/SEOAudit").then((m) => ({ default: m.SEOAudit })));
+const SEOPackages = lazy(() => import("@/pages/services/SEOPackages").then((m) => ({ default: m.SEOPackages })));
+const SEODubai = lazy(() => import("@/pages/locations/SEODubai").then((m) => ({ default: m.SEODubai })));
+const SEOAbuDhabi = lazy(() => import("@/pages/locations/SEOAbuDhabi").then((m) => ({ default: m.SEOAbuDhabi })));
+const SEOUAE = lazy(() => import("@/pages/locations/SEOUAE").then((m) => ({ default: m.SEOUAE })));
+const EcommerceSEO = lazy(() => import("@/pages/industries/EcommerceSEO").then((m) => ({ default: m.EcommerceSEO })));
+const RealEstateSEO = lazy(() => import("@/pages/industries/RealEstateSEO").then((m) => ({ default: m.RealEstateSEO })));
+const B2BSEO = lazy(() => import("@/pages/industries/B2BSEO").then((m) => ({ default: m.B2BSEO })));
+const HospitalitySEO = lazy(() => import("@/pages/industries/HospitalitySEO").then((m) => ({ default: m.HospitalitySEO })));
+const HealthcareSEO = lazy(() => import("@/pages/industries/HealthcareSEO").then((m) => ({ default: m.HealthcareSEO })));
+const LegalSEO = lazy(() => import("@/pages/industries/LegalSEO").then((m) => ({ default: m.LegalSEO })));
+const KeywordPage = lazy(() => import("@/pages/KeywordPage").then((m) => ({ default: m.KeywordPage })));
+const ServicesDirectory = lazy(() => import("@/pages/ServicesDirectory").then((m) => ({ default: m.ServicesDirectory })));
+const Admin = lazy(() => import("@/pages/Admin").then((m) => ({ default: m.Admin })));
+const Website20AED = lazy(() => import("@/pages/Website20AED").then((m) => ({ default: m.Website20AED })));
+const FreeSEOAudit = lazy(() => import("@/pages/FreeSEOAudit").then((m) => ({ default: m.FreeSEOAudit })));
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
+    <Suspense fallback={<div className="min-h-[60vh]" aria-busy="true" />}>
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
@@ -92,6 +96,7 @@ function Router() {
       <Route path="/:slug" component={KeywordPage} />
       <Route component={NotFound} />
     </Switch>
+    </Suspense>
   );
 }
 

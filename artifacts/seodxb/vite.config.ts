@@ -38,6 +38,21 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Split large, stable third-party libraries into their own chunks so
+        // they are cached once and reused across every route navigation,
+        // instead of being bundled and re-downloaded inside each page chunk.
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (/[\\/]react(-dom)?[\\/]|[\\/]scheduler[\\/]/.test(id)) return "react-vendor";
+            if (id.includes("@radix-ui")) return "radix";
+            if (id.includes("framer-motion")) return "motion";
+            if (id.includes("react-helmet")) return "helmet";
+          }
+        },
+      },
+    },
   },
   server: {
     port,
