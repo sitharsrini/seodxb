@@ -26,6 +26,7 @@ import { leadsKeywordPages } from "../src/data/keywordPagesLeads";
 import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
 import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
 import { longFormMeta, longFormContent, longFormSchemaData } from "../src/data/longform";
+import { clampTitle } from "../src/lib/title";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -114,7 +115,7 @@ function buildHead(page: KeywordPageConfig, shell: string): string {
     shell
       .replace(
         /<title>[^<]*<\/title>/,
-        `<title>${escape(page.title)}</title>`,
+        `<title>${escape(clampTitle(page.title))}</title>`,
       )
       .replace(
         /<meta name="description" content="[^"]*" \/>/,
@@ -229,7 +230,7 @@ const BLOG_META: Record<string, { title: string; desc: string }> = {
   "tracking-seo-metrics-revenue": { title: "Tracking What Matters: Metrics That Actually Drive Revenue | SEODXB Blog", desc: "Average position and DA hide more than they reveal. The 2026 SEO metrics that actually connect to revenue." },
   "what-chatgpt-sees-when-it-looks-for-your-dubai-business": { title: "What ChatGPT Sees When Someone Asks It to Find Your Dubai Business | SEODXB Blog", desc: "A walk through what AI engines actually see when searching for Dubai businesses, and why most are invisible." },
   "two-dubai-businesses-one-invisible-online": { title: "Two Dubai Businesses, Same Quality, One Invisible Online | SEODXB Blog", desc: "The gap between Dubai businesses that rank and those that do not is rarely quality. It is almost always visibility." },
-  "the-honest-guide-to-seo-timelines-in-dubai": { title: "The Honest Guide to SEO Timelines: What Dubai Businesses Should Actually Expect | SEODXB Blog", desc: "Specific, honest expectations for how long SEO takes in the Dubai market, month by month." },
+  "the-honest-guide-to-seo-timelines-in-dubai": { title: "The Honest Guide to SEO Timelines: What Dubai Businesses Should Actually Expect | SEODXB Blog", desc: "Specific, honest expectations for how long SEO takes in the Dubai market, month by month, from first cleanup to real results." },
   // Merge the 200 + 500 generated posts. Inline entries above always win on
   // any slug collision because the spread comes second only for new keys.
   ...Object.fromEntries(Object.entries(generatedBlogMeta).filter(([slug]) => !["future-of-search-generative-ai-dubai", "core-web-vitals-matter", "answer-engines-position-zero", "local-search-dubai", "semantic-seo-entities-keywords", "tracking-seo-metrics-revenue", "what-chatgpt-sees-when-it-looks-for-your-dubai-business", "two-dubai-businesses-one-invisible-online", "the-honest-guide-to-seo-timelines-in-dubai"].includes(slug))),
@@ -357,6 +358,36 @@ function buildServicesDirectoryBody(): string {
   return `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;">${body}</div>`;
 }
 
+// Sitewide navigation injected into every prerendered page. The real nav and
+// footer render client-side into an empty #root, so without this the raw HTML a
+// crawler (or AI bot) sees has no links to the main pages and they look
+// orphaned. Mirrors the footer link set, hidden off-screen.
+const SITE_NAV = `<nav id="site-nav" aria-label="Site" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><ul>` +
+  [
+    ["/", "Home"], ["/about", "About"], ["/pricing", "Pricing"], ["/contact", "Contact"],
+    ["/blog", "SEO Blog"], ["/seo-services", "All SEO Services"],
+    ["/on-page-seo", "On-Page SEO"], ["/technical-seo", "Technical SEO"], ["/aeo", "AEO"],
+    ["/geo", "GEO"], ["/local-seo", "Local SEO"], ["/international-seo", "International SEO"],
+    ["/seo-audit", "SEO Audit"], ["/seo-packages", "SEO Packages"], ["/free-seo-audit", "Free SEO Audit"],
+    ["/seo-dubai", "SEO Dubai"], ["/seo-abu-dhabi", "SEO Abu Dhabi"], ["/seo-uae", "SEO UAE"],
+    ["/ecommerce-seo", "E-commerce SEO"], ["/real-estate-seo", "Real Estate SEO"], ["/b2b-seo", "B2B SEO"],
+    ["/seo-for-restaurants", "Restaurant SEO"], ["/seo-for-healthcare", "Healthcare SEO"],
+    ["/seo-for-law-firms", "Legal SEO"], ["/website-20-aed", "Website Offer"],
+  ].map(([h, t]) => `<li><a href="${SITE}${h}">${t}</a></li>`).join("") +
+  `</ul></nav>`;
+
+// Off-screen index of every blog post, injected into /blog so all posts have at
+// least one inbound internal link in the raw HTML (otherwise each is an orphan).
+function buildBlogIndexBody(metaEntries: [string, { title: string; desc: string }][]): string {
+  const links = metaEntries
+    .map(([slug, meta]) => {
+      const t = meta.title.replace(/\s*\|\s*SEODXB(\sBlog)?\s*$/, "").trim();
+      return `<li><a href="${SITE}/blog/${slug}">${escape(t)}</a></li>`;
+    })
+    .join("");
+  return `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><h1>SEO Blog - Insights on SEO, AEO and GEO</h1><p>Browse every SEODXB article on SEO, Answer Engine Optimisation, and Generative Engine Optimisation.</p><nav aria-label="All blog posts"><ul>${links}</ul></nav></div>`;
+}
+
 // Inject static body content before <div id="root"> for crawler visibility.
 function injectStaticBody(html: string, slug: string): string {
   const block = buildStaticBody(slug);
@@ -419,7 +450,7 @@ function buildStaticHead(shell: string, url: string, title: string, descRaw: str
   // Guard: keep meta descriptions inside the 100 to 128 character SEO range.
   const desc = descRaw ? clampMetaDesc(descRaw) : descRaw;
   return shell
-    .replace(/<title>[^<]*<\/title>/, `<title>${escape(title)}</title>`)
+    .replace(/<title>[^<]*<\/title>/, `<title>${escape(clampTitle(title))}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escape(desc)}" />`)
     .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
     .replace(/<meta property="og:type" content="[^"]*" \/>/, `<meta property="og:type" content="${ogType}" />`)
@@ -491,7 +522,10 @@ function buildBlogStaticBody(slug: string, title?: string): string {
 // ─── main ─────────────────────────────────────────────────────────────────────
 
 function prerender() {
-  const shell = readFileSync(join(DIST, "index.html"), "utf-8");
+  const rawShell = readFileSync(join(DIST, "index.html"), "utf-8");
+  // Bake the sitewide nav into the shell so every page built from it has links
+  // to the main pages in its raw HTML, not just after React renders the footer.
+  const shell = rawShell.replace('<div id="root"></div>', `${SITE_NAV}\n<div id="root"></div>`);
   const pages = Object.values(keywordPages);
 
   console.log(`\n🔧 Prerendering ${pages.length} keyword pages...\n`);
@@ -529,7 +563,7 @@ function prerender() {
   const NOINDEX_ROUTES = new Set(["admin"]);
   // Routes that already have H1 injected via buildStaticBody() or a dedicated builder
   const HAS_STATIC_BODY = new Set(["", "index", "about", "pricing",
-    "seo-services",
+    "seo-services", "blog",
     "what-chatgpt-sees-when-it-looks-for-your-dubai-business",
     "two-dubai-businesses-one-invisible-online",
     "the-honest-guide-to-seo-timelines-in-dubai"]);
@@ -539,6 +573,8 @@ function prerender() {
       let html = buildStaticHead(shell, `${SITE}/${route}`, meta.title, meta.desc);
       if (route === "seo-services") {
         html = html.replace('<div id="root"></div>', `${buildServicesDirectoryBody()}\n<div id="root"></div>`);
+      } else if (route === "blog") {
+        html = html.replace('<div id="root"></div>', `${buildBlogIndexBody(Object.entries(BLOG_META))}\n<div id="root"></div>`);
       } else {
         html = injectStaticBody(html, route);
       }
@@ -566,10 +602,13 @@ function prerender() {
       blogHtml = blogHtml.replace("</head>", `    ${schema}\n  </head>`);
     }
     // Try generated content first, then fall back to hand-written static body.
-    const bodyBlock = buildBlogStaticBody(slug, h1Title) || buildStaticBody(slug);
-    if (bodyBlock) {
-      blogHtml = blogHtml.replace('<div id="root"></div>', `${bodyBlock}\n<div id="root"></div>`);
+    // Posts whose content lives only as JSX (the original six) still need an H1
+    // and outgoing links in raw HTML, so emit a minimal block for them.
+    let bodyBlock = buildBlogStaticBody(slug, h1Title) || buildStaticBody(slug);
+    if (!bodyBlock) {
+      bodyBlock = `<div id="static-content" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"><article><h1>${escape(h1Title)}</h1><p>${escape(meta.desc)}</p>${BLOG_OUTGOING_LINKS}</article></div>`;
     }
+    blogHtml = blogHtml.replace('<div id="root"></div>', `${bodyBlock}\n<div id="root"></div>`);
     writeFileSync(join(DIST, "blog", `${slug}.html`), blogHtml, "utf-8");
   }
   console.log(`  ✓ ${Object.keys(STATIC_META).length} static + ${Object.keys(BLOG_META).length} blog pages`);

@@ -345,7 +345,7 @@ commercial("local-seo-australia", {
 commercial("ecommerce-seo-australia", {
   keyword: "E-commerce SEO Australia", badge: "E-commerce SEO Specialists for Australia",
   title: "E-commerce SEO Australia | SEODXB - Australian E-commerce Growth",
-  metaDesc: "E-commerce SEO for Australian online retailers from SEODXB. Product SEO, category pages, Shopping schema, and AI shopping visibility across Australia.",
+  metaDesc: "E-commerce SEO for Australian online stores. SEODXB grows organic product and category traffic and sales across Australia.",
   h1: "E-commerce SEO That Drives Sales Across Australia",
   intro: "Australian shoppers research products across Google Shopping, comparison platforms, and AI tools before buying. SEODXB delivers e-commerce SEO that captures this demand: product and category optimisation, Shopping schema for rich results, and AI shopping visibility across Australia's competitive retail market.",
   scope: "Australia", served: "Australia", pressLabel: "Australian",
@@ -675,7 +675,7 @@ commercial("seo-for-fintech-singapore", {
 commercial("seo-for-ecommerce-australia", {
   keyword: "SEO for E-commerce Australia", badge: "E-commerce SEO Specialists for Australia",
   title: "SEO for E-commerce Australia | SEODXB - Australian E-commerce Growth",
-  metaDesc: "E-commerce SEO for Australian online retailers from SEODXB. Product SEO, category pages, Shopping schema, and AI shopping visibility for Australia.",
+  metaDesc: "SEODXB helps Australian online retailers rank products, win Google Shopping visibility, and grow store revenue from search.",
   h1: "E-commerce SEO in Australia: Rank Where Australian Shoppers Research",
   intro: "Australian online shoppers research products across Google Shopping, comparison platforms, and AI tools before making purchase decisions. SEODXB delivers e-commerce SEO that captures Australian search demand through product and category optimisation, Shopping schema, and AI shopping visibility.",
   scope: "Australia", served: "Australia", pressLabel: "Australian",

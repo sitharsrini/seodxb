@@ -10,6 +10,7 @@ import { generatedBlogPosts, type GenBlogPost } from "@/data/blogPosts";
 import { generatedBlogPosts2 } from "@/data/blogPosts2";
 import { longFormArticles } from "@/data/longform";
 import type { LongFormArticle } from "@/data/longform/types";
+import { clampTitle } from "@/lib/title";
 
 const AUTHOR = {
   name: "Srinivasan R",
@@ -1263,7 +1264,7 @@ export function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>{post.title} | SEODXB Blog</title>
+        <title>{clampTitle(`${post.title} | SEODXB Blog`)}</title>
         <meta name="description" content={post.excerpt || `${post.title} - Expert SEO insights from SEODXB, a specialist SEO agency based in Dubai.`} />
         <link rel="canonical" href={`https://seodxb.com/blog/${slug}`} />
         <meta name="author" content={AUTHOR.name} />

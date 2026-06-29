@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, CheckCircle, ArrowRight, Loader2, AlertCircle, Phone, MessageCircle } from "lucide-react";
 import type { KeywordPageConfig } from "@/data/keywordPages";
 import { keywordIndex } from "@/data/keywordIndex";
+import { clampTitle } from "@/lib/title";
 import { track } from "@/lib/track";
 import NotFound from "@/pages/not-found";
 
@@ -521,7 +522,7 @@ export function KeywordPage() {
   return (
     <>
       <Helmet>
-        <title>{config.title}</title>
+        <title>{clampTitle(config.title)}</title>
         <meta name="description" content={config.metaDesc} />
         <link rel="canonical" href={`https://seodxb.com/${slug}`} />
         <meta property="og:title" content={config.title} />
