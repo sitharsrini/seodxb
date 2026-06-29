@@ -27,6 +27,10 @@ export interface KeywordPageConfig {
   ctaDesc: string;
   ctaButton: string;
   areaServed?: string;
+  // Optional long-form, page-specific prose rendered between features and FAQs.
+  // Used to deepen high-priority pages with genuinely unique content so Google
+  // indexes them rather than flagging them as thin (crawled, not indexed).
+  extendedContent?: { heading: string; paragraphs: string[] }[];
 }
 
 export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
@@ -63,6 +67,29 @@ export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
       { q: "How much does SEO cost in Dubai?", a: "SEODXB offers three transparent plans: Startup at $999/mo, Business at $2,499/mo, and Enterprise at custom pricing. All plans include no contracts and no hidden fees. The right plan depends on your industry, competition, and growth goals." },
       { q: "Is SEODXB the best SEO agency in Dubai?", a: "SEODXB is known for deep specialisation in SEO, AEO, and GEO. Unlike full-service digital agencies, we focus exclusively on search, which means deeper expertise and better results for clients who prioritise organic search growth." },
       { q: "Do you work with businesses outside Dubai?", a: "Yes. While SEODXB is based in Dubai, we serve clients across the UAE, Middle East, UK, US, and globally. Our GEO and international SEO services are designed for brands targeting multiple markets simultaneously." },
+    ],
+    extendedContent: [
+      {
+        heading: "What Working With a Dubai SEO Agency Actually Involves",
+        paragraphs: [
+          "Hiring an SEO agency in Dubai is not about handing over a keyword list and waiting for rankings. The work starts with a technical audit that finds the issues holding your site back, from crawl errors and slow mobile load times to missing structured data and weak internal linking. Only once those foundations are sound does new content and authority building begin to pay off.",
+          "A typical engagement with SEODXB moves through four stages. First, we audit and benchmark where you stand against the competitors already ranking for your terms. Second, we build a keyword and content map tied to how Dubai buyers actually search. Third, we execute, covering on-page changes, content production, local signals, and link acquisition. Fourth, we report on rankings, organic traffic, and leads each month so you can see what the investment returns.",
+        ],
+      },
+      {
+        heading: "Why a Specialist Agency Beats a Generalist for SEO",
+        paragraphs: [
+          "Many Dubai businesses hire a full-service marketing agency and find SEO treated as one line item among social media, paid ads, and design. The result is shallow work that rarely moves rankings. A specialist agency does one thing, which means deeper technical knowledge, faster diagnosis of ranking problems, and strategies built specifically for how search is changing.",
+          "That focus matters more in 2026 than it did five years ago. Search now spans classic Google results, featured snippets, and AI answers from tools like ChatGPT and Perplexity. Each rewards different signals, and keeping pace with all three is a full-time discipline rather than a side service.",
+        ],
+      },
+      {
+        heading: "The Dubai Search Landscape in 2026",
+        paragraphs: [
+          "Dubai is one of the most competitive and linguistically diverse search markets in the region. A large share of the population is expatriate, searches happen in both English and Arabic, and new residents arrive constantly with no existing list of trusted suppliers. For most service categories, the business that is easiest to find and verify online wins the enquiry, often before a single phone call.",
+          "Ranking here means competing against established local players, international brands, and aggregator directories at the same time. A focused local strategy, strong Google Business Profile signals, and content that answers the specific questions Dubai buyers ask is how smaller businesses earn visibility against bigger budgets.",
+        ],
+      },
     ],
     ctaTitle: "Ready to Dominate Dubai Search?",
     ctaDesc: "Book a free SEO strategy call with SEODXB. We'll audit your site, analyse your competitors, and show you exactly how to rank #1 in Dubai.",
@@ -140,6 +167,29 @@ export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
       { q: "Can I choose specific SEO services or do I need a full package?", a: "SEODXB offers both. Our monthly retainer plans cover the full service spectrum, but we also offer standalone technical SEO audits, one-time content projects, and GEO setup packages for businesses with specific needs." },
       { q: "How do your SEO services compare to hiring an in-house SEO in Dubai?", a: "SEODXB provides a full team of SEO specialists, content writers, and technical experts for less than the cost of one senior in-house hire. You also benefit from cross-industry knowledge and access to enterprise-level tools." },
     ],
+    extendedContent: [
+      {
+        heading: "The Core SEO Services Dubai Businesses Need",
+        paragraphs: [
+          "SEO is not a single task but a set of connected services. Technical SEO makes sure search engines can crawl, render, and index your site quickly on mobile. On-page SEO aligns your titles, headings, and content with what people search for. Content production answers buyer questions and builds topical depth. Local SEO covers your Google Business Profile, citations, and reviews so you appear in the map results for nearby searches.",
+          "On top of these sit two newer services. Answer Engine Optimisation structures your content so it can be lifted into featured snippets and voice results. Generative Engine Optimisation makes your pages extractable and credible enough to be cited inside AI answers. Together they protect your visibility as more searches end inside an answer rather than a list of links.",
+        ],
+      },
+      {
+        heading: "How the Services Fit Together",
+        paragraphs: [
+          "These services compound rather than work in isolation. Technical fixes make every later improvement count, because content cannot rank on a site search engines struggle to crawl. Content gives your link building something worth pointing to. Local signals turn that visibility into walk-ins and calls. Skipping a layer usually caps the results of the others.",
+          "For that reason we sequence the work rather than running everything at once. The first months focus on foundations and quick technical wins, then content and authority building take over as the engine of sustained growth.",
+        ],
+      },
+      {
+        heading: "Choosing the Right Services for Your Stage",
+        paragraphs: [
+          "A new business with a thin site needs foundations first: a clean technical base, core service pages, and a claimed, optimised Google Business Profile. An established business whose traffic has plateaued usually needs content depth, better internal linking, and authority building to break through. We scope the mix to where you are rather than selling a fixed package.",
+          "If you are unsure which services you need, a free audit will show the gaps in priority order so your budget goes to the work that moves rankings first.",
+        ],
+      },
+    ],
     ctaTitle: "Start Growing Your Organic Traffic Today",
     ctaDesc: "Tell us your goals and we'll recommend the right mix of SEO services to get you there - with a free audit included.",
     ctaButton: "Explore SEO Services",
@@ -215,6 +265,29 @@ export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
       { q: "When should I hire an SEO consultant vs. an SEO agency?", a: "An SEO consultant is ideal if you have an in-house team that needs strategic direction, or if you want a second opinion on your existing SEO approach. An SEO agency like SEODXB is better when you need full execution capability in addition to strategy." },
       { q: "How much does an SEO consultant cost in Dubai?", a: "SEO consultant rates in Dubai vary widely. SEODXB offers structured consultancy through our monthly plans starting at $999/mo, which includes both strategy and execution - delivering more value than standalone advisory retainers." },
       { q: "Can an SEO consultant fix a Google penalty?", a: "Yes. SEODXB consultants are experienced in diagnosing and resolving both manual and algorithmic Google penalties, including link-based penalties, thin content issues, and core update impacts." },
+    ],
+    extendedContent: [
+      {
+        heading: "What an SEO Consultant Does That a Retainer Does Not",
+        paragraphs: [
+          "An SEO consultant is hired for judgement rather than volume of output. The role is to diagnose why a site is not ranking, decide what matters most, and build a strategy that your in-house team or developers can execute. Where a full agency retainer bundles strategy and delivery together, a consultant focuses on direction, prioritisation, and avoiding expensive mistakes.",
+          "That makes consulting a good fit for businesses that already have people who can do the work but lack a clear plan. The consultant sets the roadmap, reviews execution, and keeps the strategy aligned with how search is changing, while your team handles the day-to-day implementation.",
+        ],
+      },
+      {
+        heading: "When to Hire a Consultant Instead of an Agency",
+        paragraphs: [
+          "If you have a marketing manager, a developer, or a content writer in-house, a consultant often gives better value than a full retainer. You are paying for expertise and direction, not for a team to reproduce work your people can already do. Consulting also suits businesses that want an independent second opinion on an existing agency relationship.",
+          "Conversely, if you have no internal capacity to execute, an agency that both plans and delivers is usually the better choice. Many businesses start with consulting to set the strategy, then bring in delivery support once the roadmap is clear.",
+        ],
+      },
+      {
+        heading: "How SEO Consulting Engagements Work",
+        paragraphs: [
+          "A consulting engagement with SEODXB usually opens with a deep audit and competitor analysis, followed by a prioritised roadmap your team can act on. From there, the relationship can continue as a monthly advisory arrangement, where we review progress, adjust priorities, and answer the questions that come up during execution.",
+          "The aim is to leave your team more capable, not dependent. A good consultant transfers knowledge so the in-house skills you build keep paying off long after the engagement ends.",
+        ],
+      },
     ],
     ctaTitle: "Book a Consultation with a Dubai SEO Expert",
     ctaDesc: "Get a 1-hour strategy session with a senior SEODXB consultant - we'll review your site live and give you actionable recommendations.",
@@ -2219,6 +2292,29 @@ export const dubaiKeywordPages: Record<string, KeywordPageConfig> = {
       { q: "Does SEODXB offer one-off projects for Dubai businesses that can't afford a retainer?", a: "Yes. SEODXB offers standalone SEO audits, keyword research projects, and on-page optimisation sprints as one-off engagements. These are ideal for businesses that want expert SEO work but implement it themselves, or need a specific output without committing to a retainer." },
       { q: "How does SEODXB keep costs affordable without cutting quality?", a: "By being a specialist. We don't maintain huge generalist teams, expensive offices, or overhead from non-SEO services. Our lean, specialist team delivers expert SEO without the bloat of large agencies - passing those savings to clients without compromising quality." },
     ],
+    extendedContent: [
+      {
+        heading: "What Affordable SEO Should and Should Not Mean",
+        paragraphs: [
+          "Affordable SEO should mean strong value for the money, not the cheapest possible price. The lowest quotes in the market usually rely on automated link schemes, spun content, or thin work that risks penalties and rarely produces leads. Genuinely affordable SEO is about spending a sensible budget on the few activities that move rankings, and skipping the ones that do not.",
+          "The difference shows up over time. Cheap SEO often costs more in the long run because the damage has to be undone before real progress can start. Affordable SEO done properly compounds, so the same monthly spend returns more each month as authority builds.",
+        ],
+      },
+      {
+        heading: "How to Get Results on a Smaller Budget",
+        paragraphs: [
+          "A smaller budget means ruthless prioritisation rather than doing less of everything. We start with the highest-impact work: fixing technical issues that block indexing, optimising the handful of pages closest to ranking, and claiming local search visibility through your Google Business Profile. These deliver the fastest movement for the least spend.",
+          "Content and link building then proceed at a steady pace that fits the budget, focusing on the topics most likely to bring qualified enquiries. Progress is slower than a large retainer would deliver, but it is real and it accumulates.",
+        ],
+      },
+      {
+        heading: "SEO Pricing in Dubai, Explained",
+        paragraphs: [
+          "SEODXB offers transparent plans with no long lock-in contracts, starting from $999 per month. Each plan sets out exactly what is included, from the number of pages and tracked keywords to content output and reporting, so you can match the investment to your goals and budget.",
+          "If you are weighing cost against value, a free audit will show what your site needs and which work to fund first, so even a modest budget is spent where it has the most effect.",
+        ],
+      },
+    ],
     ctaTitle: "Get Affordable Expert SEO for Your Dubai Business",
     ctaDesc: "Book a free consultation. We'll scope a realistic SEO plan within your budget - with transparent pricing, clear deliverables, and a realistic timeline to organic growth.",
     ctaButton: "Get Free SEO Quote",
@@ -3812,14 +3908,27 @@ function normalize(rec: Record<string, KeywordPageConfig>): Record<string, Keywo
   return rec;
 }
 
-export const keywordPages: Record<string, KeywordPageConfig> = normalize({
-  ...dubaiKeywordPages,
-  ...uaeKeywordPages,
-  ...toRecord(usKeywordPages),
-  ...toRecord(ukKeywordPages),
-  ...toRecord(euKeywordPages),
-  ...toRecord(apacKeywordPages),
-  ...toRecord(gccKeywordPages),
-  ...toRecord(globalKeywordPages),
-  ...toRecord(leadsKeywordPages),
-});
+// Near-synonym pages consolidated into a stronger page via a 301 redirect
+// (see public/_redirects). Excluded from the live set so they are not
+// prerendered, sitemapped, indexed, or linked internally. Consolidating thin
+// duplicate-intent pages concentrates authority and crawl budget on one URL.
+export const REDIRECTED_SLUGS = new Set<string>([
+  "seo-company-dubai",
+  "best-seo-agency-dubai",
+]);
+
+export const keywordPages: Record<string, KeywordPageConfig> = normalize(
+  Object.fromEntries(
+    Object.entries({
+      ...dubaiKeywordPages,
+      ...uaeKeywordPages,
+      ...toRecord(usKeywordPages),
+      ...toRecord(ukKeywordPages),
+      ...toRecord(euKeywordPages),
+      ...toRecord(apacKeywordPages),
+      ...toRecord(gccKeywordPages),
+      ...toRecord(globalKeywordPages),
+      ...toRecord(leadsKeywordPages),
+    }).filter(([slug]) => !REDIRECTED_SLUGS.has(slug)),
+  ),
+);

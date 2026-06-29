@@ -1,0 +1,5 @@
+# 301 redirects for consolidated near-synonym keyword pages.
+# Each source targeted the same intent as the destination; merging them
+# concentrates authority and crawl budget on one stronger URL.
+/seo-company-dubai       /seo-agency-dubai   301
+/best-seo-agency-dubai   /seo-agency-dubai   301

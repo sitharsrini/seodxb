@@ -173,6 +173,14 @@ function buildBody(page: KeywordPageConfig, html: string, related: KeywordPageCo
         ${page.features.map((f) => `<li><strong>${escape(f.title)}</strong> - ${escape(f.desc)}</li>`).join("\n        ")}
       </ul>
     </section>
+    ${(page.extendedContent ?? [])
+      .map(
+        (b) => `<section>
+      <h2>${escape(b.heading)}</h2>
+      ${b.paragraphs.map((p) => `<p>${escape(p)}</p>`).join("\n      ")}
+    </section>`,
+      )
+      .join("\n    ")}
     <section>
       <h2>${escape(page.faqTitle ?? "Frequently Asked Questions")}</h2>
       ${page.faqs

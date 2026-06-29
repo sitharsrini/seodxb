@@ -618,6 +618,22 @@ export function KeywordPage() {
           </div>
         </section>
 
+        {/* Extended, page-specific long-form content (deepens priority pages) */}
+        {config.extendedContent && config.extendedContent.length > 0 && (
+          <section className="py-20 bg-white border-t border-gray-100">
+            <div className="container mx-auto px-4 max-w-3xl">
+              {config.extendedContent.map((block, i) => (
+                <div key={i} className={i > 0 ? "mt-12" : ""}>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold mb-5 text-gray-900">{block.heading}</h2>
+                  {block.paragraphs.map((p, j) => (
+                    <p key={j} className="text-gray-600 leading-relaxed mb-4">{p}</p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Why SEODXB */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
