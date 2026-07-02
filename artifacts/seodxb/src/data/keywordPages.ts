@@ -6,6 +6,7 @@ import { apacKeywordPages } from "./keywordPagesAPAC";
 import { gccKeywordPages } from "./keywordPagesGCC";
 import { globalKeywordPages } from "./keywordPagesGlobal";
 import { leadsKeywordPages } from "./keywordPagesLeads";
+import { saudiWebPages } from "./keywordPagesSaudiWeb";
 
 export interface KeywordPageConfig {
   slug: string;
@@ -3929,6 +3930,7 @@ export const keywordPages: Record<string, KeywordPageConfig> = normalize(
       ...toRecord(gccKeywordPages),
       ...toRecord(globalKeywordPages),
       ...toRecord(leadsKeywordPages),
+      ...toRecord(saudiWebPages),
     }).filter(([slug]) => !REDIRECTED_SLUGS.has(slug)),
   ),
 );
