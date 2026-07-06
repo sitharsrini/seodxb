@@ -1283,31 +1283,10 @@ export function BlogPost() {
         <meta name="twitter:title" content={`${post.title} | SEODXB Blog`} />
         <meta name="twitter:description" content={post.excerpt || post.title} />
         <meta name="twitter:image" content={post.imageUrl ?? "https://seodxb.com/opengraph.jpg"} />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": post.title,
-          "description": post.excerpt,
-          "url": `https://seodxb.com/blog/${slug}`,
-          "datePublished": post.iso,
-          "dateModified": post.updated,
-          "author": { "@type": "Person", "name": AUTHOR.name, "url": AUTHOR.url },
-          "publisher": { "@type": "Organization", "name": "SEODXB", "url": "https://seodxb.com", "logo": { "@type": "ImageObject", "url": "https://seodxb.com/favicon.png" } },
-          "image": post.imageUrl ?? "https://seodxb.com/opengraph.jpg",
-          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://seodxb.com/blog/${slug}` }
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify(authorSchema)}</script>
-        {post.faqs && post.faqs.length > 0 && (
-          <script type="application/ld+json">{JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": post.faqs.map((f) => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": { "@type": "Answer", "text": f.a },
-            })),
-          })}</script>
-        )}
+        {/* Article + FAQPage + BreadcrumbList JSON-LD are injected into the raw
+            prerendered HTML by scripts/prerender.ts (buildBlogSchema) so AI
+            crawlers that do not run JavaScript can read it. Not duplicated here
+            to avoid two copies of the same schema in Google's rendered DOM. */}
       </Helmet>
     <div className="pt-28 pb-24 min-h-screen bg-white">
       <div className="container mx-auto px-4 max-w-3xl">

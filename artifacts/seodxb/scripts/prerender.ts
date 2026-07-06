@@ -23,8 +23,8 @@ import { euKeywordPages } from "../src/data/keywordPagesEU";
 import { apacKeywordPages } from "../src/data/keywordPagesAPAC";
 import { globalKeywordPages } from "../src/data/keywordPagesGlobal";
 import { leadsKeywordPages } from "../src/data/keywordPagesLeads";
-import { generatedBlogMeta, generatedBlogContent } from "../src/data/blogPosts";
-import { generatedBlogMeta2, generatedBlogContent2 } from "../src/data/blogPosts2";
+import { generatedBlogMeta, generatedBlogContent, generatedBlogPosts } from "../src/data/blogPosts";
+import { generatedBlogMeta2, generatedBlogContent2, generatedBlogPosts2 } from "../src/data/blogPosts2";
 import { longFormMeta, longFormContent, longFormSchemaData } from "../src/data/longform";
 import { clampTitle } from "../src/lib/title";
 
@@ -409,12 +409,37 @@ const AUTHOR_URL = "https://www.linkedin.com/in/srinivasanram163/";
 // Build raw-HTML JSON-LD (Article + BreadcrumbList + FAQPage) for a blog post so
 // the structured data lives in the served source, not only in React Helmet tags.
 // Only emitted for long-form articles where full data (dates, image, FAQs) exists.
+// Schema data for EVERY blog post, not just long-form. AI crawlers (GPTBot,
+// PerplexityBot, ClaudeBot) mostly do not execute JavaScript, so structured
+// data must live in the raw HTML for them to read authorship, dates, and FAQs.
+// Long-form entries win on collision because their data is hand-curated.
+type BlogSchemaEntry = { title: string; excerpt: string; iso: string; updated: string; heroImage: string; faqs: { q: string; a: string }[] };
+const BLOG_SCHEMA_DATA: Record<string, BlogSchemaEntry> = {
+  ...Object.fromEntries(
+    [...generatedBlogPosts, ...generatedBlogPosts2].map((p) => [p.slug, {
+      title: p.title,
+      excerpt: p.excerpt,
+      iso: p.iso,
+      updated: p.updated,
+      heroImage: p.imageUrl ?? "",
+      faqs: p.faqs ?? [],
+    }]),
+  ),
+  ...longFormSchemaData,
+};
+
 function buildBlogSchema(slug: string, url: string): string {
-  const d = longFormSchemaData[slug];
-  if (!d) return "";
+  let d: BlogSchemaEntry | undefined = BLOG_SCHEMA_DATA[slug];
+  if (!d) {
+    // Fallback for the few hand-written JSX posts: still emit Article + Breadcrumb
+    // from their meta so no blog post is left without structured data.
+    const m = BLOG_META[slug];
+    if (!m) return "";
+    d = { title: m.title.replace(/\s*\|\s*SEODXB Blog\s*$/, ""), excerpt: m.desc, iso: "2026-05-15", updated: "2026-05-15", heroImage: "", faqs: [] };
+  }
   const blocks: string[] = [];
 
-  blocks.push(JSON.stringify({
+  const article: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: d.title,
@@ -424,9 +449,10 @@ function buildBlogSchema(slug: string, url: string): string {
     dateModified: d.updated,
     author: { "@type": "Person", name: AUTHOR_NAME, url: AUTHOR_URL },
     publisher: { "@type": "Organization", name: "SEODXB", url: SITE, logo: { "@type": "ImageObject", url: `${SITE}/favicon.png` } },
-    image: d.heroImage,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-  }));
+  };
+  if (d.heroImage) article.image = d.heroImage;
+  blocks.push(JSON.stringify(article));
 
   blocks.push(JSON.stringify({
     "@context": "https://schema.org",
