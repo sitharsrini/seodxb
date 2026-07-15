@@ -10,7 +10,7 @@ const SUPABASE_URL = "https://khqjknkcrenlihjtaekf.supabase.co";
 // key cannot expose leads.
 const SUPABASE_ANON =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtocWprbmtjcmVubGloanRhZWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1OTQ4ODMsImV4cCI6MjA4OTE3MDg4M30.c7GaLdHO5Sk-MXafvxfYRpAWTNHhI3bduhczDjXEgLw";
-const ADMIN_KEY_FALLBACK = "iwFeVR0kWPEcRkJNPeXLhVEU";
+const ADMIN_KEY_FALLBACK = "1234";
 
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
