@@ -3,14 +3,18 @@ import { Helmet } from "react-helmet-async";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 type Status = "idle" | "sending" | "success" | "error";
 
+const WHATSAPP = "971521551198"; // +971 52 155 1198
+const CONTACT_EMAIL = "hi@Listi.ae";
+
 export function Contact() {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [status, setStatus] = React.useState<Status>("idle");
+  const [sent, setSent] = React.useState<{ from_name?: string; reply_to?: string; phone?: string; company_url?: string; message?: string }>({});
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,6 +22,7 @@ export function Contact() {
 
     setStatus("sending");
     const data = Object.fromEntries(new FormData(formRef.current));
+    setSent(data as typeof sent);
 
     try {
       const res = await fetch("/api/contact", {
@@ -133,12 +138,32 @@ export function Contact() {
                 <Textarea name="message" placeholder="How can we help you?" className="bg-white min-h-[150px] resize-none text-base p-4" required />
               </div>
 
-              {status === "error" && (
-                <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                  <AlertCircle size={16} />
-                  Something went wrong. Please email us directly at hi@Listi.ae
-                </div>
-              )}
+              {status === "error" && (() => {
+                const summary = `Hi SEODXB, I tried the contact form but it did not go through.%0A%0AName: ${sent.from_name ?? ""}%0AEmail: ${sent.reply_to ?? ""}%0ACompany: ${sent.company_url ?? ""}%0A%0A${sent.message ?? ""}`;
+                const mailBody = summary.replace(/%0A/g, "\n");
+                return (
+                  <div className="space-y-3 bg-amber-50 border border-amber-200 rounded-xl px-4 py-4">
+                    <div className="flex items-center gap-2 text-amber-700 text-sm font-semibold">
+                      <AlertCircle size={16} />
+                      Message not sent. Reach us directly, it takes one tap:
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      <a href={`https://wa.me/${WHATSAPP}?text=${summary}`} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 rounded-lg bg-[#25D366] text-white font-semibold py-3 text-sm hover:opacity-90 transition-opacity">
+                        <MessageCircle size={16} /> WhatsApp
+                      </a>
+                      <a href={`tel:+${WHATSAPP}`}
+                        className="flex items-center justify-center gap-2 rounded-lg bg-primary text-white font-semibold py-3 text-sm hover:opacity-90 transition-opacity">
+                        <Phone size={16} /> Call
+                      </a>
+                      <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("New enquiry from " + (sent.from_name ?? "website"))}&body=${encodeURIComponent(mailBody)}`}
+                        className="flex items-center justify-center gap-2 rounded-lg border border-gray-300 text-gray-800 font-semibold py-3 text-sm hover:bg-gray-50 transition-colors">
+                        <Mail size={16} /> Email
+                      </a>
+                    </div>
+                  </div>
+                );
+              })()}
 
               <Button
                 type="submit"
