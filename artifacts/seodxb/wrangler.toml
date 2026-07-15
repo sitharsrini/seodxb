@@ -1,3 +1,15 @@
 name = "seodxb"
 compatibility_date = "2025-05-01"
 pages_build_output_dir = "dist/public"
+
+# Leads database binding. Cloudflare Pages reads this on build, so the worker
+# gets env.DB with no dashboard configuration required.
+[[d1_databases]]
+binding = "DB"
+database_name = "seodxb-leads"
+database_id = "eb366b9d-3291-4da6-91bf-0385000d5f40"
+
+# Admin key gating GET /api/leads. Lives only in the server-side worker (never
+# shipped to the browser); the admin page prompts for it.
+[vars]
+ADMIN_KEY = "iwFeVR0kWPEcRkJNPeXLhVEU"

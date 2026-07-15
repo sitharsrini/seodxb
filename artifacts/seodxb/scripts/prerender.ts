@@ -227,6 +227,7 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "free-seo-audit": { title: "Free SEO Audit Dubai - Request Your Report in 2 Minutes | SEODXB", desc: "Get a free SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a priority action list." },
   "seo-services": { title: "SEO Services Directory - All Locations and Industries | SEODXB", desc: "Browse all SEODXB SEO services by location and industry. Dubai, UAE cities, GCC, US, UK, Europe, APAC and global coverage." },
   "admin": { title: "Site Index | SEODXB Admin", desc: "Internal site index of every SEODXB page and blog post. Private admin directory, not indexed by search engines." },
+  "leads-admin": { title: "Leads | SEODXB Admin", desc: "Private admin page for viewing stored contact-form leads. Not indexed by search engines. Access is protected by an admin key." },
 };
 
 const BLOG_META: Record<string, { title: string; desc: string }> = {
@@ -594,7 +595,7 @@ function prerender() {
   const homepageHtml = injectStaticBody(shell, "");
   writeFileSync(homepageFile, homepageHtml, "utf-8");
 
-  const NOINDEX_ROUTES = new Set(["admin"]);
+  const NOINDEX_ROUTES = new Set(["admin", "leads-admin"]);
   // Routes that already have H1 injected via buildStaticBody() or a dedicated builder
   const HAS_STATIC_BODY = new Set(["", "index", "about", "pricing",
     "seo-services", "blog",

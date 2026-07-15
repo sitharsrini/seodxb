@@ -57,6 +57,7 @@ const LegalSEO = lazy(() => import("@/pages/industries/LegalSEO").then((m) => ({
 const KeywordPage = lazy(() => import("@/pages/KeywordPage").then((m) => ({ default: m.KeywordPage })));
 const ServicesDirectory = lazy(() => import("@/pages/ServicesDirectory").then((m) => ({ default: m.ServicesDirectory })));
 const Admin = lazy(() => import("@/pages/Admin").then((m) => ({ default: m.Admin })));
+const LeadsAdmin = lazy(() => import("@/pages/LeadsAdmin").then((m) => ({ default: m.LeadsAdmin })));
 const Website20AED = lazy(() => import("@/pages/Website20AED").then((m) => ({ default: m.Website20AED })));
 const FreeSEOAudit = lazy(() => import("@/pages/FreeSEOAudit").then((m) => ({ default: m.FreeSEOAudit })));
 
@@ -92,6 +93,7 @@ function Router() {
       <Route path="/free-seo-audit" component={FreeSEOAudit} />
       <Route path="/seo-services" component={ServicesDirectory} />
       <Route path="/admin" component={Admin} />
+      <Route path="/leads-admin" component={LeadsAdmin} />
       <Route path="/website-20-aed" component={Website20AED} />
       <Route path="/:slug" component={KeywordPage} />
       <Route component={NotFound} />

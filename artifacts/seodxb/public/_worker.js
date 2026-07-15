@@ -1,84 +1,71 @@
+// Cloudflare Pages advanced-mode worker.
+// - POST /api/contact  -> stores a lead in the D1 database (env.DB). No email.
+// - GET  /api/leads    -> returns stored leads as JSON, gated by ADMIN_KEY.
+// Everything else is served as a static asset.
+
+function json(obj, status = 200) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Health check: reports whether the email key is configured, without
-    // exposing it. Lets us diagnose the form without sending an email.
-    if (url.pathname === "/api/contact" && request.method === "GET") {
-      return new Response(
-        JSON.stringify({ ok: true, keyConfigured: Boolean(env.RESEND_API_KEY) }),
-        { status: 200, headers: { "Content-Type": "application/json" } }
-      );
-    }
-
-    // Handle contact form API
-    if (url.pathname === "/api/contact" && request.method === "POST") {
-      const headers = { "Content-Type": "application/json" };
+    // ── Admin: list stored leads (protected) ────────────────────────────────
+    if (url.pathname === "/api/leads" && request.method === "GET") {
+      const key = url.searchParams.get("key") || request.headers.get("x-admin-key");
+      if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
+        return json({ error: "Unauthorized" }, 401);
+      }
+      if (!env.DB) return json({ error: "Database not bound" }, 500);
       try {
-        const { from_name, reply_to, phone, company_url, message } =
-          await request.json();
-
-        if (!from_name || !reply_to || !message) {
-          return new Response(
-            JSON.stringify({ error: "Missing required fields" }),
-            { status: 400, headers }
-          );
-        }
-
-        if (!env.RESEND_API_KEY) {
-          return new Response(
-            JSON.stringify({ error: "Email not configured", detail: "RESEND_API_KEY missing in Cloudflare Pages environment variables" }),
-            { status: 500, headers }
-          );
-        }
-
-        const res = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${env.RESEND_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            from: "SEODXB Contact <noreply@seodxb.com>",
-            to: ["hi@Listi.ae"],
-            reply_to,
-            subject: `New enquiry from ${from_name}`,
-            html: `
-              <div style="font-family:sans-serif;max-width:600px">
-                <h2>New contact form submission</h2>
-                <table style="width:100%">
-                  <tr><td style="color:#666;width:140px">Name</td><td><strong>${from_name}</strong></td></tr>
-                  <tr><td style="color:#666">Email</td><td><a href="mailto:${reply_to}">${reply_to}</a></td></tr>
-                  <tr><td style="color:#666">Phone</td><td>${phone || "-"}</td></tr>
-                  <tr><td style="color:#666">Company URL</td><td>${company_url || "-"}</td></tr>
-                </table>
-                <hr style="margin:24px 0"/>
-                <p style="white-space:pre-wrap">${message}</p>
-              </div>`,
-          }),
-        });
-
-        if (!res.ok) {
-          const detail = (await res.text()).slice(0, 500);
-          return new Response(
-            JSON.stringify({ error: "Failed to send email", resendStatus: res.status, detail }),
-            { status: 502, headers }
-          );
-        }
-
-        return new Response(JSON.stringify({ success: true }), {
-          status: 200,
-          headers,
-        });
-      } catch {
-        return new Response(
-          JSON.stringify({ error: "Internal server error" }),
-          { status: 500, headers }
-        );
+        const { results } = await env.DB.prepare(
+          "SELECT id, name, email, phone, company_url, message, source, created_at FROM leads ORDER BY id DESC LIMIT 1000"
+        ).all();
+        return json({ leads: results, count: results.length });
+      } catch (e) {
+        return json({ error: "Database error", detail: String(e) }, 500);
       }
     }
 
-    // Serve all other requests as static assets
+    // ── Capture a lead ──────────────────────────────────────────────────────
+    if (url.pathname === "/api/contact" && request.method === "POST") {
+      let b;
+      try {
+        b = await request.json();
+      } catch {
+        return json({ error: "Invalid request" }, 400);
+      }
+      const name = (b.from_name || b.name || "").toString().slice(0, 200);
+      const email = (b.reply_to || b.email || "").toString().slice(0, 200);
+      const message = (b.message || "").toString().slice(0, 5000);
+      if (!name || !email || !message) {
+        return json({ error: "Missing required fields" }, 400);
+      }
+      if (!env.DB) return json({ error: "Database not bound" }, 500);
+      try {
+        await env.DB.prepare(
+          "INSERT INTO leads (name, email, phone, company_url, message, source) VALUES (?, ?, ?, ?, ?, ?)"
+        )
+          .bind(
+            name,
+            email,
+            (b.phone || "").toString().slice(0, 60),
+            (b.company_url || "").toString().slice(0, 300),
+            message,
+            (b.source || url.hostname).toString().slice(0, 120)
+          )
+          .run();
+        return json({ success: true });
+      } catch (e) {
+        return json({ error: "Failed to save", detail: String(e) }, 500);
+      }
+    }
+
+    // ── Static assets ───────────────────────────────────────────────────────
     return env.ASSETS.fetch(request);
   },
 };
