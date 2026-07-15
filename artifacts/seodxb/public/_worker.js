@@ -10,14 +10,19 @@ function json(obj, status = 200) {
   });
 }
 
+// Admin key. Prefers the env var if set, else this fallback so the panel works
+// without any dashboard configuration. Lives only in the server-side worker.
+const ADMIN_KEY_FALLBACK = "iwFeVR0kWPEcRkJNPeXLhVEU";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const ADMIN_KEY = env.ADMIN_KEY || ADMIN_KEY_FALLBACK;
 
     // ── Admin: list stored leads (protected) ────────────────────────────────
     if (url.pathname === "/api/leads" && request.method === "GET") {
       const key = url.searchParams.get("key") || request.headers.get("x-admin-key");
-      if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
+      if (key !== ADMIN_KEY) {
         return json({ error: "Unauthorized" }, 401);
       }
       if (!env.DB) return json({ error: "Database not bound" }, 500);
