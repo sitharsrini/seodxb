@@ -15,28 +15,31 @@ export function Contact() {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [status, setStatus] = React.useState<Status>("idle");
   const [sent, setSent] = React.useState<{ from_name?: string; reply_to?: string; phone?: string; company_url?: string; message?: string }>({});
+  const [waUrl, setWaUrl] = React.useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const buildWaUrl = (d: typeof sent) => {
+    const text =
+      `New enquiry from ${d.from_name || "website"}\n\n` +
+      `Email: ${d.reply_to || "-"}\n` +
+      `Phone: ${d.phone || "-"}\n` +
+      `Company: ${d.company_url || "-"}\n\n` +
+      `${d.message || ""}`;
+    return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    setStatus("sending");
-    const data = Object.fromEntries(new FormData(formRef.current));
-    setSent(data as typeof sent);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
-      formRef.current.reset();
-    } catch {
-      setStatus("error");
-    }
+    const data = Object.fromEntries(new FormData(formRef.current)) as typeof sent;
+    setSent(data);
+    const url = buildWaUrl(data);
+    setWaUrl(url);
+    // Open WhatsApp with the enquiry pre-filled. Opened synchronously inside the
+    // submit gesture so popup blockers allow it. No server, key, or account
+    // needed, and it reaches the business instantly, which suits the Gulf market.
+    window.open(url, "_blank");
+    setStatus("success");
   };
 
   return (
@@ -101,13 +104,23 @@ export function Contact() {
           <h3 className="text-2xl font-bold mb-8">Send us a message</h3>
 
           {status === "success" ? (
-            <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
-              <CheckCircle size={56} className="text-green-500" />
-              <p className="text-2xl font-bold">Message sent!</p>
-              <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
+            <div className="flex flex-col items-center justify-center py-14 text-center gap-4">
+              <MessageCircle size={56} className="text-[#25D366]" />
+              <p className="text-2xl font-bold">Opening WhatsApp…</p>
+              <p className="text-muted-foreground max-w-sm">Your enquiry is pre-filled in WhatsApp, just press send and we'll reply fast. If it did not open, tap below.</p>
+              <div className="flex flex-wrap justify-center gap-2 mt-1">
+                <a href={waUrl || `https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-full bg-[#25D366] text-white font-semibold px-5 py-3 text-sm hover:opacity-90 transition-opacity">
+                  <MessageCircle size={16} /> Open WhatsApp
+                </a>
+                <a href={`tel:+${WHATSAPP}`}
+                  className="flex items-center gap-2 rounded-full bg-primary text-white font-semibold px-5 py-3 text-sm hover:opacity-90 transition-opacity">
+                  <Phone size={16} /> Call
+                </a>
+              </div>
               <Button
                 variant="outline"
-                className="mt-4 rounded-full"
+                className="mt-2 rounded-full"
                 onClick={() => setStatus("idle")}
               >
                 Send another message
