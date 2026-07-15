@@ -2,6 +2,15 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // Health check: reports whether the email key is configured, without
+    // exposing it. Lets us diagnose the form without sending an email.
+    if (url.pathname === "/api/contact" && request.method === "GET") {
+      return new Response(
+        JSON.stringify({ ok: true, keyConfigured: Boolean(env.RESEND_API_KEY) }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     // Handle contact form API
     if (url.pathname === "/api/contact" && request.method === "POST") {
       const headers = { "Content-Type": "application/json" };
@@ -13,6 +22,13 @@ export default {
           return new Response(
             JSON.stringify({ error: "Missing required fields" }),
             { status: 400, headers }
+          );
+        }
+
+        if (!env.RESEND_API_KEY) {
+          return new Response(
+            JSON.stringify({ error: "Email not configured", detail: "RESEND_API_KEY missing in Cloudflare Pages environment variables" }),
+            { status: 500, headers }
           );
         }
 
@@ -43,8 +59,9 @@ export default {
         });
 
         if (!res.ok) {
+          const detail = (await res.text()).slice(0, 500);
           return new Response(
-            JSON.stringify({ error: "Failed to send email" }),
+            JSON.stringify({ error: "Failed to send email", resendStatus: res.status, detail }),
             { status: 502, headers }
           );
         }
