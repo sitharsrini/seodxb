@@ -10,7 +10,7 @@ export const batch12: LongFormSpec[] = [
   {
     slug: "best-accounting-valuation-difc-firms-dubai",
     category: "Wealth & Business",
-    title: "Dubai's Best Accounting, Business Valuation and DIFC Setup Firms for HNWIs (2026 Guide)",
+    title: "Best Accounting, Valuation and DIFC Setup Firms in Dubai",
     excerpt: "A 2026 guide to Dubai's top accounting, business valuation and DIFC setup firms for HNWIs and premium businesses.",
     heroImage: img("photo-1512453979798-5ea266f8880c"),
     heroAlt: "Dubai financial district skyline representing accounting, valuation and corporate services for high net worth individuals",
