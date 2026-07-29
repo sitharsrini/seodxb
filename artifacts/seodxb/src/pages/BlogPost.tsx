@@ -1098,6 +1098,28 @@ function renderLongForm(a: LongFormArticle): React.ReactNode {
       <h2>The bottom line</h2>
       <p>{a.takeaway}</p>
 
+      {a.partners && a.partners.length > 0 && (
+        <React.Fragment>
+          <h2>Recommended providers</h2>
+          <div className="space-y-4 not-prose mt-6">
+            {a.partners.map((p, i) => (
+              <div key={`partner-${i}`} className="border border-gray-100 rounded-2xl p-6 bg-white shadow-sm">
+                <div className="flex items-center gap-2 flex-wrap mb-1">
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-lg hover:underline">
+                    {p.name}
+                  </a>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-gray-400">{p.role}</span>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">{p.blurb}</p>
+                <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm font-semibold text-primary hover:underline">
+                  Visit {p.name} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </React.Fragment>
+      )}
+
       {a.faqs.length > 0 && (
         <React.Fragment>
           <h2>Frequently asked questions</h2>

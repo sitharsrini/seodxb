@@ -503,6 +503,7 @@ type BlogStaticContent = {
   sections: { h: string; p: string[]; list?: string[] }[];
   takeaway: string;
   faqs?: { q: string; a: string }[];
+  partners?: { name: string; url: string; role: string; blurb: string }[];
 };
 const ALL_BLOG_CONTENT: Record<string, BlogStaticContent> = {
   ...generatedBlogContent,
@@ -544,6 +545,12 @@ function buildBlogStaticBody(slug: string, title?: string): string {
     }
   }
   parts.push(`<p>${esc(c.takeaway)}</p>`);
+  if (c.partners && c.partners.length > 0) {
+    parts.push(`<h2>Recommended providers</h2>`);
+    for (const p of c.partners) {
+      parts.push(`<p><a href="${p.url}" rel="noopener">${esc(p.name)}</a> - ${esc(p.role)}. ${esc(p.blurb)}</p>`);
+    }
+  }
   if (c.faqs && c.faqs.length > 0) {
     parts.push(`<h2>Frequently asked questions</h2>`);
     for (const f of c.faqs) {

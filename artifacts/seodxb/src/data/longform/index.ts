@@ -16,6 +16,7 @@ import { batch08 } from "./batch08";
 import { batch09 } from "./batch09";
 import { batch10 } from "./batch10";
 import { batch11 } from "./batch11";
+import { batch12 } from "./batch12";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -50,7 +51,7 @@ function readingTime(spec: LongFormSpec): string {
 const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
-  ...batch11,
+  ...batch11, ...batch12,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -58,6 +59,7 @@ const allSpecs: LongFormSpec[] = [
 const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: string }> = {
   "aeo-vs-seo-vs-geo-differences-explained": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
   "audit-brand-ai-visibility-20-minutes": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
+  "best-accounting-valuation-difc-firms-dubai": { date: "Jul 15, 2026", iso: "2026-07-15", updated: "2026-07-15" },
 };
 
 const seen = new Set<string>();
@@ -78,9 +80,9 @@ export const longFormMeta: Record<string, { title: string; desc: string }> = Obj
 
 // Plain-text content for static prerender injection (intro, sections, takeaway,
 // FAQs) so non-JS and AI crawlers can read the full article from raw HTML.
-export const longFormContent: Record<string, { intro: string[]; sections: ArticleSection[]; takeaway: string; faqs: ArticleFAQ[] }> =
+export const longFormContent: Record<string, { intro: string[]; sections: ArticleSection[]; takeaway: string; faqs: ArticleFAQ[]; partners?: { name: string; url: string; role: string; blurb: string }[] }> =
   Object.fromEntries(
-    longFormArticles.map((a) => [a.slug, { intro: a.intro, sections: a.sections, takeaway: a.takeaway, faqs: a.faqs }]),
+    longFormArticles.map((a) => [a.slug, { intro: a.intro, sections: a.sections, takeaway: a.takeaway, faqs: a.faqs, partners: a.partners ?? [] }]),
   );
 
 // Schema data for static JSON-LD injection (Article, FAQPage, Breadcrumb) so the

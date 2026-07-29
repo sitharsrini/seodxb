@@ -29,6 +29,15 @@ export interface ArticleFAQ {
   a: string;
 }
 
+// Recommended providers rendered as a dofollow-linked block (real backlinks,
+// unlike the nofollow reference citations).
+export interface PartnerLink {
+  name: string;
+  url: string;
+  role: string;
+  blurb: string;
+}
+
 // What the writing agents produce (no dates / reading time; the index assigns
 // those so they stay unique and accurate across the whole set).
 export interface LongFormSpec {
@@ -44,6 +53,7 @@ export interface LongFormSpec {
   takeaway: string;
   faqs: ArticleFAQ[];
   references: ArticleRef[];
+  partners?: PartnerLink[];
   youtubeId?: string;
   youtubeTitle?: string;
 }
