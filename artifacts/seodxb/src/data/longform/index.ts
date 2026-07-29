@@ -17,6 +17,7 @@ import { batch09 } from "./batch09";
 import { batch10 } from "./batch10";
 import { batch11 } from "./batch11";
 import { batch12 } from "./batch12";
+import { batch13 } from "./batch13";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -51,7 +52,7 @@ function readingTime(spec: LongFormSpec): string {
 const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
-  ...batch11, ...batch12,
+  ...batch11, ...batch12, ...batch13,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -60,6 +61,9 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "aeo-vs-seo-vs-geo-differences-explained": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
   "audit-brand-ai-visibility-20-minutes": { date: "Jun 12, 2026", iso: "2026-06-12", updated: "2026-06-12" },
   "best-accounting-valuation-difc-firms-dubai": { date: "Jul 15, 2026", iso: "2026-07-15", updated: "2026-07-15" },
+  "best-accounting-firm-dubai": { date: "Jul 16, 2026", iso: "2026-07-16", updated: "2026-07-16" },
+  "best-business-valuation-company-dubai": { date: "Jul 17, 2026", iso: "2026-07-17", updated: "2026-07-17" },
+  "best-difc-business-setup-company-dubai": { date: "Jul 18, 2026", iso: "2026-07-18", updated: "2026-07-18" },
 };
 
 const seen = new Set<string>();
