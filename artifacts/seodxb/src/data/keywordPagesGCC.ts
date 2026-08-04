@@ -1426,4 +1426,96 @@ commercial("seo-for-real-estate-amman", {
   ctaButton: "Get Free Consultation",
 });
 
+// ===== Kuwait sector pages: automotive, healthcare, and AI/technology =====
+
+commercial("seo-for-automotive-kuwait", {
+  keyword: "SEO for Automotive Companies in Kuwait", badge: "Automotive SEO in Kuwait",
+  title: "SEO for Automotive Companies in Kuwait | SEODXB",
+  metaDesc: "Automotive SEO in Kuwait from SEODXB. Rank car brands, models and dealers on Google and AI search in Arabic and English.",
+  h1: "SEO for Automotive Companies in Kuwait: Be Found by Car Buyers",
+  intro: "Car buyers in Kuwait research models, prices, and dealers extensively across Google and AI tools before they ever visit a showroom. SEODXB delivers automotive SEO in Kuwait: model and dealer page ranking, comparison and pricing keyword targeting, and AI search citations that put your brand in front of buyers in both Arabic and English.",
+  scope: "Automotive companies in Kuwait", served: "Kuwait",
+  featuresTitle: "Automotive SEO Built for Kuwait",
+  featuresSubtitle: "Model, dealer, and comparison SEO that captures Kuwait car buyers across Google and AI search.",
+  faqTitle: "Automotive SEO Kuwait - FAQs",
+  ctaTitle: "Put Your Kuwait Automotive Brand in Front of Buyers",
+  ctaDesc: "Book a free consultation and we'll map an automotive SEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("seo-for-car-dealerships-kuwait", {
+  keyword: "SEO for Car Dealerships in Kuwait", badge: "Car Dealership SEO in Kuwait",
+  title: "SEO for Car Dealerships in Kuwait | SEODXB",
+  metaDesc: "Car dealership SEO in Kuwait from SEODXB. Rank your showroom, models and offers on Google, Maps and AI search, bilingual.",
+  h1: "SEO for Car Dealerships in Kuwait: Drive Showroom Visits",
+  intro: "A car dealership in Kuwait competes for buyers who compare models, offers, and showrooms online before deciding where to go. SEODXB delivers dealership SEO in Kuwait: local Map Pack visibility, model and offer pages that rank, review and reputation signals, and AI search citations that send high-intent buyers to your showroom in Arabic and English.",
+  scope: "Car dealerships in Kuwait", served: "Kuwait",
+  featuresTitle: "Dealership SEO Built for Kuwait",
+  featuresSubtitle: "Local, model, and offer SEO that turns Kuwait online searches into showroom visits.",
+  faqTitle: "Car Dealership SEO Kuwait - FAQs",
+  ctaTitle: "Fill Your Kuwait Showroom With Online Buyers",
+  ctaDesc: "Book a free consultation and we'll map a dealership SEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("seo-for-healthcare-kuwait", {
+  keyword: "SEO for Healthcare in Kuwait", badge: "Healthcare SEO in Kuwait",
+  title: "SEO for Healthcare Providers in Kuwait | SEODXB",
+  metaDesc: "Healthcare SEO in Kuwait from SEODXB. Help patients find your hospital or clinic on Google and AI search, Arabic and English.",
+  h1: "SEO for Healthcare Providers in Kuwait: Be Found by Patients",
+  intro: "Patients in Kuwait research providers, treatments, and specialist clinics across Google and AI tools before booking. SEODXB delivers healthcare SEO in Kuwait: treatment and specialty page ranking, local and Map Pack visibility, medical schema, and AI search citations that build trust and bring patients to your hospital or clinic in Arabic and English.",
+  scope: "Healthcare providers in Kuwait", served: "Kuwait",
+  featuresTitle: "Healthcare SEO Built for Kuwait",
+  featuresSubtitle: "Treatment, specialty, and local SEO that connects Kuwait patients with your practice.",
+  faqTitle: "Healthcare SEO Kuwait - FAQs",
+  ctaTitle: "Bring More Patients to Your Kuwait Practice",
+  ctaDesc: "Book a free consultation and we'll map a healthcare SEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("seo-for-clinics-kuwait", {
+  keyword: "SEO for Clinics and Medical Centres in Kuwait", badge: "Clinic SEO in Kuwait",
+  title: "SEO for Clinics and Medical Centres in Kuwait | SEODXB",
+  metaDesc: "Clinic SEO in Kuwait from SEODXB. Rank your medical centre and specialties on Google, Maps and AI search, Arabic and English.",
+  h1: "SEO for Clinics and Medical Centres in Kuwait",
+  intro: "Clinics and medical centres in Kuwait win patients who search by symptom, treatment, and location before choosing where to book. SEODXB delivers clinic SEO in Kuwait: specialty and treatment pages that rank, Google Business Profile and Map Pack optimisation, review signals, and AI search citations that put your centre in front of nearby patients in Arabic and English.",
+  scope: "Clinics and medical centres in Kuwait", served: "Kuwait",
+  featuresTitle: "Clinic SEO Built for Kuwait",
+  featuresSubtitle: "Specialty, treatment, and local SEO that fills appointment books across Kuwait.",
+  faqTitle: "Clinic SEO Kuwait - FAQs",
+  ctaTitle: "Fill Your Kuwait Clinic's Appointment Book",
+  ctaDesc: "Book a free consultation and we'll map a clinic SEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("seo-for-tech-companies-kuwait", {
+  keyword: "SEO for Technology and AI Companies in Kuwait", badge: "Tech and AI SEO in Kuwait",
+  title: "SEO for Technology and AI Companies in Kuwait | SEODXB",
+  metaDesc: "SEO for tech and AI companies in Kuwait from SEODXB. Rank and get cited by AI search engines, bilingual Arabic-English.",
+  h1: "SEO for Technology and AI Companies in Kuwait",
+  intro: "Technology and AI companies in Kuwait are evaluated by buyers and investors who research platforms through Google and AI comparison tools first. SEODXB delivers tech and AI SEO in Kuwait: product and solution page ranking, thought-leadership content that earns authority, and AEO and GEO work so your company is cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews in Arabic and English.",
+  scope: "Technology and AI companies in Kuwait", served: "Kuwait",
+  featuresTitle: "Tech and AI SEO Built for Kuwait",
+  featuresSubtitle: "Product, authority, and AI-search optimisation that wins Kuwait technology buyers.",
+  faqTitle: "Tech and AI SEO Kuwait - FAQs",
+  ctaTitle: "Make Your Kuwait Tech Company the AI-Cited Choice",
+  ctaDesc: "Book a free consultation and we'll map a tech and AI SEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("ai-search-optimization-kuwait", {
+  keyword: "AI Search Optimization (AEO and GEO) in Kuwait", badge: "AI Search Optimization in Kuwait",
+  title: "AI Search Optimization in Kuwait (AEO and GEO) | SEODXB",
+  metaDesc: "AI search optimization in Kuwait from SEODXB. Get your brand cited by ChatGPT, Perplexity, Gemini and Google AI Overviews.",
+  h1: "AI Search Optimization in Kuwait: Get Cited by AI Answer Engines",
+  intro: "Buyers in Kuwait increasingly ask ChatGPT, Perplexity, Gemini, and Google AI Overviews for recommendations instead of scrolling search results. SEODXB delivers answer engine optimization (AEO) and generative engine optimization (GEO) in Kuwait: structured, answer-first content, entity and schema work, and authority signals that get your brand cited by AI engines in both Arabic and English.",
+  scope: "AI search optimization in Kuwait", served: "Kuwait",
+  featuresTitle: "AEO and GEO Built for Kuwait",
+  featuresSubtitle: "Answer-first content and entity work that earn AI citations across Kuwait's key sectors.",
+  faqTitle: "AI Search Optimization Kuwait - FAQs",
+  ctaTitle: "Get Your Kuwait Brand Cited by AI Engines",
+  ctaDesc: "Book a free consultation and we'll map an AEO and GEO strategy for Kuwait.",
+  ctaButton: "Get Free Consultation",
+});
+
 export const gccKeywordPages: KeywordPageConfig[] = pages;
