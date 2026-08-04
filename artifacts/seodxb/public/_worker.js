@@ -64,6 +64,15 @@ export default {
       if (!name || !email || !message) {
         return json({ error: "Missing required fields" }, 400);
       }
+      // Record which page the lead came from: explicit source, else the page
+      // that submitted the form (Referer path), else the hostname.
+      let refPath = "";
+      try {
+        refPath = new URL(request.headers.get("Referer") || "").pathname;
+      } catch {
+        refPath = "";
+      }
+      const source = (b.source || refPath || url.hostname).toString().slice(0, 120);
       try {
         const res = await fetch(`${SUPABASE_URL}/rest/v1/seodxb_leads`, {
           method: "POST",
@@ -74,7 +83,7 @@ export default {
             phone: (b.phone || "").toString().slice(0, 60),
             company_url: (b.company_url || "").toString().slice(0, 300),
             message,
-            source: (b.source || url.hostname).toString().slice(0, 120),
+            source,
           }),
         });
         if (!res.ok) {
