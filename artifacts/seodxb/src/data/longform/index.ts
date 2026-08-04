@@ -19,6 +19,7 @@ import { batch11 } from "./batch11";
 import { batch12 } from "./batch12";
 import { batch13 } from "./batch13";
 import { batch14 } from "./batch14";
+import { batch15 } from "./batch15";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -53,7 +54,7 @@ function readingTime(spec: LongFormSpec): string {
 const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
-  ...batch11, ...batch12, ...batch13, ...batch14,
+  ...batch11, ...batch12, ...batch13, ...batch14, ...batch15,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -68,6 +69,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "ai-search-automotive-companies-kuwait": { date: "Aug 1, 2026", iso: "2026-08-01", updated: "2026-08-01" },
   "healthcare-seo-ai-search-kuwait": { date: "Aug 2, 2026", iso: "2026-08-02", updated: "2026-08-02" },
   "ai-tech-companies-seo-kuwait": { date: "Aug 3, 2026", iso: "2026-08-03", updated: "2026-08-03" },
+  "seo-in-kuwait-complete-guide-2026": { date: "Aug 4, 2026", iso: "2026-08-04", updated: "2026-08-04" },
+  "seo-for-real-estate-kuwait": { date: "Aug 5, 2026", iso: "2026-08-05", updated: "2026-08-05" },
+  "seo-for-finance-banking-kuwait": { date: "Aug 6, 2026", iso: "2026-08-06", updated: "2026-08-06" },
+  "ai-search-optimization-saudi-arabia-2026": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "seo-in-riyadh-complete-guide": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
+  "arabic-seo-saudi-arabia-guide": { date: "Aug 9, 2026", iso: "2026-08-09", updated: "2026-08-09" },
 };
 
 const seen = new Set<string>();
