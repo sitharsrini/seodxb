@@ -677,6 +677,35 @@ function prerender() {
   writeFileSync(join(DIST, "sitemap-blog.xml"), sitemapBlog, "utf-8");
   console.log(`  ✓ sitemap-blog.xml with ${Object.keys(BLOG_META).length} URLs`);
 
+  // Regenerate sitemap-pages.xml from static routes + every keyword-page array so
+  // newly added landing pages are always included, instead of a stale static file.
+  const kwSources: unknown[] = [
+    keywordPages, uaeKeywordPages, gccKeywordPages, usKeywordPages, ukKeywordPages,
+    euKeywordPages, apacKeywordPages, globalKeywordPages, leadsKeywordPages,
+  ];
+  const pageSlugs = new Set<string>();
+  for (const src of kwSources) {
+    const list = (Array.isArray(src) ? src : Object.values(src as object)) as KeywordPageConfig[];
+    for (const p of list) if (p && p.slug) pageSlugs.add(p.slug);
+  }
+  const staticLocs = [
+    `${SITE}/`,
+    ...Object.keys(STATIC_META)
+      .filter((r) => !NOINDEX_ROUTES.has(r))
+      .map((r) => `${SITE}/${r}`),
+  ];
+  const pageLocs = [...staticLocs, ...[...pageSlugs].map((s) => `${SITE}/${s}`)];
+  const sitemapPages = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...pageLocs.map((loc) =>
+      `<url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${loc === `${SITE}/` ? "1.0" : "0.8"}</priority>\n  </url>`,
+    ),
+    "</urlset>",
+  ].join("\n");
+  writeFileSync(join(DIST, "sitemap-pages.xml"), sitemapPages, "utf-8");
+  console.log(`  ✓ sitemap-pages.xml with ${pageLocs.length} URLs`);
+
   // Real 404 page so unknown URLs return a 404 status, not a soft 200.
   const notFound = shell
     .replace(/<title>[^<]*<\/title>/, "<title>Page Not Found | SEODXB</title>")
