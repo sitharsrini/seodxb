@@ -21,6 +21,7 @@ import { batch13 } from "./batch13";
 import { batch14 } from "./batch14";
 import { batch15 } from "./batch15";
 import { batch16 } from "./batch16";
+import { batch17 } from "./batch17";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -56,6 +57,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
+  ...batch17,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -81,6 +83,11 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "saudi-arabic-english-seo-hreflang": { date: "Aug 6, 2026", iso: "2026-08-06", updated: "2026-08-06" },
   "doha-b2b-lead-sources": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
   "kuwait-website-speed-core-web-vitals": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
+  "seo-in-qatar-complete-guide-2026": { date: "Aug 10, 2026", iso: "2026-08-10", updated: "2026-08-10" },
+  "seo-for-real-estate-qatar": { date: "Aug 11, 2026", iso: "2026-08-11", updated: "2026-08-11" },
+  "ai-search-optimization-uk-businesses-2026": { date: "Aug 12, 2026", iso: "2026-08-12", updated: "2026-08-12" },
+  "seo-in-dublin-complete-guide-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  "google-ai-overviews-uae-businesses-2026": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
 };
 
 const seen = new Set<string>();
