@@ -20,6 +20,7 @@ import { batch12 } from "./batch12";
 import { batch13 } from "./batch13";
 import { batch14 } from "./batch14";
 import { batch15 } from "./batch15";
+import { batch16 } from "./batch16";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -54,7 +55,7 @@ function readingTime(spec: LongFormSpec): string {
 const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
-  ...batch11, ...batch12, ...batch13, ...batch14, ...batch15,
+  ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -75,6 +76,11 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "ai-search-optimization-saudi-arabia-2026": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
   "seo-in-riyadh-complete-guide": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
   "arabic-seo-saudi-arabia-guide": { date: "Aug 9, 2026", iso: "2026-08-09", updated: "2026-08-09" },
+  "uae-map-pack-local-ranking-factors": { date: "Aug 4, 2026", iso: "2026-08-04", updated: "2026-08-04" },
+  "difc-finance-firms-seo-compliance": { date: "Aug 5, 2026", iso: "2026-08-05", updated: "2026-08-05" },
+  "saudi-arabic-english-seo-hreflang": { date: "Aug 6, 2026", iso: "2026-08-06", updated: "2026-08-06" },
+  "doha-b2b-lead-sources": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "kuwait-website-speed-core-web-vitals": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
 };
 
 const seen = new Set<string>();
