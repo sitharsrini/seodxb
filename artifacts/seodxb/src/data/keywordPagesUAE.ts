@@ -550,6 +550,21 @@ commercial("freelance-seo-uae", {
   ctaTitle: "Get Flexible, Expert SEO", ctaDesc: "Book a free consultation and we'll scope a flexible SEO engagement that fits your needs.", ctaButton: "Get Free Consultation",
 });
 
+commercial("seo-for-difc-finance-firms", {
+  keyword: "SEO for DIFC Finance Firms", badge: "SEO for Regulated Finance in the DIFC",
+  title: "SEO for DIFC Finance Firms | SEODXB - Compliant Search Growth",
+  metaDesc: "Compliant SEO for DIFC-regulated finance firms: earn qualified search traffic and AI citations without slowing review.",
+  h1: "SEO for DIFC Finance Firms: Qualified Traffic Without Compliance Headaches",
+  intro: "DIFC-regulated finance firms have real expertise their high-value clients research online, yet slow content review keeps most of them nearly invisible in search. SEODXB builds a compliance-aware content engine for regulated firms: substantial educational content that ranks and earns AI citations, structured for a named reviewer and a shared checklist, so good content ships fast and safely. We handle SEO and workflow; your compliance function approves any firm-specific regulatory statements.",
+  scope: "DIFC-regulated finance firms", served: "DIFC, Dubai, UAE",
+  featuresTitle: "SEO Built for Regulated Finance Firms in the DIFC",
+  featuresSubtitle: "A compliance-aware content engine that earns qualified search traffic and AI citations, without risky claims.",
+  faqTitle: "DIFC Finance SEO - FAQs",
+  ctaTitle: "Win Qualified Search Traffic, Compliantly",
+  ctaDesc: "Book a free consultation and we'll map a compliance-aware SEO strategy for your DIFC firm.",
+  ctaButton: "Get Free Consultation",
+});
+
 export const uaeKeywordPages: Record<string, KeywordPageConfig> = Object.fromEntries(
   pages.map((p) => [p.slug, p]),
 );

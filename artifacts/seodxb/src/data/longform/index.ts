@@ -108,9 +108,9 @@ export const longFormMeta: Record<string, { title: string; desc: string }> = Obj
 
 // Plain-text content for static prerender injection (intro, sections, takeaway,
 // FAQs) so non-JS and AI crawlers can read the full article from raw HTML.
-export const longFormContent: Record<string, { intro: string[]; sections: ArticleSection[]; takeaway: string; faqs: ArticleFAQ[]; partners?: { name: string; url: string; role: string; blurb: string }[] }> =
+export const longFormContent: Record<string, { intro: string[]; sections: ArticleSection[]; takeaway: string; faqs: ArticleFAQ[]; partners?: { name: string; url: string; role: string; blurb: string }[]; related?: { label: string; href: string }[] }> =
   Object.fromEntries(
-    longFormArticles.map((a) => [a.slug, { intro: a.intro, sections: a.sections, takeaway: a.takeaway, faqs: a.faqs, partners: a.partners ?? [] }]),
+    longFormArticles.map((a) => [a.slug, { intro: a.intro, sections: a.sections, takeaway: a.takeaway, faqs: a.faqs, partners: a.partners ?? [], related: a.related ?? [] }]),
   );
 
 // Schema data for static JSON-LD injection (Article, FAQPage, Breadcrumb) so the

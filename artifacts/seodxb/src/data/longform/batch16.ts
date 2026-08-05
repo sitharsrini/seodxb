@@ -103,6 +103,11 @@ export const batch16: LongFormSpec[] = [
       { title: "Dubai Financial Services Authority (DFSA)", url: "https://www.dfsa.ae/", publisher: "DFSA" },
       { title: "Dubai International Financial Centre (DIFC)", url: "https://www.difc.com/", publisher: "DIFC" },
     ],
+    related: [
+      { label: "Service: SEO for DIFC Finance Firms", href: "/seo-for-difc-finance-firms" },
+      { label: "Best DIFC Business Setup Company in Dubai", href: "/blog/best-difc-business-setup-company-dubai" },
+      { label: "The UAE Map Pack in 2026: What Moves Local Rankings", href: "/blog/uae-map-pack-local-ranking-factors" },
+    ],
   },
 
   // ── 2. UAE map pack local ranking factors ─────────────────────────────────
@@ -208,6 +213,11 @@ export const batch16: LongFormSpec[] = [
     references: [
       { title: "Google Business Profile", url: "https://www.google.com/business/", publisher: "Google" },
       { title: "Improve your local ranking on Google", url: "https://support.google.com/business/answer/7091", publisher: "Google" },
+    ],
+    related: [
+      { label: "Service: Local SEO in the UAE", href: "/local-seo-uae" },
+      { label: "Kuwait Website Speed and Core Web Vitals", href: "/blog/kuwait-website-speed-core-web-vitals" },
+      { label: "SEO in Kuwait 2026: The Complete Guide", href: "/blog/seo-in-kuwait-complete-guide-2026" },
     ],
   },
 
@@ -320,6 +330,11 @@ export const batch16: LongFormSpec[] = [
       { title: "Tell Google about localized versions of your pages", url: "https://developers.google.com/search/docs/specialty/international/localized-versions", publisher: "Google" },
       { title: "Managing multi-regional and multilingual sites", url: "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites", publisher: "Google" },
     ],
+    related: [
+      { label: "Service: International and Arabic SEO in Saudi Arabia", href: "/international-seo-saudi-arabia" },
+      { label: "Arabic SEO for Saudi Arabia: How to Rank in Arabic Search", href: "/blog/arabic-seo-saudi-arabia-guide" },
+      { label: "SEO in Riyadh: The Complete Guide", href: "/blog/seo-in-riyadh-complete-guide" },
+    ],
   },
 
   // ── 4. Doha B2B lead sources ──────────────────────────────────────────────
@@ -409,6 +424,11 @@ export const batch16: LongFormSpec[] = [
     references: [
       { title: "Google Analytics: Attribution", url: "https://support.google.com/analytics/answer/10596866", publisher: "Google" },
       { title: "Google Search Central: SEO Starter Guide", url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", publisher: "Google" },
+    ],
+    related: [
+      { label: "Service: B2B Lead Generation in Doha", href: "/b2b-lead-generation-doha" },
+      { label: "The UAE Map Pack in 2026: What Moves Local Rankings", href: "/blog/uae-map-pack-local-ranking-factors" },
+      { label: "How AI Search Engines Decide Which Brands to Cite", href: "/blog/how-ai-search-engines-choose-which-brands-to-cite" },
     ],
   },
 
@@ -504,6 +524,11 @@ export const batch16: LongFormSpec[] = [
     references: [
       { title: "Core Web Vitals", url: "https://web.dev/articles/vitals", publisher: "Google web.dev" },
       { title: "PageSpeed Insights", url: "https://pagespeed.web.dev/", publisher: "Google" },
+    ],
+    related: [
+      { label: "Service: Technical SEO in Kuwait", href: "/technical-seo-kuwait" },
+      { label: "SEO in Kuwait 2026: The Complete Guide", href: "/blog/seo-in-kuwait-complete-guide-2026" },
+      { label: "The UAE Map Pack in 2026: What Moves Local Rankings", href: "/blog/uae-map-pack-local-ranking-factors" },
     ],
   },
 ];

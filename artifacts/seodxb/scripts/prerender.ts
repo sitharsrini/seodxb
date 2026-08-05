@@ -504,6 +504,7 @@ type BlogStaticContent = {
   takeaway: string;
   faqs?: { q: string; a: string }[];
   partners?: { name: string; url: string; role: string; blurb: string }[];
+  related?: { label: string; href: string }[];
 };
 const ALL_BLOG_CONTENT: Record<string, BlogStaticContent> = {
   ...generatedBlogContent,
@@ -550,6 +551,13 @@ function buildBlogStaticBody(slug: string, title?: string): string {
     for (const p of c.partners) {
       parts.push(`<p><a href="${p.url}" rel="noopener">${esc(p.name)}</a> - ${esc(p.role)}. ${esc(p.blurb)}</p>`);
     }
+  }
+  if (c.related && c.related.length > 0) {
+    parts.push(`<h2>Related guides and services</h2><ul>`);
+    for (const r of c.related) {
+      parts.push(`<li><a href="${r.href}">${esc(r.label)}</a></li>`);
+    }
+    parts.push(`</ul>`);
   }
   if (c.faqs && c.faqs.length > 0) {
     parts.push(`<h2>Frequently asked questions</h2>`);

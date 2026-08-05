@@ -1518,4 +1518,51 @@ commercial("ai-search-optimization-kuwait", {
   ctaButton: "Get Free Consultation",
 });
 
+// ===== Matching service pages for the editorial-calendar cluster =====
+
+commercial("b2b-lead-generation-doha", {
+  keyword: "B2B Lead Generation in Doha", badge: "B2B Lead Generation in Doha",
+  title: "B2B Lead Generation in Doha | SEODXB - SEO That Converts",
+  metaDesc: "B2B lead generation in Doha from SEODXB. We build search and content channels that originate qualified pipeline, not just last-click leads.",
+  h1: "B2B Lead Generation in Doha: Find Where Your Leads Really Come From",
+  intro: "Most Doha B2B companies misjudge where their qualified leads come from, crediting the last click and under-investing in the channels that do the real work. SEODXB builds the search and content engine that originates qualified pipeline in Doha: high-intent SEO, authority content, and measurement that credits the channels that genuinely convert, in both Arabic and English.",
+  scope: "B2B lead generation in Doha", served: "Doha, Qatar",
+  featuresTitle: "B2B Lead Generation Built for Doha",
+  featuresSubtitle: "Search, content, and measurement that originate qualified Doha pipeline, not just last-click leads.",
+  faqTitle: "B2B Lead Generation Doha - FAQs",
+  ctaTitle: "Build a Pipeline of Qualified Doha B2B Leads",
+  ctaDesc: "Book a free consultation and we'll map a lead generation strategy for your Doha business.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("technical-seo-kuwait", {
+  keyword: "Technical SEO in Kuwait", badge: "Technical SEO and Speed in Kuwait",
+  title: "Technical SEO in Kuwait | SEODXB - Speed and Core Web Vitals",
+  metaDesc: "Technical SEO in Kuwait from SEODXB. We fix Core Web Vitals, site speed, crawlability and structure so your site ranks and converts.",
+  h1: "Technical SEO in Kuwait: Fast, Crawlable, and Ready to Rank",
+  intro: "Kuwait has some of the fastest connections in the region, yet many local sites still feel slow, and that costs rankings and conversions. SEODXB delivers technical SEO in Kuwait: Core Web Vitals and site-speed fixes, crawlability, structured data, and clean architecture that let your content rank and your visitors convert, in both Arabic and English.",
+  scope: "Technical SEO in Kuwait", served: "Kuwait",
+  featuresTitle: "Technical SEO Built for Kuwait",
+  featuresSubtitle: "Core Web Vitals, speed, crawlability, and structure that turn a slow site into a fast, ranking one.",
+  faqTitle: "Technical SEO Kuwait - FAQs",
+  ctaTitle: "Make Your Kuwait Site Fast and Search-Ready",
+  ctaDesc: "Book a free consultation and we'll map a technical SEO plan for your Kuwait site.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("international-seo-saudi-arabia", {
+  keyword: "International and Arabic SEO in Saudi Arabia", badge: "Arabic and English SEO in Saudi Arabia",
+  title: "International and Arabic SEO in Saudi Arabia | SEODXB",
+  metaDesc: "Arabic and English SEO in Saudi Arabia from SEODXB. Hreflang, native Arabic content and structure so both languages rank without competing.",
+  h1: "International and Arabic SEO in Saudi Arabia",
+  intro: "Serving both Arabic and English is essential in Saudi Arabia, but done wrong the two versions compete and split your rankings. SEODXB delivers international and Arabic SEO in Saudi Arabia: correct hreflang, clean bilingual structure, and native Arabic content, not translation, so each language ranks on its own merits and the underserved Arabic side becomes your advantage.",
+  scope: "International and Arabic SEO in Saudi Arabia", served: "Saudi Arabia",
+  featuresTitle: "Arabic and English SEO Built for Saudi Arabia",
+  featuresSubtitle: "Hreflang, bilingual structure, and native Arabic content that rank without competing or diluting.",
+  faqTitle: "Arabic and International SEO Saudi Arabia - FAQs",
+  ctaTitle: "Rank in Both Arabic and English in Saudi Arabia",
+  ctaDesc: "Book a free consultation and we'll map a bilingual SEO strategy for Saudi Arabia.",
+  ctaButton: "Get Free Consultation",
+});
+
 export const gccKeywordPages: KeywordPageConfig[] = pages;

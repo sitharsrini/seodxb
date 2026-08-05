@@ -40,6 +40,12 @@ export interface PartnerLink {
 
 // What the writing agents produce (no dates / reading time; the index assigns
 // those so they stay unique and accurate across the whole set).
+// Internal cross-links to related articles and service pages (topic clusters).
+export interface RelatedLink {
+  label: string;
+  href: string;
+}
+
 export interface LongFormSpec {
   slug: string;
   category: string;
@@ -54,6 +60,7 @@ export interface LongFormSpec {
   faqs: ArticleFAQ[];
   references: ArticleRef[];
   partners?: PartnerLink[];
+  related?: RelatedLink[];
   youtubeId?: string;
   youtubeTitle?: string;
 }

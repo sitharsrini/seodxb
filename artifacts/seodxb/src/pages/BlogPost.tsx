@@ -1120,6 +1120,19 @@ function renderLongForm(a: LongFormArticle): React.ReactNode {
         </React.Fragment>
       )}
 
+      {a.related && a.related.length > 0 && (
+        <React.Fragment>
+          <h2>Related guides and services</h2>
+          <ul className="not-prose mt-4 space-y-2">
+            {a.related.map((r, i) => (
+              <li key={`rel-${i}`} className="text-sm">
+                <a href={r.href} className="text-primary font-medium hover:underline">{r.label}</a>
+              </li>
+            ))}
+          </ul>
+        </React.Fragment>
+      )}
+
       {a.faqs.length > 0 && (
         <React.Fragment>
           <h2>Frequently asked questions</h2>
