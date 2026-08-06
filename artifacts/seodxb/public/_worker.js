@@ -45,10 +45,30 @@ function esc(s) {
   return (s || "").toString().replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
 
-// Email a notification for a new lead. Uses Resend; sending from
-// onboarding@resend.dev to the owner's own address needs no domain verification.
-// No-op unless RESEND_API_KEY is set, so it never blocks lead capture.
+// Notify the owner about a new lead on two channels, both best-effort:
+// 1. ntfy.sh push notification - free, no account or key, always on. The owner
+//    subscribes to the topic in the ntfy app or at ntfy.sh to receive alerts.
+// 2. Resend email - only when RESEND_API_KEY is set.
+const NTFY_TOPIC = "seodxb-leads-a7k2x9";
+
 async function notifyNewLead(env, lead) {
+  // Always-on push alert (no credentials needed).
+  try {
+    await fetch(`https://ntfy.sh/${env.NTFY_TOPIC || NTFY_TOPIC}`, {
+      method: "POST",
+      headers: {
+        Title: `New lead: ${(lead.name || lead.email || lead.company_url || "website").toString().slice(0, 80)}`,
+        Tags: "moneybag",
+        Click: "https://seodxb.com/leads-admin",
+      },
+      body:
+        `Name: ${lead.name || "-"}\nEmail: ${lead.email || "-"}\nPhone: ${lead.phone || "-"}\n` +
+        `Company: ${lead.company_url || "-"}\nSource: ${lead.source || "-"}\n\n${(lead.message || "").toString().slice(0, 500)}`,
+    });
+  } catch {
+    /* best-effort */
+  }
+
   if (!env.RESEND_API_KEY) return;
   const to = env.NOTIFY_EMAIL || "rsrinivasan163@gmail.com";
   const from = env.NOTIFY_FROM || "SEODXB Leads <onboarding@resend.dev>";
