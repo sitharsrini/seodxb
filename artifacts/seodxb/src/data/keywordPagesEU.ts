@@ -35,6 +35,13 @@ interface Loc {
 const L: Record<string, Loc> = {
   // Cities
   paris:     { name: "Paris",     type: "city",    served: "Paris, France",      context: "Paris is France's business and luxury capital, home to major financial services, fashion, tourism, and a booming startup ecosystem around Station F.",                      sectors: "finance, luxury, tourism, and tech" },
+  rotterdam: { name: "Rotterdam", type: "city",    served: "Rotterdam, Netherlands", context: "Rotterdam is Europe's largest port and the Netherlands' logistics and industry powerhouse, with a fast-growing architecture, maritime tech, and startup scene.",        sectors: "logistics, maritime, industry, and tech" },
+  "the-hague": { name: "The Hague", type: "city",  served: "The Hague, Netherlands", context: "The Hague is the Netherlands' centre of government and international law, home to global institutions, legal services, NGOs, and a growing security tech cluster.",     sectors: "legal, government, NGOs, and security tech" },
+  utrecht:   { name: "Utrecht",   type: "city",    served: "Utrecht, Netherlands",   context: "Utrecht sits at the heart of the Dutch economy, with strong healthcare, education, professional services, and one of the country's fastest-growing tech scenes.",        sectors: "healthcare, education, professional services, and tech" },
+  eindhoven: { name: "Eindhoven", type: "city",    served: "Eindhoven, Netherlands", context: "Eindhoven is the Netherlands' high-tech capital, anchored by the Brainport ecosystem, semiconductor and deep-tech companies, and world-class design and engineering.",   sectors: "high-tech, semiconductors, design, and engineering" },
+  cork:      { name: "Cork",      type: "city",    served: "Cork, Ireland",          context: "Cork is Ireland's second city and a major pharmaceutical, tech, and food industry hub, hosting European operations for global companies alongside a strong SME base.", sectors: "pharma, tech, food, and professional services" },
+  galway:    { name: "Galway",    type: "city",    served: "Galway, Ireland",        context: "Galway is Ireland's west-coast medtech capital, with a dense cluster of medical device companies, a thriving tourism economy, and a growing startup community.",        sectors: "medtech, tourism, education, and startups" },
+  limerick:  { name: "Limerick",  type: "city",    served: "Limerick, Ireland",      context: "Limerick is a rising Irish business hub in the Mid-West, with strong manufacturing, fintech operations, logistics, and a growing university-driven tech scene.",         sectors: "manufacturing, fintech, logistics, and tech" },
   berlin:    { name: "Berlin",    type: "city",    served: "Berlin, Germany",     context: "Berlin is Europe's startup capital, with a thriving tech and SaaS scene, strong creative and media industries, and a rapidly growing B2B market.",                       sectors: "tech, SaaS, media, and creative" },
   amsterdam: { name: "Amsterdam", type: "city",    served: "Amsterdam, Netherlands", context: "Amsterdam is one of Europe's top fintech and tech hubs, with strong financial services, international trade, and a highly digital consumer market.",              sectors: "fintech, tech, trade, and international services" },
   madrid:    { name: "Madrid",    type: "city",    served: "Madrid, Spain",       context: "Madrid is Spain's financial and business capital, with strong real estate, retail, tourism, and a fast-growing tech and startup ecosystem.",                              sectors: "finance, real estate, tourism, and tech" },
@@ -1293,6 +1300,130 @@ commercial("seo-for-hospitality-vienna", {
   faqTitle: "Hospitality SEO Vienna - FAQs",
   ctaTitle: "Win More Direct Bookings in Vienna",
   ctaDesc: "Book a free consultation. We will show you how hospitality SEO grows direct revenue for your Vienna business.",
+  ctaButton: "Get Free Consultation",
+});
+
+// ===== Netherlands + Ireland expansion (~100 pages) =====
+
+// F. New city hubs (7)
+const nlIeCityKeys: [string, string][] = [
+  ["seo-rotterdam", "rotterdam"], ["seo-the-hague", "the-hague"],
+  ["seo-utrecht", "utrecht"], ["seo-eindhoven", "eindhoven"],
+  ["seo-cork", "cork"], ["seo-galway", "galway"], ["seo-limerick", "limerick"],
+];
+nlIeCityKeys.forEach(([slug, key]) => locHub(slug, key));
+
+// G. Industry x new NL/IE cities (8 industries x 7 cities = 56)
+const nlIeCities = ["rotterdam", "the-hague", "utrecht", "eindhoven", "cork", "galway", "limerick"];
+Object.keys(I).forEach((indKey) => {
+  nlIeCities.forEach((cityKey) => {
+    indLoc(`seo-for-${indKey}-${cityKey}`, indKey, cityKey);
+  });
+});
+
+// H. Industry x country (8 industries x 2 countries = 16)
+["netherlands", "ireland"].forEach((countryKey) => {
+  Object.keys(I).forEach((indKey) => {
+    indLoc(`seo-for-${indKey}-${countryKey}`, indKey, countryKey);
+  });
+});
+
+// I. Service x country (10 services x 2 countries = 20)
+const nlIeSvcSlugs: [string, string][] = [
+  ["technical-seo", "technical"], ["on-page-seo", "on-page"], ["local-seo", "local"],
+  ["ecommerce-seo", "ecommerce"], ["link-building", "link-building"],
+  ["content-marketing", "content-marketing"], ["seo-audit", "seo-audit"],
+  ["enterprise-seo", "enterprise"], ["aeo", "aeo"], ["geo", "geo"],
+];
+["netherlands", "ireland"].forEach((countryKey) => {
+  nlIeSvcSlugs.forEach(([base, svcKey]) => {
+    svcRegion(`${base}-${countryKey}`, svcKey, countryKey);
+  });
+});
+
+// J. Agency and intent pages (6)
+commercial("seo-company-netherlands", {
+  keyword: "SEO Company Netherlands", badge: "SEO Company for the Netherlands",
+  title: "SEO Company Netherlands | SEODXB - Results-Driven Dutch SEO",
+  metaDesc: "SEODXB is a results-driven SEO company for the Netherlands: rankings, local visibility and AI citations for Dutch businesses.",
+  h1: "A Results-Driven SEO Company for the Netherlands",
+  intro: "Dutch customers research online before they buy, in one of Europe's most digital markets. SEODXB is an SEO company serving businesses across the Netherlands with technical SEO, content strategy, local visibility, and AI search optimisation that turns rankings into revenue.",
+  scope: "the Netherlands", served: "Netherlands",
+  featuresTitle: "Why Dutch Businesses Choose SEODXB",
+  featuresSubtitle: "Deep SEO expertise applied to the Dutch market and how its customers actually search.",
+  faqTitle: "SEO Company Netherlands - FAQs",
+  ctaTitle: "Work With an SEO Company That Delivers",
+  ctaDesc: "Book a free consultation and we'll map your fastest path to page one in the Netherlands.",
+  ctaButton: "Get Free Consultation",
+});
+commercial("seo-company-ireland", {
+  keyword: "SEO Company Ireland", badge: "SEO Company for Ireland",
+  title: "SEO Company Ireland | SEODXB - Results-Driven Irish SEO",
+  metaDesc: "SEODXB is a results-driven SEO company for Ireland: Google rankings, Map Pack visibility and AI citations for Irish businesses.",
+  h1: "A Results-Driven SEO Company for Ireland",
+  intro: "Irish businesses compete for attention in a market shaped by global tech headquarters and a digital-first population. SEODXB is an SEO company serving businesses across Ireland with technical SEO, content, local visibility, and AI search optimisation built to win qualified traffic.",
+  scope: "Ireland", served: "Ireland",
+  featuresTitle: "Why Irish Businesses Choose SEODXB",
+  featuresSubtitle: "Deep SEO expertise applied to the Irish market and how its customers actually search.",
+  faqTitle: "SEO Company Ireland - FAQs",
+  ctaTitle: "Work With an SEO Company That Delivers",
+  ctaDesc: "Book a free consultation and we'll map your fastest path to page one in Ireland.",
+  ctaButton: "Get Free Consultation",
+});
+commercial("seo-services-netherlands", {
+  keyword: "SEO Services Netherlands", badge: "SEO Services in the Netherlands",
+  title: "SEO Services Netherlands | SEODXB - Full-Service Dutch SEO",
+  metaDesc: "Full-service SEO in the Netherlands from SEODXB: technical, content, local and AI search optimisation for Dutch businesses.",
+  h1: "SEO Services for the Netherlands: Technical, Content, Local and AI",
+  intro: "From Amsterdam fintechs to Rotterdam logistics and Eindhoven high-tech, Dutch businesses win when they are visible where customers search. SEODXB delivers full-service SEO in the Netherlands: technical foundations, content that ranks, local visibility, and AEO and GEO so AI engines cite your brand.",
+  scope: "the Netherlands", served: "Netherlands",
+  featuresTitle: "Our SEO Services for the Dutch Market",
+  featuresSubtitle: "Everything a Dutch business needs to rank, get cited by AI, and convert searchers into customers.",
+  faqTitle: "SEO Services Netherlands - FAQs",
+  ctaTitle: "Get Full-Service SEO in the Netherlands",
+  ctaDesc: "Book a free consultation and we'll design an SEO programme for your Dutch market goals.",
+  ctaButton: "Get Free Consultation",
+});
+commercial("seo-services-ireland", {
+  keyword: "SEO Services Ireland", badge: "SEO Services in Ireland",
+  title: "SEO Services Ireland | SEODXB - Full-Service Irish SEO",
+  metaDesc: "Full-service SEO in Ireland from SEODXB: technical, content, local Map Pack and AI search optimisation for Irish businesses.",
+  h1: "SEO Services for Ireland: Technical, Content, Local and AI",
+  intro: "From Dublin startups to Cork pharma and Galway medtech, Irish businesses win when they appear where customers search. SEODXB delivers full-service SEO in Ireland: technical foundations, content that ranks, Map Pack visibility, and AEO and GEO so AI engines cite your brand.",
+  scope: "Ireland", served: "Ireland",
+  featuresTitle: "Our SEO Services for the Irish Market",
+  featuresSubtitle: "Everything an Irish business needs to rank, get cited by AI, and convert searchers into customers.",
+  faqTitle: "SEO Services Ireland - FAQs",
+  ctaTitle: "Get Full-Service SEO in Ireland",
+  ctaDesc: "Book a free consultation and we'll design an SEO programme for your Irish market goals.",
+  ctaButton: "Get Free Consultation",
+});
+commercial("seo-agency-netherlands", {
+  keyword: "SEO Agency Netherlands", badge: "SEO Agency for the Netherlands",
+  title: "SEO Agency Netherlands | SEODXB - Rank Across the Dutch Market",
+  metaDesc: "SEODXB is an SEO agency for the Netherlands: Google rankings, local visibility and AI citations in Dutch and English markets.",
+  h1: "SEO Agency for the Netherlands: Rank in a Digital-First Market",
+  intro: "The Netherlands is one of Europe's most digital economies, where customers in Amsterdam, Rotterdam, The Hague, Utrecht, and Eindhoven research nearly every purchase online. SEODXB helps Dutch businesses rank on Google, win local visibility, and get cited by AI engines like ChatGPT and Perplexity, with strategies built for the bilingual Dutch-English market.",
+  scope: "the Netherlands", served: "Netherlands",
+  featuresTitle: "SEO Built for the Dutch Market",
+  featuresSubtitle: "Technical SEO, content, local visibility, and AI-era optimisation for businesses across the Netherlands.",
+  faqTitle: "SEO Agency Netherlands - FAQs",
+  ctaTitle: "Ready to Rank Across the Netherlands?",
+  ctaDesc: "Book a free consultation and we'll map an SEO strategy for the Dutch market.",
+  ctaButton: "Get Free Consultation",
+});
+commercial("seo-agency-ireland", {
+  keyword: "SEO Agency Ireland", badge: "SEO Agency for Ireland",
+  title: "SEO Agency Ireland | SEODXB - Rank Across the Irish Market",
+  metaDesc: "SEODXB is an SEO agency for Ireland: Google rankings, local Map Pack visibility and AI search citations for Irish businesses.",
+  h1: "SEO Agency for Ireland: Rank From Dublin to Cork and Galway",
+  intro: "Ireland pairs a fast-growing domestic market with the European bases of the world's biggest tech companies, making search visibility fiercely competitive. SEODXB helps Irish businesses rank on Google, dominate the local Map Pack, and get cited by AI engines, from Dublin and Cork to Galway and Limerick.",
+  scope: "Ireland", served: "Ireland",
+  featuresTitle: "SEO Built for the Irish Market",
+  featuresSubtitle: "Technical SEO, content, local visibility, and AI-era optimisation for businesses across Ireland.",
+  faqTitle: "SEO Agency Ireland - FAQs",
+  ctaTitle: "Ready to Rank Across Ireland?",
+  ctaDesc: "Book a free consultation and we'll map an SEO strategy for the Irish market.",
   ctaButton: "Get Free Consultation",
 });
 
