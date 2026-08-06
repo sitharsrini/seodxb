@@ -41,8 +41,45 @@ Use HTML tables wherever appropriate. Prioritize business intent and lead-genera
 OUTPUT FORMAT: return clean semantic HTML only, using <h2>, <h3>, <p>, <ul>, <li>, <table>, <thead>, <tbody>, <tr>, <th>, <td>, and <strong>. Do NOT include <script>, <style>, <html>, <head>, or <body> tags, and do NOT wrap the output in markdown code fences. Start directly with an <h2>.`;
 }
 
+function esc(s) {
+  return (s || "").toString().replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+// Email a notification for a new lead. Uses Resend; sending from
+// onboarding@resend.dev to the owner's own address needs no domain verification.
+// No-op unless RESEND_API_KEY is set, so it never blocks lead capture.
+async function notifyNewLead(env, lead) {
+  if (!env.RESEND_API_KEY) return;
+  const to = env.NOTIFY_EMAIL || "rsrinivasan163@gmail.com";
+  const from = env.NOTIFY_FROM || "SEODXB Leads <onboarding@resend.dev>";
+  const body = {
+    from,
+    to: [to],
+    subject: `New lead: ${(lead.name || lead.email || lead.company_url || "website").toString().slice(0, 80)}`,
+    html:
+      `<h2>New lead from seodxb.com</h2>` +
+      `<p><strong>Name:</strong> ${esc(lead.name)}</p>` +
+      `<p><strong>Email:</strong> ${esc(lead.email)}</p>` +
+      `<p><strong>Phone:</strong> ${esc(lead.phone)}</p>` +
+      `<p><strong>Company / URL:</strong> ${esc(lead.company_url)}</p>` +
+      `<p><strong>Source:</strong> ${esc(lead.source)}</p>` +
+      `<p><strong>Message:</strong><br>${esc(lead.message)}</p>` +
+      `<p><a href="https://seodxb.com/leads-admin">Open your leads panel</a></p>`,
+  };
+  if (lead.email) body.reply_to = lead.email;
+  try {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    /* notification is best-effort */
+  }
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const ADMIN_KEY = env.ADMIN_KEY || ADMIN_KEY_FALLBACK;
     const sb = {
@@ -82,6 +119,16 @@ export default {
       } catch {
         /* capture is best-effort; do not block the tool */
       }
+      ctx.waitUntil(
+        notifyNewLead(env, {
+          name: email || "ICP Finder user",
+          email,
+          phone: "",
+          company_url: site,
+          message: `ICP Finder & Keyword Analyser request.${question ? " Question: " + question : ""}`,
+          source: "icp-finder",
+        }),
+      );
 
       // Generate a live report if any AI provider is available. All optional.
       // Preference order puts the FREE options first: Cloudflare Workers AI
@@ -207,6 +254,16 @@ export default {
           const detail = (await res.text()).slice(0, 300);
           return json({ error: "Failed to save", detail }, 502);
         }
+        ctx.waitUntil(
+          notifyNewLead(env, {
+            name,
+            email,
+            phone: (b.phone || "").toString().slice(0, 60),
+            company_url: (b.company_url || "").toString().slice(0, 300),
+            message,
+            source,
+          }),
+        );
         return json({ success: true });
       } catch (e) {
         return json({ error: "Save error", detail: String(e) }, 500);
