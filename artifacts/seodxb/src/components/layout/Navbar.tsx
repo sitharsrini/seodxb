@@ -58,6 +58,7 @@ export function Navbar() {
   const navLinks = [
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
+    { name: "Free Tools", path: "/icp-finder" },
     { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
   ];
