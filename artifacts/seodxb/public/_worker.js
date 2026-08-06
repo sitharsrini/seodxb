@@ -83,11 +83,44 @@ export default {
         /* capture is best-effort; do not block the tool */
       }
 
-      // If an LLM key is configured, generate a live report on the page.
-      if (env.ANTHROPIC_API_KEY) {
-        const model = env.ANTHROPIC_MODEL || "claude-3-5-sonnet-latest";
-        try {
-          const res = await fetch("https://api.anthropic.com/v1/messages", {
+      // Generate a live report if any AI provider is available. All optional.
+      // Preference order puts the FREE options first: Cloudflare Workers AI
+      // (free tier, native to this host) and Google Gemini (free API key), then
+      // paid Anthropic. If none is configured, the request is captured as a lead.
+      const clean = (t) => (t || "").replace(/<script[\s\S]*?<\/script>/gi, "").replace(/```html|```/g, "").trim();
+      const prompt = buildAnalysisPrompt(site, question);
+      try {
+        // 1) Cloudflare Workers AI - free tier, no external key (needs an AI binding).
+        if (env.AI) {
+          const r = await env.AI.run(env.AI_MODEL || "@cf/meta/llama-3.1-8b-instruct", {
+            messages: [{ role: "user", content: prompt }],
+            max_tokens: 4000,
+          });
+          const html = clean(r && (r.response || r.result || ""));
+          if (html) return json({ captured: true, html, engine: "cloudflare" });
+        }
+        // 2) Google Gemini - free tier (free key from aistudio.google.com, no billing).
+        if (env.GEMINI_API_KEY) {
+          const model = env.GEMINI_MODEL || "gemini-2.0-flash";
+          const r = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
+            {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+            },
+          );
+          if (r.ok) {
+            const data = await r.json();
+            const html = clean(
+              data?.candidates?.[0]?.content?.parts?.[0]?.text,
+            );
+            if (html) return json({ captured: true, html, engine: "gemini" });
+          }
+        }
+        // 3) Anthropic - paid.
+        if (env.ANTHROPIC_API_KEY) {
+          const r = await fetch("https://api.anthropic.com/v1/messages", {
             method: "POST",
             headers: {
               "x-api-key": env.ANTHROPIC_API_KEY,
@@ -95,22 +128,19 @@ export default {
               "content-type": "application/json",
             },
             body: JSON.stringify({
-              model,
+              model: env.ANTHROPIC_MODEL || "claude-3-5-sonnet-latest",
               max_tokens: 4000,
-              messages: [{ role: "user", content: buildAnalysisPrompt(site, question) }],
+              messages: [{ role: "user", content: prompt }],
             }),
           });
-          if (!res.ok) {
-            const detail = (await res.text()).slice(0, 300);
-            return json({ captured: true, error: "AI generation failed", detail }, 200);
+          if (r.ok) {
+            const data = await r.json();
+            const html = clean(data?.content?.[0]?.text);
+            if (html) return json({ captured: true, html, engine: "anthropic" });
           }
-          const data = await res.json();
-          let html = (data.content && data.content[0] && data.content[0].text) || "";
-          html = html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/```html|```/g, "");
-          return json({ captured: true, html });
-        } catch (e) {
-          return json({ captured: true, error: "AI error", detail: String(e) }, 200);
         }
+      } catch (e) {
+        return json({ captured: true, error: "AI error", detail: String(e) }, 200);
       }
 
       return json({ captured: true });
