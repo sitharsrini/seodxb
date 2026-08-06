@@ -78,6 +78,79 @@ async function notifyNewLead(env, lead) {
   }
 }
 
+// On-page SEO audit of fetched HTML. No AI, no key: pure checks, so it is free.
+function analyzeSeo(site, html) {
+  const items = [];
+  const add = (label, status, detail) => items.push({ label, status, detail });
+  const get = (re) => {
+    const m = html.match(re);
+    return m ? (m[1] || "").trim() : null;
+  };
+
+  add("HTTPS", /^https:\/\//i.test(site) ? "pass" : "fail",
+    /^https:\/\//i.test(site) ? "Served over HTTPS." : "Use HTTPS. It is a ranking and trust signal.");
+
+  const title = get(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  if (!title) add("Title tag", "fail", "No title found. Add a unique, descriptive title.");
+  else {
+    const n = title.length;
+    add("Title tag", n >= 30 && n <= 65 ? "pass" : "warn",
+      `"${title.slice(0, 70)}" (${n} chars). ${n < 30 ? "Short, aim 30-60." : n > 65 ? "Long, may truncate, aim 30-60." : "Good length."}`);
+  }
+
+  const desc = get(/<meta[^>]+name=["']description["'][^>]*content=["']([\s\S]*?)["']/i)
+    || get(/<meta[^>]+content=["']([\s\S]*?)["'][^>]*name=["']description["']/i);
+  if (!desc) add("Meta description", "fail", "No meta description. Add one of 120-160 characters.");
+  else {
+    const n = desc.length;
+    add("Meta description", n >= 110 && n <= 170 ? "pass" : "warn",
+      `${n} chars. ${n < 110 ? "Short, aim 120-160." : n > 170 ? "Long, may truncate, aim 120-160." : "Good length."}`);
+  }
+
+  const h1s = (html.match(/<h1[\s>]/gi) || []).length;
+  add("H1 heading", h1s === 1 ? "pass" : h1s === 0 ? "fail" : "warn",
+    h1s === 0 ? "No H1 found. Add one clear H1." : h1s === 1 ? "Exactly one H1." : `${h1s} H1s found. Use a single H1.`);
+
+  const h2s = (html.match(/<h2[\s>]/gi) || []).length;
+  add("Subheadings (H2)", h2s >= 1 ? "pass" : "warn",
+    h2s >= 1 ? `${h2s} H2 headings, good structure.` : "No H2s. Structure content with subheadings.");
+
+  const canonical = get(/<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
+  add("Canonical tag", canonical ? "pass" : "warn",
+    canonical ? "Canonical tag set." : "No canonical tag. Add one to avoid duplicate-content issues.");
+
+  const robots = get(/<meta[^>]+name=["']robots["'][^>]*content=["']([^"']+)["']/i) || "";
+  add("Indexable", /noindex/i.test(robots) ? "fail" : "pass",
+    /noindex/i.test(robots) ? "Page is set to NOINDEX and will not rank." : "Page is indexable.");
+
+  add("Mobile viewport", /<meta[^>]+name=["']viewport["']/i.test(html) ? "pass" : "fail",
+    /<meta[^>]+name=["']viewport["']/i.test(html) ? "Viewport meta present." : "No viewport meta. Add it for mobile.");
+
+  const og = /<meta[^>]+property=["']og:title["']/i.test(html) && /<meta[^>]+property=["']og:image["']/i.test(html);
+  add("Social (Open Graph)", og ? "pass" : "warn",
+    og ? "og:title and og:image present." : "Missing Open Graph tags for rich social sharing.");
+
+  const imgs = html.match(/<img[^>]*>/gi) || [];
+  const noAlt = imgs.filter((t) => !/\salt=/i.test(t)).length;
+  add("Image alt text", imgs.length === 0 ? "warn" : noAlt === 0 ? "pass" : "warn",
+    imgs.length === 0 ? "No images found." : noAlt === 0 ? `All ${imgs.length} images have alt text.` : `${noAlt} of ${imgs.length} images missing alt text.`);
+
+  add("Structured data (schema)", /<script[^>]+type=["']application\/ld\+json["']/i.test(html) ? "pass" : "warn",
+    /<script[^>]+type=["']application\/ld\+json["']/i.test(html) ? "JSON-LD structured data found." : "No structured data. Add schema for rich results and AI citations.");
+
+  const lang = get(/<html[^>]+lang=["']([^"']+)["']/i);
+  add("Language attribute", lang ? "pass" : "warn",
+    lang ? `lang="${lang}".` : "No lang attribute on <html>. Add it (e.g. en or ar).");
+
+  const text = html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
+  const words = text.split(/\s+/).filter(Boolean).length;
+  add("Content depth", words >= 300 ? "pass" : "warn",
+    `~${words} words. ${words < 300 ? "Thin, aim for 300+ words of useful content." : "Reasonable content length."}`);
+
+  const pass = items.filter((i) => i.status === "pass").length;
+  return { score: Math.round((pass / items.length) * 100), items };
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -191,6 +264,55 @@ export default {
       }
 
       return json({ captured: true });
+    }
+
+    // ── SEO Optimizer: free on-page audit of any URL ────────────────────────
+    if (url.pathname === "/api/seo-check" && request.method === "POST") {
+      let b;
+      try {
+        b = await request.json();
+      } catch {
+        return json({ error: "Invalid request" }, 400);
+      }
+      const website = (b.website || "").toString().trim().slice(0, 300);
+      const email = (b.email || "").toString().trim().slice(0, 200);
+      if (!website) return json({ error: "Please enter a website URL." }, 400);
+      const site = /^https?:\/\//i.test(website) ? website : `https://${website}`;
+      let host = "";
+      try {
+        host = new URL(site).hostname;
+      } catch {
+        return json({ error: "That does not look like a valid URL." }, 400);
+      }
+      if (/^(localhost$|127\.|0\.0\.0\.0|10\.|192\.168\.|169\.254\.)/i.test(host)) {
+        return json({ error: "Please enter a public website URL." }, 400);
+      }
+      const lead = { name: email || "SEO Optimizer user", email, phone: "", company_url: site, message: "SEO Optimizer audit request.", source: "seo-optimizer" };
+      ctx.waitUntil(
+        (async () => {
+          try {
+            await fetch(`${SUPABASE_URL}/rest/v1/seodxb_leads`, {
+              method: "POST",
+              headers: { ...sb, Prefer: "return=minimal" },
+              body: JSON.stringify(lead),
+            });
+          } catch {
+            /* best-effort */
+          }
+          await notifyNewLead(env, lead);
+        })(),
+      );
+      try {
+        const r = await fetch(site, {
+          headers: { "User-Agent": "Mozilla/5.0 (compatible; SEODXB-SEO-Checker/1.0; +https://seodxb.com)" },
+          redirect: "follow",
+        });
+        if (!r.ok) return json({ error: `Could not fetch the page (HTTP ${r.status}). Check the URL is correct and public.` }, 200);
+        const htmlText = (await r.text()).slice(0, 800000);
+        return json({ result: analyzeSeo(site, htmlText) });
+      } catch {
+        return json({ error: "Could not reach that URL. Check it is correct and publicly accessible." }, 200);
+      }
     }
 
     // ── Admin: list stored leads (protected) ────────────────────────────────

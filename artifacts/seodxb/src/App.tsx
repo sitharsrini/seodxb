@@ -59,6 +59,7 @@ const ServicesDirectory = lazy(() => import("@/pages/ServicesDirectory").then((m
 const Admin = lazy(() => import("@/pages/Admin").then((m) => ({ default: m.Admin })));
 const LeadsAdmin = lazy(() => import("@/pages/LeadsAdmin").then((m) => ({ default: m.LeadsAdmin })));
 const IcpFinder = lazy(() => import("@/pages/IcpFinder").then((m) => ({ default: m.IcpFinder })));
+const SeoOptimizer = lazy(() => import("@/pages/SeoOptimizer").then((m) => ({ default: m.SeoOptimizer })));
 const Website20AED = lazy(() => import("@/pages/Website20AED").then((m) => ({ default: m.Website20AED })));
 const FreeSEOAudit = lazy(() => import("@/pages/FreeSEOAudit").then((m) => ({ default: m.FreeSEOAudit })));
 
@@ -96,6 +97,7 @@ function Router() {
       <Route path="/admin" component={Admin} />
       <Route path="/leads-admin" component={LeadsAdmin} />
       <Route path="/icp-finder" component={IcpFinder} />
+      <Route path="/seo-optimizer" component={SeoOptimizer} />
       <Route path="/website-20-aed" component={Website20AED} />
       <Route path="/:slug" component={KeywordPage} />
       <Route component={NotFound} />
