@@ -945,4 +945,71 @@ commercial("seo-outsourcing-uk", {
   ctaButton: "Get Free Consultation",
 });
 
-export const ukKeywordPages: KeywordPageConfig[] = pages;
+// Hand-crafted daily page (2026-08-08): a genuinely London-specific agency hub
+// filling a verified gap and parenting the London vertical pages.
+const extraUKPages: KeywordPageConfig[] = [
+  {
+    slug: "seo-agency-london",
+    keyword: "SEO Agency London",
+    badge: "SEO Agency for London Businesses",
+    title: "SEO Agency London | SEODXB Search Specialists",
+    metaDesc: "SEODXB is an SEO agency for London businesses. We rank you on Google, win local and borough-level searches, and get you cited by AI answer engines. No lock-in contracts.",
+    h1: "The SEO Agency London Businesses Rely On to Grow From Search",
+    intro: "London is one of the most competitive search markets in the world, where established brands, aggressive challengers and directories all fight for the same terms. SEODXB helps London businesses cut through it: a technically sound foundation, content that ranks for how Londoners actually search by service and by area, strong local visibility at borough level, and optimisation to be cited by AI answer engines. We focus on qualified enquiries and revenue, not vanity metrics, and we work without long lock-in contracts.",
+    svgVariant: "serp",
+    imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=640&h=480&fit=crop&q=80&auto=format",
+    featuresTitle: "Why London Businesses Choose SEODXB",
+    featuresSubtitle: "Specialist SEO built for one of the world's most competitive and local search markets.",
+    features: [
+      { title: "Technical SEO Foundations", desc: "We fix the crawl, indexation, speed and structured-data issues that quietly hold London sites back before building on top of them." },
+      { title: "London-Focused Content", desc: "We target how Londoners search, by service and often by borough or district, so you rank for the specific terms that convert." },
+      { title: "Local & Map Pack SEO", desc: "We optimise your Google Business Profile and local signals to win the borough-level and near-me searches that drive real enquiries." },
+      { title: "Authority Building", desc: "We earn genuine links and mentions from credible UK sources to build the prominence London's competitive terms demand." },
+      { title: "AEO & GEO Optimisation", desc: "We structure content to be cited by AI Overviews, ChatGPT and Perplexity, keeping you visible as search shifts to AI answers." },
+      { title: "Transparent Reporting", desc: "You get clear reporting on rankings, organic traffic and, above all, the enquiries and revenue your SEO produces." },
+    ],
+    stats: [
+      { value: "3", label: "Search surfaces covered" },
+      { value: "Local", label: "Borough-level targeting" },
+      { value: "24/7", label: "Always-on visibility" },
+      { value: "0", label: "Long-term contracts" },
+    ],
+    faqTitle: "SEO Agency London - FAQs",
+    faqs: [
+      { q: "What does an SEO agency in London do?", a: "A London SEO agency helps your business rank higher on Google and get found by the customers searching for what you offer. SEODXB handles technical SEO, content, local SEO and AI search visibility, focused on generating qualified enquiries rather than vanity traffic in a highly competitive market." },
+      { q: "How long does SEO take to work in London?", a: "London is very competitive, so meaningful results on head terms usually build over several months. Local, borough-level and long-tail searches can move sooner. Because content and authority compound, results build steadily rather than arriving all at once, and consistency matters most." },
+      { q: "Can a smaller business compete for SEO in London?", a: "Yes, with focus. Large brands rank broadly but rarely with depth on specific services, niches or boroughs. A focused strategy built on genuine local relevance, strong technical foundations and content that answers the exact questions your customers ask can win the searches that convert." },
+      { q: "Do you offer local SEO for specific London areas?", a: "Yes. Many Londoners search at borough or neighbourhood level, so we align your Google Business Profile, location-relevant pages and consistent business details to win those local searches, which are often a major source of enquiries." },
+      { q: "Is SEODXB based in London?", a: "SEODXB is a specialist SEO agency that serves London and UK businesses alongside clients across the UAE and internationally. Our work is delivered remotely with transparent reporting and direct access to the specialists doing it, and we operate without long lock-in contracts." },
+    ],
+    extendedContent: [
+      {
+        heading: "What It Takes to Rank in London",
+        paragraphs: [
+          "London is not one market but many overlapping ones: dozens of boroughs, distinct commercial districts from the City and Canary Wharf to Shoreditch and Mayfair, and intense competition in almost every service category. Ranking here means competing against established local players, national brands and aggregator directories at the same time, which is why a shallow, generic approach rarely moves the needle.",
+          "What works is depth and specificity. A technically sound site, content that answers the precise questions Londoners ask about your service, and genuine local relevance for the areas you serve together let you rank for the searches that actually produce enquiries. We prioritise those winnable, high-intent terms rather than chasing the broadest, most contested keywords for their own sake.",
+        ],
+      },
+      {
+        heading: "Local Search Is Where Many London Enquiries Are Won",
+        paragraphs: [
+          "Because London is so dense, a large share of valuable searches carry local intent: people looking for a service in their borough, near a station, or close to where they work. The Map Pack and local results capture that intent directly, and a well-optimised Google Business Profile with consistent details and genuine reviews is one of the most reliable sources of enquiries a London business can build.",
+          "We treat local SEO and your wider content as one system. The profile and location-relevant pages capture nearby intent, while your service content provides the depth that turns a click into a customer. For most London businesses, getting both right matters more than winning any single competitive head term.",
+        ],
+      },
+      {
+        heading: "Staying Visible as London Search Moves to AI",
+        paragraphs: [
+          "Londoners increasingly research services through AI Overviews and assistants that answer directly and cite a handful of trusted sources. Being one of those sources puts your business in front of customers at the research stage, before they reach a list of links. Earning it comes from clear, answer-first content backed by genuine expertise and consistent information across the web.",
+          "This does not replace ranking for the commercial searches that drive clicks; it adds a surface worth winning. Combining strong technical and local SEO with answer-engine optimisation keeps a London business visible across Google, the Map Pack and AI answers at once, which is exactly where competition is thinnest for the firms that adapt early.",
+        ],
+      },
+    ],
+    ctaTitle: "Grow Your London Business From Search",
+    ctaDesc: "Book a free SEO strategy call. We will audit your site, analyse the competitors ranking above you, and show you where the qualified London enquiries are.",
+    ctaButton: "Book a Free Strategy Call",
+    areaServed: "London, United Kingdom",
+  },
+];
+
+export const ukKeywordPages: KeywordPageConfig[] = [...pages, ...extraUKPages];

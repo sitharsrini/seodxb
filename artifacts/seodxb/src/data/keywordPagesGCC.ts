@@ -1565,4 +1565,119 @@ commercial("international-seo-saudi-arabia", {
   ctaButton: "Get Free Consultation",
 });
 
-export const gccKeywordPages: KeywordPageConfig[] = pages;
+// Hand-crafted daily pages (2026-08-08): genuinely city-specific commercial
+// pages filling verified gaps (Riyadh ecommerce SEO, Doha Google Ads).
+const extraGCCPages: KeywordPageConfig[] = [
+  {
+    slug: "ecommerce-seo-riyadh",
+    keyword: "Ecommerce SEO Riyadh",
+    badge: "Ecommerce SEO for Riyadh Stores",
+    title: "Ecommerce SEO Riyadh | SEODXB Online Store Growth",
+    metaDesc: "SEODXB grows online stores in Riyadh with Arabic-first ecommerce SEO. Rank category and product pages on Google and get cited by AI shopping answers.",
+    h1: "Ecommerce SEO That Grows Riyadh Online Stores",
+    intro: "Riyadh is at the centre of Saudi Arabia's fast-growing ecommerce market, with a young, mobile-first population that shops online and often searches in Arabic first. SEODXB helps Riyadh stores win organic traffic that converts: Arabic-led category architecture, product pages built to rank and sell, correct bilingual implementation, and content structured so AI shopping answers cite your products. The aim is qualified buyers, not traffic for its own sake.",
+    svgVariant: "growth",
+    imageUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=640&h=480&fit=crop&q=80&auto=format",
+    featuresTitle: "How SEODXB Grows Ecommerce in Riyadh",
+    featuresSubtitle: "Arabic-first ecommerce SEO built for how Saudi shoppers actually search and buy.",
+    features: [
+      { title: "Arabic-First Keyword Research", desc: "We research how Riyadh shoppers describe products in Arabic and let that shape your categories, filters and titles, rather than translating an English structure." },
+      { title: "Category Architecture", desc: "We build a clear, shallow architecture so your most valuable categories are easy for shoppers and search engines to reach and rank." },
+      { title: "Product Pages That Convert", desc: "We write original product content with specifications, use cases and Product structured data so pages rank and represent well in rich results." },
+      { title: "Faceted Navigation Control", desc: "We manage filters and facets so your store does not spawn thousands of thin, near-duplicate URLs that waste crawl budget." },
+      { title: "Correct Bilingual Setup", desc: "We implement hreflang and crawlable Arabic and English versions properly so neither is treated as a duplicate and each ranks in its own language." },
+      { title: "AI Shopping Visibility", desc: "We structure your catalogue so AI tools can cite your products accurately when shoppers ask them for recommendations." },
+    ],
+    stats: [
+      { value: "AR/EN", label: "Bilingual store SEO" },
+      { value: "3", label: "Search surfaces covered" },
+      { value: "24/7", label: "Always-on visibility" },
+      { value: "100%", label: "Focused on search" },
+    ],
+    faqTitle: "Ecommerce SEO Riyadh - FAQs",
+    faqs: [
+      { q: "Do I need an Arabic version of my Riyadh online store?", a: "In most categories, yes. A large share of high-intent shopping searches in Saudi Arabia happen in Arabic. The Arabic version should be a first-class experience with its own keyword-led categories and product content, not a thin machine translation, because that is where much of the demand and least competition sit." },
+      { q: "What drives the most ecommerce traffic, category or product pages?", a: "Category pages usually drive the most commercial organic traffic because they match how people shop by type, brand and use case. Product pages are essential for ranking on specific items and converting. A strong store optimises both, linked by a clear architecture." },
+      { q: "How do I stop filters from hurting my store's SEO?", a: "We decide deliberately which filtered views deserve indexing and prevent the rest from creating thin, near-duplicate URLs. Handling faceted navigation well protects crawl budget and keeps ranking signals on the pages that matter." },
+      { q: "How long does ecommerce SEO take in Riyadh?", a: "Long-tail product and category terms can improve within a few months, while competitive head terms take longer. Ecommerce SEO compounds, so a consistent programme builds steady organic sales over time rather than delivering all at once." },
+      { q: "How do online stores get recommended by AI shopping tools?", a: "By making product and category content clear, structured and factually consistent, with specifications, prices and availability that machines can parse. Structured data and consistent facts across your site and listings help AI engines represent your products accurately." },
+    ],
+    extendedContent: [
+      {
+        heading: "Why Riyadh Is a Real Ecommerce Opportunity",
+        paragraphs: [
+          "Riyadh combines a large, young, highly connected population with rising online spending and a national push towards a digital economy. That produces genuine demand, but also competition from regional marketplaces and international brands with deep budgets. The stores that win organic traffic are not necessarily the biggest; they are the ones built for how Saudi shoppers actually search, which in most categories means Arabic first.",
+          "For an independent Riyadh store, that is the opening. Marketplaces rank broadly but rarely with depth on specific categories and the exact Arabic phrasing shoppers use. A focused store with genuine Arabic-led category and product content can capture high-intent searches those larger players serve poorly, and convert them into sales.",
+        ],
+      },
+      {
+        heading: "Arabic-First Is a Strategy, Not a Translation",
+        paragraphs: [
+          "Many Saudi stores build in English and add a translated Arabic version late, which is backwards for a market where so much high-intent shopping happens in Arabic. Arabic-first means doing the keyword research in Arabic, understanding the phrasing and dialect that shoppers use, and letting that shape your categories, filters and titles rather than mirroring an English structure that never matched local behaviour.",
+          "Done properly, this captures demand that translated, English-first competitors miss entirely. The Arabic version reads naturally to a native speaker, targets the terms shoppers actually search, and ranks in its own right, while correct hreflang keeps it and the English version distinct. That combination is what turns Arabic search from an afterthought into a competitive advantage.",
+        ],
+      },
+    ],
+    ctaTitle: "Grow Your Riyadh Store With Search",
+    ctaDesc: "Book a free ecommerce SEO review. We will show you where Saudi shoppers are searching, where your store is losing traffic, and how to capture more sales.",
+    ctaButton: "Get a Free Ecommerce SEO Review",
+    areaServed: "Riyadh, Saudi Arabia",
+  },
+  {
+    slug: "google-ads-doha",
+    keyword: "Google Ads Doha",
+    badge: "Google Ads & PPC in Doha",
+    title: "Google Ads Doha | SEODXB PPC Management Qatar",
+    metaDesc: "SEODXB manages Google Ads for businesses in Doha and across Qatar. High-intent Arabic and English campaigns measured on qualified enquiries, not vanity clicks.",
+    h1: "Google Ads Management That Delivers Enquiries in Doha",
+    intro: "Doha is a compact but competitive market where the businesses that win paid search are those that run tight, well-targeted campaigns rather than the ones that simply spend more. SEODXB manages Google Ads for businesses across Doha, West Bay, Lusail and Al Wakrah, focusing budget on the high-intent Arabic and English searches most likely to become customers and measuring everything against cost per qualified enquiry. Whether you need immediate leads or a paid programme alongside SEO, we build campaigns that respect your budget.",
+    svgVariant: "growth",
+    imageUrl: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=640&h=480&fit=crop&q=80&auto=format",
+    featuresTitle: "What SEODXB's Google Ads Management Covers in Qatar",
+    featuresSubtitle: "A tightly run PPC programme built for Qatar's bilingual, high-value search market.",
+    features: [
+      { title: "High-Intent Targeting", desc: "We focus budget on bottom-of-funnel searches across Doha that signal readiness to buy, and cut the broad terms that drain spend without converting." },
+      { title: "Arabic & English Campaigns", desc: "We build and write campaigns in both languages so you reach the whole Qatar market, including the Arabic searches many accounts ignore." },
+      { title: "Accurate Conversion Tracking", desc: "We set up proper conversion tracking so every campaign is measured against real enquiries, calls and bookings rather than raw clicks." },
+      { title: "Quality Score & Landing Pages", desc: "We align ads with focused landing pages to lift Quality Score, lowering cost per click and improving position at the same budget." },
+      { title: "Wasted-Spend Audits", desc: "We continuously prune irrelevant search terms and weak keywords so budget flows to what actually produces enquiries." },
+      { title: "Paired With SEO", desc: "We use paid data to sharpen your SEO and let organic rankings lower your blended cost per lead over time, rather than running ads in isolation." },
+    ],
+    stats: [
+      { value: "AR/EN", label: "Bilingual campaigns" },
+      { value: "CPL", label: "Measured on enquiries" },
+      { value: "100%", label: "Focused on search" },
+      { value: "0", label: "Long-term contracts" },
+    ],
+    faqTitle: "Google Ads Doha - FAQs",
+    faqs: [
+      { q: "How much should I spend on Google Ads in Doha?", a: "It depends on your category and goals. The right budget is the one that produces a profitable cost per qualified enquiry. We start at a level that gathers useful data, then scale the campaigns and keywords that convert." },
+      { q: "How is Google Ads different from SEO in Qatar?", a: "Google Ads buys visibility instantly and stops when spend stops, which is ideal for immediate leads. SEO builds visibility that compounds and lowers cost per lead over time. Many Doha businesses benefit from running both together." },
+      { q: "Do you run Google Ads in Arabic?", a: "Yes. Qatar is a bilingual market and many high-intent searches happen in Arabic. We build and write campaigns in both Arabic and English so you capture demand that English-only accounts miss." },
+      { q: "How quickly can I get leads from Google Ads?", a: "Campaigns can go live within days and start producing enquiries almost immediately. The first weeks gather conversion data, after which cost per lead typically improves as we refine targeting and landing pages." },
+      { q: "Is there a long-term contract?", a: "No. SEODXB works without long lock-in contracts and keeps the account transparent, earning continued management through results measured on qualified enquiries." },
+    ],
+    extendedContent: [
+      {
+        heading: "Winning Paid Search in a Compact, Competitive Market",
+        paragraphs: [
+          "Qatar's market is small in population but high in value, with strong spending power concentrated across Doha, West Bay, Lusail and Al Wakrah. That combination makes paid search competitive: many businesses chase the same limited pool of high-intent customers. The ones that succeed are not those with the largest budgets but those with the tightest accounts, precise targeting, strong landing pages and constant removal of wasted spend.",
+          "We manage campaigns with that discipline. Budget goes to the searches closest to a purchase, Quality Score improvements lower what you pay for better positions, and every result is measured against cost per qualified enquiry. In a market this concentrated, account quality beats raw spend almost every time.",
+        ],
+      },
+      {
+        heading: "The Bilingual Edge in Qatar",
+        paragraphs: [
+          "Qatar is genuinely bilingual, yet many Google Ads accounts run in English only and forfeit a large share of high-intent Arabic searches. Arabic campaigns are not translated English keywords; they require real Arabic keyword research and ad copy that reads naturally, because the phrasing and intent behind Arabic searches differ from their English equivalents.",
+          "Running both languages well widens your reach into demand competitors overlook, often at lower cost where Arabic competition is thinner. For businesses serving the whole of Qatar, bilingual campaigns are one of the most dependable ways to lower blended cost per lead and reach customers rivals never see.",
+        ],
+      },
+    ],
+    ctaTitle: "Get More From Your Google Ads Budget in Qatar",
+    ctaDesc: "Book a free Google Ads review. We will audit your account or plan a new campaign and show you where budget is wasted and where the qualified leads are.",
+    ctaButton: "Get a Free Google Ads Review",
+    areaServed: "Doha, Qatar",
+  },
+];
+
+export const gccKeywordPages: KeywordPageConfig[] = [...pages, ...extraGCCPages];

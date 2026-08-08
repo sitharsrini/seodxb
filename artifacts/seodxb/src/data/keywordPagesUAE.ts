@@ -565,6 +565,135 @@ commercial("seo-for-difc-finance-firms", {
   ctaButton: "Get Free Consultation",
 });
 
+// Hand-crafted daily pages (2026-08-08): genuinely Dubai-specific commercial
+// pages filling verified gaps (Google Ads management, real estate SEO).
+const extraUAEPages: KeywordPageConfig[] = [
+  {
+    slug: "google-ads-management-dubai",
+    keyword: "Google Ads Management Dubai",
+    badge: "Google Ads & PPC Management in Dubai",
+    title: "Google Ads Management Dubai | SEODXB PPC Specialists",
+    metaDesc: "SEODXB manages Google Ads campaigns for Dubai businesses. We cut wasted spend, target high-intent Arabic and English searches, and turn clicks into qualified enquiries.",
+    h1: "Google Ads Management That Turns Dubai Clicks Into Enquiries",
+    intro: "Dubai is one of the most expensive pay-per-click markets in the region, so a poorly run Google Ads account burns budget fast. SEODXB manages campaigns that focus spend on the high-intent searches most likely to become customers, in both Arabic and English, and we measure everything against cost per qualified enquiry rather than vanity clicks. Whether you need leads this week or a paid programme that works alongside your SEO, we build campaigns that respect your margins.",
+    svgVariant: "growth",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&h=480&fit=crop&q=80&auto=format",
+    featuresTitle: "What SEODXB's Google Ads Management Covers",
+    featuresSubtitle: "A tightly run PPC programme built for Dubai's competitive, bilingual, high-cost search market.",
+    features: [
+      { title: "High-Intent Keyword Targeting", desc: "We concentrate budget on bottom-of-funnel Dubai searches that signal readiness to buy, and cut the broad terms that drain spend without converting." },
+      { title: "Arabic & English Campaigns", desc: "We build and write campaigns for both languages so you capture the full Dubai market, not just the English-searching half of it." },
+      { title: "Conversion Tracking Done Properly", desc: "We set up accurate conversion tracking so every dirham is measured against real enquiries, calls and bookings rather than raw traffic." },
+      { title: "Landing Page & Quality Score Work", desc: "We align ads with focused landing pages to lift Quality Score, which lowers your cost per click and improves ad position at the same budget." },
+      { title: "Wasted-Spend Audits", desc: "We continuously prune irrelevant search terms, weak placements and underperforming keywords so budget flows to what actually works." },
+      { title: "Paired With SEO", desc: "We use paid data to sharpen your SEO targeting and let organic rankings lower your blended cost per lead over time, rather than running ads in isolation." },
+    ],
+    stats: [
+      { value: "AR/EN", label: "Bilingual campaigns" },
+      { value: "CPL", label: "Measured on enquiries" },
+      { value: "100%", label: "Focused on search" },
+      { value: "0", label: "Long-term contracts" },
+    ],
+    faqTitle: "Google Ads Management Dubai - FAQs",
+    faqs: [
+      { q: "How much should I spend on Google Ads in Dubai?", a: "It depends on your category and goals. Competitive sectors such as property, legal and clinics have high cost per click, so the right budget is the one that produces a profitable cost per qualified enquiry. We start with a level that gathers useful data, then scale what converts." },
+      { q: "How is Google Ads different from SEO?", a: "Google Ads buys visibility instantly and stops when you pause spend, which is ideal for immediate leads. SEO builds visibility that compounds and lowers cost per lead over time. Most Dubai businesses benefit from both, and we often run them together." },
+      { q: "Do you manage Google Ads in Arabic?", a: "Yes. Dubai is a bilingual market and many high-intent searches happen in Arabic. We build and write campaigns in both Arabic and English so you capture demand that English-only accounts miss." },
+      { q: "How quickly can Google Ads generate leads?", a: "Campaigns can go live within days and start producing enquiries almost immediately. The first weeks are about gathering conversion data and optimising, after which performance and cost per lead typically improve as we refine targeting and landing pages." },
+      { q: "Is there a long-term contract?", a: "No. SEODXB works without long lock-in contracts. We keep the account transparent and earn continued management through results measured on qualified enquiries." },
+    ],
+    extendedContent: [
+      {
+        heading: "Why Google Ads Costs More in Dubai, and How to Stay Profitable",
+        paragraphs: [
+          "Dubai's paid search market is unusually competitive. International brands, aggressive local players and directories all bid for the same high-value terms in property, legal services, cosmetic clinics and financial services, which pushes cost per click up. The businesses that stay profitable are not the ones with the biggest budgets but the ones with the tightest accounts: precise targeting, strong landing pages, and relentless removal of wasted spend.",
+          "That is where management earns its keep. We focus budget on the searches closest to a purchase, improve Quality Score so you pay less for better positions, and measure everything against cost per qualified enquiry. A well-run account in a high-cost market beats a poorly run one with a larger budget almost every time.",
+        ],
+      },
+      {
+        heading: "The Bilingual Advantage Most Dubai Accounts Miss",
+        paragraphs: [
+          "A large share of Dubai's population searches in Arabic, yet many Google Ads accounts run in English only and quietly forfeit that demand. Arabic campaigns are not a matter of translating English keywords; they need genuine Arabic keyword research and ad copy that reads naturally, because the phrasing and intent behind Arabic searches differ from their English equivalents.",
+          "Running both languages well widens your reach into parts of the market competitors ignore, often at lower cost because there is less competition on well-chosen Arabic terms. For businesses serving the whole of Dubai, bilingual campaigns are one of the most reliable ways to lower blended cost per lead.",
+        ],
+      },
+      {
+        heading: "Paid and Organic, Working Together",
+        paragraphs: [
+          "Google Ads and SEO are strongest when they inform each other. Paid campaigns reveal quickly which keywords convert into enquiries, which sharpens the terms we prioritise in your SEO programme. As organic rankings build for those terms, they carry more of the load, letting you reduce reliance on per-click spend over time.",
+          "We manage Google Ads with that whole picture in mind rather than as a standalone spend. The aim is a blended search strategy where paid delivers immediate, high-intent leads while SEO steadily lowers your overall acquisition cost, so the two channels compound instead of competing for the same budget.",
+        ],
+      },
+    ],
+    ctaTitle: "Get More From Your Google Ads Budget in Dubai",
+    ctaDesc: "Book a free Google Ads review. We will audit your account or plan a new campaign, and show you where budget is being wasted and where the qualified leads are.",
+    ctaButton: "Get a Free Google Ads Review",
+    areaServed: "Dubai, UAE",
+  },
+  {
+    slug: "real-estate-seo-dubai",
+    keyword: "Real Estate SEO Dubai",
+    badge: "SEO for Dubai Real Estate",
+    title: "Real Estate SEO Dubai | SEODXB Property SEO Specialists",
+    metaDesc: "SEODXB helps Dubai developers, brokers and property portals rank on Google and get cited by AI search. Capture buyers researching areas, projects and prices online.",
+    h1: "Real Estate SEO That Brings Dubai Property Buyers to You",
+    intro: "Property is one of the most researched purchases anyone makes, and in Dubai that research happens online long before a buyer contacts an agent. Buyers and investors explore areas, projects and prices across Google and increasingly through AI tools, and the developers, brokers and portals that appear during that research win the enquiry. SEODXB builds property SEO that captures buyers at the research stage, in both Arabic and English, across the areas and communities that drive Dubai's market.",
+    svgVariant: "local",
+    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=640&h=480&fit=crop&q=80&auto=format",
+    featuresTitle: "How SEODXB Grows Property Businesses in Dubai",
+    featuresSubtitle: "Search visibility across areas, projects and buyer questions, built for Dubai's competitive property market.",
+    features: [
+      { title: "Area & Community Pages", desc: "We build genuinely useful pages for the areas you sell in, from Dubai Marina and Downtown to JVC and Dubai Hills, that rank for how buyers actually search." },
+      { title: "Project & Development SEO", desc: "We optimise project and off-plan pages so they surface when buyers research specific developments, prices and handover details." },
+      { title: "Buyer-Question Content", desc: "We answer the questions buyers and investors ask about areas, yields, financing and process, capturing them early in the journey." },
+      { title: "Local & Map Pack Visibility", desc: "We optimise your Google Business Profile and local signals so your agency appears when buyers search for property services nearby." },
+      { title: "Bilingual Property SEO", desc: "We build Arabic and English visibility so you reach both local and international buyers searching Dubai property." },
+      { title: "AI Search Visibility", desc: "We structure content so AI tools cite your business when buyers ask them about Dubai areas, projects and investment." },
+    ],
+    stats: [
+      { value: "AR/EN", label: "Bilingual property SEO" },
+      { value: "3", label: "Search surfaces covered" },
+      { value: "24/7", label: "Always-on visibility" },
+      { value: "100%", label: "Focused on search" },
+    ],
+    faqTitle: "Real Estate SEO Dubai - FAQs",
+    faqs: [
+      { q: "How does SEO help a Dubai real estate business?", a: "Most property buyers research areas, projects and prices online before contacting anyone. SEO makes your business visible during that research, on Google and in AI answers, so you capture qualified buyers early rather than competing for attention once the decision is made." },
+      { q: "Should I build pages for specific Dubai areas?", a: "Yes, where you genuinely operate. Buyers search by area and community, so useful, specific pages for the neighbourhoods you sell in capture high-intent searches. Each page must be genuinely informative rather than a template with the area name changed." },
+      { q: "Do I need Arabic SEO for Dubai property?", a: "It helps significantly. Dubai attracts both local and international buyers, and many high-intent searches happen in Arabic. Bilingual property SEO reaches buyers that English-only sites miss, which is often where competition is thinner." },
+      { q: "How long does real estate SEO take in Dubai?", a: "Area and long-tail searches can improve within a few months, while competitive head terms take longer. Property SEO compounds, so a consistent programme builds a steady flow of qualified enquiries over time rather than delivering all at once." },
+      { q: "Can SEO help off-plan and new project sales?", a: "Yes. Buyers research specific developments, prices and handover details online, and optimised project pages surface during that research. Combined with area content and AI visibility, this places your projects in front of buyers actively evaluating their options." },
+    ],
+    extendedContent: [
+      {
+        heading: "How Dubai Property Buyers Actually Search",
+        paragraphs: [
+          "The property journey in Dubai starts broad and narrows fast. A buyer moves from areas and budgets to specific communities, then to particular projects, prices, financing and which agent to trust. Each of those steps is a search, and a real estate business with little more than a homepage and a listings feed is invisible for the research that actually shapes the decision.",
+          "Dubai adds its own layer of complexity: a market split between end-users and investors, local and international buyers, ready and off-plan property, and dozens of distinct communities each with their own search demand. Winning here means having genuinely useful content for the areas, projects and questions your buyers care about, so you appear consistently as they move from curiosity to commitment.",
+        ],
+      },
+      {
+        heading: "Competing With Portals and Bigger Brokerages",
+        paragraphs: [
+          "Independent agencies often assume the large portals and established brokerages have search sewn up. In practice there is room, because portals rank broadly but rarely with depth on specific communities, niche segments or the detailed questions serious buyers ask. A focused agency that builds genuine authority on the areas and property types it knows best can outrank bigger players for the searches that convert.",
+          "The route is specificity. Deep, accurate content on the communities you specialise in, honest guidance on areas and investment, strong local signals and bilingual reach together let a smaller business win high-intent searches that generic portal pages do not serve well. That is where a targeted property SEO programme pays back.",
+        ],
+      },
+      {
+        heading: "Being the Answer When Buyers Ask AI",
+        paragraphs: [
+          "Increasingly, Dubai buyers ask AI tools which area suits their budget, whether an area is a good investment, or how the buying process works. Those tools answer with a condensed recommendation drawn from sources they trust. A real estate business whose content is clear, structured and authoritative becomes one of those sources, placing it in front of buyers at the very start of the journey.",
+          "This is an opportunity while many competitors have not adapted. Property businesses that structure their area and project content for both Google and AI answers now can establish themselves as the default reference in their niche before the field catches up, which is a difficult position for later entrants to overturn.",
+        ],
+      },
+    ],
+    ctaTitle: "Bring More Property Buyers to Your Dubai Business",
+    ctaDesc: "Book a free property SEO review. We will show you where buyers are searching, where your competitors are winning, and how to capture more qualified enquiries.",
+    ctaButton: "Get a Free Property SEO Review",
+    areaServed: "Dubai, UAE",
+  },
+];
+
 export const uaeKeywordPages: Record<string, KeywordPageConfig> = Object.fromEntries(
-  pages.map((p) => [p.slug, p]),
+  [...pages, ...extraUAEPages].map((p) => [p.slug, p]),
 );
