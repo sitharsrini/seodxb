@@ -22,9 +22,10 @@ import { batch14 } from "./batch14";
 import { batch15 } from "./batch15";
 import { batch16 } from "./batch16";
 import { batch17 } from "./batch17";
-import { batch20 } from "./batch20";
 import { batch18 } from "./batch18";
 import { batch19 } from "./batch19";
+import { batch20 } from "./batch20";
+import { batch21 } from "./batch21";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -60,7 +61,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
-  ...batch17, ...batch18, ...batch19, ...batch20,
+  ...batch17, ...batch18, ...batch19, ...batch20, ...batch21,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -106,6 +107,8 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "seo-for-financial-services-firms-london": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
   "measuring-ai-search-visibility-search-console-2026": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
   "seo-for-qatar-new-city-districts-lusail": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "why-not-showing-google-maps-fixes": { date: "Aug 20, 2026", iso: "2026-08-20", updated: "2026-08-20" },
+  "local-seo-vs-national-seo-guide": { date: "Aug 21, 2026", iso: "2026-08-21", updated: "2026-08-21" },
 };
 
 const seen = new Set<string>();
