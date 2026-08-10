@@ -24,6 +24,8 @@ import { batch16 } from "./batch16";
 import { batch17 } from "./batch17";
 import { batch18 } from "./batch18";
 import { batch19 } from "./batch19";
+import { batch20 } from "./batch20";
+import { batch21 } from "./batch21";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -59,7 +61,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
-  ...batch17, ...batch18, ...batch19,
+  ...batch17, ...batch18, ...batch19, ...batch20, ...batch21,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -90,11 +92,21 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "ai-search-optimization-uk-businesses-2026": { date: "Aug 12, 2026", iso: "2026-08-12", updated: "2026-08-12" },
   "seo-in-dublin-complete-guide-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "google-ai-overviews-uae-businesses-2026": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
+  "seo-pricing-saudi-arabia-2026": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "how-to-choose-seo-agency-manchester": { date: "Aug 16, 2026", iso: "2026-08-16", updated: "2026-08-16" },
+  "seo-business-bay-dubai-guide": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "doha-vs-dubai-seo-strategy": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "ireland-small-business-seo-ai-search-2026": { date: "Aug 19, 2026", iso: "2026-08-19", updated: "2026-08-19" },
   "google-ai-mode-explained-for-business-2026": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
   "seo-in-jeddah-complete-guide-2026": { date: "Aug 16, 2026", iso: "2026-08-16", updated: "2026-08-16" },
   "seo-in-london-complete-guide-2026": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
   "google-business-profile-optimisation-checklist-2026": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
   "ai-search-optimization-ireland-businesses-2026": { date: "Aug 19, 2026", iso: "2026-08-19", updated: "2026-08-19" },
+  "google-ai-mode-default-search-what-it-means-2026": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "saudi-rhq-programme-b2b-search-riyadh": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "seo-for-financial-services-firms-london": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "measuring-ai-search-visibility-search-console-2026": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
+  "seo-for-qatar-new-city-districts-lusail": { date: "Aug 7, 2026", iso: "2026-08-07", updated: "2026-08-07" },
   "why-not-showing-google-maps-fixes": { date: "Aug 20, 2026", iso: "2026-08-20", updated: "2026-08-20" },
   "local-seo-vs-national-seo-guide": { date: "Aug 21, 2026", iso: "2026-08-21", updated: "2026-08-21" },
 };
