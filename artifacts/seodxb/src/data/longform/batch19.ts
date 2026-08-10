@@ -7,7 +7,7 @@ import type { LongFormSpec } from "./types";
 
 const img = (id: string) => `https://images.unsplash.com/${id}?w=1200&auto=format&fit=crop&q=80`;
 
-export const batch18: LongFormSpec[] = [
+export const batch19: LongFormSpec[] = [
   // ── 1. Saudi Arabia SEO pricing (commercial research) ─────────────────────
   {
     slug: "seo-pricing-saudi-arabia-2026",
@@ -332,7 +332,7 @@ export const batch18: LongFormSpec[] = [
       { title: "Managing multi-regional and multilingual sites", url: "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites", publisher: "Google Search Central" },
     ],
     related: [
-      { label: "SEO Company Doha", href: "/seo-company-doha" },
+      { label: "SEO Agency Doha", href: "/seo-agency-doha" },
       { label: "SEO in Qatar: Complete Guide", href: "/blog/seo-in-qatar-complete-guide-2026" },
       { label: "SEO Agency Business Bay", href: "/seo-agency-business-bay" },
       { label: "SEO Agency Dubai", href: "/seo-agency-dubai" },

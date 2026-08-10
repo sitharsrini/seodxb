@@ -1,7 +1,7 @@
 import type { KeywordPageConfig } from "./keywordPages";
 
 // City-level commercial landing pages filling genuine geographic gaps:
-// Business Bay (Dubai district), Riyadh, Doha, Manchester and Dublin. Each page
+// Business Bay (Dubai district), Riyadh, Manchester and Dublin. Each page
 // is hand-authored with location-specific content, sectors, competition notes
 // and local FAQs so it deserves to rank on its own rather than being a doorway
 // clone. British English. No em dashes, no double hyphens as dashes.
@@ -118,58 +118,6 @@ export const cityKeywordPages: KeywordPageConfig[] = [
         paragraphs: [
           "In a competitive capital, the sensible sequence is to fix technical and local foundations, then win achievable local and long-tail terms to build momentum, before reinvesting into the more contested head terms. This order produces early results while compounding over time, rather than front-loading effort into the hardest terms in the market.",
           "Because many competitors have not yet adapted to AI search, structuring content for AI answers now is a real opportunity in Riyadh. Businesses that establish themselves as the default citation in their category can hold that position against later entrants, which is difficult to overturn once earned.",
-        ],
-      },
-    ],
-  },
-
-  // ── 3. SEO Company Doha (Qatar) ───────────────────────────────────────────
-  {
-    slug: "seo-company-doha",
-    keyword: "SEO Company Doha",
-    badge: "Bilingual SEO Specialists for Doha",
-    title: "SEO Company Doha | SEODXB - Arabic and English SEO for Doha",
-    metaDesc: "SEODXB is an SEO company for Doha businesses. Bilingual Arabic and English SEO, local Map Pack visibility and AI search citations across Qatar's capital.",
-    h1: "The SEO Company Doha Businesses Trust to Get Found",
-    intro: "Doha concentrates most of Qatar's commercial search demand, from West Bay and Lusail to Al Wakrah, across a compact and wealthy market. SEODXB helps Doha businesses rank on Google and get cited by AI answer engines, combining Arabic and English SEO, local optimisation and technical depth, and capitalising on a market where many competitors have not yet adapted to AI search.",
-    svgVariant: "growth",
-    imageUrl: heroImg("photo-1518684079-3c830dcef090"),
-    featuresTitle: "What Makes SEODXB the Right SEO Company for Doha",
-    featuresSubtitle: "Bilingual SEO tuned to how Doha searches, with an early-mover advantage on AI visibility.",
-    features: [
-      { title: "Bilingual Arabic and English SEO", desc: "We run Arabic and English keyword research and write native content in each with correct hreflang, because both languages matter in Qatar's bilingual market." },
-      { title: "Local SEO for Doha's Core Areas", desc: "We target Doha, West Bay, Lusail and Al Wakrah tightly through an optimised Google Business Profile and consistent local listings." },
-      { title: "Technical SEO Foundations", desc: "We resolve crawlability, speed, indexing and structured-data issues so your site can compete for Qatar's commercial terms." },
-      { title: "AEO and GEO Visibility", desc: "We structure content answer-first so AI engines such as ChatGPT and Google AI Overviews can cite your business, an advantage while competitors lag." },
-      { title: "Sector-Aware Content", desc: "We build content around Qatar's tourism, finance, real estate and professional-services demand, answering real buyer questions." },
-      { title: "Enquiry-Focused Reporting", desc: "We report against calls, forms and bookings rather than vanity metrics, so search is measured on commercial contribution." },
-    ],
-    stats: serviceStats({ value: "Arabic + English", label: "Bilingual SEO" }),
-    faqTitle: "SEO Company Doha - Common Questions",
-    faqs: [
-      { q: "How much does SEO cost in Doha?", a: "It depends on your sector, competition and goals, so the more useful question is value rather than the lowest price. Well-executed SEO in Doha compounds, delivering qualified organic enquiries at a lower long-term cost than paid ads. A scope tied to your specific goals is more informative than a flat rate." },
-      { q: "Is SEO easier in Doha than in bigger Gulf cities?", a: "Doha is smaller and, across many sectors, less saturated than markets like Dubai, which can mean faster wins for well-executed SEO. It is not easy, but thinner competition on many terms is a genuine advantage for businesses that execute properly and move early on AI visibility." },
-      { q: "Do I need Arabic SEO for my Doha business?", a: "For most Doha businesses, yes. Qatar is genuinely bilingual and Arabic and English searches surface different results. Investing only in English misses high-intent Arabic searches. We build proper bilingual SEO with Arabic keyword research and native content rather than translation." },
-      { q: "Can you help me get cited by AI answer engines?", a: "Yes, and Doha is a strong market for it. Because many local competitors have not yet adapted to AI search, structuring your content answer-first now, with consistent facts and credible mentions, can make your business the default citation in its category before rivals catch up." },
-      { q: "How long does SEO take to work in Doha?", a: "Local and long-tail terms can improve within a few months, while competitive terms take longer. Because content and authority compound, results build steadily. No agency can guarantee specific rankings, and consistency over several months matters more than any single change." },
-    ],
-    ctaTitle: "Ready to Get Found in Doha?",
-    ctaDesc: "Book a free SEO audit and we will show you where you stand across Google and AI search in Doha, and the fastest path to visibility in Arabic and English.",
-    ctaButton: "Get Your Free SEO Audit",
-    areaServed: "Doha, Qatar",
-    extendedContent: [
-      {
-        heading: "Why Doha Rewards Businesses That Move Early",
-        paragraphs: [
-          "Qatar is a compact market with substantial spending power and one of the most connected populations in the world. Most meaningful purchases begin with an online search, and in 2026 that means being found on Google and being cited by the AI answer engines people increasingly rely on. Doha, West Bay, Lusail and Al Wakrah concentrate most of the country's commercial search demand.",
-          "Across many sectors, Doha is less saturated than larger Gulf markets, which is precisely the opportunity. A business that executes SEO well can reach visibility faster than it could for the equivalent term in a more contested city, and can establish authority before competitors compete seriously for the same searches.",
-        ],
-      },
-      {
-        heading: "Bilingual Visibility Is a Commercial Necessity",
-        paragraphs: [
-          "Doha is genuinely bilingual, and Arabic and English searches return different content. A business that ranks only in English misses high-intent Arabic searches, particularly among Qatari nationals and Arabic-speaking residents. Proper bilingual SEO means Arabic keyword research, correct hreflang and content written to read naturally in each language rather than machine translation.",
-          "This is also where larger and international competitors often underperform locally. Their sites rank in English but lack Arabic depth and Qatar-specific signals, which is exactly the gap a focused local business can exploit to win searches its rivals never appear for.",
         ],
       },
     ],
