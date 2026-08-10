@@ -22,6 +22,7 @@ import { batch14 } from "./batch14";
 import { batch15 } from "./batch15";
 import { batch16 } from "./batch16";
 import { batch17 } from "./batch17";
+import { batch18 } from "./batch18";
 import { batch19 } from "./batch19";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -58,7 +59,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
-  ...batch17, ...batch19,
+  ...batch17, ...batch18, ...batch19,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -89,7 +90,13 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "ai-search-optimization-uk-businesses-2026": { date: "Aug 12, 2026", iso: "2026-08-12", updated: "2026-08-12" },
   "seo-in-dublin-complete-guide-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "google-ai-overviews-uae-businesses-2026": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
-  // Daily batch published 2026-08-08.
+  // Daily batch (#3) published from 2026-08-15.
+  "google-ai-mode-explained-for-business-2026": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "seo-in-jeddah-complete-guide-2026": { date: "Aug 16, 2026", iso: "2026-08-16", updated: "2026-08-16" },
+  "seo-in-london-complete-guide-2026": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "google-business-profile-optimisation-checklist-2026": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "ai-search-optimization-ireland-businesses-2026": { date: "Aug 19, 2026", iso: "2026-08-19", updated: "2026-08-19" },
+  // Daily batch (#5) published 2026-08-08.
   "google-ads-vs-seo-dubai-roi-2026": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
   "google-business-profile-abu-dhabi-guide": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
   "ecommerce-seo-saudi-arabia-arabic-strategy": { date: "Aug 8, 2026", iso: "2026-08-08", updated: "2026-08-08" },
