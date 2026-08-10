@@ -8,7 +8,7 @@ import type { LongFormSpec } from "./types";
 
 const img = (id: string) => `https://images.unsplash.com/${id}?w=1200&auto=format&fit=crop&q=80`;
 
-export const batch19: LongFormSpec[] = [
+export const batch22: LongFormSpec[] = [
   // ── 1. Google Ads vs SEO for Dubai businesses ─────────────────────────────
   {
     slug: "google-ads-vs-seo-dubai-roi-2026",
