@@ -226,6 +226,8 @@ const STATIC_META: Record<string, { title: string; desc: string }> = {
   "website-20-aed": { title: "Professional Website from 5 AED | Listi.ae Business Offer | SEODXB", desc: "Listi.ae business users get a professional, SEO-ready website from just 5 AED. Free plan 20 AED, one page. Terms apply." },
   "free-seo-audit": { title: "Free SEO Audit Dubai - Request Your Report in 2 Minutes | SEODXB", desc: "Get a free SEO audit for your Dubai website. Technical health, keyword gaps, competitor analysis, and a priority action list." },
   "seo-services": { title: "SEO Services Directory - All Locations and Industries | SEODXB", desc: "Browse all SEODXB SEO services by location and industry. Dubai, UAE cities, GCC, US, UK, Europe, APAC and global coverage." },
+  "icp-finder": { title: "Free ICP Finder & Keyword Analyser | SEODXB", desc: "Free ICP Finder and keyword analyser: enter a website to get an ideal customer profile and SEO keyword strategy from SEODXB." },
+  "seo-optimizer": { title: "Free SEO Optimizer & On-Page Checker | SEODXB", desc: "Free SEO optimizer: enter a URL for an instant on-page SEO audit with a score and fixes for title, meta, headings and schema." },
   "admin": { title: "Site Index | SEODXB Admin", desc: "Internal site index of every SEODXB page and blog post. Private admin directory, not indexed by search engines." },
   "leads-admin": { title: "Leads | SEODXB Admin", desc: "Private admin page for viewing stored contact-form leads. Not indexed by search engines. Access is protected by an admin key." },
 };

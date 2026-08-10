@@ -29,12 +29,19 @@ const industryLinks = [
   { name: "Legal SEO", path: "/seo-for-law-firms" },
 ];
 
+const toolsLinks = [
+  { name: "SEO Optimizer (Free)", path: "/seo-optimizer" },
+  { name: "ICP Finder & Keywords", path: "/icp-finder" },
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [servicesOpen, setServicesOpen] = React.useState(false);
+  const [toolsOpen, setToolsOpen] = React.useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = React.useState(false);
   const servicesRef = React.useRef<HTMLDivElement>(null);
+  const toolsRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -46,6 +53,9 @@ export function Navbar() {
     const handleClickOutside = (e: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
+      }
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setToolsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -61,6 +71,7 @@ export function Navbar() {
     { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
   ];
+  const isToolActive = toolsLinks.some((l) => location === l.path);
 
   return (
     <nav
@@ -107,6 +118,26 @@ export function Navbar() {
                   <Link key={link.path} href={link.path}
                     className={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
                     onClick={() => setServicesOpen(false)}>{link.name}</Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Free Tools dropdown */}
+          <div ref={toolsRef} className="relative">
+            <button
+              onClick={() => setToolsOpen(!toolsOpen)}
+              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${isToolActive ? "text-primary" : "text-muted-foreground"}`}
+            >
+              Free Tools
+              <ChevronDown size={14} className={`transition-transform ${toolsOpen ? "rotate-180" : ""}`} />
+            </button>
+            {toolsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-60 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+                {toolsLinks.map((link) => (
+                  <Link key={link.path} href={link.path}
+                    className={`block px-4 py-2 text-sm hover:bg-slate-50 hover:text-primary transition-colors ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                    onClick={() => setToolsOpen(false)}>{link.name}</Link>
                 ))}
               </div>
             )}
@@ -169,6 +200,12 @@ export function Navbar() {
             ))}
             <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-3 mb-1">By Industry</p>
             {industryLinks.map((link) => (
+              <Link key={link.path} href={link.path}
+                className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
+                onClick={() => setIsOpen(false)}>{link.name}</Link>
+            ))}
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-3 mb-1">Free Tools</p>
+            {toolsLinks.map((link) => (
               <Link key={link.path} href={link.path}
                 className={`block py-2 pl-3 text-sm rounded-md ${location === link.path ? "text-primary font-semibold" : "text-foreground"}`}
                 onClick={() => setIsOpen(false)}>{link.name}</Link>
