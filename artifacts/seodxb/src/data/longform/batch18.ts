@@ -1,423 +1,449 @@
 import type { LongFormSpec } from "./types";
 
-// Daily batch: current AI-search developments and commercial-intent market
-// guides. Google AI Mode as the default search experience, Saudi Arabia's RHQ
-// programme and B2B search, SEO for London financial services firms, measuring
-// AI search visibility in Search Console, and SEO for Qatar's new city
-// districts. British English. No em dashes. Writer: Srinivasan R.
+// Daily batch: a trending Google AI Mode explainer, Jeddah and London market
+// guides, a Google Business Profile optimisation checklist, and an Ireland AI
+// search guide. Educational, commercial-intent pieces that fill geographic and
+// topical gaps in the blog. British English. Writer: Srinivasan R.
 
 const img = (id: string) => `https://images.unsplash.com/${id}?w=1200&auto=format&fit=crop&q=80`;
 
 export const batch18: LongFormSpec[] = [
-  // ── 1. Google AI Mode is now the default (trending) ───────────────────────
+  // ── 1. Google AI Mode: what it means for businesses (trending) ────────────
   {
-    slug: "google-ai-mode-default-search-what-it-means-2026",
+    slug: "google-ai-mode-explained-for-business-2026",
     category: "AI Search",
-    title: "Google AI Mode Is Now the Default: What It Means for Your Business",
-    excerpt: "Google AI Mode is the default search experience in 2026. What changes for rankings, clicks and how you get found.",
-    heroImage: img("photo-1573804633927-bfcbcd909acd"),
-    heroAlt: "Person using an AI-powered search interface on a laptop in 2026",
+    title: "Google AI Mode Explained: What It Means for Your Business in 2026",
+    excerpt: "What Google AI Mode is, how it differs from AI Overviews, and how businesses stay visible when Google answers directly.",
+    heroImage: img("photo-1518770660439-4636190af475"),
+    heroAlt: "Search interface concept representing Google AI Mode answering business queries in 2026",
     intro: [
-      "At Google I/O in May 2026, Google confirmed what the industry had watched coming for two years: AI Mode, its conversational, answer-first search experience, is now the default rather than an opt-in tab. It runs on Gemini 3.5 Flash, has passed a billion monthly users, and has rolled out across nearly two hundred countries and territories. For a business owner, the headline is simple. The way customers search has changed, and the page of ten blue links you optimised for over the past decade is no longer the whole game.",
-      "This guide explains what AI Mode actually changes, what it does not, and what a sensible business should do about it in the second half of 2026. The short version is that the fundamentals of good SEO still matter, but the reward now goes to content that an AI system can read, trust and quote, not just content that ranks in a list a human scrolls through.",
+      "Google spent 2025 turning search from a page of links into a conversation, and AI Mode is the clearest expression of that shift. Instead of typing a keyword and scanning ten blue links, users now ask a full question, read a synthesised answer, and ask a follow-up without ever leaving the results page. For business owners who have relied on ranking first for a keyword, this is a genuine change in how customers find you, and it deserves a considered response rather than panic.",
+      "This guide explains what AI Mode actually is, how it differs from AI Overviews, why it changes the economics of a click, and the practical steps a business can take so it is still found, cited and contacted when Google answers questions directly.",
     ],
     keyStats: [
-      "Google AI Mode became the default search experience globally in 2026, powered by Gemini 3.5 Flash.",
-      "AI Mode has passed one billion monthly users across roughly two hundred countries and territories.",
-      "Google Search Console added Search Generative AI performance reports in June 2026.",
-      "A single AI answer increasingly replaces a page of links for many informational queries.",
+      "AI Mode answers a query conversationally and supports follow-up questions in the same session.",
+      "It draws on multiple sources and cites them, so being one of those sources is the new goal.",
+      "Informational and comparison queries are most affected; local and transactional intent still drives clicks.",
+      "Clear, well-structured, genuinely useful content remains the raw material AI answers are built from.",
     ],
     sections: [
       {
-        h: "What Actually Changed in 2026",
+        h: "What Google AI Mode Actually Is",
         p: [
-          "For years, AI Overviews sat at the top of an otherwise familiar results page, and AI Mode lived behind a separate tab you had to choose. The change in 2026 is that the separation has effectively gone. For a growing share of queries, a searcher now receives an AI-generated, conversational answer whether or not they asked for one, with links and sources woven into and beneath that answer rather than listed as the main event.",
-          "This matters because attention now lands first on the AI response. If your business is named, described or cited inside that answer, you are part of the customer's shortlist before they click anything. If you are not, you may never be seen, even when your website would have ranked perfectly well in the old ten-link format. Visibility has moved from position on a page to inclusion in an answer.",
+          "AI Mode is a dedicated, conversational search experience built on Google's Gemini models. Rather than returning a ranked list, it reads the intent behind a question, gathers information from across the web, and composes a direct answer with links to the sources it used. Crucially, it keeps context, so a user can ask a broad question, then narrow it with follow-ups, and the answer adapts each time.",
+          "It helps to separate two related features. AI Overviews are the AI-generated summaries that appear above traditional results for many queries. AI Mode is a distinct, fuller experience the user chooses to enter, closer to asking an assistant than running a search. Both are powered by the same underlying idea: Google increasingly wants to answer the question, not just point at pages that might contain the answer.",
         ],
         image: {
-          url: img("photo-1518770660439-4636190af475"),
-          alt: "Abstract representation of an AI language model processing search queries",
-          caption: "AI Mode answers questions directly, so being cited in the answer now matters as much as ranking.",
+          url: img("photo-1526374965328-7f61d4dc18c5"),
+          alt: "Abstract data visualisation representing how AI Mode synthesises answers from many sources",
+          caption: "AI Mode composes an answer from several sources and names them, so citation is the objective.",
         },
       },
       {
-        h: "What Did Not Change",
+        h: "Why This Changes the Value of a Ranking",
         p: [
-          "It would be a mistake to conclude that SEO is finished. AI Mode does not invent its answers from nothing. It draws on the same open web that Google has always crawled, and it favours sources it can parse cleanly and corroborate against other reputable pages. That means the disciplines that produced good rankings still produce good AI visibility: a fast, crawlable, well-structured site, content that genuinely answers real questions, accurate and consistent business information, and authority signals from credible third parties.",
-          "What has changed is the emphasis. Clarity, structure and factual consistency now carry more weight than clever keyword placement. An article that states its answer plainly in the first two sentences, backs it with specifics, and is marked up with clean structured data is far easier for an AI system to lift and cite than a 2,000-word piece that buries its point beneath an introduction about the digital landscape.",
+          "For years the goal was simple: rank in the top few positions and earn the click. AI Mode complicates that. When Google answers a question well enough, some users never click through, particularly for straightforward informational queries. The instinctive fear is a collapse in traffic, and for thin, purely informational content that risk is real.",
+          "The more useful framing is that the click is no longer the only prize. Being cited as a source inside the answer builds visibility and trust even without an immediate visit, and users who do click after reading an AI answer arrive far better qualified. The businesses that suffer are those whose content merely restates what everyone else says. The businesses that gain are those with genuine expertise, first-hand information and a clear structure that AI can quote confidently.",
         ],
       },
       {
-        h: "How to Earn a Place Inside AI Answers",
+        h: "Which Searches Are Most and Least Affected",
         p: [
-          "Getting cited in an AI answer is the practical goal, and it follows a recognisable pattern. AI systems reward answer-first content, entity clarity, and third-party corroboration. Answer-first means leading each section with a direct, self-contained response to the question a buyer would actually ask. Entity clarity means describing who you are, what you do and where you operate consistently across your website, Google Business Profile, LinkedIn and any directories you appear in, so the machine can resolve you to a single confident entity.",
-          "Corroboration is the part most businesses neglect. AI engines are more willing to name a business that credible outside sources also mention, whether that is regional press, an industry body, or a well-regarded directory. Earning genuine mentions from trusted sources is slow work, but it is what separates a business the AI names with confidence from one it leaves out because it cannot verify the claim.",
+          "Not every search is equally exposed. Broad informational and comparison queries, the kind that begin with how, what, why or which is best, are where AI answers now dominate. If your traffic depends heavily on that type of query, expect the pattern of clicks to change and plan for it.",
+          "Local and transactional intent is far more resilient. When someone wants a clinic near them, a same-day service or to actually buy something, they still need a real business, a map result, a phone number or a checkout. This is why local SEO and a well-optimised Google Business Profile matter more than ever: they sit exactly where AI is least able to replace the click with an answer.",
         ],
         list: [
-          "Lead every important section with a direct 40 to 80 word answer",
-          "Keep your name, category and location identical everywhere they appear",
-          "Add clean, valid structured data for organisation, service and FAQ content",
-          "Earn mentions from credible third parties, not just self-published pages",
-          "Publish specifics, examples and figures rather than vague claims",
+          "Most affected: definitions, explainers, broad comparisons and general how-to queries",
+          "Partly affected: research-stage commercial queries where users still want to verify a source",
+          "Least affected: local, near-me, booking and buy-now searches",
+          "Resilient asset: an optimised Google Business Profile capturing local intent",
         ],
       },
       {
-        h: "Measuring the New Reality",
+        h: "How to Stay Visible in an AI-Answer World",
         p: [
-          "One genuinely useful development arrived alongside AI Mode. In June 2026, Google added Search Generative AI performance reports to Search Console, so you can begin to see how your content performs inside generative results rather than guessing. This does not give you a complete picture of every AI engine, but it is the first official window into how Google's own AI surfaces your pages, and it belongs in every serious reporting routine.",
-          "Beyond Google, treat AI visibility as something you test rather than assume. Ask ChatGPT, Perplexity and Gemini the questions your customers ask, in the markets you serve, and record whether you appear. Repeating that test each month turns a vague worry into a measurable trend you can act on, and it tells you quickly whether the work you are doing is moving the needle.",
+          "The good news is that optimising for AI Mode is not a separate discipline bolted onto SEO. It rewards the same fundamentals, executed with more discipline. Answer the question directly and early on the page, before the preamble. Use clear headings phrased as the questions people actually ask. Support claims with specifics, data and first-hand experience that a generic source cannot fabricate. Keep the facts about your business consistent everywhere they appear.",
+          "Structure is the multiplier. Well-formed headings, concise answer paragraphs, lists, tables and valid structured data all make it easier for an AI system to extract and quote your content accurately. Add genuine expertise signals, a named author with real credentials, cited sources and clear dates, and you give Google every reason to treat your page as a trustworthy source worth naming in its answer.",
         ],
       },
       {
-        h: "What a Sensible Business Should Do Now",
+        h: "A Practical Response for Business Owners",
         p: [
-          "Do not panic and do not overhaul everything at once. Start by making sure your foundations are sound, because AI Mode punishes technical weakness just as hard as classic search did. Then work through your most commercially important pages, rewriting them to answer the questions buyers actually ask, clearly and early, with structured data in place. Finally, invest steadily in the credibility signals that make an AI comfortable naming you.",
-          "The businesses that will do well in the AI Mode era are not the ones chasing every new feature announcement. They are the ones that were already publishing genuinely useful, well-structured, verifiable content, and who have adjusted the emphasis rather than thrown out the discipline. That is a position any focused business can still reach in 2026.",
+          "Start by auditing where your traffic is exposed. Identify the informational queries that drive visits today and ask honestly whether an AI answer could satisfy them without a click. For those, shift the goal from traffic to citation and lead the reader toward the commercial next step your competitors' thin content cannot offer.",
+          "Then double down on what AI cannot replace: your local presence, your proprietary knowledge and the trust you have earned. A business that pairs a strong Google Business Profile with genuinely expert, well-structured content is positioned to be both the answer AI gives and the business the reader ultimately contacts. That is a stronger position than ranking first ever was.",
         ],
       },
     ],
-    takeaway: "Google AI Mode becoming the default in 2026 shifts the prize from ranking in a list of links to being cited inside an AI answer. The fundamentals still hold: a sound technical site, clear answer-first content, consistent business information and genuine third-party authority. What changes is the emphasis on clarity, structure and verifiability. Fix your foundations, rewrite your key pages to answer real questions plainly, add clean structured data, and measure your visibility across Google's new generative reports and the major AI engines. SEODXB helps businesses adapt to AI search without abandoning what already works.",
+    takeaway: "Google AI Mode does not end SEO, it raises the bar. As Google answers more questions directly, thin content that only restates the obvious loses value, while genuine expertise, first-hand information and clear structure become the raw material AI answers are built from. Businesses win by leading their pages with direct answers, backing them with real proof, keeping their facts consistent, and protecting the local and transactional searches AI cannot replace. SEODXB helps businesses adapt their content and local presence to stay visible as search becomes an answer engine.",
     faqs: [
-      { q: "Is SEO dead now that Google AI Mode is the default?", a: "No. AI Mode still draws its answers from the open web and favours sources it can parse and trust. The fundamentals of good SEO, a fast structured site, clear content and genuine authority, are exactly what earn citations in AI answers. The tactics shift toward clarity and structure, but the discipline remains." },
-      { q: "What is the difference between AI Overviews and AI Mode?", a: "AI Overviews were AI summaries shown at the top of an otherwise standard results page. AI Mode is a fuller conversational search experience that, as of 2026, is the default rather than a separate tab, so many searchers now receive an AI answer whether or not they requested one." },
-      { q: "How do I get my business cited in AI search answers?", a: "Publish answer-first content that responds directly to buyer questions, keep your business details consistent across your site, Google Business Profile and directories, add valid structured data, and earn mentions from credible third parties. AI engines name businesses they can parse and corroborate." },
-      { q: "Can I track how my site performs in Google AI Mode?", a: "Partly. Google added Search Generative AI performance reports to Search Console in June 2026, which show how your pages perform in generative results. For other engines such as ChatGPT and Perplexity, test manually by asking the questions your customers ask and recording whether you appear." },
-      { q: "Should I stop writing long articles for AI search?", a: "Not necessarily, but length for its own sake no longer helps. Lead with a clear, self-contained answer, then expand with specifics. AI systems lift concise, well-structured passages far more readily than long introductions that delay the point." },
-      { q: "Does AI Mode affect local businesses?", a: "Yes. When someone asks an AI engine for the best provider in their area, it returns a short recommendation drawn from sources it trusts. An optimised Google Business Profile, consistent local listings and genuine reviews make a local business far more likely to be the one named." },
+      { q: "Is Google AI Mode the same as AI Overviews?", a: "No. AI Overviews are AI summaries shown above normal results for many searches. AI Mode is a fuller, conversational experience the user chooses to enter, where they can ask follow-up questions in context. Both synthesise answers from web sources, so being one of those cited sources is the aim in each case." },
+      { q: "Will AI Mode reduce my website traffic?", a: "It can reduce clicks on broad informational queries that an AI answer satisfies on its own. Local, transactional and genuinely expert content is far more resilient. The practical response is to shift some goals from raw traffic to being cited, and to strengthen the local and commercial searches AI cannot replace." },
+      { q: "How do I get my business cited inside AI answers?", a: "Answer questions directly and early, use question-based headings, support claims with specifics and first-hand experience, keep your business facts consistent across the web, and add clear expertise signals such as a named author and cited sources. Valid structured data makes your content easier to extract and quote." },
+      { q: "Does traditional SEO still matter with AI Mode?", a: "Yes. AI answers are built from content that Google can find, understand and trust, which is exactly what technical, content and local SEO deliver. The fundamentals still apply; AI Mode simply rewards them more strictly and punishes thin content more quickly." },
+      { q: "What type of content is safest from AI answers?", a: "Content tied to a real-world action or place: local service pages, booking and product pages, and anything that requires the reader to contact or transact with an actual business. Pairing these with an optimised Google Business Profile protects the searches least exposed to AI." },
+      { q: "Should small businesses worry about AI Mode?", a: "They should adapt, not worry. Smaller businesses with genuine local presence and real expertise are often better placed than large content farms, because AI favours trustworthy, specific, well-structured sources over generic bulk. A focused response protects and can even grow visibility." },
     ],
     references: [
-      { title: "Google I/O 2026: Search updates", url: "https://blog.google/products-and-platforms/products/search/search-io-2026/", publisher: "Google" },
-      { title: "Search Generative AI performance reports in Search Console", url: "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports", publisher: "Google" },
       { title: "Google Search Central: SEO Starter Guide", url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", publisher: "Google" },
+      { title: "Google Search Central: AI features and your website", url: "https://developers.google.com/search/docs/appearance/ai-features", publisher: "Google" },
+      { title: "Creating helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", publisher: "Google" },
     ],
     related: [
-      { label: "Generative Engine Optimisation (GEO)", href: "/geo" },
-      { label: "Answer Engine Optimisation (AEO)", href: "/aeo" },
-      { label: "How to Get Cited in Google AI Overviews", href: "/blog/how-to-get-cited-in-google-ai-overviews" },
+      { label: "How to get cited in Google AI Overviews", href: "/blog/how-to-get-cited-in-google-ai-overviews" },
+      { label: "AI Overviews vs featured snippets", href: "/blog/ai-overviews-vs-featured-snippets" },
+      { label: "GEO strategy playbook 2026", href: "/blog/geo-strategy-playbook-2026" },
+      { label: "AEO & GEO services", href: "/aeo" },
     ],
   },
 
-  // ── 2. Saudi RHQ programme and B2B search (Saudi, commercial) ─────────────
+  // ── 2. Jeddah: complete SEO guide (pillar) ────────────────────────────────
   {
-    slug: "saudi-rhq-programme-b2b-search-riyadh",
+    slug: "seo-in-jeddah-complete-guide-2026",
     category: "Industry Guides",
-    title: "The Saudi RHQ Programme and What It Means for B2B Search in Riyadh",
-    excerpt: "Saudi Arabia's RHQ programme is pulling regional HQs to Riyadh. Why that reshapes B2B search and how to be found.",
-    heroImage: img("photo-1578662996442-48f60103fc96"),
-    heroAlt: "Riyadh skyline representing the growth of regional headquarters in Saudi Arabia",
+    title: "SEO in Jeddah 2026: The Complete Guide for Businesses",
+    excerpt: "A 2026 guide to SEO and AI search in Jeddah: how businesses rank on Google and get cited by AI engines, bilingual.",
+    heroImage: img("photo-1590060766050-3c0f45b3d5b6"),
+    heroAlt: "Jeddah waterfront and skyline representing SEO and AI search for Saudi businesses in 2026",
     intro: [
-      "Saudi Arabia's Regional Headquarters programme has quietly become one of the most consequential business policies in the Gulf. It is the scheme that persuades multinational companies to base their Middle East and North Africa leadership in Riyadh rather than elsewhere in the region, and since the start of 2024 it has carried real commercial teeth. An RHQ licence is now the gateway to most Saudi government contracts above a set threshold, which means a growing number of large organisations have a direct financial reason to establish a genuine Riyadh presence.",
-      "For any business that sells to those organisations, or that competes for the same buyers, this changes the search landscape. More decision makers are now based in, or reporting into, Riyadh. More procurement happens through Saudi entities. This guide explains what the RHQ programme involves and, more usefully, what it means for how B2B companies should approach search and AI visibility in the Kingdom.",
+      "Jeddah is Saudi Arabia's commercial gateway, the Red Sea port that has handled the Kingdom's trade and pilgrim traffic for generations. It is a city of established family trading houses, a dense retail and hospitality economy, and a fast-growing tourism ambition anchored by projects such as Jeddah Central. Its customers are young, mobile-first and increasingly comfortable letting an AI assistant shortlist businesses for them. For a Jeddah company, being visible in search is one of the most direct routes to growth in 2026.",
+      "This guide sets out what SEO in Jeddah involves today: how Jeddawi and expatriate customers search, what it takes to rank on Google, how to be quoted by AI engines such as ChatGPT and Google AI Overviews, and why genuine Arabic and English visibility is a commercial necessity rather than an afterthought.",
     ],
     keyStats: [
-      "Since 1 January 2024, an RHQ licence is the gateway to most Saudi government contracts above SAR 1 million.",
-      "An RHQ must employ at least 15 full-time staff, including three C-suite executives, within its first year.",
-      "The programme is designed to make companies genuinely operate from Riyadh, not maintain symbolic offices.",
-      "Riyadh concentrates a rising share of regional B2B decision making as a result.",
+      "Jeddah is the Kingdom's principal Red Sea port and its historic commercial capital.",
+      "Saudi Arabia has one of the highest smartphone and social media penetration rates in the world.",
+      "Arabic-first search is dominant, yet high-value B2B and expatriate searches often happen in English.",
+      "Vision 2030 tourism and retail investment is expanding the pool of businesses competing online.",
     ],
     sections: [
       {
-        h: "What the RHQ Programme Actually Requires",
+        h: "How Customers in Jeddah Search in 2026",
         p: [
-          "The Regional Headquarters programme, run through Saudi Arabia's investment ministry, grants a licence that carries a long tax incentive package and, crucially, access to government tenders that non-RHQ firms are largely shut out of. In return, the company must genuinely operate from Riyadh. Within a year of the licence being issued, it must employ at least fifteen full-time staff, including three C-suite executives, begin its mandatory strategic and management activities within six months, and take on additional functions such as sales and marketing support or financial management.",
-          "The design intent is important for anyone selling into this market. The programme deliberately discourages symbolic offices and rewards real operations, which means the people who make regional buying decisions are increasingly physically in Riyadh, holding board meetings on Saudi soil and running functions from the Kingdom rather than from a hub elsewhere in the Gulf.",
+          "Jeddah blends deep-rooted local commerce with a young, connected population, and that shows in how people search. The buying journey is fast and phone-led: a customer moves from a need to a shortlist within minutes, checking Google, maps, Instagram and, increasingly, AI assistants before contacting a business. By the time an enquiry arrives, much of the decision has already been made online.",
+          "The most important recent shift is the rise of direct AI answers. When a resident asks an AI tool for the best clinic in Al Hamra, a reliable contractor in Al Rawdah, or a supplier for a specific need, they receive one confident recommendation rather than a page to browse. A business that is not among the sources those engines trust is simply absent from that answer, no matter how strong its reputation is offline.",
         ],
         image: {
-          url: img("photo-1541354329998-f4d9a9f9297f"),
-          alt: "King Abdullah Financial District towers in Riyadh, a hub for regional headquarters",
-          caption: "Riyadh's financial districts are drawing regional headquarters and the decision makers that come with them.",
+          url: img("photo-1460925895917-afdab827c52f"),
+          alt: "Analytics dashboard representing how Jeddah businesses measure search performance",
+          caption: "Visibility in Jeddah now spans both Google and the AI engines customers ask directly.",
         },
       },
       {
-        h: "Why This Reshapes B2B Search",
+        h: "The Google Foundation: Technical, Local and Content SEO",
         p: [
-          "When regional decision making concentrates in one city, so does the search demand that surrounds it. Procurement leads, functional heads and their teams research suppliers, partners and service providers the same way everyone else does, by searching and, increasingly, by asking AI assistants. As more of those people operate from Riyadh, more high-value B2B searches carry Saudi intent, whether or not the searcher types the city name.",
-          "The practical consequence is that a supplier who is invisible in Saudi search results, or absent from the AI answers Saudi buyers receive, is quietly excluded from a growing pool of serious opportunities. This is not about consumer volume. It is about being present at the moment a well-funded organisation researches who to work with, and that moment now happens in and around Riyadh far more than it did three years ago.",
-        ],
-      },
-      {
-        h: "What B2B Companies Should Do",
-        p: [
-          "The first move is to make sure your Saudi-facing content genuinely targets Saudi search intent rather than reusing Dubai or generic Gulf pages. That means content that speaks to Saudi buyers, references the realities of doing business in the Kingdom, and is available in Arabic as well as English, because a large share of high-intent B2B research still happens in Arabic. A supplier that only ranks in English is missing part of its own audience.",
-          "The second move is to build the kind of authority that both Google and AI engines reward for considered B2B purchases. Case-relevant content, clear service definitions, consistent business information, and mentions from credible Saudi and regional sources all contribute. For considered B2B buying, trust signals matter more than for impulse purchases, so demonstrable expertise and third-party corroboration do a disproportionate amount of the work.",
+          "Google carries the majority of search traffic in Jeddah, and ranking rests on three pillars. Technical SEO keeps the site fast, crawlable and mobile-friendly, which matters in a market where most searches happen on a phone. Local SEO, through an optimised Google Business Profile and accurate listings, captures the many searches with local intent across districts such as Al Rawdah, Al Hamra, Al Salamah and the Corniche. Content SEO, built around the questions customers actually ask, earns rankings for the terms that produce enquiries.",
+          "For most Jeddah businesses, local and content SEO deliver the quickest wins. A fully optimised profile and a set of pages that genuinely answer buyer questions can move rankings within months, especially for long-tail and neighbourhood searches where competition is thinner than on the most contested head terms.",
         ],
         list: [
-          "Build Saudi-specific pages, not lightly edited Dubai pages",
-          "Invest in genuine Arabic content, not machine translation",
-          "Define your services and outcomes clearly for procurement-style research",
-          "Earn credibility signals from Saudi and regional sources",
-          "Structure content so AI engines can quote your expertise directly",
+          "A fast, crawlable, mobile-friendly technical foundation",
+          "An optimised Google Business Profile with accurate districts and hours",
+          "Content built around real customer questions in Arabic and English",
+          "Structured data for rich results and clearer AI extraction",
+          "Genuine reviews and reputation signals from local customers",
         ],
       },
       {
-        h: "The AI Search Angle for Saudi B2B",
+        h: "The Arabic and English Imperative",
         p: [
-          "B2B buyers increasingly begin supplier research by asking an AI assistant to compare options or recommend providers for a specific need. For a considered purchase, the businesses that appear in those answers gain an early and durable advantage, because they enter the shortlist before a formal process begins. In a market where a policy shift is actively concentrating buyers in one place, being the default answer to a Saudi buyer's question is a genuinely valuable position.",
-          "Because many competitors have not yet adapted their content for AI search in the Kingdom, there is a real opportunity for organised suppliers to establish themselves as the trusted, quotable source in their category now, before the field catches up. That window will not stay open indefinitely, which is the usual pattern whenever a search behaviour shifts faster than the supply of well-optimised content.",
+          "Saudi Arabia is an Arabic-first search market, and Arabic and English queries surface different results. A Jeddah business that invests only in English misses a large share of high-intent Arabic searches, particularly among Saudi nationals. Yet many B2B, luxury and expatriate-facing searches still happen in English. The right answer is rarely one language; it is proper bilingual SEO with genuine Arabic keyword research, correct hreflang implementation and content written to read naturally in each language rather than machine translation.",
+          "This is also where larger and international competitors often underperform locally. Their sites rank in English but lack Arabic depth and Jeddah-specific signals, which is exactly the gap a focused local business can exploit to win searches its rivals never appear for.",
+        ],
+      },
+      {
+        h: "AI Search: AEO and GEO for Jeddah",
+        p: [
+          "Answer engine optimisation and generative engine optimisation are how a business becomes the answer, not merely a link. AI engines favour clear, structured, answer-first content, consistent facts about the business across the web, and authority signals from credible third parties such as established media and directories.",
+          "There is a real first-mover advantage here. Because many Jeddah competitors have not yet adapted to AI search, businesses that structure their content for AI answers now can establish themselves as the default citation in their category before the field catches up, a position that later entrants find difficult to overturn.",
+        ],
+      },
+      {
+        h: "Where to Start and How to Measure",
+        p: [
+          "A sensible sequence is to audit where you stand on Google and in AI answers, fix technical and local foundations, then build content and AI-answer authority around your highest-intent topics. This order produces early wins while compounding over time, rather than front-loading effort into the most competitive head terms.",
+          "Measure against business outcomes, not vanity metrics: rankings and AI citations for your key terms, growth in qualified organic traffic, and the enquiries, calls and bookings that follow. Search in Jeddah rewards consistency, and businesses that treat it as an ongoing discipline build an advantage competitors struggle to reverse.",
         ],
       },
     ],
-    takeaway: "Saudi Arabia's RHQ programme is pulling regional headquarters, and the decision makers who run them, into Riyadh, and since 2024 it has been tied directly to access to government contracts. That concentration of buyers reshapes B2B search: more high-value research now carries Saudi intent, in both Arabic and English. Suppliers who build genuinely Saudi-specific content, invest in real Arabic visibility, and structure their expertise so AI engines can quote it will be present at the moment serious buyers research who to work with. SEODXB helps B2B companies build that Saudi search and AI visibility.",
+    takeaway: "SEO in Jeddah in 2026 means being visible and trusted across both Google and AI answer engines, in Arabic and English, at the moments when customers research their decisions. Businesses that fix technical and local foundations, build content around real questions, structure that content so AI engines cite it, and invest in genuine bilingual visibility win customers their competitors never see. SEODXB helps Jeddah businesses build exactly that.",
     faqs: [
-      { q: "What is Saudi Arabia's RHQ programme?", a: "The Regional Headquarters programme grants multinationals a licence to base their Middle East and North Africa leadership in Riyadh, with tax incentives and, since 2024, access to most Saudi government contracts above SAR 1 million. In return the company must genuinely operate from Riyadh, including employing senior staff there." },
-      { q: "Why does the RHQ programme matter for SEO and search?", a: "It concentrates regional decision making in Riyadh, so more high-value B2B research now carries Saudi intent. Suppliers who are invisible in Saudi search results or absent from AI answers are quietly excluded from a growing pool of serious opportunities in the Kingdom." },
-      { q: "Do I need Arabic content to sell B2B in Saudi Arabia?", a: "In most cases yes. A large share of high-intent B2B research in the Kingdom happens in Arabic. Genuine Arabic content, not machine translation, captures buyers that English-only sites never reach, and it is often where the least competition sits." },
-      { q: "Can I reuse my Dubai pages for the Saudi market?", a: "It rarely works well. Saudi buyers search with different intent and context, and lightly edited Dubai pages read as generic. Purpose-built Saudi pages that reflect the realities of the Kingdom perform far better in both Google and AI search." },
-      { q: "How do B2B suppliers get recommended by AI engines in Saudi Arabia?", a: "By publishing clear, answer-first content about their services and outcomes, keeping business information consistent, and earning mentions from credible Saudi and regional sources. For considered B2B purchases, trust and corroboration carry more weight than for consumer queries." },
-      { q: "Is now a good time to invest in Saudi search visibility?", a: "For many suppliers, yes. Because a policy shift is actively concentrating buyers in Riyadh while many competitors have not yet adapted their content for AI search, organised suppliers can establish themselves as the trusted source in their category before the field catches up." },
+      { q: "How much does SEO cost in Jeddah?", a: "It depends on your sector, competition and goals, but value matters more than the lowest price. Well-executed SEO in Jeddah compounds, delivering qualified organic enquiries at a lower long-term cost than paid ads. A scope tied to your specific goals is more informative than a flat rate." },
+      { q: "How long does SEO take to work in Jeddah?", a: "Local and long-tail terms can improve within a few months, while competitive terms take longer. Because content and authority compound, results build steadily rather than arriving all at once. Consistency over several months matters more than any single change." },
+      { q: "Do I need Arabic SEO for my Jeddah business?", a: "In most cases, yes. Saudi Arabia is an Arabic-first search market and many high-intent searches happen in Arabic. Proper Arabic SEO, not translation, captures customers that English-only sites miss and is often where the least competition sits, while English remains important for B2B and expatriate audiences." },
+      { q: "How do Jeddah businesses get cited by AI engines?", a: "By publishing clear, answer-first content, keeping facts about the business consistent across the web, and earning mentions from credible third parties. AI engines draw on sources they can parse and trust, so structure and consistency matter as much as the words themselves." },
+      { q: "Is local SEO important in Jeddah?", a: "Very. A large share of searches have local intent, and an optimised Google Business Profile with accurate listings and genuine reviews captures ready-to-act customers across districts such as Al Rawdah, Al Hamra and the Corniche." },
+      { q: "What is the fastest win for a Jeddah business new to SEO?", a: "Usually a fully optimised Google Business Profile combined with a handful of pages answering the exact questions your customers ask, in Arabic and English. Together these capture local and long-tail searches quickly while the broader strategy compounds." },
     ],
     references: [
-      { title: "Invest Saudi: Regional Headquarters Programme", url: "https://investsaudi.sa/", publisher: "Ministry of Investment of Saudi Arabia" },
       { title: "Google Search Central: SEO Starter Guide", url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", publisher: "Google" },
-      { title: "General Authority for Statistics", url: "https://www.stats.gov.sa/en", publisher: "Kingdom of Saudi Arabia" },
-    ],
-    related: [
-      { label: "SEO Agency Saudi Arabia", href: "/seo-agency-saudi-arabia" },
-      { label: "SEO in Riyadh: Complete Guide", href: "/blog/seo-in-riyadh-complete-guide" },
-      { label: "SEO for KAFD Riyadh Financial Firms", href: "/seo-kafd-riyadh" },
-    ],
-  },
-
-  // ── 3. SEO for London financial services firms (UK, commercial) ───────────
-  {
-    slug: "seo-for-financial-services-firms-london",
-    category: "Industry Guides",
-    title: "SEO for Financial Services Firms in London",
-    excerpt: "How London financial firms rank on Google and get cited by AI search while meeting FCA financial promotion rules.",
-    heroImage: img("photo-1529101091764-c3526daf38fe"),
-    heroAlt: "The City of London financial district representing SEO for financial services firms",
-    intro: [
-      "London remains one of the world's leading financial centres, and the firms that operate there, from wealth managers in Mayfair to fintechs in Shoreditch and banks in Canary Wharf and the City, face an unusual SEO challenge. They compete in one of the most crowded and sophisticated search markets anywhere, and they do it under financial promotion rules that most other industries never have to consider. Getting search right in this sector means being genuinely visible while staying firmly on the right side of the regulator.",
-      "This guide sets out how financial services firms in London can rank on Google and earn citations from AI search engines, without falling foul of the compliance obligations that govern how regulated firms communicate with the public. The good news is that the disciplines that satisfy the regulator, clarity, accuracy and fair balance, are largely the same disciplines that AI search now rewards.",
-    ],
-    keyStats: [
-      "London is one of the world's top financial centres, with intense competition across finance, fintech and professional services.",
-      "Regulated firms must ensure financial promotions are clear, fair and not misleading under FCA rules.",
-      "Financial buyers research extensively online before contacting a regulated firm.",
-      "AI engines increasingly answer financial questions directly, drawing on sources they can trust.",
-    ],
-    sections: [
-      {
-        h: "The Compliance Constraint Comes First",
-        p: [
-          "For regulated firms, SEO cannot be separated from compliance. Any content that invites people to engage in investment activity is a financial promotion, and it must be clear, fair and not misleading. That rules out the exaggerated claims and pressure tactics that pass unremarked in other sectors. A financial services firm cannot promise guaranteed returns any more than a good SEO agency should promise guaranteed rankings, and the discipline of writing honestly is the same in both cases.",
-          "This constraint is often treated as a limitation, but in the AI search era it is closer to an advantage. AI engines are built to favour accurate, balanced, well-sourced content and to be wary of overblown claims. Content written to satisfy a compliance team, with risk stated plainly and benefits described fairly, is exactly the kind of content an AI system is comfortable quoting. The regulator and the algorithm are, unusually, pulling in the same direction.",
-        ],
-        image: {
-          url: img("photo-1554224155-6726b3ff858f"),
-          alt: "Financial analyst reviewing data, representing compliant content for regulated firms",
-          caption: "For regulated firms, clear and fair content satisfies both the FCA and the way AI engines assess sources.",
-        },
-      },
-      {
-        h: "Winning the London Search Market",
-        p: [
-          "London is fiercely competitive, so a financial firm rarely wins by chasing the broadest, most contested terms head on. The more productive route is depth and specificity. A wealth manager is better served by content that answers the precise questions a particular client type asks, about a particular situation, than by a generic page targeting a term that established institutions and comparison sites already dominate. Specific, high-intent content ranks more readily and attracts better-qualified enquiries.",
-          "Local and district-level intent matters more than firms expect. Someone searching for an adviser or a firm near their office in Canary Wharf, the City or Mayfair is signalling strong intent, and a firm with genuine district-specific presence and an accurate, active Google Business Profile can capture searches that national competitors overlook. The combination of tight geographic targeting and deep topical content is how a focused firm competes against larger budgets.",
-        ],
-      },
-      {
-        h: "Earning AI Citations in Finance",
-        p: [
-          "Financial questions are among the most common things people now ask AI assistants, and the engines are deliberately cautious about which sources they draw on for money matters. They favour firms that demonstrate genuine expertise, cite their reasoning, keep their information consistent, and are corroborated by credible outside sources. For a regulated firm, this rewards exactly the professionalism the business already practises, provided that expertise is actually published rather than kept behind a login or a contact form.",
-          "The practical work is to turn the knowledge your advisers already have into clear, structured, answer-first content that addresses real client questions. Add valid structured data, keep your firm's details identical across your website, LinkedIn and any professional directories, and ensure your authorship and credentials are visible. This is how a London firm becomes a source an AI engine trusts enough to name when someone asks for guidance in its specialism.",
-        ],
-        list: [
-          "Write compliant, answer-first content that states risk fairly",
-          "Target specific client questions rather than broad, contested terms",
-          "Use district-level local intent across the City, Canary Wharf and Mayfair",
-          "Publish genuine expertise with visible authorship and credentials",
-          "Keep firm information consistent and add valid structured data",
-        ],
-      },
-      {
-        h: "Measuring What Matters for a Regulated Firm",
-        p: [
-          "For financial services, vanity metrics are especially misleading. Broad traffic to informational content means little if it does not convert into qualified enquiries from the right kind of client. The metrics worth tracking are rankings and AI citations for the specific, high-intent terms that matter to your specialism, the quality of enquiries generated, and the eventual conversion of those enquiries into clients. A smaller volume of well-qualified enquiries is almost always more valuable than a large volume of poorly matched interest.",
-          "It is also worth measuring AI visibility directly. Ask the AI engines the questions your ideal clients ask, in the context they ask them, and record whether your firm is named. For a sector where a single new client can be highly valuable, being the firm an AI recommends to a serious enquirer is a position that repays the effort of getting the content and compliance right.",
-        ],
-      },
-    ],
-    takeaway: "Financial services firms in London compete in one of the world's toughest search markets under financial promotion rules that most industries never face. The constraint is really an advantage: clear, fair, accurate content satisfies both the FCA and the way AI engines assess trustworthy sources. Win by targeting specific, high-intent client questions rather than broad contested terms, using district-level local intent across the City, Canary Wharf and Mayfair, and publishing genuine expertise that AI engines can quote. Measure qualified enquiries and AI citations, not raw traffic. SEODXB helps regulated firms build compliant, effective search visibility.",
-    faqs: [
-      { q: "Can financial services firms do SEO under FCA rules?", a: "Yes, provided any content that promotes investment activity is a compliant financial promotion, meaning clear, fair and not misleading. In practice the honesty and balance the regulator requires align well with what AI search engines reward, so compliant content and effective content are largely the same thing." },
-      { q: "How do London financial firms compete in such a crowded market?", a: "Not by chasing the broadest terms, which established institutions already dominate, but through depth and specificity. Content that answers precise, high-intent client questions, combined with genuine district-level local presence, ranks more readily and attracts better-qualified enquiries." },
-      { q: "Does local SEO matter for financial firms in London?", a: "Yes. District-level intent is strong, so a firm with genuine presence and an accurate Google Business Profile in areas such as the City, Canary Wharf or Mayfair can capture high-intent searches that broader national competitors overlook." },
-      { q: "How do regulated firms get cited by AI engines?", a: "AI engines are cautious about financial sources and favour firms that demonstrate real expertise, cite their reasoning, keep information consistent, and are corroborated by credible sources. Publishing genuine, clearly authored expertise rather than hiding it is what earns citations." },
-      { q: "What SEO metrics should a financial services firm track?", a: "Rankings and AI citations for specific high-intent terms in your specialism, the quality of enquiries generated, and their conversion into clients. Broad traffic is a poor guide in finance, where a small number of well-matched enquiries is worth more than high volume." },
-      { q: "Can an SEO agency guarantee rankings for my financial firm?", a: "No reputable agency can, just as no regulated firm can promise guaranteed returns. Rankings depend on competition and Google's judgement. A credible agency commits to sound method and honest reporting, not to guarantees." },
-    ],
-    references: [
-      { title: "FCA: Financial promotions and adverts", url: "https://www.fca.org.uk/firms/financial-promotions-and-adverts", publisher: "Financial Conduct Authority" },
-      { title: "Google Search Central: Creating helpful, reliable content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", publisher: "Google" },
       { title: "Google Business Profile", url: "https://www.google.com/business/", publisher: "Google" },
+      { title: "Saudi Vision 2030", url: "https://www.vision2030.gov.sa/en", publisher: "Kingdom of Saudi Arabia" },
     ],
     related: [
-      { label: "SEO for Canary Wharf Financial Firms", href: "/seo-canary-wharf" },
-      { label: "SEO for the City of London", href: "/seo-city-of-london" },
+      { label: "SEO in Riyadh: complete guide", href: "/blog/seo-in-riyadh-complete-guide" },
+      { label: "Arabic SEO in Saudi Arabia", href: "/blog/arabic-seo-saudi-arabia-guide" },
+      { label: "AI search optimisation in Saudi Arabia", href: "/blog/ai-search-optimization-saudi-arabia-2026" },
+      { label: "SEO Agency Jeddah", href: "/seo-agency-jeddah" },
+    ],
+  },
+
+  // ── 3. London: complete SEO guide (pillar) ────────────────────────────────
+  {
+    slug: "seo-in-london-complete-guide-2026",
+    category: "Industry Guides",
+    title: "SEO in London 2026: The Complete Guide for Businesses",
+    excerpt: "A 2026 guide to SEO and AI search in London: how businesses rank on Google, win local packs and get cited by AI.",
+    heroImage: img("photo-1513635269975-59663e0ac1ad"),
+    heroAlt: "London skyline representing SEO and AI search for UK businesses in 2026",
+    intro: [
+      "London is one of the most competitive search markets in the world. Every borough contains dozens of businesses chasing the same customers, national brands overlap with hyper-local independents, and a discerning, high-spending audience researches almost everything online before committing. Ranking here is harder than in most cities, but the reward is a market of extraordinary depth. In 2026 that reward increasingly depends on being visible not only on Google but inside the AI answers Londoners now rely on.",
+      "This guide explains what SEO in London actually involves: how customers across the city search, what it takes to rank against fierce competition, how local intent splits by borough and neighbourhood, and how to make sure AI engines cite your business when someone asks for the best option in your field.",
+    ],
+    keyStats: [
+      "London is among the most competitive local search markets globally, with intense per-category rivalry.",
+      "Search intent is strongly local, splitting by borough, high street and postcode.",
+      "The United Kingdom has very high internet and smartphone penetration and mature online buying habits.",
+      "AI Overviews and AI Mode increasingly answer research queries before a click.",
+    ],
+    sections: [
+      {
+        h: "How Customers in London Search in 2026",
+        p: [
+          "Londoners are experienced, sceptical searchers. They compare, read reviews, check maps and cross-reference before they act, and they expect a fast, credible online experience. The journey is heavily mobile and local: a search for a service is usually tied to a specific area, a nearby high street or a postcode, and the results a user sees in Shoreditch differ from those in Richmond or Croydon.",
+          "The newest shift is that a growing share of research now ends inside an AI answer. When someone asks for the best accountant in the City, a reliable plumber in Islington or a comparison of options, AI Overviews and AI Mode return a synthesised recommendation. Businesses that are not among the trusted sources those engines draw on lose visibility at the exact moment a decision is forming.",
+        ],
+        image: {
+          url: img("photo-1526304640581-d334cdbbf45e"),
+          alt: "Analytics dashboard representing how London businesses measure search performance",
+          caption: "Success in London now depends on visibility across Google, the local pack and AI answers.",
+        },
+      },
+      {
+        h: "Winning Local Search Across the Boroughs",
+        p: [
+          "Local SEO is where most London businesses live or die. The local pack, the map results with three businesses shown above the organic listings, captures a huge share of high-intent clicks and calls. Ranking there depends on a fully optimised Google Business Profile, accurate and consistent listings across the web, genuine reviews, and content that clearly signals the areas you serve.",
+          "Because intent splits so finely across London, generic city-wide pages rarely win. A business that serves several boroughs is usually better served by genuinely useful, distinct area pages that reflect the real character and needs of each location, rather than one template with the place name swapped. Thin, duplicated location pages are a common and costly mistake here; Google recognises them and holds them back.",
+        ],
+        list: [
+          "A fully optimised Google Business Profile with accurate categories and service areas",
+          "Consistent name, address and phone details across every listing and directory",
+          "Genuine, recent reviews and a system for earning more",
+          "Distinct, useful area pages rather than duplicated location templates",
+          "Local relevance signals in content, from landmarks to neighbourhood specifics",
+        ],
+      },
+      {
+        h: "Competing on Content and Authority",
+        p: [
+          "In a market this crowded, technical soundness is the entry ticket, not the differentiator. A London site must be fast, mobile-first and cleanly structured simply to be in contention. What separates the winners is content depth and authority: pages that answer buyer questions more completely than rivals, and the backlinks and mentions from credible UK sources that build the domain trust Google rewards.",
+          "Digital PR is particularly effective in London because the city is dense with publications, industry bodies and local media. Earning coverage and links from those sources lifts authority and, increasingly, feeds the signals AI engines use to decide which businesses to name. Content and authority compound: the further ahead you get, the harder it is for competitors to catch up.",
+        ],
+      },
+      {
+        h: "AI Search: AEO and GEO for London Businesses",
+        p: [
+          "Answer engine optimisation and generative engine optimisation are how a London business becomes the answer rather than one of many links. AI engines favour clear, answer-first content, consistent facts about the business, and authority from trusted third parties. In a competitive market, the businesses that structure their content well and maintain a coherent online presence are the ones AI can confidently cite.",
+          "This is a rare opening in an otherwise saturated market. Many established London competitors rank well on Google but have done nothing to adapt to AI search. A business that leads its pages with direct answers, uses question-based headings and keeps its information consistent can win AI citations before larger rivals react.",
+        ],
+      },
+      {
+        h: "Where to Start and How to Measure",
+        p: [
+          "Given the competition, sequence matters. Fix the technical foundation, then win local search in your strongest areas before expanding, then invest in the content and authority that compound over time. Trying to rank everywhere at once usually spreads effort too thin to move the needle anywhere; concentrating on your best boroughs first builds momentum.",
+          "Measure against outcomes that matter: local pack visibility and organic rankings for your priority terms, AI citations in your category, growth in qualified organic traffic, and the enquiries, calls and bookings that result. London rewards businesses that treat SEO as a sustained discipline rather than a one-off project.",
+        ],
+      },
+    ],
+    takeaway: "SEO in London in 2026 is a contest of local relevance, content depth and authority, now extended to the AI answers customers increasingly trust. Businesses win by mastering the local pack across their strongest boroughs, building genuinely useful area and service content rather than thin duplicates, earning authority from credible UK sources, and structuring everything so AI engines cite them. In a market this competitive, the compounding advantage goes to those who start properly and stay consistent. SEODXB helps London businesses do exactly that.",
+    faqs: [
+      { q: "How much does SEO cost in London?", a: "London is competitive, so effective SEO usually requires a sustained investment rather than a token budget, but the right figure depends on your category and the boroughs you target. Value matters more than headline price: well-executed SEO delivers qualified organic enquiries at a lower long-term cost than paid search in most sectors." },
+      { q: "How long does SEO take to work in London?", a: "In a competitive market, expect meaningful local and long-tail progress within a few months and stronger results across six to twelve months. Content and authority compound, so momentum builds over time. Consistency and focus on your best areas first produce results faster than trying to rank everywhere at once." },
+      { q: "Should I create separate pages for each London borough?", a: "Only if each page is genuinely useful and distinct. Distinct area pages that reflect the real needs and character of a borough can rank well, but thin, duplicated templates with the place name swapped are a common mistake that Google holds back. Quality and local specificity are what win." },
+      { q: "How important is the local pack in London?", a: "Very. The map pack captures a large share of high-intent clicks and calls, especially on mobile. Ranking there depends on an optimised Google Business Profile, consistent listings, genuine reviews and clear service-area signals, and it is often the single highest-return focus for a London business." },
+      { q: "How do London businesses get cited by AI search engines?", a: "By leading pages with direct answers, using question-based headings, supporting claims with specifics, keeping business facts consistent across the web, and earning authority from credible UK sources. Many established competitors have not adapted to AI search, which creates an opening for businesses that act now." },
+      { q: "Is digital PR worth it for SEO in London?", a: "Often, yes. London is dense with publications and industry media, so earning coverage and links from credible sources is both achievable and valuable. It builds the domain authority Google rewards and increasingly feeds the signals AI engines use to decide which businesses to recommend." },
+    ],
+    references: [
+      { title: "Google Search Central: SEO Starter Guide", url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", publisher: "Google" },
+      { title: "Google Business Profile", url: "https://www.google.com/business/", publisher: "Google" },
+      { title: "Office for National Statistics: Internet users, UK", url: "https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers/latest", publisher: "Office for National Statistics" },
+    ],
+    related: [
+      { label: "AI search optimisation for UK businesses", href: "/blog/ai-search-optimization-uk-businesses-2026" },
+      { label: "Local SEO: UAE map pack ranking factors", href: "/blog/uae-map-pack-local-ranking-factors" },
+      { label: "Building topical authority", href: "/blog/building-topical-authority" },
       { label: "SEO in London", href: "/seo-london" },
     ],
   },
 
-  // ── 4. Measuring AI search visibility (how-to, all markets) ───────────────
+  // ── 4. Google Business Profile optimisation checklist (evergreen) ─────────
   {
-    slug: "measuring-ai-search-visibility-search-console-2026",
-    category: "AI Search",
-    title: "How to Measure Your AI Search Visibility in 2026",
-    excerpt: "A practical way to measure whether AI engines cite your business, using Search Console reports and repeatable tests.",
-    heroImage: img("photo-1551288049-bebda4e38f71"),
-    heroAlt: "Analytics dashboard representing measurement of AI search visibility in 2026",
+    slug: "google-business-profile-optimisation-checklist-2026",
+    category: "Local SEO",
+    title: "Google Business Profile Optimisation Checklist for 2026",
+    excerpt: "A practical 2026 checklist to optimise your Google Business Profile for the local pack, maps and more calls.",
+    heroImage: img("photo-1571867424488-4565932edb41"),
+    heroAlt: "Map and local search concept representing Google Business Profile optimisation in 2026",
     intro: [
-      "For most of the last two years, businesses investing in AI search visibility have been working partly blind. They understood that being cited by ChatGPT, Perplexity and Google's AI answers mattered, but they had no reliable way to measure whether their efforts were working. That has started to change. In June 2026, Google added Search Generative AI performance reports to Search Console, giving businesses their first official view of how content performs inside generative results, and a handful of practical testing methods now fill the remaining gaps.",
-      "This guide sets out a repeatable way to measure AI search visibility that does not rely on guesswork or on tools that overpromise. It combines what Google now reports directly with simple, disciplined manual testing across the major AI engines, so you can tell whether your visibility is improving, holding steady or slipping, and act accordingly.",
+      "For any business with a physical location or a defined service area, the Google Business Profile is the single highest-return asset in local SEO. It is what puts you in the map pack, feeds Google Maps, and increasingly informs the local recommendations AI answers give. Yet most profiles are set up once and left to drift, missing the details that decide whether a searcher calls you or a competitor. A well-maintained profile often outperforms a much larger website for local, ready-to-act searches.",
+      "This is a practical checklist you can work through in an afternoon. It covers the fundamentals that must be right, the details most businesses neglect, and the ongoing habits that keep a profile competitive in 2026, when local intent is one of the few searches AI cannot answer without pointing to a real business.",
     ],
     keyStats: [
-      "Google added Search Generative AI performance reports to Search Console in June 2026.",
-      "No single tool yet reports citations across every AI engine, so manual testing still matters.",
-      "AI answers vary by phrasing and location, so tests must be consistent to be comparable.",
-      "Tracking visibility monthly turns a vague worry into a measurable trend.",
+      "The map pack captures a large share of high-intent local clicks and calls.",
+      "Complete, accurate profiles are favoured for local ranking and inspire more trust.",
+      "Reviews, categories and consistent business details are among the strongest local signals.",
+      "Local, near-me and booking searches remain resilient to AI-answer disruption.",
     ],
     sections: [
       {
-        h: "Start With What Google Now Reports",
+        h: "Get the Fundamentals Exactly Right",
         p: [
-          "The first place to look is Search Console. Google's Search Generative AI performance reports, introduced in June 2026, show how your pages perform within generative results rather than only in the traditional link listings. This is the closest thing to an authoritative source, because it comes from Google itself and reflects your actual pages against real queries, not a third party's estimate. Reviewing it regularly tells you which of your pages Google's own AI is surfacing and for what.",
-          "Treat this as your baseline, but understand its limits. It covers Google's generative surfaces, not ChatGPT, Perplexity, Claude or Copilot, and it reflects Google's evolving reporting rather than a complete census of every AI mention. It is a genuine window, and the first official one, but it is one window, not the whole view. That is why manual testing across other engines remains necessary.",
-        ],
-        image: {
-          url: img("photo-1460925895917-afdab827c52f"),
-          alt: "Person reviewing search performance data on a screen",
-          caption: "Search Console's generative reports are the authoritative baseline, but they cover only Google's surfaces.",
-        },
-      },
-      {
-        h: "Build a Repeatable Manual Test",
-        p: [
-          "For the engines Google does not report on, disciplined manual testing is still the most honest method. The key word is disciplined. Write down the exact questions your customers ask, in the exact wording they would use, for the markets you serve. Then ask each major engine those same questions on a fixed schedule, and record whether your business is named, how it is described, and which of your pages, if any, is cited. Consistency is what makes the results comparable month to month.",
-          "Keep the conditions stable. AI answers vary with phrasing, with location, and with the account and history behind the session, so change as little as possible between tests. Use the same question set, note the date, and where possible test from the location you are targeting. A messy, inconsistent test tells you almost nothing, while a stable one quickly reveals whether your visibility is trending up or down.",
+          "Start with accuracy, because Google rewards profiles it can trust. Your business name should be your real name, not a keyword-stuffed version, which risks suspension. Your address or service area, phone number and website must match what appears everywhere else online, to the character. Choose the most specific primary category available, then add relevant secondary categories, as category choice is one of the strongest levers on which searches you appear for.",
+          "Complete every field. Hours, including special hours for holidays, opening date, attributes and a description that reads naturally all contribute. An incomplete profile signals neglect to both Google and customers, while a complete one signals a real, active business worth ranking.",
         ],
         list: [
-          "List the exact questions your customers ask, in their own words",
-          "Ask each engine the same set on a fixed monthly schedule",
-          "Record whether you are named, how, and which page is cited",
-          "Hold phrasing, location and account conditions as steady as you can",
-          "Log every result with a date so you can see the trend",
+          "Exact, real business name with no added keywords",
+          "Name, address and phone identical across every listing",
+          "Most specific primary category, plus relevant secondary categories",
+          "Complete hours, including special and holiday hours",
+          "A natural, informative business description",
         ],
       },
       {
-        h: "Watch the Signals That Precede Citations",
+        h: "Use Photos, Products and Services Fully",
         p: [
-          "Citations are the outcome, but several upstream signals move first and are worth tracking because they tell you whether you are building the foundations that citations rest on. These include how consistently your business is described across the web, whether credible third parties mention you, whether your structured data is valid, and whether your key pages answer questions clearly and early. Improvement in these signals typically precedes improvement in citations, so watching them gives you an earlier read than waiting for the citation itself.",
-          "Branded search is another useful leading indicator. When AI engines begin surfacing a business, curious searchers often follow up by searching its name directly, so a steady rise in branded impressions and clicks in Search Console can be an early sign that AI visibility is growing even before it shows clearly in the generative reports. No single signal is definitive, but together they form a reliable picture.",
+          "Visual completeness matters more than most owners realise. Profiles with a strong, current set of photos tend to earn more clicks and direction requests than sparse ones. Add high-quality images of your premises, team, work and products, and refresh them regularly so the profile looks active. For many categories, a cover and logo that render cleanly on mobile make a real difference to first impressions.",
+          "Populate the products and services sections with your actual offerings, described in the words customers use. This gives Google more context about what you do, helps you surface for relevant searches, and answers buyer questions before they even reach your website. It is free space to demonstrate range and expertise, and most competitors leave it empty.",
         ],
       },
       {
-        h: "Turn Measurement Into Action",
+        h: "Build and Manage Reviews Properly",
         p: [
-          "Measurement only earns its keep if it changes what you do. If a set of questions consistently fails to name you, that is a precise brief: those are the topics where your content is not yet clear, structured or authoritative enough to be quoted. Rewrite the relevant pages to answer those exact questions plainly, strengthen the supporting signals, and re-test the following month. Over time this loop, measure, identify gaps, improve, re-measure, is what steadily expands the range of questions for which you are the answer.",
-          "Resist the temptation to over-invest in tooling that claims to track every AI mention automatically. The honest state of measurement in 2026 is that Google's own reports plus a disciplined manual routine will tell you what you need to know, at a fraction of the cost and with far less false precision than tools that imply certainty they cannot deliver.",
+          "Reviews are among the most powerful local ranking and conversion signals, and they are earned, not bought. Ask satisfied customers at the natural moment, make it easy with a direct review link, and never incentivise or fake reviews, which breaches Google's policies and erodes trust when discovered. A steady flow of genuine, recent reviews outweighs a burst of old ones.",
+          "Responding matters as much as receiving. Reply to reviews, positive and negative, promptly and professionally. Thoughtful responses to criticism reassure prospective customers far more than a flawless but silent profile, and they signal to Google that the business is active and engaged. Treat your review section as an ongoing conversation, not a scoreboard.",
+        ],
+      },
+      {
+        h: "Keep the Profile Active Over Time",
+        p: [
+          "A profile is not a set-and-forget asset. Use Google Business Profile posts to share offers, news and updates, which keeps the listing fresh and gives customers reasons to act. Monitor and answer the questions in the Q and A section, and pre-empt common ones with your own clear answers, because unmanaged Q and A can leave misinformation on your listing.",
+          "Check your information regularly for accuracy, watch for unauthorised edits or suggested changes, and keep hours and details current, especially around holidays and any change of premises. Consistency over time is what separates a profile that steadily climbs from one that quietly slips behind more attentive competitors.",
+        ],
+      },
+      {
+        h: "Connect the Profile to the Rest of Your SEO",
+        p: [
+          "The profile performs best when it is part of a joined-up local strategy rather than an island. Your website should reinforce the same locations, services and details, ideally with genuinely useful location and service pages that match the intent your profile captures. Consistent citations across reputable directories strengthen the trust signals that underpin local ranking.",
+          "This connection also feeds AI search. When your business facts are consistent across your profile, your website and credible third parties, AI engines can cite you confidently for local recommendations. In 2026, a well-optimised profile is not only your best route into the map pack, it is part of how you become the answer when someone asks an AI assistant for the best option nearby.",
         ],
       },
     ],
-    takeaway: "You can no longer treat AI search visibility as unmeasurable. Start with Google's Search Generative AI performance reports in Search Console, added in June 2026, as your authoritative baseline for Google's surfaces. Fill the gaps with a disciplined, repeatable manual test across ChatGPT, Perplexity and other engines, holding conditions steady so results are comparable. Track upstream signals such as consistency, third-party mentions and branded search, which move before citations do. Then close the loop by rewriting the pages that fail to earn a mention. SEODXB helps businesses measure and improve their visibility across every search surface.",
+    takeaway: "A Google Business Profile is the highest-return asset in local SEO, but only when it is complete, accurate and actively maintained. Get the fundamentals exactly right, use photos, products and services fully, earn and respond to genuine reviews, keep the profile active with posts and Q and A, and connect it to consistent website and citation signals. Do this and you win the map pack, earn more calls, and become the local business AI answers recommend. SEODXB helps businesses optimise and maintain profiles that consistently outperform.",
     faqs: [
-      { q: "Can I see how my site performs in Google's AI results?", a: "Yes, in part. Google added Search Generative AI performance reports to Search Console in June 2026, which show how your pages perform within generative results. It covers Google's surfaces rather than every AI engine, so it is a baseline rather than a complete view." },
-      { q: "How do I know if ChatGPT or Perplexity cites my business?", a: "Test manually and consistently. Ask each engine the exact questions your customers ask, on a fixed schedule, and record whether you are named and which page is cited. Holding phrasing and location steady makes the results comparable over time." },
-      { q: "Is there a tool that tracks all AI citations automatically?", a: "No single tool reliably reports citations across every AI engine in 2026. Some claim to, but the honest position is that Google's own reports combined with a disciplined manual routine give you a trustworthy picture without the false precision such tools imply." },
-      { q: "How often should I measure AI search visibility?", a: "Monthly is a sensible cadence for most businesses. It is frequent enough to reveal trends and to test whether changes are working, without generating noise from the natural week-to-week variation in how AI engines answer." },
-      { q: "What signals improve before AI citations do?", a: "Consistency of your business information, credible third-party mentions, valid structured data, clear answer-first content, and rising branded search. These foundations typically strengthen before citations increase, so tracking them gives you an earlier read than citations alone." },
-      { q: "What should I do if AI engines never mention my business?", a: "Treat the failing questions as a brief. They mark the topics where your content is not yet clear, structured or authoritative enough to be quoted. Rewrite those pages to answer the exact questions plainly, strengthen supporting signals, and re-test the following month." },
+      { q: "How do I rank higher in the Google map pack?", a: "Complete and verify your profile, choose the most specific primary category, keep your name, address and phone consistent everywhere, earn a steady flow of genuine reviews and respond to them, add strong photos, and reinforce it all with matching website and citation signals. Relevance, distance and prominence together drive local ranking." },
+      { q: "Can I put keywords in my business name to rank better?", a: "No. Your Google Business Profile name must be your real business name. Adding keywords breaches Google's guidelines and can lead to suspension. The correct levers are accurate categories, complete information, reviews and consistent citations, not keyword stuffing the name." },
+      { q: "How many reviews do I need to compete locally?", a: "There is no fixed number; what matters is a steady flow of genuine, recent reviews relative to your competitors, plus your responses to them. Quality, recency and consistency count more than a single large total, and buying or faking reviews risks penalties and lost trust." },
+      { q: "Do Google Business Profile posts actually help?", a: "Posts do not directly guarantee higher rankings, but they keep your listing fresh, give customers reasons to act, and can improve engagement and conversions. Combined with a complete profile and reviews, an active posting habit supports overall local performance." },
+      { q: "How often should I update my Google Business Profile?", a: "Check accuracy regularly and update whenever details change, add fresh photos periodically, post updates or offers when you have them, and respond to reviews and questions promptly. Around holidays, set special hours in advance. Ongoing attention is what keeps a profile competitive." },
+      { q: "Does my Google Business Profile affect AI search visibility?", a: "Increasingly, yes. When your business facts are consistent across your profile, website and credible directories, AI engines can cite you confidently for local recommendations. A well-optimised, consistent profile supports both the map pack and the local answers AI assistants give." },
     ],
     references: [
-      { title: "Search Generative AI performance reports in Search Console", url: "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports", publisher: "Google" },
-      { title: "Google Search Central: Search Console", url: "https://developers.google.com/search/docs/monitor-debug/search-console-start", publisher: "Google" },
-      { title: "Google Search Central: Creating helpful, reliable content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", publisher: "Google" },
+      { title: "Google Business Profile Help: Improve your local ranking", url: "https://support.google.com/business/answer/7091", publisher: "Google" },
+      { title: "Google Business Profile Help: Guidelines for representing your business", url: "https://support.google.com/business/answer/3038177", publisher: "Google" },
+      { title: "Google Business Profile", url: "https://www.google.com/business/", publisher: "Google" },
     ],
     related: [
-      { label: "Generative Engine Optimisation (GEO)", href: "/geo" },
-      { label: "Google AI Mode Is Now the Default", href: "/blog/google-ai-mode-default-search-what-it-means-2026" },
-      { label: "How to Get Cited in Google AI Overviews", href: "/blog/how-to-get-cited-in-google-ai-overviews" },
+      { label: "UAE map pack local ranking factors", href: "/blog/uae-map-pack-local-ranking-factors" },
+      { label: "SEO in London: complete guide", href: "/blog/seo-in-london-complete-guide-2026" },
+      { label: "Local SEO services", href: "/local-seo" },
+      { label: "Free SEO audit", href: "/free-seo-audit" },
     ],
   },
 
-  // ── 5. SEO for Qatar's new city districts (Qatar, local) ──────────────────
+  // ── 5. Ireland: AI search optimisation guide ──────────────────────────────
   {
-    slug: "seo-for-qatar-new-city-districts-lusail",
-    category: "Industry Guides",
-    title: "SEO for Businesses in Qatar's New City Districts",
-    excerpt: "As commerce shifts to Lusail and Qatar's new districts, here is how businesses there get found on Google and AI.",
-    heroImage: img("photo-1518684079-3c830dcef090"),
-    heroAlt: "Lusail city skyline representing SEO for businesses in Qatar's new districts",
+    slug: "ai-search-optimization-ireland-businesses-2026",
+    category: "AI Search",
+    title: "AI Search Optimisation for Ireland Businesses in 2026",
+    excerpt: "How Irish businesses get cited by ChatGPT, Google AI Overviews and Perplexity, and win customers in AI search.",
+    heroImage: img("photo-1549918864-48ac978761a4"),
+    heroAlt: "Dublin cityscape representing AI search optimisation for Irish businesses in 2026",
     intro: [
-      "Qatar's commercial centre of gravity is moving. Lusail, the purpose-built city just north of Doha, has grown from a construction site into a genuine business and residential district, and areas such as West Bay and the developments around them continue to fill with new companies, retail and services. For a business opening in one of these districts, the challenge is immediate: the customers exist, but discovery happens online, and a new location with no search presence is effectively invisible however impressive the physical premises.",
-      "This guide explains how businesses in Lusail and Qatar's other new districts can build search visibility quickly, on both Google and the AI engines that Qatari and expatriate customers increasingly rely on. The particular difficulty of a new district is that the place itself is still establishing its search footprint, which is both a challenge and, for the businesses that move early, a real opportunity.",
+      "Ireland punches well above its size online. A young, highly educated, English-speaking population, the European base of many of the world's largest technology companies, and near-universal connectivity make it one of the most digitally mature markets in Europe. Irish consumers and businesses were quick to adopt AI assistants, and in 2026 a meaningful share of research now begins with a question to ChatGPT, Google AI Overviews or Perplexity rather than a traditional search.",
+      "This guide explains what AI search optimisation means for an Irish business: how AEO and GEO differ from classic SEO, why being cited by AI engines is now a commercial priority, and the practical steps a company in Dublin, Cork, Galway, Limerick or anywhere in between can take to become the answer customers are given.",
     ],
     keyStats: [
-      "Lusail has grown into a genuine business and residential district north of Doha.",
-      "Customers in Qatar research online before visiting, in both Arabic and English.",
-      "New districts have a thinner search footprint, which early movers can claim.",
-      "AI engines answer location and neighbourhood questions directly.",
+      "Ireland is among Europe's most digitally connected markets, with high AI-tool adoption.",
+      "English-language content means Irish businesses compete directly with large global sources.",
+      "AI engines return a single confident recommendation rather than a page of links.",
+      "Consistency, structure and authority decide which businesses AI chooses to cite.",
     ],
     sections: [
       {
-        h: "Why New Districts Are a Distinct SEO Problem",
+        h: "Why AI Search Matters for Irish Businesses Now",
         p: [
-          "An established area has years of accumulated search signals: businesses with mature listings, reviews built up over time, and content that has been indexed and refined. A new district has almost none of that. When a business opens in Lusail, it is not slotting into an existing web of local search results, it is helping to create one. That means the usual assumption, that you are fighting to rank above established competitors, often does not hold. The competition for district-specific searches can be surprisingly thin.",
-          "This is the opportunity. In an area where few businesses have yet built a proper search presence, an organised newcomer can become the visible default for its category and location faster than would ever be possible in a mature market. The window does not stay open forever, because others will eventually catch on, but for now the businesses that treat search seriously from day one can establish positions that later arrivals will struggle to displace.",
+          "The shift from links to answers is well advanced in Ireland. When a customer asks an AI tool for the best solicitor in Cork, a reliable software partner in Dublin, or a comparison of suppliers, they receive a direct recommendation with a handful of cited sources. If your business is not among those sources, you are invisible at the moment the decision is forming, regardless of how well you rank in traditional results.",
+          "Because Ireland operates in English, Irish businesses face an unusual dynamic: they compete for AI citations against large international publishers and global brands, not just local rivals. That raises the bar, but it also means the businesses that adapt early, with genuinely useful, well-structured, distinctly Irish content, can claim category authority before most competitors have noticed the change.",
         ],
         image: {
-          url: img("photo-1512453979798-5ea266f8880c"),
-          alt: "Modern Doha and Lusail cityscape representing Qatar's growing commercial districts",
-          caption: "New districts start with a thin search footprint, so early movers can claim positions cheaply.",
+          url: img("photo-1454165804606-c3d57bc86b40"),
+          alt: "Team reviewing analytics representing how Irish businesses measure AI search visibility",
+          caption: "In Ireland's mature digital market, AI citations are becoming a decisive form of visibility.",
         },
       },
       {
-        h: "Get the Local Foundations Right First",
+        h: "AEO and GEO: What Actually Changes",
         p: [
-          "The fastest wins in a new district come from local SEO. A complete, accurate Google Business Profile that names the district precisely, uses the correct category, and carries genuine early reviews will begin capturing local-intent searches quickly. Consistency matters more than usual here, because in a new area there is no established record for search engines to fall back on, so every listing, citation and mention of your address and details needs to agree exactly. Inconsistency confuses the very signals you are trying to establish.",
-          "Because the district itself is new, be explicit about location in your content. Name the district, reference nearby landmarks and developments, and answer the practical questions newcomers ask about finding and reaching you. This helps both human searchers who are still learning the area and the search and AI systems that are building their own understanding of what exists there and where.",
+          "Answer engine optimisation focuses on winning direct answers, such as AI Overviews and featured snippets, by leading with a clear, concise response to the exact question a user asks. Generative engine optimisation is broader: structuring your brand, content and authority so generative AI tools understand, trust and recommend you across conversations. Both build on classic SEO rather than replacing it.",
+          "The practical differences are about structure and trust. AI engines reward content that answers the question first and elaborates second, that uses headings phrased as real questions, that presents facts clearly enough to be quoted, and that is backed by consistent business information and credible third-party mentions. Thin content that merely echoes competitors gives an AI nothing distinctive to cite.",
         ],
         list: [
-          "Complete and verify a precise, district-specific Google Business Profile",
-          "Keep your name, address and details identical across every listing",
-          "Gather genuine early reviews to build a local track record",
-          "Name the district and nearby landmarks explicitly in your content",
-          "Answer the practical location questions newcomers actually ask",
+          "Answer-first content that responds to the question in the opening lines",
+          "Question-based headings that mirror how people actually ask",
+          "Consistent business facts across your site, listings and directories",
+          "Authority signals from credible Irish and international sources",
+          "Valid structured data so answers can be extracted accurately",
         ],
       },
       {
-        h: "Build Content and AI Visibility for a Bilingual Audience",
+        h: "How AI Engines Decide Whom to Cite",
         p: [
-          "Qatar is a bilingual search market, and new districts like Lusail draw a mix of Qatari nationals, long-term residents and newly arrived expatriates, all searching in Arabic or English depending on who they are. A business that publishes only in English misses a meaningful share of high-intent local searches. Genuine bilingual content, written to read naturally in each language rather than translated mechanically, captures customers that single-language competitors never see.",
-          "The same content that serves human searchers well also positions a business to be named by AI engines when someone asks for a recommendation in the district. Clear, answer-first content about what you offer and where, combined with consistent business information and genuine reviews, is what makes an AI comfortable naming you. In a new district where few competitors have done this work, being the business the AI recommends is an unusually attainable position.",
+          "Different engines weight things differently, but the common thread is trust and clarity. AI systems favour sources whose information is consistent wherever it appears, whose expertise is evident through named authors and cited evidence, and whose content is structured cleanly enough to extract without ambiguity. Contradictory details across your web presence are a quiet but serious handicap, because they give an AI reason to doubt and to choose a competitor instead.",
+          "First-hand experience and specifics are decisive. Generic claims that any business could make are easy to ignore; concrete detail, genuine expertise and clear, verifiable information are what an AI can confidently quote. For an Irish business, that often means content that reflects the real Irish market, local context and specifics that a global source simply does not have.",
         ],
       },
       {
-        h: "How to Sequence the Work",
+        h: "A Practical Plan for Ireland",
         p: [
-          "A sensible order avoids wasted effort. Begin with the local foundations, because they produce the quickest returns and establish the consistent signals everything else builds on. Then add district-specific content that answers real customer questions and names your location clearly. Finally, structure that content so AI engines can quote it, and begin earning the third-party mentions that build lasting authority. This sequence delivers early visibility while compounding into a durable position.",
-          "Measure against outcomes that matter for a new location: enquiries, calls, bookings and visits, not raw impressions. In a district that is still growing, steady month-on-month growth in genuine local enquiries is the clearest sign that your search presence is doing its job, and it is a far more reliable guide than vanity metrics that flatter without informing.",
+          "Begin by auditing how AI engines currently describe your business and category. Ask the tools your customers use what they say about you and your competitors, and note where you are absent or misrepresented. That gap analysis is the foundation of an AI search strategy, because it shows exactly which answers you need to earn.",
+          "Then act on the fundamentals: tighten the consistency of your business information everywhere it appears, restructure key pages to answer buyer questions directly, strengthen expertise signals with named authorship and cited sources, and earn mentions from credible publications and directories relevant to your sector and region. These moves lift you in both traditional and AI search at once, which is why they compound.",
+        ],
+      },
+      {
+        h: "Measuring AI Search Success",
+        p: [
+          "AI visibility is harder to measure than a keyword ranking, but it is not unmeasurable. Track whether the tools your customers use cite or recommend you for your priority questions, monitor branded and category prompts over time, and watch for the qualified enquiries that mention finding you through an AI assistant. Combined with your traditional organic performance, this gives a rounded picture of visibility.",
+          "The wider point is that AEO and GEO are not a separate project competing with SEO for budget; they are the modern extension of it. An Irish business that invests in consistent, expert, well-structured content builds an asset that ranks on Google and gets cited by AI at the same time, and holds that advantage as the field slowly catches up.",
         ],
       },
     ],
-    takeaway: "As commerce shifts to Lusail and Qatar's other new districts, businesses there face a distinct SEO problem: the area itself is still building its search footprint, so there is little to slot into and, crucially, little competition for district-specific searches. Early movers can claim visible positions cheaply. Start with precise, consistent local foundations and genuine early reviews, add district-specific bilingual content that names your location clearly, then structure it so AI engines can quote you. Measure real enquiries, not impressions. SEODXB helps businesses in Qatar's new districts become the default answer before competitors catch on.",
+    takeaway: "AI search optimisation is now a commercial priority for Irish businesses, because a growing share of customers ask an AI assistant before they ever run a traditional search. Winning AI citations rests on the same foundations as strong SEO, executed with more discipline: answer-first content, question-based structure, consistent business facts, genuine expertise and credible authority. Irish companies that adapt early, with distinctly local, trustworthy content, can claim category authority before larger competitors react. SEODXB helps Irish businesses become the answer AI gives.",
     faqs: [
-      { q: "Is SEO different for a business in a new district like Lusail?", a: "Yes. A new district has few established search signals, so you are helping to create the local results rather than fighting to rank above mature competitors. Competition for district-specific searches is often thin, which lets organised early movers claim visible positions quickly." },
-      { q: "What is the fastest way to get found in Lusail or West Bay?", a: "Local SEO. A complete, accurate Google Business Profile that names the district precisely, uses the right category and carries genuine early reviews will start capturing local-intent searches quickly, especially where few competitors have done the same." },
-      { q: "Do I need Arabic content for a business in Qatar's new districts?", a: "In most cases yes. Qatar is bilingual and new districts draw nationals, residents and expatriates who search in both Arabic and English. Genuine bilingual content, not machine translation, captures high-intent searches that English-only sites miss." },
-      { q: "How do businesses in new Qatari districts get recommended by AI engines?", a: "By publishing clear, answer-first content about what they offer and where, keeping business information consistent, and earning genuine reviews and third-party mentions. In a new district where few competitors have done this, being the AI's recommendation is unusually attainable." },
-      { q: "Why is consistency so important for a new-district business?", a: "Because there is no established record for search engines to fall back on. Every listing, citation and mention of your name, address and details needs to agree exactly, or you confuse the very local signals you are trying to establish from scratch." },
-      { q: "What should a new-district business measure?", a: "Real outcomes: enquiries, calls, bookings and visits, rather than impressions. In a growing district, steady month-on-month growth in genuine local enquiries is the clearest sign your search presence is working." },
+      { q: "What is AI search optimisation?", a: "It is the practice of making your business visible in AI-generated answers from tools such as ChatGPT, Google AI Overviews and Perplexity. It combines answer engine optimisation, winning direct answers, with generative engine optimisation, structuring your brand and content so AI systems understand, trust and recommend you." },
+      { q: "How is AI search different from traditional SEO in Ireland?", a: "Traditional SEO aims to rank a page in a list of links; AI search aims to make your business the cited source inside a direct answer. The foundations overlap, but AI rewards answer-first structure, consistent facts and clear expertise even more strictly, and returns one recommendation rather than a page to browse." },
+      { q: "Do Irish businesses really need to worry about AI search?", a: "Increasingly, yes. Ireland is a digitally mature, English-speaking market with high AI-tool adoption, so a meaningful share of research now starts with an AI assistant. Businesses that are absent from those answers lose visibility at the decision-forming stage, while early adopters can claim category authority." },
+      { q: "How do I get my Irish business cited by ChatGPT or Perplexity?", a: "Publish clear, answer-first content, use question-based headings, keep your business facts consistent across your site and listings, add named authorship and cited evidence, and earn mentions from credible sources. Distinctly Irish, specific content gives AI something to quote that global sources cannot match." },
+      { q: "Does AI search optimisation replace my normal SEO?", a: "No, it extends it. The same investments in consistent, expert, well-structured content and credible authority lift you in both traditional and AI search at once. Treating AEO and GEO as the modern continuation of SEO, rather than a separate project, is the most efficient approach." },
+      { q: "How do I measure AI search visibility?", a: "Ask the AI tools your customers use whether they cite or recommend you for your priority questions, monitor branded and category prompts over time, and track qualified enquiries that mention an AI assistant. Read this alongside your traditional organic performance for a full picture of visibility." },
     ],
     references: [
-      { title: "Google Business Profile", url: "https://www.google.com/business/", publisher: "Google" },
-      { title: "Google Search Central: Local SEO", url: "https://developers.google.com/search/docs/appearance/local-business", publisher: "Google" },
-      { title: "Qatar Planning and Statistics Authority", url: "https://www.psa.gov.qa/en/pages/default.aspx", publisher: "State of Qatar" },
+      { title: "Google Search Central: AI features and your website", url: "https://developers.google.com/search/docs/appearance/ai-features", publisher: "Google" },
+      { title: "Creating helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", publisher: "Google" },
+      { title: "Central Statistics Office: Information Society Statistics", url: "https://www.cso.ie/en/statistics/informationsociety/", publisher: "Central Statistics Office Ireland" },
     ],
     related: [
-      { label: "SEO for Lusail Businesses", href: "/seo-lusail" },
-      { label: "SEO in Qatar: Complete Guide", href: "/blog/seo-in-qatar-complete-guide-2026" },
-      { label: "SEO Agency Qatar", href: "/seo-agency-qatar" },
+      { label: "AI search optimisation for UK businesses", href: "/blog/ai-search-optimization-uk-businesses-2026" },
+      { label: "SEO in Dublin: complete guide", href: "/blog/seo-in-dublin-complete-guide-2026" },
+      { label: "How AI search engines choose which brands to cite", href: "/blog/how-ai-search-engines-choose-which-brands-to-cite" },
+      { label: "SEO Agency Cork", href: "/seo-agency-cork" },
     ],
   },
 ];
