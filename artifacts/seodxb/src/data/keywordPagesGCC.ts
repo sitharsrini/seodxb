@@ -1680,4 +1680,81 @@ const extraGCCPages: KeywordPageConfig[] = [
   },
 ];
 
+// ===== Google Maps SEO cluster (Map Pack visibility across the GCC) =====
+
+commercial("google-maps-seo-dubai", {
+  keyword: "Google Maps SEO in Dubai", badge: "Google Maps and Map Pack SEO in Dubai",
+  title: "Google Maps SEO in Dubai | SEODXB - Rank in the Map Pack",
+  metaDesc: "Google Maps SEO in Dubai from SEODXB. We optimise your Google Business Profile to win the Dubai Map Pack and drive calls, directions and visits.",
+  h1: "Google Maps SEO in Dubai: Win the Map Pack and the Calls That Follow",
+  intro: "In Dubai, a huge share of high-intent searches, from a clinic in Jumeirah to a contractor in Business Bay, end in the Google Maps Map Pack rather than the classic blue links. SEODXB delivers Google Maps SEO in Dubai: Google Business Profile optimisation, category and service accuracy, review strategy, and consistent listings across the web so your business appears when nearby customers search in Arabic and English, and turns those searches into calls, directions and visits.",
+  scope: "Google Maps SEO in Dubai", served: "Dubai, UAE",
+  featuresTitle: "Google Maps SEO Built for Dubai",
+  featuresSubtitle: "Profile, reviews, and local signals that win the Dubai Map Pack and convert nearby searchers.",
+  faqTitle: "Google Maps SEO Dubai - FAQs",
+  ctaTitle: "Get Your Dubai Business into the Map Pack",
+  ctaDesc: "Book a free consultation and we'll audit your Google Business Profile and map a Google Maps SEO plan for Dubai.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("google-maps-seo-abu-dhabi", {
+  keyword: "Google Maps SEO in Abu Dhabi", badge: "Google Maps and Map Pack SEO in Abu Dhabi",
+  title: "Google Maps SEO in Abu Dhabi | SEODXB - Map Pack Visibility",
+  metaDesc: "Google Maps SEO in Abu Dhabi from SEODXB. We optimise your Google Business Profile to win the Abu Dhabi Map Pack and drive local enquiries.",
+  h1: "Google Maps SEO in Abu Dhabi: Be the Business Nearby Customers Find",
+  intro: "Abu Dhabi's mix of government, energy, professional services and a fast-growing retail and hospitality scene means many buying journeys start with a local Maps search. SEODXB delivers Google Maps SEO in Abu Dhabi: Google Business Profile optimisation, accurate categories and service areas, review generation, and consistent citations so your business ranks in the Abu Dhabi Map Pack when customers search nearby in Arabic and English, and reaches you before it reaches a competitor.",
+  scope: "Google Maps SEO in Abu Dhabi", served: "Abu Dhabi, UAE",
+  featuresTitle: "Google Maps SEO Built for Abu Dhabi",
+  featuresSubtitle: "Profile, reviews, and local signals that win the Abu Dhabi Map Pack and convert local intent.",
+  faqTitle: "Google Maps SEO Abu Dhabi - FAQs",
+  ctaTitle: "Get Your Abu Dhabi Business into the Map Pack",
+  ctaDesc: "Book a free consultation and we'll audit your Google Business Profile and map a Google Maps SEO plan for Abu Dhabi.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("google-maps-seo-riyadh", {
+  keyword: "Google Maps SEO in Riyadh", badge: "Google Maps and Map Pack SEO in Riyadh",
+  title: "Google Maps SEO in Riyadh | SEODXB - Rank in the Map Pack",
+  metaDesc: "Google Maps SEO in Riyadh from SEODXB. We optimise your Google Business Profile to win the Riyadh Map Pack and drive calls, directions and visits.",
+  h1: "Google Maps SEO in Riyadh: Win Local Searches Across the Capital",
+  intro: "Riyadh is a large, fast-growing capital where customers routinely search Google Maps for the nearest trusted provider before they call. SEODXB delivers Google Maps SEO in Riyadh: Google Business Profile optimisation, precise Arabic and English categories and services, review strategy, and consistent listings so your business appears in the Riyadh Map Pack for high-intent local searches and captures the calls, directions and visits that follow.",
+  scope: "Google Maps SEO in Riyadh", served: "Riyadh, Saudi Arabia",
+  featuresTitle: "Google Maps SEO Built for Riyadh",
+  featuresSubtitle: "Profile, reviews, and bilingual local signals that win the Riyadh Map Pack and convert nearby searchers.",
+  faqTitle: "Google Maps SEO Riyadh - FAQs",
+  ctaTitle: "Get Your Riyadh Business into the Map Pack",
+  ctaDesc: "Book a free consultation and we'll audit your Google Business Profile and map a Google Maps SEO plan for Riyadh.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("google-maps-seo-doha", {
+  keyword: "Google Maps SEO in Doha", badge: "Google Maps and Map Pack SEO in Doha",
+  title: "Google Maps SEO in Doha | SEODXB - Map Pack Visibility",
+  metaDesc: "Google Maps SEO in Doha from SEODXB. We optimise your Google Business Profile to win the Doha Map Pack and drive local enquiries in Qatar.",
+  h1: "Google Maps SEO in Doha: Be Found First When Customers Search Nearby",
+  intro: "In Doha, a compact and highly connected market spanning West Bay, Lusail and the wider metro, local searches on Google Maps often decide who gets the call. SEODXB delivers Google Maps SEO in Doha: Google Business Profile optimisation, accurate categories and service areas, review generation, and consistent citations so your business ranks in the Doha Map Pack when nearby customers search in Arabic and English, and wins the enquiries before competitors do.",
+  scope: "Google Maps SEO in Doha", served: "Doha, Qatar",
+  featuresTitle: "Google Maps SEO Built for Doha",
+  featuresSubtitle: "Profile, reviews, and local signals that win the Doha Map Pack and convert high-intent searches.",
+  faqTitle: "Google Maps SEO Doha - FAQs",
+  ctaTitle: "Get Your Doha Business into the Map Pack",
+  ctaDesc: "Book a free consultation and we'll audit your Google Business Profile and map a Google Maps SEO plan for Doha.",
+  ctaButton: "Get Free Consultation",
+});
+
+commercial("google-maps-seo-kuwait-city", {
+  keyword: "Google Maps SEO in Kuwait City", badge: "Google Maps and Map Pack SEO in Kuwait City",
+  title: "Google Maps SEO in Kuwait City | SEODXB - Rank in the Map Pack",
+  metaDesc: "Google Maps SEO in Kuwait City from SEODXB. We optimise your Google Business Profile to win the Kuwait City Map Pack and drive local enquiries.",
+  h1: "Google Maps SEO in Kuwait City: Win the Local Searches That Convert",
+  intro: "Kuwait City has some of the highest smartphone and connectivity rates in the region, and customers across Salmiya, Hawally and the wider capital reach for Google Maps to find nearby providers. SEODXB delivers Google Maps SEO in Kuwait City: Google Business Profile optimisation, accurate Arabic and English categories and services, review strategy, and consistent listings so your business ranks in the Kuwait City Map Pack for local searches and turns them into calls, directions and visits.",
+  scope: "Google Maps SEO in Kuwait City", served: "Kuwait City, Kuwait",
+  featuresTitle: "Google Maps SEO Built for Kuwait City",
+  featuresSubtitle: "Profile, reviews, and bilingual local signals that win the Kuwait City Map Pack and convert nearby searchers.",
+  faqTitle: "Google Maps SEO Kuwait City - FAQs",
+  ctaTitle: "Get Your Kuwait City Business into the Map Pack",
+  ctaDesc: "Book a free consultation and we'll audit your Google Business Profile and map a Google Maps SEO plan for Kuwait City.",
+  ctaButton: "Get Free Consultation",
+});
+
 export const gccKeywordPages: KeywordPageConfig[] = [...pages, ...extraGCCPages];

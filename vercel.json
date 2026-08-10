@@ -1,8 +1,9 @@
 {
   "buildCommand": "cd artifacts/seodxb && PORT=3000 BASE_PATH=/ pnpm run build",
   "outputDirectory": "artifacts/seodxb/dist/public",
-  "installCommand": "pnpm install",
+  "installCommand": "cd artifacts/seodxb && pnpm install",
   "framework": null,
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
