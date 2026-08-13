@@ -29,6 +29,7 @@ import { batch21 } from "./batch21";
 import { batch22 } from "./batch22";
 import { batch23 } from "./batch23";
 import { batch24 } from "./batch24";
+import { batch25 } from "./batch25";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -65,7 +66,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
   ...batch17, ...batch18, ...batch19, ...batch20, ...batch21, ...batch22,
-  ...batch23, ...batch24,
+  ...batch23, ...batch24, ...batch25,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -131,6 +132,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "in-house-seo-vs-agency": { date: "Aug 11, 2026", iso: "2026-08-11", updated: "2026-08-11" },
   "new-website-not-getting-traffic": { date: "Aug 11, 2026", iso: "2026-08-11", updated: "2026-08-11" },
   "do-you-need-seo-if-you-run-google-ads": { date: "Aug 11, 2026", iso: "2026-08-11", updated: "2026-08-11" },
+  // Daily batch (#10) published 2026-08-13.
+  "how-to-do-keyword-research-small-business": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  "do-backlinks-still-matter-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  "wix-vs-wordpress-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  "how-to-get-more-google-reviews": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  "do-you-need-a-blog-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
 };
 
 const seen = new Set<string>();
