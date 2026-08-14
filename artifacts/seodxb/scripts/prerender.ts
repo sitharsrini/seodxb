@@ -708,6 +708,20 @@ function prerender() {
   writeFileSync(join(DIST, "sitemap-pages.xml"), sitemapPages, "utf-8");
   console.log(`  ✓ sitemap-pages.xml with ${pageLocs.length} URLs`);
 
+  // Regenerate the sitemap index so its <lastmod> tracks the actual build date.
+  // The sub-sitemaps are rebuilt every deploy, but a static index would keep
+  // advertising a stale date, which discourages crawlers from re-fetching them.
+  const sitemapIndex = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...["sitemap-pages.xml", "sitemap-blog.xml"].map(
+      (f) => `  <sitemap>\n    <loc>${SITE}/${f}</loc>\n    <lastmod>${today}</lastmod>\n  </sitemap>`,
+    ),
+    "</sitemapindex>",
+  ].join("\n");
+  writeFileSync(join(DIST, "sitemap.xml"), sitemapIndex, "utf-8");
+  console.log(`  ✓ sitemap.xml index lastmod ${today}`);
+
   // Real 404 page so unknown URLs return a 404 status, not a soft 200.
   const notFound = shell
     .replace(/<title>[^<]*<\/title>/, "<title>Page Not Found | SEODXB</title>")
