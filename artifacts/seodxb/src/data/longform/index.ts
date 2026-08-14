@@ -30,6 +30,7 @@ import { batch22 } from "./batch22";
 import { batch23 } from "./batch23";
 import { batch24 } from "./batch24";
 import { batch25 } from "./batch25";
+import { batch26 } from "./batch26";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -66,7 +67,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
   ...batch17, ...batch18, ...batch19, ...batch20, ...batch21, ...batch22,
-  ...batch23, ...batch24, ...batch25,
+  ...batch23, ...batch24, ...batch25, ...batch26,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -138,6 +139,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "wix-vs-wordpress-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "how-to-get-more-google-reviews": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "do-you-need-a-blog-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  // Daily batch (#13) published 2026-08-14.
+  "is-seo-worth-it-small-business-2026": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
+  "optimise-content-for-copilot-bing-2026": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
+  "ga4-vs-google-search-console-for-seo": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
+  "website-migration-without-losing-rankings": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
+  "why-is-my-google-ranking-dropping": { date: "Aug 14, 2026", iso: "2026-08-14", updated: "2026-08-14" },
 };
 
 const seen = new Set<string>();
