@@ -51,12 +51,10 @@ Based in Dubai, UAE. Serving clients across Dubai, Abu Dhabi, UAE, and globally.
 - Healthcare SEO Dubai: https://seodxb.com/seo-for-healthcare
 - Legal SEO Dubai: https://seodxb.com/seo-for-law-firms
 
-## SEO Keyword Landing Pages (100 pages)
+## SEO Keyword Landing Pages (selection)
 
 - https://seodxb.com/seo-agency-dubai - SEO Agency Dubai
-- https://seodxb.com/seo-company-dubai - SEO Company Dubai
 - https://seodxb.com/seo-services-dubai - SEO Services Dubai
-- https://seodxb.com/best-seo-agency-dubai - Best SEO Agency Dubai
 - https://seodxb.com/seo-consultant-dubai - SEO Consultant Dubai
 - https://seodxb.com/seo-expert-dubai - SEO Expert Dubai
 - https://seodxb.com/seo-agency-uae - SEO Agency UAE
@@ -154,7 +152,7 @@ Based in Dubai, UAE. Serving clients across Dubai, Abu Dhabi, UAE, and globally.
 - https://seodxb.com/seo-for-coworking-spaces-dubai - SEO for Coworking Spaces Dubai
 - https://seodxb.com/dubai-seo-specialists - Dubai SEO Specialists
 
-## SEO Landing Pages - UAE-Wide (100 pages)
+## SEO Landing Pages - UAE-Wide (selection)
 
 Location, industry, and service pages across Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, Al Ain, and every emirate.
 
@@ -387,6 +385,14 @@ Three transparent plans with no contracts and no hidden fees:
 - Email: hi@Listi.ae
 - WhatsApp: +971 52 155 1198
 - Location: Dubai, UAE
+
+## Complete Index
+
+This file is a curated summary. The complete machine-readable index of every page and article on seodxb.com is at:
+
+- https://seodxb.com/llms-full.txt
+
+Sitemaps: https://seodxb.com/sitemap.xml (index), https://seodxb.com/sitemap-pages.xml, https://seodxb.com/sitemap-blog.xml
 
 ## Optional: Full Content
 

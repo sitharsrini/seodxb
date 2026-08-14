@@ -696,7 +696,8 @@ function prerender() {
       .filter((r) => !NOINDEX_ROUTES.has(r))
       .map((r) => `${SITE}/${r}`),
   ];
-  const pageLocs = [...staticLocs, ...[...pageSlugs].map((s) => `${SITE}/${s}`)];
+  // Deduplicate: a few slugs exist both as static routes and as keyword pages.
+  const pageLocs = [...new Set([...staticLocs, ...[...pageSlugs].map((s) => `${SITE}/${s}`)])];
   const sitemapPages = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -707,6 +708,49 @@ function prerender() {
   ].join("\n");
   writeFileSync(join(DIST, "sitemap-pages.xml"), sitemapPages, "utf-8");
   console.log(`  ✓ sitemap-pages.xml with ${pageLocs.length} URLs`);
+
+  // Generate llms-full.txt: the complete AI-crawler index of every page and post
+  // with its title. llms.txt stays the curated summary and links here for depth.
+  const kwTitle = new Map<string, string>();
+  for (const src of kwSources) {
+    const list = (Array.isArray(src) ? src : Object.values(src as object)) as KeywordPageConfig[];
+    for (const p of list) if (p && p.slug) kwTitle.set(p.slug, p.keyword || p.h1 || p.slug);
+  }
+  const fullLines: string[] = [
+    "# SEODXB - Complete Content Index",
+    "",
+    "> Full machine-readable index of every page and article on seodxb.com.",
+    "> SEODXB is a Dubai-based SEO, AEO, and GEO agency helping businesses rank on",
+    "> Google and get cited by AI answer engines. Curated summary: https://seodxb.com/llms.txt",
+    "",
+    `> Generated ${today}. Pages: ${pageLocs.length}. Articles: ${Object.keys(BLOG_META).length}.`,
+    "",
+    "## Core Pages",
+    "",
+    `- https://seodxb.com/ - SEODXB, SEO, AEO and GEO agency in Dubai`,
+    ...Object.entries(STATIC_META)
+      .filter(([r]) => !NOINDEX_ROUTES.has(r))
+      .map(([r, m]) => `- ${SITE}/${r} - ${m.title.replace(/\s*\|\s*SEODXB.*$/, "")}`),
+    "",
+    "## Landing Pages",
+    "",
+    ...[...pageSlugs].sort().map((s) => `- ${SITE}/${s} - ${kwTitle.get(s) ?? s}`),
+    "",
+    "## Articles",
+    "",
+    ...Object.entries(BLOG_META).map(
+      ([slug, m]) => `- ${SITE}/blog/${slug} - ${(m as { title: string }).title.replace(/\s*\|\s*SEODXB.*$/, "")}`,
+    ),
+    "",
+    "## Contact",
+    "",
+    "- Email: hi@Listi.ae",
+    "- WhatsApp: +971 52 155 1198",
+    "- Location: Dubai, UAE",
+    "",
+  ];
+  writeFileSync(join(DIST, "llms-full.txt"), fullLines.join("\n"), "utf-8");
+  console.log(`  ✓ llms-full.txt with ${pageLocs.length + Object.keys(BLOG_META).length} URLs`);
 
   // Regenerate the sitemap index so its <lastmod> tracks the actual build date.
   // The sub-sitemaps are rebuilt every deploy, but a static index would keep

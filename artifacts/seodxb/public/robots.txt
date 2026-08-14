@@ -41,3 +41,4 @@ Sitemap: https://seodxb.com/sitemap.xml
 Sitemap: https://seodxb.com/sitemap-pages.xml
 Sitemap: https://seodxb.com/sitemap-blog.xml
 LLMs: https://seodxb.com/llms.txt
+LLMs-Full: https://seodxb.com/llms-full.txt
