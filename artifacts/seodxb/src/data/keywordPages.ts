@@ -11,6 +11,7 @@ import { cityKeywordPages } from "./keywordPagesCities";
 import { dailyKeywordPages } from "./keywordPagesDaily";
 import { dailyKeywordPages2 } from "./keywordPagesDaily2";
 import { dailyKeywordPages3 } from "./keywordPagesDaily3";
+import { dailyKeywordPages4 } from "./keywordPagesDaily4";
 import { districtKeywordPages } from "./keywordPagesDistricts";
 
 export interface KeywordPageConfig {
@@ -3940,6 +3941,7 @@ export const keywordPages: Record<string, KeywordPageConfig> = normalize(
       ...toRecord(dailyKeywordPages),
       ...toRecord(dailyKeywordPages2),
       ...toRecord(dailyKeywordPages3),
+      ...toRecord(dailyKeywordPages4),
       ...districtKeywordPages,
     }).filter(([slug]) => !REDIRECTED_SLUGS.has(slug)),
   ),
