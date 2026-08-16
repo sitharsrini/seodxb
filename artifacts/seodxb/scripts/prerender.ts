@@ -400,6 +400,83 @@ function buildBlogIndexBody(metaEntries: [string, { title: string; desc: string 
 }
 
 // Inject static body content before <div id="root"> for crawler visibility.
+// ── Service / industry page bodies extracted from their React source ────────
+// These pages hold 1,400-1,700 words in React but shipped only ~80 words of raw
+// HTML, so AI crawlers (GPTBot, ClaudeBot, PerplexityBot), which do not execute
+// JavaScript, saw almost nothing. Reading the copy straight out of the component
+// keeps one source of truth: the prerendered text is exactly what users see.
+const SERVICE_PAGE_SOURCES: Record<string, string> = {
+  "aeo": "services/AEO.tsx",
+  "geo": "services/GEO.tsx",
+  "on-page-seo": "services/OnPageSEO.tsx",
+  "technical-seo": "services/TechnicalSEO.tsx",
+  "local-seo": "services/LocalSEO.tsx",
+  "international-seo": "services/InternationalSEO.tsx",
+  "seo-audit": "services/SEOAudit.tsx",
+  "seo-packages": "services/SEOPackages.tsx",
+  "ecommerce-seo": "industries/EcommerceSEO.tsx",
+  "real-estate-seo": "industries/RealEstateSEO.tsx",
+  "b2b-seo": "industries/B2BSEO.tsx",
+  "seo-for-restaurants": "industries/HospitalitySEO.tsx",
+  "seo-for-healthcare": "industries/HealthcareSEO.tsx",
+  "seo-for-law-firms": "industries/LegalSEO.tsx",
+  "seo-dubai": "locations/SEODubai.tsx",
+  "seo-uae": "locations/SEOUAE.tsx",
+  "seo-abu-dhabi": "locations/SEOAbuDhabi.tsx",
+  "free-seo-audit": "FreeSEOAudit.tsx",
+  "website-20-aed": "Website20AED.tsx",
+  "icp-finder": "IcpFinder.tsx",
+  "seo-optimizer": "SeoOptimizer.tsx",
+  "contact": "Contact.tsx",
+  "index": "Home.tsx",
+  "about": "About.tsx",
+  "pricing": "Pricing.tsx",
+};
+
+function buildServicePageBody(slug: string): string {
+  const rel = SERVICE_PAGE_SOURCES[slug];
+  if (!rel) return "";
+  const file = resolve(__dirname, "../src/pages", rel);
+  if (!existsSync(file)) return "";
+  const src = readFileSync(file, "utf-8");
+  const unesc = (s: string) => s.replace(/\\"/g, '"').replace(/\\'/g, "'");
+
+  // Hero: the first <h1> and the paragraph that follows it.
+  const heroH1 = src.match(/<h1[^>]*>\s*([^<{]+?)\s*<\/h1>/);
+  const heroP = src.match(/<\/h1>\s*<p[^>]*>\s*([^<{]+?)\s*<\/p>/);
+  // Feature cards: { icon: <X />, title: "...", desc: "..." }
+  const features = [...src.matchAll(/title:\s*"((?:[^"\\]|\\.)*)"\s*,\s*desc:\s*"((?:[^"\\]|\\.)*)"/g)];
+  // FAQs: { q: "...", a: "..." }
+  const faqs = [...src.matchAll(/\bq:\s*"((?:[^"\\]|\\.)*)"\s*,\s*a:\s*"((?:[^"\\]|\\.)*)"/g)];
+  // Plain JSX headings with a following paragraph, for pages that describe
+  // themselves in markup rather than in a data array (e.g. the free tools).
+  const jsxSections = [...src.matchAll(/<h2[^>]*>\s*([^<{]+?)\s*<\/h2>\s*<p[^>]*>\s*([^<{]+?)\s*<\/p>/g)];
+  if (!features.length && !faqs.length && !jsxSections.length && !heroH1) return "";
+
+  const parts: string[] = ["<article>"];
+  if (heroH1) parts.push(`<h1>${escape(unesc(heroH1[1]))}</h1>`);
+  if (heroP) parts.push(`<p>${escape(unesc(heroP[1]))}</p>`);
+  for (const m of jsxSections) {
+    parts.push(`<h2>${escape(unesc(m[1]))}</h2><p>${escape(unesc(m[2]))}</p>`);
+  }
+  if (features.length) {
+    parts.push("<section><h2>What this service includes</h2>");
+    for (const m of features) {
+      parts.push(`<h3>${escape(unesc(m[1]))}</h3><p>${escape(unesc(m[2]))}</p>`);
+    }
+    parts.push("</section>");
+  }
+  if (faqs.length) {
+    parts.push("<section><h2>Frequently asked questions</h2>");
+    for (const m of faqs) {
+      parts.push(`<h3>${escape(unesc(m[1]))}</h3><p>${escape(unesc(m[2]))}</p>`);
+    }
+    parts.push("</section>");
+  }
+  parts.push("</article>");
+  return `<noscript>${parts.join("\n")}</noscript>`;
+}
+
 function injectStaticBody(html: string, slug: string): string {
   const block = buildStaticBody(slug);
   if (!block) return html;
@@ -609,7 +686,11 @@ function prerender() {
   // raw HTML, so SEO tools and crawlers don't see the homepage canonical.
   // Patch the homepage (index.html) with static body content for AI crawlers.
   const homepageFile = join(DIST, "index.html");
-  const homepageHtml = injectStaticBody(shell, "");
+  let homepageHtml = injectStaticBody(shell, "");
+  const homeBody = buildServicePageBody("index");
+  if (homeBody) {
+    homepageHtml = homepageHtml.replace('<div id="root"></div>', `<div id="root"></div>\n${homeBody}`);
+  }
   writeFileSync(homepageFile, homepageHtml, "utf-8");
 
   const NOINDEX_ROUTES = new Set(["admin", "leads-admin"]);
@@ -619,6 +700,7 @@ function prerender() {
     "what-chatgpt-sees-when-it-looks-for-your-dubai-business",
     "two-dubai-businesses-one-invisible-online",
     "the-honest-guide-to-seo-timelines-in-dubai"]);
+  let servicePagesEnriched = 0;
   for (const [route, meta] of Object.entries(STATIC_META)) {
     const file = join(DIST, `${route}.html`);
     if (!existsSync(file)) {
@@ -629,6 +711,12 @@ function prerender() {
         html = html.replace('<div id="root"></div>', `${buildBlogIndexBody(Object.entries(BLOG_META))}\n<div id="root"></div>`);
       } else {
         html = injectStaticBody(html, route);
+      }
+      // Service and industry pages: inject the real copy from their component.
+      const serviceBody = buildServicePageBody(route);
+      if (serviceBody) {
+        html = html.replace('<div id="root"></div>', `<div id="root"></div>\n${serviceBody}`);
+        servicePagesEnriched++;
       }
       // Inject a minimal H1 + service links for pages that don't already have a static body
       if (!HAS_STATIC_BODY.has(route)) {
@@ -664,6 +752,7 @@ function prerender() {
     writeFileSync(join(DIST, "blog", `${slug}.html`), blogHtml, "utf-8");
   }
   console.log(`  ✓ ${Object.keys(STATIC_META).length} static + ${Object.keys(BLOG_META).length} blog pages`);
+  console.log(`  ✓ ${servicePagesEnriched} service/industry pages enriched with prerendered copy`);
 
   // Regenerate sitemap-blog.xml from the full BLOG_META set so it always stays
   // in sync with the actual post count without manual maintenance.
