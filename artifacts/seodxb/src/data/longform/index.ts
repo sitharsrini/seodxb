@@ -30,6 +30,7 @@ import { batch22 } from "./batch22";
 import { batch23 } from "./batch23";
 import { batch24 } from "./batch24";
 import { batch25 } from "./batch25";
+import { batch26 } from "./batch26";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -66,7 +67,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
   ...batch17, ...batch18, ...batch19, ...batch20, ...batch21, ...batch22,
-  ...batch23, ...batch24, ...batch25,
+  ...batch23, ...batch24, ...batch25, ...batch26,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -138,6 +139,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "wix-vs-wordpress-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "how-to-get-more-google-reviews": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
   "do-you-need-a-blog-for-seo-2026": { date: "Aug 13, 2026", iso: "2026-08-13", updated: "2026-08-13" },
+  // Daily batch (#11) published 2026-08-15.
+  "will-ai-overviews-reduce-my-website-traffic": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "crawled-currently-not-indexed-how-to-fix": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "shopify-vs-woocommerce-for-seo": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "google-business-profile-suspended-what-to-do": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  "how-to-improve-organic-click-through-rate": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
 };
 
 const seen = new Set<string>();
