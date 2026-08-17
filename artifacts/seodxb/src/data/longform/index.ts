@@ -31,6 +31,7 @@ import { batch23 } from "./batch23";
 import { batch24 } from "./batch24";
 import { batch25 } from "./batch25";
 import { batch26 } from "./batch26";
+import { batch27 } from "./batch27";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -67,7 +68,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
   ...batch17, ...batch18, ...batch19, ...batch20, ...batch21, ...batch22,
-  ...batch23, ...batch24, ...batch25, ...batch26,
+  ...batch23, ...batch24, ...batch25, ...batch26, ...batch27,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -145,6 +146,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "shopify-vs-woocommerce-for-seo": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
   "google-business-profile-suspended-what-to-do": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
   "how-to-improve-organic-click-through-rate": { date: "Aug 15, 2026", iso: "2026-08-15", updated: "2026-08-15" },
+  // Daily batch (#15) published 2026-08-17.
+  "how-to-fix-duplicate-content-issues": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "bing-copilot-search-opportunity-2026": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "seo-vs-social-media-marketing-small-business": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "why-is-my-competitor-outranking-me": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  "how-much-does-seo-cost-uk": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
 };
 
 const seen = new Set<string>();
