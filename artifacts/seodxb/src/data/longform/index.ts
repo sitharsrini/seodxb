@@ -32,6 +32,7 @@ import { batch24 } from "./batch24";
 import { batch25 } from "./batch25";
 import { batch26 } from "./batch26";
 import { batch27 } from "./batch27";
+import { batch28 } from "./batch28";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -68,7 +69,7 @@ const allSpecs: LongFormSpec[] = [
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
   ...batch11, ...batch12, ...batch13, ...batch14, ...batch15, ...batch16,
   ...batch17, ...batch18, ...batch19, ...batch20, ...batch21, ...batch22,
-  ...batch23, ...batch24, ...batch25, ...batch26, ...batch27,
+  ...batch23, ...batch24, ...batch25, ...batch26, ...batch27, ...batch28,
 ];
 
 // Explicit publish dates for posts uploaded on a known day, so adding them
@@ -152,6 +153,12 @@ const DATE_OVERRIDES: Record<string, { date: string; iso: string; updated: strin
   "seo-vs-social-media-marketing-small-business": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
   "why-is-my-competitor-outranking-me": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
   "how-much-does-seo-cost-uk": { date: "Aug 17, 2026", iso: "2026-08-17", updated: "2026-08-17" },
+  // Daily batch (2026-08-18).
+  "how-to-migrate-website-without-losing-seo": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "track-ai-chatgpt-referral-traffic-ga4": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "is-seo-worth-it-for-small-businesses": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "why-did-my-google-rankings-drop": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
+  "how-to-choose-an-seo-agency-dubai": { date: "Aug 18, 2026", iso: "2026-08-18", updated: "2026-08-18" },
 };
 
 const seen = new Set<string>();
