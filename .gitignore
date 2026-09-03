@@ -1,0 +1,13 @@
+node_modules
+dist
+functions-dist
+.wrangler
+.astro
+.firecrawl
+.vercel
+.env
+.env.*
+.dev.vars
+.DS_Store
+*.log
+.vite

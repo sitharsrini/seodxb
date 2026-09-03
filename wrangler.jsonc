@@ -1,0 +1,9 @@
+{
+  "name": "seodxb",
+  "pages_build_output_dir": "./dist/public",
+  "compatibility_date": "2026-08-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "BREVO_FROM_EMAIL": "hello@seodxb.com"
+  }
+}
