@@ -4,6 +4,12 @@
   "installCommand": "pnpm install",
   "framework": null,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/sitemap-*.xml", "destination": "/sitemap-$1.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/llms-full.txt", "destination": "/llms-full.txt" },
+    { "source": "/:path*/(.js|.css|.png|.jpg|.jpeg|.gif|.svg|.ico|.webp|.woff|.woff2|.ttf|.eot)", "destination": "/:path*/$1" },
+    { "source": "/:path*(?!/\\..*)", "destination": "/index.html" }
   ]
 }
