@@ -430,7 +430,26 @@ export default {
       }
     }
 
-    // ── Static assets ───────────────────────────────────────────────────────
-    return env.ASSETS.fetch(request);
+    // ── SPA routing: serve index.html for client-side routes ──────────────
+    // First check if it's a static file (has an extension)
+    if (/\.\w+$/.test(url.pathname)) {
+      return env.ASSETS.fetch(request);
+    }
+
+    // Try to fetch the requested asset
+    const response = await env.ASSETS.fetch(request);
+
+    // If not found (404), serve index.html for SPA routing
+    if (response.status === 404) {
+      const indexResponse = await env.ASSETS.fetch(
+        new Request(new URL("/index.html", url).toString(), request)
+      );
+      return new Response(indexResponse.body, {
+        status: 200,
+        headers: indexResponse.headers,
+      });
+    }
+
+    return response;
   },
 };
