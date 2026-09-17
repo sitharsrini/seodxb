@@ -1,5 +1,17 @@
 interface Env {
   RESEND_API_KEY: string;
+  LEADS_KV?: KVNamespace;
+}
+
+interface Lead {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  company_url?: string;
+  message: string;
+  timestamp: number;
+  date: string;
 }
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
@@ -20,6 +32,21 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         status: 400,
         headers,
       });
+    }
+
+    // Save lead to KV if available
+    if (env.LEADS_KV) {
+      const lead: Lead = {
+        id: `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        name: from_name,
+        email: reply_to,
+        phone,
+        company_url,
+        message,
+        timestamp: Date.now(),
+        date: new Date().toISOString(),
+      };
+      await env.LEADS_KV.put(lead.id, JSON.stringify(lead), { expirationTtl: 2592000 }); // 30 days
     }
 
     const res = await fetch("https://api.resend.com/emails", {

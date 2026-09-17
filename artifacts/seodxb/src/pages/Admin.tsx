@@ -3,10 +3,21 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, ExternalLink, Copy, Check } from "lucide-react";
+import { Search, ExternalLink, Copy, Check, Trash2, Eye, EyeOff, Loader2 } from "lucide-react";
 import { keywordPages } from "@/data/keywordPages";
 import { generatedBlogPosts } from "@/data/blogPosts";
 import { generatedBlogPosts2 } from "@/data/blogPosts2";
+
+interface Lead {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  company_url?: string;
+  message: string;
+  timestamp: number;
+  date: string;
+}
 
 const SITE = "https://seodxb.com";
 
@@ -110,11 +121,57 @@ function Row({ item }: { item: Item }) {
 }
 
 export function Admin() {
+  const [tab, setTab] = React.useState<"pages" | "leads">("pages");
   const [query, setQuery] = React.useState("");
   const [copied, setCopied] = React.useState(false);
+  const [leads, setLeads] = React.useState<Lead[]>([]);
+  const [loading, setLoading] = React.useState(false);
+  const [password, setPassword] = React.useState("");
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [authenticated, setAuthenticated] = React.useState(false);
 
   const q = query.trim().toLowerCase();
   const match = (i: Item) => !q || i.title.toLowerCase().includes(q) || i.path.toLowerCase().includes(q);
+
+  const fetchLeads = async (pwd: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/leads?auth=${encodeURIComponent(pwd)}`);
+      if (res.ok) {
+        const data = await res.json();
+        setLeads(data.leads || []);
+        setAuthenticated(true);
+      } else {
+        alert("Invalid password");
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Error loading leads");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteLead = async (leadId: string, pwd: string) => {
+    if (!confirm("Delete this lead?")) return;
+    try {
+      const res = await fetch(`/api/leads?id=${leadId}&auth=${encodeURIComponent(pwd)}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        setLeads(leads.filter((l) => l.id !== leadId));
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleTabChange = (newTab: "pages" | "leads") => {
+    setTab(newTab);
+    if (newTab === "leads" && leads.length === 0 && !authenticated) {
+      setPassword("");
+    }
+  };
 
   const allItems: Item[] = [
     ...staticPages, ...servicePages, ...hubPages, ...industryPages, ...keywordItems, ...blogPosts,
@@ -151,45 +208,164 @@ export function Admin() {
   return (
     <>
       <Helmet>
-        <title>All Pages &amp; Blogs | SEODXB Admin</title>
+        <title>Admin | SEODXB</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <div className="pt-28 pb-24 min-h-screen bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-2">
-            <h1 className="text-3xl font-black tracking-tight">Site Index</h1>
-            <Button onClick={copyAll} variant="outline" className="rounded-full gap-2">
-              {copied ? <><Check size={15} /> Copied</> : <><Copy size={15} /> Copy all URLs</>}
-            </Button>
-          </div>
-          <p className="text-gray-500 mb-6 text-sm">
-            {total} pages total. Click a title to open in-app, or the URL to open in a new tab.
-          </p>
-
-          <div className="relative mb-10 sticky top-20 z-10">
-            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <Input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search pages and blogs..."
-              className="pl-11 py-5 rounded-full border-gray-200 shadow-sm bg-white"
-            />
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+            <h1 className="text-3xl font-black tracking-tight">Admin Dashboard</h1>
           </div>
 
-          <Section title="Core Pages" items={staticPages} />
-          <Section title="Service Pages" items={servicePages} />
-          <Section title="Location Hubs" items={hubPages} />
-          <Section title="Industry Pages" items={industryPages} />
-          <Section title="Blog Posts" items={blogPosts} />
-
-          <div className="mt-12 mb-4">
-            <h2 className="text-xl font-black text-black">SEO Landing Pages ({keywordItems.length})</h2>
-            <p className="text-gray-500 text-sm">Grouped by region.</p>
+          <div className="flex gap-2 mb-8 border-b border-gray-200">
+            <button
+              onClick={() => handleTabChange("pages")}
+              className={`px-4 py-3 font-semibold border-b-2 transition-colors ${
+                tab === "pages"
+                  ? "border-primary text-primary"
+                  : "border-transparent text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              Pages ({total})
+            </button>
+            <button
+              onClick={() => handleTabChange("leads")}
+              className={`px-4 py-3 font-semibold border-b-2 transition-colors ${
+                tab === "leads"
+                  ? "border-primary text-primary"
+                  : "border-transparent text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              Leads ({leads.length})
+            </button>
           </div>
-          {keywordGroups.map((g) => (
-            <Section key={g.region} title={g.region} items={g.items} />
-          ))}
+
+          {tab === "pages" ? (
+            <>
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <p className="text-gray-500 text-sm">{total} pages total.</p>
+                <Button onClick={copyAll} variant="outline" className="rounded-full gap-2">
+                  {copied ? <><Check size={15} /> Copied</> : <><Copy size={15} /> Copy all URLs</>}
+                </Button>
+              </div>
+
+              <div className="relative mb-10 sticky top-20 z-10">
+                <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search pages..."
+                  className="pl-11 py-5 rounded-full border-gray-200 shadow-sm bg-white"
+                />
+              </div>
+
+              <Section title="Core Pages" items={staticPages} />
+              <Section title="Service Pages" items={servicePages} />
+              <Section title="Location Hubs" items={hubPages} />
+              <Section title="Industry Pages" items={industryPages} />
+              <Section title="Blog Posts" items={blogPosts} />
+
+              <div className="mt-12 mb-4">
+                <h2 className="text-xl font-black text-black">SEO Landing Pages ({keywordItems.length})</h2>
+                <p className="text-gray-500 text-sm">Grouped by region.</p>
+              </div>
+              {keywordGroups.map((g) => (
+                <Section key={g.region} title={g.region} items={g.items} />
+              ))}
+            </>
+          ) : (
+            <div>
+              {!authenticated ? (
+                <div className="max-w-md mx-auto py-12">
+                  <p className="text-gray-600 mb-4 text-sm">Enter password to view leads:</p>
+                  <div className="flex gap-2">
+                    <div className="relative flex-1">
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Admin password"
+                        className="pr-10"
+                        onKeyPress={(e) => e.key === "Enter" && fetchLeads(password)}
+                      />
+                      <button
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      >
+                        {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                      </button>
+                    </div>
+                    <Button
+                      onClick={() => fetchLeads(password)}
+                      disabled={loading || !password}
+                      className="gap-2"
+                    >
+                      {loading && <Loader2 size={16} className="animate-spin" />}
+                      Load
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  {leads.length === 0 ? (
+                    <p className="text-gray-500 text-center py-12">No leads yet</p>
+                  ) : (
+                    <div className="space-y-4">
+                      {leads.map((lead) => (
+                        <div
+                          key={lead.id}
+                          className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors"
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div>
+                              <p className="font-semibold text-gray-900">{lead.name}</p>
+                              <p className="text-sm text-gray-500">{new Date(lead.date).toLocaleString()}</p>
+                            </div>
+                            <button
+                              onClick={() => deleteLead(lead.id, password)}
+                              className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors"
+                            >
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                          <div className="space-y-2 text-sm mb-3">
+                            <p>
+                              <span className="text-gray-500">Email:</span>{" "}
+                              <a href={`mailto:${lead.email}`} className="text-primary hover:underline">
+                                {lead.email}
+                              </a>
+                            </p>
+                            {lead.phone && (
+                              <p>
+                                <span className="text-gray-500">Phone:</span> {lead.phone}
+                              </p>
+                            )}
+                            {lead.company_url && (
+                              <p>
+                                <span className="text-gray-500">Company:</span>{" "}
+                                <a
+                                  href={lead.company_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-primary hover:underline"
+                                >
+                                  {lead.company_url}
+                                </a>
+                              </p>
+                            )}
+                          </div>
+                          <div className="bg-gray-50 rounded p-3 border border-gray-100">
+                            <p className="text-sm text-gray-700 whitespace-pre-wrap">{lead.message}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>
