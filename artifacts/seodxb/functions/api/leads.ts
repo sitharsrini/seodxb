@@ -21,7 +21,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
     const url = new URL(request.url);
     const auth = url.searchParams.get("auth");
 
-    if (!auth || auth !== (process.env.ADMIN_PASSWORD || "admin123")) {
+    if (!auth || auth !== (process.env.ADMIN_PASSWORD || "1234")) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers,
@@ -68,7 +68,7 @@ export const onRequestDelete: PagesFunction<Env> = async ({ request, env }) => {
     const auth = url.searchParams.get("auth");
     const leadId = url.searchParams.get("id");
 
-    if (!auth || auth !== (process.env.ADMIN_PASSWORD || "admin123")) {
+    if (!auth || auth !== (process.env.ADMIN_PASSWORD || "1234")) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers,
