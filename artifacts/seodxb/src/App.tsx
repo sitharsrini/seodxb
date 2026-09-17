@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
@@ -57,6 +57,12 @@ import { Website20AED } from "@/pages/Website20AED";
 
 const queryClient = new QueryClient();
 
+function Redirect({ to }: { to: string }) {
+  const [, setLocation] = useLocation();
+  React.useEffect(() => setLocation(to), [to, setLocation]);
+  return null;
+}
+
 function Router() {
   return (
     <Switch>
@@ -66,6 +72,7 @@ function Router() {
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/contact" component={Contact} />
+      <Route path="/leads" component={() => <Redirect to="/seo-for-lead-generation" />} />
       <Route path="/on-page-seo" component={OnPageSEO} />
       <Route path="/technical-seo" component={TechnicalSEO} />
       <Route path="/aeo" component={AEO} />
