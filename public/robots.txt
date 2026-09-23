@@ -1,5 +1,3 @@
+# Crawling is allowed so search engines can see that old pages are gone (410) and noindexed.
 User-agent: *
-Disallow: /
-
-# Site under reconstruction with new quality content
-# All pages are noindexed during this period
+Allow: /
