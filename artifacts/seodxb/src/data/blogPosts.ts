@@ -969,6 +969,198 @@ for (const f of fundamentals) {
   });
 }
 
+// ---- High-impact authority-building posts ---------------------------------
+const authorityPosts: Spec[] = [
+  {
+    slug: "building-eeat-for-generative-search",
+    category: "GEO",
+    title: "Building E-E-A-T for Generative Search: How to Become a Source AI Models Trust and Cite",
+    excerpt: clampExcerpt("E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is how generative AI engines decide whether to cite your business by name. Learn the four-pillar framework to build AI search credibility."),
+    hook: [
+      "A customer asks ChatGPT: 'Which SEO agency should I hire in Dubai?' The model doesn't return a list. It synthesises one answer and names 3-5 brands it deems credible enough to cite by name. If yours isn't one of them, you've lost the deal before the search even started.",
+      "E-E-A-T is how you become a source generative engines cite. It's not new. Google introduced it in 2023. But for AI search, E-E-A-T is not optional. It's the entry price.",
+    ],
+    sections: [
+      {
+        h: "The Four Pillars of E-E-A-T",
+        p: [
+          "Experience is demonstrated real-world track record. Create detailed case studies that show starting situation, specific approach, measurable results, and timeline.",
+          "Expertise is known for deep knowledge. Publish original research, develop a named methodology, create definitive guides, and add author credentials prominently to every piece.",
+          "Authoritativeness is being recognized by others. Get mentioned in authority publications, build citation networks on trusted directories, earn backlinks from DA 40+ sites, and appear in media.",
+          "Trustworthiness is proven reliability. Collect verified reviews, make your business verifiable with clear team info, ensure consistency across platforms, be transparent about limitations, and fact-check your content.",
+        ],
+      },
+      {
+        h: "Building Experience: Case Studies and Process",
+        p: ["Start with 3+ detailed case studies showing client name, challenge, your approach, measurable results, and timeline. Share your methodology transparently—how you work, tools you use, timelines, success measures. Get client testimonials with names and specific results, not generic praise."],
+        list: [
+          "Create case studies with before/after metrics and outcomes",
+          "Document your process step-by-step for buyers to understand",
+          "Collect testimonials that include specific, quantifiable results",
+          "State years in business and number of clients served",
+        ],
+      },
+      {
+        h: "Building Expertise: Research, Frameworks, and Authority Content",
+        p: ["Conduct original research AI models will cite. Develop a named framework or methodology unique to your approach. Create definitive guides (2000+ words) that become benchmarks in your field. Include author credentials—name, title, years of experience, specialization."],
+        list: [
+          "Publish original research with raw data and findings",
+          "Give your methodology a memorable name and use it consistently",
+          "Write comprehensive guides that become link magnets",
+          "Add author credentials to every content piece",
+        ],
+      },
+      {
+        h: "Building Authoritativeness: Media, Citations, and Backlinks",
+        p: ["Get mentioned in authority publications (SearchEngineLand, Forbes, industry publications). Build a citation network through industry directories, local listings, professional associations, and awards. Earn backlinks from DA 40+ sites with your name/brand in anchor text. Build media presence through interviews, podcasts, webinars, and press features."],
+        list: [
+          "Pitch guest posts to high-authority publications in your field",
+          "Get listed on 5+ industry directories with complete profiles",
+          "Earn backlinks from domain authority 40+ sites",
+          "Appear in media interviews, podcasts, and press coverage",
+        ],
+      },
+      {
+        h: "Building Trustworthiness: Reviews, Consistency, and Transparency",
+        p: ["Collect verified reviews on Google (target 25+ at 4.0+ rating), Trustpilot, and industry platforms. Create a Trust Center page with team bios, credentials, case studies, privacy policy, and security info. Ensure consistency across all platforms—same business name, address, phone, service descriptions. Be transparent about what you specialize in and what you don't. Fact-check all claims before publishing."],
+        list: [
+          "Collect 25+ verified reviews with 4.0+ rating minimum",
+          "Audit and fix consistency across 20 platforms",
+          "Create a Trust Center with team credentials and case studies",
+          "Be honest about limitations and what you don't do",
+        ],
+      },
+      {
+        h: "Measuring E-E-A-T Improvement",
+        p: ["Track mentions in AI answers (query ChatGPT, Perplexity regularly). Monitor review score and count growth. Track backlinks from authority sites. Count third-party citations. Measure search visibility for branded and unbranded queries. The goal: demonstrate that your E-E-A-T is rising and AI citation follows 4-8 weeks after."],
+      },
+    ],
+    takeaway: "E-E-A-T is not a one-time project. It's a continuous investment in being recognized as trustworthy by both AI models and human decision-makers. The brands building E-E-A-T now will own generative search visibility in 2027.",
+  },
+  {
+    slug: "dominating-local-ai-search-dubai",
+    category: "Local SEO",
+    title: "Dominating Local AI Search in Dubai: How to Get Your Business Cited by ChatGPT, Perplexity & Gemini",
+    excerpt: clampExcerpt("Local AI search is different from local SEO. Learn the five-phase playbook to get your Dubai business cited by ChatGPT, Perplexity, and Gemini when customers search for your service."),
+    hook: [
+      "Three years ago, a customer searching for 'best SEO agency in Dubai' would open Google, scroll through paid ads and organic results, and click through 3-5 sites. Today, that same customer asks ChatGPT the same question inside the app. The model synthesises one answer, names 2-3 agencies by name, and the customer never leaves ChatGPT.",
+      "Local AI search is different from local SEO. Google Maps visibility doesn't translate to ChatGPT mentions. A high Google Business rating doesn't guarantee an AI citation. The signals are different. The strategy is different. This is how to win it.",
+    ],
+    sections: [
+      {
+        h: "Phase 1: Entity Consistency (Week 1-2)",
+        p: ["Get your business information 100% consistent across 15+ platforms. Audit your presence for consistency in business name, phone, address, service description, website URL, and hours."],
+        list: [
+          "Business name spelled identically everywhere (not 'SEODXB' on one site, 'SEO DXB' on another)",
+          "Phone number the same everywhere (not mixing +971, 04, or different extensions)",
+          "Address formatted identically (all say 'Dubai, UAE' or all say 'Dubai, United Arab Emirates')",
+          "Service description matches across platforms",
+          "Website URL correct everywhere, linking to current domain",
+          "Hours listed consistently if you have them",
+        ],
+      },
+      {
+        h: "Phase 2: Local Authority Building (Week 3-8)",
+        p: ["Get mentioned in local publications like Gulf News, Khaleej Times, Arabian Business, Zawya. Build a partnership network by getting listed on client websites and local guides. Each media mention and partnership validates your entity to AI models."],
+        list: [
+          "Contact editors with pitches on timely local topics",
+          "Get listed on 3-5 local business publications",
+          "Partner with complementary businesses for mutual mentions",
+          "Get included in local guides and tourism sites",
+        ],
+      },
+      {
+        h: "Phase 3: Review and Rating Authority (Week 3-ongoing)",
+        p: ["Set goals per platform: Google (30+ reviews, 4.5+ rating), Trustpilot (15+ reviews, 4.0+ rating), industry-specific platforms (10+ reviews). Email clients after project completion with review links. Follow up with those who haven't left reviews. For restaurants/retail, include review links on receipts."],
+        list: [
+          "Email clients after completing work: 'We'd love your feedback'",
+          "Make it easy with direct links, not search instructions",
+          "Incentivize slightly: 'Reviews help us serve your community better'",
+          "Follow up: 'Haven't left a review yet? Here's the link again'",
+        ],
+      },
+      {
+        h: "Phase 4: Local Content Strategy (Week 4-ongoing)",
+        p: ["Create content that answers local queries. For services: 'SEO Mistakes Dubai Businesses Make,' 'Why Local SEO in Dubai Is Different.' For restaurants: 'Best Delivery Apps in Dubai 2026,' 'Authentic Food in Dubai Without Tourist Traps.' For real estate: 'Best Neighborhoods for Families/Young Professionals,' 'Dubai Property Prices 2026.' Each post should be 2000+ words, mention Dubai/UAE specifically, and include local examples."],
+        list: [
+          "Write posts for services, restaurants, or real estate specific to Dubai",
+          "Answer questions locals actually ask",
+          "Link to your business naturally, not forced",
+          "Make each post 2000+ words with local data and examples",
+        ],
+      },
+      {
+        h: "Phase 5: Local Schema Markup (Week 2-3)",
+        p: ["Add LocalBusiness schema to your website header. Include name, address, telephone, email, URL, hours, rating, description. This tells AI models exactly who you are, where you are, and how credible you are."],
+      },
+    ],
+    takeaway: "Local AI search is less competitive than global search today, but that window is closing fast. A business that gets its entity and authority right now will have a 6-12 month head start before competitors catch up. Start this week.",
+  },
+  {
+    slug: "tracking-geo-performance",
+    category: "Analytics",
+    title: "Tracking GEO Performance: How to Measure ROI from Generative Search Visibility",
+    excerpt: clampExcerpt("Generative search doesn't have a ranking dashboard. Learn how to track citations, measure traffic attribution, build authority metrics, and calculate ROI from GEO work—with manual and automated approaches."),
+    hook: [
+      "Traditional SEO has a clear metric: ranking position. You rank #5 for a keyword, your agency moves you to #2, you can prove ROI. Generative Engine Optimization is harder to track. ChatGPT doesn't have a public ranking system. Perplexity doesn't publish visibility metrics.",
+      "Yet GEO is generating real revenue. Businesses that get cited by ChatGPT report 2-3x more qualified inbound leads. But without measurement, you can't prove it to stakeholders, you can't optimize it, and you can't scale it. Here is the measurement framework.",
+    ],
+    sections: [
+      {
+        h: "Layer 1: Citation Visibility (The Foundation)",
+        p: ["Track how often your brand appears in AI-generated answers. Set up a weekly spreadsheet tracking 5 key queries across ChatGPT, Perplexity, Gemini, Claude, Copilot. Log whether you're mentioned, your position in the answer, and which competitors are named."],
+        list: [
+          "Run 5 core queries weekly on each AI platform (15 min commitment)",
+          "Log: mentioned Y/N, position in answer, how you're described",
+          "Track competitors named alongside you",
+          "Expect first mentions in 6-12 weeks with consistent effort",
+        ],
+      },
+      {
+        h: "Layer 2: Traffic Attribution (The Revenue Signal)",
+        p: ["Use UTM parameters to track AI traffic separately. Set up query parameter utm_source=ai-search, utm_medium=citation, utm_campaign=[platform]. In Google Analytics, create a segment for AI search traffic and track conversion rate, session duration, pages per session. Track which AI platform sends highest quality leads."],
+        list: [
+          "Add UTM tags: utm_source=ai-search&utm_campaign=chatgpt, etc.",
+          "Create GA4 segment for AI-sourced traffic",
+          "Track: conversion rate, session duration, pages per session",
+          "Use phone tracking to attribute calls by source",
+        ],
+      },
+      {
+        h: "Layer 3: Entity Authority Metrics (The Trust Indicators)",
+        p: ["Track leading indicators that predict citations 4-8 weeks out. Monthly monitor: review count and rating (Google 50+ at 4.5+, Trustpilot 25+ at 4.0+), new backlinks from DA 40+ sites, brand consistency across platforms (audit 10 key platforms monthly), content activity (posts published and updated)."],
+        list: [
+          "Google: 50+ reviews at 4.5+ rating target",
+          "Trustpilot: 25+ reviews at 4.0+ rating target",
+          "New DA 40+ backlinks per month",
+          "100% consistency across key platforms",
+        ],
+      },
+      {
+        h: "Building Your GEO Dashboard",
+        p: ["Use Google Sheets for tracking and Data Studio for visualization. Create a simple table with date, query, platform mentions, traffic, leads, reviews, backlinks. Update weekly with manual audit results. Then build a Data Studio dashboard showing citation trends, traffic waterfall, authority metrics, and ROI."],
+      },
+      {
+        h: "Calculating ROI",
+        p: [
+          "Example calculation: 15 leads per month from AI at 40% conversion = 6 clients. At $5,000 average value = $30,000 monthly revenue. If your GEO effort costs $2,000/month, that's 15x return on investment. Track this monthly and share with stakeholders.",
+        ],
+      },
+      {
+        h: "Advanced Metrics (6+ Months In)",
+        p: [
+          "Citation Share of Voice: (Your citations / Total mentions by all competitors) × 100. Target: 30%+ in your category.",
+          "Citation Quality Score: Named mentions × 3 + hyperlinked mentions × 2 + contextual mentions × 1. Target 30+.",
+          "Answer Position Value: Weight position 1 (primary rec) as 3 points, position 2-3 as 2 points, position 4+ as 1 point.",
+          "Platform-Specific ROI: Track revenue per platform divided by volume per platform to find which AI platforms send highest quality leads.",
+        ],
+      },
+    ],
+    takeaway: "Start with manual tracking (15 minutes per week). Once you have 8-12 weeks of data proving ROI, invest in automation tools like Semrush or AirOps. The best GEO metric is the one you actually track consistently.",
+  },
+];
+specs.push(...authorityPosts);
+
 // ─── assemble final posts ────────────────────────────────────────────────────
 
 function specToPost(spec: Spec, index: number): GenBlogPost {
