@@ -1,3 +1,5 @@
-# Crawling is allowed so search engines can see that old pages are gone (410) and noindexed.
 User-agent: *
 Allow: /
+Disallow: /api/
+
+Sitemap: https://seodxb.com/sitemap.xml
