@@ -1,38 +1,238 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0f1d2e;
-  --color-ink-soft: #4a5868;
-  --color-paper: #fbfaf7;
-  --color-sand: #f2eee6;
-  --color-line: #e4ded3;
-  --color-accent: #e0592a;
-  --color-accent-dark: #c2461b;
+  --color-ink: #0a1f44;
+  --color-ink-soft: #4b5d80;
+  --color-paper: #ffffff;
+  --color-sand: #f0f6ff;
+  --color-line: #dce6f7;
+  --color-brand: #1d5bff;
+  --color-brand-dark: #0b3fc7;
+  --color-navy: #071d52;
+  --color-mint: #bbf7d0;
+  --color-mint-strong: #4ade80;
+  --color-mint-dark: #047857;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", ui-serif, Georgia, serif;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-mint);
+  color: var(--color-navy);
 }
 
 @layer components {
+  .btn-primary,
+  .btn-accent,
+  .btn-ghost,
+  .btn-ghost-light {
+    @apply relative inline-flex items-center overflow-hidden rounded-full font-medium transition-all duration-300;
+  }
   .btn-primary {
-    @apply inline-flex items-center rounded-full bg-ink px-5 py-2.5 font-medium text-white transition-colors hover:bg-ink/85;
+    @apply bg-brand px-5 py-2.5 text-white shadow-lg shadow-brand/20 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-brand/40;
   }
   .btn-accent {
-    @apply inline-flex items-center rounded-full bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-dark;
+    @apply bg-mint-strong px-6 py-3 text-navy shadow-lg shadow-mint-strong/30 hover:-translate-y-0.5 hover:bg-mint hover:shadow-mint-strong/50;
   }
   .btn-ghost {
-    @apply inline-flex items-center rounded-full border border-ink/20 px-6 py-3 font-medium text-ink transition-colors hover:border-ink/50;
+    @apply border border-brand/25 bg-white/70 px-6 py-3 text-ink backdrop-blur hover:-translate-y-0.5 hover:border-brand;
   }
   .btn-ghost-light {
-    @apply inline-flex items-center rounded-full border border-white/30 px-6 py-3 font-medium text-white transition-colors hover:border-white/60;
+    @apply border border-white/30 px-6 py-3 text-white hover:-translate-y-0.5 hover:border-mint hover:text-mint;
+  }
+  /* Light sweep across buttons on hover. */
+  .btn-primary::after,
+  .btn-accent::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.45) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+  }
+  .btn-primary:hover::after,
+  .btn-accent:hover::after {
+    transform: translateX(120%);
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-mint-strong;
   }
   .field {
-    @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-ink focus:ring-2 focus:ring-ink/10;
+    @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/10;
+  }
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-brand) 0%, #3b82f6 45%, var(--color-mint-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Card with a glow that follows the cursor (position set from JS). */
+  .spotlight {
+    @apply relative overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/10;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(74 222 128 / 0.16), rgb(29 91 255 / 0.08) 40%, transparent 70%);
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgb(29 91 255 / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(29 91 255 / 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 75%);
+  }
+  .blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+    animation: blob 18s ease-in-out infinite alternate;
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .gradient-shift {
+    background: linear-gradient(120deg, var(--color-navy), var(--color-brand-dark), var(--color-brand), #0f766e, var(--color-navy));
+    background-size: 300% 300%;
+    animation: gradient-shift 14s ease infinite;
+  }
+  .marquee {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .word-in {
+    display: inline-block;
+    animation: word-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .pulse-dot {
+    animation: pulse-dot 2s ease-out infinite;
+  }
+}
+
+/* Scroll reveal. Hidden only when JS is running, so content is always visible to crawlers and no-JS users. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.js [data-reveal="left"] {
+  transform: translateX(-32px);
+}
+.js [data-reveal="scale"] {
+  transform: scale(0.94);
+}
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Process steps: the top rule draws in when revealed. */
+.step-line {
+  position: relative;
+}
+.step-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-brand), var(--color-mint-strong));
+  transform-origin: left;
+}
+.js .step-line::before {
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--d, 0ms) + 150ms);
+}
+.js .step-line.is-visible::before {
+  transform: scaleX(1);
+}
+
+.pop-in {
+  animation: pop-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.check-draw path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: draw 0.6s 0.35s ease-out forwards;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes blob {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.12); }
+  100% { transform: translate(-30px, 25px) scale(0.95); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.6em) rotateX(-40deg); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgb(74 222 128 / 0.7); }
+  100% { box-shadow: 0 0 0 10px rgb(74 222 128 / 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  .js .step-line::before {
+    transform: scaleX(1);
+  }
+  .check-draw path {
+    stroke-dashoffset: 0;
   }
 }

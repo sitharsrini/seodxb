@@ -1,5 +1,6 @@
-import { CtaBand } from "../components/Layout";
+import { CtaBand, PageHero } from "../components/Layout";
 import { LISTI_URL } from "../site";
+import { delay } from "../motion";
 
 const PRINCIPLES = [
   { title: "Advice before invoices", body: "If a channel will not work for your business, we say so, even when it means a smaller engagement." },
@@ -11,51 +12,54 @@ const PRINCIPLES = [
 export default function About() {
   return (
     <>
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <p className="eyebrow">About</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            A Dubai marketing consultancy built for businesses that want accountable growth
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About"
+        title={<>A Dubai marketing consultancy built for businesses that want <span className="text-gradient">accountable growth</span></>}
+      />
 
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.2fr_1fr]">
         <div className="space-y-5 text-lg leading-relaxed text-ink-soft">
-          <p>
+          <p data-reveal>
             SEODXB started as a search agency. Working with businesses across the UAE, we kept seeing the same pattern:
             good search work held back by unclear positioning, untracked ad spend and websites that did not convert.
           </p>
-          <p>
+          <p data-reveal style={delay(1)}>
             So we became a marketing consultancy. We still do the hands-on work in search, ads, websites and content, but
             every engagement now starts with strategy: who you sell to, what makes you the better choice and which channels
             deserve your budget.
           </p>
-          <p>
+          <p data-reveal style={delay(2)}>
             Our clients are mostly established small and mid-sized businesses in professional services, real estate,
             healthcare, hospitality and ecommerce who want a senior partner rather than another supplier.
           </p>
         </div>
-        <aside className="rounded-2xl bg-ink p-8 text-white">
-          <p className="eyebrow">Powered by Listi</p>
-          <p className="mt-4 font-display text-2xl font-semibold leading-snug">SEODXB is powered by Listi</p>
-          <p className="mt-4 text-sm leading-relaxed text-white/75">
-            Listi is a UAE business platform that helps companies get listed, found and contacted. SEODXB brings the
-            consultancy and hands-on marketing that help those businesses grow further.
-          </p>
-          <a href={LISTI_URL} target="_blank" rel="noopener" className="btn-ghost-light mt-6 text-sm">
-            Visit Listi
-          </a>
+        <aside className="gradient-shift relative overflow-hidden rounded-3xl p-8 text-white shadow-2xl shadow-brand/20" data-reveal="scale" style={delay(1)}>
+          <div className="blob -right-16 -top-16 h-48 w-48 bg-mint-strong/30" aria-hidden="true" />
+          <div className="relative">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-mint">
+              <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint-strong" aria-hidden="true" />
+              Powered by Listi
+            </p>
+            <p className="mt-4 font-display text-2xl font-semibold leading-snug">SEODXB is powered by Listi</p>
+            <p className="mt-4 text-sm leading-relaxed text-white/80">
+              Listi is a UAE business platform that helps companies get listed, found and contacted. SEODXB brings the
+              consultancy and hands-on marketing that help those businesses grow further.
+            </p>
+            <a href={LISTI_URL} target="_blank" rel="noopener" className="btn-ghost-light mt-6 text-sm">
+              Visit Listi
+            </a>
+          </div>
         </aside>
       </section>
 
       <section className="bg-sand">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <h2 className="font-display text-3xl font-semibold">How we work with clients</h2>
+          <h2 className="font-display text-3xl font-semibold" data-reveal>How we work with clients</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {PRINCIPLES.map((p) => (
-              <div key={p.title} className="rounded-xl border border-line bg-paper p-7">
-                <h3 className="text-lg font-semibold">{p.title}</h3>
+            {PRINCIPLES.map((p, i) => (
+              <div key={p.title} className="spotlight rounded-2xl border border-line bg-white p-7" data-reveal style={delay(i + 1, 110)}>
+                <span className="h-1 w-10 rounded-full bg-gradient-to-r from-brand to-mint-strong block" aria-hidden="true" />
+                <h3 className="mt-4 text-lg font-semibold">{p.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">{p.body}</p>
               </div>
             ))}

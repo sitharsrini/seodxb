@@ -1,4 +1,5 @@
-import { CtaBand } from "../components/Layout";
+import { CtaBand, PageHero } from "../components/Layout";
+import { delay } from "../motion";
 
 const KPIS = [
   { channel: "Strategy", kpis: "Cost per qualified lead, pipeline value, payback period per channel" },
@@ -29,25 +30,22 @@ const COMMITMENTS = [
 export default function Results() {
   return (
     <>
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <p className="eyebrow">Results</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            We measure success the way your finance team does
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Good marketing shows up as enquiries, sales and a lower cost to win each customer. This is how we set targets,
-            report on them and decide where your budget goes next.
-          </p>
-        </div>
-      </section>
+      <PageHero eyebrow="Results" title={<>We measure success the way your <span className="text-gradient">finance team</span> does</>}>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
+          Good marketing shows up as enquiries, sales and a lower cost to win each customer. This is how we set targets,
+          report on them and decide where your budget goes next.
+        </p>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <h2 className="font-display text-3xl font-semibold">Our commitments on every engagement</h2>
+        <h2 className="font-display text-3xl font-semibold" data-reveal>Our commitments on every engagement</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {COMMITMENTS.map((c) => (
-            <div key={c.title} className="rounded-xl border border-line bg-white p-7">
-              <h3 className="text-lg font-semibold">{c.title}</h3>
+          {COMMITMENTS.map((c, i) => (
+            <div key={c.title} className="spotlight rounded-2xl border border-line bg-white p-7" data-reveal style={delay(i + 1, 110)}>
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-dark font-display text-sm font-semibold text-white shadow-lg shadow-brand/25">
+                {i + 1}
+              </span>
+              <h3 className="mt-4 text-lg font-semibold">{c.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">{c.body}</p>
             </div>
           ))}
@@ -56,10 +54,10 @@ export default function Results() {
 
       <section className="bg-sand">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <h2 className="font-display text-3xl font-semibold">What we track, by service</h2>
-          <div className="mt-8 overflow-hidden rounded-xl border border-line bg-paper">
+          <h2 className="font-display text-3xl font-semibold" data-reveal>What we track, by service</h2>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-line bg-white shadow-xl shadow-brand/5" data-reveal="scale" style={delay(1)}>
             <table className="w-full text-left text-sm">
-              <thead className="bg-white">
+              <thead className="bg-gradient-to-r from-brand to-brand-dark text-white">
                 <tr>
                   <th scope="col" className="px-5 py-4 font-semibold">Service</th>
                   <th scope="col" className="px-5 py-4 font-semibold">Primary KPIs</th>
@@ -67,7 +65,7 @@ export default function Results() {
               </thead>
               <tbody>
                 {KPIS.map((k) => (
-                  <tr key={k.channel} className="border-t border-line">
+                  <tr key={k.channel} className="border-t border-line transition-colors hover:bg-mint/30">
                     <th scope="row" className="px-5 py-4 align-top font-medium">{k.channel}</th>
                     <td className="px-5 py-4 text-ink-soft">{k.kpis}</td>
                   </tr>
@@ -80,8 +78,8 @@ export default function Results() {
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
-          <h2 className="font-display text-3xl font-semibold">Case studies</h2>
-          <div className="space-y-4 leading-relaxed text-ink-soft">
+          <h2 className="font-display text-3xl font-semibold" data-reveal="left">Case studies</h2>
+          <div className="space-y-4 leading-relaxed text-ink-soft" data-reveal style={delay(1)}>
             <p>
               Many of our clients prefer not to publish their numbers. We share relevant, anonymised case studies during
               your consultation, matched to your industry and goals.
