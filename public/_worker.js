@@ -4,6 +4,8 @@ const SUPABASE_URL = "https://khqjknkcrenlihjtaekf.supabase.co";
 const SUPABASE_ANON =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtocWprbmtjcmVubGloanRhZWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1OTQ4ODMsImV4cCI6MjA4OTE3MDg4M30.c7GaLdHO5Sk-MXafvxfYRpAWTNHhI3bduhczDjXEgLw";
 const NTFY_TOPIC = "seodxb-leads-a7k2x9";
+// Keep in sync with ROUTES in src/site.ts.
+const PAGES = new Set(["/", "/services", "/results", "/about", "/contact"]);
 
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), { status, headers: { "Content-Type": "application/json" } });
@@ -78,8 +80,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    const res = await env.ASSETS.fetch(request);
-    if (res.status !== 404) return res;
+    const isPage = PAGES.has(url.pathname);
+    const isFile = /\.\w+$/.test(url.pathname);
+    if (isPage || isFile) {
+      const res = await env.ASSETS.fetch(request);
+      if (res.status !== 404) return res;
+    }
 
     return new Response(GONE_HTML, {
       status: 410,
