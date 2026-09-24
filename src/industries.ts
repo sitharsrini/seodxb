@@ -12,6 +12,7 @@ export interface Industry {
   measure: string[];
   faqs: { q: string; a: string }[];
   postSlug: string;
+  extraPostSlugs?: string[];
 }
 
 export const INDUSTRIES: Industry[] = [
@@ -686,6 +687,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "why-schools-in-dubai-need-marketing",
+    extraPostSlugs: ["nursery-marketing-dubai-more-enrolments", "university-marketing-uae-student-recruitment"],
   },
 ];
 

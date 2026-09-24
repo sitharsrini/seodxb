@@ -669,7 +669,7 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h2", text: "Nurseries, universities and training providers", id: "others" },
       {
         t: "p",
-        text: "The same principles apply. Nurseries compete very locally, universities face longer decision cycles and more international audiences, and training centres often need faster, offer-led campaigns. In every case: be found, be trusted, make enquiring easy and measure what works.",
+        text: "The same principles apply. Nurseries compete very locally, universities face longer decision cycles and more international audiences, and training centres often need faster, offer-led campaigns. In every case: be found, be trusted, make enquiring easy and measure what works. We cover the details in our guides to [nursery marketing](/blog/nursery-marketing-dubai-more-enrolments) and [university student recruitment](/blog/university-marketing-uae-student-recruitment).",
       },
       {
         t: "p",
@@ -688,6 +688,211 @@ export const INDUSTRY_POSTS: Post[] = [
       {
         q: "Should schools publish fees online?",
         a: "Publishing fees saves time for both parents and admissions teams and usually improves the quality of enquiries.",
+      },
+    ],
+  },
+  {
+    slug: "nursery-marketing-dubai-more-enrolments",
+    title: "Nursery Marketing in Dubai: How to Fill Places with Local Families",
+    description:
+      "How nurseries and early years centres in Dubai can win more tours and enrolments with local search, trust-building content, reviews and fast WhatsApp follow-up.",
+    category: "Industry Guides",
+    date: D,
+    updated: D,
+    answer:
+      "Nurseries in Dubai fill places by being easy to find and easy to trust for families nearby. The steps that work are a complete Google Business Profile and strong map visibility in your area, a website that clearly shows ages, hours, fees, curriculum, meals, staff ratios and safety measures, genuine parent reviews, real photos and videos of daily life, a simple tour booking with fast WhatsApp replies, and marketing timed to the busiest enrolment months.",
+    keywords: ["nursery marketing Dubai", "nursery enrolment", "early years marketing UAE", "nursery SEO", "nursery near me Dubai"],
+    takeaways: [
+      "Nursery choice is local: most families search within a short drive of home or work.",
+      "Parents decide on trust and safety first, then curriculum, hours and fees.",
+      "Tours convert; make booking one easy and follow up the same day.",
+      "Reviews from local parents are your most persuasive marketing.",
+    ],
+    body: [
+      {
+        t: "p",
+        text: "Choosing a nursery is one of the most emotional decisions a parent makes. They are handing over a baby or toddler for most of the day, often for the first time. That makes nursery marketing different from school marketing: it is more local, more personal and far more focused on trust and care than on results or rankings.",
+      },
+      { t: "h2", text: "How parents choose a nursery", id: "how-parents-choose" },
+      {
+        t: "ul",
+        items: [
+          "**Location**: close to home or work, with an easy drop-off.",
+          "**Trust and safety**: qualified staff, ratios, security, hygiene and how the nursery communicates.",
+          "**Care and routine**: meals, naps, outdoor time, and how babies and toddlers are supported.",
+          "**Curriculum**: EYFS, Montessori, Reggio Emilia or other approaches, and bilingual options.",
+          "**Practicalities**: hours, extended care, holiday camps, fees and what they include.",
+        ],
+      },
+      {
+        t: "p",
+        text: "Most parents search things like \"nursery near me\", \"British nursery in Mirdif\" or \"Montessori nursery JLT\", and increasingly ask AI assistants for recommendations in their area. Then they shortlist two or three and book tours.",
+      },
+      { t: "h2", text: "Step 1: Own your local search results", id: "local" },
+      {
+        t: "p",
+        text: "Your Google Business Profile is often the first thing parents see. Use the exact licensed name, the right category, accurate hours, a pin on the correct building, and plenty of real photos of classrooms, outdoor areas and activities (without children's faces unless you have parental consent). Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers every setting.",
+      },
+      { t: "h2", text: "Step 2: Answer every question on your website", id: "website" },
+      {
+        t: "p",
+        text: "Parents want details before they call. Make these easy to find on your website and on mobile:",
+      },
+      {
+        t: "ul",
+        items: [
+          "Age groups you accept and class structure.",
+          "Opening hours, extended hours and holiday programmes.",
+          "Fees, registration costs and what is included, such as meals, nappies or transport.",
+          "Curriculum and a typical day.",
+          "Staff qualifications and ratios.",
+          "Safety, security, health and communication with parents, such as daily updates.",
+        ],
+      },
+      {
+        t: "callout",
+        title: "Show real life, with consent",
+        text: "Photos and short videos of real activities build more trust than stock images. Always follow your privacy and consent policies, and never show children's faces without written parental permission.",
+      },
+      { t: "h2", text: "Step 3: Collect parent reviews", id: "reviews" },
+      {
+        t: "p",
+        text: "Local parents trust other local parents. Ask happy families for Google reviews at natural moments, such as after the first month or at the end of term, and reply to every review warmly and professionally.",
+      },
+      { t: "h2", text: "Step 4: Make the tour easy to book", id: "tours" },
+      {
+        t: "p",
+        text: "The tour is where most enrolment decisions are made. Offer online tour booking and a WhatsApp button on every page, reply the same day, send a reminder, and follow up after the visit. Track which searches, ads and pages bring tour bookings. Our [lead tracking guide](/blog/track-whatsapp-call-form-leads-uae) explains how.",
+      },
+      { t: "h2", text: "Step 5: Time your campaigns", id: "timing" },
+      {
+        t: "p",
+        text: "Nurseries enrol throughout the year, but demand usually rises around the start of the academic year and after holidays when families return or relocate. Start local search ads and social campaigns a few weeks before those peaks, targeted to families within a realistic distance.",
+      },
+      { t: "h2", text: "Step 6: Stay in touch with families on the waiting list", id: "waiting-list" },
+      {
+        t: "p",
+        text: "Many parents enquire months before they need a place. Keep a simple list, send occasional updates such as open mornings or new classes, and invite them back when a place opens.",
+      },
+      {
+        t: "p",
+        text: "See how we support nurseries and schools on our [education marketing page](/industries/education), or read our guide on [why schools in Dubai need marketing](/blog/why-schools-in-dubai-need-marketing).",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the best marketing channel for a nursery?",
+        a: "For most nurseries, local search and Google Business Profile bring the highest-intent families, supported by reviews, Instagram and targeted local ads.",
+      },
+      {
+        q: "Should nurseries publish fees?",
+        a: "Yes, at least starting fees and what they include. Parents compare costs early, and clear fees reduce enquiries from families who are not a fit.",
+      },
+      {
+        q: "How far do parents travel for a nursery?",
+        a: "Usually not far. Most families look near home or work, which is why local visibility in your own area matters more than city-wide reach.",
+      },
+    ],
+  },
+  {
+    slug: "university-marketing-uae-student-recruitment",
+    title: "University Marketing in the UAE: Student Recruitment That Turns Enquiries into Enrolments",
+    description:
+      "How UAE universities and higher education providers can recruit more students with programme SEO, AI search visibility, targeted ads and a tracked admissions funnel.",
+    category: "Industry Guides",
+    date: D,
+    updated: D,
+    answer:
+      "Universities in the UAE recruit more students by building a clear page for every programme with entry requirements, fees, intakes, accreditation and career outcomes, ranking those pages for course and location searches, making sure AI assistants can find accurate information, running targeted campaigns for each audience ahead of each intake, responding quickly through a counselling team and tracking every lead from enquiry to application to enrolment.",
+    keywords: ["university marketing UAE", "student recruitment Dubai", "higher education marketing", "university SEO", "MBA marketing UAE"],
+    takeaways: [
+      "Students search for programmes, not institutions; every programme needs a strong page.",
+      "Accreditation, fees, intakes and outcomes are the facts students compare.",
+      "Different audiences need different campaigns: school leavers, working professionals and international students.",
+      "Track leads to applications, deposits and enrolments, not just enquiries.",
+    ],
+    body: [
+      {
+        t: "p",
+        text: "The UAE has a large and competitive higher education market, with federal universities, private universities and international branch campuses competing for local and international students. Students compare options carefully, often over many months, and increasingly start by asking an AI assistant which universities offer the course they want.",
+      },
+      { t: "h2", text: "How students search", id: "how-students-search" },
+      {
+        t: "ul",
+        items: [
+          "By programme and location: \"BBA in Dubai\", \"part-time MBA Abu Dhabi\", \"computer science degree UAE\".",
+          "By situation: \"weekend MBA for working professionals\", \"study in Dubai for international students\".",
+          "By cost and support: \"university fees Dubai\", \"scholarships UAE universities\".",
+          "By recognition: \"accredited universities in UAE\", \"is [university] degree recognised\".",
+        ],
+      },
+      { t: "h2", text: "Step 1: A strong page for every programme", id: "programme-pages" },
+      {
+        t: "p",
+        text: "Programme pages are where students decide whether to apply, and where most searches land. Each should clearly state:",
+      },
+      {
+        t: "ol",
+        items: [
+          "Who the programme is for and what students will learn.",
+          "Entry requirements, including English language and prior qualifications.",
+          "Duration, study mode and schedule, especially for working professionals.",
+          "Fees, payment options and scholarships.",
+          "Intake dates and application deadlines.",
+          "Accreditation and licensing, and how the degree is recognised.",
+          "Career outcomes, internships and industry links.",
+        ],
+      },
+      {
+        t: "callout",
+        title: "Accuracy builds trust",
+        text: "Students and parents check accreditation carefully. State accreditation, licensing and recognition precisely and keep it current. The same accurate facts help AI assistants describe your programmes correctly.",
+      },
+      { t: "h2", text: "Step 2: Be visible in AI answers", id: "ai" },
+      {
+        t: "p",
+        text: "When a student asks an assistant which universities in Dubai offer a particular degree, the answer draws on sources it can find and trust. Clear programme pages, consistent information across education directories and rankings sites, and structured data all help. Our guide to [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains the principles.",
+      },
+      { t: "h2", text: "Step 3: Campaigns for each audience", id: "audiences" },
+      {
+        t: "ul",
+        items: [
+          "**School leavers and parents**: Instagram, TikTok and YouTube for discovery; Google for programme searches; open days and campus tours.",
+          "**Working professionals**: LinkedIn and Google for MBA, master's and executive programmes, with messages about flexibility, career impact and employer recognition.",
+          "**International students**: search and social campaigns in key source markets, with clear visa, accommodation and living cost information.",
+        ],
+      },
+      {
+        t: "p",
+        text: "Plan each campaign around your intakes, starting early enough for students to research, apply and arrange visas where needed.",
+      },
+      { t: "h2", text: "Step 4: Fast, personal counselling", id: "counselling" },
+      {
+        t: "p",
+        text: "Students often enquire with several universities at once. The one that replies quickly, answers questions clearly and helps with next steps usually wins the application. Offer WhatsApp, call-back and virtual counselling, and set a response time target for your admissions team.",
+      },
+      { t: "h2", text: "Step 5: Track the full funnel", id: "funnel" },
+      {
+        t: "p",
+        text: "Use a CRM to follow each lead from source to enquiry, application, offer, deposit and enrolment. Only then can you see which channels and campaigns bring enrolled students rather than cheap enquiries. Our [lead tracking guide](/blog/track-whatsapp-call-form-leads-uae) covers the basics.",
+      },
+      {
+        t: "p",
+        text: "See how we support education providers on our [education marketing page](/industries/education), or read our guide on [why schools in Dubai need marketing](/blog/why-schools-in-dubai-need-marketing).",
+      },
+    ],
+    faqs: [
+      {
+        q: "When should universities start recruiting for an intake?",
+        a: "Many months in advance, especially for international students who need time to apply and arrange visas. Campaigns usually build towards each application deadline.",
+      },
+      {
+        q: "Should universities publish fees online?",
+        a: "Yes. Fees are one of the first things students compare, and clear fees with scholarship information improve the quality of enquiries.",
+      },
+      {
+        q: "Are education fairs still worth it?",
+        a: "They can be, especially for meeting students and parents in person. Capture every contact in your CRM and follow up quickly so the investment can be measured.",
       },
     ],
   },

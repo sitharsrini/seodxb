@@ -10,6 +10,9 @@ const serviceName = (id: string) => SERVICES.find((s) => s.id === id)?.name ?? i
 
 export default function Industry({ industry }: { industry: IndustryData }) {
   const post = POSTS.find((p) => p.slug === industry.postSlug);
+  const guides = [industry.postSlug, ...(industry.extraPostSlugs ?? [])]
+    .map((slug) => POSTS.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
   const others = INDUSTRIES.filter((i) => i.slug !== industry.slug);
 
   return (
@@ -108,7 +111,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
         </div>
       </section>
 
-      {post && (
+      {guides.length === 1 && post && (
         <section className="bg-sand">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1fr_1.2fr]">
             <div data-reveal="left">
@@ -119,6 +122,19 @@ export default function Industry({ industry }: { industry: IndustryData }) {
               </p>
             </div>
             <PostCard post={post} />
+          </div>
+        </section>
+      )}
+      {guides.length > 1 && (
+        <section className="bg-sand">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+            <p className="eyebrow" data-reveal>Free guides</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>Read the full guides</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {guides.map((g, i) => (
+                <PostCard key={g.slug} post={g} index={i} />
+              ))}
+            </div>
           </div>
         </section>
       )}
