@@ -30,7 +30,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
       <section className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
         <div id="short-answer" className="rounded-2xl border-l-4 border-mint-strong bg-white p-6 shadow-lg shadow-brand/5 sm:p-8" data-reveal>
           <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-dark">
-            Why {industry.name.toLowerCase()} businesses need SEO
+            Why SEO matters for {industry.name.toLowerCase()}
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-ink">{industry.answer}</p>
         </div>
@@ -56,7 +56,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-ink-soft" data-reveal>Examples of the searches and AI questions we target for {industry.name.toLowerCase()} businesses.</p>
+        <p className="mt-4 text-sm text-ink-soft" data-reveal>Examples of the searches and AI questions we target in {industry.name.toLowerCase()}.</p>
       </section>
 
       <section className="bg-sand">
@@ -118,7 +118,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
               <p className="eyebrow">Free guide</p>
               <h2 className="mt-3 font-display text-3xl font-semibold">Read the full guide</h2>
               <p className="mt-4 text-ink-soft">
-                A step-by-step guide for {industry.name.toLowerCase()} businesses you can use whether or not you work with us.
+                A step-by-step guide for {industry.name.toLowerCase()} you can use whether or not you work with us.
               </p>
             </div>
             <PostCard post={post} />
@@ -164,7 +164,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
               Free review
             </p>
             <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
-              Get a free marketing review for your {industry.name.toLowerCase()} business
+              Get a free marketing review
             </h2>
             <p className="mt-4 text-white/80">
               Tell us about your business. We will look at your website, search visibility and current marketing, and reply

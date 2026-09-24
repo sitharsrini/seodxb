@@ -691,4 +691,343 @@ export const INDUSTRIES: Industry[] = [
   },
 ];
 
+INDUSTRIES.push(
+  {
+    slug: "spas-wellness",
+    name: "Spas & Wellness",
+    title: "SEO & Marketing for Spas and Wellness Centres in Dubai | SEODXB",
+    description:
+      "Fill treatment rooms with direct bookings. Local SEO, Google Maps, social content, offers and booking-focused websites for Dubai spas and wellness centres.",
+    heroTitle: "Fill your treatment rooms with direct bookings",
+    heroIntro:
+      "Guests search for a massage, a hammam or a spa day near them, compare photos, prices and reviews, then book. Spas that look inviting online and make booking effortless get the appointments, without paying a share to deal sites.",
+    answer:
+      "Spas and wellness centres in Dubai need SEO because residents and tourists search for specific treatments near them, such as a Moroccan bath in JBR or a couples massage in Downtown, and book with the spa that looks most inviting and trustworthy. A complete Google Business Profile, a page for each treatment with prices and duration, beautiful real photos, strong reviews and instant online or WhatsApp booking turn those searches into direct bookings and repeat guests.",
+    searches: [
+      "Moroccan bath Dubai Marina",
+      "couples massage Downtown Dubai",
+      "best spa in JBR",
+      "deep tissue massage near me",
+      "spa day package Dubai",
+      "hot stone massage Abu Dhabi",
+    ],
+    challenges: [
+      {
+        title: "Deal sites and discount culture",
+        body: "Heavy discounting through deal platforms fills rooms but trains guests to wait for offers and erodes margins.",
+      },
+      {
+        title: "Quiet weekday hours",
+        body: "Weekends book themselves; weekday afternoons often sit empty. Marketing needs to fill the quiet hours, not just the busy ones.",
+      },
+      {
+        title: "Residents and tourists",
+        body: "Hotel and tourist spas compete for visitors, while neighbourhood spas depend on regular residents. Each needs a different approach.",
+      },
+    ],
+    plan: [
+      {
+        service: "search",
+        points: [
+          "Google Business Profile with treatment menu, prices, real photos and booking link.",
+          "A page for each treatment and package, written for how guests search.",
+          "Consistent listings on maps, travel and wellness directories so AI assistants can recommend you.",
+        ],
+      },
+      {
+        service: "web-content-social",
+        points: [
+          "A calm, fast website with online booking and a visible WhatsApp button.",
+          "Instagram and TikTok content showing the space, rituals and team.",
+          "Gift vouchers and packages that sell online.",
+        ],
+      },
+      {
+        service: "ads",
+        points: [
+          "Local search and Meta campaigns aimed at quiet days and new residents nearby.",
+          "Seasonal campaigns for Mother's Day, Valentine's, Ramadan and summer.",
+          "Tracking bookings and voucher sales by campaign.",
+        ],
+      },
+      {
+        service: "strategy",
+        points: [
+          "Memberships and treatment series that turn first visits into regulars.",
+          "Off-peak offers instead of blanket discounting.",
+          "Positioning on experience, speciality or location rather than price alone.",
+        ],
+      },
+    ],
+    measure: ["Direct online and WhatsApp bookings", "Occupancy on off-peak days", "Repeat guest rate and memberships", "Voucher and package sales"],
+    faqs: [
+      {
+        q: "Should spas list prices online?",
+        a: "Yes. Guests compare spas quickly, and a clear treatment menu with prices and durations converts far better than asking guests to call.",
+      },
+      {
+        q: "Are deal websites bad for spas?",
+        a: "Not always, but relying on them can erode margins and attract one-time bargain hunters. Use them selectively and focus on turning those guests into direct, repeat customers.",
+      },
+      {
+        q: "Can hotel spas benefit from SEO?",
+        a: "Yes. Many residents and visitors from other hotels search for spa experiences nearby, and a strong local profile brings non-hotel guests through the door.",
+      },
+    ],
+    postSlug: "seo-for-spas-wellness-centres-dubai",
+  },
+  {
+    slug: "beauty-salons",
+    name: "Beauty Salons",
+    title: "SEO & Marketing for Beauty Salons and Parlours in Dubai | SEODXB",
+    description:
+      "More bookings for hair, nails, lashes, brows and bridal. Local SEO, Instagram, reviews and easy booking for beauty salons and parlours in Dubai and the UAE.",
+    heroTitle: "Keep your chairs full, every day of the week",
+    heroIntro:
+      "Clients search for a service near them, check the photos and reviews, and book the salon that looks best and replies fastest. We help beauty salons and parlours win those bookings and keep clients coming back.",
+    answer:
+      "Beauty salons and parlours in Dubai need SEO because clients search for specific services nearby, such as balayage in JLT, gel nails near me or bridal makeup in Sharjah, and choose the salon with the best photos, reviews and easiest booking. A complete Google Business Profile, a page for each service with prices, a strong Instagram portfolio, steady reviews and fast WhatsApp or online booking bring new clients and help turn them into regulars.",
+    searches: [
+      "balayage hair salon JLT",
+      "gel nails near me",
+      "bridal makeup artist Dubai",
+      "eyelash extensions Al Barsha",
+      "ladies salon Karama",
+      "keratin treatment price Dubai",
+    ],
+    challenges: [
+      {
+        title: "Visual decisions",
+        body: "Clients choose from photos. Without a strong portfolio of real work, the salon down the road wins.",
+      },
+      {
+        title: "Heavy local competition",
+        body: "Most areas have several salons within walking distance. Reviews, speciality and convenience decide who gets the booking.",
+      },
+      {
+        title: "Retention",
+        body: "The real value is a client who returns every few weeks. Marketing should bring them back, not just in once.",
+      },
+    ],
+    plan: [
+      {
+        service: "search",
+        points: [
+          "Google Business Profile with every service, price ranges, portfolio photos and booking link.",
+          "Service pages for hair, nails, lashes, brows, skin and bridal, including Arabic where your clients need it.",
+          "A steady flow of genuine reviews after appointments.",
+        ],
+      },
+      {
+        service: "web-content-social",
+        points: [
+          "Instagram and TikTok content showing real transformations and your team.",
+          "A mobile website with prices, stylist profiles and instant booking.",
+          "Bridal and event pages with packages and galleries.",
+        ],
+      },
+      {
+        service: "ads",
+        points: [
+          "Meta ads to women nearby for new services, quiet days and seasonal occasions.",
+          "Google Ads for high-intent searches such as bridal makeup and hair treatments.",
+          "Tracking bookings from each campaign, including WhatsApp.",
+        ],
+      },
+      {
+        service: "strategy",
+        points: [
+          "Rebooking reminders, memberships and loyalty offers.",
+          "A clear speciality, such as colour, nails or bridal, that sets you apart.",
+          "Referral offers so happy clients bring friends.",
+        ],
+      },
+    ],
+    measure: ["New client bookings by source", "Rebooking and retention rate", "Average spend per visit", "Review volume and rating"],
+    faqs: [
+      {
+        q: "Is Instagram enough for a salon?",
+        a: "Instagram is important for showing your work, but many clients start with Google Maps. The strongest salons use both, with Instagram content linked from their profile and website.",
+      },
+      {
+        q: "Should we show prices?",
+        a: "Showing starting prices builds trust and filters out poor-fit enquiries. Final prices can depend on hair length or consultation.",
+      },
+      {
+        q: "Can salons advertise treatments like Botox or laser?",
+        a: "Medical aesthetic treatments must be provided and advertised by appropriately licensed healthcare facilities in the UAE. Only promote services your licence covers.",
+      },
+    ],
+    postSlug: "seo-for-beauty-salons-dubai",
+  },
+  {
+    slug: "holistic-healing",
+    name: "Healing & Holistic Therapists",
+    title: "SEO & Marketing for Healing and Holistic Therapists in the UAE | SEODXB",
+    description:
+      "Trust-led marketing for reiki, sound healing, ayurveda, acupuncture and holistic therapists: local SEO, clear content and responsible ads.",
+    heroTitle: "Reach clients who are looking for what you offer",
+    heroIntro:
+      "People searching for reiki, sound healing, breathwork, ayurveda or acupuncture want to understand the practice and trust the practitioner before they book. Clear, honest content and a strong local presence help the right clients find you.",
+    answer:
+      "Healing and holistic therapists in the UAE need SEO because clients search for specific practices and practitioners near them, then read carefully before booking. Clear pages that explain each therapy and what a session involves, practitioner credentials and licensing where required, a complete Google Business Profile, genuine reviews and responsible wording that avoids medical claims help the right clients find and trust you.",
+    searches: [
+      "reiki healing Dubai",
+      "sound bath near me",
+      "acupuncture clinic Jumeirah",
+      "breathwork session Dubai",
+      "ayurvedic massage Abu Dhabi",
+      "energy healing practitioner UAE",
+    ],
+    challenges: [
+      {
+        title: "Explaining the practice",
+        body: "Many potential clients are curious but unsure what a session involves. Clear, calm explanations turn curiosity into bookings.",
+      },
+      {
+        title: "Trust and credibility",
+        body: "Clients want to know who the practitioner is, their training and approach, and whether the practice is properly licensed.",
+      },
+      {
+        title: "Responsible claims",
+        body: "Health-related advertising is regulated, and ad platforms restrict health claims. Marketing must describe experiences honestly without promising cures.",
+      },
+    ],
+    plan: [
+      {
+        service: "search",
+        points: [
+          "A page for each therapy explaining what it is, what happens in a session and who it suits.",
+          "Google Business Profile and practitioner profiles with credentials and real photos.",
+          "Consistent information across wellness directories so AI assistants describe you accurately.",
+        ],
+      },
+      {
+        service: "web-content-social",
+        points: [
+          "Educational articles and short videos that answer common questions.",
+          "Practitioner bios with training, approach and licensing where applicable.",
+          "Simple booking for sessions, workshops and group events.",
+        ],
+      },
+      {
+        service: "ads",
+        points: [
+          "Responsible campaigns that describe the experience, not medical outcomes.",
+          "Promotion of workshops, retreats and group sessions to interested audiences.",
+          "Booking tracking so spend follows results.",
+        ],
+      },
+      {
+        service: "strategy",
+        points: [
+          "Packages and memberships for ongoing sessions.",
+          "Partnerships with yoga studios, spas and wellness venues.",
+          "A clear niche that sets you apart from general wellness providers.",
+        ],
+      },
+    ],
+    measure: ["Session and workshop bookings by source", "Returning client rate", "Enquiries from educational content", "Local search visibility for each therapy"],
+    faqs: [
+      {
+        q: "Do holistic therapists need a licence in the UAE?",
+        a: "Some complementary and alternative medicine practices are regulated by health authorities such as the DHA in Dubai, while others fall under different licensing. Check the requirements for your practice and emirate, and state your licensing clearly.",
+      },
+      {
+        q: "Can we say our therapy treats conditions?",
+        a: "Be very careful. Health claims are regulated and ad platforms restrict them. Describe what the session involves and how clients may feel, rather than promising medical outcomes.",
+      },
+      {
+        q: "What content works best for holistic practices?",
+        a: "Plain explanations of each practice, what to expect in a first session, practitioner stories and short calming videos tend to build the most trust.",
+      },
+    ],
+    postSlug: "marketing-for-healing-holistic-therapists-uae",
+  },
+  {
+    slug: "mental-health-therapists",
+    name: "Mental Health Therapists",
+    title: "Ethical Marketing for Therapists and Psychologists in the UAE | SEODXB",
+    description:
+      "Ethical, privacy-first SEO and AI search visibility for therapists, psychologists, counsellors and clinics in the UAE.",
+    heroTitle: "Help the people who need you find you",
+    heroIntro:
+      "People looking for a therapist often search privately, late at night, unsure where to start. Clear, compassionate and ethical marketing helps them find a licensed professional who fits, and take the first step.",
+    answer:
+      "Mental health therapists, psychologists and counselling clinics in the UAE need SEO because most people begin looking for support privately online, searching for a therapist by concern, language, approach and location. Clear pages on the issues you work with, therapist profiles showing licensing and specialisms, practical information on fees, languages and online sessions, a complete Google Business Profile and privacy-first enquiry forms help the right clients find you, within professional ethics and advertising rules.",
+    searches: [
+      "therapist in Dubai for anxiety",
+      "psychologist near me",
+      "couples counselling Dubai",
+      "online therapy UAE Arabic speaking",
+      "child psychologist Abu Dhabi",
+      "affordable counselling Sharjah",
+    ],
+    challenges: [
+      {
+        title: "Sensitive and private decisions",
+        body: "People seeking therapy value discretion. Every touchpoint, from ads to enquiry forms, must respect their privacy.",
+      },
+      {
+        title: "Ethics and regulation",
+        body: "Therapists must be licensed by the relevant authority, such as DHA, DoH or MOHAP, and professional codes often discourage client testimonials. Marketing has to work within these limits.",
+      },
+      {
+        title: "Finding the right fit",
+        body: "Clients look for a therapist who understands their concern, speaks their language and fits their schedule and budget.",
+      },
+    ],
+    plan: [
+      {
+        service: "search",
+        points: [
+          "Pages for each area you support, such as anxiety, depression, relationships, children and teens, written compassionately and accurately.",
+          "Therapist profiles with licensing, qualifications, approaches and languages.",
+          "Google Business Profile and directory listings that are complete and consistent.",
+        ],
+      },
+      {
+        service: "web-content-social",
+        points: [
+          "Helpful articles that answer common questions about starting therapy.",
+          "Clear information on fees, insurance, online and in-person sessions and what to expect.",
+          "Privacy-first contact forms that collect only what is needed.",
+        ],
+      },
+      {
+        service: "ads",
+        points: [
+          "Search campaigns for people actively looking for support, within platform healthcare policies.",
+          "No targeting based on personal health conditions, which major platforms restrict.",
+          "Conversion tracking that never sends sensitive details to ad platforms.",
+        ],
+      },
+      {
+        service: "strategy",
+        points: [
+          "Clear positioning on specialisms, languages and client groups.",
+          "Referral relationships with doctors, schools and employers.",
+          "Corporate wellbeing offers for companies.",
+        ],
+      },
+    ],
+    measure: ["Enquiries and first appointments by source", "Enquiry-to-first-session rate", "Visibility for specialism and language searches", "Referral partner enquiries"],
+    faqs: [
+      {
+        q: "Can therapists use client testimonials?",
+        a: "Many professional codes of ethics discourage or restrict testimonials from clients, because of the power imbalance and confidentiality. Focus on credentials, approach and helpful information instead, and follow your licensing body's guidance.",
+      },
+      {
+        q: "Is it ethical for therapists to advertise?",
+        a: "Yes, when advertising is accurate, respectful and helps people find appropriate care. Avoid guarantees, fear-based messaging and anything that could identify clients.",
+      },
+      {
+        q: "How do you protect client privacy in marketing?",
+        a: "We keep enquiry forms minimal, avoid sending any health information to analytics or ad platforms, and never target ads based on personal health conditions.",
+      },
+    ],
+    postSlug: "ethical-marketing-for-therapists-uae",
+  },
+);
+
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;
