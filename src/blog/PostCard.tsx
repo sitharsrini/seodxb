@@ -5,6 +5,8 @@ const TINTS: Record<string, string> = {
   Strategy: "from-brand to-brand-dark",
   "SEO & AI Search": "from-brand-dark to-emerald-600",
   "Performance Ads": "from-sky-500 to-brand",
+  "Local SEO": "from-emerald-600 to-brand",
+  "Websites & Content": "from-brand to-sky-400",
 };
 
 export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {

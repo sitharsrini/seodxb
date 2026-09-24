@@ -1,25 +1,9 @@
-// Inline text supports **bold** and [link text](/url).
-export type Block =
-  | { t: "p"; text: string }
-  | { t: "h2"; text: string; id: string }
-  | { t: "h3"; text: string }
-  | { t: "ul"; items: string[] }
-  | { t: "ol"; items: string[] }
-  | { t: "callout"; title: string; text: string };
+import type { Block, Post } from "./types";
+import { MORE_POSTS } from "./posts-more";
 
-export interface Post {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  date: string;
-  updated: string;
-  takeaways: string[];
-  body: Block[];
-  faqs: { q: string; a: string }[];
-}
+export type { Block, Post } from "./types";
 
-export const POSTS: Post[] = [
+const FIRST_POSTS: Post[] = [
   {
     slug: "questions-to-ask-before-hiring-a-marketing-agency-dubai",
     title: "12 Questions to Ask Before Hiring a Marketing Agency in Dubai",
@@ -28,6 +12,9 @@ export const POSTS: Post[] = [
     category: "Strategy",
     date: "2026-09-24",
     updated: "2026-09-24",
+    answer:
+      "Before hiring a marketing agency in Dubai, confirm that you will own every account and the website, agree how success will be measured in leads and revenue, meet the people who will do the work, and check the notice period and how ad spend is billed. An agency that answers these clearly is more likely to be a partner than a supplier.",
+    keywords: ["marketing agency Dubai", "hiring a marketing agency", "agency questions", "marketing consultancy UAE"],
     takeaways: [
       "You should own every ad account, analytics property, domain and website login from day one.",
       "Ask how success will be measured in leads and revenue before you discuss deliverables.",
@@ -152,6 +139,9 @@ export const POSTS: Post[] = [
     category: "SEO & AI Search",
     date: "2026-09-24",
     updated: "2026-09-24",
+    answer:
+      "AI assistants such as ChatGPT search and Google AI Overviews recommend businesses they can clearly identify and verify across the web. To be recommended, allow AI crawlers in robots.txt, keep your name, address and phone number identical everywhere, complete your Google Business Profile, answer buyers' questions directly on your site, and earn genuine reviews and mentions from credible third-party sources.",
+    keywords: ["AI search visibility", "ChatGPT recommendations", "Google AI Overviews", "generative engine optimization", "GEO Dubai", "AEO"],
     takeaways: [
       "AI assistants recommend businesses they can clearly identify and verify across many sources.",
       "Strong traditional SEO is still the foundation, because AI answers draw on content that search engines already trust.",
@@ -287,6 +277,9 @@ export const POSTS: Post[] = [
     category: "Performance Ads",
     date: "2026-09-24",
     updated: "2026-09-24",
+    answer:
+      "To track WhatsApp, call and form leads, record each as a key event in Google Analytics 4 (form submission, wa.me link click, tel: link click), import those events as conversions into Google Ads and Meta, ask every new enquiry how they found you, and log all leads with source and outcome in one place. Then compare campaigns on cost per qualified lead rather than clicks.",
+    keywords: ["WhatsApp lead tracking", "call tracking UAE", "Google Analytics 4 key events", "conversion tracking Dubai", "cost per qualified lead"],
     takeaways: [
       "If you only track form submissions, you are probably missing many of your leads.",
       "Track WhatsApp clicks and phone taps as key events in Google Analytics and your ad platforms.",
@@ -397,11 +390,30 @@ export const POSTS: Post[] = [
   },
 ];
 
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS];
+
+const strip = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+// Plain-text version of a post, used for word counts, RSS and llms-full.txt.
+export function postText(post: Post): string {
+  const parts: string[] = [post.answer];
+  for (const b of post.body) {
+    if (b.t === "h2" || b.t === "h3") parts.push(`\n## ${b.text}\n`);
+    else if (b.t === "p") parts.push(strip(b.text));
+    else if (b.t === "callout") parts.push(`${b.title}: ${strip(b.text)}`);
+    else parts.push(b.items.map((it, i) => (b.t === "ol" ? `${i + 1}. ` : "- ") + strip(it)).join("\n"));
+  }
+  parts.push("\n## Frequently asked questions\n");
+  for (const f of post.faqs) parts.push(`Q: ${f.q}\nA: ${f.a}`);
+  return parts.join("\n\n");
+}
+
+export function wordCount(post: Post): number {
+  return postText(post).split(/\s+/).filter(Boolean).length;
+}
+
 export function readingMinutes(post: Post): number {
-  const text = post.body
-    .map((b) => ("text" in b ? b.text : b.t === "ul" || b.t === "ol" ? b.items.join(" ") : ""))
-    .join(" ");
-  return Math.max(3, Math.round(text.split(/\s+/).length / 220));
+  return Math.max(3, Math.round(wordCount(post) / 220));
 }
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

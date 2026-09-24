@@ -1,6 +1,10 @@
-import { POSTS, postPath } from "./blog/posts";
+import { POSTS, postPath, wordCount } from "./blog/posts";
 
 export const SITE_URL = "https://seodxb.com";
+
+export const AUTHOR = { name: "Srinivasan R", url: `${SITE_URL}/about` };
+
+const ORG = { "@type": "Organization", name: "SEODXB", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192.png` } };
 
 export const CONTACT = {
   email: "hi@Listi.ae",
@@ -19,6 +23,7 @@ export interface Route {
   title: string;
   description: string;
   ogType?: "website" | "article";
+  image?: string;
   jsonLd?: object[];
 }
 
@@ -29,6 +34,16 @@ const PAGE_ROUTES: Route[] = [
     title: "SEODXB | Marketing Consultancy in Dubai",
     description:
       "Dubai marketing consultancy for strategy, SEO and AI search, performance ads, websites, content and social. Plans built around revenue, not vanity metrics.",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "SEODXB",
+        url: SITE_URL,
+        inLanguage: "en",
+        publisher: ORG,
+      },
+    ],
   },
   {
     path: "/services",
@@ -73,7 +88,25 @@ const BLOG_ROUTES: Route[] = [
     title: "Marketing Insights Blog | SEODXB Dubai",
     description:
       "Practical guides on marketing strategy, SEO and AI search, performance ads and lead tracking for businesses in Dubai and the UAE.",
-    jsonLd: [breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }])],
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "SEODXB Blog",
+        url: `${SITE_URL}/blog`,
+        description: "Practical guides on marketing strategy, SEO and AI search, performance ads and lead tracking for businesses in Dubai and the UAE.",
+        inLanguage: "en",
+        publisher: ORG,
+        blogPost: POSTS.map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.title,
+          url: SITE_URL + postPath(p),
+          datePublished: p.date,
+          author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+        })),
+      },
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
+    ],
   },
   ...POSTS.map((p): Route => ({
     path: postPath(p),
@@ -81,18 +114,26 @@ const BLOG_ROUTES: Route[] = [
     title: `${p.title} | SEODXB`,
     description: p.description,
     ogType: "article",
+    image: `/og/${p.slug}.png`,
     jsonLd: [
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: p.title,
         description: p.description,
+        abstract: p.answer,
+        image: `${SITE_URL}/og/${p.slug}.png`,
         datePublished: p.date,
         dateModified: p.updated,
-        mainEntityOfPage: SITE_URL + postPath(p),
+        inLanguage: "en",
+        wordCount: wordCount(p),
+        keywords: p.keywords.join(", "),
         articleSection: p.category,
-        author: { "@type": "Organization", name: "SEODXB", url: SITE_URL },
-        publisher: { "@type": "Organization", name: "SEODXB", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192.png` } },
+        mainEntityOfPage: { "@type": "WebPage", "@id": SITE_URL + postPath(p) },
+        isPartOf: { "@type": "Blog", name: "SEODXB Blog", url: `${SITE_URL}/blog` },
+        author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url, worksFor: ORG },
+        publisher: ORG,
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["#short-answer", "h1"] },
       },
       {
         "@context": "https://schema.org",

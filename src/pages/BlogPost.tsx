@@ -4,6 +4,7 @@ import { POSTS, formatDate, readingMinutes, type Block, type Post } from "../blo
 import { Inline } from "../blog/Inline";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
+import { AUTHOR } from "../site";
 
 function ReadingProgress() {
   const [p, setP] = useState(0);
@@ -72,7 +73,8 @@ function renderBlock(b: Block, i: number) {
 
 export default function BlogPost({ post }: { post: Post }) {
   const toc = post.body.filter((b): b is Extract<Block, { t: "h2" }> => b.t === "h2");
-  const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const others = POSTS.filter((p) => p.slug !== post.slug);
+  const related = [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(0, 2);
 
   return (
     <>
@@ -93,9 +95,22 @@ export default function BlogPost({ post }: { post: Post }) {
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>{post.description}</p>
             <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft" data-reveal style={delay(3)}>
-              <span className="font-medium text-ink">SEODXB</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-brand to-brand-dark text-xs font-bold text-white" aria-hidden="true">
+                  {AUTHOR.name[0]}
+                </span>
+                <a href="/about" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>
+              </span>
               <span aria-hidden="true">·</span>
-              <time dateTime={post.date}>{formatDate(post.date)}</time>
+              <span>
+                Published <time dateTime={post.date}>{formatDate(post.date)}</time>
+                {post.updated !== post.date && (
+                  <>
+                    {", updated "}
+                    <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                  </>
+                )}
+              </span>
               <span aria-hidden="true">·</span>
               <span>{readingMinutes(post)} min read</span>
             </p>
@@ -103,8 +118,13 @@ export default function BlogPost({ post }: { post: Post }) {
         </header>
 
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_16rem]">
-          <div className="mx-auto w-full max-w-3xl text-[17px] leading-[1.8] text-ink-soft">
-            <section className="rounded-2xl border border-line bg-sand p-6" aria-labelledby="takeaways" data-reveal>
+          <div className="mx-auto w-full min-w-0 max-w-3xl text-[17px] leading-[1.8] text-ink-soft [overflow-wrap:anywhere]">
+            <section id="short-answer" className="rounded-2xl border-l-4 border-mint-strong bg-white p-6 shadow-lg shadow-brand/5" aria-labelledby="short-answer-h" data-reveal>
+              <h2 id="short-answer-h" className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-dark">Short answer</h2>
+              <p className="mt-3 text-base leading-relaxed text-ink">{post.answer}</p>
+            </section>
+
+            <section className="mt-6 rounded-2xl border border-line bg-sand p-6" aria-labelledby="takeaways" data-reveal style={delay(1)}>
               <h2 id="takeaways" className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">Key takeaways</h2>
               <ul className="mt-4 space-y-2.5 text-base">
                 {post.takeaways.map((t) => (
