@@ -1,4 +1,5 @@
 import { HEALTH_INDUSTRIES } from "./industries-health";
+import { HOSPITALITY_INDUSTRIES } from "./industries-hospitality";
 
 export interface Industry {
   slug: string;
@@ -1032,6 +1033,6 @@ INDUSTRIES.push(
   },
 );
 
-INDUSTRIES.push(...HEALTH_INDUSTRIES);
+INDUSTRIES.push(...HEALTH_INDUSTRIES, ...HOSPITALITY_INDUSTRIES);
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;
