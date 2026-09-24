@@ -6,7 +6,7 @@ const root = path.resolve(import.meta.dirname, "..");
 const out = path.join(root, "dist/public");
 const serverDir = path.join(root, "dist/server");
 
-type Route = { path: string; file: string; title: string; description: string; ogType?: string; image?: string; jsonLd?: object[] };
+type Route = { path: string; file: string; title: string; description: string; ogType?: string; image?: string; jsonLd?: object[]; hidden?: boolean };
 type Post = { slug: string; title: string; description: string; category: string; date: string; updated: string; answer: string; keywords: string[]; faqs: { q: string; a: string }[] };
 type Service = { id: string; name: string; short: string };
 
@@ -41,7 +41,7 @@ for (const r of ROUTES) {
     .replace(/(<meta property="og:url" content=")[^"]*"/, (_, a) => `${a}${url}"`)
     .replace(/(<meta property="og:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
     .replace(/(<meta name="twitter:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
-    .replace("</head>", () => `${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
+    .replace("</head>", () => `${r.hidden ? '<meta name="robots" content="noindex, nofollow" />\n    ' : ""}${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
     .replace('<div id="root"></div>', () => `<div id="root">${render(r.path)}</div>`);
   const file = path.join(out, r.file);
   mkdirSync(path.dirname(file), { recursive: true });
@@ -53,7 +53,7 @@ const today = new Date().toISOString().slice(0, 10);
 const lastmod = (r: Route) => POSTS.find((p) => postPath(p) === r.path)?.updated ?? today;
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  ROUTES.map((r) => `  <url><loc>${abs(r.path)}</loc><lastmod>${lastmod(r)}</lastmod></url>`).join("\n") +
+  ROUTES.filter((r) => !r.hidden).map((r) => `  <url><loc>${abs(r.path)}</loc><lastmod>${lastmod(r)}</lastmod></url>`).join("\n") +
   `\n</urlset>\n`;
 writeFileSync(path.join(out, "sitemap.xml"), sitemap);
 
@@ -75,7 +75,7 @@ const rss =
 writeFileSync(path.join(out, "feed.xml"), rss);
 
 // llms.txt: a short, AI-readable map of the site. llms-full.txt: the full blog text.
-const pageRoutes = ROUTES.filter((r) => !r.path.startsWith("/blog"));
+const pageRoutes = ROUTES.filter((r) => !r.hidden && !r.path.startsWith("/blog"));
 const llms =
   `# SEODXB\n\n> Marketing consultancy in Dubai, United Arab Emirates. Services: marketing strategy, SEO / AEO / GEO (search and AI search visibility), performance advertising (Google, Meta, LinkedIn, TikTok), websites, content and social media. Powered by Listi. Contact: ${CONTACT.email}, ${CONTACT.phone}, ${CONTACT.city}.\n\n` +
   `Articles are written by ${AUTHOR.name}. Every article opens with a short direct answer, followed by key takeaways, the full guide and an FAQ.\n\n` +

@@ -25,6 +25,8 @@ export interface Route {
   ogType?: "website" | "article";
   image?: string;
   jsonLd?: object[];
+  // Private pages: noindex, and left out of the sitemap and llms.txt.
+  hidden?: boolean;
 }
 
 const PAGE_ROUTES: Route[] = [
@@ -149,7 +151,15 @@ const BLOG_ROUTES: Route[] = [
   })),
 ];
 
-export const ROUTES: Route[] = [...PAGE_ROUTES, ...BLOG_ROUTES];
+const ADMIN_ROUTE: Route = {
+  path: "/admin",
+  file: "admin.html",
+  title: "Admin | SEODXB",
+  description: "SEODXB leads dashboard.",
+  hidden: true,
+};
+
+export const ROUTES: Route[] = [...PAGE_ROUTES, ...BLOG_ROUTES, ADMIN_ROUTE];
 
 export const NAV = [
   { href: "/services", label: "Services" },

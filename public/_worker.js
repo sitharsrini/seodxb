@@ -58,6 +58,25 @@ async function handleContact(request, env, ctx) {
   return json({ success: true });
 }
 
+// Admin password: set ADMIN_KEY in Cloudflare environment variables to override.
+// The Supabase function get_seodxb_leads also checks the key it receives.
+const ADMIN_KEY_FALLBACK = "1234";
+
+async function handleLeads(request, env) {
+  const key = request.headers.get("x-admin-key") || "";
+  if (!key || key !== (env.ADMIN_KEY || ADMIN_KEY_FALLBACK)) return json({ error: "Unauthorized" }, 401);
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_seodxb_leads`, {
+    method: "POST",
+    headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ p_key: key }),
+  });
+  if (!res.ok) return json({ error: "Could not read leads." }, 502);
+  const leads = await res.json();
+  return new Response(JSON.stringify({ leads }), {
+    headers: { "Content-Type": "application/json", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" },
+  });
+}
+
 const GONE_HTML = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page removed | SEODXB</title></head><body style="font-family:system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 1rem;color:#0f1d2e"><h1>This page no longer exists</h1><p>SEODXB has a new website. <a href="/">Go to the homepage</a>.</p></body></html>`;
 
 export default {
@@ -68,6 +87,11 @@ export default {
       url.hostname = url.hostname.slice(4);
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
+    }
+
+    if (url.pathname === "/api/leads") {
+      if (request.method !== "GET") return json({ error: "Method not allowed" }, 405);
+      return handleLeads(request, env);
     }
 
     if (url.pathname === "/api/contact") {
