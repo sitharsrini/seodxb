@@ -3,6 +3,7 @@ import { SERVICES } from "../services";
 import { CountUp, RotatingWord, delay } from "../motion";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
+import { INDUSTRIES, industryPath } from "../industries";
 
 const PROBLEMS = [
   {
@@ -170,6 +171,33 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="eyebrow" data-reveal>Industries</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl" data-reveal style={delay(1)}>
+              Built for how your customers buy
+            </h2>
+          </div>
+          <a href="/industries" className="text-sm font-semibold text-brand underline underline-offset-4" data-reveal style={delay(2)}>
+            All industries
+          </a>
+        </div>
+        <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+          {INDUSTRIES.map((ind, i) => (
+            <li key={ind.slug} data-reveal="scale" style={delay(i, 60)}>
+              <a
+                href={industryPath(ind)}
+                className="spotlight group flex h-full items-center justify-between gap-3 rounded-2xl border border-line bg-white px-5 py-4 text-sm font-semibold text-ink"
+              >
+                {ind.name}
+                <span className="text-brand transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="border-b border-line bg-white">

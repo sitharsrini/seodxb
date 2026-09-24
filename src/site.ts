@@ -1,4 +1,5 @@
 import { POSTS, postPath, wordCount } from "./blog/posts";
+import { INDUSTRIES, industryPath } from "./industries";
 
 export const SITE_URL = "https://seodxb.com";
 
@@ -151,6 +152,55 @@ const BLOG_ROUTES: Route[] = [
   })),
 ];
 
+const INDUSTRY_ROUTES: Route[] = [
+  {
+    path: "/industries",
+    file: "industries.html",
+    title: "Industries We Serve | SEODXB Marketing Consultancy Dubai",
+    description:
+      "SEO, AI search, ads and websites for real estate, construction, car dealers, cleaning, maid services, painting, furniture and education in the UAE.",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Industries served by SEODXB",
+        itemListElement: INDUSTRIES.map((ind, i) => ({ "@type": "ListItem", position: i + 1, name: ind.name, url: SITE_URL + industryPath(ind) })),
+      },
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }]),
+    ],
+  },
+  ...INDUSTRIES.map((ind): Route => ({
+    path: industryPath(ind),
+    file: `industries/${ind.slug}.html`,
+    title: ind.title,
+    description: ind.description,
+    image: `/og/industry-${ind.slug}.png`,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: `Marketing and SEO for ${ind.name} businesses`,
+        serviceType: ["Search engine optimization", "Generative engine optimization", "Performance advertising", "Website design", "Marketing strategy"],
+        description: ind.answer,
+        audience: { "@type": "BusinessAudience", name: `${ind.name} businesses` },
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+        provider: { ...ORG, "@type": "ProfessionalService", telephone: "+971521551198", address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" } },
+        url: SITE_URL + industryPath(ind),
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: ind.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      },
+      breadcrumbs([
+        { name: "Home", path: "/" },
+        { name: "Industries", path: "/industries" },
+        { name: ind.name, path: industryPath(ind) },
+      ]),
+    ],
+  })),
+];
+
 const ADMIN_ROUTE: Route = {
   path: "/admin",
   file: "admin.html",
@@ -159,10 +209,11 @@ const ADMIN_ROUTE: Route = {
   hidden: true,
 };
 
-export const ROUTES: Route[] = [...PAGE_ROUTES, ...BLOG_ROUTES, ADMIN_ROUTE];
+export const ROUTES: Route[] = [...PAGE_ROUTES, ...INDUSTRY_ROUTES, ...BLOG_ROUTES, ADMIN_ROUTE];
 
 export const NAV = [
   { href: "/services", label: "Services" },
+  { href: "/industries", label: "Industries" },
   { href: "/results", label: "Results" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
