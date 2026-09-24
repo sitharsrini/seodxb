@@ -62,9 +62,23 @@ async function handleContact(request, env, ctx) {
 // The Supabase function get_seodxb_leads also checks the key it receives.
 const ADMIN_KEY_FALLBACK = "1234";
 
+const isAdmin = (request, env) => {
+  const key = request.headers.get("x-admin-key") || "";
+  return Boolean(key) && key === (env.ADMIN_KEY || ADMIN_KEY_FALLBACK);
+};
+
+async function handleSeoReport(request, env) {
+  if (!isAdmin(request, env)) return json({ error: "Unauthorized" }, 401);
+  const res = await env.ASSETS.fetch(new Request(new URL("/_private/seo-report.json", request.url)));
+  if (!res.ok) return json({ error: "Report not found." }, 404);
+  return new Response(res.body, {
+    headers: { "Content-Type": "application/json", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" },
+  });
+}
+
 async function handleLeads(request, env) {
   const key = request.headers.get("x-admin-key") || "";
-  if (!key || key !== (env.ADMIN_KEY || ADMIN_KEY_FALLBACK)) return json({ error: "Unauthorized" }, 401);
+  if (!isAdmin(request, env)) return json({ error: "Unauthorized" }, 401);
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_seodxb_leads`, {
     method: "POST",
     headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}`, "Content-Type": "application/json" },
@@ -87,6 +101,15 @@ export default {
       url.hostname = url.hostname.slice(4);
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
+    }
+
+    if (url.pathname.startsWith("/_private")) {
+      return new Response("Not found", { status: 404, headers: { "X-Robots-Tag": "noindex" } });
+    }
+
+    if (url.pathname === "/api/seo-report") {
+      if (request.method !== "GET") return json({ error: "Method not allowed" }, 405);
+      return handleSeoReport(request, env);
     }
 
     if (url.pathname === "/api/leads") {

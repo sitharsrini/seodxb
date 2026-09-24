@@ -1,4 +1,9 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
+import SeoKeywords, { useSeoReport } from "./admin/SeoKeywords";
+import SearchConsole from "./admin/SearchConsole";
+
+type Tab = "leads" | "pages" | "blog" | "gsc";
+const TABS: Tab[] = ["leads", "pages", "blog", "gsc"];
 
 interface Lead {
   id: number;
@@ -51,6 +56,18 @@ export default function Admin() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [source, setSource] = useState("");
+  const [tab, setTab] = useState<Tab>("leads");
+  const seo = useSeoReport(leads === null ? "" : key);
+
+  useEffect(() => {
+    const h = window.location.hash.slice(1) as Tab;
+    if (TABS.includes(h)) setTab(h);
+  }, []);
+
+  function selectTab(t: Tab) {
+    setTab(t);
+    history.replaceState(null, "", `#${t}`);
+  }
 
   async function load(k: string) {
     setLoading(true);
@@ -134,8 +151,8 @@ export default function Admin() {
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl items-center justify-center px-4 py-20">
           <form onSubmit={onLogin} className="w-full max-w-sm rounded-3xl border border-line bg-white p-8 shadow-2xl shadow-brand/10">
             <p className="eyebrow">Admin</p>
-            <h1 className="mt-3 font-display text-3xl font-semibold">Leads dashboard</h1>
-            <p className="mt-2 text-sm text-ink-soft">Enter the admin password to view enquiries.</p>
+            <h1 className="mt-3 font-display text-3xl font-semibold">Admin dashboard</h1>
+            <p className="mt-2 text-sm text-ink-soft">Enter the admin password to view leads and SEO reports.</p>
             <label className="mt-6 block text-sm font-medium">
               Password
               <input
@@ -149,7 +166,7 @@ export default function Admin() {
             </label>
             {error && <p className="mt-3 text-sm text-red-700" role="alert">{error}</p>}
             <button type="submit" disabled={loading} className="btn-primary mt-6 w-full justify-center py-3 disabled:opacity-60">
-              {loading ? "Checking..." : "View leads"}
+              {loading ? "Checking..." : "Sign in"}
             </button>
           </form>
         </div>
@@ -157,8 +174,8 @@ export default function Admin() {
     );
   }
 
-  return (
-    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+  const leadsView = (
+    <div>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="eyebrow">Admin</p>
@@ -171,7 +188,6 @@ export default function Admin() {
           <button type="button" onClick={exportCsv} disabled={!shown.length} className="btn-primary text-sm disabled:opacity-50">
             Export CSV
           </button>
-          <button type="button" onClick={lock} className="btn-ghost py-2 text-sm">Lock</button>
         </div>
       </div>
 
@@ -247,6 +263,53 @@ export default function Admin() {
           ))}
         </ul>
       )}
+    </div>
+  );
+
+  const NAV: { id: Tab; label: string; badge?: string | number }[] = [
+    { id: "leads", label: "Leads", badge: stats.total },
+    { id: "pages", label: "Pages & keywords", badge: seo.report?.rows.filter((r) => r.kind === "page").length },
+    { id: "blog", label: "Blog & keywords", badge: seo.report?.rows.filter((r) => r.kind === "blog").length },
+    { id: "gsc", label: "Search Console", badge: "Setup" },
+  ];
+
+  return (
+    <section className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
+        <aside className="lg:sticky lg:top-24 lg:self-start">
+          <nav aria-label="Admin sections" className="flex gap-2 overflow-x-auto rounded-2xl border border-line bg-white p-2 lg:flex-col">
+            {NAV.map((n) => (
+              <button
+                key={n.id}
+                type="button"
+                onClick={() => selectTab(n.id)}
+                aria-current={tab === n.id ? "page" : undefined}
+                className={`flex flex-none items-center justify-between gap-3 whitespace-nowrap rounded-xl px-4 py-2.5 text-left text-sm font-medium transition ${
+                  tab === n.id ? "bg-brand text-white" : "text-ink hover:bg-sand"
+                }`}
+              >
+                {n.label}
+                {n.badge !== undefined && (
+                  <span className={`rounded-full px-2 py-0.5 text-[11px] ${tab === n.id ? "bg-white/20 text-white" : "bg-sand text-brand"}`}>{n.badge}</span>
+                )}
+              </button>
+            ))}
+            <button type="button" onClick={lock} className="flex-none whitespace-nowrap rounded-xl px-4 py-2.5 text-left text-sm text-ink-soft hover:bg-sand lg:mt-2 lg:border-t lg:border-line">
+              Lock admin
+            </button>
+          </nav>
+        </aside>
+        <div className="min-w-0">
+          {tab === "leads" && leadsView}
+          {(tab === "pages" || tab === "blog") &&
+            (seo.report ? (
+              <SeoKeywords key={tab} report={seo.report} kind={tab === "pages" ? "page" : "blog"} />
+            ) : (
+              <p className="rounded-2xl border border-line bg-white p-6 text-ink-soft">{seo.error || "Loading keyword report..."}</p>
+            ))}
+          {tab === "gsc" && <SearchConsole />}
+        </div>
+      </div>
     </section>
   );
 }

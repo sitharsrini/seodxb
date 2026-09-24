@@ -23,14 +23,19 @@ const mod = (await import(pathToFileURL(path.join(serverDir, "entry-server.js"))
   SERVICES: Service[];
   INDUSTRIES: Industry[];
   industryPath: (i: Industry) => string;
+  SERVICE_PAGES: { slug: string; title: string }[];
+  KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }>;
+  KEYWORD_METRICS: Record<string, { volume: number; kd: number; cpc: number }>;
+  SEMRUSH_SNAPSHOT: { source: string; date: string };
 };
-const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath } = mod;
+const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath, SERVICE_PAGES, KEYWORD_TARGETS, KEYWORD_METRICS, SEMRUSH_SNAPSHOT } = mod;
 const template = readFileSync(path.join(out, "index.html"), "utf8");
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const ld = (o: object) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`;
 const abs = (p: string) => SITE_URL + (p === "/" ? "/" : p);
 
+const h1s: Record<string, string> = {};
 for (const r of ROUTES) {
   const url = abs(r.path);
   const image = SITE_URL + (r.image ?? "/og/default.png");
@@ -49,6 +54,7 @@ for (const r of ROUTES) {
   const file = path.join(out, r.file);
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
+  h1s[r.path] = ((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').trim();
 }
 
 // Sitemap with real dates for posts.
@@ -100,6 +106,36 @@ const full =
     )
     .join("\n\n---\n\n");
 writeFileSync(path.join(out, "llms-full.txt"), full);
+
+// Private SEO keyword report for the admin panel. Served only through /api/seo-report.
+const CORE_NAMES: Record<string, string> = { "/": "Homepage", "/services": "Services (overview)", "/results": "Results", "/about": "About", "/contact": "Contact", "/blog": "Blog (index)", "/industries": "Industries (index)" };
+const seoRows = ROUTES.filter((r) => !r.hidden).map((r) => {
+  const post = POSTS.find((p) => postPath(p) === r.path);
+  const ind = INDUSTRIES.find((i) => industryPath(i) === r.path);
+  const svc = SERVICE_PAGES.find((sp) => `/services/${sp.slug}` === r.path);
+  const target = post ? { main: post.keywords[0].toLowerCase(), secondary: post.keywords.slice(1) } : KEYWORD_TARGETS[r.path] ?? { main: null, secondary: [] };
+  const m = target.main ? KEYWORD_METRICS[target.main] : undefined;
+  const section = post || r.path === "/blog" ? "Blog" : svc ? "Service pages" : ind || r.path === "/industries" ? "Industry pages" : "Core pages";
+  return {
+    kind: post || r.path === "/blog" ? "blog" : "page",
+    section,
+    name: post ? post.title : ind ? ind.name : svc ? svc.title.replace(/ \| SEODXB$/, "") : CORE_NAMES[r.path] ?? r.path,
+    path: r.path,
+    url: abs(r.path),
+    main: target.main,
+    volume: target.main ? (m ? m.volume : null) : null,
+    kd: m ? m.kd : null,
+    cpc: m ? m.cpc : null,
+    secondary: target.secondary,
+    title: r.title,
+    description: r.description,
+    h1: h1s[r.path] ?? "",
+    category: post ? post.category : "",
+    published: post ? post.date : "",
+  };
+});
+mkdirSync(path.join(out, "_private"), { recursive: true });
+writeFileSync(path.join(out, "_private/seo-report.json"), JSON.stringify({ generated: new Date().toISOString(), metrics: SEMRUSH_SNAPSHOT, rows: seoRows }));
 
 // The worker only serves known pages; everything else is 410 Gone.
 const workerPath = path.join(out, "_worker.js");
