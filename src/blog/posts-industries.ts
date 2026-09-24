@@ -798,7 +798,7 @@ export const INDUSTRY_POSTS: Post[] = [
     slug: "university-marketing-uae-student-recruitment",
     title: "University Marketing in the UAE: Student Recruitment That Turns Enquiries into Enrolments",
     description:
-      "How UAE universities and higher education providers can recruit more students with programme SEO, AI search visibility, targeted ads and a tracked admissions funnel.",
+      "How UAE universities can recruit more students with programme SEO, AI search visibility, targeted ads and a tracked admissions funnel.",
     category: "Industry Guides",
     date: D,
     updated: D,

@@ -4,6 +4,9 @@ import { CountUp, RotatingWord, delay } from "../motion";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { INDUSTRIES, industryPath } from "../industries";
+import { SERVICE_PAGES, servicePath } from "../service-pages";
+import { Faq } from "../components/Faq";
+import { CORE_FAQS } from "../core-faqs";
 
 const PROBLEMS = [
   {
@@ -151,7 +154,7 @@ export default function Home() {
             {SERVICES.map((s, i) => (
               <a
                 key={s.id}
-                href={`/services#${s.id}`}
+                href={SERVICE_PAGES.find((sp) => sp.id === s.id) ? servicePath(SERVICE_PAGES.find((sp) => sp.id === s.id)!) : "/services"}
                 className="spotlight group rounded-2xl border border-line bg-white p-7"
                 data-reveal
                 style={delay(i + 1, 110)}
@@ -252,6 +255,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Faq faqs={CORE_FAQS["/"]} />
 
       <CtaBand />
     </>

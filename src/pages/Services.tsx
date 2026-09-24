@@ -1,6 +1,9 @@
 import { CtaBand, PageHero } from "../components/Layout";
 import { SERVICES } from "../services";
+import { SERVICE_PAGES, servicePath } from "../service-pages";
 import { delay } from "../motion";
+import { Faq } from "../components/Faq";
+import { CORE_FAQS } from "../core-faqs";
 
 function Bullet({ strong = false }: { strong?: boolean }) {
   return (
@@ -48,6 +51,11 @@ export default function Services() {
                 <span className="font-semibold">Best for: </span>
                 <span className="text-ink-soft">{s.bestFor}</span>
               </p>
+              {SERVICE_PAGES.find((sp) => sp.id === s.id) && (
+                <a href={servicePath(SERVICE_PAGES.find((sp) => sp.id === s.id)!)} className="btn-primary mt-6 text-sm">
+                  {s.name}: full details
+                </a>
+              )}
             </div>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
               <div className="spotlight rounded-2xl border border-line bg-white p-6" data-reveal style={delay(1, 120)}>
@@ -76,6 +84,8 @@ export default function Services() {
           </div>
         </section>
       ))}
+
+      <Faq faqs={CORE_FAQS["/services"]} />
 
       <CtaBand />
     </>

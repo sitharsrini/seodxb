@@ -452,7 +452,7 @@ export const MORE_POSTS: Post[] = [
     slug: "website-traffic-but-no-enquiries-conversion-checklist",
     title: "Why Your Website Gets Traffic but No Enquiries: A Conversion Checklist",
     description:
-      "Visitors arrive and leave without contacting you. The usual causes are wrong traffic, an unclear offer, missing trust signals, slow mobile pages and broken tracking.",
+      "Visitors arrive but never contact you. The usual causes: wrong traffic, an unclear offer, missing trust signals, slow mobile pages and broken tracking.",
     category: "Websites & Content",
     date: "2026-09-24",
     updated: "2026-09-24",
@@ -556,6 +556,114 @@ export const MORE_POSTS: Post[] = [
       {
         q: "Do pop-ups help or hurt enquiries?",
         a: "Pop-ups that block the page on mobile usually hurt, and Google treats intrusive ones negatively. A small, dismissible WhatsApp or chat prompt in a corner is a different matter and often helps.",
+      },
+    ],
+  },
+  {
+    slug: "seo-vs-aeo-vs-geo-explained",
+    title: "SEO vs AEO vs GEO: What Is the Difference and Which Do You Need?",
+    description:
+      "Clear definitions of SEO, AEO and GEO, how they differ, how they work together, and what a UAE business should do first to be found in search and AI tools.",
+    category: "SEO & AI Search",
+    date: "2026-09-24",
+    updated: "2026-09-24",
+    answer:
+      "SEO (search engine optimisation) improves how your website ranks in search results such as Google. AEO (answer engine optimisation) structures content so search engines and voice assistants can show it as a direct answer, such as a featured snippet. GEO (generative engine optimisation) makes your business easy for AI tools such as ChatGPT, Gemini, Perplexity and Google AI Overviews to find, trust and recommend. They build on the same foundations, so most businesses need all three, starting with SEO basics.",
+    keywords: ["SEO vs AEO vs GEO", "what is GEO", "generative engine optimization", "answer engine optimization", "AI search optimization", "GEO agency Dubai"],
+    takeaways: [
+      "SEO wins rankings, AEO wins direct answers, GEO wins mentions in AI-generated answers.",
+      "All three rely on the same foundations: a technically healthy site, clear content and credibility.",
+      "GEO adds a focus on entity consistency, third-party mentions and AI crawler access.",
+      "Start with SEO fundamentals, then structure content for answers and AI.",
+    ],
+    body: [
+      {
+        t: "p",
+        text: "Search has split into three surfaces. People still click on ranked results, they increasingly read direct answers without clicking, and more of them now ask AI assistants for recommendations. Each surface has a name for the work that helps you appear there: SEO, AEO and GEO. The terms are new; the principles behind them are not.",
+      },
+      { t: "h2", text: "What is SEO?", id: "seo" },
+      {
+        t: "p",
+        text: "**Search engine optimisation (SEO)** is the practice of improving a website so it ranks higher in search engine results for relevant searches. It covers technical health (crawling, indexing, speed, mobile), content that matches search intent, and authority earned through links, mentions and reviews. The result you are aiming for is a high position in the list of results, and the clicks that follow.",
+      },
+      { t: "h2", text: "What is AEO?", id: "aeo" },
+      {
+        t: "p",
+        text: "**Answer engine optimisation (AEO)** focuses on being the answer rather than one of the results. Search engines often show a direct answer at the top of the page: featured snippets, People Also Ask boxes and knowledge panels. Voice assistants read one answer aloud. AEO structures content so it can be extracted cleanly: a clear question, a concise answer directly beneath it, lists and tables where they help, and FAQ structured data.",
+      },
+      { t: "h2", text: "What is GEO?", id: "geo" },
+      {
+        t: "p",
+        text: "**Generative engine optimisation (GEO)** helps AI tools that generate answers, such as ChatGPT search, Google AI Overviews, Gemini, Perplexity and Microsoft Copilot, find, understand, trust and mention your business. Instead of a ranked list, these tools write one answer and may name a handful of businesses or cite a few sources. GEO is about being one of them.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Access**: AI crawlers can read your site, and key content is in the HTML rather than hidden behind scripts.",
+          "**Entity clarity**: your name, services, location and details are identical everywhere, so AI tools know exactly who you are.",
+          "**Citable content**: clear, factual answers, definitions and specifics that are easy to quote accurately.",
+          "**Third-party trust**: reviews, directory listings and mentions on credible sites that AI tools cross-check.",
+          "**Monitoring**: regularly checking what AI assistants say about you and your competitors.",
+        ],
+      },
+      { t: "h2", text: "How they compare", id: "compare" },
+      {
+        t: "ul",
+        items: [
+          "**Goal**: SEO aims for a ranking; AEO aims for the direct answer; GEO aims for a mention or citation in an AI answer.",
+          "**Where it shows**: SEO in the list of results; AEO in snippets, answer boxes and voice results; GEO inside ChatGPT, Gemini, Perplexity, Copilot and AI Overviews.",
+          "**Key signals**: SEO relies on relevance, technical health and links; AEO on clear question-and-answer structure and schema; GEO on entity consistency, credible mentions and citable facts.",
+          "**How to measure**: SEO by rankings, traffic and enquiries; AEO by snippet and People Also Ask appearances; GEO by how often and how accurately AI assistants mention you.",
+        ],
+      },
+      {
+        t: "callout",
+        title: "They are layers, not rivals",
+        text: "A page that ranks well is more likely to be used for a direct answer, and content that is clear enough to be an answer is easier for AI tools to cite. Work done for one surface usually helps the others.",
+      },
+      { t: "h2", text: "Which one does your business need?", id: "which" },
+      {
+        t: "p",
+        text: "In practice, most businesses need all three, in this order:",
+      },
+      {
+        t: "ol",
+        items: [
+          "**SEO foundations**: fix technical issues, create a strong page for each service and location, and complete your Google Business Profile.",
+          "**AEO structure**: answer the questions buyers ask, clearly and early on each page, with FAQs and structured data.",
+          "**GEO signals**: make your business details consistent everywhere, allow AI crawlers, add llms.txt, earn credible mentions and monitor AI answers.",
+        ],
+      },
+      {
+        t: "p",
+        text: "Skipping the foundations and jumping to AI-specific tactics rarely works, because AI tools rely heavily on the same sources and trust signals that search engines do.",
+      },
+      { t: "h2", text: "What this means in the UAE", id: "uae" },
+      {
+        t: "p",
+        text: "UAE buyers search in English and Arabic, rely heavily on Google Maps for local decisions, and are quick to adopt AI assistants. That makes consistent business details across English and Arabic sources, a strong Google Business Profile and bilingual content particularly important. Our guides on [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai), [bilingual SEO](/blog/arabic-english-bilingual-website-seo-uae) and [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) go deeper on each.",
+      },
+      {
+        t: "p",
+        text: "We deliver SEO, AEO and GEO as one programme. See our [SEO, AEO and GEO service](/services/seo-aeo-geo) for details.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is GEO replacing SEO?",
+        a: "No. GEO builds on SEO. AI tools draw on content and signals that search engines already use, so strong SEO remains the foundation for AI visibility.",
+      },
+      {
+        q: "Is AEO the same as featured snippet optimisation?",
+        a: "Featured snippets are a large part of AEO, but AEO also covers People Also Ask, knowledge panels and voice assistant answers.",
+      },
+      {
+        q: "What is llms.txt?",
+        a: "llms.txt is a plain-text file at the root of a website that summarises its most important pages for AI tools. It is a newer, optional convention; not every AI tool uses it yet, but it is simple to add.",
+      },
+      {
+        q: "How do I know if AI tools mention my business?",
+        a: "Ask the main AI assistants the questions your customers ask, such as the best provider of your service in your area, and record whether you appear and how you are described. Repeat monthly, because answers vary.",
       },
     ],
   },

@@ -108,7 +108,7 @@ export default function BlogPost({ post }: { post: Post }) {
                 <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-brand to-brand-dark text-xs font-bold text-white" aria-hidden="true">
                   {AUTHOR.name[0]}
                 </span>
-                <a href="/about" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>
+                <a href="/about#author" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>
               </span>
               <span aria-hidden="true">·</span>
               <span>

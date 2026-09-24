@@ -2,6 +2,8 @@ import { useState, type FormEvent } from "react";
 import { CONTACT } from "../site";
 import { SERVICES } from "../services";
 import { delay } from "../motion";
+import { Faq } from "../components/Faq";
+import { CORE_FAQS } from "../core-faqs";
 
 type Status = { kind: "idle" } | { kind: "sending" } | { kind: "sent" } | { kind: "error"; message: string };
 
@@ -106,6 +108,7 @@ export function ContactForm({ source = "contact-page" }: { source?: string }) {
 
 export default function Contact() {
   return (
+    <>
     <section className="relative overflow-hidden">
       <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div className="blob -left-24 top-10 h-80 w-80 bg-brand/15" aria-hidden="true" />
@@ -145,5 +148,7 @@ export default function Contact() {
         <ContactForm />
       </div>
     </section>
+    <Faq faqs={CORE_FAQS["/contact"]} />
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import { CtaBand, PageHero } from "../components/Layout";
-import { LISTI_URL } from "../site";
+import { AUTHOR, LISTI_URL } from "../site";
 import { delay } from "../motion";
+import { Faq } from "../components/Faq";
+import { CORE_FAQS } from "../core-faqs";
 
 const PRINCIPLES = [
   { title: "Advice before invoices", body: "If a channel will not work for your business, we say so, even when it means a smaller engagement." },
@@ -52,6 +54,24 @@ export default function About() {
         </aside>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6" id="author" aria-labelledby="author-title">
+        <div className="grid items-center gap-8 rounded-3xl border border-line bg-white p-8 shadow-lg shadow-brand/5 md:grid-cols-[auto_1fr]" data-reveal>
+          <span className="grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-brand to-brand-dark font-display text-3xl font-semibold text-white" aria-hidden="true">
+            {AUTHOR.name[0]}
+          </span>
+          <div>
+            <p className="eyebrow">Who writes our guides</p>
+            <h2 id="author-title" className="mt-2 font-display text-2xl font-semibold">{AUTHOR.name}</h2>
+            <p className="mt-3 leading-relaxed text-ink-soft">
+              {AUTHOR.name} writes the SEODXB blog: practical guides on marketing strategy, SEO, AEO and GEO, performance
+              advertising and lead tracking for businesses in the UAE. Every guide opens with a short answer, shows when it was
+              published and updated, and ends with answers to common questions.
+            </p>
+            <a href="/blog" className="mt-4 inline-block text-sm font-semibold text-brand underline underline-offset-4">Read the guides</a>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-sand">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <h2 className="font-display text-3xl font-semibold" data-reveal>How we work with clients</h2>
@@ -66,6 +86,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <Faq faqs={CORE_FAQS["/about"]} />
 
       <CtaBand />
     </>

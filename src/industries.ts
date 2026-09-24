@@ -276,7 +276,7 @@ export const INDUSTRIES: Industry[] = [
     name: "Cleaning Companies",
     title: "SEO & Marketing for Cleaning Companies in Dubai | SEODXB",
     description:
-      "Get direct bookings for deep cleaning, move-in cleaning, sofa, carpet and AC duct cleaning. Local SEO, ads and booking-focused websites for Dubai cleaning companies.",
+      "Direct bookings for deep cleaning, move-out, sofa, carpet and AC duct cleaning. Local SEO, ads and booking-focused websites for Dubai cleaning companies.",
     heroTitle: "Direct bookings, not commission to the booking apps",
     heroIntro:
       "Cleaning is searched locally and booked quickly. Companies that show up in the map results and make booking easy win the job, without giving a share to the apps every time.",
@@ -360,7 +360,7 @@ export const INDUSTRIES: Industry[] = [
     name: "Maid Services",
     title: "SEO & Marketing for Maid Service Companies in Dubai | SEODXB",
     description:
-      "Get more hourly, part-time and full-time maid bookings. Local SEO, trust-building content, ads and WhatsApp booking for maid service companies in Dubai and the UAE.",
+      "More hourly, part-time and recurring maid bookings. Local SEO, trust-building content, ads and WhatsApp booking for maid service companies in Dubai.",
     heroTitle: "Families choose the maid service they trust. Be that one.",
     heroIntro:
       "Choosing someone to work inside your home is a trust decision. Maid service companies that are easy to find, transparent about pricing and vetting, and quick on WhatsApp get the bookings.",
@@ -444,7 +444,7 @@ export const INDUSTRIES: Industry[] = [
     name: "Painting & Carpentry",
     title: "SEO & Marketing for Painting and Carpentry Companies in Dubai | SEODXB",
     description:
-      "Turn local searches into painting, carpentry, wardrobe and kitchen jobs. Local SEO, project galleries, reviews and ads for Dubai painting and joinery businesses.",
+      "Turn local searches into painting, carpentry, wardrobe and kitchen jobs. Local SEO, project galleries, reviews and ads for Dubai painters and joiners.",
     heroTitle: "Turn 'painter near me' into booked jobs",
     heroIntro:
       "Homeowners and tenants search for painters and carpenters when they need them, often this week. Showing up locally with real project photos, reviews and quick quotes wins the work.",
@@ -528,7 +528,7 @@ export const INDUSTRIES: Industry[] = [
     name: "Home Furniture",
     title: "SEO & Marketing for Furniture Stores in the UAE | SEODXB",
     description:
-      "Bring more buyers to your showroom and online store. Ecommerce SEO, product schema, Google Shopping, social ads and content for UAE furniture brands and retailers.",
+      "More showroom visits and online sales. Ecommerce SEO, product schema, Google Shopping, social ads and content for UAE furniture retailers.",
     heroTitle: "Get found by buyers who research furniture before they visit",
     heroIntro:
       "Furniture buyers browse for weeks, compare styles and prices online, then buy online or visit a showroom. SEO, Shopping ads and inspiring content keep your brand in front of them throughout.",

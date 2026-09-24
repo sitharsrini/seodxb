@@ -78,12 +78,13 @@ const rss =
 writeFileSync(path.join(out, "feed.xml"), rss);
 
 // llms.txt: a short, AI-readable map of the site. llms-full.txt: the full blog text.
-const pageRoutes = ROUTES.filter((r) => !r.hidden && !r.path.startsWith("/blog") && !r.path.startsWith("/industries/"));
+const pageRoutes = ROUTES.filter((r) => !r.hidden && !r.path.startsWith("/blog") && !r.path.startsWith("/industries/") && !r.path.startsWith("/services/"));
+const SERVICE_URL: Record<string, string> = { strategy: "/services/marketing-strategy", search: "/services/seo-aeo-geo", ads: "/services/performance-advertising", "web-content-social": "/services/websites-content-social" };
 const llms =
   `# SEODXB\n\n> Marketing consultancy in Dubai, United Arab Emirates. Services: marketing strategy, SEO / AEO / GEO (search and AI search visibility), performance advertising (Google, Meta, LinkedIn, TikTok), websites, content and social media. Powered by Listi. Contact: ${CONTACT.email}, ${CONTACT.phone}, ${CONTACT.city}.\n\n` +
   `Articles are written by ${AUTHOR.name}. Every article opens with a short direct answer, followed by key takeaways, the full guide and an FAQ.\n\n` +
   `## Pages\n\n${pageRoutes.map((r) => `- [${r.title.replace(/ \| .*$/, "")}](${abs(r.path)}): ${r.description}`).join("\n")}\n\n` +
-  `## Services\n\n${SERVICES.map((s) => `- [${s.name}](${SITE_URL}/services#${s.id}): ${s.short}`).join("\n")}\n\n` +
+  `## Services\n\n${SERVICES.map((s) => `- [${s.name}](${SITE_URL}${SERVICE_URL[s.id] ?? "/services"}): ${s.short}`).join("\n")}\n\n` +
   `## Industries\n\n${INDUSTRIES.map((i) => `- [${i.name}](${abs(industryPath(i))}): ${i.answer}`).join("\n")}\n\n` +
   `## Blog\n\n${sorted.map((p) => `- [${p.title}](${abs(postPath(p))}): ${p.description}`).join("\n")}\n\n` +
   `## Optional\n\n- [Full article text](${SITE_URL}/llms-full.txt)\n- [RSS feed](${SITE_URL}/feed.xml)\n- [Sitemap](${SITE_URL}/sitemap.xml)\n`;

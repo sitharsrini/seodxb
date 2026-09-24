@@ -1,6 +1,7 @@
 import { CtaBand, PageHero } from "../components/Layout";
 import { INDUSTRIES, industryPath } from "../industries";
 import { delay } from "../motion";
+import { POSTS } from "../blog/posts";
 
 export default function Industries() {
   return (
@@ -29,6 +30,25 @@ export default function Industries() {
               </span>
             </a>
           ))}
+        </div>
+      </section>
+      <section className="bg-sand">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <p className="eyebrow" data-reveal>Free guides</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>Marketing guides by industry</h2>
+          <ul className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+            {INDUSTRIES.flatMap((ind) => [ind.postSlug, ...(ind.extraPostSlugs ?? [])].map((slug) => ({ ind, post: POSTS.find((p) => p.slug === slug) })))
+              .filter((x): x is { ind: (typeof INDUSTRIES)[number]; post: NonNullable<typeof x.post> } => Boolean(x.post))
+              .map(({ ind, post }) => (
+                <li key={post.slug} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-mint-strong" aria-hidden="true" />
+                  <span>
+                    <a href={`/blog/${post.slug}`} className="font-medium text-ink hover:text-brand">{post.title}</a>
+                    <span className="block text-xs text-ink-soft">{ind.name}</span>
+                  </span>
+                </li>
+              ))}
+          </ul>
         </div>
       </section>
       <CtaBand />
