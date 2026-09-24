@@ -1,6 +1,8 @@
 import { CtaBand } from "../components/Layout";
 import { SERVICES } from "../services";
 import { CountUp, RotatingWord, delay } from "../motion";
+import { POSTS } from "../blog/posts";
+import { PostCard } from "../blog/PostCard";
 
 const PROBLEMS = [
   {
@@ -200,6 +202,27 @@ export default function Home() {
         <a href="/results" className="mt-10 inline-block text-sm font-semibold text-brand underline underline-offset-4" data-reveal>
           How we measure results
         </a>
+      </section>
+
+      <section className="bg-sand">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow" data-reveal>From the blog</p>
+              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl" data-reveal style={delay(1)}>
+                Practical guides, no fluff
+              </h2>
+            </div>
+            <a href="/blog" className="text-sm font-semibold text-brand underline underline-offset-4" data-reveal style={delay(2)}>
+              All articles
+            </a>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[...POSTS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3).map((p, i) => (
+              <PostCard key={p.slug} post={p} index={i} />
+            ))}
+          </div>
+        </div>
       </section>
 
       <CtaBand />

@@ -23,7 +23,8 @@ function PoweredByListi({ className = "" }: { className?: string }) {
   );
 }
 
-function Header({ path }: { path: string }) {
+function Header({ path: current }: { path: string }) {
+  const path = current.startsWith("/blog/") ? "/blog" : current;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {

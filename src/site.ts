@@ -1,3 +1,5 @@
+import { POSTS, postPath } from "./blog/posts";
+
 export const SITE_URL = "https://seodxb.com";
 
 export const CONTACT = {
@@ -16,9 +18,11 @@ export interface Route {
   file: string;
   title: string;
   description: string;
+  ogType?: "website" | "article";
+  jsonLd?: object[];
 }
 
-export const ROUTES: Route[] = [
+const PAGE_ROUTES: Route[] = [
   {
     path: "/",
     file: "index.html",
@@ -56,9 +60,60 @@ export const ROUTES: Route[] = [
   },
 ];
 
+const breadcrumbs = (items: { name: string; path: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: SITE_URL + it.path })),
+});
+
+const BLOG_ROUTES: Route[] = [
+  {
+    path: "/blog",
+    file: "blog.html",
+    title: "Marketing Insights Blog | SEODXB Dubai",
+    description:
+      "Practical guides on marketing strategy, SEO and AI search, performance ads and lead tracking for businesses in Dubai and the UAE.",
+    jsonLd: [breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }])],
+  },
+  ...POSTS.map((p): Route => ({
+    path: postPath(p),
+    file: `blog/${p.slug}.html`,
+    title: `${p.title} | SEODXB`,
+    description: p.description,
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: p.title,
+        description: p.description,
+        datePublished: p.date,
+        dateModified: p.updated,
+        mainEntityOfPage: SITE_URL + postPath(p),
+        articleSection: p.category,
+        author: { "@type": "Organization", name: "SEODXB", url: SITE_URL },
+        publisher: { "@type": "Organization", name: "SEODXB", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192.png` } },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: p.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      },
+      breadcrumbs([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: p.title, path: postPath(p) },
+      ]),
+    ],
+  })),
+];
+
+export const ROUTES: Route[] = [...PAGE_ROUTES, ...BLOG_ROUTES];
+
 export const NAV = [
   { href: "/services", label: "Services" },
   { href: "/results", label: "Results" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 
