@@ -337,4 +337,88 @@ export const HEALTH_INDUSTRIES: Industry[] = [
     ],
     postSlug: "cardiology-heart-clinic-marketing-uae",
   },
+  {
+    slug: "gyms-fitness",
+    name: "Gyms & Fitness Centres",
+    title: "SEO & Marketing for Gyms and Fitness Centres in Dubai | SEODXB",
+    description:
+      "More trials, more members, less churn. Local SEO, class and personal training pages, social content and membership campaigns for gyms in Dubai and the UAE.",
+    heroTitle: "More trials, more members, fewer cancellations",
+    heroIntro:
+      "People choose a gym close to home or work, with the right facilities, classes and atmosphere, at a price that makes sense. Gyms that are easy to find, easy to try and easy to love keep growing.",
+    answer:
+      "Gyms and fitness centres in Dubai need SEO because people search for a gym, class or personal trainer near them, such as a 24-hour gym in JLT, a ladies-only gym in Mirdif or boxing classes in Al Quoz, then compare facilities, prices, reviews and trial offers. A complete Google Business Profile, pages for each facility, class and service, clear membership information, an easy free trial or day pass, genuine reviews and a focus on retention turn searches into long-term members.",
+    searches: [
+      "24 hour gym JLT",
+      "ladies only gym Mirdif",
+      "personal trainer Dubai Marina",
+      "boxing classes Al Quoz",
+      "gym day pass Business Bay",
+      "CrossFit box Abu Dhabi",
+    ],
+    challenges: [
+      {
+        title: "Everyone offers a discount",
+        body: "Gyms compete on price and joining offers. Without a clear reason to choose you, members leave for the next promotion.",
+      },
+      {
+        title: "Trials that never convert",
+        body: "Free trials and day passes bring people in, but many never return. The follow-up after the first visit decides the membership.",
+      },
+      {
+        title: "Churn",
+        body: "Winning a member is only half the job. Keeping them past the first few months is where profit is made.",
+      },
+    ],
+    plan: [
+      {
+        service: "search",
+        points: [
+          "Google Business Profile with facilities, hours, class schedule link, real photos and reviews.",
+          "Pages for each class type, personal training, ladies-only areas, facilities and each branch.",
+          "Consistent listings across fitness directories so AI assistants recommend you for the right searches.",
+        ],
+      },
+      {
+        service: "web-content-social",
+        points: [
+          "Clear membership options and pricing, with a simple trial or day pass booking.",
+          "Coach profiles with qualifications and specialities.",
+          "Instagram and TikTok content showing classes, coaches and member stories, with consent.",
+        ],
+      },
+      {
+        service: "ads",
+        points: [
+          "Local Meta and Google campaigns for trials, timed for January, September and Ramadan.",
+          "Ads that follow platform rules on weight-loss claims and before-and-after images.",
+          "Tracking trials, sign-ups and cost per new member.",
+        ],
+      },
+      {
+        service: "strategy",
+        points: [
+          "A clear positioning: community, specialist training, premium facilities or value.",
+          "Trial follow-up and onboarding that turns first visits into memberships.",
+          "Retention programmes, referral rewards and corporate memberships.",
+        ],
+      },
+    ],
+    measure: ["Trials and day passes by source", "Trial-to-member conversion", "Monthly churn and retention", "Cost per new member"],
+    faqs: [
+      {
+        q: "What is the best way for a gym to get new members?",
+        a: "For most gyms, local search and Google Business Profile bring people ready to join, supported by a simple free trial, strong reviews and local social campaigns.",
+      },
+      {
+        q: "Can gyms use transformation photos in ads?",
+        a: "Ad platforms restrict before-and-after images and weight-loss claims, and some content is not allowed at all. Share member stories with consent and focus on experience, community and coaching.",
+      },
+      {
+        q: "How can gyms reduce cancellations?",
+        a: "A strong first month matters most: a welcome session, a programme, a coach who checks in, and classes or challenges that build habits and friendships.",
+      },
+    ],
+    postSlug: "gym-marketing-dubai-more-members",
+  },
 ];
