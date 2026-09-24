@@ -2,6 +2,96 @@
 export const SEMRUSH_SNAPSHOT = { source: "Semrush, UAE database", date: "2026-09-24" };
 
 export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }> = {
+  "/industries/dermatology-clinics": {
+    "main": "dermatology clinic marketing dubai",
+    "secondary": [
+      "dermatology seo dubai"
+    ]
+  },
+  "/industries/physiotherapy-clinics": {
+    "main": "physiotherapy clinic marketing dubai",
+    "secondary": [
+      "physiotherapy seo dubai"
+    ]
+  },
+  "/industries/aesthetic-clinics": {
+    "main": "aesthetic clinic marketing dubai",
+    "secondary": [
+      "aesthetic clinic seo dubai"
+    ]
+  },
+  "/industries/ac-maintenance": {
+    "main": "ac maintenance company marketing dubai",
+    "secondary": [
+      "ac repair seo dubai"
+    ]
+  },
+  "/industries/pest-control": {
+    "main": "pest control marketing dubai",
+    "secondary": [
+      "pest control seo dubai"
+    ]
+  },
+  "/industries/movers-packers": {
+    "main": "movers and packers marketing dubai",
+    "secondary": [
+      "moving company seo dubai"
+    ]
+  },
+  "/industries/business-setup-consultants": {
+    "main": "business setup consultant marketing dubai",
+    "secondary": [
+      "business setup seo dubai"
+    ]
+  },
+  "/industries/accounting-firms": {
+    "main": "accounting firm marketing dubai",
+    "secondary": [
+      "accounting firm seo dubai"
+    ]
+  },
+  "/industries/vat-corporate-tax-consultants": {
+    "main": "tax consultant marketing uae",
+    "secondary": [
+      "vat consultant seo dubai"
+    ]
+  },
+  "/industries/interior-design": {
+    "main": "interior design marketing dubai",
+    "secondary": [
+      "interior design seo dubai"
+    ]
+  },
+  "/industries/car-rental": {
+    "main": "car rental marketing dubai",
+    "secondary": [
+      "car rental seo dubai"
+    ]
+  },
+  "/industries/tuition-centres": {
+    "main": "tuition centre marketing dubai",
+    "secondary": [
+      "tuition centre seo dubai"
+    ]
+  },
+  "/industries/certification-training": {
+    "main": "training institute marketing dubai",
+    "secondary": [
+      "training institute seo dubai"
+    ]
+  },
+  "/industries/desert-safari": {
+    "main": "desert safari marketing dubai",
+    "secondary": [
+      "tour operator seo dubai"
+    ]
+  },
+  "/industries/yacht-charters": {
+    "main": "yacht charter marketing dubai",
+    "secondary": [
+      "yacht rental seo dubai"
+    ]
+  },
   "/": {
     "main": "marketing agency dubai",
     "secondary": [

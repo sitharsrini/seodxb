@@ -189,7 +189,7 @@ export default function Home() {
           </a>
         </div>
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-          {INDUSTRIES.map((ind, i) => (
+          {INDUSTRIES.slice(0, 12).map((ind, i) => (
             <li key={ind.slug} data-reveal="scale" style={delay(i, 60)}>
               <a
                 href={industryPath(ind)}
