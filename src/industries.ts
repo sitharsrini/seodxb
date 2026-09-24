@@ -1,5 +1,10 @@
 import { HEALTH_INDUSTRIES } from "./industries-health";
 import { HOSPITALITY_INDUSTRIES } from "./industries-hospitality";
+import { BATCH2_A_INDUSTRIES } from "./industries-batch2-a";
+import { BATCH2_B_INDUSTRIES } from "./industries-batch2-b";
+import { BATCH2_C_INDUSTRIES } from "./industries-batch2-c";
+import { BATCH2_D_INDUSTRIES } from "./industries-batch2-d";
+import { BATCH2_E_INDUSTRIES } from "./industries-batch2-e";
 
 export interface Industry {
   slug: string;
@@ -1033,6 +1038,14 @@ INDUSTRIES.push(
   },
 );
 
-INDUSTRIES.push(...HEALTH_INDUSTRIES, ...HOSPITALITY_INDUSTRIES);
+INDUSTRIES.push(
+  ...HEALTH_INDUSTRIES,
+  ...HOSPITALITY_INDUSTRIES,
+  ...BATCH2_A_INDUSTRIES,
+  ...BATCH2_B_INDUSTRIES,
+  ...BATCH2_C_INDUSTRIES,
+  ...BATCH2_D_INDUSTRIES,
+  ...BATCH2_E_INDUSTRIES,
+);
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;

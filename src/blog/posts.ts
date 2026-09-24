@@ -4,6 +4,11 @@ import { INDUSTRY_POSTS } from "./posts-industries";
 import { WELLNESS_POSTS } from "./posts-wellness";
 import { HEALTH_POSTS } from "./posts-health";
 import { HOSPITALITY_POSTS } from "./posts-hospitality";
+import { BATCH2_A_POSTS } from "./posts-batch2-a";
+import { BATCH2_B_POSTS } from "./posts-batch2-b";
+import { BATCH2_C_POSTS } from "./posts-batch2-c";
+import { BATCH2_D_POSTS } from "./posts-batch2-d";
+import { BATCH2_E_POSTS } from "./posts-batch2-e";
 
 export type { Block, Post } from "./types";
 
@@ -394,7 +399,7 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS];
 
 const strip = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 

@@ -31,7 +31,7 @@ export const BATCH2_C_INDUSTRIES: Industry[] = [
       },
       {
         title: "Buyers are often abroad",
-        body: "Many founders research from India, Pakistan, the UK, Europe and elsewhere before they have visited Dubai, and they make first contact on WhatsApp. Pages written for someone already living here, and tracking that only counts web forms, miss most of that demand.",
+        body: "Many founders research their options from their home country before they have visited Dubai, and often make first contact on WhatsApp. Pages written for someone already living here, and tracking that only counts web forms, miss much of that demand.",
       },
     ],
     plan: [

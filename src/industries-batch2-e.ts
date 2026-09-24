@@ -262,7 +262,7 @@ export const BATCH2_E_INDUSTRIES: Industry[] = [
     ],
     faqs: [
       {
-        q: "Should we show prices on our website?",
+        q: "Should a yacht charter company show hourly prices online?",
         a: "Yes. Guests compare hourly rates before they message anyone. Show a starting hourly rate, the minimum hours and what is included for each yacht. Hidden prices send people back to the aggregators that show them.",
       },
       {

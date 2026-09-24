@@ -199,7 +199,7 @@ const INDUSTRY_ROUTES: Route[] = [
     file: "industries.html",
     title: "Industries We Serve | SEODXB Marketing Consultancy Dubai",
     description:
-      "SEO, AI search, ads and websites for UAE real estate, construction, car dealers, home services, education, wellness, healthcare and hospitality.",
+      "SEO, AI search, ads and websites for 34 UAE industries: healthcare, home services, professional services, education, property, tourism and more.",
     jsonLd: [
       {
         "@context": "https://schema.org",
