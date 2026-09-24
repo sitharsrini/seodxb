@@ -74,7 +74,16 @@ function renderBlock(b: Block, i: number) {
 export default function BlogPost({ post }: { post: Post }) {
   const toc = post.body.filter((b): b is Extract<Block, { t: "h2" }> => b.t === "h2");
   const others = POSTS.filter((p) => p.slug !== post.slug);
-  const related = [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(0, 2);
+  const linked = new Set(
+    post.body.flatMap((b) => ("text" in b ? b.text : b.t === "ul" || b.t === "ol" ? b.items.join(" ") : "").match(/\/blog\/[a-z0-9-]+/g) ?? []),
+  );
+  const words = (p: typeof post) => new Set(`${p.title} ${p.keywords.join(" ")}`.toLowerCase().match(/[a-z]{4,}/g) ?? []);
+  const mine = words(post);
+  const overlap = (p: typeof post) => [...words(p)].filter((w) => mine.has(w)).length + (p.category === post.category ? 1 : 0);
+  const related = [
+    ...others.filter((p) => linked.has(`/blog/${p.slug}`)),
+    ...others.filter((p) => !linked.has(`/blog/${p.slug}`)).sort((a, b) => overlap(b) - overlap(a)),
+  ].slice(0, 2);
 
   return (
     <>

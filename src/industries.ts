@@ -1,3 +1,5 @@
+import { HEALTH_INDUSTRIES } from "./industries-health";
+
 export interface Industry {
   slug: string;
   name: string;
@@ -1029,5 +1031,7 @@ INDUSTRIES.push(
     postSlug: "ethical-marketing-for-therapists-uae",
   },
 );
+
+INDUSTRIES.push(...HEALTH_INDUSTRIES);
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;

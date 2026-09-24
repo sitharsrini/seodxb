@@ -2,6 +2,7 @@ import type { Block, Post } from "./types";
 import { MORE_POSTS } from "./posts-more";
 import { INDUSTRY_POSTS } from "./posts-industries";
 import { WELLNESS_POSTS } from "./posts-wellness";
+import { HEALTH_POSTS } from "./posts-health";
 
 export type { Block, Post } from "./types";
 
@@ -392,7 +393,7 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS];
 
 const strip = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
