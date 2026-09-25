@@ -113,7 +113,7 @@ export default function Contact() {
       <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div className="blob -left-24 top-10 h-80 w-80 bg-brand/15" aria-hidden="true" />
       <div className="blob -right-20 bottom-0 h-80 w-80 bg-mint/70" style={{ animationDelay: "-7s" }} aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1fr_1.3fr]">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1fr_1.3fr]" data-reveal-now>
         <div>
           <p className="eyebrow" data-reveal>Contact</p>
           <h1 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl" data-reveal style={delay(1)}>

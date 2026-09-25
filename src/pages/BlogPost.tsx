@@ -93,7 +93,7 @@ export default function BlogPost({ post }: { post: Post }) {
           <div className="hero-grid absolute inset-0" aria-hidden="true" />
           <div className="blob -left-24 -top-24 h-72 w-72 bg-brand/15" aria-hidden="true" />
           <div className="blob -right-16 top-10 h-64 w-64 bg-mint/70" style={{ animationDelay: "-6s" }} aria-hidden="true" />
-          <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20">
+          <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20" data-reveal-now>
             <nav className="text-sm text-ink-soft" aria-label="Breadcrumb" data-reveal>
               <a href="/blog" className="hover:text-brand">Blog</a>
               <span className="mx-2" aria-hidden="true">/</span>

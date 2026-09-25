@@ -8,3 +8,4 @@ const app = <App path={normalizePath(window.location.pathname)} />;
 
 if (root.hasChildNodes()) hydrateRoot(root, app);
 else createRoot(root).render(app);
+(window as unknown as { __hydrated: boolean }).__hydrated = true;

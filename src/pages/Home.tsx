@@ -55,7 +55,7 @@ export default function Home() {
         <div className="blob right-0 top-24 h-80 w-80 bg-mint/80" style={{ animationDelay: "-5s" }} aria-hidden="true" />
         <div className="blob bottom-0 left-1/3 h-64 w-64 bg-sky-200/60" style={{ animationDelay: "-11s" }} aria-hidden="true" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.3fr_1fr] md:py-28">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.3fr_1fr] md:py-28" data-reveal-now>
           <div>
             <p className="eyebrow" data-reveal>Marketing consultancy · Dubai</p>
             <h1

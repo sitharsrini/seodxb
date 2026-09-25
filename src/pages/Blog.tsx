@@ -37,6 +37,7 @@ export default function Blog() {
             );
           })}
         </div>
+        <h2 className="sr-only">All articles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {shown.map((p, i) => (
             <PostCard key={p.slug} post={p} index={i % 6} />

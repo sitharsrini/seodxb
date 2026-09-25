@@ -163,7 +163,7 @@ export function PageHero({ eyebrow, title, children }: { eyebrow: string; title:
       <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div className="blob -left-24 -top-24 h-72 w-72 bg-brand/15" aria-hidden="true" />
       <div className="blob -right-16 top-10 h-64 w-64 bg-mint/70" style={{ animationDelay: "-6s" }} aria-hidden="true" />
-      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24" data-reveal-now>
         <p className="eyebrow" data-reveal>{eyebrow}</p>
         <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl" data-reveal style={delay(1)}>
           {title}
