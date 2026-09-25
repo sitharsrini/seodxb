@@ -30,7 +30,7 @@ export default function ServiceDetail({ page }: { page: ServicePage }) {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
-        <div id="short-answer" className="rounded-2xl border-l-4 border-mint-strong bg-white p-6 shadow-lg shadow-brand/5 sm:p-8" data-reveal>
+        <div id="short-answer" className="rounded-2xl border-l-4 border-mint-strong bg-white p-6 shadow-lg shadow-brand/5 sm:p-8" data-reveal data-reveal-now>
           <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-dark">In short</h2>
           <p className="mt-3 text-lg leading-relaxed text-ink">{page.answer}</p>
         </div>
