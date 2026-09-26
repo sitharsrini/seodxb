@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gemini-image-studio": {
+      "command": "npx",
+      "args": ["-y", "gemini-image-studio-mcp@1.0.2"],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    }
+  }
+}
