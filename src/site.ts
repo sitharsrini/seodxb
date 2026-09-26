@@ -5,7 +5,19 @@ import { CORE_FAQS } from "./core-faqs";
 
 export const SITE_URL = "https://seodxb.com";
 
-export const AUTHOR = { name: "Srinivasan R", url: `${SITE_URL}/about` };
+// sameAs: add the author's Listonics profile and LinkedIn URLs so search engines can link the same person across sites.
+export const AUTHOR: { name: string; url: string; sameAs: string[] } = {
+  name: "Srinivasan Ramachandran",
+  url: `${SITE_URL}/about#author`,
+  sameAs: [],
+};
+
+const authorLd = () => ({
+  "@type": "Person",
+  name: AUTHOR.name,
+  url: AUTHOR.url,
+  ...(AUTHOR.sameAs.length ? { sameAs: AUTHOR.sameAs } : {}),
+});
 
 const ORG = { "@type": "Organization", name: "SEODXB", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192.png` } };
 
@@ -103,9 +115,7 @@ const PAGE_ROUTES: Route[] = [
       },
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        name: AUTHOR.name,
-        url: AUTHOR.url,
+        ...authorLd(),
         worksFor: ORG,
         knowsAbout: ["Marketing strategy", "Search engine optimization", "Generative engine optimization", "Performance advertising"],
       },
@@ -146,7 +156,7 @@ const BLOG_ROUTES: Route[] = [
           headline: p.title,
           url: SITE_URL + postPath(p),
           datePublished: p.date,
-          author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+          author: authorLd(),
         })),
       },
       breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
@@ -155,10 +165,10 @@ const BLOG_ROUTES: Route[] = [
   ...POSTS.map((p): Route => ({
     path: postPath(p),
     file: `blog/${p.slug}.html`,
-    title: `${p.title} | SEODXB`,
+    title: `${p.seoTitle ?? p.title} | SEODXB`,
     description: p.description,
     ogType: "article",
-    image: `/og/${p.slug}.png`,
+    image: `/og/${p.slug}.jpg`,
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -166,7 +176,7 @@ const BLOG_ROUTES: Route[] = [
         headline: p.title,
         description: p.description,
         abstract: p.answer,
-        image: `${SITE_URL}/og/${p.slug}.png`,
+        image: `${SITE_URL}/og/${p.slug}.jpg`,
         datePublished: p.date,
         dateModified: p.updated,
         inLanguage: "en",
@@ -175,7 +185,7 @@ const BLOG_ROUTES: Route[] = [
         articleSection: p.category,
         mainEntityOfPage: { "@type": "WebPage", "@id": SITE_URL + postPath(p) },
         isPartOf: { "@type": "Blog", name: "SEODXB Blog", url: `${SITE_URL}/blog` },
-        author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url, worksFor: ORG },
+        author: { ...authorLd(), worksFor: ORG },
         publisher: ORG,
         speakable: { "@type": "SpeakableSpecification", cssSelector: ["#short-answer", "h1"] },
       },
@@ -215,7 +225,7 @@ const INDUSTRY_ROUTES: Route[] = [
     file: `industries/${ind.slug}.html`,
     title: ind.title,
     description: ind.description,
-    image: `/og/industry-${ind.slug}.png`,
+    image: `/og/industry-${ind.slug}.jpg`,
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -255,7 +265,7 @@ const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => ({
   file: `services/${sp.slug}.html`,
   title: sp.title,
   description: sp.description,
-  image: `/og/service-${sp.slug}.png`,
+  image: `/og/service-${sp.slug}.jpg`,
   jsonLd: [
     {
       "@context": "https://schema.org",

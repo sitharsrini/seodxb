@@ -447,7 +447,7 @@ export const INDUSTRIES: Industry[] = [
   {
     slug: "painting-carpentry",
     name: "Painting & Carpentry",
-    title: "SEO & Marketing for Painting and Carpentry Companies in Dubai | SEODXB",
+    title: "Painting & Carpentry Marketing in Dubai | SEODXB",
     description:
       "Turn local searches into painting, carpentry, wardrobe and kitchen jobs. Local SEO, project galleries, reviews and ads for Dubai painters and joiners.",
     heroTitle: "Turn 'painter near me' into booked jobs",
@@ -615,7 +615,7 @@ export const INDUSTRIES: Industry[] = [
   {
     slug: "education",
     name: "Schools & Education",
-    title: "Marketing & SEO for Schools and Education Providers in the UAE | SEODXB",
+    title: "School & Education Marketing in the UAE | SEODXB",
     description:
       "Fill seats before the enrolment peak. Admissions marketing, SEO, AI search and ads for private schools, nurseries, universities and training centres in the UAE.",
     heroTitle: "Admissions marketing that fills seats before term starts",
@@ -871,7 +871,7 @@ INDUSTRIES.push(
   {
     slug: "holistic-healing",
     name: "Healing & Holistic Therapists",
-    title: "SEO & Marketing for Healing and Holistic Therapists in the UAE | SEODXB",
+    title: "Holistic Therapist Marketing & SEO in the UAE | SEODXB",
     description:
       "Trust-led marketing for reiki, sound healing, ayurveda, acupuncture and holistic therapists: local SEO, clear content and responsible ads.",
     heroTitle: "Reach clients who are looking for what you offer",
@@ -955,7 +955,7 @@ INDUSTRIES.push(
   {
     slug: "mental-health-therapists",
     name: "Mental Health Therapists",
-    title: "Ethical Marketing for Therapists and Psychologists in the UAE | SEODXB",
+    title: "Therapist & Psychologist Marketing in UAE | SEODXB",
     description:
       "Ethical, privacy-first SEO and AI search visibility for therapists, psychologists, counsellors and clinics in the UAE.",
     heroTitle: "Help the people who need you find you",

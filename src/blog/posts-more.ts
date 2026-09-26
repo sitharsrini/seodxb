@@ -4,6 +4,7 @@ export const MORE_POSTS: Post[] = [
   {
     slug: "google-business-profile-setup-checklist-dubai",
     title: "Google Business Profile for Dubai Businesses: The Complete Setup Checklist",
+    seoTitle: "Google Business Profile Setup Checklist for Dubai",
     description:
       "How to set up and maintain a Google Business Profile that wins Map Pack visibility in Dubai: categories, verification, hours, photos, reviews and tracking.",
     category: "Local SEO",
@@ -141,6 +142,7 @@ export const MORE_POSTS: Post[] = [
   {
     slug: "how-much-should-a-uae-business-spend-on-marketing",
     title: "How Much Should a UAE Business Spend on Marketing? A Way to Decide",
+    seoTitle: "How Much Should a UAE Business Spend on Marketing?",
     description:
       "Instead of a percentage rule, work backwards from your revenue goal, close rate and customer value to find a marketing budget you can defend.",
     category: "Strategy",
@@ -343,6 +345,7 @@ export const MORE_POSTS: Post[] = [
   {
     slug: "arabic-english-bilingual-website-seo-uae",
     title: "Arabic and English SEO: How to Structure a Bilingual Website in the UAE",
+    seoTitle: "Arabic and English SEO for Bilingual UAE Websites",
     description:
       "Separate URLs, correct hreflang, real translation and right-to-left design: the decisions that make a bilingual UAE website rank in both languages.",
     category: "SEO & AI Search",
@@ -451,6 +454,7 @@ export const MORE_POSTS: Post[] = [
   {
     slug: "website-traffic-but-no-enquiries-conversion-checklist",
     title: "Why Your Website Gets Traffic but No Enquiries: A Conversion Checklist",
+    seoTitle: "Website Traffic but No Enquiries? A Conversion Checklist",
     description:
       "Visitors arrive but never contact you. The usual causes: wrong traffic, an unclear offer, missing trust signals, slow mobile pages and broken tracking.",
     category: "Websites & Content",
@@ -562,6 +566,7 @@ export const MORE_POSTS: Post[] = [
   {
     slug: "seo-vs-aeo-vs-geo-explained",
     title: "SEO vs AEO vs GEO: What Is the Difference and Which Do You Need?",
+    seoTitle: "SEO vs AEO vs GEO: What Is the Difference?",
     description:
       "Clear definitions of SEO, AEO and GEO, how they differ, how they work together, and what a UAE business should do first to be found in search and AI tools.",
     category: "SEO & AI Search",

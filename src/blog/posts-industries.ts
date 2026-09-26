@@ -6,6 +6,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-real-estate-companies-dubai",
     title: "SEO for Real Estate Companies in Dubai: Getting Leads Beyond the Portals",
+    seoTitle: "Real Estate SEO in Dubai: Leads Beyond the Portals",
     description:
       "How Dubai brokerages and developers can use SEO, area guides and AI search visibility to win buyer, investor and tenant leads they own.",
     category: "Industry Guides",
@@ -96,6 +97,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-construction-companies-uae",
     title: "SEO for Construction Companies in the UAE: Get Shortlisted Before the Tender",
+    seoTitle: "Construction Company SEO in the UAE: A Practical Guide",
     description:
       "How UAE contractors and fit-out firms can use SEO, project pages and LinkedIn to be found by developers, consultants and property owners earlier.",
     category: "Industry Guides",
@@ -182,6 +184,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-car-dealers-dubai",
     title: "SEO for Car Dealers in Dubai: Sell More When Buyers Start Online",
+    seoTitle: "Car Dealer SEO in Dubai: Win Buyers Before Classifieds",
     description:
       "How Dubai car dealers and showrooms can use inventory SEO, Google Business Profile, video and ads to win buyers before they reach the classifieds.",
     category: "Industry Guides",
@@ -269,6 +272,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-cleaning-companies-dubai",
     title: "SEO for Cleaning Companies in Dubai: Get Direct Bookings, Not App Commission",
+    seoTitle: "Cleaning Company SEO in Dubai: Get Direct Bookings",
     description:
       "How Dubai cleaning companies can win direct bookings for deep cleaning, move-out, sofa, carpet and AC duct cleaning through local SEO, reviews and fast booking.",
     category: "Industry Guides",
@@ -355,6 +359,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "maid-service-company-marketing-dubai",
     title: "How Maid Service Companies in Dubai Can Get More Bookings Online",
+    seoTitle: "How Maid Service Companies in Dubai Get More Bookings",
     description:
       "Trust, clear pricing, local search and WhatsApp booking: how maid service companies in Dubai can win more hourly, part-time and recurring customers.",
     category: "Industry Guides",
@@ -362,7 +367,7 @@ export const INDUSTRY_POSTS: Post[] = [
     updated: D,
     answer:
       "Maid service companies in Dubai get more bookings online by ranking in local searches for hourly and part-time maids, showing clear prices, explaining how staff are recruited, trained and supervised, displaying licensing information and genuine reviews, and making booking instant through WhatsApp. The biggest gains come from turning first bookings into weekly or monthly customers.",
-    keywords: ["maid service marketing Dubai", "maid company SEO", "hourly maid bookings", "part time maid Dubai leads", "domestic services marketing UAE"],
+    keywords: ["how maid service companies get bookings", "maid company SEO", "hourly maid bookings", "part time maid Dubai leads", "domestic services marketing UAE"],
     takeaways: [
       "Families choose on trust; explain vetting, training and licensing clearly.",
       "Show prices for hourly, part-time and recurring services.",
@@ -438,6 +443,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-painting-carpentry-companies-dubai",
     title: "SEO for Painting and Carpentry Businesses in Dubai: Turn Local Searches into Jobs",
+    seoTitle: "Painting and Carpentry SEO in Dubai: Win Local Jobs",
     description:
       "How Dubai painters, carpenters and joinery companies can win more jobs with local SEO, project galleries, price guides, reviews and fast quotes.",
     category: "Industry Guides",
@@ -522,6 +528,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "seo-for-furniture-stores-uae",
     title: "SEO for Furniture Stores in the UAE: Win Buyers Who Research Before They Buy",
+    seoTitle: "Furniture Store SEO in the UAE: A Practical Guide",
     description:
       "How UAE furniture retailers and custom furniture makers can grow online sales and showroom visits with category SEO, product schema, Shopping ads and content.",
     category: "Industry Guides",
@@ -605,6 +612,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "why-schools-in-dubai-need-marketing",
     title: "Why Schools in Dubai Need Marketing, and What Actually Fills Seats",
+    seoTitle: "Why Schools in Dubai Need Marketing",
     description:
       "Why private schools, nurseries and education providers in the UAE need marketing, and the admissions strategies that turn parent research into enrolments.",
     category: "Industry Guides",
@@ -612,7 +620,7 @@ export const INDUSTRY_POSTS: Post[] = [
     updated: D,
     answer:
       "Schools in Dubai need marketing because parents compare many private schools on curriculum, fees, inspection ratings, location and reviews, mostly online and often before they move to the UAE. What fills seats is clear admissions and fees pages, strong visibility for curriculum and area searches, honest content that shows real teaching and student life, campaigns timed to the enrolment calendar and a fast, tracked follow-up from enquiry to tour to application.",
-    keywords: ["school marketing Dubai", "school admissions marketing UAE", "education marketing", "school SEO Dubai", "nursery marketing Dubai"],
+    keywords: ["why schools need marketing", "school admissions marketing UAE", "education marketing", "school SEO Dubai", "nursery marketing Dubai"],
     takeaways: [
       "Parents shortlist schools online before booking a tour.",
       "Marketing must be ready before the admissions peak, not during it.",
@@ -694,6 +702,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "nursery-marketing-dubai-more-enrolments",
     title: "Nursery Marketing in Dubai: How to Fill Places with Local Families",
+    seoTitle: "Nursery Marketing in Dubai: Fill Places Locally",
     description:
       "How nurseries and early years centres in Dubai can win more tours and enrolments with local search, trust-building content, reviews and fast WhatsApp follow-up.",
     category: "Industry Guides",
@@ -797,6 +806,7 @@ export const INDUSTRY_POSTS: Post[] = [
   {
     slug: "university-marketing-uae-student-recruitment",
     title: "University Marketing in the UAE: Student Recruitment That Turns Enquiries into Enrolments",
+    seoTitle: "University Marketing in the UAE: Student Recruitment",
     description:
       "How UAE universities can recruit more students with programme SEO, AI search visibility, targeted ads and a tracked admissions funnel.",
     category: "Industry Guides",

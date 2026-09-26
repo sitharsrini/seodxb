@@ -4,6 +4,7 @@ export const BATCH2_B_POSTS: Post[] = [
   {
     slug: "ac-maintenance-company-marketing-dubai",
     title: "AC Maintenance Company Marketing in Dubai: A Practical Guide",
+    seoTitle: "How to Win AC Maintenance Contracts in Dubai",
     description:
       "How AC maintenance companies in Dubai can win urgent repair calls, handle the summer peak and build annual maintenance contracts for year-round work.",
     category: "Industry Guides",
@@ -11,8 +12,7 @@ export const BATCH2_B_POSTS: Post[] = [
     updated: "2026-09-24",
     answer:
       "AC maintenance company marketing in Dubai works best when it is built around two kinds of demand. Urgent repair searches peak in summer and are won by the Google Business Profile, fast replies and call-focused ads. Planned work, such as duct cleaning, servicing and annual maintenance contracts, is won with clear service pages and follow-up. The goal is to use each emergency job to sign a contract, so revenue does not collapse when the weather cools.",
-    keywords: [
-      "ac maintenance company marketing",
+    keywords: ["how to get ac maintenance contracts",
       "ac repair dubai",
       "ac maintenance dubai",
       "ac duct cleaning dubai",
@@ -136,6 +136,7 @@ export const BATCH2_B_POSTS: Post[] = [
   {
     slug: "pest-control-company-marketing-dubai",
     title: "Pest Control Company Marketing in Dubai: How to Win More Jobs",
+    seoTitle: "How Pest Control Companies in Dubai Win More Jobs",
     description:
       "A practical guide to pest control company marketing in Dubai: urgent searches, safety questions, move-in treatments and recurring commercial contracts.",
     category: "Industry Guides",
@@ -143,8 +144,7 @@ export const BATCH2_B_POSTS: Post[] = [
     updated: "2026-09-24",
     answer:
       "Pest control company marketing in Dubai should focus on the moment a customer discovers a problem. Build a page for each pest you treat, show your Dubai Municipality approval clearly, answer safety questions for families and pets, and respond fast on phone and WhatsApp. Then turn one-off treatments into recurring work through move-in offers, household plans and scheduled contracts with restaurants and buildings, which provide steadier income than emergencies alone.",
-    keywords: [
-      "pest control company marketing",
+    keywords: ["how pest control companies get jobs",
       "pest control dubai",
       "pest control near me",
       "bed bug treatment dubai",
@@ -261,6 +261,7 @@ export const BATCH2_B_POSTS: Post[] = [
   {
     slug: "movers-and-packers-marketing-dubai",
     title: "Movers and Packers Marketing in Dubai: Win More Booked Moves",
+    seoTitle: "How Moving Companies in Dubai Get More Leads",
     description:
       "How movers and packers in Dubai can win direct enquiries, compete with aggregator sites, build trust on damage and insurance, and book more surveys.",
     category: "Industry Guides",
@@ -268,8 +269,7 @@ export const BATCH2_B_POSTS: Post[] = [
     updated: "2026-09-24",
     answer:
       "Movers and packers marketing in Dubai works when it wins the customer before they fill in a comparison site. That means ranking for local and international moving searches, offering an easy video or in-person survey, and answering the trust questions about packing, insurance and damage upfront. Plan around predictable peaks such as lease renewals, summer and school term changes, and ask for a review after every move, because reviews carry much of the weight in this decision.",
-    keywords: [
-      "movers and packers marketing",
+    keywords: ["how moving companies get leads",
       "movers dubai",
       "moving company dubai",
       "movers and packers dubai",

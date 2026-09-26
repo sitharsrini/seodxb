@@ -127,6 +127,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Send mixed-case links such as /Services to the canonical lower-case page.
+    if (/[A-Z]/.test(url.pathname) && PAGES.has(url.pathname.toLowerCase())) {
+      url.pathname = url.pathname.toLowerCase();
+      return Response.redirect(url.toString(), 301);
+    }
+
     const isPage = PAGES.has(url.pathname);
     const isFile = /\.\w+$/.test(url.pathname);
     if (isPage || isFile) {

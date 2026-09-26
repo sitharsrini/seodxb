@@ -64,8 +64,9 @@ export default function About() {
             <h2 id="author-title" className="mt-2 font-display text-2xl font-semibold">{AUTHOR.name}</h2>
             <p className="mt-3 leading-relaxed text-ink-soft">
               {AUTHOR.name} writes the SEODXB blog: practical guides on marketing strategy, SEO, AEO and GEO, performance
-              advertising and lead tracking for businesses in the UAE. Every guide opens with a short answer, shows when it was
-              published and updated, and ends with answers to common questions.
+              advertising and lead tracking for businesses in the UAE. {AUTHOR.name} is also the author of the Listonics guides
+              on office IT. Every guide opens with a short answer, shows when it was published and updated, and ends with
+              answers to common questions.
             </p>
             <a href="/blog" className="mt-4 inline-block text-sm font-semibold text-brand underline underline-offset-4">Read the guides</a>
           </div>

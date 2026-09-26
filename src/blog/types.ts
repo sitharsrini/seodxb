@@ -10,6 +10,8 @@ export type Block =
 export interface Post {
   slug: string;
   title: string;
+  // Shorter title for the <title> tag when the headline is too long for search results.
+  seoTitle?: string;
   description: string;
   category: string;
   date: string;

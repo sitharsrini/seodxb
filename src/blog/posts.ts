@@ -16,6 +16,7 @@ const FIRST_POSTS: Post[] = [
   {
     slug: "questions-to-ask-before-hiring-a-marketing-agency-dubai",
     title: "12 Questions to Ask Before Hiring a Marketing Agency in Dubai",
+    seoTitle: "12 Questions to Ask a Marketing Agency in Dubai",
     description:
       "The questions that separate a marketing partner from a supplier: ownership, tracking, reporting, contracts and who actually does the work.",
     category: "Strategy",
@@ -23,7 +24,7 @@ const FIRST_POSTS: Post[] = [
     updated: "2026-09-24",
     answer:
       "Before hiring a marketing agency in Dubai, confirm that you will own every account and the website, agree how success will be measured in leads and revenue, meet the people who will do the work, and check the notice period and how ad spend is billed. An agency that answers these clearly is more likely to be a partner than a supplier.",
-    keywords: ["marketing agency Dubai", "hiring a marketing agency", "agency questions", "marketing consultancy UAE"],
+    keywords: ["questions to ask a marketing agency", "hiring a marketing agency", "agency questions", "marketing consultancy UAE"],
     takeaways: [
       "You should own every ad account, analytics property, domain and website login from day one.",
       "Ask how success will be measured in leads and revenue before you discuss deliverables.",
@@ -143,6 +144,7 @@ const FIRST_POSTS: Post[] = [
   {
     slug: "get-recommended-by-chatgpt-google-ai-overviews",
     title: "How to Get Your Business Recommended by ChatGPT and Google AI Overviews",
+    seoTitle: "How to Get Recommended by ChatGPT and AI Overviews",
     description:
       "A practical guide to AI search visibility: how assistants choose which businesses to mention, and the steps that make yours easier to recommend.",
     category: "SEO & AI Search",
@@ -281,6 +283,7 @@ const FIRST_POSTS: Post[] = [
   {
     slug: "track-whatsapp-call-form-leads-uae",
     title: "Track Every WhatsApp, Call and Form Lead Before You Spend on Ads",
+    seoTitle: "How to Track WhatsApp, Call and Form Leads in the UAE",
     description:
       "How UAE businesses can measure enquiries from WhatsApp, phone calls and web forms, so ad budgets go to the campaigns that actually bring customers.",
     category: "Performance Ads",

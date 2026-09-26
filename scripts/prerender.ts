@@ -38,7 +38,7 @@ const abs = (p: string) => SITE_URL + (p === "/" ? "/" : p);
 const h1s: Record<string, string> = {};
 for (const r of ROUTES) {
   const url = abs(r.path);
-  const image = SITE_URL + (r.image ?? "/og/default.png");
+  const image = SITE_URL + (r.image ?? "/og/default.jpg");
   const html = template
     .replace(/<title>.*?<\/title>/, () => `<title>${esc(r.title)}</title>`)
     .replace(/(<meta name="description" content=")[^"]*"/, (_, a) => `${a}${esc(r.description)}"`)
@@ -145,7 +145,7 @@ if (!/^const PAGES = new Set\(.*\);$/m.test(worker)) throw new Error("PAGES line
 writeFileSync(workerPath, worker.replace(/^const PAGES = new Set\(.*\);$/m, () => pagesLine));
 
 for (const r of ROUTES) {
-  const img = path.join(out, r.image ?? "/og/default.png");
+  const img = path.join(out, r.image ?? "/og/default.jpg");
   if (!existsSync(img)) console.warn(`Missing social image: ${img}`);
 }
 

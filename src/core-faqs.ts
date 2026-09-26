@@ -52,7 +52,7 @@ export const CORE_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: "Who writes the SEODXB blog?",
-      a: "Articles are written by Srinivasan R for SEODXB. Each article shows when it was published and last updated, opens with a short answer and ends with an FAQ.",
+      a: "Articles are written by Srinivasan Ramachandran for SEODXB. Each article shows when it was published and last updated, opens with a short answer and ends with an FAQ.",
     },
     {
       q: "What languages do you work in?",

@@ -102,8 +102,8 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
   "/services": {
     "main": "digital marketing services dubai",
     "secondary": [
-      "seo services dubai",
-      "marketing services uae"
+      "marketing services uae",
+      "marketing agency services dubai"
     ]
   },
   "/results": {

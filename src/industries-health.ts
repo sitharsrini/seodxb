@@ -88,7 +88,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
   {
     slug: "hospitals-clinics",
     name: "Hospitals & Clinics",
-    title: "Healthcare Marketing & SEO for Hospitals and Clinics in the UAE | SEODXB",
+    title: "Hospital & Clinic Marketing and SEO in UAE | SEODXB",
     description:
       "Compliant healthcare SEO, doctor profiles, AI search visibility and appointment tracking for hospitals and clinics in the UAE.",
     heroTitle: "Help patients find the right doctor, and book",
@@ -256,7 +256,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
   {
     slug: "cardiology-heart-clinics",
     name: "Heart & Cardiology Clinics",
-    title: "Healthcare Marketing for Cardiology and Heart Health Clinics in the UAE | SEODXB",
+    title: "Cardiology Clinic Marketing in the UAE | SEODXB",
     description:
       "Help patients find trusted heart care. Compliant SEO, cardiologist profiles, heart screening pages and AI search visibility for UAE cardiology clinics.",
     heroTitle: "Trusted heart care, easy to find",

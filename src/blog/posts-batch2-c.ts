@@ -6,6 +6,7 @@ export const BATCH2_C_POSTS: Post[] = [
   {
     slug: "business-setup-consultant-marketing-dubai",
     title: "Business Setup Consultant Marketing: A Long-Tail Plan for Dubai",
+    seoTitle: "How to Get Business Setup Leads in Dubai",
     description:
       "A practical marketing plan for Dubai business setup consultants: skip the costly head terms and win cost, jurisdiction, abroad and PRO services searches.",
     category: "Industry Guides",
@@ -13,8 +14,7 @@ export const BATCH2_C_POSTS: Post[] = [
     updated: D,
     answer:
       "Business setup consultant marketing in Dubai works best when it avoids the head terms that large consultancies and free zones dominate, and instead targets the questions buyers ask mid-decision: formation cost, mainland versus free zone, starting a business as a foreigner, Abu Dhabi setup and PRO services. Build one page per question, answer it in the first paragraph, make WhatsApp the easy first step, track enquiries by country, and use a small, focused ads budget only where tracking proves it pays.",
-    keywords: [
-      "business setup consultant marketing",
+    keywords: ["how to get business setup leads",
       "business setup consultants dubai",
       "dubai mainland company formation cost",
       "starting a business in dubai as a foreigner",
@@ -145,6 +145,7 @@ export const BATCH2_C_POSTS: Post[] = [
   {
     slug: "accounting-firm-marketing-dubai",
     title: "Accounting Firm Marketing in Dubai: Win Monthly Bookkeeping Clients",
+    seoTitle: "How Accounting Firms in Dubai Win More Clients",
     description:
       "How accounting firms in Dubai can win SME bookkeeping retainer clients with service pages, visible credentials, reviews, referrals and deadline planning.",
     category: "Industry Guides",
@@ -152,8 +153,7 @@ export const BATCH2_C_POSTS: Post[] = [
     updated: D,
     answer:
       "Accounting firm marketing in Dubai works when it reaches SME owners at the moments they need help: after company setup, before corporate tax and VAT deadlines, and when a free zone asks for audited accounts. Build a separate page for each service, show named accountants and their qualifications, publish clear retainer scopes, collect reviews steadily, form referral partnerships with setup consultants, and time campaigns around deadlines. Measure new retainer clients, not website visits.",
-    keywords: [
-      "accounting firm marketing dubai",
+    keywords: ["how accounting firms get clients",
       "accounting firms in dubai",
       "bookkeeping services dubai",
       "audit firms in dubai",
@@ -277,6 +277,7 @@ export const BATCH2_C_POSTS: Post[] = [
   {
     slug: "tax-consultant-marketing-uae",
     title: "Tax Consultant Marketing in the UAE: Turn Tax Questions into Clients",
+    seoTitle: "How to Market Corporate Tax Services in the UAE",
     description:
       "How VAT and corporate tax consultants in the UAE can turn tax searches into clients with accurate guides, trust signals and deadline planning.",
     category: "Industry Guides",
@@ -284,8 +285,7 @@ export const BATCH2_C_POSTS: Post[] = [
     updated: D,
     answer:
       "Tax consultant marketing in the UAE should start with education, because most tax searches are questions such as how corporate tax works or how to register, not requests for a consultant. Publish accurate, plainly written guides reviewed by qualified people, keep them dated and updated, link each guide to the matching service, show registrations and credentials clearly, and plan campaigns around registration and filing deadlines. Readers who trust your explanations become clients when they need help.",
-    keywords: [
-      "tax consultant marketing uae",
+    keywords: ["how to market corporate tax services",
       "corporate tax uae",
       "corporate tax registration uae",
       "tax consultant dubai",

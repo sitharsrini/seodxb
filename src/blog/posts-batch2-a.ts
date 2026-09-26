@@ -6,6 +6,7 @@ export const BATCH2_A_POSTS: Post[] = [
   {
     slug: "dermatology-clinic-marketing-dubai",
     title: "Dermatology Clinic Marketing in Dubai: A Practical Patient Guide",
+    seoTitle: "How to Market a Dermatology Clinic in Dubai",
     description:
       "A step-by-step guide to dermatology clinic marketing in Dubai: condition pages, doctor profiles, Google Maps, compliant ads and tracking consultations.",
     category: "Industry Guides",
@@ -13,8 +14,7 @@ export const BATCH2_A_POSTS: Post[] = [
     updated: D,
     answer:
       "Dermatology clinic marketing in Dubai works best when you separate medical and cosmetic services, build a clinician-reviewed page for each condition you treat, give every doctor a profile with their exact licensed title, keep each branch's Google Business Profile accurate, and run search ads only after health authority approval. Start with lower-competition condition searches such as acne treatment, then track booked consultations by condition rather than clicks.",
-    keywords: [
-      "dermatology clinic marketing",
+    keywords: ["how to market a dermatology clinic",
       "dermatologist dubai",
       "dermatology clinic dubai",
       "acne treatment dubai",
@@ -136,6 +136,7 @@ export const BATCH2_A_POSTS: Post[] = [
   {
     slug: "physiotherapy-clinic-marketing-dubai",
     title: "Physiotherapy Clinic Marketing in Dubai: Clinic and Home Patients",
+    seoTitle: "How to Get More Physiotherapy Patients in Dubai",
     description:
       "How Dubai physiotherapy clinics can win patients from local search, doctor referrals and home physiotherapy, with clear insurance pages and tracking.",
     category: "Industry Guides",
@@ -143,8 +144,7 @@ export const BATCH2_A_POSTS: Post[] = [
     updated: D,
     answer:
       "Physiotherapy clinic marketing in Dubai rests on three sources of patients: local searches such as physiotherapist near me, referrals from orthopaedic and sports doctors, and home physiotherapy enquiries from families. Build a complete Google Business Profile, condition pages reviewed by a physiotherapist, a clear insurance and referral page and a dedicated home physio section, then track new assessments by source so you know which channel really fills the diary.",
-    keywords: [
-      "physiotherapy clinic marketing",
+    keywords: ["how to get more physiotherapy patients",
       "physiotherapist near me",
       "physiotherapy dubai",
       "home physiotherapy dubai",
@@ -258,6 +258,7 @@ export const BATCH2_A_POSTS: Post[] = [
   {
     slug: "aesthetic-clinic-marketing-dubai-botox-fillers",
     title: "Aesthetic Clinic Marketing Dubai: Botox and Fillers Within the Rules",
+    seoTitle: "Botox and Filler Marketing Rules in the UAE",
     description:
       "A practical guide to aesthetic clinic marketing in Dubai: rank for Botox and filler searches, pass ad reviews, show credentials and avoid over-promising.",
     category: "Industry Guides",
@@ -265,8 +266,7 @@ export const BATCH2_A_POSTS: Post[] = [
     updated: D,
     answer:
       "Aesthetic clinic marketing in Dubai works when it starts from the rules. Botox and fillers are medical procedures, so only licensed facilities and practitioners may provide and advertise them, promotional content generally needs health authority approval, and Google and Meta restrict ads for prescription medicines and cosmetic procedures. Within those limits, rank with honest treatment pages, practitioner profiles and a strong Google Business Profile, advertise consultations rather than products, and never promise results.",
-    keywords: [
-      "aesthetic clinic marketing dubai",
+    keywords: ["botox and filler marketing rules uae",
       "botox dubai",
       "fillers dubai",
       "lip filler dubai",

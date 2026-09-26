@@ -93,6 +93,7 @@ export const WELLNESS_POSTS: Post[] = [
   {
     slug: "seo-for-beauty-salons-dubai",
     title: "SEO for Beauty Salons in Dubai: More Bookings, More Regular Clients",
+    seoTitle: "Beauty Salon SEO in Dubai: More Bookings and Regulars",
     description:
       "How beauty salons and parlours in Dubai can win more bookings for hair, nails, lashes and bridal through Google Maps, Instagram, reviews and rebooking.",
     category: "Industry Guides",
@@ -175,6 +176,7 @@ export const WELLNESS_POSTS: Post[] = [
   {
     slug: "marketing-for-healing-holistic-therapists-uae",
     title: "Marketing for Healing and Holistic Therapists in the UAE: Build Trust, Get Bookings",
+    seoTitle: "Marketing for Holistic Therapists in the UAE",
     description:
       "How reiki, sound healing, ayurveda and other holistic practitioners in the UAE can attract clients with clear content, local SEO and honest claims.",
     category: "Industry Guides",
@@ -182,7 +184,7 @@ export const WELLNESS_POSTS: Post[] = [
     updated: D,
     answer:
       "Holistic and healing therapists in the UAE attract more clients by explaining each practice clearly and honestly, showing practitioner training and any required licensing, optimising their Google Business Profile, publishing helpful content that answers what first-time clients wonder, collecting genuine reviews and offering easy booking for sessions and workshops. Avoid promising medical outcomes, because health claims are regulated and restricted by ad platforms.",
-    keywords: ["holistic therapist marketing UAE", "reiki Dubai", "sound healing Dubai", "wellness practitioner SEO", "complementary therapy marketing"],
+    keywords: ["how holistic therapists get clients", "reiki Dubai", "sound healing Dubai", "wellness practitioner SEO", "complementary therapy marketing"],
     takeaways: [
       "Many clients are curious but unsure; clear explanations convert them.",
       "Credentials and licensing, where required, are central to trust.",
@@ -257,6 +259,7 @@ export const WELLNESS_POSTS: Post[] = [
   {
     slug: "ethical-marketing-for-therapists-uae",
     title: "Ethical Marketing for Therapists and Psychologists in the UAE",
+    seoTitle: "Ethical Marketing for Therapists in the UAE",
     description:
       "How UAE therapists, psychologists and counselling clinics can help clients find them through SEO and AI search, while protecting privacy and ethics.",
     category: "Industry Guides",
@@ -264,7 +267,7 @@ export const WELLNESS_POSTS: Post[] = [
     updated: D,
     answer:
       "Therapists and psychologists in the UAE can market ethically by making it easy for people to find a licensed professional who fits their needs: clear pages on the concerns they support, therapist profiles with licensing, qualifications, approaches and languages, practical details on fees, insurance and online sessions, a complete Google Business Profile and privacy-first enquiry forms. Avoid client testimonials where your professional code discourages them, never target ads based on health conditions and never send sensitive information to analytics or ad platforms.",
-    keywords: ["therapist marketing UAE", "psychologist Dubai SEO", "counselling clinic marketing", "mental health marketing ethics", "therapist near me Dubai"],
+    keywords: ["ethical marketing for therapists", "psychologist Dubai SEO", "counselling clinic marketing", "mental health marketing ethics", "therapist near me Dubai"],
     takeaways: [
       "People search privately, often by concern, language and approach.",
       "Licensing, qualifications and fit matter more than persuasive copy.",

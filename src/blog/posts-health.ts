@@ -6,6 +6,7 @@ export const HEALTH_POSTS: Post[] = [
   {
     slug: "seo-for-yoga-studios-dubai",
     title: "SEO for Yoga Studios in Dubai: Fill Classes and Grow Memberships",
+    seoTitle: "Yoga Studio SEO in Dubai: Fill Classes and Memberships",
     description:
       "How Dubai yoga studios can attract beginners and regulars with Google Maps, class pages, a clear timetable, intro offers and content that builds community.",
     category: "Industry Guides",
@@ -93,6 +94,7 @@ export const HEALTH_POSTS: Post[] = [
   {
     slug: "healthcare-marketing-hospitals-clinics-uae",
     title: "Healthcare Marketing in the UAE: How Hospitals and Clinics Get Found by Patients",
+    seoTitle: "Healthcare Marketing in the UAE for Hospitals and Clinics",
     description:
       "How UAE hospitals and clinics can help patients find the right doctor and book, with compliant SEO, doctor profiles and AI search visibility.",
     category: "Industry Guides",
@@ -100,7 +102,7 @@ export const HEALTH_POSTS: Post[] = [
     updated: D,
     answer:
       "Hospitals and clinics in the UAE get found by patients through clear specialty and service pages reviewed by clinicians, detailed doctor profiles with licensing and languages, accurate insurance and location information, a complete Google Business Profile for each facility, easy online booking and privacy-first appointment tracking. All medical advertising should follow the rules of the relevant health authority, which generally require approval before publication.",
-    keywords: ["healthcare marketing UAE", "hospital SEO Dubai", "clinic marketing", "medical SEO", "doctor near me Dubai"],
+    keywords: ["how hospitals and clinics get patients", "hospital SEO Dubai", "clinic marketing", "medical SEO", "doctor near me Dubai"],
     takeaways: [
       "Patients search for a doctor, specialty, insurance network and location.",
       "Doctor profiles are often the most visited and most important pages.",
@@ -263,6 +265,7 @@ export const HEALTH_POSTS: Post[] = [
   {
     slug: "cardiology-heart-clinic-marketing-uae",
     title: "Marketing for Cardiology and Heart Health Clinics in the UAE: Trust, Accuracy and Access",
+    seoTitle: "Cardiology Clinic Marketing in the UAE: A Guide",
     description:
       "How UAE cardiology and heart health clinics can help patients find them with expert-reviewed content, cardiologist profiles, screening pages and compliant ads.",
     category: "Industry Guides",
@@ -270,7 +273,7 @@ export const HEALTH_POSTS: Post[] = [
     updated: D,
     answer:
       "Cardiology and heart health clinics in the UAE attract the right patients by publishing clear, cardiologist-reviewed pages for each test, service and screening package, detailed cardiologist profiles with licensing and subspecialties, accurate insurance and access information, a complete Google Business Profile and easy booking. Every relevant page should direct emergencies to call 998, and all advertising should follow health authority rules and avoid fear-based messaging.",
-    keywords: ["cardiology clinic marketing UAE", "cardiologist Dubai", "heart check up Dubai", "heart health SEO", "medical marketing cardiology"],
+    keywords: ["how cardiology clinics attract patients", "cardiologist Dubai", "heart check up Dubai", "heart health SEO", "medical marketing cardiology"],
     takeaways: [
       "Heart health content must be accurate and reviewed by cardiologists.",
       "Clear emergency guidance protects patients and builds trust.",
@@ -350,6 +353,7 @@ export const HEALTH_POSTS: Post[] = [
   {
     slug: "gym-marketing-dubai-more-members",
     title: "Gym Marketing in Dubai: How to Get More Members and Keep Them",
+    seoTitle: "Gym Marketing in Dubai: Get and Keep More Members",
     description:
       "How Dubai gyms and fitness centres can win more trials and members through Google Maps, class and coach pages, trial follow-up and retention programmes.",
     category: "Industry Guides",
@@ -357,7 +361,7 @@ export const HEALTH_POSTS: Post[] = [
     updated: D,
     answer:
       "Gyms in Dubai get more members by completing their Google Business Profile with facilities, hours and real photos, creating pages for each class, personal training and facility, showing membership options clearly, making a free trial or day pass easy to book, following up every trial within a day, collecting reviews and investing in the first month of membership so new members stay. Ads should follow platform rules on weight-loss claims and before-and-after images.",
-    keywords: ["gym marketing Dubai", "fitness centre SEO", "gym near me Dubai", "gym membership growth", "personal trainer marketing UAE"],
+    keywords: ["how gyms get more members", "fitness centre SEO", "gym near me Dubai", "gym membership growth", "personal trainer marketing UAE"],
     takeaways: [
       "Most gym choices are local, so map visibility comes first.",
       "A trial is only valuable if it is followed up quickly and personally.",

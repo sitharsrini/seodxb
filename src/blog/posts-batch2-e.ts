@@ -6,6 +6,7 @@ export const BATCH2_E_POSTS: Post[] = [
   {
     slug: "certification-training-institute-marketing-dubai",
     title: "Training Institute Marketing in Dubai: Fill PMP, CMA and ACCA Batches",
+    seoTitle: "How to Fill PMP, CMA and ACCA Batches in Dubai",
     description:
       "How Dubai training institutes can fill PMP, CMA and ACCA batches: course pages, exam-window timing, honest claims, partner status and corporate budgets.",
     category: "Industry Guides",
@@ -13,8 +14,7 @@ export const BATCH2_E_POSTS: Post[] = [
     updated: D,
     answer:
       "Training institute marketing in Dubai works best when it follows the exam calendar. Build a detailed page for each certification with eligibility, batch timings, trainer profiles and what the fee covers, show only the partner status you actually hold, avoid pass-rate claims you cannot prove, start campaigns several weeks before each batch, offer weekend and evening options for working professionals, and follow up every enquiry by WhatsApp and email until the next intake.",
-    keywords: [
-      "training institute marketing dubai",
+    keywords: ["how to fill certification courses",
       "pmp certification dubai",
       "cma course dubai",
       "acca classes in dubai",
@@ -150,6 +150,7 @@ export const BATCH2_E_POSTS: Post[] = [
   {
     slug: "desert-safari-marketing-dubai",
     title: "Desert Safari Marketing in Dubai: How to Win More Direct Bookings",
+    seoTitle: "How Desert Safari Operators Win Direct Bookings",
     description:
       "A practical guide for Dubai desert safari operators: beat the aggregators on specific searches, earn reviews, show safety clearly and grow direct bookings.",
     category: "Industry Guides",
@@ -157,8 +158,7 @@ export const BATCH2_E_POSTS: Post[] = [
     updated: D,
     answer:
       "Desert safari marketing in Dubai works when operators stop fighting booking platforms for the broadest safari searches and focus on specific ones: evening, morning, private and overnight safaris, family options and pickup areas. Build a page for each tour with clear inclusions and price, show your licence and safety standards, collect genuine reviews on Google and TripAdvisor, offer pages in visitors' languages, and make direct booking and WhatsApp confirmation faster than the platforms.",
-    keywords: [
-      "desert safari marketing dubai",
+    keywords: ["desert safari direct bookings",
       "desert safari dubai",
       "evening desert safari dubai",
       "private desert safari dubai",
@@ -288,6 +288,7 @@ export const BATCH2_E_POSTS: Post[] = [
   {
     slug: "yacht-charter-marketing-dubai",
     title: "Yacht Charter Marketing in Dubai: A Guide to More Direct Bookings",
+    seoTitle: "How to Get More Yacht Charter Bookings in Dubai",
     description:
       "How Dubai yacht charter companies win direct bookings: yacht pages, clear hourly pricing, Instagram, reviews, occasion pages and summer demand.",
     category: "Industry Guides",
@@ -295,8 +296,7 @@ export const BATCH2_E_POSTS: Post[] = [
     updated: D,
     answer:
       "Yacht charter marketing in Dubai works when each boat and each occasion has its own clear page. Show real photos, capacity, hourly rate, minimum hours, inclusions and the exact departure point, build occasion pages for birthdays, proposals and corporate events, keep your Instagram and website consistent, collect reviews that mention the boat, reply fast on WhatsApp, and show your licensing and safety details so guests book direct instead of through aggregators.",
-    keywords: [
-      "yacht charter marketing dubai",
+    keywords: ["how to get more yacht bookings",
       "yacht rental dubai",
       "yacht party dubai",
       "yacht charter dubai",

@@ -6,6 +6,7 @@ export const BATCH2_D_POSTS: Post[] = [
   {
     slug: "interior-design-studio-marketing-dubai",
     title: "Interior Design Marketing in Dubai: Turn Your Portfolio Into Leads",
+    seoTitle: "How Interior Designers in Dubai Get More Clients",
     description:
       "A practical guide to interior design marketing in Dubai: project case studies, niche service pages, Instagram and Pinterest, and nurturing long projects.",
     category: "Industry Guides",
@@ -13,8 +14,7 @@ export const BATCH2_D_POSTS: Post[] = [
     updated: D,
     answer:
       "Interior design marketing in Dubai works best when a studio picks a clear niche, turns every finished project into a written case study with community, scope, style and timeline, builds separate pages for villas, apartments and commercial fit-outs, uses Instagram and Pinterest to send people to those pages, targets long-tail searches rather than the crowded head terms, and follows up patiently through a sales cycle that can run for months.",
-    keywords: [
-      "interior design marketing dubai",
+    keywords: ["how interior designers get clients",
       "interior design company dubai",
       "interior designer dubai",
       "villa interior design dubai",
@@ -133,6 +133,7 @@ export const BATCH2_D_POSTS: Post[] = [
   {
     slug: "car-rental-marketing-dubai",
     title: "Car Rental Marketing in Dubai: How to Win More Direct Bookings",
+    seoTitle: "How to Get More Direct Car Rental Bookings in Dubai",
     description:
       "A step-by-step guide to car rental marketing in Dubai: long-tail pages, transparent fees, reviews, WhatsApp, seasonal ads and the resident monthly market.",
     category: "Industry Guides",
@@ -140,8 +141,7 @@ export const BATCH2_D_POSTS: Post[] = [
     updated: D,
     answer:
       "Car rental marketing in Dubai works when a company stops chasing only the crowded head terms and builds pages for specific cars, durations and areas, publishes every fee clearly (deposit, Salik, fines, mileage, insurance), collects reviews that mention deposit refunds and service, replies fast on WhatsApp, targets tourists around the winter season and builds an always-on monthly rental offer for residents.",
-    keywords: [
-      "car rental marketing dubai",
+    keywords: ["how to get more car rental bookings",
       "rent a car dubai",
       "monthly car rental dubai",
       "car rental dubai",
@@ -262,6 +262,7 @@ export const BATCH2_D_POSTS: Post[] = [
   {
     slug: "tuition-centre-marketing-dubai",
     title: "Tuition Centre Marketing in Dubai: A Guide to Winning Parents",
+    seoTitle: "How to Get More Tuition Students in Dubai",
     description:
       "How Dubai tuition centres can reach parents searching by subject, curriculum and area, with local SEO, trial classes, trust signals and exam-season timing.",
     category: "Industry Guides",
@@ -269,8 +270,7 @@ export const BATCH2_D_POSTS: Post[] = [
     updated: D,
     answer:
       "Tuition centre marketing in Dubai works when a centre builds a page for each subject and curriculum it teaches (such as IGCSE maths, A level chemistry, IB physics or CBSE science), sets up a strong local Google Business Profile, shows tutor qualifications, class sizes and safeguarding clearly, offers an easy trial class, plans campaigns around each curriculum's exam calendar and follows up with parents quickly after the first lesson.",
-    keywords: [
-      "tuition centre marketing dubai",
+    keywords: ["how to get more tuition students",
       "maths tutor dubai",
       "igcse maths tutor dubai",
       "ib tutor dubai",

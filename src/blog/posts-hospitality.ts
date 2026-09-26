@@ -6,6 +6,7 @@ export const HOSPITALITY_POSTS: Post[] = [
   {
     slug: "seo-for-restaurants-dubai",
     title: "SEO for Restaurants in Dubai: Fill More Tables and Grow Direct Orders",
+    seoTitle: "Restaurant SEO in Dubai: More Tables, More Direct Orders",
     description:
       "How Dubai restaurants and cafés can win more diners through Google Maps, a searchable menu, fresh photos, reviews, social content and direct ordering.",
     category: "Industry Guides",
@@ -101,7 +102,7 @@ export const HOSPITALITY_POSTS: Post[] = [
     updated: D,
     answer:
       "UAE hotels grow direct bookings by making their own website the easiest and most rewarding place to book: a fast site with a smooth booking engine, clear direct-booking benefits, room and experience pages that rank, visibility in Google hotel results and metasearch with the direct rate shown, strong reviews, campaigns tailored to key source markets and resident staycations, and loyalty offers that bring guests back directly.",
-    keywords: ["hotel marketing UAE", "hotel direct bookings", "hotel SEO Dubai", "reduce OTA commission", "staycation marketing Dubai"],
+    keywords: ["how hotels get direct bookings", "hotel direct bookings", "hotel SEO Dubai", "reduce OTA commission", "staycation marketing Dubai"],
     takeaways: [
       "Most guests compare prices across channels; give them a reason to book direct.",
       "Google hotel results and metasearch put your direct rate next to the OTAs.",
