@@ -187,6 +187,7 @@ export const BATCH2_C_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "accounting-firm-marketing-dubai",
+    extraPostSlugs: ["audit-firm-marketing-dubai", "bookkeeping-services-marketing-dubai"],
   },
   {
     slug: "vat-corporate-tax-consultants",

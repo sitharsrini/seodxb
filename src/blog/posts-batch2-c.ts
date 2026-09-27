@@ -154,9 +154,8 @@ export const BATCH2_C_POSTS: Post[] = [
       "Accounting firm marketing in Dubai works when it reaches SME owners at the moments they need help: after company setup, before corporate tax and VAT deadlines, and when a free zone asks for audited accounts. Build a separate page for each service, show named accountants and their qualifications, publish clear retainer scopes, collect reviews steadily, form referral partnerships with setup consultants, and time campaigns around deadlines. Measure new retainer clients, not website visits.",
     keywords: ["how accounting firms get clients",
       "accounting firms in dubai",
-      "bookkeeping services dubai",
-      "audit firms in dubai",
       "accounting services dubai",
+      "chartered accountants dubai",
     ],
     takeaways: [
       "SME owners look for accountants at trigger moments, so be visible at each one.",
@@ -201,7 +200,7 @@ export const BATCH2_C_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Pages that answer these questions filter out poor-fit enquiries and give serious buyers a reason to call. They also give AI assistants specific facts to draw on when someone asks for an accountant for a small trading company in Dubai.",
+        text: "Pages that answer these questions filter out poor-fit enquiries and give serious buyers a reason to call. They also give AI assistants specific facts to draw on when someone asks for an accountant for a small trading company in Dubai. We cover two of these services in more depth in our guides to [audit firm marketing](/blog/audit-firm-marketing-dubai) and [selling bookkeeping retainers](/blog/bookkeeping-services-marketing-dubai).",
       },
       { t: "h2", text: "Put your credentials where people can see them", id: "credentials" },
       {
