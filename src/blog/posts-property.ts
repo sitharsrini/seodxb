@@ -175,7 +175,7 @@ export const PROPERTY_POSTS: Post[] = [
   {
     slug: "holiday-home-management-marketing-dubai",
     title: "Holiday Home Management in Dubai: How to Win More Owners and Guests",
-    seoTitle: "Holiday Home Management Marketing in Dubai",
+    seoTitle: "How Holiday Home Operators in Dubai Win More Owners",
     description:
       "How Dubai holiday home operators can win more property owners and direct guest bookings: permits, owner pages, listing quality, reviews and direct booking.",
     category: "Industry Guides",
@@ -183,7 +183,7 @@ export const PROPERTY_POSTS: Post[] = [
     updated: D,
     answer:
       "Holiday home operators in Dubai grow by marketing to two groups: owners, who need proof of higher returns and hassle-free management, and guests, who book on Airbnb, Booking.com and direct channels. Clear owner pages with fee structures and sample earnings reports, fully licensed units, professional listings, fast guest communication, strong reviews and a direct booking option for returning guests are the foundations. Holiday homes in Dubai require permits from the Department of Economy and Tourism, so compliance is part of the pitch.",
-    keywords: ["holiday home marketing dubai", "holiday homes dubai", "holiday home management dubai", "airbnb management dubai", "short term rental dubai"],
+    keywords: ["how holiday home operators win owners", "holiday homes dubai", "holiday home management dubai", "airbnb management dubai", "short term rental dubai"],
     takeaways: [
       "Market to owners and guests separately; they need different proof.",
       "Show owners a sample earnings statement and your fee structure.",
@@ -238,7 +238,7 @@ export const PROPERTY_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "See how we help property managers and holiday home operators on our [property management marketing page](/industries/property-management).",
+        text: "See how we help operators on our [holiday home marketing page](/industries/holiday-homes), read our [DTCM holiday home licence guide](/blog/dtcm-holiday-home-licence-guide-operators), or see our [property management marketing page](/industries/property-management).",
       },
     ],
     faqs: [
