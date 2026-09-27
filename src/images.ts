@@ -48,6 +48,7 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
   "law-firms": {"id": "photo-1589829545856-d10d557cf95f", "alt": "Lady Justice statue holding scales", "by": "Tingey Injury Law Firm", "user": "tingeyinjurylawfirm"},
   "travel-agencies": {"id": "photo-1558204692-5f402fe220b9", "alt": "Aircraft on the runway at sunset", "by": "Anna Gru", "user": "gruu"},
   "event-management": {"id": "photo-1531058020387-3be344556be6", "alt": "Audience at a conference in a large event hall", "by": "Jakob Dalbjörn", "user": "jakobdalbjorn"},
+  "mep-contractors": {"id": "photo-1690356107685-3725367f6f3f", "alt": "Technicians in blue overalls working on mechanical equipment", "by": "Septian setiawan", "user": "septian_s09"},
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
@@ -109,6 +110,8 @@ export const POST_PHOTOS: Record<string, Photo> = {
   "holiday-package-pages-seo-uae": {"id": "photo-1523496922380-91d5afba98a3", "alt": "Boat on clear turquoise water seen from above", "by": "Mohamed Masaau", "user": "masaaau_02"},
   "corporate-travel-management-marketing-uae": {"id": "photo-1580285198593-af9f402c676a", "alt": "Aerial view of aircraft parked at airport gates", "by": "Doug Bagg", "user": "dougbagg_"},
   "how-event-management-companies-get-clients-dubai": {"id": "photo-1540575467063-178a50c2df87", "alt": "Conference audience facing a lit stage", "by": "Headway", "user": "headwayio"},
+  "how-mep-contractors-win-projects-uae": {"id": "photo-1694521787162-5373b598945c", "alt": "Engineers inspecting work on a building site", "by": "Glenov Brankovic", "user": "glenovbrankovic"},
+  "mep-company-profile-prequalification": {"id": "photo-1454165804606-c3d57bc86b40", "alt": "Reviewing documents beside a laptop", "by": "Scott Graham", "user": "amstram"},
 };
 
 const UTM = "utm_source=seodxb&utm_medium=referral";

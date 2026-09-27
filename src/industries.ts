@@ -8,6 +8,7 @@ import { LAW_INDUSTRIES } from "./industries-law";
 import { INSURANCE_INDUSTRIES } from "./industries-insurance";
 import { TRAVEL_INDUSTRIES } from "./industries-travel";
 import { EVENT_INDUSTRIES } from "./industries-events";
+import { MEP_INDUSTRIES } from "./industries-mep";
 import { BATCH2_A_INDUSTRIES } from "./industries-batch2-a";
 import { BATCH2_B_INDUSTRIES } from "./industries-batch2-b";
 import { BATCH2_C_INDUSTRIES } from "./industries-batch2-c";
@@ -133,7 +134,7 @@ export const INDUSTRIES: Industry[] = [
     searches: [
       "fit out contractors Dubai",
       "villa renovation company Dubai",
-      "MEP contractor Abu Dhabi",
+      "civil contractors Dubai",
       "commercial construction company UAE",
       "swimming pool construction Dubai",
       "steel structure fabrication Sharjah",
@@ -1065,6 +1066,7 @@ INDUSTRIES.push(
   ...INSURANCE_INDUSTRIES,
   ...TRAVEL_INDUSTRIES,
   ...EVENT_INDUSTRIES,
+  ...MEP_INDUSTRIES,
 );
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;

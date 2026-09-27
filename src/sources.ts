@@ -41,6 +41,8 @@ const S = {
   icp: { name: "Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)", url: "https://icp.gov.ae" },
   dct: { name: "Department of Culture and Tourism, Abu Dhabi", url: "https://dct.gov.ae" },
   dwtc: { name: "Dubai World Trade Centre (DWTC)", url: "https://www.dwtc.com" },
+  dewa: { name: "Dubai Electricity and Water Authority (DEWA)", url: "https://www.dewa.gov.ae" },
+  dcd: { name: "Dubai Civil Defence", url: "https://www.dcd.gov.ae" },
 } satisfies Record<string, Source>;
 
 export const INDUSTRY_SOURCES: Record<string, Source[]> = {
@@ -86,6 +88,7 @@ export const INDUSTRY_SOURCES: Record<string, Source[]> = {
   "insurance-brokers": [S.cbuae, S.dha, S.doh, S.helpful],
   "travel-agencies": [S.det, S.iata, S.gbpRank, S.helpful],
   "event-management": [S.det, S.dct, S.gbpRank, S.helpful],
+  "mep-contractors": [S.dm, S.dewa, S.dcd, S.helpful],
 };
 
 export const POST_SOURCES: Record<string, Source[]> = {
