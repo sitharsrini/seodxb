@@ -337,7 +337,7 @@ export const WELLNESS_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "See how we support practices on our [therapist marketing page](/industries/mental-health-therapists).",
+        text: "For the listing itself, our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting, and our guide to [holistic and healing therapist marketing](/blog/marketing-for-healing-holistic-therapists-uae) covers related practices. See how we support practices on our [therapist marketing page](/industries/mental-health-therapists).",
       },
     ],
     faqs: [

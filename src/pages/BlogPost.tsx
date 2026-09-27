@@ -5,6 +5,8 @@ import { Inline } from "../blog/Inline";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
 import { AUTHOR } from "../site";
+import { postSources } from "../citations";
+import { AuthorBox, Sources } from "../components/Trust";
 
 function ReadingProgress() {
   const [p, setP] = useState(0);
@@ -163,6 +165,9 @@ export default function BlogPost({ post }: { post: Post }) {
                 ))}
               </div>
             </section>
+
+            <Sources sources={postSources(post.slug)} className="mt-14" />
+            <AuthorBox reviewed={post.updated} className="mt-10" />
           </div>
 
           <aside className="hidden lg:block">
@@ -176,6 +181,9 @@ export default function BlogPost({ post }: { post: Post }) {
                 ))}
                 <li>
                   <a href="#faq" className="block text-ink-soft transition hover:translate-x-1 hover:text-brand">FAQ</a>
+                </li>
+                <li>
+                  <a href="#sources" className="block text-ink-soft transition hover:translate-x-1 hover:text-brand">Sources</a>
                 </li>
               </ul>
               <a href="/contact" className="btn-primary mt-6 w-full justify-center text-sm">Book a consultation</a>

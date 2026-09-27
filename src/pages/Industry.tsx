@@ -1,6 +1,7 @@
 import { PageHero } from "../components/Layout";
-import { ContactForm } from "./Contact";
-import { INDUSTRIES, industryPath, type Industry as IndustryData } from "../industries";
+import { type Industry as IndustryData } from "../industries";
+import { Enquire, FaqList, OtherIndustries, TrustBand } from "./IndustryParts";
+import IndustryEditorial from "./IndustryEditorial";
 import { SERVICES } from "../services";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
@@ -9,11 +10,11 @@ import { delay } from "../motion";
 const serviceName = (id: string) => SERVICES.find((s) => s.id === id)?.name ?? id;
 
 export default function Industry({ industry }: { industry: IndustryData }) {
+  if (industry.layout === "editorial") return <IndustryEditorial industry={industry} />;
   const post = POSTS.find((p) => p.slug === industry.postSlug);
   const guides = [industry.postSlug, ...(industry.extraPostSlugs ?? [])]
     .map((slug) => POSTS.find((p) => p.slug === slug))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
-  const others = INDUSTRIES.filter((i) => i.slug !== industry.slug);
 
   return (
     <>
@@ -141,52 +142,15 @@ export default function Industry({ industry }: { industry: IndustryData }) {
 
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h2 className="font-display text-3xl font-semibold" data-reveal>Frequently asked questions</h2>
-        <div className="mt-6 space-y-3">
-          {industry.faqs.map((f) => (
-            <details key={f.q} className="group rounded-xl border border-line bg-white p-5 open:shadow-lg open:shadow-brand/5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-ink">
-                {f.q}
-                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-sand text-brand transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className="mt-3 text-ink-soft">{f.a}</p>
-            </details>
-          ))}
+        <div className="mt-6">
+          <FaqList faqs={industry.faqs} />
         </div>
       </section>
 
-      <section id="enquire" className="relative scroll-mt-20 overflow-hidden bg-navy">
-        <div className="blob -left-24 top-0 h-80 w-80 bg-brand/40" aria-hidden="true" />
-        <div className="blob -right-20 bottom-0 h-72 w-72 bg-mint-strong/20" style={{ animationDelay: "-7s" }} aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-[1fr_1.3fr]">
-          <div className="text-white" data-reveal="left">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-mint">
-              <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint-strong" aria-hidden="true" />
-              Free review
-            </p>
-            <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
-              Get a free marketing review
-            </h2>
-            <p className="mt-4 text-white/80">
-              Tell us about your business. We will look at your website, search visibility and current marketing, and reply
-              within one working day with what we would do first.
-            </p>
-          </div>
-          <ContactForm source={`industry-${industry.slug}`} />
-        </div>
-      </section>
+      <TrustBand industry={industry} />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="font-display text-2xl font-semibold" data-reveal>Other industries we work with</h2>
-        <ul className="mt-6 flex flex-wrap gap-3">
-          {others.map((o) => (
-            <li key={o.slug}>
-              <a href={industryPath(o)} className="inline-block rounded-full border border-line bg-white px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:border-brand hover:text-brand">
-                {o.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Enquire industry={industry} />
+      <OtherIndustries industry={industry} />
     </>
   );
 }

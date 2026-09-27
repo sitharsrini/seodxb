@@ -5,6 +5,7 @@ import { PROPERTY_INDUSTRIES } from "./industries-property";
 import { HOLIDAY_INDUSTRIES } from "./industries-holiday";
 import { COWORK_INDUSTRIES } from "./industries-cowork";
 import { LAW_INDUSTRIES } from "./industries-law";
+import { INSURANCE_INDUSTRIES } from "./industries-insurance";
 import { BATCH2_A_INDUSTRIES } from "./industries-batch2-a";
 import { BATCH2_B_INDUSTRIES } from "./industries-batch2-b";
 import { BATCH2_C_INDUSTRIES } from "./industries-batch2-c";
@@ -26,6 +27,8 @@ export interface Industry {
   faqs: { q: string; a: string }[];
   postSlug: string;
   extraPostSlugs?: string[];
+  // "editorial" uses the alternative landing page layout.
+  layout?: "classic" | "editorial";
 }
 
 export const INDUSTRIES: Industry[] = [
@@ -1057,6 +1060,7 @@ INDUSTRIES.push(
   ...HOLIDAY_INDUSTRIES,
   ...COWORK_INDUSTRIES,
   ...LAW_INDUSTRIES,
+  ...INSURANCE_INDUSTRIES,
 );
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;

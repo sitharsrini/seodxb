@@ -2,6 +2,8 @@ import { POSTS, postPath, wordCount } from "./blog/posts";
 import { INDUSTRIES, industryPath } from "./industries";
 import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
+import { citationLd, industrySources, postSources } from "./citations";
+import { INDUSTRY_REVIEWED } from "./sources";
 
 export const SITE_URL = "https://seodxb.com";
 
@@ -188,6 +190,7 @@ const BLOG_ROUTES: Route[] = [
         author: { ...authorLd(), worksFor: ORG },
         publisher: ORG,
         speakable: { "@type": "SpeakableSpecification", cssSelector: ["#short-answer", "h1"] },
+        citation: citationLd(postSources(p.slug)),
       },
       {
         "@context": "https://schema.org",
@@ -209,7 +212,7 @@ const INDUSTRY_ROUTES: Route[] = [
     file: "industries.html",
     title: "Industries We Serve | SEODXB Marketing Consultancy Dubai",
     description:
-      "SEO, AI search, ads and websites for 34 UAE industries: healthcare, home services, professional services, education, property, tourism and more.",
+      `SEO, AI search, ads and websites for ${INDUSTRIES.length} UAE industries: healthcare, home services, professional services, education, property, tourism and more.`,
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -237,6 +240,21 @@ const INDUSTRY_ROUTES: Route[] = [
         areaServed: { "@type": "Country", name: "United Arab Emirates" },
         provider: { ...ORG, "@type": "ProfessionalService", telephone: "+971521551198", address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" } },
         url: SITE_URL + industryPath(ind),
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": SITE_URL + industryPath(ind),
+        name: ind.title,
+        description: ind.description,
+        inLanguage: "en",
+        dateModified: INDUSTRY_REVIEWED,
+        lastReviewed: INDUSTRY_REVIEWED,
+        author: authorLd(),
+        reviewedBy: authorLd(),
+        publisher: ORG,
+        citation: citationLd(industrySources(ind.slug)),
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["#short-answer", "h1"] },
       },
       {
         "@context": "https://schema.org",
