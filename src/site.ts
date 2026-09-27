@@ -4,6 +4,17 @@ import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
 import { citationLd, industrySources, postSources } from "./citations";
 import { INDUSTRY_REVIEWED } from "./sources";
+import { INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl, photographerUrl, type Photo } from "./images";
+
+const photoLd = (ph: Photo) => ({
+  "@type": "ImageObject",
+  url: photoUrl(ph, 1200, 675),
+  caption: ph.alt,
+  creditText: `Photo by ${ph.by} on Unsplash`,
+  creator: { "@type": "Person", name: ph.by, url: photographerUrl(ph) },
+  license: "https://unsplash.com/license",
+  acquireLicensePage: "https://unsplash.com/license",
+});
 
 export const SITE_URL = "https://seodxb.com";
 
@@ -178,7 +189,7 @@ const BLOG_ROUTES: Route[] = [
         headline: p.title,
         description: p.description,
         abstract: p.answer,
-        image: `${SITE_URL}/og/${p.slug}.jpg`,
+        image: POST_PHOTOS[p.slug] ? [`${SITE_URL}/og/${p.slug}.jpg`, photoLd(POST_PHOTOS[p.slug])] : `${SITE_URL}/og/${p.slug}.jpg`,
         datePublished: p.date,
         dateModified: p.updated,
         inLanguage: "en",
@@ -254,6 +265,7 @@ const INDUSTRY_ROUTES: Route[] = [
         reviewedBy: authorLd(),
         publisher: ORG,
         citation: citationLd(industrySources(ind.slug)),
+        ...(INDUSTRY_PHOTOS[ind.slug] ? { primaryImageOfPage: photoLd(INDUSTRY_PHOTOS[ind.slug]) } : {}),
         speakable: { "@type": "SpeakableSpecification", cssSelector: ["#short-answer", "h1"] },
       },
       {

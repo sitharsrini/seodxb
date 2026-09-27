@@ -7,6 +7,8 @@ import { delay } from "../motion";
 import { AUTHOR } from "../site";
 import { postSources } from "../citations";
 import { AuthorBox, Sources } from "../components/Trust";
+import { POST_PHOTOS } from "../images";
+import { PhotoFigure } from "../components/Photo";
 
 function ReadingProgress() {
   const [p, setP] = useState(0);
@@ -130,6 +132,9 @@ export default function BlogPost({ post }: { post: Post }) {
 
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_16rem]">
           <div className="mx-auto w-full min-w-0 max-w-3xl text-[17px] leading-[1.8] text-ink-soft [overflow-wrap:anywhere]">
+            {POST_PHOTOS[post.slug] && (
+              <PhotoFigure photo={POST_PHOTOS[post.slug]} priority className="mb-8" sizes="(min-width: 768px) 768px, 100vw" />
+            )}
             <section id="short-answer" className="rounded-2xl border-l-4 border-mint-strong bg-white p-6 shadow-lg shadow-brand/5" aria-labelledby="short-answer-h" data-reveal data-reveal-now>
               <h2 id="short-answer-h" className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-dark">Short answer</h2>
               <p className="mt-3 text-base leading-relaxed text-ink">{post.answer}</p>

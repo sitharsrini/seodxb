@@ -1,5 +1,6 @@
 import { formatDate, postPath, readingMinutes, type Post } from "./posts";
 import { delay } from "../motion";
+import { POST_PHOTOS, photoUrl } from "../images";
 
 const TINTS: Record<string, string> = {
   Strategy: "from-brand to-brand-dark",
@@ -24,6 +25,17 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
           style={{ backgroundImage: "radial-gradient(rgb(255 255 255 / 0.7) 1px, transparent 1px)", backgroundSize: "18px 18px" }}
         />
         <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-mint/40 blur-2xl transition-transform duration-700 group-hover:scale-125" />
+        {POST_PHOTOS[post.slug] && (
+          <img
+            src={photoUrl(POST_PHOTOS[post.slug], 640, 288)}
+            alt=""
+            width={640}
+            height={288}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        )}
         <span className="absolute bottom-4 left-5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-dark backdrop-blur">
           {post.category}
         </span>

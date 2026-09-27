@@ -4,12 +4,15 @@ import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
 import { Enquire, FaqList, OtherIndustries, TrustBand } from "./IndustryParts";
+import { INDUSTRY_PHOTOS } from "../images";
+import { PhotoFigure } from "../components/Photo";
 
 const serviceName = (id: string) => SERVICES.find((s) => s.id === id)?.name ?? id;
 
 // Alternative landing page layout: split hero with a search panel, numbered
 // editorial rows, a step timeline and a two-column FAQ.
 export default function IndustryEditorial({ industry }: { industry: Industry }) {
+  const photo = INDUSTRY_PHOTOS[industry.slug];
   const guides = [industry.postSlug, ...(industry.extraPostSlugs ?? [])]
     .map((slug) => POSTS.find((p) => p.slug === slug))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -64,6 +67,12 @@ export default function IndustryEditorial({ industry }: { industry: Industry }) 
           <p className="mt-5 font-display text-xl leading-relaxed text-white sm:text-2xl">{industry.answer}</p>
         </div>
       </section>
+
+      {photo && (
+        <div className="mx-auto max-w-6xl px-4 pt-16 sm:px-6" data-reveal>
+          <PhotoFigure photo={photo} ratio={21 / 9} sizes="(min-width: 1152px) 1104px, 100vw" />
+        </div>
+      )}
 
       <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
         <p className="eyebrow" data-reveal>The challenges</p>
