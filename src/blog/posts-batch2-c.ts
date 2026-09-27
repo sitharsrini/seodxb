@@ -287,7 +287,7 @@ export const BATCH2_C_POSTS: Post[] = [
       "corporate tax uae",
       "corporate tax registration uae",
       "tax consultant dubai",
-      "vat consultants dubai",
+      "corporate tax consultant",
     ],
     takeaways: [
       "Most tax demand is informational, so educational content is the start of your sales process.",
@@ -386,7 +386,7 @@ export const BATCH2_C_POSTS: Post[] = [
       { t: "h2", text: "Connect guides to services", id: "guides-to-services" },
       {
         t: "p",
-        text: "Every guide should lead somewhere. A corporate tax registration guide links to your registration service. A VAT return guide links to your VAT compliance service. Place a short, relevant offer, such as a registration check or tax health review, at the end of each guide.",
+        text: "Every guide should lead somewhere. A corporate tax registration guide links to your registration service. A VAT return guide links to your VAT compliance service. Place a short, relevant offer, such as a registration check or tax health review, at the end of each guide. For VAT-specific work, see our guide on [how VAT consultants get more clients](/blog/vat-consultant-marketing-dubai), and for the next compliance wave, [marketing e-invoicing readiness services](/blog/e-invoicing-services-marketing-uae).",
       },
       {
         t: "p",

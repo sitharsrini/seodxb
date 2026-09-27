@@ -8,6 +8,7 @@ import { BATCH3_POSTS } from "./posts-batch3";
 import { REALESTATE_POSTS } from "./posts-realestate";
 import { PROPERTY_POSTS } from "./posts-property";
 import { HOLIDAY_POSTS } from "./posts-holiday";
+import { TAX_POSTS } from "./posts-tax";
 import { ACCOUNTING_POSTS } from "./posts-accounting";
 import { BIZSETUP_POSTS } from "./posts-bizsetup";
 import { COWORK_POSTS } from "./posts-cowork";
@@ -409,7 +410,7 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS, ...TAX_POSTS];
 
 const strip = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 

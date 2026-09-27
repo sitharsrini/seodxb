@@ -281,5 +281,6 @@ export const BATCH2_C_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "tax-consultant-marketing-uae",
+    extraPostSlugs: ["vat-consultant-marketing-dubai", "e-invoicing-services-marketing-uae"],
   },
 ];
