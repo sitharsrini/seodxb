@@ -27,22 +27,22 @@ export interface Industry {
 export const INDUSTRIES: Industry[] = [
   {
     slug: "real-estate",
-    name: "Real Estate",
-    title: "SEO & Marketing for Real Estate Companies in Dubai | SEODXB",
+    name: "Real Estate Brokers",
+    title: "Real Estate Broker Marketing & SEO in Dubai | SEODXB",
     description:
-      "Get buyer, investor and tenant leads beyond the property portals. SEO, AI search, ads and websites for Dubai real estate brokerages and developers.",
+      "Buyer, investor and tenant leads beyond the portals. SEO, community pages, compliant ads and AI search visibility for Dubai real estate brokers.",
     heroTitle: "Property leads you own, not leads you rent from the portals",
     heroIntro:
       "Most Dubai brokerages depend on Bayut, Property Finder and Dubizzle for enquiries, and pay more every year for the same visibility. SEO builds a second source of buyer, investor and tenant leads that belongs to you.",
     answer:
       "Real estate companies in Dubai need SEO because buyers, investors and tenants research areas, projects and prices on Google and AI assistants long before they contact an agent. Ranking your own community guides, project pages and area searches brings enquiries directly to your brokerage instead of through paid portal listings, lowers cost per lead over time and builds the trust that high-value property decisions depend on.",
     searches: [
-      "off plan projects in Dubai Creek Harbour",
-      "2 bedroom apartment for rent JVC",
-      "best areas to buy villa in Dubai for families",
-      "Dubai Marina property prices 2026",
-      "real estate agent Arabian Ranches",
-      "golden visa property investment Dubai",
+      "real estate agent dubai",
+      "real estate companies in dubai",
+      "jvc apartments for rent",
+      "dubai marina apartments for sale",
+      "off plan property dubai",
+      "villas for sale in dubai",
     ],
     challenges: [
       {
@@ -108,6 +108,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "seo-for-real-estate-companies-dubai",
+    extraPostSlugs: ["dubai-community-pages-real-estate-seo", "off-plan-property-marketing-dubai-brokers", "trakheesi-permit-property-advertising-dubai"],
   },
   {
     slug: "construction",
