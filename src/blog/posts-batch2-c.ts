@@ -17,8 +17,7 @@ export const BATCH2_C_POSTS: Post[] = [
     keywords: ["how to get business setup leads",
       "business setup consultants dubai",
       "dubai mainland company formation cost",
-      "starting a business in dubai as a foreigner",
-      "pro services dubai",
+      "free zone vs mainland company setup",
     ],
     takeaways: [
       "The head terms are expensive and crowded, so build your plan around specific questions buyers ask.",
@@ -84,7 +83,7 @@ export const BATCH2_C_POSTS: Post[] = [
       {
         t: "callout",
         title: "Write for the founder who has never been to Dubai",
-        text: "Many setup buyers research from abroad. Explain terms such as mainland, free zone, establishment card and visa allocation the first time you use them, answer questions about bank accounts, residency and timelines from their side, and make it easy to start on WhatsApp in their time zone.",
+        text: "Many setup buyers research from abroad. Explain terms such as mainland, free zone, establishment card and visa allocation the first time you use them, answer questions about bank accounts, residency and timelines from their side, and make it easy to start on WhatsApp in their time zone. Our guide to [marketing company formation to founders abroad](/blog/marketing-company-formation-to-foreign-founders) goes further.",
       },
       { t: "h2", text: "Treat free zones as partners, not competitors", id: "free-zones" },
       {
@@ -102,7 +101,7 @@ export const BATCH2_C_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Give PRO services its own section with a page for each common task. These searches come from existing companies, often unhappy with their current provider, and they are much less crowded than the setup head terms. Every setup client should also hear about your PRO service before their first renewal is due.",
+        text: "Give PRO services its own section with a page for each common task. These searches come from existing companies, often unhappy with their current provider, and they are much less crowded than the setup head terms. Every setup client should also hear about your PRO service before their first renewal is due. See our guide on [how PRO service companies win recurring clients](/blog/pro-services-marketing-dubai).",
       },
       { t: "h2", text: "Use paid search carefully and measure the right thing", id: "ads-and-tracking" },
       {
