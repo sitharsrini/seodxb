@@ -2,6 +2,12 @@
 export const SEMRUSH_SNAPSHOT = { source: "Semrush, UAE database", date: "2026-09-24" };
 
 export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }> = {
+  "/industries/property-management": {
+    "main": "property management marketing dubai",
+    "secondary": [
+      "property management seo dubai"
+    ]
+  },
   "/industries/recruitment-agencies": {
     "main": "recruitment agency marketing dubai",
     "secondary": [

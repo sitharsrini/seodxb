@@ -6,6 +6,7 @@ import { HEALTH_POSTS } from "./posts-health";
 import { HOSPITALITY_POSTS } from "./posts-hospitality";
 import { BATCH3_POSTS } from "./posts-batch3";
 import { REALESTATE_POSTS } from "./posts-realestate";
+import { PROPERTY_POSTS } from "./posts-property";
 import { BATCH2_A_POSTS } from "./posts-batch2-a";
 import { BATCH2_B_POSTS } from "./posts-batch2-b";
 import { BATCH2_C_POSTS } from "./posts-batch2-c";
@@ -404,7 +405,7 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS];
 
 const strip = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
