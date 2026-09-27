@@ -2,6 +2,12 @@
 export const SEMRUSH_SNAPSHOT = { source: "Semrush, UAE database", date: "2026-09-24" };
 
 export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }> = {
+  "/industries/event-management": {
+    "main": "event management company marketing dubai",
+    "secondary": [
+      "event company seo dubai"
+    ]
+  },
   "/industries/travel-agencies": {
     "main": "travel agency marketing dubai",
     "secondary": [
@@ -329,6 +335,11 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
 
 // Keywords missing here had no measurable UAE volume (under 10 a month) in the snapshot.
 export const KEYWORD_METRICS: Record<string, { volume: number; kd: number; cpc: number }> = {
+  "event management companies in dubai": { volume: 2900, kd: 31, cpc: 3.59 },
+  "event management company dubai": { volume: 2900, kd: 31, cpc: 3.59 },
+  "exhibition stand builders dubai": { volume: 1300, kd: 50, cpc: 3.27 },
+  "wedding planners in dubai": { volume: 880, kd: 13, cpc: 2.04 },
+  "event companies in abu dhabi": { volume: 720, kd: 38, cpc: 3.47 },
   "holiday home companies in dubai": { "volume": 480, "kd": 33, "cpc": 2.89 },
   "recruitment agency marketing": { "volume": 30, "kd": 16, "cpc": 1.72 },
   "marketing agency dubai": {

@@ -39,6 +39,8 @@ const S = {
   uae: { name: "The official portal of the UAE Government (u.ae)", url: "https://u.ae" },
   iata: { name: "International Air Transport Association (IATA)", url: "https://www.iata.org" },
   icp: { name: "Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)", url: "https://icp.gov.ae" },
+  dct: { name: "Department of Culture and Tourism, Abu Dhabi", url: "https://dct.gov.ae" },
+  dwtc: { name: "Dubai World Trade Centre (DWTC)", url: "https://www.dwtc.com" },
 } satisfies Record<string, Source>;
 
 export const INDUSTRY_SOURCES: Record<string, Source[]> = {
@@ -83,6 +85,7 @@ export const INDUSTRY_SOURCES: Record<string, Source[]> = {
   "law-firms": [S.moj, S.lad, S.difc, S.adgm],
   "insurance-brokers": [S.cbuae, S.dha, S.doh, S.helpful],
   "travel-agencies": [S.det, S.iata, S.gbpRank, S.helpful],
+  "event-management": [S.det, S.dct, S.gbpRank, S.helpful],
 };
 
 export const POST_SOURCES: Record<string, Source[]> = {
@@ -110,6 +113,8 @@ export const POST_SOURCES: Record<string, Source[]> = {
   "law-firm-practice-area-pages-seo": [S.moj, S.lad, S.sd, S.ai],
   "ethical-marketing-for-therapists-uae": [S.dha, S.doh, S.helpful],
   "holiday-package-pages-seo-uae": [S.sd, S.multi, S.helpful],
+  "wedding-planner-marketing-dubai": [S.det, S.gbpRank, S.gbpGuide],
+  "exhibition-stand-builder-marketing-dubai": [S.dwtc, S.helpful, S.conv],
   "how-travel-agencies-get-more-bookings-uae": [S.det, S.icp, S.gbpRank, S.helpful],
   "corporate-travel-management-marketing-uae": [S.iata, S.helpful, S.conv],
 };

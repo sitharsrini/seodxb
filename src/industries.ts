@@ -7,6 +7,7 @@ import { COWORK_INDUSTRIES } from "./industries-cowork";
 import { LAW_INDUSTRIES } from "./industries-law";
 import { INSURANCE_INDUSTRIES } from "./industries-insurance";
 import { TRAVEL_INDUSTRIES } from "./industries-travel";
+import { EVENT_INDUSTRIES } from "./industries-events";
 import { BATCH2_A_INDUSTRIES } from "./industries-batch2-a";
 import { BATCH2_B_INDUSTRIES } from "./industries-batch2-b";
 import { BATCH2_C_INDUSTRIES } from "./industries-batch2-c";
@@ -1063,6 +1064,7 @@ INDUSTRIES.push(
   ...LAW_INDUSTRIES,
   ...INSURANCE_INDUSTRIES,
   ...TRAVEL_INDUSTRIES,
+  ...EVENT_INDUSTRIES,
 );
 
 export const industryPath = (i: Industry) => `/industries/${i.slug}`;
