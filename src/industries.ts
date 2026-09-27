@@ -27,7 +27,7 @@ export interface Industry {
   faqs: { q: string; a: string }[];
   postSlug: string;
   extraPostSlugs?: string[];
-  // "editorial" uses the alternative landing page layout.
+  // Landing page layout; "editorial" is the default, "classic" is the original.
   layout?: "classic" | "editorial";
 }
 

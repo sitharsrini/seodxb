@@ -33,7 +33,7 @@ export default function IndustryEditorial({ industry }: { industry: Industry }) 
             </p>
             <div className="mt-8 flex flex-wrap gap-3" data-reveal style={delay(3)}>
               <a href="#enquire" className="btn-primary px-6 py-3">Get a free marketing review</a>
-              <a href="#guides" className="btn-ghost">Read the guides</a>
+              <a href="#guides" className="btn-ghost">{guides.length > 1 ? "Read the guides" : "Read the guide"}</a>
             </div>
           </div>
 
@@ -117,15 +117,28 @@ export default function IndustryEditorial({ industry }: { industry: Industry }) 
         </div>
       </section>
 
-      <section id="guides" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
-        <p className="eyebrow" data-reveal>Free guides</p>
-        <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>Read the full guides</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {guides.map((g, i) => (
-            <PostCard key={g.slug} post={g} index={i} />
-          ))}
-        </div>
-      </section>
+      {guides.length > 1 ? (
+        <section id="guides" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+          <p className="eyebrow" data-reveal>Free guides</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>Read the full guides</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {guides.map((g, i) => (
+              <PostCard key={g.slug} post={g} index={i} />
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section id="guides" className="mx-auto grid max-w-6xl scroll-mt-20 items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-[1fr_1.2fr]">
+          <div data-reveal="left">
+            <p className="eyebrow">Free guide</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold">Read the full guide</h2>
+            <p className="mt-4 leading-relaxed text-ink-soft">
+              A step-by-step guide for {industry.name.toLowerCase()} you can use whether or not you work with us.
+            </p>
+          </div>
+          {guides[0] && <PostCard post={guides[0]} />}
+        </section>
+      )}
 
       <section className="border-t border-line">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_1.6fr]">

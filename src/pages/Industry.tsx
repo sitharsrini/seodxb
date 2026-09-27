@@ -10,7 +10,7 @@ import { delay } from "../motion";
 const serviceName = (id: string) => SERVICES.find((s) => s.id === id)?.name ?? id;
 
 export default function Industry({ industry }: { industry: IndustryData }) {
-  if (industry.layout === "editorial") return <IndustryEditorial industry={industry} />;
+  if (industry.layout !== "classic") return <IndustryEditorial industry={industry} />;
   const post = POSTS.find((p) => p.slug === industry.postSlug);
   const guides = [industry.postSlug, ...(industry.extraPostSlugs ?? [])]
     .map((slug) => POSTS.find((p) => p.slug === slug))
