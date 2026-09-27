@@ -2,6 +2,12 @@
 export const SEMRUSH_SNAPSHOT = { source: "Semrush, UAE database", date: "2026-09-24" };
 
 export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }> = {
+  "/industries/recruitment-agencies": {
+    "main": "recruitment agency marketing dubai",
+    "secondary": [
+      "recruitment agency seo"
+    ]
+  },
   "/industries/dermatology-clinics": {
     "main": "dermatology clinic marketing dubai",
     "secondary": [
@@ -287,6 +293,7 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
 
 // Keywords missing here had no measurable UAE volume (under 10 a month) in the snapshot.
 export const KEYWORD_METRICS: Record<string, { volume: number; kd: number; cpc: number }> = {
+  "recruitment agency marketing": { "volume": 30, "kd": 16, "cpc": 1.72 },
   "marketing agency dubai": {
     "volume": 1900,
     "kd": 33,
