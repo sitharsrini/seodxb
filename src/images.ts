@@ -49,6 +49,8 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
   "travel-agencies": {"id": "photo-1558204692-5f402fe220b9", "alt": "Aircraft on the runway at sunset", "by": "Anna Gru", "user": "gruu"},
   "event-management": {"id": "photo-1531058020387-3be344556be6", "alt": "Audience at a conference in a large event hall", "by": "Jakob Dalbjörn", "user": "jakobdalbjorn"},
   "mep-contractors": {"id": "photo-1690356107685-3725367f6f3f", "alt": "Technicians in blue overalls working on mechanical equipment", "by": "Septian setiawan", "user": "septian_s09"},
+  "pest-control": {"id": "photo-1747659629851-a92bd71149f6", "alt": "Technician holding a pressure sprayer for pest treatment", "by": "MESTO Sprayers Sprühgeräte", "user": "mesto_sprayers"},
+  "insurance-brokers": {"id": "photo-1648221350871-e3ae3c8d0f58", "alt": "Family silhouetted against a sunset sky", "by": "Tá Focando", "user": "tafocandofotoefilme"},
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
@@ -112,6 +114,24 @@ export const POST_PHOTOS: Record<string, Photo> = {
   "how-event-management-companies-get-clients-dubai": {"id": "photo-1540575467063-178a50c2df87", "alt": "Conference audience facing a lit stage", "by": "Headway", "user": "headwayio"},
   "how-mep-contractors-win-projects-uae": {"id": "photo-1694521787162-5373b598945c", "alt": "Engineers inspecting work on a building site", "by": "Glenov Brankovic", "user": "glenovbrankovic"},
   "mep-company-profile-prequalification": {"id": "photo-1454165804606-c3d57bc86b40", "alt": "Reviewing documents beside a laptop", "by": "Scott Graham", "user": "amstram"},
+  "mep-maintenance-contracts-marketing-dubai": {"id": "photo-1621905251189-08b45d6a269e", "alt": "Electrician in a hard hat working on building wiring", "by": "Emmanuel Ikwuegbu", "user": "emmages"},
+  "pest-control-company-marketing-dubai": {"id": "photo-1581578017093-cd30fce4eeb7", "alt": "Technician in protective gloves treating a garden", "by": "CDC", "user": "cdc"},
+  "how-insurance-brokers-get-clients-uae": {"id": "photo-1681505531034-8d67054e07f6", "alt": "Adviser and client shaking hands over a policy document", "by": "Amina Atar", "user": "minaslens"},
+  "group-medical-insurance-marketing-uae": {"id": "photo-1603796846097-bee99e4a601f", "alt": "Business owners reviewing and signing documents", "by": "Romain Dancre", "user": "romaindancre"},
+  "insurance-renewal-retention-brokers-uae": {"id": "photo-1521791055366-0d553872125f", "alt": "Client signing a renewal document", "by": "Cytonn Photography", "user": "cytonn_photography"},
+  "wedding-planner-marketing-dubai": {"id": "photo-1519225421980-715cb0215aed", "alt": "Wedding reception table set with flowers and glassware", "by": "Photos by Lanty", "user": "photos_by_lanty"},
+  "exhibition-stand-builder-marketing-dubai": {"id": "photo-1761195696518-6384573549ea", "alt": "Visitors walking between stands at a trade exhibition", "by": "Trans Russia", "user": "transrussia"},
+  "vat-consultant-marketing-dubai": {"id": "photo-1649209979970-f01d950cc5ed", "alt": "Calculator on top of receipts and financial papers", "by": "FIN", "user": "fin21"},
+  "e-invoicing-services-marketing-uae": {"id": "photo-1735825764485-93a381fd5779", "alt": "Person reviewing an invoice beside a laptop", "by": "SumUp", "user": "sumup"},
+  "questions-to-ask-before-hiring-a-marketing-agency-dubai": {"id": "photo-1532622785990-d2c36a76f5a6", "alt": "Two people planning a strategy on a whiteboard", "by": "Kaleidico", "user": "kaleidico"},
+  "get-recommended-by-chatgpt-google-ai-overviews": {"id": "photo-1697577418970-95d99b5a55cf", "alt": "Computer chip labelled AI on a circuit board", "by": "Igor Omilaev", "user": "omilaev"},
+  "track-whatsapp-call-form-leads-uae": {"id": "photo-1592890288564-76628a30a657", "alt": "Person reading a message on a smartphone", "by": "Jonas Leupe", "user": "jonasleupe"},
+  "google-business-profile-setup-checklist-dubai": {"id": "photo-1548345680-f5475ea5df84", "alt": "Smartphone showing a map with local business results", "by": "henry perks", "user": "hjkp"},
+  "how-much-should-a-uae-business-spend-on-marketing": {"id": "photo-1554224155-6726b3ff858f", "alt": "Budget papers, calculator and pen on a desk", "by": "Kelly Sikkema", "user": "kellysikkema"},
+  "seo-vs-google-ads-dubai-which-first": {"id": "photo-1594663653925-365bcbf7ef86", "alt": "Smartphone open on the Google search page", "by": "Solen Feyissa", "user": "solenfeyissa"},
+  "arabic-english-bilingual-website-seo-uae": {"id": "photo-1646229227468-ba6eb534d368", "alt": "Arabic calligraphy in relief on a wall", "by": "Agnieszka Stankiewicz", "user": "dubai_love_story"},
+  "website-traffic-but-no-enquiries-conversion-checklist": {"id": "photo-1460925895917-afdab827c52f", "alt": "Laptop showing a website analytics dashboard", "by": "Carlos Muza", "user": "kmuza"},
+  "seo-vs-aeo-vs-geo-explained": {"id": "photo-1675352161828-c07170f1b114", "alt": "Phone showing Google search in front of the Google logo", "by": "Shutter Speed", "user": "shutter_speed_"},
 };
 
 const UTM = "utm_source=seodxb&utm_medium=referral";
