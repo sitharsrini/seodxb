@@ -49,8 +49,9 @@ const deviceOf = (ua) => (/iPad|Tablet/i.test(ua) ? "tablet" : /Mobi|Android|iPh
 
 const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
-// Emails each lead through Resend when RESEND_API_KEY and LEAD_EMAIL_TO are set
-// in Cloudflare. Without a verified domain, Resend only delivers to the account owner.
+// Lead emails are currently sent by the Supabase trigger seodxb_leads_email (key in
+// Supabase Vault). Only set RESEND_API_KEY and LEAD_EMAIL_TO in Cloudflare if that
+// trigger is removed, otherwise every lead is emailed twice.
 async function emailLead(env, lead) {
   if (!env.RESEND_API_KEY || !env.LEAD_EMAIL_TO) return;
   const rows = [
