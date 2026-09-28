@@ -13,6 +13,82 @@ function json(obj, status = 200) {
 
 const clip = (v, n) => (v || "").toString().trim().slice(0, n);
 
+const hostOf = (u) => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+};
+
+// Where the lead came from, in plain words, based on first-touch data.
+function channelOf(t) {
+  const medium = (t.utm_medium || "").toLowerCase();
+  const click = (t.click_id || "").split(":")[0];
+  if (click === "gclid" || click === "gbraid" || click === "wbraid") return "Google Ads";
+  if (click === "msclkid") return "Microsoft Ads";
+  if (click === "ttclid") return "TikTok Ads";
+  if (click === "li_fat_id") return "LinkedIn Ads";
+  if (/^(cpc|ppc|paid|paidsearch|paid_search)$/.test(medium)) return `Paid search (${t.utm_source || "unknown"})`;
+  if (/paid.?social/.test(medium)) return `Paid social (${t.utm_source || "unknown"})`;
+  if (medium === "email") return `Email (${t.utm_source || "campaign"})`;
+  if (t.utm_source) return `Campaign (${t.utm_source}${medium ? ` / ${medium}` : ""})`;
+  const host = hostOf(t.first_referrer || t.referrer);
+  if (!host) return click === "fbclid" ? "Facebook / Instagram" : "Direct";
+  if (/(^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com|you\.com|phind\.com)$/.test(host))
+    return `AI assistant (${host})`;
+  if (/(^|\.)(google\.[a-z.]+|bing\.com|yahoo\.com|duckduckgo\.com|yandex\.[a-z]+|ecosia\.org|baidu\.com)$/.test(host))
+    return `Organic search (${host})`;
+  if (/(^|\.)(facebook\.com|instagram\.com|linkedin\.com|lnkd\.in|t\.co|x\.com|twitter\.com|tiktok\.com|youtube\.com|reddit\.com|pinterest\.com)$/.test(host))
+    return `Social (${host})`;
+  if (/(^|\.)(whatsapp\.com|wa\.me)$/.test(host)) return "WhatsApp";
+  return `Referral (${host})`;
+}
+
+const deviceOf = (ua) => (/iPad|Tablet/i.test(ua) ? "tablet" : /Mobi|Android|iPhone/i.test(ua) ? "mobile" : "desktop");
+
+const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+// Emails each lead through Resend when RESEND_API_KEY and LEAD_EMAIL_TO are set
+// in Cloudflare. Without a verified domain, Resend only delivers to the account owner.
+async function emailLead(env, lead) {
+  if (!env.RESEND_API_KEY || !env.LEAD_EMAIL_TO) return;
+  const rows = [
+    ["Name", lead.name],
+    ["Email", lead.email],
+    ["Phone", lead.phone],
+    ["Website", lead.company_url],
+    ["Channel", lead.channel],
+    ["Page", lead.page_title ? `${lead.page_title} (${lead.page_url})` : lead.page_url],
+    ["Referrer", lead.referrer || "none"],
+    ["First landing page", lead.landing_page],
+    ["First referrer", lead.first_referrer || "none"],
+    ["Campaign", [lead.utm_source, lead.utm_medium, lead.utm_campaign, lead.utm_term, lead.utm_content].filter(Boolean).join(" / ")],
+    ["Ad click ID", lead.click_id],
+    ["Country / device", [lead.country, lead.device].filter(Boolean).join(" / ")],
+    ["Form", lead.source],
+  ].filter(([, v]) => v);
+  const html =
+    `<h2 style="font-family:sans-serif">New SEODXB lead: ${esc(lead.name)}</h2>` +
+    `<p style="font-family:sans-serif;white-space:pre-wrap;border-left:3px solid #1d5bff;padding-left:12px">${esc(lead.message)}</p>` +
+    `<table style="font-family:sans-serif;font-size:14px;border-collapse:collapse">${rows
+      .map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#555;vertical-align:top">${k}</td><td style="padding:4px 0">${esc(v)}</td></tr>`)
+      .join("")}</table>`;
+  const text = `${lead.message}\n\n${rows.map(([k, v]) => `${k}: ${v}`).join("\n")}`;
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: env.LEAD_EMAIL_FROM || "SEODXB Leads <onboarding@resend.dev>",
+      to: env.LEAD_EMAIL_TO.split(",").map((s) => s.trim()),
+      reply_to: lead.email,
+      subject: `New lead: ${lead.name} (${lead.channel})`.slice(0, 150),
+      html,
+      text,
+    }),
+  });
+}
+
 async function handleContact(request, env, ctx) {
   let b;
   try {
@@ -28,7 +104,21 @@ async function handleContact(request, env, ctx) {
     company_url: clip(b.company_url, 300),
     message: (service ? `[${service}] ` : "") + clip(b.message, 5000),
     source: clip(b.source, 120) || "website",
+    page_url: clip(b.page_url, 500) || clip(request.headers.get("Referer"), 500),
+    page_title: clip(b.page_title, 200),
+    referrer: clip(b.referrer, 500),
+    landing_page: clip(b.landing_page, 500),
+    first_referrer: clip(b.first_referrer, 500),
+    utm_source: clip(b.utm_source, 200),
+    utm_medium: clip(b.utm_medium, 200),
+    utm_campaign: clip(b.utm_campaign, 200),
+    utm_term: clip(b.utm_term, 200),
+    utm_content: clip(b.utm_content, 200),
+    click_id: clip(b.click_id, 200),
+    country: clip(request.headers.get("CF-IPCountry") || request.cf?.country, 10),
+    device: deviceOf(request.headers.get("User-Agent") || ""),
   };
+  lead.channel = channelOf(lead);
   if (!lead.name || !lead.email || !clip(b.message, 5000)) {
     return json({ error: "Please fill in your name, email and goals." }, 400);
   }
@@ -52,9 +142,10 @@ async function handleContact(request, env, ctx) {
     fetch(`https://ntfy.sh/${env.NTFY_TOPIC || NTFY_TOPIC}`, {
       method: "POST",
       headers: { Title: `New lead: ${lead.name.slice(0, 80)}`, Tags: "moneybag" },
-      body: `Name: ${lead.name}\nEmail: ${lead.email}\nPhone: ${lead.phone || "-"}\nCompany: ${lead.company_url || "-"}\n\n${lead.message.slice(0, 500)}`,
+      body: `Name: ${lead.name}\nEmail: ${lead.email}\nPhone: ${lead.phone || "-"}\nCompany: ${lead.company_url || "-"}\nChannel: ${lead.channel}\nPage: ${lead.page_url || "-"}\nReferrer: ${lead.referrer || lead.first_referrer || "-"}\n\n${lead.message.slice(0, 500)}`,
     }).catch(() => {}),
   );
+  ctx.waitUntil(emailLead(env, lead).catch(() => {}));
   return json({ success: true });
 }
 

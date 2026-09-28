@@ -2,6 +2,9 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import { normalizePath } from "./site";
 import "./index.css";
+import { captureFirstTouch } from "./attribution";
+
+captureFirstTouch();
 
 const root = document.getElementById("root")!;
 const app = <App path={normalizePath(window.location.pathname)} />;

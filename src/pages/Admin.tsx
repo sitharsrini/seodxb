@@ -14,7 +14,32 @@ interface Lead {
   message: string;
   source: string;
   created_at: string;
+  channel?: string | null;
+  page_url?: string | null;
+  page_title?: string | null;
+  referrer?: string | null;
+  landing_page?: string | null;
+  first_referrer?: string | null;
+  utm_source?: string | null;
+  utm_medium?: string | null;
+  utm_campaign?: string | null;
+  utm_term?: string | null;
+  utm_content?: string | null;
+  click_id?: string | null;
+  country?: string | null;
+  device?: string | null;
 }
+
+const campaignOf = (l: Lead) => [l.utm_source, l.utm_medium, l.utm_campaign, l.utm_term, l.utm_content].filter(Boolean).join(" / ");
+const pathOf = (u?: string | null) => {
+  if (!u) return "";
+  try {
+    const x = new URL(u);
+    return x.pathname + x.search;
+  } catch {
+    return u;
+  }
+};
 
 const KEY_STORE = "seodxb_admin_key";
 
@@ -99,14 +124,14 @@ export default function Admin() {
     if (saved) load(saved);
   }, []);
 
-  const sources = useMemo(() => [...new Set((leads ?? []).map((l) => l.source || "unknown"))].sort(), [leads]);
+  const sources = useMemo(() => [...new Set((leads ?? []).map((l) => l.channel || l.source || "unknown"))].sort(), [leads]);
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
     return (leads ?? []).filter(
       (l) =>
-        (!source || (l.source || "unknown") === source) &&
-        (!q || [l.name, l.email, l.phone, l.company_url, l.message].some((v) => (v || "").toLowerCase().includes(q))),
+        (!source || (l.channel || l.source || "unknown") === source) &&
+        (!q || [l.name, l.email, l.phone, l.company_url, l.message, l.page_url, l.referrer, l.channel].some((v) => (v || "").toLowerCase().includes(q))),
     );
   }, [leads, query, source]);
 
@@ -122,8 +147,12 @@ export default function Admin() {
   }, [leads]);
 
   function exportCsv() {
-    const head = ["Date (Dubai)", "Name", "Email", "Phone", "Company", "Source", "Message"];
-    const rows = shown.map((l) => [fmt(l.created_at), l.name, l.email, l.phone, l.company_url, l.source, l.message].map(csvCell).join(","));
+    const head = ["Date (Dubai)", "Name", "Email", "Phone", "Company", "Channel", "Page", "Referrer", "First landing page", "First referrer", "Campaign", "Ad click ID", "Country", "Device", "Form", "Message"];
+    const rows = shown.map((l) =>
+      [fmt(l.created_at), l.name, l.email, l.phone, l.company_url, l.channel, l.page_url, l.referrer, l.landing_page, l.first_referrer, campaignOf(l), l.click_id, l.country, l.device, l.source, l.message]
+        .map((v) => csvCell(v ?? ""))
+        .join(","),
+    );
     const blob = new Blob(["﻿" + [head.map(csvCell).join(","), ...rows].join("\n")], { type: "text/csv;charset=utf-8" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -213,8 +242,8 @@ export default function Admin() {
           aria-label="Search leads"
           className="field sm:flex-1"
         />
-        <select value={source} onChange={(e) => setSource(e.target.value)} aria-label="Filter by source" className="field sm:w-56">
-          <option value="">All sources</option>
+        <select value={source} onChange={(e) => setSource(e.target.value)} aria-label="Filter by channel" className="field sm:w-56">
+          <option value="">All channels</option>
           {sources.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
@@ -238,7 +267,7 @@ export default function Admin() {
                 <div className="min-w-0">
                   <p className="font-semibold text-ink">{l.name || "No name"}</p>
                   <p className="mt-0.5 text-xs text-ink-soft">
-                    {fmt(l.created_at)} · <span className="rounded-full bg-sand px-2 py-0.5 text-brand">{l.source || "unknown"}</span>
+                    {fmt(l.created_at)} · <span className="rounded-full bg-sand px-2 py-0.5 text-brand">{l.channel || l.source || "unknown"}</span>
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 text-xs font-medium">
@@ -258,6 +287,27 @@ export default function Admin() {
                 <div><dt className="inline text-ink-soft">Phone: </dt><dd className="inline">{l.phone || "-"}</dd></div>
                 <div><dt className="inline text-ink-soft">Company: </dt><dd className="inline">{l.company_url || "-"}</dd></div>
               </dl>
+              {(l.page_url || l.referrer || l.landing_page) && (
+                <dl className="mt-3 grid gap-x-6 gap-y-1 rounded-xl border border-line px-4 py-3 text-xs sm:grid-cols-2 [overflow-wrap:anywhere]">
+                  {[
+                    ["Page", l.page_title ? `${l.page_title} (${pathOf(l.page_url)})` : pathOf(l.page_url)],
+                    ["Referrer", l.referrer || "none (direct or same site)"],
+                    ["First landing page", pathOf(l.landing_page)],
+                    ["First referrer", l.first_referrer || "none"],
+                    ["Campaign", campaignOf(l)],
+                    ["Ad click ID", l.click_id],
+                    ["Country / device", [l.country, l.device].filter(Boolean).join(" / ")],
+                    ["Form", l.source],
+                  ]
+                    .filter(([, v]) => v)
+                    .map(([k, v]) => (
+                      <div key={k}>
+                        <dt className="inline text-ink-soft">{k}: </dt>
+                        <dd className="inline text-ink">{v}</dd>
+                      </div>
+                    ))}
+                </dl>
+              )}
               {l.message && <p className="mt-3 whitespace-pre-wrap rounded-xl bg-sand px-4 py-3 text-sm text-ink [overflow-wrap:anywhere]">{l.message}</p>}
             </li>
           ))}

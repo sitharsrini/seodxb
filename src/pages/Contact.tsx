@@ -4,6 +4,7 @@ import { SERVICES } from "../services";
 import { delay } from "../motion";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
+import { leadAttribution } from "../attribution";
 
 type Status = { kind: "idle" } | { kind: "sending" } | { kind: "sent" } | { kind: "error"; message: string };
 
@@ -19,7 +20,7 @@ export function ContactForm({ source = "contact-page" }: { source?: string }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source }),
+        body: JSON.stringify({ ...data, source, ...leadAttribution() }),
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(body.error || "Something went wrong.");
