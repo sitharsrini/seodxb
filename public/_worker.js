@@ -214,6 +214,16 @@ export default {
       return handleContact(request, env, ctx);
     }
 
+    // Old WordPress query URLs (/?p=123, /?page_id=5, /?cat=2 ...) are gone for good.
+    // Tracking parameters such as utm_* and gclid are not affected.
+    const WP_PARAMS = ["p", "page_id", "cat", "tag", "s", "attachment_id", "m", "author", "feed", "replytocom", "preview", "post_type", "paged"];
+    if (url.pathname === "/" && WP_PARAMS.some((k) => url.searchParams.has(k))) {
+      return new Response(GONE_HTML, {
+        status: 410,
+        headers: { "Content-Type": "text/html; charset=utf-8", "X-Robots-Tag": "noindex" },
+      });
+    }
+
     if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
       url.pathname = url.pathname.replace(/\/+$/, "");
       return Response.redirect(url.toString(), 301);
