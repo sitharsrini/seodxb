@@ -10,6 +10,7 @@ type Route = { path: string; file: string; title: string; description: string; o
 type Post = { slug: string; title: string; description: string; category: string; date: string; updated: string; answer: string; keywords: string[]; faqs: { q: string; a: string }[] };
 type Service = { id: string; name: string; short: string };
 type Industry = { slug: string; name: string; answer: string };
+type Photo = { id: string; alt: string; by: string; user: string };
 
 const mod = (await import(pathToFileURL(path.join(serverDir, "entry-server.js")).href)) as {
   render: (p: string) => string;
@@ -27,8 +28,13 @@ const mod = (await import(pathToFileURL(path.join(serverDir, "entry-server.js"))
   KEYWORD_TARGETS: Record<string, { main: string | null; secondary: string[] }>;
   KEYWORD_METRICS: Record<string, { volume: number; kd: number; cpc: number }>;
   SEMRUSH_SNAPSHOT: { source: string; date: string };
+  INDUSTRY_REVIEWED: string;
+  PAGES_UPDATED: string;
+  INDUSTRY_PHOTOS: Record<string, Photo>;
+  POST_PHOTOS: Record<string, Photo>;
+  photoUrl: (p: Photo, w: number, h?: number) => string;
 };
-const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath, SERVICE_PAGES, KEYWORD_TARGETS, KEYWORD_METRICS, SEMRUSH_SNAPSHOT } = mod;
+const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath, SERVICE_PAGES, KEYWORD_TARGETS, KEYWORD_METRICS, SEMRUSH_SNAPSHOT, INDUSTRY_REVIEWED, PAGES_UPDATED, INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl } = mod;
 const template = readFileSync(path.join(out, "index.html"), "utf8");
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -57,27 +63,74 @@ for (const r of ROUTES) {
   h1s[r.path] = ((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').trim();
 }
 
-// Sitemap with real dates for posts.
-const today = new Date().toISOString().slice(0, 10);
-const lastmod = (r: Route) => POSTS.find((p) => postPath(p) === r.path)?.updated ?? today;
-const sitemap =
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  ROUTES.filter((r) => !r.hidden).map((r) => `  <url><loc>${abs(r.path)}</loc><lastmod>${lastmod(r)}</lastmod></url>`).join("\n") +
-  `\n</urlset>\n`;
-writeFileSync(path.join(out, "sitemap.xml"), sitemap);
+// Sitemaps: an index at /sitemap.xml pointing to one sitemap per section, each URL with
+// its real last-modified date and its images (Open Graph image and page photo).
+const xmlEsc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const latest = (dates: string[]) => dates.reduce((a, b) => (b > a ? b : a), "");
+type SmEntry = { loc: string; lastmod: string; images: { loc: string; title: string }[] };
+const entryFor = (r: Route): SmEntry => {
+  const post = POSTS.find((p) => postPath(p) === r.path);
+  const ind = INDUSTRIES.find((i) => industryPath(i) === r.path);
+  const lastmod = post ? post.updated : ind || r.path === "/industries" ? INDUSTRY_REVIEWED : r.path === "/blog" ? latest(POSTS.map((p) => p.updated)) : PAGES_UPDATED;
+  const photo = post ? POST_PHOTOS[post.slug] : ind ? INDUSTRY_PHOTOS[ind.slug] : undefined;
+  const images = [{ loc: SITE_URL + (r.image ?? "/og/default.jpg"), title: r.title }];
+  if (photo) images.push({ loc: photoUrl(photo, 1200, 675), title: photo.alt });
+  return { loc: abs(r.path), lastmod, images };
+};
+const visible = ROUTES.filter((r) => !r.hidden);
+const sections: Record<string, Route[]> = {
+  pages: visible.filter((r) => !r.path.startsWith("/industries/") && !r.path.startsWith("/blog/")),
+  industries: visible.filter((r) => r.path.startsWith("/industries/")),
+  blog: visible.filter((r) => r.path.startsWith("/blog/")),
+};
+mkdirSync(path.join(out, "sitemaps"), { recursive: true });
+const indexEntries: { loc: string; lastmod: string }[] = [];
+for (const [name, routes] of Object.entries(sections)) {
+  const entries = routes.map(entryFor);
+  const xml =
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
+    entries
+      .map(
+        (e) =>
+          `  <url>\n    <loc>${xmlEsc(e.loc)}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n` +
+          e.images.map((im) => `    <image:image><image:loc>${xmlEsc(im.loc)}</image:loc></image:image>\n`).join("") +
+          `  </url>`,
+      )
+      .join("\n") +
+    `\n</urlset>\n`;
+  writeFileSync(path.join(out, "sitemaps", `${name}.xml`), xml);
+  indexEntries.push({ loc: `${SITE_URL}/sitemaps/${name}.xml`, lastmod: latest(entries.map((e) => e.lastmod)) });
+}
+const sitemapIndex =
+  `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  indexEntries.map((e) => `  <sitemap>\n    <loc>${e.loc}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n  </sitemap>`).join("\n") +
+  `\n</sitemapindex>\n`;
+writeFileSync(path.join(out, "sitemap.xml"), sitemapIndex);
+
+// robots.txt: one rule set for every crawler. AI search and assistant crawlers are named
+// so it is explicit that they are welcome; they get the same rules as everyone else.
+const AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Amazonbot", "DuckAssistBot", "meta-externalagent", "CCBot", "Bytespider", "cohere-ai", "MistralAI-User"];
+const RULES = "Allow: /\nDisallow: /api/\nDisallow: /admin\n";
+const robots =
+  `# robots.txt for ${SITE_URL}\n# Search engines and AI assistants are welcome to crawl, index and cite this site.\n# AI-readable site summary: ${SITE_URL}/llms.txt (full text: ${SITE_URL}/llms-full.txt)\n\n` +
+  `User-agent: *\n${RULES}\n` +
+  `# AI search and assistant crawlers\n${AI_BOTS.map((b) => `User-agent: ${b}`).join("\n")}\n${RULES}\n` +
+  `Sitemap: ${SITE_URL}/sitemap.xml\n`;
+writeFileSync(path.join(out, "robots.txt"), robots);
 
 // RSS feed of blog posts.
 const sorted = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
 const rfc822 = (iso: string) => new Date(iso + "T08:00:00Z").toUTCString();
 const rss =
-  `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n` +
+  `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">\n<channel>\n` +
   `<title>SEODXB Blog</title>\n<link>${SITE_URL}/blog</link>\n<description>Practical marketing guides for businesses in Dubai and the UAE.</description>\n<language>en</language>\n` +
-  `<atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>\n` +
+  `<atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>\n<lastBuildDate>${rfc822(latest(POSTS.map((p) => p.updated)))}</lastBuildDate>\n` +
+  `<image><url>${SITE_URL}/logo.png</url><title>SEODXB Blog</title><link>${SITE_URL}/blog</link></image>\n` +
   sorted
     .map(
       (p) =>
         `<item>\n<title>${esc(p.title)}</title>\n<link>${abs(postPath(p))}</link>\n<guid isPermaLink="true">${abs(postPath(p))}</guid>\n` +
-        `<pubDate>${rfc822(p.date)}</pubDate>\n<category>${esc(p.category)}</category>\n<description>${esc(p.description)}</description>\n</item>`,
+        `<pubDate>${rfc822(p.date)}</pubDate>\n<dc:creator>${esc(AUTHOR.name)}</dc:creator>\n<category>${esc(p.category)}</category>\n<description>${esc(p.description)}</description>\n</item>`,
     )
     .join("\n") +
   `\n</channel>\n</rss>\n`;

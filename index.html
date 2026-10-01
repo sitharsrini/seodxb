@@ -33,14 +33,19 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://seodxb.com/#organization",
       "name": "SEODXB",
+      "alternateName": "SEO DXB",
       "url": "https://seodxb.com",
-      "logo": "https://seodxb.com/favicon-192.png",
+      "logo": { "@type": "ImageObject", "url": "https://seodxb.com/logo.png", "width": 512, "height": 512 },
+      "image": "https://seodxb.com/og/default.jpg",
       "description": "Marketing consultancy in Dubai offering marketing strategy, SEO, AEO and GEO, performance advertising, websites, content and social media.",
       "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressRegion": "Dubai", "addressCountry": "AE" },
       "telephone": "+971521551198",
       "email": "hi@Listi.ae",
-      "areaServed": "AE",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+971521551198", "email": "hi@Listi.ae", "areaServed": "AE", "availableLanguage": ["English"] },
+      "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+      "employee": { "@id": "https://seodxb.com/about#author" },
       "sameAs": ["https://www.linkedin.com/company/soegeodubai/"],
       "knowsAbout": ["Marketing strategy", "Search engine optimization", "Answer engine optimization", "Generative engine optimization", "Performance advertising", "Web design", "Content marketing", "Social media marketing"]
     }

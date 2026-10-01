@@ -11,3 +11,4 @@ functions-dist
 .DS_Store
 *.log
 .vite
+src/generated

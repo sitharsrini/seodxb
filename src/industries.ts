@@ -15,24 +15,8 @@ import { BATCH2_C_INDUSTRIES } from "./industries-batch2-c";
 import { BATCH2_D_INDUSTRIES } from "./industries-batch2-d";
 import { BATCH2_E_INDUSTRIES } from "./industries-batch2-e";
 
-export interface Industry {
-  slug: string;
-  name: string;
-  title: string;
-  description: string;
-  heroTitle: string;
-  heroIntro: string;
-  answer: string;
-  searches: string[];
-  challenges: { title: string; body: string }[];
-  plan: { service: string; points: string[] }[];
-  measure: string[];
-  faqs: { q: string; a: string }[];
-  postSlug: string;
-  extraPostSlugs?: string[];
-  // Landing page layout; "editorial" is the default, "classic" is the original.
-  layout?: "classic" | "editorial";
-}
+import type { Industry } from "./industry-types";
+export type { Industry } from "./industry-types";
 
 export const INDUSTRIES: Industry[] = [
   {
