@@ -101,8 +101,8 @@ export const HEALTH_INDUSTRIES: Industry[] = [
       "paediatrician near me",
       "dermatologist Jumeirah",
       "gynaecologist Abu Dhabi female doctor",
-      "ENT specialist Sharjah",
-      "multispecialty clinic Al Barsha",
+      "private hospital Dubai",
+      "medical tourism Dubai",
     ],
     challenges: [
       {
@@ -168,6 +168,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "healthcare-marketing-hospitals-clinics-uae",
+    extraPostSlugs: ["medical-tourism-marketing-uae-hospitals", "medical-content-eeat-hospital-websites", "hospital-local-seo-multiple-locations-departments"],
   },
   {
     slug: "dental-clinics",

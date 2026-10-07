@@ -9,6 +9,7 @@ import { REALESTATE_POSTS } from "./posts-realestate";
 import { PROPERTY_POSTS } from "./posts-property";
 import { HOLIDAY_POSTS } from "./posts-holiday";
 import { MEP_POSTS } from "./posts-mep";
+import { HOSPITAL_POSTS } from "./posts-hospitals";
 import { EVENT_POSTS } from "./posts-events";
 import { TRAVEL_POSTS } from "./posts-travel";
 import { INSURANCE_POSTS } from "./posts-insurance";
@@ -415,6 +416,6 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS, ...TAX_POSTS, ...LAW_POSTS, ...INSURANCE_POSTS, ...TRAVEL_POSTS, ...EVENT_POSTS, ...MEP_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS, ...TAX_POSTS, ...LAW_POSTS, ...INSURANCE_POSTS, ...TRAVEL_POSTS, ...EVENT_POSTS, ...MEP_POSTS, ...HOSPITAL_POSTS];
 
 export { postText, wordCount, readingMinutes, formatDate, postPath } from "./post-utils";

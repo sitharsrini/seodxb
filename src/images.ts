@@ -54,6 +54,9 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
+  "medical-tourism-marketing-uae-hospitals": {"id": "photo-1519494026892-80bbd2d6fd0d", "alt": "Bright hospital lobby with reception desk and signage", "by": "Martha Dominguez de Gouveia", "user": "m_dominguez_marketing"},
+  "medical-content-eeat-hospital-websites": {"id": "photo-1631217868264-e5b90bb7e133", "alt": "Doctor in a white coat talking with a patient in a clinic", "by": "National Cancer Institute", "user": "nci"},
+  "hospital-local-seo-multiple-locations-departments": {"id": "photo-1628372095387-017d1099fc19", "alt": "Hospital ward corridor with a patient bed", "by": "Miguel Ausejo", "user": "mausejor"},
   "seo-for-real-estate-companies-dubai": {"id": "photo-1617449512807-7401d38e5c29", "alt": "Waterfront apartment towers and promenade in Dubai Marina", "by": "Noah Bikoro", "user": "noahnkb"},
   "dubai-community-pages-real-estate-seo": {"id": "photo-1682410601760-6372fd33ad2b", "alt": "Aerial view of Dubai's coastline, residential communities and Palm Jumeirah", "by": "Jhonwayne Pumaras", "user": "spiraleyebrows"},
   "off-plan-property-marketing-dubai-brokers": {"id": "photo-1599707254554-027aeb4deacd", "alt": "Tower cranes above a high-rise building under construction", "by": "Frames For Your Heart", "user": "framesforyourheart"},
