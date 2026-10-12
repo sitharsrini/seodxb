@@ -54,6 +54,9 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
+  "school-admissions-funnel-dubai": {"id": "photo-1509062522246-3755977927d7", "alt": "Teacher leading a lesson with secondary students in a classroom", "by": "Quilia", "user": "heyquilia"},
+  "school-marketing-relocating-families-uae": {"id": "photo-1758227365187-016878604d94", "alt": "Wooden family figures beside a small house and keys", "by": "IGOR LOLATTO", "user": "igorlolatto"},
+  "school-website-pages-that-rank-uae": {"id": "photo-1503676260728-1c00da094a0b", "alt": "Apple on a stack of books beside ABC blocks and crayons", "by": "Element5 Digital", "user": "element5digital"},
   "medical-tourism-marketing-uae-hospitals": {"id": "photo-1519494026892-80bbd2d6fd0d", "alt": "Bright hospital lobby with reception desk and signage", "by": "Martha Dominguez de Gouveia", "user": "m_dominguez_marketing"},
   "medical-content-eeat-hospital-websites": {"id": "photo-1631217868264-e5b90bb7e133", "alt": "Doctor in a white coat talking with a patient in a clinic", "by": "National Cancer Institute", "user": "nci"},
   "hospital-local-seo-multiple-locations-departments": {"id": "photo-1628372095387-017d1099fc19", "alt": "Hospital ward corridor with a patient bed", "by": "Miguel Ausejo", "user": "mausejor"},

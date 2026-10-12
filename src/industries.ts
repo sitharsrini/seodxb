@@ -691,7 +691,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "why-schools-in-dubai-need-marketing",
-    extraPostSlugs: ["nursery-marketing-dubai-more-enrolments", "university-marketing-uae-student-recruitment"],
+    extraPostSlugs: ["school-admissions-funnel-dubai", "school-marketing-relocating-families-uae", "school-website-pages-that-rank-uae", "nursery-marketing-dubai-more-enrolments", "university-marketing-uae-student-recruitment"],
   },
 ];
 
