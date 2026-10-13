@@ -54,6 +54,8 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
+  "food-on-focus-media-fb-creative-agency-dubai": {"id": "photo-1478145971721-10511ecaf005", "alt": "Cameras beside a styled plate of fruit, olives and cheese on a white table", "by": "Brooke Lark", "user": "brookelark"},
+  "zarak-events-event-management-agency-dubai": {"id": "photo-1670028514318-0ac718c0590d", "alt": "Event stage with lighting rig and beams over an audience", "by": "Kevin Yudhistira Alloni", "user": "kyalloni"},
   "listonics-office-it-services-dubai": {"id": "photo-1785682117028-6fcf2c0b515b", "alt": "IT engineer working on network equipment in a server rack", "by": "Valentin Lacoste", "user": "valentinlacoste"},
   "school-admissions-funnel-dubai": {"id": "photo-1509062522246-3755977927d7", "alt": "Teacher leading a lesson with secondary students in a classroom", "by": "Quilia", "user": "heyquilia"},
   "school-marketing-relocating-families-uae": {"id": "photo-1758227365187-016878604d94", "alt": "Wooden family figures beside a small house and keys", "by": "IGOR LOLATTO", "user": "igorlolatto"},
