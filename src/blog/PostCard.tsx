@@ -9,6 +9,7 @@ const TINTS: Record<string, string> = {
   "Local SEO": "from-emerald-600 to-brand",
   "Websites & Content": "from-brand to-sky-400",
   "Industry Guides": "from-navy to-brand",
+  Partners: "from-navy to-emerald-600",
 };
 
 export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {

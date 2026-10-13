@@ -10,8 +10,15 @@ export function Inline({ text }: { text: string }) {
         if (bold) return <strong key={i} className="font-semibold text-ink">{bold[1]}</strong>;
         const link = part.match(/^\[(.+)\]\((.+)\)$/);
         if (link) {
+          // Links to other websites open in a new tab.
+          const external = /^https?:\/\//.test(link[2]);
           return (
-            <a key={i} href={link[2]} className="font-medium text-brand underline decoration-mint-strong decoration-2 underline-offset-4 hover:text-brand-dark">
+            <a
+              key={i}
+              href={link[2]}
+              {...(external ? { target: "_blank", rel: "noopener" } : {})}
+              className="font-medium text-brand underline decoration-mint-strong decoration-2 underline-offset-4 hover:text-brand-dark"
+            >
               {link[1]}
             </a>
           );

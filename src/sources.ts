@@ -41,6 +41,9 @@ const S = {
   icp: { name: "Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)", url: "https://icp.gov.ae" },
   dct: { name: "Department of Culture and Tourism, Abu Dhabi", url: "https://dct.gov.ae" },
   dwtc: { name: "Dubai World Trade Centre (DWTC)", url: "https://www.dwtc.com" },
+  listonics: { name: "Listonics: services and company information (llms.txt)", url: "https://listonics.com/llms.txt" },
+  listonicsAbout: { name: "About Listonics", url: "https://listonics.com/about/" },
+  listi: { name: "Listi Partners Portal", url: "https://listi.ae/" },
   dewa: { name: "Dubai Electricity and Water Authority (DEWA)", url: "https://www.dewa.gov.ae" },
   dcd: { name: "Dubai Civil Defence", url: "https://www.dcd.gov.ae" },
 } satisfies Record<string, Source>;
@@ -121,6 +124,7 @@ export const POST_SOURCES: Record<string, Source[]> = {
   "school-admissions-funnel-dubai": [S.khda, S.adek, S.conv],
   "school-marketing-relocating-families-uae": [S.khda, S.adek, S.moe, S.multi],
   "school-website-pages-that-rank-uae": [S.khda, S.adek, S.sd, S.helpful],
+  "listonics-office-it-services-dubai": [S.listonics, S.listonicsAbout, S.listi],
   "holiday-package-pages-seo-uae": [S.sd, S.multi, S.helpful],
   "wedding-planner-marketing-dubai": [S.det, S.gbpRank, S.gbpGuide],
   "exhibition-stand-builder-marketing-dubai": [S.dwtc, S.helpful, S.conv],

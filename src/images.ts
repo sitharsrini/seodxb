@@ -54,6 +54,7 @@ export const INDUSTRY_PHOTOS: Record<string, Photo> = {
 };
 
 export const POST_PHOTOS: Record<string, Photo> = {
+  "listonics-office-it-services-dubai": {"id": "photo-1785682117028-6fcf2c0b515b", "alt": "IT engineer working on network equipment in a server rack", "by": "Valentin Lacoste", "user": "valentinlacoste"},
   "school-admissions-funnel-dubai": {"id": "photo-1509062522246-3755977927d7", "alt": "Teacher leading a lesson with secondary students in a classroom", "by": "Quilia", "user": "heyquilia"},
   "school-marketing-relocating-families-uae": {"id": "photo-1758227365187-016878604d94", "alt": "Wooden family figures beside a small house and keys", "by": "IGOR LOLATTO", "user": "igorlolatto"},
   "school-website-pages-that-rank-uae": {"id": "photo-1503676260728-1c00da094a0b", "alt": "Apple on a stack of books beside ABC blocks and crayons", "by": "Element5 Digital", "user": "element5digital"},
