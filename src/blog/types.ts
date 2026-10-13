@@ -5,7 +5,9 @@ export type Block =
   | { t: "h3"; text: string }
   | { t: "ul"; items: string[] }
   | { t: "ol"; items: string[] }
-  | { t: "callout"; title: string; text: string };
+  | { t: "callout"; title: string; text: string }
+  // A stock photo inside the article (Unsplash, credited), with an optional caption.
+  | { t: "img"; photo: { id: string; alt: string; by: string; user: string }; caption?: string };
 
 export interface Post {
   slug: string;

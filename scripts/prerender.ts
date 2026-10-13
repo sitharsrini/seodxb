@@ -7,7 +7,7 @@ const out = path.join(root, "dist/public");
 const serverDir = path.join(root, "dist/server");
 
 type Route = { path: string; file: string; title: string; description: string; ogType?: string; image?: string; jsonLd?: object[]; hidden?: boolean };
-type Post = { slug: string; title: string; description: string; category: string; date: string; updated: string; answer: string; keywords: string[]; faqs: { q: string; a: string }[] };
+type Post = { slug: string; title: string; description: string; category: string; date: string; updated: string; answer: string; keywords: string[]; faqs: { q: string; a: string }[]; body: { t: string; photo?: Photo }[] };
 type Service = { id: string; name: string; short: string };
 type Industry = { slug: string; name: string; answer: string };
 type Photo = { id: string; alt: string; by: string; user: string };
@@ -75,6 +75,7 @@ const entryFor = (r: Route): SmEntry => {
   const photo = post ? POST_PHOTOS[post.slug] : ind ? INDUSTRY_PHOTOS[ind.slug] : undefined;
   const images = [{ loc: SITE_URL + (r.image ?? "/og/default.jpg"), title: r.title }];
   if (photo) images.push({ loc: photoUrl(photo, 1200, 675), title: photo.alt });
+  for (const b of post?.body ?? []) if (b.t === "img" && b.photo) images.push({ loc: photoUrl(b.photo, 1200, 675), title: b.photo.alt });
   return { loc: abs(r.path), lastmod, images };
 };
 const visible = ROUTES.filter((r) => !r.hidden);

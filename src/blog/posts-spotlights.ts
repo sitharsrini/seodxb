@@ -37,6 +37,7 @@ export const SPOTLIGHT_POSTS: Post[] = [
         t: "p",
         text: `Logeswari K. M., the co-founder and creative director, was named in [Inc. Arabia's Women of Influence 2026](https://en.incarabia.com/inc-arabia%E2%80%99s-women-of-influence-2026-food-on-focus-medias-zarak-media-and-zarak-events-logeswari-k-m-882495.html) list, and the agency received the BeingShe x Gulf News Excellence in Media Award 2026 for Best Creative Agency.`,
       },
+      { t: "img", photo: { id: "photo-1590742309630-e9f9b66da3f7", alt: "A burger with fries photographed close up on a dark background", by: "Hamideh Jafari", user: "hamideh_jafari" }, caption: "Hero dishes need light, angle and styling chosen for the screen they will appear on." },
       { t: "h2", text: "Food photography, shot for where it will be used", id: "photography" },
       {
         t: "p",
@@ -59,11 +60,13 @@ export const SPOTLIGHT_POSTS: Post[] = [
         title: "Before you book any food shoot",
         text: `Three of the agency's own guides are worth reading first: [how to write a food photography brief](${F}/blog/how-to-write-a-food-photography-brief-uae-restaurant-template/), [how many dishes to photograph for your menu](${F}/blog/how-many-dishes-to-photograph-restaurant-menu-dubai/) and [what food photography costs in Dubai](${F}/blog/food-photography-cost-dubai-pricing-guide/). They make any shoot, with any studio, more productive.`,
       },
+      { t: "img", photo: { id: "photo-1642177057604-bcbe54bedcb1", alt: "A stack of pancakes with syrup and berries", by: "Z Graphica", user: "kiki_1323" }, caption: "Menu photography sells texture: syrup, steam and crumb are what make people order." },
       { t: "h2", text: "Video, reels and social content", id: "video" },
       {
         t: "p",
         text: `Short-form video now does much of the work photos used to do on Instagram and TikTok. Food On Focus produces [food video, reels and branded films](${F}/food-video-production-dubai-food-on-focus/), and runs [monthly social media management](${F}/social-media-management-dubai/) for restaurants and food brands, with content planned against a calendar and produced in-house.`,
       },
+      { t: "img", photo: { id: "photo-1695408246612-584543865997", alt: "A camera operator filming a chef at work in a restaurant kitchen", by: "Wesley Tingey", user: "wesleyphotography" }, caption: "Behind-the-scenes kitchen footage is the raw material for reels and short video." },
       { t: "h2", text: "Branding, menus and 3D design", id: "branding" },
       {
         t: "p",
@@ -74,6 +77,7 @@ export const SPOTLIGHT_POSTS: Post[] = [
         t: "p",
         text: `For venues that want one team from shoot to sale, Food On Focus also offers [restaurant and F&B marketing](${F}/restaurant-marketing-agency-dubai/), covering launch plans, social media, influencer campaigns, SEO and paid ads, and [restaurant website design](${F}/restaurant-website-design-uae/) with menus, reservations and direct ordering built around real food photography. Its [photography packages](${F}/food-photography-packages-dubai/) set out what a menu refresh, full menu, seasonal campaign or monthly content plan includes.`,
       },
+      { t: "img", photo: { id: "photo-1566417713940-fe7c737a9ef2", alt: "A bartender pouring a cocktail into a glass", by: "Louis Hansel", user: "louishansel" }, caption: "Drinks content works best in motion: a pour, a garnish, a toast." },
       { t: "h2", text: "Work for well-known brands", id: "work" },
       {
         t: "ul",
@@ -85,6 +89,7 @@ export const SPOTLIGHT_POSTS: Post[] = [
           `[Plantoholic](${F}/projects/plantoholic/): cafe concept, branding and visuals for a Palm Jumeirah venue.`,
         ],
       },
+      { t: "img", photo: { id: "photo-1742549626436-bf3c11dab212", alt: "Latte art in a ceramic cup on a café table", by: "Panchanok Juntanarach", user: "mindddd" }, caption: "Strong, consistent photos are what customers see first in Google Maps and delivery apps." },
       { t: "h2", text: "How great food photos help search and AI visibility", id: "search" },
       {
         t: "p",
@@ -142,6 +147,7 @@ export const SPOTLIGHT_POSTS: Post[] = [
         t: "p",
         text: `Zarak Events is a full-service event management, experiential marketing and production agency based at SIT Tower in Dubai Silicon Oasis. It describes itself as a creative event agency that brings strategy, experience design and production together, delivering events for roughly 50 to 5,000 guests across the UAE and GCC. Brands shown on its website include Keeta, Hilti, PUMA, Ellington Properties, talabat, Danfoss, Informa Connect and WHX 2026. Its co-founder Logeswari K. M. also co-founded [Food On Focus Media](${F}/about-us/) and Zarak Media, and was named in [Inc. Arabia's Women of Influence 2026](https://en.incarabia.com/inc-arabia%E2%80%99s-women-of-influence-2026-food-on-focus-medias-zarak-media-and-zarak-events-logeswari-k-m-882495.html).`,
       },
+      { t: "img", photo: { id: "photo-1766164416026-1a823688d106", alt: "A formal dining room set for a gala dinner, in black and white", by: "Raymond Petrik", user: "raymondpetrik" }, caption: "Gala dinners are judged on detail: table settings, lighting and flow between courses." },
       { t: "h2", text: "What Zarak Events delivers", id: "services" },
       {
         t: "ul",
@@ -155,11 +161,13 @@ export const SPOTLIGHT_POSTS: Post[] = [
           `[Event production](${Z}/event-production-company-dubai/): stages, sound, lighting, LED screens, trussing, AV technicians and live show control.`,
         ],
       },
+      { t: "img", photo: { id: "photo-1761195689615-9469b65dac01", alt: "A branded exhibition stand with visitors at a trade show", by: "Trans Russia", user: "transrussia" }, caption: "Exhibition stands combine design, fabrication and logistics against a fixed show date." },
       { t: "h2", text: "Selected work", id: "work" },
       {
         t: "p",
         text: `Two projects show the range. For the [Manna Mess restaurant launch in Dubai](${Z}/manna-mess-restaurant-launch-dubai/), Zarak delivered the inauguration, a Tamil cultural roadshow, permits, staging, AV, security and content. It also staged [The Mousetrap](${Z}/the-mousetrap-theatre-production-uae/), a full-length theatre production in the UAE, covering set build, lighting, sound and show control. More projects are in its [event portfolio](${Z}/our-work/).`,
       },
+      { t: "img", photo: { id: "photo-1558620013-a08999547a36", alt: "Beams of stage lighting cutting through haze above a crowd", by: "Jorik Kleen", user: "jorikkleen" }, caption: "Lighting, sound and staging shape how an audience remembers the night." },
       { t: "h2", text: "How to plan an event in Dubai: the questions that matter", id: "planning" },
       {
         t: "p",
@@ -180,6 +188,7 @@ export const SPOTLIGHT_POSTS: Post[] = [
         title: "Planning a specific type of event?",
         text: `Zarak has step-by-step guides for [gala dinners and awards nights](${Z}/blog/how-to-plan-a-gala-dinner-or-awards-night-in-dubai/), [product launches](${Z}/blog/product-launch-event-checklist-dubai/), [corporate iftars and suhoors](${Z}/blog/corporate-iftar-suhoor-dubai-ramadan-2027/) and [exhibition stands](${Z}/blog/how-to-choose-exhibition-stand-contractor-dubai/), plus [ten decisions to make before stand design starts](${Z}/blog/decisions-before-exhibition-stand-design/).`,
       },
+      { t: "img", photo: { id: "photo-1761225646548-bc92fea0dc72", alt: "A styled retail display counter at a brand activation", by: "Ela De Pure", user: "eladepure" }, caption: "Brand activations need the creative idea and the build to come from the same plan." },
       { t: "h2", text: "Why one team for creative and production matters", id: "one-team" },
       {
         t: "p",

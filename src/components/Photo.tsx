@@ -7,12 +7,14 @@ export function PhotoFigure({
   sizes = "(min-width: 1024px) 1024px, 100vw",
   priority = false,
   className = "",
+  caption,
 }: {
   photo: Photo;
   ratio?: number;
   sizes?: string;
   priority?: boolean;
   className?: string;
+  caption?: string;
 }) {
   const w = 1200;
   return (
@@ -31,7 +33,9 @@ export function PhotoFigure({
           className="h-auto w-full object-cover"
         />
       </div>
-      <figcaption className="mt-2 text-right text-xs text-ink-soft">
+      <figcaption className="mt-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-xs text-ink-soft">
+        {caption ? <span className="text-sm text-ink">{caption}</span> : <span />}
+        <span>
         Photo by{" "}
         <a href={photographerUrl(photo)} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-brand">
           {photo.by}
@@ -40,6 +44,7 @@ export function PhotoFigure({
         <a href={UNSPLASH_URL} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-brand">
           Unsplash
         </a>
+        </span>
       </figcaption>
     </figure>
   );

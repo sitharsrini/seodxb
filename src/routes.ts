@@ -7,6 +7,7 @@ import { CORE_FAQS } from "./core-faqs";
 import { citationLd, industrySources, postSources } from "./citations";
 import { INDUSTRY_REVIEWED } from "./sources";
 import { INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl, photographerUrl, type Photo } from "./images";
+import type { Post } from "./blog/types";
 
 const photoLd = (ph: Photo) => ({
   "@type": "ImageObject",
@@ -17,6 +18,14 @@ const photoLd = (ph: Photo) => ({
   license: "https://unsplash.com/license",
   acquireLicensePage: "https://unsplash.com/license",
 });
+
+// OG card, hero photo and every in-article photo, in reading order.
+const postImages = (p: Post) => {
+  const inline = p.body.flatMap((b) => (b.t === "img" ? [photoLd(b.photo)] : []));
+  const hero = POST_PHOTOS[p.slug];
+  if (!hero && !inline.length) return `${SITE_URL}/og/${p.slug}.jpg`;
+  return [`${SITE_URL}/og/${p.slug}.jpg`, ...(hero ? [photoLd(hero)] : []), ...inline];
+};
 
 const authorLd = () => ({
   "@type": "Person",
@@ -172,7 +181,7 @@ const BLOG_ROUTES: Route[] = [
         headline: p.title,
         description: p.description,
         abstract: p.answer,
-        image: POST_PHOTOS[p.slug] ? [`${SITE_URL}/og/${p.slug}.jpg`, photoLd(POST_PHOTOS[p.slug])] : `${SITE_URL}/og/${p.slug}.jpg`,
+        image: postImages(p),
         datePublished: p.date,
         dateModified: p.updated,
         inLanguage: "en",

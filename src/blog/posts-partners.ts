@@ -47,6 +47,7 @@ export const PARTNER_POSTS: Post[] = [
           `[Office relocation IT services](${L}/services/office-it-relocation/): auditing what exists, preparing the new site in advance, then moving and reinstalling equipment so the business reopens without lost working days.`,
         ],
       },
+      { t: "img", photo: { id: "photo-1683322499436-f4383dd59f5a", alt: "Blue network cables plugged into a patch panel", by: "Scott Rodgerson", user: "scottrodgerson" }, caption: "Structured cabling, tested and labelled, is the foundation every other system sits on." },
       { t: "h2", text: "Networks, Wi-Fi and connectivity", id: "network" },
       {
         t: "ul",
@@ -56,6 +57,7 @@ export const PARTNER_POSTS: Post[] = [
           `[IoT and connected devices](${L}/services/iot/): cameras, access control and sensors installed on a network built for them, with dashboards and integrations handled by the same team.`,
         ],
       },
+      { t: "img", photo: { id: "photo-1594915440248-1e419eba6611", alt: "A network switch with fibre optic cables connected", by: "Kirill Sh", user: "kirill2020" }, caption: "A wired core of switches and a firewall keeps Wi-Fi and cloud services reliable." },
       { t: "h2", text: "Security, cloud and backup", id: "security" },
       {
         t: "ul",
@@ -65,11 +67,13 @@ export const PARTNER_POSTS: Post[] = [
           `[NAS, storage and backup](${L}/services/nas-storage-and-backup/): a local NAS for fast shared files, encrypted off-site copies, protection against ransomware and a recovery plan that is actually tested.`,
         ],
       },
+      { t: "img", photo: { id: "photo-1614064641938-3bbee52942c7", alt: "A padlock resting on a laptop keyboard lit in red and green", by: "FlyD", user: "flyd2069" }, caption: "Multi-factor sign-in, managed protection and tested backups do most of the security work." },
       { t: "h2", text: "Ongoing IT support", id: "support" },
       {
         t: "p",
         text: `Day-to-day support is offered as [managed IT services and IT AMC](${L}/services/managed-it-support/): a helpdesk staff can reach by phone, WhatsApp or email, on-site visits, monitoring, patching, backup checks and vendor management, with response times written into the agreement. Listonics states that critical issues are acknowledged within 15 minutes under a support plan. For more detail, see its guides to [IT support in Dubai](${L}/it-support-dubai/), [IT AMC contracts](${L}/it-amc-dubai/) and [emergency IT support](${L}/emergency-it-support-dubai/).`,
       },
+      { t: "img", photo: { id: "photo-1603201667141-5a2d4c673378", alt: "A team working together on laptops around a table", by: "Cherrydeck", user: "cherrydeck" }, caption: "Good IT support is measured by staff who simply get on with their work." },
       { t: "h2", text: "Software, websites and search", id: "software" },
       {
         t: "ul",

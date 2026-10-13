@@ -9,6 +9,7 @@ export function postText(post: Post): string {
     if (b.t === "h2" || b.t === "h3") parts.push(`\n## ${b.text}\n`);
     else if (b.t === "p") parts.push(strip(b.text));
     else if (b.t === "callout") parts.push(`${b.title}: ${strip(b.text)}`);
+    else if (b.t === "img") continue;
     else parts.push(b.items.map((it, i) => (b.t === "ol" ? `${i + 1}. ` : "- ") + strip(it)).join("\n"));
   }
   parts.push("\n## Frequently asked questions\n");

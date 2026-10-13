@@ -65,6 +65,17 @@ function renderBlock(b: Block, i: number) {
           ))}
         </ol>
       );
+    case "img":
+      return (
+        <PhotoFigure
+          key={i}
+          photo={b.photo}
+          caption={b.caption}
+          ratio={3 / 2}
+          className="mt-10"
+          sizes="(min-width: 768px) 768px, 100vw"
+        />
+      );
     case "callout":
       return (
         <aside key={i} className="mt-8 rounded-2xl border border-mint-strong/40 bg-mint/30 p-6">
