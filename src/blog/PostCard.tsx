@@ -1,6 +1,6 @@
 import { formatDate, postPath, readingMinutes, type Post } from "./posts";
 import { delay } from "../motion";
-import { POST_PHOTOS, photoUrl } from "../images";
+import { POST_PHOTOS, photoUrl, photoSrcSet } from "../images";
 
 const TINTS: Record<string, string> = {
   Strategy: "from-brand to-brand-dark",
@@ -30,6 +30,8 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
         {POST_PHOTOS[post.slug] && (
           <img
             src={photoUrl(POST_PHOTOS[post.slug], 640, 288)}
+            srcSet={photoSrcSet(POST_PHOTOS[post.slug], [320, 480, 640, 800], 640 / 288)}
+            sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
             alt=""
             width={640}
             height={288}
