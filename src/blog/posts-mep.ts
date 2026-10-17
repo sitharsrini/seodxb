@@ -5,7 +5,8 @@ const D = "2026-09-27";
 export const MEP_POSTS: Post[] = [
   {
     slug: "how-mep-contractors-win-projects-uae",
-    title: "How MEP Contractors in the UAE Win More Projects",
+    title: "How MEP Contractors in the UAE Win More Projects and Maintenance Contracts",
+    seoTitle: "How MEP Contractors in the UAE Win More Projects",
     description:
       "A practical marketing plan for UAE MEP contractors: discipline pages, project case studies, visible approvals, LinkedIn and getting onto approved lists.",
     category: "Industry Guides",

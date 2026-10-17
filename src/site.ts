@@ -22,7 +22,7 @@ export const CONTACT = {
   email: "hi@Listi.ae",
   phone: "+971 52 155 1198",
   phoneHref: "tel:+971521551198",
-  whatsapp: "https://wa.me/971521551198",
+  whatsapp: "https://api.whatsapp.com/send?phone=971521551198",
   linkedin: "https://www.linkedin.com/company/soegeodubai/",
   city: "Dubai, United Arab Emirates",
 };

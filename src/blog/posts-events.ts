@@ -5,7 +5,8 @@ const D = "2026-09-27";
 export const EVENT_POSTS: Post[] = [
   {
     slug: "how-event-management-companies-get-clients-dubai",
-    title: "How Event Management Companies in Dubai Get More Clients",
+    title: "How Event Management Companies in Dubai Get More Clients and Better Briefs",
+    seoTitle: "How Event Management Companies in Dubai Get More Clients",
     description:
       "A practical marketing plan for Dubai event companies: event type pages, permitted case studies, LinkedIn, fast brief responses and the UAE events calendar.",
     category: "Industry Guides",

@@ -5,7 +5,8 @@ const D = "2026-09-27";
 export const INSURANCE_POSTS: Post[] = [
   {
     slug: "how-insurance-brokers-get-clients-uae",
-    title: "How Insurance Brokers in the UAE Get More Clients",
+    title: "How Insurance Brokers in the UAE Get More Clients Who Stay at Renewal",
+    seoTitle: "How Insurance Brokers in the UAE Get More Clients",
     description:
       "A practical marketing plan for UAE insurance brokers: product pages, licensed advisers, compliant ads, fast quotes and winning against comparison sites.",
     category: "Industry Guides",

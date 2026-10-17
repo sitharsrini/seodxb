@@ -61,6 +61,7 @@ for (const p of pages) {
   if (h1.length > 1) add(p.path, "error", `${h1.length} H1s: ${h1.map((x) => `"${x.t}"`).join(", ")}`);
   if (h1[0] && !h1[0].t) add(p.path, "error", "empty H1");
   if (h1[0] && h1s.get(h1[0].t.toLowerCase()) > 1) add(p.path, "error", `duplicate H1: "${h1[0].t}"`);
+  if (h1[0] && h1[0].t.toLowerCase() === p.title.replace(/\s*\|\s*SEODXB.*$/i, "").toLowerCase()) add(p.path, "warn", `H1 duplicates the title: "${h1[0].t}"`);
   if (h1[0] && h1[0].t.length > 120) add(p.path, "info", `H1 ${h1[0].t.length} chars`);
   const h2 = p.headings.filter((x) => x.l === 2);
   if (!h2.length) add(p.path, "warn", "no H2");

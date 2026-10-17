@@ -5,7 +5,8 @@ const D = "2026-09-27";
 export const COWORK_POSTS: Post[] = [
   {
     slug: "how-coworking-spaces-get-more-members-dubai",
-    title: "How Co-working Spaces in Dubai Get More Members",
+    title: "How Co-working Spaces in Dubai Get More Members, and Keep Them Longer",
+    seoTitle: "How Co-working Spaces in Dubai Get More Members",
     description:
       "A practical plan for Dubai co-working spaces to fill desks and offices: Google Maps, location pages, clear pricing, easy tours, day passes and retention.",
     category: "Industry Guides",

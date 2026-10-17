@@ -5,7 +5,8 @@ const D = "2026-09-24";
 export const WELLNESS_POSTS: Post[] = [
   {
     slug: "seo-for-spas-wellness-centres-dubai",
-    title: "SEO for Spas in Dubai: How to Get More Direct Bookings",
+    title: "SEO for Spas and Wellness Centres in Dubai: How to Fill Treatment Rooms with Direct Bookings",
+    seoTitle: "SEO for Spas in Dubai: How to Get More Direct Bookings",
     description:
       "How Dubai spas can win direct bookings with Google Maps, treatment pages, real photos, reviews and easy booking, instead of relying on deal sites.",
     category: "Industry Guides",

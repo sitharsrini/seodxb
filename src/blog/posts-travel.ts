@@ -5,7 +5,8 @@ const D = "2026-09-27";
 export const TRAVEL_POSTS: Post[] = [
   {
     slug: "how-travel-agencies-get-more-bookings-uae",
-    title: "How Travel Agencies in the UAE Get More Bookings",
+    title: "How Travel Agencies in the UAE Get More Bookings Beyond the Online Travel Sites",
+    seoTitle: "How Travel Agencies in the UAE Get More Bookings",
     description:
       "A practical marketing plan for UAE travel agencies: package pages, visa help, Google Maps, fast WhatsApp quotes, holiday calendar timing and repeat bookings.",
     category: "Industry Guides",

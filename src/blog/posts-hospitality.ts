@@ -97,7 +97,8 @@ export const HOSPITALITY_POSTS: Post[] = [
   },
   {
     slug: "hotel-marketing-direct-bookings-uae",
-    title: "Hotel Marketing in the UAE: How to Grow Direct Bookings",
+    title: "Hotel Marketing in the UAE: How to Grow Direct Bookings and Rely Less on OTAs",
+    seoTitle: "Hotel Marketing in the UAE: How to Grow Direct Bookings",
     description:
       "How UAE hotels and resorts can grow direct bookings and reduce OTA commission with SEO, Google hotel listings, metasearch, source-market campaigns and loyalty.",
     category: "Industry Guides",

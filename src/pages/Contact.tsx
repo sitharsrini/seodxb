@@ -149,6 +149,38 @@ export default function Contact() {
         <ContactForm />
       </div>
     </section>
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <p className="eyebrow" data-reveal>What happens next</p>
+      <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>From first message to a clear plan</h2>
+      <ol className="mt-10 grid gap-6 md:grid-cols-3">
+        {[
+          {
+            title: "We reply within one working day",
+            body: "We read your enquiry and get back to you to arrange a time for a call. If it is urgent, call or message us on WhatsApp.",
+          },
+          {
+            title: "A free 30-minute consultation",
+            body: "We talk through your market, your goals and your current marketing, by phone or video call. You leave with at least one thing you can act on, whether or not we work together.",
+          },
+          {
+            title: "Your first 30 days, if we work together",
+            body: "An honest audit of your current marketing and tracking, a clear view of which channels can pay back in your market, and a 90-day plan with budget, priorities and KPIs.",
+          },
+        ].map((step, i) => (
+          <li key={step.title} className="rounded-2xl border border-line bg-white p-6" data-reveal style={delay(i + 2)}>
+            <span className="font-display text-3xl font-semibold text-brand">{i + 1}</span>
+            <h3 className="mt-3 font-display text-xl font-semibold">{step.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-10 max-w-3xl leading-relaxed text-ink-soft" data-reveal>
+        Not sure what to ask for? See our <a href="/services" className="font-medium text-brand underline underline-offset-4">marketing and SEO services</a>,
+        find the guide for <a href="/industries" className="font-medium text-brand underline underline-offset-4">your industry</a>, or read the{" "}
+        <a href="/blog" className="font-medium text-brand underline underline-offset-4">marketing guides on our blog</a> first. We work with businesses
+        across Dubai, Abu Dhabi, Sharjah and the northern emirates, and with international companies entering the UAE.
+      </p>
+    </section>
     <Faq faqs={CORE_FAQS["/contact"]} />
     </>
   );

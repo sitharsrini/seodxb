@@ -95,7 +95,8 @@ export const BATCH3_POSTS: Post[] = [
   },
   {
     slug: "job-posting-seo-attract-candidates-uae",
-    title: "Job Posting SEO: How UAE Agencies Attract Better Candidates",
+    title: "Job Posting SEO: How UAE Recruitment Agencies Attract Better Candidates from Search",
+    seoTitle: "Job Posting SEO: How UAE Agencies Attract Better Candidates",
     description:
       "How recruitment agencies in the UAE can attract better candidates from search: clear job pages, JobPosting schema, trust signals and scam-free messaging.",
     category: "Industry Guides",

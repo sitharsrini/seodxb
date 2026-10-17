@@ -193,7 +193,8 @@ export const HEALTH_POSTS: Post[] = [
   },
   {
     slug: "dental-clinic-seo-dubai",
-    title: "Dental Clinic SEO in Dubai: How to Attract More New Patients",
+    title: "Dental Clinic SEO in Dubai: How to Attract More New Patients, and Keep Them",
+    seoTitle: "Dental Clinic SEO in Dubai: How to Attract More New Patients",
     description:
       "How dental clinics in Dubai and the UAE can attract new patients for check-ups, emergencies, implants and aligners with local SEO, treatment pages and reviews.",
     category: "Industry Guides",

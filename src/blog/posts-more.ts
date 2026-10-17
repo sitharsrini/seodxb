@@ -244,7 +244,8 @@ export const MORE_POSTS: Post[] = [
   },
   {
     slug: "seo-vs-google-ads-dubai-which-first",
-    title: "SEO vs Google Ads in Dubai: Which Should You Start With?",
+    title: "SEO vs Google Ads in Dubai: Which Should Your Business Start With?",
+    seoTitle: "SEO vs Google Ads in Dubai: Which Should You Start With?",
     description:
       "Google Ads brings enquiries in weeks; SEO takes months but compounds. How to choose where a Dubai business should start, and why most end up running both.",
     category: "SEO & AI Search",
