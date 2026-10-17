@@ -37,6 +37,7 @@ export const ACCOUNTING_POSTS: Post[] = [
           "For special work such as due diligence, internal audit or liquidation.",
         ],
       },
+      { t: "img", photo: { id: "photo-1551135049-8a33b5883817", alt: "Four men in shirts and ties reviewing papers together at a white table", by: "Sebastian Herrmann", user: "officestock" }, caption: "Companies weighing up auditors compare firms carefully, so make that comparison easy for them." },
       { t: "h2", text: "Step 1: Pages for each audit need", id: "pages" },
       {
         t: "p",
@@ -52,6 +53,7 @@ export const ACCOUNTING_POSTS: Post[] = [
         title: "Accuracy is part of the service",
         text: "Audit requirements differ between free zones and change over time. Date every requirements page, avoid quoting authority fees and tell readers to confirm the current rules with their licensing authority.",
       },
+      { t: "img", photo: { id: "photo-1772588627373-729b0f47e5bb", alt: "Person reviewing printed forms with a pen beside a calculator and laptop", by: "Kelly Sikkema", user: "kellysikkema" }, caption: "Buyers want reassurance, so state clearly which approvals and registrations your audit firm holds." },
       { t: "h2", text: "Step 3: Credentials people can check", id: "credentials" },
       {
         t: "p",
@@ -62,6 +64,7 @@ export const ACCOUNTING_POSTS: Post[] = [
         t: "p",
         text: "Run focused Google Ads and email campaigns in the months before common year ends and renewal peaks, with landing pages explaining what to prepare and how long an audit takes. Remind past clients early so they book before the rush. Our [SEO versus Google Ads guide](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
       },
+      { t: "img", photo: { id: "photo-1633526543814-9718c8922b7a", alt: "Calendar page with red push pins marking several dates", by: "Towfiqu barbhuiya", user: "towfiqu999999" }, caption: "Audit work follows a yearly rhythm, so plan campaigns before the busiest months arrive." },
       { t: "h2", text: "Step 5: Referral partners", id: "referrals" },
       {
         t: "p",
@@ -111,6 +114,7 @@ export const ACCOUNTING_POSTS: Post[] = [
         t: "p",
         text: "Define two or three monthly packages by volume and scope: number of transactions or invoices, bank reconciliations, payroll, VAT return preparation support, management reports and a monthly call. State what is not included. Packages make it easy for owners to choose and easy for you to scope work profitably.",
       },
+      { t: "img", photo: { id: "photo-1544396821-4dd40b938ad3", alt: "Rows of colourful ring binders arranged on wooden office shelves", by: "Viktor Talashuk", user: "viktortalashuk" }, caption: "Clear packages turn bookkeeping from a vague task into a service owners can understand and buy." },
       { t: "h2", text: "Step 2: Be open about starting prices", id: "pricing" },
       {
         t: "p",
@@ -126,6 +130,7 @@ export const ACCOUNTING_POSTS: Post[] = [
         t: "p",
         text: "Many SMEs already use or plan to use cloud accounting software. Create pages for each platform your team is trained on, covering setup, migration and ongoing bookkeeping. Owners searching for help with their software are often ready to buy.",
       },
+      { t: "img", photo: { id: "photo-1783115259399-3a5a3e0e4592", alt: "Hands typing on a laptop showing a spreadsheet in a busy office", by: "Gorilla ROI Data Connector", user: "gorillaroi" }, caption: "Showing the software you work in daily helps owners trust you with their records." },
       { t: "h2", text: "Step 4: Reach companies after setup", id: "new-companies" },
       {
         t: "p",
@@ -136,6 +141,7 @@ export const ACCOUNTING_POSTS: Post[] = [
         t: "p",
         text: "Explain the first 30 days: what documents you need, how you connect to bank feeds and software, and when the first reports arrive. A clear onboarding page reduces the worry of switching and shortens the sales cycle.",
       },
+      { t: "img", photo: { id: "photo-1551836022-d5d88e9218df", alt: "Two women talking across a meeting table with a laptop and notebook", by: "Amy Hirschi", user: "amyhirschi" }, caption: "A clear, friendly first meeting sets the tone for a long monthly retainer." },
       { t: "h2", text: "Step 6: Track retainers, not just leads", id: "tracking" },
       {
         t: "p",

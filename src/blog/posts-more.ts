@@ -54,6 +54,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Use the same phone number that appears on your website. For the website link, add tracking parameters so visits from the profile show up separately in Google Analytics, for example ?utm_source=google&utm_medium=organic&utm_campaign=business-profile. If WhatsApp is your main enquiry channel, add it in the messaging options where available, and make sure someone answers it.",
       },
+      { t: "img", photo: { id: "photo-1758445045876-fc6bfe13a1d7", alt: "White brick shop front with a wooden door, large window and potted plants", by: "Zhen Yao", user: "rex_filmer" }, caption: "Accurate basics such as category, hours and address are the base of every listing." },
       { t: "h2", text: "Part 2: Content that helps you rank and convert", id: "content" },
       { t: "h3", text: "Business description" },
       {
@@ -98,6 +99,7 @@ export const MORE_POSTS: Post[] = [
         title: "Consistency across the web",
         text: "Google cross-checks your profile against your website, directories and social profiles. Use the same name, address and phone number everywhere. This also helps AI assistants describe your business correctly. See our guide on [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews).",
       },
+      { t: "img", photo: { id: "photo-1633613286991-611fe299c4be", alt: "Row of five yellow stars on a pink and blue background", by: "Towfiqu barbhuiya", user: "towfiqu999999" }, caption: "A steady flow of genuine reviews, with replies, builds trust with people comparing options." },
       { t: "h2", text: "Part 4: Monthly maintenance", id: "maintenance" },
       {
         t: "ol",
@@ -197,6 +199,7 @@ export const MORE_POSTS: Post[] = [
         title: "An illustrative example",
         text: "A consultancy wants AED 600,000 of new revenue in a year. Its average new client is worth AED 30,000, so it needs 20 clients. It closes one in four qualified leads, so it needs 80 leads. If a qualified lead costs around AED 1,500 from search ads, the media budget is about AED 120,000 for the year, or AED 10,000 a month, before fees and content. These numbers are made up to show the method; yours will differ.",
       },
+      { t: "img", photo: { id: "photo-1516201580490-33550d32de5c", alt: "Open planner, pens, calculator and an orange on a wooden table", by: "Iryna Tysiak", user: "20ira17" }, caption: "Work backwards from your sales target to find the number of leads you need." },
       { t: "h2", text: "What the budget must include", id: "include" },
       {
         t: "ul",
@@ -213,6 +216,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Do not commit the whole annual budget on day one. Spend a smaller amount over the first two or three months to learn your real cost per lead and close rate, then adjust the plan with real numbers. Many businesses find that one channel outperforms the rest and deserves most of the budget, which they could not have known in advance.",
       },
+      { t: "img", photo: { id: "photo-1523348837708-15d4a09cfac2", alt: "Young green seedlings growing in rows of small black plastic pots", by: "Markus Spiske", user: "markusspiske" }, caption: "Start with a small test budget and only scale what proves it can grow." },
       { t: "h2", text: "When the numbers do not work", id: "when-not" },
       {
         t: "p",
@@ -269,6 +273,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "**SEO** earns a place in the organic results by making your site the most useful, trusted answer for a search. It involves technical fixes, content, and mentions from other sites. It usually takes months to show results, but the traffic does not disappear when you stop paying, and it is often trusted more by searchers than an ad.",
       },
+      { t: "img", photo: { id: "photo-1625297673326-14790108da55", alt: "Person typing on a laptop at a wooden desk beside a monitor", by: "Justin Morgan", user: "justin_morgan" }, caption: "Ads and organic results both answer the same search, but they work on different timelines." },
       { t: "h2", text: "Start with Google Ads when", id: "ads-first" },
       {
         t: "ul",
@@ -294,6 +299,7 @@ export const MORE_POSTS: Post[] = [
         title: "The overlooked third option",
         text: "Your Google Business Profile is free, appears above organic results for local searches, and is often the fastest win available. Set it up properly before deciding anything else. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers it.",
       },
+      { t: "img", photo: { id: "photo-1457530378978-8bac673b8062", alt: "Close view of young green plants sprouting from dark soil", by: "Francesco Gallarotti", user: "gallarotti" }, caption: "SEO grows slowly at first, which suits businesses that can plan for the longer term." },
       { t: "h2", text: "Why most businesses end up with both", id: "both" },
       {
         t: "p",
@@ -317,6 +323,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Without these, ads waste money on clicks that do not convert, and SEO struggles to rank pages that do not deserve to. Fixing the foundation is usually the first month of any engagement.",
       },
+      { t: "img", photo: { id: "photo-1629904853893-c2c8981a1dc5", alt: "Two people working on code at computer monitors in a bright office", by: "Compagnons", user: "sigmund" }, caption: "A fast, clear website and proper tracking make both channels work better." },
       { t: "h2", text: "A note on AI search", id: "ai-search" },
       {
         t: "p",
@@ -379,6 +386,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Each language version of a page needs its own address. The common options are a subdirectory (example.ae/ar/services), a subdomain (ar.example.ae) or a separate domain. For most businesses a subdirectory is the simplest and keeps all authority on one domain. What you must avoid is showing different languages at the same URL depending on a cookie or the visitor's location, because search engines will only ever see one version.",
       },
+      { t: "img", photo: { id: "photo-1555949963-ff9fe0c870eb", alt: "Shallow focus view of colourful code on a dark computer screen", by: "Shahadat Rahman", user: "hishahadat" }, caption: "Giving each language its own URL makes the site easier for search engines to understand." },
       { t: "h2", text: "hreflang: telling Google which page is which", id: "hreflang" },
       {
         t: "p",
@@ -408,6 +416,7 @@ export const MORE_POSTS: Post[] = [
         title: "Translate the invisible parts too",
         text: "Page titles, meta descriptions, image alt text, URL slugs where practical, structured data and form labels all need Arabic versions. A page with Arabic body text and an English title is a common half-finished job.",
       },
+      { t: "img", photo: { id: "photo-1676447838052-57434bd33d96", alt: "Close view of an open book with dense printed text on its pages", by: "Brett Jordan", user: "brett_jordan" }, caption: "Word for word translation rarely matches how local customers actually search and speak." },
       { t: "h2", text: "Let visitors choose", id: "choose" },
       {
         t: "p",
@@ -418,6 +427,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Your Google Business Profile, directory listings and social profiles can carry both languages. Keep the business name consistent, and use the Arabic name only if it is the name on your licence and signage. AI assistants answering questions in Arabic draw on Arabic sources, so Arabic content and mentions matter for that visibility as much as English ones do for English queries.",
       },
+      { t: "img", photo: { id: "photo-1776433246728-b85796861746", alt: "Blue street signs showing names in both Arabic and English script", by: "Maram Alkrdy", user: "maram_alkrdy" }, caption: "Local details such as addresses and area names should read naturally in both languages." },
       { t: "h2", text: "Launch checklist", id: "checklist" },
       {
         t: "ol",
@@ -488,6 +498,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Look at which pages people land on and which searches bring them. A business that ranks for an informational question, such as \"what is a golden visa\", will get visitors who want to learn, not to buy. Blog traffic and job seekers can inflate visitor counts while contributing nothing. Judge the site on visitors who land on service pages from commercial searches, not on the total.",
       },
+      { t: "img", photo: { id: "photo-1562793440-5e60349d130d", alt: "Crowd of people walking along a busy pedestrian shopping street", by: "Rich Smith", user: "richwilliamsmith" }, caption: "Lots of visitors means little if they are not the people who might buy." },
       { t: "h2", text: "3. Does the first screen answer the three questions?", id: "first-screen" },
       {
         t: "p",
@@ -518,6 +529,7 @@ export const MORE_POSTS: Post[] = [
         title: "A quick test",
         text: "Open your site on your phone using mobile data, not Wi-Fi. Time how long it takes to see the headline and find a way to contact you. If it is more than a few seconds for either, that is a problem worth fixing before anything else on this list.",
       },
+      { t: "img", photo: { id: "photo-1486312338219-ce68d2c6f44d", alt: "Close view of hands typing on a laptop keyboard at a desk", by: "Glenn Carstens-Peters", user: "glenncarstenspeters" }, caption: "Every extra form field or step gives a visitor another reason to give up." },
       { t: "h2", text: "6. Is the page slow or broken on mobile?", id: "mobile" },
       {
         t: "p",
@@ -533,6 +545,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Pages that ask visitors to call, email, fill a form, download a brochure, follow on Instagram and subscribe to a newsletter tend to get none of those. Decide the one action you want from each page and make it obvious. Secondary options can exist, but they should not compete.",
       },
+      { t: "img", photo: { id: "photo-1635620080444-a7cf3499f307", alt: "Empty road through autumn trees with a white arrow painted on it", by: "Fabien BELLANGER", user: "fabbel78" }, caption: "One clear next step helps visitors act instead of wondering where to go." },
       { t: "h2", text: "9. Are you answering the questions visitors have?", id: "questions" },
       {
         t: "p",
@@ -591,6 +604,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "**Search engine optimisation (SEO)** is the practice of improving a website so it ranks higher in search engine results for relevant searches. It covers technical health (crawling, indexing, speed, mobile), content that matches search intent, and authority earned through links, mentions and reviews. The result you are aiming for is a high position in the list of results, and the clicks that follow.",
       },
+      { t: "img", photo: { id: "photo-1770368787729-6a42187b668c", alt: "Woman typing on a laptop at a tiled table beside a pink vase", by: "Swello", user: "getswello" }, caption: "Traditional SEO is about earning a place in the search results people click through." },
       { t: "h2", text: "What is AEO?", id: "aeo" },
       {
         t: "p",
@@ -611,6 +625,7 @@ export const MORE_POSTS: Post[] = [
           "**Monitoring**: regularly checking what AI assistants say about you and your competitors.",
         ],
       },
+      { t: "img", photo: { id: "photo-1665396697251-05a3a49515a7", alt: "Woman speaking into a smartphone showing a green voice recording waveform", by: "BandLab", user: "bandlab_music" }, caption: "People increasingly ask AI tools full questions and expect a written answer back." },
       { t: "h2", text: "How they compare", id: "compare" },
       {
         t: "ul",
@@ -643,6 +658,7 @@ export const MORE_POSTS: Post[] = [
         t: "p",
         text: "Skipping the foundations and jumping to AI-specific tactics rarely works, because AI tools rely heavily on the same sources and trust signals that search engines do.",
       },
+      { t: "img", photo: { id: "photo-1586165368502-1bad197a6461", alt: "Black and white chess knights facing each other on a chessboard", by: "Hassan Pasha", user: "hpzworkz" }, caption: "The right mix depends on how your customers search and what you can maintain." },
       { t: "h2", text: "What this means in the UAE", id: "uae" },
       {
         t: "p",

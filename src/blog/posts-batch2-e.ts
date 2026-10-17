@@ -53,6 +53,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "This single change usually does more for cost per enrolment than any new channel, because you stop paying for clicks from people who are months away from deciding.",
       },
+      { t: "img", photo: { id: "photo-1506784365847-bbad939e9335", alt: "Open planner with a handwritten September calendar and a yellow marker", by: "Estée Janssens", user: "esteejanssens" }, caption: "Building your intake plan around exam windows keeps each batch filled on time." },
       { t: "h2", text: "Build one strong page per certification", id: "course-pages" },
       {
         t: "p",
@@ -87,6 +88,7 @@ export const BATCH2_E_POSTS: Post[] = [
         title: "Check your licence details",
         text: "Training institutes in Dubai are generally licensed by KHDA, while those in free zones may be licensed by their free zone authority. Confirm which applies to you and keep the licence details on your website accurate and consistent with your listings.",
       },
+      { t: "img", photo: { id: "photo-1655337690727-5224680c8c07", alt: "Adult learners in a classroom taking notes during a lesson", by: "Timur Shakerzianov", user: "shaker_jpg" }, caption: "Describe your teaching and support honestly rather than promising results you cannot control." },
       { t: "h2", text: "Market to working professionals", id: "working-professionals" },
       {
         t: "p",
@@ -122,6 +124,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Put this on a separate corporate page, and reach those buyers through LinkedIn and direct outreach rather than consumer ads.",
       },
+      { t: "img", photo: { id: "photo-1551836022-aadb801c60ae", alt: "Man and woman talking across a boardroom table with laptops and coffee", by: "Amy Hirschi", user: "amyhirschi" }, caption: "Corporate buyers need clear proposals that link training to the skills their teams need." },
       { t: "h2", text: "Follow up until the next intake", id: "follow-up" },
       {
         t: "p",
@@ -214,6 +217,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Hidden prices send people straight back to the platforms, where prices are always visible. You do not have to be the cheapest. You have to be clear.",
       },
+      { t: "img", photo: { id: "photo-1758766730120-ffcf5b777cfc", alt: "Line of riders on camels crossing flat desert sand under a hazy sky", by: "Sheila C", user: "qld_traveller" }, caption: "A separate page for each tour lets guests compare what is included before they book." },
       { t: "h2", text: "Show safety and licensing openly", id: "safety-licensing" },
       {
         t: "p",
@@ -242,6 +246,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Your Google Business Profile should show real photos of your camp, vehicles and guides. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers every setting worth completing.",
       },
+      { t: "img", photo: { id: "photo-1762970913723-21d3c7f5846c", alt: "Desert camp with white tents and a small campfire among sand dunes", by: "Bernd Dittrich", user: "hdbernd" }, caption: "Reviews that describe the whole evening help new guests picture what they are booking." },
       { t: "h2", text: "Speak your guests' languages", id: "languages" },
       {
         t: "p",
@@ -256,6 +261,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Treat every partner guest as a future direct guest. A friendly guide, a memorable evening and a card with your own website and WhatsApp number mean that when they come back to Dubai, or recommend you to a friend, they can reach you without a middleman. Keep a record of which hotels send the most guests and the best reviews, and look after those relationships first.",
       },
+      { t: "img", photo: { id: "photo-1759038085950-1234ca8f5fed", alt: "Hotel reception desk with wooden panelling and leather armchairs in a lobby", by: "Neon Wang", user: "neonwangphotography" }, caption: "Clear, fair terms make it easier for hotel staff to recommend your tours." },
       { t: "h2", text: "Plan for the season", id: "season" },
       {
         t: "p",
@@ -357,6 +363,7 @@ export const BATCH2_E_POSTS: Post[] = [
         title: "Get the departure point right",
         text: "Guests regularly go to the wrong pier. Put your exact berth, marina name and a map pin on every booking page and confirmation message, and make sure your Google Business Profile sits at the real location.",
       },
+      { t: "img", photo: { id: "photo-1759020622116-d3c15827423d", alt: "White motor yacht moored at a marina beside trees on a sunny day", by: "Jason Gooljar", user: "jasongooljar24" }, caption: "A dedicated page for every yacht, with real photos and capacity, answers questions early." },
       { t: "h2", text: "Build pages for each occasion", id: "occasion-pages" },
       {
         t: "p",
@@ -371,6 +378,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Yacht charters are one of the most visual services in Dubai, and Instagram is where many bookings begin. Post Reels of each boat, sunset cruises, real celebrations (with guests' permission) and the view from the deck. Name the yacht in every post so people can search for it later. When you work with creators, check they hold the advertiser licence UAE media rules require for paid promotion, and make sure paid content is clearly labelled.",
       },
+      { t: "img", photo: { id: "photo-1768424953203-998b815c84ca", alt: "Two women in sunglasses enjoying drinks on a sailboat at sea", by: "Margo Evardson", user: "stadinstudio" }, caption: "Guests sharing their trip on Instagram can create demand long before they search for a charter." },
       { t: "h2", text: "Reply fast and track every enquiry", id: "whatsapp" },
       {
         t: "p",
@@ -385,6 +393,7 @@ export const BATCH2_E_POSTS: Post[] = [
         t: "p",
         text: "Ask for reviews at the end of each trip, and encourage guests to mention the boat and occasion. Reviews that say \"great birthday on the 60ft yacht\" help you rank for exactly those searches. Reply to every review, and never trade discounts for reviews.",
       },
+      { t: "img", photo: { id: "photo-1759854529477-3aebf2243f25", alt: "Orange and white lifebuoys fixed to the railings of a boat on the water", by: "Belov Sergey", user: "belov7043" }, caption: "Showing safety equipment and licensing openly reassures guests before they book." },
       { t: "h2", text: "Plan for the seasons", id: "seasons" },
       {
         t: "p",

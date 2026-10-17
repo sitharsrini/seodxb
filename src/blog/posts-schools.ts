@@ -42,6 +42,7 @@ export const SCHOOL_POSTS: Post[] = [
         t: "p",
         text: "Parents often contact several schools in the same week. A personal reply within a few hours during working days, from a named admissions officer, with an easy way to book a tour, sets you apart. Offer WhatsApp as well as email, since many parents prefer it.",
       },
+      { t: "img", photo: { id: "photo-1758876017801-f5a892ee460a", alt: "Woman in a denim jacket typing on a laptop in a modern office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A quick, personal reply to an enquiry sets the tone for the whole admissions journey." },
       { t: "h2", text: "Step 2: Make tours easy to book", id: "tours" },
       {
         t: "p",
@@ -57,6 +58,7 @@ export const SCHOOL_POSTS: Post[] = [
         title: "Show inspection ratings accurately",
         text: "Many parents check KHDA or ADEK ratings. Present your current rating exactly as published, with the year, and never overstate it.",
       },
+      { t: "img", photo: { id: "photo-1788882681162-41c2fc0d7594", alt: "Teacher sitting with a group of young children around a classroom table", by: "Yegor Makarenko", user: "photochel228" }, caption: "Open days work best when families can see real lessons and ask honest questions." },
       { t: "h2", text: "Step 4: Follow up after every visit", id: "follow-up" },
       {
         t: "p",
@@ -67,6 +69,7 @@ export const SCHOOL_POSTS: Post[] = [
         t: "p",
         text: "Popular year groups fill quickly. Keep waiting-list families informed with honest updates on availability and offer alternatives, such as a place in a nearby year group or campus where appropriate.",
       },
+      { t: "img", photo: { id: "photo-1758598738092-a7cd486baadd", alt: "Mother and daughter looking at a laptop together on a sofa", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Regular, friendly updates keep waiting-list families engaged until a place becomes available." },
       { t: "h2", text: "Step 6: Track every stage by source", id: "tracking" },
       {
         t: "p",
@@ -123,6 +126,7 @@ export const SCHOOL_POSTS: Post[] = [
           "How does the school help new students settle in?",
         ],
       },
+      { t: "img", photo: { id: "photo-1758523671165-967ec4af0d76", alt: "Couple sitting among moving boxes looking at a tablet together", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Relocating parents often research schools from home while they plan the move." },
       { t: "h2", text: "Step 1: A page for relocating families", id: "page" },
       {
         t: "p",
@@ -138,6 +142,7 @@ export const SCHOOL_POSTS: Post[] = [
         t: "p",
         text: "Offer live video tours and calls with admissions staff at times that suit families in Europe, Asia and elsewhere. A recorded tour helps, but a live conversation builds trust far faster.",
       },
+      { t: "img", photo: { id: "photo-1758874573117-66e1143be91d", alt: "Man on a video call with a woman and child shown on a laptop screen", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Video calls let families abroad meet staff and ask questions before they arrive." },
       { t: "h2", text: "Step 3: Area and transport information", id: "areas" },
       {
         t: "p",
@@ -148,6 +153,7 @@ export const SCHOOL_POSTS: Post[] = [
         t: "p",
         text: "If many families come from particular countries, publish key pages in their languages and let them speak to staff who share it. Our [bilingual website guide](/blog/arabic-english-bilingual-website-seo-uae) explains how to structure multilingual pages.",
       },
+      { t: "img", photo: { id: "photo-1543165796-5426273eaab3", alt: "Open dictionary pages beside a printed map in close up", by: "Waldemar Brandt", user: "waldemarbrandt67w" }, caption: "Information in a family's own language makes a new country feel less daunting." },
       { t: "h2", text: "Step 5: Partners who meet families first", id: "partners" },
       {
         t: "p",
@@ -205,6 +211,7 @@ export const SCHOOL_POSTS: Post[] = [
           "Activities: sport, arts, clubs and after-school programmes.",
         ],
       },
+      { t: "img", photo: { id: "photo-1776571661811-c311d42634d9", alt: "Students studying at wooden tables in a library lined with bookshelves", by: "jason hu", user: "hujason" }, caption: "Core pages on curriculum, fees and admissions answer what parents search for first." },
       { t: "h2", text: "Answer the question first", id: "answer-first" },
       {
         t: "p",
@@ -220,6 +227,7 @@ export const SCHOOL_POSTS: Post[] = [
         t: "p",
         text: "If you genuinely serve families in particular communities, explain journey times and transport from each. Avoid thin pages that only swap the area name; one strong page about the areas you serve is better than many near-identical ones.",
       },
+      { t: "img", photo: { id: "photo-1602248406547-bda7af9fb7e9", alt: "Yellow school bus parked on a quiet road lined with trees", by: "Lisa Boonaerts", user: "lisaboonaerts" }, caption: "Area pages can cover transport and nearby communities alongside the curriculum you offer." },
       { t: "h2", text: "Structured data", id: "schema" },
       {
         t: "p",

@@ -46,6 +46,7 @@ export const MEP_POSTS: Post[] = [
         title: "Show approvals accurately",
         text: "Buyers look for the approvals and registrations relevant to your work, such as those required by Dubai Municipality, DEWA or Dubai Civil Defence. List only what you hold, show expiry or renewal dates where appropriate and keep the page current.",
       },
+      { t: "img", photo: { id: "photo-1758101755915-462eddc23f57", alt: "Gloved hand testing wiring in an electrical panel with a multimeter probe", by: "Toolmash Expo", user: "toolmash" }, caption: "Separate pages for electrical, mechanical and plumbing work match how buyers search." },
       { t: "h2", text: "Step 2: Project case pages", id: "projects" },
       {
         t: "p",
@@ -56,6 +57,7 @@ export const MEP_POSTS: Post[] = [
         t: "p",
         text: "Put your company profile on your website as readable pages, not only as a PDF. Our guide to [MEP company profiles and prequalification](/blog/mep-company-profile-prequalification) explains what to include.",
       },
+      { t: "img", photo: { id: "photo-1758876734777-dcc6981f3671", alt: "Construction worker in a hard hat checking a phone on a building site", by: "Albert Vinas", user: "treb_vinas24" }, caption: "A web company profile lets consultants check your capabilities from any device, wherever they are." },
       { t: "h2", text: "Step 4: LinkedIn relationships", id: "linkedin" },
       {
         t: "p",
@@ -66,6 +68,7 @@ export const MEP_POSTS: Post[] = [
         t: "p",
         text: "For maintenance and smaller jobs, building managers and owners search locally. Complete your Google Business Profile with accurate services and service areas and collect reviews from clients. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1660330589827-da8ab7dd3c02", alt: "Technician in a cap working on an electrical meter box on a wall", by: "Raze Solar", user: "razesolar" }, caption: "Local search brings in service calls that can grow into longer maintenance relationships." },
       { t: "h2", text: "Step 6: Turn projects into maintenance", id: "maintenance" },
       {
         t: "p",
@@ -130,6 +133,7 @@ export const MEP_POSTS: Post[] = [
         title: "Show your reporting",
         text: "Facility managers need records for audits and owners. Show an anonymised sample of the maintenance report you provide after each visit, including checks done, issues found and recommendations.",
       },
+      { t: "img", photo: { id: "photo-1748347084012-075796185d56", alt: "Technician holding a clipboard while inspecting equipment in an industrial plant", by: "TECNIC Bioprocess Solutions", user: "tecnic" }, caption: "A clear AMC page explains what each visit covers and how often it happens." },
       { t: "h2", text: "Step 2: Be found for maintenance searches", id: "search" },
       {
         t: "p",
@@ -140,6 +144,7 @@ export const MEP_POSTS: Post[] = [
         t: "p",
         text: "At the end of every installation project, offer a maintenance contract with a clear scope and a smooth transition from warranty support. Clients who have seen your team's work are far easier to convert than new prospects.",
       },
+      { t: "img", photo: { id: "photo-1774599730788-a74cd9253b56", alt: "Group in hard hats and hi-vis vests discussing plans outdoors near a building", by: "Fiqih Alfarish", user: "fiqihalfarish" }, caption: "Handover is a natural moment to offer the client a maintenance contract." },
       { t: "h2", text: "Step 4: Track and renew", id: "renew" },
       {
         t: "p",
@@ -203,6 +208,7 @@ export const MEP_POSTS: Post[] = [
         title: "Accuracy matters",
         text: "Only list approvals, certifications and projects you can evidence. Procurement teams verify them, and inaccurate claims can remove you from approved lists.",
       },
+      { t: "img", photo: { id: "photo-1581094488379-6a10d04c0f04", alt: "Two people in blue uniforms pointing at a printed plan on a table", by: "ThisisEngineering", user: "thisisengineering" }, caption: "A strong profile covers your disciplines, team, approvals and recent project types." },
       { t: "h2", text: "Put it on the web, not only in a PDF", id: "web" },
       {
         t: "p",
@@ -213,6 +219,7 @@ export const MEP_POSTS: Post[] = [
         t: "p",
         text: "Add a clear prequalification page with a contact for tenders, the documents you can provide, and a short form for procurement teams. Respond to prequalification requests quickly and completely.",
       },
+      { t: "img", photo: { id: "photo-1768158989131-64cbff67f292", alt: "Wooden shelves filled with rows of colourful ring binders", by: "Richard Heinen", user: "richard_he" }, caption: "Making documents easy to find helps procurement teams complete prequalification faster." },
       { t: "h2", text: "Keep it current", id: "current" },
       {
         t: "p",

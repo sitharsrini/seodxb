@@ -47,6 +47,7 @@ export const HOSPITAL_POSTS: Post[] = [
           "Questions to AI assistants: \"which hospitals in Dubai treat international patients for cardiac surgery\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1783768813434-21bca14a41db", alt: "Wide airport terminal walkway with travellers, seating and illuminated signs", by: "Edwin Petrus", user: "ep_petrus" }, caption: "International patients research treatment and travel together, so answer both on your pages." },
       { t: "h2", text: "Step 1: Treatment pages built for travellers", id: "treatments" },
       {
         t: "p",
@@ -57,6 +58,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "International patients want a person, not a form. Introduce your international patient coordinators by name, with the languages they speak, and make WhatsApp and video call the easy first step. Respond quickly across time zones, and track each enquiry by country and treatment. Our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) shows how.",
       },
+      { t: "img", photo: { id: "photo-1706806595136-5afefb45da1a", alt: "Two women in work uniforms talking in a bright hospital corridor", by: "Centre for Ageing Better", user: "ageing_better" }, caption: "A named coordinator gives overseas patients one person to call with every question." },
       { t: "h2", text: "Step 3: Speak your patients' languages", id: "languages" },
       {
         t: "p",
@@ -67,6 +69,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "Create a clear guide for international patients covering visas, travel, accommodation for patients and companions, payment and insurance options, interpreters and how follow-up care works after they return home. Keep visa and cost information general and dated, and tell patients to confirm details with your coordinators.",
       },
+      { t: "img", photo: { id: "photo-1730791976869-e10d1073011c", alt: "Woman in sunglasses checking her smartphone while standing on a city street", by: "Rendy Novantino", user: "novantino" }, caption: "Practical details about visas, transfers and stays help patients plan with confidence." },
       { t: "h2", text: "Step 5: Show why you can be trusted", id: "trust" },
       {
         t: "p",
@@ -126,6 +129,7 @@ export const HOSPITAL_POSTS: Post[] = [
           "Trustworthiness: accurate, current, transparent information and honest claims.",
         ],
       },
+      { t: "img", photo: { id: "photo-1778918006809-82a60e7a954b", alt: "Person in a white lab coat reading a small open book", by: "Sasun Bughdaryan", user: "sasun1990" }, caption: "E-E-A-T rewards content that shows real clinical knowledge and careful review." },
       { t: "h2", text: "Step 1: Named clinician authors and reviewers", id: "reviewers" },
       {
         t: "p",
@@ -141,6 +145,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "Show when each page was last medically reviewed, and review important pages at least once a year or when guidance changes. A simple editorial policy page explaining how content is written, reviewed and updated adds further trust.",
       },
+      { t: "img", photo: { id: "photo-1758691461888-b74515208d7a", alt: "Doctor in a white coat typing at a computer in a clinic office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A visible review date shows readers that a clinician has checked the page recently." },
       { t: "h2", text: "Step 3: Cite recognised sources", id: "sources" },
       {
         t: "p",
@@ -151,6 +156,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "Explain conditions and treatments in plain language, cover risks and alternatives, say when someone should seek urgent care, and avoid absolute claims about results. Pages that answer the patient's question directly in the first paragraph are the ones search engines and AI assistants quote.",
       },
+      { t: "img", photo: { id: "photo-1758691462863-9e1b8a863140", alt: "Doctor with a stethoscope talking with a patient across a desk", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Honest, plain explanations read like a good consultation and build lasting trust." },
       { t: "h2", text: "Step 5: Structured data that connects it all", id: "schema" },
       {
         t: "p",
@@ -205,6 +211,7 @@ export const HOSPITAL_POSTS: Post[] = [
         title: "Hours must be right",
         text: "Patients act on the hours they see, especially for emergency departments, pharmacies and urgent care. Update hours for public holidays and Ramadan, and list separate hours where Google allows it.",
       },
+      { t: "img", photo: { id: "photo-1754299343336-4240f3109a06", alt: "Close up of a printed city map with building icons and location markers", by: "unavailable parts", user: "unavailable_parts" }, caption: "Each facility needs its own listing so patients find the right location on the map." },
       { t: "h2", text: "Step 2: Departments and doctors", id: "departments" },
       {
         t: "p",
@@ -215,6 +222,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "Create a page for each facility with its address, map, parking and access details, opening hours, departments and doctors at that site, insurance accepted and how to book. Link each Google Business Profile to its own location page, not just the homepage.",
       },
+      { t: "img", photo: { id: "photo-1638766861788-807789e1cea3", alt: "Pale multi-storey building framed by autumn trees under a clear blue sky", by: "Fredrick Lee", user: "mkaine17" }, caption: "A page for each site should give its address, hours, parking and departments." },
       { t: "h2", text: "Step 4: Consistent details everywhere", id: "consistency" },
       {
         t: "p",
@@ -225,6 +233,7 @@ export const HOSPITAL_POSTS: Post[] = [
         t: "p",
         text: "Invite reviews through a consistent, compliant process at every facility, reply professionally without discussing medical details, and route feedback to the right team. Never offer anything in exchange for reviews, and follow your regulator's rules on patient testimonials.",
       },
+      { t: "img", photo: { id: "photo-1586773860418-d37222d8fce3", alt: "Large brick hospital building with a curved entrance under a blue sky", by: "National Cancer Institute", user: "nci" }, caption: "Patients often compare reviews before choosing a site, so ask for them at every location." },
       { t: "h2", text: "Step 6: Measure by location", id: "measure" },
       {
         t: "p",

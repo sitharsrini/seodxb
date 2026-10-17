@@ -35,6 +35,7 @@ export const BATCH3_POSTS: Post[] = [
         t: "p",
         text: "Pick two or three sectors where you already have placements, consultants and candidates. Your website, LinkedIn and content should make those specialisms impossible to miss.",
       },
+      { t: "img", photo: { id: "photo-1758518727653-5650fd9e146c", alt: "Man in glasses holding a clipboard while talking with a woman in an office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Specialising in a sector helps employers find you when they search for that expertise." },
       { t: "h2", text: "Build pages employers want to read", id: "pages" },
       {
         t: "ul",
@@ -55,6 +56,7 @@ export const BATCH3_POSTS: Post[] = [
         title: "Keep claims honest",
         text: "Avoid unverifiable claims such as \"99% placement success\". Specific, checkable facts, such as the sectors you cover and how you screen candidates, persuade employers more and keep you out of trouble.",
       },
+      { t: "img", photo: { id: "photo-1653656120510-b800119e5b73", alt: "Women reviewing printed documents beside an open laptop on a table", by: "The Unmistakables", user: "theunmistakables" }, caption: "Salary guides and hiring checklists give employers a practical reason to return to your site." },
       { t: "h2", text: "Be visible on LinkedIn", id: "linkedin" },
       {
         t: "p",
@@ -65,6 +67,7 @@ export const BATCH3_POSTS: Post[] = [
         t: "p",
         text: "Employers want to know they are dealing with a legitimate, licensed agency. Show your licence details, a real office address, named consultants and a Google Business Profile with genuine reviews from clients and candidates. Keep your details identical across your site, LinkedIn and directories, which also helps AI assistants recommend you. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers the setup.",
       },
+      { t: "img", photo: { id: "photo-1729371568794-fb9c66ab09cf", alt: "Man and woman smiling during a meeting at a table with a laptop", by: "Lyubomyr Reverchuk", user: "lreverchuk" }, caption: "Clear licence details and real team profiles help employers trust a new agency." },
       { t: "h2", text: "Turn placements into repeat clients", id: "repeat" },
       {
         t: "p",
@@ -117,6 +120,7 @@ export const BATCH3_POSTS: Post[] = [
         t: "p",
         text: "Every live role deserves its own page with a clear job title (the one people actually search for, not an internal code), the emirate and area, contract type, salary range where the client allows it, key requirements and what the application process looks like. Vague listings attract hundreds of unsuitable applications; specific ones attract the right people.",
       },
+      { t: "img", photo: { id: "photo-1522125670776-3c7abb882bc2", alt: "Close view of hands holding a smartphone, with a silver wristwatch", by: "Paul Hanaoka", user: "plhnk" }, caption: "Job pages written in plain language are easier for candidates to read on a phone." },
       { t: "h2", text: "Add JobPosting structured data", id: "schema" },
       {
         t: "p",
@@ -141,6 +145,7 @@ export const BATCH3_POSTS: Post[] = [
         t: "p",
         text: "Show your licence, office address, landline or official WhatsApp Business number, and named consultants. Use a company email domain, not a free email address, in every job advert. These details reassure candidates and make scammers who copy your brand easier to spot.",
       },
+      { t: "img", photo: { id: "photo-1758518730162-09a142505bfd", alt: "Woman in a dark suit interviewing a man across a table in an office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Candidates respond better when a listing shows who is hiring and what happens next." },
       { t: "h2", text: "Publish career advice people search for", id: "advice" },
       {
         t: "p",
@@ -151,6 +156,7 @@ export const BATCH3_POSTS: Post[] = [
         t: "p",
         text: "LinkedIn, Bayt, Indeed, GulfTalent and similar boards remain the main source of applicants for most agencies. Link each board listing back to the full role page on your site, and invite strong candidates to register for future roles in their field so you build your own talent pool instead of paying to reach the same people again.",
       },
+      { t: "img", photo: { id: "photo-1758874573150-05c1b6b56407", alt: "Hands typing on a laptop keyboard at a wooden desk", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Job boards bring reach, but your own site keeps the candidate relationship with you." },
       { t: "h2", text: "Keep listings fresh", id: "fresh" },
       {
         t: "p",

@@ -49,6 +49,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "The broad doctor and clinic searches are the most competitive, because every hospital and large group targets them. Condition searches are usually less contested and closer to a decision. **Acne treatment** is a good example: plenty of people search for it and relatively few clinics have a genuinely useful page. That is where a smaller clinic can rank first.",
       },
+      { t: "img", photo: { id: "photo-1775642548371-861fab6cea75", alt: "Woman applying cream to her cheek while looking in a mirror", by: "Christian Agbede", user: "chriscreations__" }, caption: "Many patients start searching after noticing a skin change at home in the mirror." },
       { t: "h2", text: "Split medical and cosmetic dermatology", id: "medical-cosmetic" },
       {
         t: "p",
@@ -78,6 +79,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "Have a dermatologist review each page and show their name and the review date. That helps patients trust the content, and it is the kind of signal search engines and AI assistants look for on health topics. For more on how AI tools choose sources, read our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews).",
       },
+      { t: "img", photo: { id: "photo-1758691462954-e6fa5005474b", alt: "Doctor in a white coat taking notes while talking with a patient", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A dedicated page for each condition answers specific questions before a patient books." },
       { t: "h2", text: "Get doctor profiles and Google Maps right", id: "doctors-maps" },
       {
         t: "p",
@@ -101,6 +103,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "Send each ad to the matching condition page, not the home page. Keep medical and cosmetic campaigns separate so you can see which is paying back. Remember that Google restricts some health-related ads and does not allow personalised targeting based on health conditions, so plan around keywords and locations rather than audiences.",
       },
+      { t: "img", photo: { id: "photo-1663524789637-1a0ad51c64c2", alt: "Hands typing on a laptop keyboard on a wooden table", by: "Kelly Sikkema", user: "kellysikkema" }, caption: "Search ads work best for people already typing in a specific treatment or condition." },
       { t: "h2", text: "Measure booked consultations, not clicks", id: "measure" },
       {
         t: "p",
@@ -180,6 +183,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "If you have more than one branch, each needs its own profile and its own page on your website. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) walks through every field.",
       },
+      { t: "img", photo: { id: "photo-1712903900716-1854fc444610", alt: "Woman in a red top scrolling on a smartphone at home", by: "Walls.io", user: "walls_io" }, caption: "Patients in pain usually search on their phone for a physiotherapist they can reach quickly." },
       { t: "h2", text: "Build condition pages patients understand", id: "condition-pages" },
       {
         t: "p",
@@ -203,6 +207,7 @@ export const BATCH2_A_POSTS: Post[] = [
         title: "Medical advertising rules apply",
         text: "Physiotherapy is a regulated healthcare service. Promotional content, including ads and many social posts, generally needs approval from the relevant health authority (DHA in Dubai, DoH in Abu Dhabi, MOHAP elsewhere). Patient testimonials are restricted, and therapist titles should match their licences. Check current rules before you publish.",
       },
+      { t: "img", photo: { id: "photo-1761558794306-466448dab4bc", alt: "Hand holding a pen over a blue clipboard", by: "Phil Hearing", user: "philhearing" }, caption: "Spell out which insurance plans you accept and whether a referral is needed before booking." },
       { t: "h2", text: "Make it easy for doctors to refer", id: "doctor-referrals" },
       {
         t: "p",
@@ -230,6 +235,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "Real photos help here more than anywhere else. A picture of your therapist arriving with portable equipment, or working with an older patient in a living room (with written consent), reassures a worried family far more than a stock image. Show the areas you cover as a simple list of communities, and say honestly how soon a first visit is usually possible.",
       },
+      { t: "img", photo: { id: "photo-1773227055624-07b515ba87c5", alt: "Carer helping a smiling older woman with a walking frame in a lounge", by: "Age Cymru", user: "agecymru" }, caption: "Home visits suit patients who find travelling to a clinic difficult, such as older adults." },
       { t: "h2", text: "Track where patients come from", id: "tracking" },
       {
         t: "p",
@@ -297,6 +303,7 @@ export const BATCH2_A_POSTS: Post[] = [
         title: "Three things to avoid",
         text: "Do not promise or imply results (\"look ten years younger\"), do not use before-and-after images or patient testimonials unless you are sure they meet your health authority's rules, and do not name prescription products in paid ads without checking the platform's policy first.",
       },
+      { t: "img", photo: { id: "photo-1762341104168-63ddb56e9805", alt: "Hand writing on a clipboard with a silver pen against a dark background", by: "Zulfugar Karimov", user: "zulfugarkarimov" }, caption: "Check every claim, image and offer against the advertising rules before it is published." },
       { t: "h2", text: "Choose searches you can realistically win", id: "searches" },
       {
         t: "p",
@@ -330,6 +337,7 @@ export const BATCH2_A_POSTS: Post[] = [
         t: "p",
         text: "Have a licensed doctor review each page and show the reviewer and the review date. Pages like this are also what AI assistants tend to quote when someone asks which clinic to trust. See our guide on [how to get recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews).",
       },
+      { t: "img", photo: { id: "photo-1785861001619-b263ebd4e615", alt: "Practitioner in black scrubs talking with a seated woman in a treatment room", by: "Sum Sum", user: "surprisechef" }, caption: "Treatment pages build trust when they explain the consultation, the process and realistic expectations." },
       { t: "h2", text: "Make credentials impossible to miss", id: "credentials" },
       {
         t: "p",
@@ -354,6 +362,7 @@ export const BATCH2_A_POSTS: Post[] = [
           "Track booked and attended consultations, not just leads.",
         ],
       },
+      { t: "img", photo: { id: "photo-1680204438561-81754a196285", alt: "Two women talking across a white table in a bright room", by: "Maria Fernanda Pissioli", user: "mxpissioli" }, caption: "Promoting the consultation rather than a product keeps the focus on assessment and suitability." },
       { t: "h2", text: "Keep patients coming back, with consent", id: "retention" },
       {
         t: "p",

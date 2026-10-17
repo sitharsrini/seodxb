@@ -41,6 +41,7 @@ export const LAW_POSTS: Post[] = [
         t: "p",
         text: "Give each practice area you want to grow its own page, answering the client's first question in plain language, explaining the usual process and timeline, what documents to bring and how fees are structured. Our guide to [practice area pages for law firms](/blog/law-firm-practice-area-pages-seo) explains the structure in detail.",
       },
+      { t: "img", photo: { id: "photo-1760822600750-0bc72f1fad9f", alt: "Old leather bound books lined up on a wooden shelf", by: "T", user: "tanyabarrow" }, caption: "Each practice area needs its own page so people can see you handle their kind of matter." },
       { t: "h2", text: "Step 2: Show who the lawyers are", id: "lawyers" },
       {
         t: "p",
@@ -51,6 +52,7 @@ export const LAW_POSTS: Post[] = [
         t: "p",
         text: "Complete your Google Business Profile for each office with accurate categories, hours, photos and a link to your consultation page. Reviews on Google are common for law firms, but check what your conduct rules allow before asking clients for them, and never offer anything in exchange. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1790749871472-4b08b767ce0f", alt: "Man in a blue sweater using his smartphone at a cafe table", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Many people look for a lawyer nearby, so a complete local profile and genuine reviews matter." },
       { t: "h2", text: "Step 4: Careful, focused ads", id: "ads" },
       {
         t: "p",
@@ -61,6 +63,7 @@ export const LAW_POSTS: Post[] = [
         t: "p",
         text: "Many clients contact more than one firm, and the first to respond thoughtfully is often instructed. Offer calls, WhatsApp and a short form, reply within hours during working days, run a conflict check before discussing details and route each enquiry to the right lawyer. Track every enquiry by practice area and source. Our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) shows how.",
       },
+      { t: "img", photo: { id: "photo-1758520144437-f068ecaf0d83", alt: "Woman in glasses taking notes while speaking with a man across a desk", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Prompt, careful intake shows a worried enquirer they will be listened to and taken seriously." },
       { t: "h2", text: "Step 6: Content that builds authority", id: "content" },
       {
         t: "p",
@@ -120,6 +123,7 @@ export const LAW_POSTS: Post[] = [
         t: "p",
         text: "Start with the areas your firm handles best and most wants to grow. A strong page for three areas beats thin pages for fifteen.",
       },
+      { t: "img", photo: { id: "photo-1542626991-cbc4e32524cc", alt: "Man in a suit placing sticky notes on a crowded planning board", by: "Jo Szczepanska", user: "joszczepanska" }, caption: "Prioritise the practice areas that bring the most valuable enquiries before building the rest." },
       { t: "h2", text: "The structure that works", id: "structure" },
       {
         t: "ol",
@@ -144,6 +148,7 @@ export const LAW_POSTS: Post[] = [
         t: "p",
         text: "Use the words clients search with, such as \"my employer has not paid my salary\" rather than only the legal term. Explain any legal terms the first time you use them. If many clients in that area search in Arabic, publish a properly translated Arabic version.",
       },
+      { t: "img", photo: { id: "photo-1780733064275-d1ade9b83a3d", alt: "Two smiling men discussing documents across an office desk", by: "Md Ishak Rahman", user: "mdishakrahman" }, caption: "Write in the words clients use when they explain their problem, not in courtroom language." },
       { t: "h2", text: "Make pages easy for AI to cite", id: "ai" },
       {
         t: "p",

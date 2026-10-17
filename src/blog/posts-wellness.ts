@@ -40,6 +40,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "For most local spa searches, the map results come first. Add every treatment with prices and durations, choose accurate categories, set correct hours, and upload high-quality photos of your treatment rooms, relaxation areas and reception. Add a booking link. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1785852790570-0d2858068c70", alt: "Therapist giving a facial treatment to a client in a dark treatment room", by: "Sum Sum", user: "surprisechef" }, caption: "Real photos of treatment rooms help your Google profile show guests what to expect." },
       { t: "h2", text: "Step 2: A page for every treatment and package", id: "pages" },
       {
         t: "p",
@@ -55,6 +56,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Send a short thank-you message with a review link after each appointment. Recent reviews that mention specific therapists and treatments are especially persuasive. Reply to every review.",
       },
+      { t: "img", photo: { id: "photo-1741934023052-26baf5535088", alt: "Woman with eyes closed receiving a relaxing facial massage", by: "Ionela Mat", user: "ionelaaaaa" }, caption: "Guests who leave relaxed are often happy to write a review if you ask soon after." },
       { t: "h2", text: "Step 4: Booking in two taps", id: "booking" },
       {
         t: "p",
@@ -65,6 +67,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Instead of permanent discounts, run targeted offers for weekday afternoons, promote to new residents and nearby offices, and use seasonal campaigns for Mother's Day, Valentine's Day and summer. Track bookings from each campaign so you know which offers are worth repeating.",
       },
+      { t: "img", photo: { id: "photo-1737064700128-c0769e13e211", alt: "Lit candles beside a rolled white towel and pink bath salts", by: "Maria Kovalets", user: "marylooo" }, caption: "Quieter weekday hours are a good time to promote calmer, unhurried treatments." },
       { t: "h2", text: "Step 6: Bring guests back", id: "retention" },
       {
         t: "p",
@@ -123,6 +126,7 @@ export const WELLNESS_POSTS: Post[] = [
           "Price: \"keratin treatment price Dubai\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1521590832167-7bcbfaa6381f", alt: "Three maroon salon chairs facing a long white counter and mirror", by: "Guilherme Petri", user: "guipetri" }, caption: "Clients usually search for a specific service close to where they live or work." },
       { t: "h2", text: "Step 1: Google Business Profile as your shop window", id: "gbp" },
       {
         t: "p",
@@ -133,6 +137,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Create a page for each main service: hair colour, cuts, treatments, nails, lashes, brows, skin and bridal. Include starting prices, duration, aftercare and photos. If many of your clients speak Arabic, add Arabic versions. Our [bilingual SEO guide](/blog/arabic-english-bilingual-website-seo-uae) explains how.",
       },
+      { t: "img", photo: { id: "photo-1632345031435-8727f6897d53", alt: "Nail technician carefully filing a client's nails at a salon table", by: "Giorgio Trovato", user: "giorgiotrovato" }, caption: "Listing each service with a clear price helps clients book without needing to call first." },
       { t: "h2", text: "Step 3: Instagram and TikTok as your portfolio", id: "social" },
       {
         t: "p",
@@ -148,6 +153,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Ask for a review right after an appointment, when the client is happiest with the result. Reply to every review, and handle complaints calmly and privately.",
       },
+      { t: "img", photo: { id: "photo-1675034743339-0b0747047727", alt: "Stylists working on clients' hair in a salon with round mirrors", by: "Vinicius \"amnx\" Amano", user: "viniciusamano" }, caption: "Thoughtful replies to reviews show future clients how you treat the people in your chair." },
       { t: "h2", text: "Step 5: Rebooking and loyalty", id: "rebooking" },
       {
         t: "p",
@@ -211,6 +217,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "For each therapy, explain what it is, its background, what happens during a session, how long it lasts, what to wear or bring, who it may suit and who should check with a doctor first. This content ranks for searches like \"what is a sound bath\" and reassures first-time clients.",
       },
+      { t: "img", photo: { id: "photo-1593811167562-9cef47bfc4d7", alt: "Person seated cross legged holding a brass singing bowl and striker", by: "THLT LCX", user: "thlt_lcx" }, caption: "A clear page for each practice explains what a session involves in plain, careful language." },
       { t: "h2", text: "Step 2: Show who you are", id: "practitioner" },
       {
         t: "p",
@@ -221,6 +228,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Set up a Google Business Profile for your studio or practice, with accurate categories, hours, photos and a booking link. If you work from several venues, list your sessions on each venue's website and in wellness directories. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) walks through it.",
       },
+      { t: "img", photo: { id: "photo-1758274539654-23fa349cc090", alt: "Three people meditating on mats in a park in autumn", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Local visibility helps people nearby find calm, in person sessions close to home." },
       { t: "h2", text: "Step 4: Educational content", id: "content" },
       {
         t: "p",
@@ -231,6 +239,7 @@ export const WELLNESS_POSTS: Post[] = [
         t: "p",
         text: "Group sound baths, breathwork circles and introductory workshops let people try your practice at low risk. Partner with yoga studios, spas and wellness venues to reach their communities.",
       },
+      { t: "img", photo: { id: "photo-1760691313751-98262affa4f9", alt: "Man playing a large gong surrounded by singing bowls in a bright room", by: "Kabita Captured", user: "captured_on_camera" }, caption: "Group sessions and workshops let newcomers experience a practice before booking one to one." },
       { t: "h2", text: "Step 6: Make booking simple and follow up", id: "booking" },
       {
         t: "p",
@@ -294,6 +303,7 @@ export const WELLNESS_POSTS: Post[] = [
           "By format and cost: \"online therapy UAE\", \"therapy covered by insurance\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1758874384950-c77e4b6a336a", alt: "Woman sitting on a sofa and looking calmly at her smartphone", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Many people begin looking for support privately, often on their phone at home." },
       { t: "h2", text: "Step 1: Pages that help people recognise the right support", id: "pages" },
       {
         t: "p",
@@ -309,6 +319,7 @@ export const WELLNESS_POSTS: Post[] = [
         title: "About testimonials",
         text: "Many professional codes of ethics discourage or restrict soliciting testimonials from clients, because of confidentiality and the therapeutic relationship. Build trust through credentials, clear information and helpful content instead, and follow your licensing body's guidance.",
       },
+      { t: "img", photo: { id: "photo-1746021513193-a314945d15c4", alt: "Quiet room with a small sofa, a plant and a window view", by: "Deliberate Directions", user: "deliberatedirections" }, caption: "Therapist profiles help people judge whether they would feel comfortable in the room." },
       { t: "h2", text: "Step 3: Practical information up front", id: "practical" },
       {
         t: "p",
@@ -325,6 +336,7 @@ export const WELLNESS_POSTS: Post[] = [
           "Include crisis information directing people to emergency services when they need urgent help.",
         ],
       },
+      { t: "img", photo: { id: "photo-1698843813652-2dc8b8d81f4c", alt: "Leather notebook, pen and cup of coffee on a white table", by: "Elena Leya", user: "foodistika" }, caption: "Enquiry forms should ask only for what is needed and keep personal details private." },
       { t: "h2", text: "Step 5: Ads within platform rules", id: "ads" },
       {
         t: "p",

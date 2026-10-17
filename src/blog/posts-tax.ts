@@ -47,6 +47,7 @@ export const TAX_POSTS: Post[] = [
         title: "Keep tax statements general and current",
         text: "Thresholds, deadlines and penalties are set by law and can change. Date every page, link to the Federal Tax Authority for official rules, avoid quoting penalty amounts unless you update them, and have a qualified adviser review each page.",
       },
+      { t: "img", photo: { id: "photo-1631651587645-e417d2b68735", alt: "Printed forms with a pen on a wooden desk beside a laptop", by: "2H Media", user: "2hmedia" }, caption: "Each VAT task deserves its own page, written around the paperwork the client needs to complete." },
       { t: "h2", text: "Step 2: Win the problem searches", id: "problems" },
       {
         t: "p",
@@ -57,6 +58,7 @@ export const TAX_POSTS: Post[] = [
         t: "p",
         text: "State your tax agency registration where it applies, name the advisers who handle VAT work with their qualifications, and describe the sectors you know. Business owners are handing over sensitive financial information, so visible, checkable credentials matter more than slogans.",
       },
+      { t: "img", photo: { id: "photo-1589330694653-ded6df03f754", alt: "Close view of a printed certificate with signatures and a red seal", by: "Lewis Keegan", user: "skillscouter" }, caption: "Qualifications people can check give a business more reason to hand over its tax affairs." },
       { t: "h2", text: "Step 4: Sector pages", id: "sectors" },
       {
         t: "p",
@@ -67,6 +69,7 @@ export const TAX_POSTS: Post[] = [
         t: "p",
         text: "Remind clients and prospects before return deadlines, publish short updates when rules change and run small Google Ads campaigns in the weeks before common filing dates. Track every enquiry by task and source so you know which pages bring paying work. Our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) shows how.",
       },
+      { t: "img", photo: { id: "photo-1546263463-02ec45e884fd", alt: "Printed December calendar page with several dates crossed out in red marker", by: "Adam Tinworth", user: "adders" }, caption: "Publishing useful content ahead of each filing period meets businesses when they are looking." },
       { t: "h2", text: "Step 6: Turn one-off tasks into retainers", id: "retainers" },
       {
         t: "p",
@@ -132,6 +135,7 @@ export const TAX_POSTS: Post[] = [
         t: "p",
         text: "Write one main guide that explains, in plain language, what e-invoicing is, how the phased rollout works, who is affected in each phase according to official guidance, and what businesses typically need to change. Answer \"what is UAE e-invoicing\" in the first paragraph. Link to supporting pages for each type of business and to your service page.",
       },
+      { t: "img", photo: { id: "photo-1584438749953-6c44fdc8fe3a", alt: "Woman writing notes on paper surrounded by printed documents and a coffee cup", by: "Maxim Ilyahov", user: "glvrdru" }, caption: "A thorough pillar guide gives finance teams one place to understand what readiness involves." },
       { t: "h2", text: "Step 2: A defined readiness check", id: "readiness" },
       {
         t: "p",
@@ -142,6 +146,7 @@ export const TAX_POSTS: Post[] = [
         t: "p",
         text: "Businesses will need to work with accredited service providers and may need changes to their accounting or ERP systems. If you partner with particular providers or are trained on particular software, create pages explaining how you work together. Be transparent about partnerships and any referral arrangements.",
       },
+      { t: "img", photo: { id: "photo-1688561807426-87333ae6e6c7", alt: "Hands typing on a laptop with a payment card resting beside it", by: "Shoper", user: "shoperpl" }, caption: "Explain plainly how your work fits alongside the software and providers a business already uses." },
       { t: "h2", text: "Step 4: Start with existing clients", id: "clients" },
       {
         t: "p",
@@ -152,6 +157,7 @@ export const TAX_POSTS: Post[] = [
         t: "p",
         text: "Plan content and campaigns in the months before each published phase date, targeting the businesses in that phase. LinkedIn works well for reaching finance managers, and Google Ads can capture businesses searching as deadlines approach. Our [VAT consultant guide](/blog/vat-consultant-marketing-dubai) and [corporate tax marketing guide](/blog/tax-consultant-marketing-uae) cover the same deadline-led approach.",
       },
+      { t: "img", photo: { id: "photo-1531403009284-440f080d1e12", alt: "Hand pinning paper notes along a timeline on a planning board", by: "Alvaro Reyes", user: "alvarordesign" }, caption: "Mapping campaigns to each rollout phase keeps your message relevant as deadlines approach." },
       { t: "h2", text: "Step 6: Be quotable", id: "quotable" },
       {
         t: "p",

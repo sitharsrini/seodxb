@@ -49,6 +49,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Most companies market only the first group and wonder why the second never grows. You need pages, offers and follow-up built for each.",
       },
+      { t: "img", photo: { id: "photo-1642749776312-aa42ce20c9f5", alt: "Workers on a rooftop beside rows of outdoor air conditioning units", by: "Singapore Stock Photos", user: "singaporestockphoto" }, caption: "Demand splits between urgent breakdowns and planned servicing, and each needs a different approach." },
       { t: "h2", text: "Win the urgent call", id: "win-the-urgent-call" },
       {
         t: "p",
@@ -81,6 +82,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Write each page for the property type too. Villa owners often have several units, ducted systems and roof access to think about. Apartment residents usually deal with a shared building system or fan coil units, and many towers and communities require a work permit or access approval from building management before a technician can start. Explaining how you handle that is a real reason to choose you.",
       },
+      { t: "img", photo: { id: "photo-1759772238012-9d5ad59ae637", alt: "White split air conditioner mounted high on a plain wall", by: "Illia Horokhovsky", user: "fili_ja" }, caption: "Separate pages for servicing, repairs and installation match how people compare their options." },
       { t: "h2", text: "Turn repairs into annual contracts", id: "annual-contracts" },
       {
         t: "p",
@@ -104,6 +106,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "During the peak, ads may not be your constraint: technician capacity is. If you are fully booked, reduce paid spend rather than paying for calls you cannot serve. After the peak, shift budget and content towards duct cleaning, commercial maintenance and contract sign-ups.",
       },
+      { t: "img", photo: { id: "photo-1667563356229-04221eef4107", alt: "Bright sun glowing in a hazy orange sky", by: "Muhammad Usman", user: "ughani" }, caption: "Calls rise with the heat, so plan campaigns and staffing before the hottest months arrive." },
       { t: "h2", text: "Track booked jobs, not clicks", id: "track-booked-jobs" },
       {
         t: "p",
@@ -174,6 +177,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Trust is also built with specifics. Photos of your own technicians in uniform, your vehicles, and the equipment you use do more than stock images of insects.",
       },
+      { t: "img", photo: { id: "photo-1674485135526-b5a686b33dfe", alt: "Worker in a white protective suit spraying a stone wall", by: "Ömer Haktan Bulut", user: "omerhaktan" }, caption: "Homeowners want proof of licensing and trained staff before they let anyone treat their home." },
       { t: "h2", text: "Build a page for every pest you treat", id: "page-per-pest" },
       {
         t: "p",
@@ -212,6 +216,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Your Google Business Profile matters as much as your website for near me searches. Keep hours accurate, list the areas you actually serve, add photos regularly, and ask every satisfied customer for a review that mentions what was treated.",
       },
+      { t: "img", photo: { id: "photo-1758611974917-f7f7a58b74b0", alt: "Smiling woman talking on the phone beside her laptop at home", by: "Vitaly Gariev", user: "silverkblack" }, caption: "People with a pest problem often call the first company that answers, so respond quickly." },
       { t: "h2", text: "Run ads by pest, not by budget", id: "ads-by-pest" },
       {
         t: "p",
@@ -226,6 +231,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Move-in treatments are a natural fit for Dubai, where tenants change homes often. Create a page aimed at new tenants and buyers, explain what a pre-move treatment covers and why it is easier to do in an empty home, and mention it in partnerships with cleaning companies, movers and property managers. Many tenants search for deep cleaning and pest control in the same week.",
       },
+      { t: "img", photo: { id: "photo-1722650272764-08d92d193a9c", alt: "Empty apartment room with a wooden floor, white walls and windows", by: "Lisa Anna", user: "lisaanna195" }, caption: "An empty home before move-in is the easiest time to treat every room thoroughly." },
       { t: "h2", text: "Grow recurring contracts", id: "recurring-contracts" },
       {
         t: "p",
@@ -299,6 +305,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Before changing anything, record the source of every enquiry for a month, and whether it became a survey and then a confirmed move. Our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) shows how. This tells you which channels actually bring profitable jobs.",
       },
+      { t: "img", photo: { id: "photo-1758876202124-cc941ebb8446", alt: "Woman talking on the phone at a desk with shelves behind her", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Track whether enquiries arrive by phone, message, form or referral before spending more on ads." },
       { t: "h2", text: "Separate local and international moves", id: "local-vs-international" },
       {
         t: "p",
@@ -330,6 +337,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Video surveys suit busy residents and people who are still abroad. Explain on your website how they work: how long they take, what the customer needs to show, and when the quote will arrive.",
       },
+      { t: "img", photo: { id: "photo-1648747067192-790595bc6d5e", alt: "Woman assembling a cardboard box in a bright room with large windows", by: "M. Cooper", user: "mcoopercreative" }, caption: "Offer video or in-person surveys at times that suit customers who are busy packing." },
       { t: "h2", text: "Answer the trust questions upfront", id: "trust-questions" },
       {
         t: "p",
@@ -363,6 +371,7 @@ export const BATCH2_B_POSTS: Post[] = [
         t: "p",
         text: "Keep your Google Business Profile complete: correct category, service areas, hours, photos and a clear link to book a survey. For searches like movers near me, it is often the first thing a customer sees.",
       },
+      { t: "img", photo: { id: "photo-1776885008664-68b2988373e6", alt: "Movers unloading furniture from a box truck parked beside a park", by: "Chloë Forbes-Kindlen", user: "chloeforbesk" }, caption: "Real photos of your own crew and vehicles reassure customers more than generic images." },
       { t: "h2", text: "Plan around the moving calendar", id: "moving-calendar" },
       {
         t: "p",

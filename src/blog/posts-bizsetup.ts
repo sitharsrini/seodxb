@@ -47,6 +47,7 @@ export const BIZSETUP_POSTS: Post[] = [
         title: "Keep process details accurate and dated",
         text: "Requirements, fees and portals change. Show a \"last reviewed\" date on each task page, avoid quoting government fees unless you update them, and tell readers to confirm current requirements with the relevant authority.",
       },
+      { t: "img", photo: { id: "photo-1564846824172-dee7b0a26785", alt: "Person wearing a gold watch writing on printed forms at a desk", by: "Leon Seibert", user: "yapics" }, caption: "Giving each government task its own page helps a business owner find exactly the service they need." },
       { t: "h2", text: "Step 2: Content timed to deadlines", id: "deadlines" },
       {
         t: "p",
@@ -57,6 +58,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "Many owners pick a PRO company near their office or the relevant government centre. Complete your Google Business Profile with the right categories, services, hours and photos of your team, and collect reviews after each completed job. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1759256243611-502772ac391b", alt: "Smartphone showing turn-by-turn navigation inside a car", by: "Ed Wingate", user: "ed_wingate" }, caption: "Clients often look for a nearby office, so a strong map listing brings in calls and visits." },
       { t: "h2", text: "Step 4: Make WhatsApp the first step", id: "whatsapp" },
       {
         t: "p",
@@ -67,6 +69,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "A single visa brings a single fee. A monthly retainer that covers renewals, new hires and ad hoc approvals for a growing company is worth far more and costs less to win again. Offer a clear retainer page with what is included, who it suits and how the renewal calendar works, and suggest it after every successful one-off job.",
       },
+      { t: "img", photo: { id: "photo-1780733065500-4284d227f58c", alt: "Two smiling men shaking hands across an office desk with papers", by: "Md Ishak Rahman", user: "mdishakrahman" }, caption: "Handling one task well is often the start of an ongoing monthly arrangement." },
       { t: "h2", text: "Step 6: Partner with setup and accounting firms", id: "partners" },
       {
         t: "p",
@@ -121,6 +124,7 @@ export const BIZSETUP_POSTS: Post[] = [
           "Many compare Abu Dhabi mainland with free zones in the emirate.",
         ],
       },
+      { t: "img", photo: { id: "photo-1512632578888-169bbbc64f33", alt: "Sheikh Zayed Grand Mosque in Abu Dhabi reflected in a pool at dusk", by: "David Rodrigo", user: "david__r" }, caption: "Founders choosing Abu Dhabi often search with the city in mind, so local pages matter." },
       { t: "h2", text: "Step 1: A real Abu Dhabi page", id: "page" },
       {
         t: "p",
@@ -136,6 +140,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "If you regularly set up companies in Abu Dhabi mainland and particular free zones in the emirate, give each one its own page covering eligible activities, visa options, office requirements and your experience there. Check your partner agreements and each authority's rules before using their names or logos in pages or ads.",
       },
+      { t: "img", photo: { id: "photo-1603565095944-2a6f33bb517c", alt: "Waterfront city skyline seen across turquoise sea from a sandy beach", by: "Nick Fewings", user: "jannerboy62" }, caption: "Different jurisdictions suit different founders, so give each one a clear page of its own." },
       { t: "h2", text: "Step 3: Explain cost without guessing", id: "cost" },
       {
         t: "p",
@@ -146,6 +151,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "If you have an Abu Dhabi office, give it its own Google Business Profile, photos and reviews from Abu Dhabi clients. Add case notes on the kinds of companies you have set up in the emirate, with permission and without inventing results.",
       },
+      { t: "img", photo: { id: "photo-1758518730384-be3d205838e8", alt: "Two professionals in suits shaking hands across a table", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Genuine local reviews help prospects trust a consultant they first found online." },
       { t: "h2", text: "Step 5: Ads and tracking", id: "ads" },
       {
         t: "p",
@@ -201,6 +207,7 @@ export const BIZSETUP_POSTS: Post[] = [
           "How long does it take, and what will it cost in total, including renewals?",
         ],
       },
+      { t: "img", photo: { id: "photo-1518544866330-4e716499f800", alt: "Blue passport lying on a light wooden floor", by: "Jeremy Dorrough", user: "jeremydorrough" }, caption: "Founders abroad need clear answers about visas and travel before they commit to setting up." },
       { t: "h2", text: "Step 1: Situation pages", id: "situation-pages" },
       {
         t: "p",
@@ -216,6 +223,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "If most of your overseas clients come from a few countries, consider properly translated pages in those languages, and let founders book calls with team members who speak them. Mention time zone friendly call slots.",
       },
+      { t: "img", photo: { id: "photo-1778846266199-9fa1994b0bc6", alt: "Colourful push pins and flags marking locations on a map of the Middle East", by: "Oualid Lakhrouti", user: "oualid24" }, caption: "Founders come from many countries, so content in their own language helps them feel understood." },
       { t: "h2", text: "Step 3: Make first contact easy", id: "contact" },
       {
         t: "p",
@@ -226,6 +234,7 @@ export const BIZSETUP_POSTS: Post[] = [
         t: "p",
         text: "Show your trade licence details, office address, named team members with their experience, and genuine reviews from overseas clients. A short video tour of your office and a clear explanation of your fees and payment stages reassure people who cannot visit before they commit.",
       },
+      { t: "img", photo: { id: "photo-1758874573113-aa93077f421f", alt: "Man on a video call with two smiling women on his laptop screen", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Video calls let you build trust with founders long before they visit in person." },
       { t: "h2", text: "Step 5: Track enquiries by country", id: "tracking" },
       {
         t: "p",

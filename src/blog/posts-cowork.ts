@@ -30,6 +30,7 @@ export const COWORK_POSTS: Post[] = [
         t: "p",
         text: "Give every location its own Google Business Profile with accurate categories, opening hours, real photos of desks, offices and meeting rooms, and a link to that location's page. Ask members for reviews after their first month, when they are settled and positive. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers every setting.",
       },
+      { t: "img", photo: { id: "photo-1527192491265-7e15c55b1ed2", alt: "Open-plan coworking space with people working at long shared desks", by: "Shridhar Gupta", user: "shridhar" }, caption: "People often find a workspace through map searches, so keep your listing complete and current." },
       { t: "h2", text: "One page per location", id: "locations" },
       {
         t: "ul",
@@ -55,6 +56,7 @@ export const COWORK_POSTS: Post[] = [
         title: "Show real prices",
         text: "Co-working buyers compare prices quickly. Publishing starting prices for each product brings more tours from people who are a good fit and saves your team time on enquiries that were never going to convert.",
       },
+      { t: "img", photo: { id: "photo-1604328727766-a151d1045ab4", alt: "Bright open workspace with lounge chairs, plants and people working at tables", by: "Copernico", user: "copernicowork" }, caption: "A day pass or a guided tour lets people try the space before they commit." },
       { t: "h2", text: "Target the right members", id: "audiences" },
       {
         t: "p",
@@ -118,6 +120,7 @@ export const COWORK_POSTS: Post[] = [
         title: "Be precise about licensing",
         text: "Some licence and visa processes require a registered office or an Ejari-registered contract. State clearly what your virtual office packages do and do not include, and advise buyers to confirm their requirements with the relevant licensing authority. Overpromising here creates problems for your customers and your reputation.",
       },
+      { t: "img", photo: { id: "photo-1623685463648-1fa0d86f6b73", alt: "Man in glasses talking on the phone while working on a laptop at home", by: "May Gauthier", user: "maygauthier" }, caption: "Virtual office clients often work remotely, so explain clearly what the address and services include." },
       { t: "h2", text: "Meeting rooms", id: "meeting-rooms" },
       {
         t: "ul",
@@ -133,6 +136,7 @@ export const COWORK_POSTS: Post[] = [
         t: "p",
         text: "Podcast and video studios attract creators, brands and agencies who may never need a desk. Show the equipment list, sample content recorded in the studio (with permission), hourly packages and whether a technician is included. Event spaces need capacity, layouts and past event photos.",
       },
+      { t: "img", photo: { id: "photo-1556761175-129418cb2dfe", alt: "Small recording studio with microphones on arms and headphones on a wooden desk", by: "Austin Distel", user: "austindistel" }, caption: "Studios and event spaces deserve their own pages, with photos, equipment details and booking options." },
       { t: "h2", text: "Link products to memberships", id: "upsell" },
       {
         t: "p",

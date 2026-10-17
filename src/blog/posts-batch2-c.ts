@@ -71,6 +71,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Pages written this way are also the ones AI assistants quote. Our guide on [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains why a direct first paragraph matters so much.",
       },
+      { t: "img", photo: { id: "photo-1758876201935-0d85989a52e2", alt: "Woman writing in a notebook beside an open laptop at a desk", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Each page should answer one clear question a founder is likely to search for." },
       { t: "h2", text: "Decide how open to be about cost", id: "cost-pages" },
       {
         t: "p",
@@ -94,6 +95,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Before you build zone-specific pages or ads, read your partner agreements. Many free zones have rules on how partners may use their name and logo, and breaking them can cost you the relationship.",
       },
+      { t: "img", photo: { id: "photo-1686771416282-3888ddaf249b", alt: "Man and woman shaking hands across a desk with a clipboard and plant", by: "Mina Rad", user: "miinrad" }, caption: "Working alongside free zones can bring in referrals instead of treating them as rivals." },
       { t: "h2", text: "Make PRO services a destination", id: "pro-services" },
       {
         t: "p",
@@ -112,6 +114,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Whatever you run, track WhatsApp clicks and calls as well as forms, and log every enquiry with its source, country and outcome. In this sector, form-only tracking makes your best campaigns look like failures. Judge channels on cost per qualified enquiry and signed client, not clicks.",
       },
+      { t: "img", photo: { id: "photo-1790614108104-337c880ec536", alt: "Laptop and phone showing analytics charts on a wooden desk beside a coffee mug", by: "Vagaro", user: "vagaro" }, caption: "Judge paid search by the qualified enquiries it brings in, not by clicks alone." },
       { t: "h2", text: "A 90-day starting plan", id: "ninety-days" },
       {
         t: "ul",
@@ -202,6 +205,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Pages that answer these questions filter out poor-fit enquiries and give serious buyers a reason to call. They also give AI assistants specific facts to draw on when someone asks for an accountant for a small trading company in Dubai. We cover two of these services in more depth in our guides to [audit firm marketing](/blog/audit-firm-marketing-dubai) and [selling bookkeeping retainers](/blog/bookkeeping-services-marketing-dubai).",
       },
+      { t: "img", photo: { id: "photo-1756312177954-d31ffd5fd68a", alt: "Woman using a calculator with papers on a table in a sitting room", by: "Centre for Ageing Better", user: "ageing_better" }, caption: "A dedicated page for each service, such as bookkeeping, makes your offer easier to find." },
       { t: "h2", text: "Put your credentials where people can see them", id: "credentials" },
       {
         t: "p",
@@ -225,6 +229,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Pick the three or four sectors where your team has real experience and write a page for each. Explain the accounting issues that are specific to that sector, the software and integrations you work with, the reports owners in that sector find most useful, and the questions they usually ask in the first meeting. Add a short, practical guide for each sector too, such as a month-end checklist for online sellers. These pages rank for narrower searches with less competition, and they convince the right owners that you will not need to learn their business at their expense.",
       },
+      { t: "img", photo: { id: "photo-1764761222629-64a7019f29c3", alt: "Shop assistant serving a customer at a counter in a small store", by: "Caden Norcott", user: "cadennorcott" }, caption: "Content written for the sectors you already serve shows owners you understand their numbers." },
       { t: "h2", text: "Reviews and your Google Business Profile", id: "reviews" },
       {
         t: "p",
@@ -243,6 +248,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Make referring easy. Create a simple page partners can send clients to, agree how you will report back, and look after referred clients well, because that is what keeps partners sending them.",
       },
+      { t: "img", photo: { id: "photo-1551836022-4c4c79ecde51", alt: "Two women talking at a boardroom table, one holding a tablet", by: "Amy Hirschi", user: "amyhirschi" }, caption: "Referral partners who serve the same owners can send steady, well matched enquiries." },
       { t: "h2", text: "Plan around deadlines and track retainers", id: "deadlines-tracking" },
       {
         t: "p",
@@ -342,6 +348,7 @@ export const BATCH2_C_POSTS: Post[] = [
         title: "Inform, do not advise, on public pages",
         text: "A public guide should explain how the rules work in general. Advice depends on each business's facts, so make clear that the guide is general information and invite readers to book a consultation for their own situation.",
       },
+      { t: "img", photo: { id: "photo-1758876017749-d1bd378e2577", alt: "Woman with curly hair writing notes at a desk beside a laptop", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Careful, well sourced guides are more likely to be trusted and quoted by others." },
       { t: "h2", text: "Keep every tax page current", id: "keep-current" },
       {
         t: "p",
@@ -365,6 +372,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "Each recurring question is a candidate for its own guide. Write the question as the page heading, in the words clients use, not the language of the legislation. Where the honest answer is \"it depends\", say what it depends on and which situations need a professional to look at the facts. That is exactly the point at which a reader becomes an enquiry.",
       },
+      { t: "img", photo: { id: "photo-1714974528232-f62051870736", alt: "Two men in suits talking across a table with a laptop and coffee cups", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Answering the real questions owners ask in meetings makes your content far more useful." },
       { t: "h2", text: "Show why clients should trust you", id: "trust" },
       {
         t: "p",
@@ -383,6 +391,7 @@ export const BATCH2_C_POSTS: Post[] = [
         t: "p",
         text: "If you use Google Ads, bid on searches that signal a need for help, such as registration support and consultant searches, rather than broad learning terms that bring readers but rarely clients. Track calls and WhatsApp enquiries as well as forms so you know which deadline campaigns led to engagements.",
       },
+      { t: "img", photo: { id: "photo-1506784983877-45594efa4cbe", alt: "Cup of coffee resting on an open planner with monthly calendar pages", by: "Estée Janssens", user: "esteejanssens" }, caption: "Publishing helpful content ahead of known filing dates meets owners when they start searching." },
       { t: "h2", text: "Connect guides to services", id: "guides-to-services" },
       {
         t: "p",

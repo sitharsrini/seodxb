@@ -49,6 +49,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "You can serve more than one, but each needs its own page, its own proof and its own language. A homeowner and a facilities manager do not read the same page the same way.",
       },
+      { t: "img", photo: { id: "photo-1788823524679-1ffa47385abd", alt: "Bright living room with a light grey sofa, cushions and sheer curtains", by: "Franco Debartolo", user: "francotheshooter" }, caption: "Being clear about the projects you want helps your portfolio attract the right enquiries." },
       { t: "h2", text: "Turn every project into a case study", id: "case-studies" },
       {
         t: "p",
@@ -82,6 +83,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "Write these pages so an AI assistant could quote them. When someone asks ChatGPT or Google which designers in Dubai handle villa renovations in a certain community, the answer is built from pages that state plainly what you do, where and for whom. A clear first paragraph on each page, consistent studio details across directories and a few honest reviews all help. Vague pages full of adjectives give an assistant nothing to repeat.",
       },
+      { t: "img", photo: { id: "photo-1705016867797-465aa3123589", alt: "Hands turning the pages of a wallpaper sample book on a wooden table", by: "EAT DOTORI", user: "eatdotori" }, caption: "Clients often search for a specific room or finish, so build pages around those needs." },
       { t: "h2", text: "Use visual platforms to feed your website", id: "visual" },
       {
         t: "p",
@@ -105,6 +107,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "Then follow up. Send a relevant project, a note on process or a materials update every few weeks. Many clients who go quiet are waiting for handover, approvals or a bonus, and the studio that stayed helpful without pushing is the one they call back. Keep a simple list of open enquiries with the date of last contact so nobody falls through the gaps. Track where each enquiry came from, including WhatsApp and calls; our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) shows how.",
       },
+      { t: "img", photo: { id: "photo-1616587656879-8a8a7cce9d6c", alt: "Man and woman talking at a large table covered with design samples", by: "LinkedIn Sales Solutions", user: "linkedinsalesnavigator" }, caption: "A short qualifying conversation helps you focus your time on projects that suit your studio." },
       { t: "h2", text: "Spend on ads carefully", id: "ads" },
       {
         t: "p",
@@ -193,6 +196,7 @@ export const BATCH2_D_POSTS: Post[] = [
           "Guide pages answering questions such as how Salik works for rental cars or what to check at handover.",
         ],
       },
+      { t: "img", photo: { id: "photo-1512428559087-560fa5ceab42", alt: "Person in a white shirt tapping on a smartphone held in one hand", by: "NordWood Themes", user: "nordwood" }, caption: "Many renters search on their phones with very specific needs, so long tail pages matter." },
       { t: "h2", text: "Publish every fee, clearly", id: "fees" },
       {
         t: "p",
@@ -216,6 +220,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "Keep availability honest. If a model is booked out for the next two weeks, say so and suggest an alternative. Renters who arrive to find a different car than the one they booked tend to leave the reviews that hurt most.",
       },
+      { t: "img", photo: { id: "photo-1656772118305-1c1937d1717a", alt: "Car interior with tan leather seats, steering wheel and central dashboard screen", by: "Vitali Adutskevich", user: "vadutskevich" }, caption: "Real photos of the actual car, inside and out, help renters book with confidence." },
       { t: "h2", text: "Reviews and WhatsApp decide the booking", id: "reviews" },
       {
         t: "p",
@@ -234,6 +239,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "Track bookings, not clicks. Measure WhatsApp chats, calls and confirmed rentals by campaign so you can see which searches actually fill the fleet. If you are deciding where to start, our comparison of [SEO and Google Ads in Dubai](/blog/seo-vs-google-ads-dubai-which-first) will help.",
       },
+      { t: "img", photo: { id: "photo-1767710096520-9246565a9d31", alt: "Travellers with luggage walking through a bright modern airport terminal", by: "CK Chen", user: "chenkuochen" }, caption: "Timing ads around busy travel periods puts your offer in front of people as they arrive." },
       { t: "h2", text: "Balance aggregators and direct bookings", id: "balance" },
       {
         t: "p",
@@ -321,6 +327,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "If you teach in Arabic as well as English, or serve Arabic-speaking families, our guide to [bilingual website SEO in the UAE](/blog/arabic-english-bilingual-website-seo-uae) explains how to structure both languages.",
       },
+      { t: "img", photo: { id: "photo-1629360057380-18b15b42e650", alt: "Tutor in glasses explaining work to a teenage girl at a table", by: "sofatutor", user: "sofatutor" }, caption: "A page for each subject and curriculum helps parents see you teach exactly what they need." },
       { t: "h2", text: "Win the local search", id: "local" },
       {
         t: "p",
@@ -336,6 +343,7 @@ export const BATCH2_D_POSTS: Post[] = [
         title: "Check your licensing before you advertise",
         text: "Education providers in Dubai operate under KHDA oversight, and there are specific permit requirements for tutoring businesses and individual tutors. Requirements can change, so check the current KHDA rules for your centre and every tutor, and show your licence details on your website.",
       },
+      { t: "img", photo: { id: "photo-1758525862357-27fb39545240", alt: "Teacher standing beside a girl writing at a desk near a bright window", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Parents look for signs of trust, such as qualified tutors and a calm, safe space." },
       { t: "h2", text: "Make the trial class the easy yes", id: "trial" },
       {
         t: "p",
@@ -346,6 +354,7 @@ export const BATCH2_D_POSTS: Post[] = [
         t: "p",
         text: "Demand follows exams. Build a simple calendar for each curriculum you teach: the start of the school year, mock exams, final exam periods and results days. Publish revision content and raise ad budgets a few weeks before each peak, not during it. Use quieter periods, such as the summer, for holiday courses, catch-up programmes and preparation for the next year.",
       },
+      { t: "img", photo: { id: "photo-1514369118554-e20d93546b30", alt: "Young woman in glasses studying and writing in a notebook at a table", by: "Kyle Gregory Devaras", user: "kyledevaras" }, caption: "Planning your marketing around exam seasons reaches parents when revision support matters most." },
       { t: "h2", text: "Create content parents actually share", id: "content" },
       {
         t: "p",

@@ -37,6 +37,7 @@ export const PROPERTY_POSTS: Post[] = [
           "**Reporting**: what the owner receives each month and how they access it.",
         ],
       },
+      { t: "img", photo: { id: "photo-1762427354397-854a52e0ded7", alt: "Calculator, pencil and printed pie and bar charts on a white desk", by: "Cht Gsml", user: "karepesinde" }, caption: "Owners compare fees and services side by side, so publish clear details they can check." },
       { t: "h2", text: "Show a sample owner report", id: "report" },
       {
         t: "p",
@@ -52,6 +53,7 @@ export const PROPERTY_POSTS: Post[] = [
         t: "p",
         text: "Owners search for terms such as property management Dubai and property management companies in Dubai, and Abu Dhabi searches are often less competitive than Dubai ones. Build a strong management page for each emirate you serve, pages for the communities where you manage many units, and a complete Google Business Profile with genuine owner reviews. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers the setup.",
       },
+      { t: "img", photo: { id: "photo-1780733064206-4f200e41daa8", alt: "Smiling woman in a dark blazer holding up a set of keys", by: "Md Ishak Rahman", user: "mdishakrahman" }, caption: "Owners looking for a manager start online, so make sure your firm appears where they search." },
       { t: "h2", text: "Answer landlord questions with content", id: "content" },
       {
         t: "p",
@@ -62,6 +64,7 @@ export const PROPERTY_POSTS: Post[] = [
         t: "p",
         text: "Overseas owners often enquire outside Dubai office hours. Offer WhatsApp, an email auto-reply with your fees and sample report, and a call-back booking link that shows times in the owner's time zone. Track which channels bring signed mandates, not just enquiries. Our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae) explains how.",
       },
+      { t: "img", photo: { id: "photo-1758876020967-e5a80e49463a", alt: "Bearded man in glasses on the phone while typing on a laptop", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Many owners live abroad, so quick replies across time zones help you win their trust." },
       { t: "h2", text: "Build referral partnerships", id: "partners" },
       {
         t: "p",
@@ -126,6 +129,7 @@ export const PROPERTY_POSTS: Post[] = [
         title: "Accuracy first",
         text: "Rental rules in Dubai are set by the Dubai Land Department and RERA and can change. Link to official sources, date every guide, review them regularly, and avoid giving legal advice. An outdated rent increase guide damages trust faster than having no guide at all.",
       },
+      { t: "img", photo: { id: "photo-1758876023053-3aa541a0935b", alt: "Woman sitting on a sofa reading something on her smartphone", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Landlords look up rent and registration questions on their phones, often from home." },
       { t: "h2", text: "How to write a guide that ranks", id: "write" },
       {
         t: "ol",
@@ -142,6 +146,7 @@ export const PROPERTY_POSTS: Post[] = [
         t: "p",
         text: "A landlord reading about rent increases often has a renewal coming up. Offer a practical next step on the page: a free rent review for their unit, a renewal checklist by email, or a call with a manager. Keep the offer relevant to the guide rather than a generic contact form.",
       },
+      { t: "img", photo: { id: "photo-1758520144427-ddb02ac74e9d", alt: "Two women in business attire shaking hands across an office desk", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A genuinely helpful guide builds the trust a reader needs before asking about your services." },
       { t: "h2", text: "Why this helps with AI search", id: "ai" },
       {
         t: "p",
@@ -201,6 +206,7 @@ export const PROPERTY_POSTS: Post[] = [
         title: "Permits and licensing",
         text: "Holiday homes in Dubai must be registered and permitted through the Department of Economy and Tourism, and operators need the appropriate licence. Guest fees such as the Tourism Dirham also apply. Check current requirements with DET and show your licence clearly: owners and guests both look for it.",
       },
+      { t: "img", photo: { id: "photo-1619418602850-35ad20aa1700", alt: "Wooden rubber stamp resting on an open printed legal document", by: "Markus Spiske", user: "markusspiske" }, caption: "Getting permits and paperwork right first gives owners confidence before any marketing starts." },
       { t: "h2", text: "Marketing to owners", id: "owners" },
       {
         t: "ul",
@@ -221,6 +227,7 @@ export const PROPERTY_POSTS: Post[] = [
         t: "p",
         text: "Most first bookings come through Airbnb, Booking.com and similar platforms. Professional photos, accurate descriptions, fast replies and consistently clean properties drive rankings and reviews on those platforms. Treat every review as marketing, and respond to all of them.",
       },
+      { t: "img", photo: { id: "photo-1787724777788-08b8b73f7150", alt: "Woman in a hat walking into a bright modern bedroom with a large bed", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Guests book on photos and reviews, so show every room exactly as they will find it." },
       { t: "h2", text: "Build direct bookings", id: "direct" },
       {
         t: "p",
@@ -231,6 +238,7 @@ export const PROPERTY_POSTS: Post[] = [
         t: "p",
         text: "Pages for each community where you have units, such as holiday homes in Dubai Marina or Downtown, help both owners and guests find you. Keep your Google Business Profile complete and collect reviews from owners as well as guests.",
       },
+      { t: "img", photo: { id: "photo-1663430186148-e7e69b15ad85", alt: "Hands holding a smartphone showing a map outdoors", by: "Norbert Buduczki", user: "buduczki" }, caption: "Guests explore neighbourhoods on maps, so local pages help them picture where they will stay." },
       { t: "h2", text: "Measure owner and guest channels separately", id: "measure" },
       {
         t: "p",

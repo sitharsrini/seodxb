@@ -41,6 +41,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Give each destination and package its own page with the itinerary, inclusions, exclusions, starting price and the dates it applies to, best months to travel, flight time from the UAE and visa notes. Our guide to [holiday package pages that rank](/blog/holiday-package-pages-seo-uae) sets out the structure in detail.",
       },
+      { t: "img", photo: { id: "photo-1781436069810-a2b217bce8ea", alt: "Resort swimming pool with palm trees, white umbrellas and lounge chairs", by: "Zidhan Ibrahim", user: "xidhern" }, caption: "Every package deserves a page that shows travellers exactly what their stay includes." },
       { t: "h2", text: "Step 2: Be clear about visas", id: "visas" },
       {
         t: "p",
@@ -56,6 +57,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Many residents still like to visit an agency or call one nearby. Complete your Google Business Profile with accurate categories, hours, photos of your office and team, and ask happy travellers for reviews after their trip. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1623390003556-8e69722b66d0", alt: "Gloved hand holding a smartphone with a map on screen outdoors", by: "Hendrik Morkel", user: "hendrikmorkel" }, caption: "Travellers often search on their phones, so a strong local listing helps them find you." },
       { t: "h2", text: "Step 4: Fast quotes on WhatsApp", id: "whatsapp" },
       {
         t: "p",
@@ -66,6 +68,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Long weekends, Eid, school holidays, summer and winter each bring a wave of searches. Publish and update package pages six to eight weeks ahead, and start ads before residents begin planning. Keep a travel calendar for the year so nothing is left to the last minute.",
       },
+      { t: "img", photo: { id: "photo-1484981184820-2e84ea0af397", alt: "Person holding a clipboard showing the first page of a calendar", by: "Brooke Lark", user: "brookelark" }, caption: "School holidays and public holidays shape demand, so plan campaigns well ahead of them." },
       { t: "h2", text: "Step 6: Bring travellers back", id: "repeat" },
       {
         t: "p",
@@ -129,6 +132,7 @@ export const TRAVEL_POSTS: Post[] = [
         title: "Keep visa notes careful",
         text: "Visa rules depend on nationality and change often. Give general guidance, say when you last checked it and advise travellers to confirm with the relevant embassy or with you before booking.",
       },
+      { t: "img", photo: { id: "photo-1499591934245-40b55745b905", alt: "Person tracing a route on a world map beside a notebook and camera", by: "Glenn Carstens-Peters", user: "glenncarstenspeters" }, caption: "A consistent page structure helps travellers compare itineraries and find details quickly." },
       { t: "h2", text: "Write for UAE residents", id: "residents" },
       {
         t: "p",
@@ -139,6 +143,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Create destination hub pages, such as Georgia or the Maldives, that link to every package there, and occasion pages such as honeymoons, family holidays or long weekends that link to suitable packages. This helps visitors browse and helps search engines understand your site.",
       },
+      { t: "img", photo: { id: "photo-1722680001761-75450b9f085e", alt: "Hand placing a pin into a map covered with colourful pins", by: "Stefancu Iulian", user: "juliano007" }, caption: "Grouping packages by destination and occasion helps people browse the trips that suit them." },
       { t: "h2", text: "Make pages easy for AI to quote", id: "ai" },
       {
         t: "p",
@@ -198,6 +203,7 @@ export const TRAVEL_POSTS: Post[] = [
           "Founders of growing companies who want to stop booking trips themselves.",
         ],
       },
+      { t: "img", photo: { id: "photo-1715091618825-70f04f4cff72", alt: "Silhouetted travellers walking through a large airport terminal with glass walls", by: "Howen", user: "oweni" }, caption: "Corporate travel is bought by people who manage frequent trips for colleagues, not just travellers." },
       { t: "h2", text: "Step 1: A dedicated corporate travel page", id: "page" },
       {
         t: "p",
@@ -208,6 +214,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Write practical guides on writing a travel policy, controlling travel costs, managing staff visas and duty of care for travellers. These attract the people who make the decision and show you understand their problems.",
       },
+      { t: "img", photo: { id: "photo-1772588627757-32365608b421", alt: "Laptop, printed forms, calculator and coffee arranged on a textured blanket", by: "Kelly Sikkema", user: "kellysikkema" }, caption: "Finance and HR teams want content that speaks to budgets, policies and approvals." },
       { t: "h2", text: "Step 3: LinkedIn and direct outreach", id: "linkedin" },
       {
         t: "p",
@@ -223,6 +230,7 @@ export const TRAVEL_POSTS: Post[] = [
         t: "p",
         text: "Show an example of the monthly report a client receives: spend by department, traveller and route, and policy compliance. Finance teams value this more than a small difference in fares.",
       },
+      { t: "img", photo: { id: "photo-1784334312040-5b3d4cf78b88", alt: "Hand using a laptop that shows a data spreadsheet on a desk", by: "Gorilla ROI Data Connector", user: "gorillaroi" }, caption: "Clear travel spend reports give finance teams a strong reason to choose your agency." },
       { t: "h2", text: "Step 5: Account management", id: "accounts" },
       {
         t: "p",

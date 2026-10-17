@@ -41,6 +41,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "Give each event type you want more of its own page: conferences, product launches, gala dinners, team building, weddings and exhibitions. Explain who it is for, the typical scale, your process from brief to event day, what you handle in house and with partners, and show real examples. Answer the main question in the first paragraph so search engines and AI assistants can quote it.",
       },
+      { t: "img", photo: { id: "photo-1768851142332-75f3d1b47452", alt: "Bright banquet hall with round tables, white linen and gold chairs under chandeliers", by: "Matt Benson", user: "mattgyver" }, caption: "A dedicated page for each event type helps buyers picture the setting they need." },
       { t: "h2", text: "Step 2: Case studies you are allowed to publish", id: "case-studies" },
       {
         t: "p",
@@ -56,6 +57,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "Corporate event buyers are active on LinkedIn. Share short posts from your team about recent events (with permission), planning advice and behind-the-scenes set-ups, and run small campaigns aimed at events, marketing and HR managers in your target sectors.",
       },
+      { t: "img", photo: { id: "photo-1775163560631-6ff15eb2fa1f", alt: "Guests mingling and talking at an indoor networking event with warm lighting", by: "Olena Kholina", user: "sixtynice" }, caption: "Corporate buyers are easier to reach when you show up where they already meet." },
       { t: "h2", text: "Step 4: Reply to briefs fast", id: "briefs" },
       {
         t: "p",
@@ -66,6 +68,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "The UAE events season runs mainly through the cooler months, with major exhibitions, conferences and year-end events. Publish case studies and run campaigns from late summer, when buyers start planning, and use the quieter summer months to update your website and portfolio. Our [SEO versus Google Ads guide](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
       },
+      { t: "img", photo: { id: "photo-1599756380350-b3a618d1f2d0", alt: "Large printed calendar showing October with black and red dates", by: "Waldemar Brandt", user: "waldemarbrandt67w" }, caption: "Planning campaigns around the busy months keeps enquiries coming before the season starts." },
       { t: "h2", text: "Step 6: Turn events into annual accounts", id: "accounts" },
       {
         t: "p",
@@ -121,6 +124,7 @@ export const EVENT_POSTS: Post[] = [
           "Questions to AI assistants: \"how much does a wedding in Dubai cost\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1533229613598-751dc97ec35f", alt: "Smiling couple looking at a laptop together at a table with fairy lights behind", by: "bruce mars", user: "brucemars" }, caption: "Most couples start their search online, often together, long before they contact a planner." },
       { t: "h2", text: "Step 1: Show real weddings", id: "real-weddings" },
       {
         t: "p",
@@ -136,6 +140,7 @@ export const EVENT_POSTS: Post[] = [
         title: "Budgets without surprises",
         text: "Couples want to know what a wedding might cost. Explain what drives the budget, share typical ranges for your planning fees and the main cost areas, date them and update them each season.",
       },
+      { t: "img", photo: { id: "photo-1469371670807-013ccf25f16a", alt: "Wedding aisle lined with pink and white flower arrangements and gold chairs", by: "Shardayyy Photography", user: "shardayyy" }, caption: "Pages for each style and venue type help couples see that you understand their vision." },
       { t: "h2", text: "Step 3: Win the map and reviews", id: "maps" },
       {
         t: "p",
@@ -146,6 +151,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "Couples use Instagram to judge a planner's taste. Post finished set-ups, details and short behind-the-scenes videos, credit suppliers and link every post back to the relevant real wedding page.",
       },
+      { t: "img", photo: { id: "photo-1769230360335-686ba24a7350", alt: "Photographer crouching to take a picture of a bride and bridesmaid on a lawn", by: "Fotógrafo Samuel Cruz", user: "fotografosamuelcruz" }, caption: "Good wedding photography gives your Instagram a clear, consistent sense of your style." },
       { t: "h2", text: "Step 5: Help destination couples", id: "destination" },
       {
         t: "p",
@@ -205,6 +211,7 @@ export const EVENT_POSTS: Post[] = [
         title: "Check organiser and venue rules",
         text: "Each show and venue has its own rules on stand design, approvals and contractor registration. Link to the official organiser and venue information, such as the Dubai World Trade Centre, and tell exhibitors to confirm deadlines with the organiser.",
       },
+      { t: "img", photo: { id: "photo-1775314054195-85f31de0c944", alt: "Busy exhibition hall under a glass roof with rows of stands and visitors", by: "Euronewsweek Media", user: "euronewsweek" }, caption: "Exhibitors search by show name, so a page for each event you build for matters." },
       { t: "h2", text: "Step 2: A portfolio with real detail", id: "portfolio" },
       {
         t: "p",
@@ -215,6 +222,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "Exhibitors plan months before a show. Use LinkedIn to reach marketing and events managers at companies exhibiting in your sectors, and run small Google Ads campaigns around each show's planning window. Only email exhibitors in line with data protection rules and the show's policies.",
       },
+      { t: "img", photo: { id: "photo-1640116565640-51de47c7791b", alt: "Small desk calendar standing on a white table against a pale wall", by: "Blessing Ri", user: "blessingeffect" }, caption: "Exhibitors book stand builders months ahead, so early contact wins more of the work." },
       { t: "h2", text: "Step 4: Fast, detailed quotes", id: "quotes" },
       {
         t: "p",
@@ -225,6 +233,7 @@ export const EVENT_POSTS: Post[] = [
         t: "p",
         text: "Explain how you work with overseas clients: design approvals by video call, shipping and storage of materials, on-site support and after-show dismantling. Offer pages in the languages of your main client markets if you serve them often.",
       },
+      { t: "img", photo: { id: "photo-1522199873717-bc67b1a5e32b", alt: "Traveller with a backpack looking at a flight departure board in an airport", by: "Anete Lūsiņa", user: "anete_lusina" }, caption: "International exhibitors value a builder who makes planning from abroad simple and clear." },
       { t: "h2", text: "Step 6: Keep exhibitors for next year", id: "repeat" },
       {
         t: "p",

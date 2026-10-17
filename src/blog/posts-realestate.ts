@@ -36,6 +36,7 @@ export const REALESTATE_POSTS: Post[] = [
         title: "Check the current rules",
         text: "Advertising requirements are set by the Dubai Land Department and RERA and can change. Use this guide as a practical overview and confirm details, such as which channels are covered and how the permit must be displayed, with DLD before you publish.",
       },
+      { t: "img", photo: { id: "photo-1781978775940-cc2c9f2198ba", alt: "Modern apartment building with lit windows and balconies at night", by: "paolo candelo", user: "paolocandelo" }, caption: "Confirming the permit is in place before an advert goes live protects both broker and buyer." },
       { t: "h2", text: "Where the permit applies", id: "where" },
       {
         t: "p",
@@ -52,6 +53,7 @@ export const REALESTATE_POSTS: Post[] = [
           "Set a reminder to close or renew the advert when the permit or listing period ends.",
         ],
       },
+      { t: "img", photo: { id: "photo-1758876201660-103984519266", alt: "Woman in glasses reviewing papers on a clipboard at a desk with a laptop", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Adding the permit check to your listing routine stops adverts going live without one." },
       { t: "h2", text: "Show who is behind the listing", id: "registration" },
       {
         t: "p",
@@ -62,6 +64,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Many buyers, especially overseas investors, worry about fake listings and bait-and-switch adverts. A visible permit, a real office address and named, registered agents are reassuring. Mention on your website that every listing carries a valid permit, and explain briefly what that means for the buyer.",
       },
+      { t: "img", photo: { id: "photo-1626105985445-6430a31f6f96", alt: "Man in a checked suit and woman reviewing printed papers at a table", by: "Paul White", user: "paulwhiteplaytowin" }, caption: "Buyers and tenants may feel more confident when a listing clearly shows its permit details." },
       { t: "h2", text: "Common mistakes", id: "mistakes" },
       {
         t: "ul",
@@ -120,6 +123,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Start with the communities where you already have listings, agents and closed deals. Depth beats breadth: five excellent community pages will do more than fifty thin ones. For each community, decide which combinations matter, such as apartments for rent, apartments for sale and villas for sale.",
       },
+      { t: "img", photo: { id: "photo-1640877268187-2fa6b2ed7a5f", alt: "Aerial view of large villas with private pools among palm trees", by: "Eslam Tawakol", user: "eslamtawakol" }, caption: "Each community has its own character, so start with the areas your buyers ask about most." },
       { t: "h2", text: "What a strong community page includes", id: "structure" },
       {
         t: "ul",
@@ -142,6 +146,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Add a short FAQ to each page: is the area good for families, how far is it from the Metro, what are typical service charges, is it a freehold area. Clear answers help the page appear in search features and give AI assistants accurate facts to quote when someone asks about the community.",
       },
+      { t: "img", photo: { id: "photo-1758523669073-edfbea249144", alt: "Couple sitting by a large window looking at a tablet together", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Buyers often research communities together, so answer their practical questions in plain words." },
       { t: "h2", text: "Link pages together", id: "links" },
       {
         t: "p",
@@ -152,6 +157,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Outdated prices and sold listings damage trust quickly. Review each community page every quarter, refresh the price ranges and date the update. Make sure every advertised listing carries its permit details; our [Trakheesi permit guide](/blog/trakheesi-permit-property-advertising-dubai) explains the process.",
       },
+      { t: "img", photo: { id: "photo-1788129115178-fd56436a9470", alt: "High-rise apartment towers lining a marina waterway on a clear day", by: "Pavlo Antonio", user: "antoniosavl" }, caption: "Communities change quickly, so review prices, new launches and amenities on each page regularly." },
       { t: "h2", text: "Track what the pages bring in", id: "track" },
       {
         t: "p",
@@ -205,6 +211,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Before any ads run, publish a page for the project on your own site with the developer, exact location, unit types and sizes, starting prices, payment plan, expected handover and amenities. Add a location map, nearby schools and transport, and a short, honest view from your team on who the project suits. This page ranks for the project name after the launch buzz fades and gives every ad a better destination than a generic form.",
       },
+      { t: "img", photo: { id: "photo-1786457070849-9adc7d91c682", alt: "Two modern high-rise apartment towers against a blue sky with clouds", by: "Zoshua Colah", user: "zoshuacolah" }, caption: "A clear project page gives investors one place to check the developer, layouts and payment plan." },
       { t: "h2", text: "Answer investor questions honestly", id: "investors" },
       {
         t: "ul",
@@ -227,6 +234,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Launch campaigns on Google, Meta and TikTok can bring enquiries quickly, but make sure every advert meets Dubai's advertising requirements, including the permit details. Our [Trakheesi permit guide](/blog/trakheesi-permit-property-advertising-dubai) covers the basics. Target by location and interest, and send traffic to the project page rather than a bare form.",
       },
+      { t: "img", photo: { id: "photo-1758598304329-c250b67437bb", alt: "Young woman in a blazer looking at her smartphone indoors", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Focused ads reach buyers on their phones, so keep claims accurate and send clicks to the project page." },
       { t: "h2", text: "Reply in minutes, not hours", id: "speed" },
       {
         t: "p",
@@ -237,6 +245,7 @@ export const REALESTATE_POSTS: Post[] = [
         t: "p",
         text: "Many off-plan buyers are overseas and have never met you. Show your brokerage registration, named agents with photos and registration numbers, a real office, genuine client reviews and video walkthroughs. Offer video calls and explain the purchase process step by step for buyers who are new to Dubai.",
       },
+      { t: "img", photo: { id: "photo-1790597035898-95815872211e", alt: "Bearded man with glasses talking on the phone at a desk with a laptop", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Overseas buyers often want a real conversation first, so make calls and video meetings easy to book." },
       { t: "h2", text: "After the launch", id: "after" },
       {
         t: "p",

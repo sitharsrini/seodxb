@@ -50,6 +50,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "Each page should explain who needs the cover, what is usually included and excluded, what affects the premium, how to get a quote and how you help with claims. Answer the main question in the first paragraph so search engines and AI assistants can quote it.",
       },
+      { t: "img", photo: { id: "photo-1780594774174-01b48ac0ac8b", alt: "Black car parked in the driveway of a house among trees", by: "Virginia Marinova", user: "virginiaphotostories" }, caption: "Separate pages for motor, home and other cover help each customer find the product they need." },
       { t: "h2", text: "Step 2: Choose battles you can win", id: "battles" },
       {
         t: "p",
@@ -60,6 +61,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "Clients share medical, financial and company details with you. Create a profile for each adviser with a real photo, experience, languages and the products they specialise in. Show your brokerage licence details on every page, and collect genuine reviews on your Google Business Profile. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers each setting.",
       },
+      { t: "img", photo: { id: "photo-1758518731296-20e24e58846f", alt: "Four business professionals in suits standing together indoors", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Real names and faces help people choose an adviser they feel comfortable calling." },
       { t: "h2", text: "Step 4: Make quotes fast and easy", id: "quotes" },
       {
         t: "p",
@@ -70,6 +72,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "Short, accurate guides to terms such as co-payment, waiting period, network, deductible and agreed value, reviewed by a licensed adviser, attract readers long before they buy and are the pages AI assistants quote. Date every guide and update it when rules or products change.",
       },
+      { t: "img", photo: { id: "photo-1758598738106-f8f9d4c5d9d2", alt: "Young woman reading on a laptop while sitting on a grey sofa", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Clear answers to common questions help readers feel ready to contact a broker." },
       { t: "h2", text: "Step 6: Keep them at renewal", id: "renewal" },
       {
         t: "p",
@@ -130,6 +133,7 @@ export const INSURANCE_POSTS: Post[] = [
           "The company wants better benefits to attract talent.",
         ],
       },
+      { t: "img", photo: { id: "photo-1769740333462-9a63bfa914bc", alt: "Colleagues gathered around a conference table in a bright meeting room", by: "Beatriz Cattel", user: "bicattel" }, caption: "Group cover often comes up when employers plan benefits for their whole team." },
       { t: "h2", text: "Step 1: An employer guide", id: "guide" },
       {
         t: "p",
@@ -140,6 +144,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "A five-person startup, a 50-person trading company and a 300-person contractor have different needs. Create pages for the segments you serve best, explaining what matters most to them and how you help. Only describe sectors where you have real experience.",
       },
+      { t: "img", photo: { id: "photo-1774600134168-b9ebd714e4e1", alt: "Small team gathered around laptops in an office with city views", by: "Fiqih Alfarish", user: "fiqihalfarish" }, caption: "Pages for different company sizes and sectors show employers you understand their situation." },
       { t: "h2", text: "Step 3: Show how you compare plans", id: "compare" },
       {
         t: "p",
@@ -150,6 +155,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "LinkedIn content from your advisers, on renewals, cost control and employee experience, reaches decision makers directly. Pair it with small Google Ads campaigns on group medical and employee health insurance searches, and a landing page with a short quote form. Our [SEO versus Google Ads guide](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
       },
+      { t: "img", photo: { id: "photo-1758518727613-00192aed759b", alt: "Three professionals discussing work over a tablet and laptop in an office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "HR managers and founders respond best to clear, practical advice about covering their people." },
       { t: "h2", text: "Step 5: Service that wins the renewal", id: "service" },
       {
         t: "p",
@@ -199,6 +205,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "Record every policy's renewal date in your CRM with the named adviser responsible. Set reminders at 90, 60 and 30 days for business clients and at 45 and 21 days for personal clients, and track which renewals are confirmed, in review or at risk.",
       },
+      { t: "img", photo: { id: "photo-1577394732330-38cef75bc388", alt: "Orange highlighter resting on a printed calendar page", by: "Eliza Diamond", user: "eliza28diamonds" }, caption: "A renewal calendar makes sure every client hears from you well before their policy ends." },
       { t: "h2", text: "Step 2: Review needs first", id: "review" },
       {
         t: "p",
@@ -214,6 +221,7 @@ export const INSURANCE_POSTS: Post[] = [
         title: "Keep comparisons fair",
         text: "Compare cover as well as price, point out reductions in cover, and never present an option as the best without explaining why. Follow the disclosure rules that apply to your licence.",
       },
+      { t: "img", photo: { id: "photo-1714974528737-3e6c7e4d11af", alt: "Three people in business clothes discussing documents around a low table", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Talking through a price change openly helps clients understand it rather than shop elsewhere." },
       { t: "h2", text: "Step 4: Support claims through the year", id: "claims" },
       {
         t: "p",
@@ -224,6 +232,7 @@ export const INSURANCE_POSTS: Post[] = [
         t: "p",
         text: "Clients with more than one policy stay longer. Offer related cover only where it genuinely helps, such as home cover for a new homeowner or group medical for a client starting a company, and explain why.",
       },
+      { t: "img", photo: { id: "photo-1780733066665-21bebd5eeab5", alt: "Woman pointing at documents for a seated man at an office desk", by: "Md Ishak Rahman", user: "mdishakrahman" }, caption: "Suggest additional cover only where it fills a genuine gap in what the client already holds." },
       { t: "h2", text: "Step 6: Measure retention", id: "measure" },
       {
         t: "p",

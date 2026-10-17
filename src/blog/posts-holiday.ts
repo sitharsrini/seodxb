@@ -45,6 +45,7 @@ export const HOLIDAY_POSTS: Post[] = [
         t: "p",
         text: "Guests staying in a registered holiday home need to be registered, and the Tourism Dirham fee is collected for stays. Build both steps into your booking and check-in process so nothing is missed on busy weekends.",
       },
+      { t: "img", photo: { id: "photo-1787724778950-c7662f907f57", alt: "Smiling couple sitting on a bed beside a black suitcase", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Every guest stay involves its own steps, so build a simple check-in routine your team follows." },
       { t: "h2", text: "Owner consent and building rules", id: "owners" },
       {
         t: "p",
@@ -55,6 +56,7 @@ export const HOLIDAY_POSTS: Post[] = [
         t: "p",
         text: "Many owners have heard stories of unlicensed operators and fines. Put your licence details on your owner page, explain in plain language how you handle unit registration, guest registration and the Tourism Dirham, and make clear that compliance is included in your service. For guests, show your licence in the footer and on booking pages.",
       },
+      { t: "img", photo: { id: "photo-1664463760781-f159dfe3af30", alt: "People at a dark desk signing a document with a pen", by: "Annika Wischnewsky", user: "wischn" }, caption: "Showing owners how carefully you handle permits and paperwork can become a strong selling point." },
       { t: "h2", text: "Write the guide owners are searching for", id: "content" },
       {
         t: "p",
@@ -119,6 +121,7 @@ export const HOLIDAY_POSTS: Post[] = [
           "Your licence details and genuine guest reviews visible on every property page.",
         ],
       },
+      { t: "img", photo: { id: "photo-1522198734915-76c764a8454d", alt: "Person sitting cross-legged on a wooden floor browsing photos on a laptop", by: "Andrew Neel", user: "andrewtneel" }, caption: "A good booking site loads quickly, shows real photos and makes checking dates simple." },
       { t: "h2", text: "Create community and trip pages", id: "pages" },
       {
         t: "p",
@@ -134,6 +137,7 @@ export const HOLIDAY_POSTS: Post[] = [
         t: "p",
         text: "Collect guest emails with consent at check-in, send a thank-you after checkout, and offer a benefit for booking direct next time, such as early check-in or a flexible cancellation policy. Business travellers and families who visit Dubai regularly are the most valuable guests to bring back.",
       },
+      { t: "img", photo: { id: "photo-1787724779313-0f3cd6d4ae1c", alt: "Woman unpacking clothes from a suitcase in a bright bedroom", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A guest who enjoyed their stay is the easiest person to welcome back through your own site." },
       { t: "h2", text: "Plan around the season", id: "season" },
       {
         t: "p",

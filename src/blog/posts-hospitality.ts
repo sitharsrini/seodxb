@@ -37,6 +37,7 @@ export const HOSPITALITY_POSTS: Post[] = [
           "Questions to AI assistants: \"where should I have brunch in Dubai Marina\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1785052288228-596ef2f51251", alt: "Man checking his phone beside a bowl of noodle soup at an outdoor table", by: "An Duc Cao Xuan", user: "caoxuananduc" }, caption: "Diners often check their phones for nearby options, photos and opening hours before choosing." },
       { t: "h2", text: "Step 1: Your Google Business Profile", id: "gbp" },
       {
         t: "p",
@@ -52,6 +53,7 @@ export const HOSPITALITY_POSTS: Post[] = [
         title: "Photos sell food",
         text: "Real, well-lit photos of your signature dishes and dining room influence decisions more than any description. Update them when the menu changes.",
       },
+      { t: "img", photo: { id: "photo-1735190093420-4ecee383badb", alt: "Printed menu card resting on a white plate beside a folded napkin and cutlery", by: "Hailey Tong", user: "haileytong" }, caption: "Publish the menu as real text on your website so search engines and diners can read it." },
       { t: "h2", text: "Step 3: Reviews, steadily", id: "reviews" },
       {
         t: "p",
@@ -62,6 +64,7 @@ export const HOSPITALITY_POSTS: Post[] = [
         t: "p",
         text: "Instagram and TikTok drive discovery for restaurants in Dubai. Post dishes being made, the atmosphere, and the people behind the food. When working with food creators, check that they hold the advertiser licence UAE media regulations require for paid promotion, and make sure paid collaborations are clearly labelled.",
       },
+      { t: "img", photo: { id: "photo-1771555557418-59fdb47145da", alt: "Hands holding a phone to photograph plates of food on a table", by: "Trương Tuyết Ly", user: "liliantruong2603" }, caption: "Guests and creators share dishes on social media, so make your food easy to photograph." },
       { t: "h2", text: "Step 5: Plan around the calendar", id: "calendar" },
       {
         t: "p",
@@ -129,6 +132,7 @@ export const HOSPITALITY_POSTS: Post[] = [
         t: "p",
         text: "Offer a clear reason to book direct, such as flexible cancellation, breakfast, a room upgrade, late check-out or loyalty points, and state it on every page and in the booking engine. Make sure booking on mobile is as quick as on the OTAs. Check your OTA agreements on rate parity before offering lower prices.",
       },
+      { t: "img", photo: { id: "photo-1790774882513-bee2fba81a2c", alt: "Bright hotel lobby with a reception desk between tall white pillars", by: "Rakib Khan", user: "rakibkhulna" }, caption: "A welcoming lobby is only half the story: the direct booking path should feel just as easy." },
       { t: "h2", text: "Step 2: Pages that rank for what guests search", id: "pages" },
       {
         t: "p",
@@ -144,6 +148,7 @@ export const HOSPITALITY_POSTS: Post[] = [
         title: "Own your brand search",
         text: "Many bookings start with a search for the hotel's own name. Make sure your official website, direct rate and Google Business Profile dominate those results.",
       },
+      { t: "img", photo: { id: "photo-1631049307264-da0ec9d70304", alt: "Tidy hotel room with a double bed, bedside lamp and window", by: "Point3D Commercial Imaging Ltd.", user: "3dottawa" }, caption: "Accurate room photos and rates help your hotel compete when guests compare prices side by side." },
       { t: "h2", text: "Step 4: Market by source market", id: "markets" },
       {
         t: "p",
@@ -154,6 +159,7 @@ export const HOSPITALITY_POSTS: Post[] = [
         t: "p",
         text: "UAE residents are a valuable audience for summer, long weekends and special occasions. Staycation packages with dining, spa or activities can fill rooms in quieter periods and bring extra revenue across the hotel.",
       },
+      { t: "img", photo: { id: "photo-1774663855124-9ede7464f37e", alt: "Resort pool with sun umbrellas and palm trees beside the sea", by: "Yijin Tao", user: "missmouse_" }, caption: "Pool days and weekend packages can appeal to residents looking for a short break close to home." },
       { t: "h2", text: "Step 6: Reviews and returning guests", id: "loyalty" },
       {
         t: "p",

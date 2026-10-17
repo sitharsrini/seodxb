@@ -68,6 +68,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "Ask directly whether you own the website code, design files, images and written content outright. Some agencies licence websites or keep them on their own hosting, which makes leaving expensive. Get the answer in the contract, not only in a meeting.",
       },
+      { t: "img", photo: { id: "photo-1774898989484-0b9becf69efb", alt: "Combination padlock resting on a white computer keyboard", by: "Sasun Bughdaryan", user: "sasun1990" }, caption: "Make sure your business holds the logins to its own accounts, not the agency." },
       { t: "h2", text: "Measurement and reporting", id: "measurement" },
       { t: "h3", text: "3. How will you measure success?" },
       {
@@ -105,6 +106,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "AI tools can speed up research and drafting, and most agencies use them. The question is how output is reviewed. Content published under your name should be checked by someone who understands your business, your market and the facts.",
       },
+      { t: "img", photo: { id: "photo-1630487656049-6db93a53a7e9", alt: "Four colleagues leaning over a table to review printed documents together", by: "Andreea Avramescu", user: "minakko" }, caption: "Ask who will actually work on your account and how often you will meet them." },
       { t: "h2", text: "Contracts and costs", id: "contracts" },
       { t: "h3", text: "10. What is the notice period and minimum term?" },
       {
@@ -137,6 +139,7 @@ const FIRST_POSTS: Post[] = [
           "No clear answer on who will do the work.",
         ],
       },
+      { t: "img", photo: { id: "photo-1642522029691-029b5a432954", alt: "Person in a suit signing paperwork beside a colleague holding a document", by: "Carrie Allen www.carrieallen.com", user: "carrieallenllc" }, caption: "Read the notice period and ownership terms carefully before you sign anything." },
       { t: "h2", text: "Choosing between a consultancy and an agency", id: "consultancy" },
       {
         t: "p",
@@ -208,6 +211,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "Also check that your important pages show their content in the HTML itself. Some sites load text only through JavaScript, which not every crawler processes. If you view the page source and cannot see your main text, AI crawlers may not see it either.",
       },
+      { t: "img", photo: { id: "photo-1680992046626-418f7e910589", alt: "Server rack with green lights and neatly bundled cables in a dark room", by: "Tyler", user: "tylergm" }, caption: "If crawlers cannot reach your pages, AI tools have nothing of yours to read." },
       { t: "h2", text: "Step 2: Get the basics of SEO right", id: "seo-basics" },
       {
         t: "p",
@@ -236,6 +240,7 @@ const FIRST_POSTS: Post[] = [
           "Write an About page that states plainly who you are, what you do, where and for whom.",
         ],
       },
+      { t: "img", photo: { id: "photo-1768180316485-2c7306ab38ff", alt: "Green shop front with open signs, potted plants and a chalkboard by the door", by: "Sara Kozak", user: "sara_kozak" }, caption: "Consistent name, address and details help AI tools recognise your business as one entity." },
       { t: "h2", text: "Step 4: Answer questions directly", id: "answers" },
       {
         t: "p",
@@ -263,6 +268,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "Quality matters more than volume. A handful of credible, relevant mentions is worth more than dozens of low-quality directory links.",
       },
+      { t: "img", photo: { id: "photo-1478940020726-e9e191651f1a", alt: "Thick stack of folded newspapers lying on a metal surface", by: "Tim Mossholder", user: "timmossholder" }, caption: "Mentions in trusted publications give AI assistants independent evidence that you exist." },
       { t: "h2", text: "Step 6: Check what AI tools say about you", id: "monitor" },
       {
         t: "p",
@@ -352,6 +358,7 @@ const FIRST_POSTS: Post[] = [
         title: "Test before you trust",
         text: "Submit your own form, tap your own WhatsApp button and phone link, then check that each event appears in Google Analytics real-time reports. Broken tracking is more common than missing tracking.",
       },
+      { t: "img", photo: { id: "photo-1712904311048-dd345c13a7c2", alt: "Laptop on a desk showing an analytics dashboard with a world map and charts", by: "Walls.io", user: "walls_io" }, caption: "Set up key events first so every enquiry is counted in one consistent way." },
       { t: "h2", text: "Step 2: Send the same events to your ad platforms", id: "ad-platforms" },
       {
         t: "p",
@@ -366,6 +373,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "Some people see your number and dial it rather than tapping. Click tracking will not catch those. Options include call tracking services that show a different number to visitors from different sources, and Google Ads call assets that report calls made from the ad itself. Choose based on how important phone leads are to your business.",
       },
+      { t: "img", photo: { id: "photo-1758876022836-70b89d3e6944", alt: "Smiling woman talking on a mobile phone at an office desk with a laptop", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Calls dialled by hand are easy to miss, so give them their own tracking method." },
       { t: "h2", text: "Step 4: Ask, and record the answer", id: "ask" },
       {
         t: "p",
@@ -376,6 +384,7 @@ const FIRST_POSTS: Post[] = [
         t: "p",
         text: "Leads spread across personal WhatsApp accounts, email inboxes and notebooks cannot be measured. Use a shared WhatsApp Business account for the team, and log every enquiry in one system, even a well-structured spreadsheet at first, with the date, source, channel and outcome.",
       },
+      { t: "img", photo: { id: "photo-1759752393975-7ca7b302fcc6", alt: "Hands typing on a laptop showing a spreadsheet on a round white table", by: "Bluestonex", user: "bluestonex_apphaus" }, caption: "A single shared lead list stops enquiries from slipping between inboxes and phones." },
       { t: "h2", text: "Step 6: Measure quality, not just volume", id: "quality" },
       {
         t: "p",

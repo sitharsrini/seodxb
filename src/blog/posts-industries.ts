@@ -44,6 +44,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "Local agent searches: \"real estate agent in Jumeirah Village Circle\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1758523669429-45723b96106c", alt: "Smiling couple sharing an armchair and looking at a tablet together", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Property buyers often research for weeks online before they contact anyone." },
       { t: "h2", text: "Step 1: Pick your communities", id: "communities" },
       {
         t: "p",
@@ -59,6 +60,7 @@ export const INDUSTRY_POSTS: Post[] = [
         title: "Keep it accurate",
         text: "Prices, fees and handover dates change. Date your market information and update it regularly. Outdated numbers damage trust with both buyers and the AI tools that summarise your pages.",
       },
+      { t: "img", photo: { id: "photo-1629997777186-3ccf91c2e009", alt: "Aerial view of a villa community with pools beside a golf course", by: "Flowdzine Creativity", user: "flowdzine" }, caption: "Community pages work best when they answer what living there is really like." },
       { t: "h2", text: "Step 3: Local and agent profiles", id: "profiles" },
       {
         t: "p",
@@ -69,6 +71,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "SEO in real estate takes time. Paid search and Meta ads fill the gap, especially for launches. In Dubai, property advertising requires a Trakheesi permit from the Dubai Land Department, and agents must be RERA-registered, so build compliance into your ad process from the start.",
       },
+      { t: "img", photo: { id: "photo-1772475385289-17fbb414ed74", alt: "Bright modern living room with a large white sofa and wall television", by: "Caroline Badran", user: "___atmos" }, caption: "Ads can bring fast enquiries while your organic pages build up over time." },
       { t: "h2", text: "Step 5: Track leads to deals", id: "track" },
       {
         t: "p",
@@ -131,6 +134,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "The first two groups care most about capability, approvals and track record. The last two often search urgently and compare several companies. Your website needs to serve both.",
       },
+      { t: "img", photo: { id: "photo-1774600166834-175d06febcd4", alt: "Two women in hard hats discussing plans beside a window with city towers", by: "Fiqih Alfarish", user: "fiqihalfarish" }, caption: "Developers, consultants and homeowners all search differently, so plan pages for each group." },
       { t: "h2", text: "Step 1: One page per specialism and location", id: "specialism" },
       {
         t: "p",
@@ -146,6 +150,7 @@ export const INDUSTRY_POSTS: Post[] = [
         title: "Show your credentials",
         text: "Display trade licences, authority approvals and classifications, ISO or safety certifications and insurance where relevant. Procurement teams look for them, and they make your company easier for search engines and AI tools to verify.",
       },
+      { t: "img", photo: { id: "photo-1631193816258-28b44b21e78b", alt: "Open plan office with rows of desks, monitors and long linear ceiling lights", by: "Petr", user: "mpetrucho" }, caption: "Completed project photos with clear scope details show buyers what you can deliver." },
       { t: "h2", text: "Step 3: LinkedIn for B2B visibility", id: "linkedin" },
       {
         t: "p",
@@ -156,6 +161,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Searches like \"villa renovation company Dubai\" come from people ready to get quotes. Focused Google Ads with a strong landing page and call tracking can bring these enquiries quickly while SEO builds. Our guide on [SEO vs Google Ads](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
       },
+      { t: "img", photo: { id: "photo-1778074762022-c33cc42f79ae", alt: "Two workers in hard hats and safety vests reviewing plans on a tablet", by: "alan boyce", user: "abcpac" }, caption: "Paid search suits urgent residential and fit out jobs where people want quotes quickly." },
       { t: "h2", text: "Step 5: Track the pipeline", id: "pipeline" },
       {
         t: "p",
@@ -219,6 +225,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "Local: \"used car showroom near me\", \"car dealers in Al Aweer\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1770319942638-a5989632f2ad", alt: "Rows of new cars in many colours parked closely in a large lot", by: "Rob Dean", user: "robhdean" }, caption: "Buyers often search for a specific model, budget or body type before a brand." },
       { t: "h2", text: "Step 1: An inventory-driven website", id: "inventory" },
       {
         t: "p",
@@ -234,6 +241,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Used-car buyers fear hidden problems. Publish inspection reports, clearly state GCC or import specification, explain your warranty and return policy, and show genuine reviews. These details convert visitors and also make your pages more useful to AI assistants answering questions like \"where to buy a reliable used car in Dubai\".",
       },
+      { t: "img", photo: { id: "photo-1561558287-6be7074f77ce", alt: "Man talking with a smiling woman seated in the driver's seat of a car", by: "Viral Vanani", user: "v4vanani" }, caption: "Honest listings, clear prices and real reviews help buyers feel confident enough to visit." },
       { t: "h2", text: "Step 3: Google Business Profile for every showroom", id: "gbp" },
       {
         t: "p",
@@ -244,6 +252,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Short walkaround videos of each car work on TikTok, Instagram and YouTube and on the listing page itself. They answer questions photos cannot and reduce wasted showroom visits.",
       },
+      { t: "img", photo: { id: "photo-1570459724998-1d291147bddd", alt: "Man filming a driver in a classic car with a camera on a stabiliser", by: "Kyle Loftus", user: "kyleloftusstudios" }, caption: "Short walkaround videos let buyers see a car properly before they make the trip." },
       { t: "h2", text: "Step 5: Ads and fast follow-up", id: "ads" },
       {
         t: "p",
@@ -306,6 +315,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "Specialist: \"AC duct cleaning\", \"mattress cleaning\", \"kitchen hood cleaning\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1758598304346-1b01479f681a", alt: "Young woman sitting on a sofa and looking at her smartphone", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Most people looking for a cleaner start with a quick search on their phone." },
       { t: "h2", text: "Step 1: Win the map results", id: "map" },
       {
         t: "p",
@@ -321,6 +331,7 @@ export const INDUSTRY_POSTS: Post[] = [
         title: "Clear prices win",
         text: "Customers compare quickly. A page that shows \"Deep cleaning from AED X for a 1-bedroom apartment\" gets more bookings than one that says \"contact us for a quote\".",
       },
+      { t: "img", photo: { id: "photo-1585417238790-f6d290d6490c", alt: "Hands in blue gloves wiping a white surface with a paper towel", by: "Anton", user: "uniqueton" }, caption: "A dedicated page for each service shows exactly what a deep clean or regular visit includes." },
       { t: "h2", text: "Step 3: Reviews after every job", id: "reviews" },
       {
         t: "p",
@@ -331,6 +342,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Put a WhatsApp button on every page with a pre-filled message, offer online booking if you can, and reply fast. Cleaning customers often contact several companies at once.",
       },
+      { t: "img", photo: { id: "photo-1758273705998-05655eea4635", alt: "Smiling woman holding a smartphone and a bank card on a sofa", by: "Vitaly Gariev", user: "silverkblack" }, caption: "When booking and payment take a minute, fewer customers drift back to the apps." },
       { t: "h2", text: "Step 5: Turn one-off jobs into regular customers", id: "repeat" },
       {
         t: "p",
@@ -390,6 +402,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "Questions to AI assistants such as \"which maid service in Dubai is reliable\"",
         ],
       },
+      { t: "img", photo: { id: "photo-1758874960573-75a9a6ad79b6", alt: "Mother and daughter in aprons baking together at a kitchen counter", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Busy families search for help that frees up time for the things they enjoy at home." },
       { t: "h2", text: "Step 1: Explain what makes you trustworthy", id: "trust" },
       {
         t: "p",
@@ -405,6 +418,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Show hourly rates, minimum hours, whether cleaning materials are included and discounts for regular bookings. Packages such as \"4 hours weekly\" make it easy to choose a recurring plan.",
       },
+      { t: "img", photo: { id: "photo-1560185007-5f0bb1866cab", alt: "Tidy living room with a grey sofa, wooden coffee table and dining area", by: "Francesca Tosolini", user: "fromitaly" }, caption: "Clear packages help families picture the result they are paying for before they book." },
       { t: "h2", text: "Step 3: Local search and reviews", id: "local" },
       {
         t: "p",
@@ -415,6 +429,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Most bookings in this category happen on WhatsApp. Add a button on every page, reply quickly, and use saved replies for prices and availability. Track WhatsApp clicks so you know which pages and campaigns bring bookings. See our guide to [tracking WhatsApp and call leads](/blog/track-whatsapp-call-form-leads-uae).",
       },
+      { t: "img", photo: { id: "photo-1753685724402-e0fe9a7908ec", alt: "Woman lying on a bed smiling at her phone with a dog beside her", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A quick WhatsApp message is often the easiest way for a family to confirm a booking." },
       { t: "h2", text: "Step 5: Focus on retention", id: "retention" },
       {
         t: "p",
@@ -475,6 +490,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "\"door repair carpenter\"",
         ],
       },
+      { t: "img", photo: { id: "photo-1688372199140-cade7ae820fe", alt: "Painter in red overalls rolling yellow paint onto a white wall", by: "Ali Mkumbwa", user: "mkumbwajr" }, caption: "Searches for painters are often urgent and local, so your profile needs to show real work." },
       { t: "h2", text: "Step 1: Google Business Profile with real work", id: "gbp" },
       {
         t: "p",
@@ -485,6 +501,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Create separate pages for apartment painting, villa painting, move-out painting, wardrobes, kitchens, doors and flooring. Explain what is included, the paints or materials you use, how long the job takes and starting prices by size. Customers who understand the price range before they call are easier to convert.",
       },
+      { t: "img", photo: { id: "photo-1713514023762-b3995318dc94", alt: "Kitchen with wooden upper cabinets and white lower drawers", by: "Sanju Pandita", user: "spxclicks" }, caption: "Service pages with clear price guides help homeowners judge whether a project fits their budget." },
       { t: "h2", text: "Step 3: Project galleries", id: "gallery" },
       {
         t: "p",
@@ -500,6 +517,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Ask for a review when the customer is happiest, right after the job is finished. Send the link by WhatsApp. Reply to each review.",
       },
+      { t: "img", photo: { id: "photo-1685022515887-c2a10c137162", alt: "Black and white photo of a carpenter cutting timber in a workshop", by: "Jean-Baptiste D.", user: "jbonunsplash" }, caption: "Asking for a review after every finished job turns good workmanship into visible proof." },
       { t: "h2", text: "Step 5: Quote fast", id: "quote" },
       {
         t: "p",
@@ -559,6 +577,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "Inspiration: \"small living room ideas\", \"balcony furniture ideas\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1758272423130-5bbccae36b11", alt: "Woman sitting on a bed with a laptop and a bank card in hand", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Furniture buyers often compare styles, sizes and prices online long before they visit a store." },
       { t: "h2", text: "Step 1: Category pages that match searches", id: "categories" },
       {
         t: "p",
@@ -574,6 +593,7 @@ export const INDUSTRY_POSTS: Post[] = [
         title: "Delivery details sell",
         text: "\"Delivered and assembled in Dubai within 5 days\" answers a question every buyer has. State delivery areas, times and costs clearly on product pages.",
       },
+      { t: "img", photo: { id: "photo-1544691560-fc2053d97726", alt: "Close view of a wooden chest of drawers with dark metal handles", by: "Julian Hochgesang", user: "julianhochgesang" }, caption: "Detailed product pages answer questions about materials, finish and dimensions before buyers have to ask." },
       { t: "h2", text: "Step 3: Google Shopping", id: "shopping" },
       {
         t: "p",
@@ -584,6 +604,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Each showroom needs its own Google Business Profile with photos, hours and directions. Many online researchers visit before buying. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) explains the setup.",
       },
+      { t: "img", photo: { id: "photo-1791388490382-28d3f51950f0", alt: "Furniture showroom with sofas and armchairs on the floor and on shelves", by: "Sabhyata Sahu", user: "sabbythefreeelf" }, caption: "A showroom that appears in local search gives online researchers a reason to visit in person." },
       { t: "h2", text: "Step 5: Inspiration content", id: "content" },
       {
         t: "p",
@@ -674,6 +695,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Respond to enquiries quickly, offer a tour, and follow up. Track every enquiry from source to tour to enrolment so you know what fills seats. Our [lead tracking guide](/blog/track-whatsapp-call-form-leads-uae) explains the setup.",
       },
+      { t: "img", photo: { id: "photo-1589206946274-929e4da3996b", alt: "Teacher sitting with a young pupil pointing at a colourful workbook", by: "Ronald Felton", user: "ronfel" }, caption: "Parents choose schools on the everyday teaching experience, so show what happens in the classroom." },
       { t: "h2", text: "Nurseries, universities and training providers", id: "others" },
       {
         t: "p",
@@ -742,6 +764,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Your Google Business Profile is often the first thing parents see. Use the exact licensed name, the right category, accurate hours, a pin on the correct building, and plenty of real photos of classrooms, outdoor areas and activities (without children's faces unless you have parental consent). Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers every setting.",
       },
+      { t: "img", photo: { id: "photo-1552028650-a96d3db96bfd", alt: "Young boy holding a woman's hand while walking outdoors", by: "Kelli McClintock", user: "kelli_mcclintock" }, caption: "Most parents want a nursery close to home, which is why local search matters so much." },
       { t: "h2", text: "Step 2: Answer every question on your website", id: "website" },
       {
         t: "p",
@@ -768,6 +791,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Local parents trust other local parents. Ask happy families for Google reviews at natural moments, such as after the first month or at the end of term, and reply to every review warmly and professionally.",
       },
+      { t: "img", photo: { id: "photo-1765314399224-9e8e85df2951", alt: "Two young girls playing with colourful wooden blocks on the floor", by: "Amanda Costelloe", user: "oliveevephoto" }, caption: "Parent reviews describing happy, settled children carry more weight than anything a nursery says itself." },
       { t: "h2", text: "Step 4: Make the tour easy to book", id: "tours" },
       {
         t: "p",
@@ -778,6 +802,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Nurseries enrol throughout the year, but demand usually rises around the start of the academic year and after holidays when families return or relocate. Start local search ads and social campaigns a few weeks before those peaks, targeted to families within a realistic distance.",
       },
+      { t: "img", photo: { id: "photo-1435527173128-983b87201f4d", alt: "Open monthly planner lying on a wooden desk", by: "Eric Rothermel", user: "erothermel" }, caption: "Planning campaigns around the months when families decide helps fill places for each intake." },
       { t: "h2", text: "Step 6: Stay in touch with families on the waiting list", id: "waiting-list" },
       {
         t: "p",
@@ -836,6 +861,7 @@ export const INDUSTRY_POSTS: Post[] = [
           "By recognition: \"accredited universities in UAE\", \"is [university] degree recognised\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1620829813573-7c9e1877706f", alt: "Young man in a dark t-shirt working on a laptop at a table", by: "Kojo Kwarteng", user: "cwojo" }, caption: "Prospective students research programmes online and compare options long before they make contact." },
       { t: "h2", text: "Step 1: A strong page for every programme", id: "programme-pages" },
       {
         t: "p",
@@ -863,6 +889,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "When a student asks an assistant which universities in Dubai offer a particular degree, the answer draws on sources it can find and trust. Clear programme pages, consistent information across education directories and rankings sites, and structured data all help. Our guide to [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains the principles.",
       },
+      { t: "img", photo: { id: "photo-1758270705290-62b6294dd044", alt: "Group of students gathered around a laptop in a lecture room", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Students increasingly ask AI tools for advice, so clear programme information needs to be easy to cite." },
       { t: "h2", text: "Step 3: Campaigns for each audience", id: "audiences" },
       {
         t: "ul",
@@ -881,6 +908,7 @@ export const INDUSTRY_POSTS: Post[] = [
         t: "p",
         text: "Students often enquire with several universities at once. The one that replies quickly, answers questions clearly and helps with next steps usually wins the application. Offer WhatsApp, call-back and virtual counselling, and set a response time target for your admissions team.",
       },
+      { t: "img", photo: { id: "photo-1653669486766-89a4f002ed5b", alt: "Woman talking with a young man across a table with a notebook and phone", by: "The Jopwell Collection", user: "jopwell" }, caption: "Fast, personal follow up helps an enquiry feel like the start of a conversation." },
       { t: "h2", text: "Step 5: Track the full funnel", id: "funnel" },
       {
         t: "p",

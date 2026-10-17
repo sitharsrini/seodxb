@@ -41,6 +41,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Choose accurate categories, add class styles as services, link your timetable and booking page, and upload real photos of the studio, teachers and classes. Keep hours current. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) covers the setup.",
       },
+      { t: "img", photo: { id: "photo-1787647090057-2086ae482fb0", alt: "Three people practising a triangle pose on mats in a bright studio", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Class photos on your Google profile show searchers the space and the atmosphere before they visit." },
       { t: "h2", text: "Step 2: A page for each style and level", id: "pages" },
       {
         t: "p",
@@ -56,6 +57,7 @@ export const HEALTH_POSTS: Post[] = [
         title: "Keep claims realistic",
         text: "Describe how classes feel and what they involve. Avoid saying yoga treats medical conditions, which is restricted in advertising, and encourage students with health concerns to check with their doctor.",
       },
+      { t: "img", photo: { id: "photo-1761034114072-9ec9c3d2fbb2", alt: "Black and white photo of a yoga instructor helping a student in class", by: "Christian Harb", user: "c7arb" }, caption: "Beginners relax when they know a teacher will guide them through each pose." },
       { t: "h2", text: "Step 4: Intro offers that lead to membership", id: "intro" },
       {
         t: "p",
@@ -66,6 +68,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Students come for a class and stay for a teacher and a community. Publish teacher profiles, share community events, workshops and retreats, and post short videos that show the atmosphere.",
       },
+      { t: "img", photo: { id: "photo-1529693662653-9d480530a697", alt: "Group of people meditating cross legged on mats in a yoga hall", by: "Erik Brolin", user: "erik_brolin" }, caption: "A friendly community and familiar teachers are often what keeps members coming back." },
       { t: "h2", text: "Step 6: Reviews and partnerships", id: "reviews" },
       {
         t: "p",
@@ -119,6 +122,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Medical advertising in the UAE is regulated by the health authorities: the Dubai Health Authority, the Department of Health in Abu Dhabi and the Ministry of Health and Prevention. Promotional content generally needs approval, and there are rules on claims, testimonials, before-and-after images and pricing. Build approval into your marketing workflow from the start.",
       },
+      { t: "img", photo: { id: "photo-1758691461990-03b49d969495", alt: "Doctor in a white coat writing notes on a clipboard form", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Every claim on a clinic website should be checked against the advertising rules before it goes live." },
       { t: "h2", text: "How patients search", id: "searches" },
       {
         t: "ul",
@@ -135,6 +139,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Each doctor needs a full profile: licensed title, specialty and subspecialties, qualifications, years of experience, languages, gender, conditions and procedures they focus on, clinic locations, availability and a booking link. Use the exact title issued by the licensing authority. Add Physician structured data.",
       },
+      { t: "img", photo: { id: "photo-1758691462878-6edc3d3da1be", alt: "Doctor in glasses talking with a patient across a desk in a clinic office", by: "Vitaly Gariev", user: "silverkblack" }, caption: "A clear doctor profile answers what patients want to know before they book a first visit." },
       { t: "h2", text: "Step 2: Specialty and service pages", id: "services" },
       {
         t: "p",
@@ -155,6 +160,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Offer online booking, call and WhatsApp options. Track that an appointment request happened and which campaign it came from, but never send patient details or health information to analytics or ad platforms. See our guide to [tracking WhatsApp, call and form leads](/blog/track-whatsapp-call-form-leads-uae).",
       },
+      { t: "img", photo: { id: "photo-1593733925160-6f78dc0be8b6", alt: "Person in a white jumper holding a smartphone with both hands", by: "Kelli McClintock", user: "kelli_mcclintock" }, caption: "Booking should take a few taps on a phone, with tracking that respects patient privacy." },
       { t: "h2", text: "Step 5: Ads within the rules", id: "ads" },
       {
         t: "p",
@@ -212,6 +218,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Your Google Business Profile is the most important dental marketing asset. Use accurate categories, list treatments, show opening hours including evenings and weekends, state if you see emergencies, upload photos of the clinic and team, and add a booking link. Our [Google Business Profile checklist](/blog/google-business-profile-setup-checklist-dubai) explains each setting.",
       },
+      { t: "img", photo: { id: "photo-1509576931792-214960705f8a", alt: "Two hands zooming in on a street map on a smartphone screen", by: "Sebastian Hietsch", user: "s_hietsch" }, caption: "Most new patients compare nearby clinics on a map before they ever open a website." },
       { t: "h2", text: "Step 2: Pages for each treatment", id: "treatments" },
       {
         t: "p",
@@ -227,6 +234,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Patients want to know who will treat them. Show each dentist's licensed title, qualifications, experience, special interests, languages and a friendly photo.",
       },
+      { t: "img", photo: { id: "photo-1777331903190-341a3dd0441b", alt: "Dentist talking with a smiling patient seated in a modern dental chair", by: "Harold Hisona", user: "harold_angus" }, caption: "Profiles that show who the dentist is and how they work help nervous patients choose." },
       { t: "h2", text: "Step 4: Insurance and payment", id: "insurance" },
       {
         t: "p",
@@ -237,6 +245,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Invite patients to leave a review after their visit and reply professionally without discussing their treatment. Recent reviews that mention gentle care, cleanliness and clear explanations are very persuasive for nervous patients.",
       },
+      { t: "img", photo: { id: "photo-1616094620696-15a31bf047ed", alt: "Woman holding a smartphone in both hands at a wooden table", by: "Clay Banks", user: "claybanks" }, caption: "Asking happy patients for a review soon after their visit keeps fresh feedback coming in." },
       { t: "h2", text: "Step 6: Recall and retention", id: "recall" },
       {
         t: "p",
@@ -305,6 +314,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Heart health is a \"Your Money or Your Life\" topic, where search engines and AI tools weigh expertise heavily. Every page about conditions, tests and treatments should be written clearly for patients, reviewed by a cardiologist, and show the reviewer's name, credentials and review date. Avoid giving individual medical advice online.",
       },
+      { t: "img", photo: { id: "photo-1623134915831-9dcb66cf9a8e", alt: "Anatomical model of a human heart on a white surface", by: "Ali Hajiluyi", user: "pixeluyi" }, caption: "Heart health content should be reviewed by a cardiologist so every explanation stays accurate." },
       { t: "h2", text: "Step 2: Pages for each test and service", id: "tests" },
       {
         t: "p",
@@ -315,6 +325,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Show each cardiologist's licensed title, qualifications, subspecialties such as electrophysiology or interventional cardiology, experience, languages and clinics. Add Physician structured data so search engines and AI assistants can connect doctors to your clinic.",
       },
+      { t: "img", photo: { id: "photo-1631217873436-b0fa88e71f0a", alt: "Doctor showing a tablet to an older couple during a consultation", by: "National Cancer Institute", user: "nci" }, caption: "Patients want to know who will read their results and explain them in plain language." },
       { t: "h2", text: "Step 4: Access and insurance", id: "access" },
       {
         t: "p",
@@ -325,6 +336,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Medical advertising in the UAE generally requires approval from the relevant health authority. Keep wording factual, avoid fear-based messages and guarantees, and follow Google and Meta healthcare policies, which prohibit targeting based on personal health conditions. Track appointment requests without sending any health information to ad platforms.",
       },
+      { t: "img", photo: { id: "photo-1755287066058-80c68aaaf0e3", alt: "ECG trace on graph paper beside a pencil and a protractor", by: "Joachim Schnürle", user: "joa70" }, caption: "Ads for heart tests should describe the service plainly, without promising any particular outcome." },
       { t: "h2", text: "Step 6: Referral relationships", id: "referrals" },
       {
         t: "p",
@@ -383,6 +395,7 @@ export const HEALTH_POSTS: Post[] = [
           "Price and trial: \"gym day pass\", \"gym membership price Dubai\", \"free trial\".",
         ],
       },
+      { t: "img", photo: { id: "photo-1529775768124-fb874e73ac7e", alt: "Hand holding a smartphone showing a city map against blurred lights", by: "Enrique Alarcon", user: "qikealarcon" }, caption: "Many people look for a gym close to home or work, so map visibility matters." },
       { t: "h2", text: "Step 1: Google Business Profile", id: "gbp" },
       {
         t: "p",
@@ -393,6 +406,7 @@ export const HEALTH_POSTS: Post[] = [
         t: "p",
         text: "Create a page for each class type, personal training, special facilities such as a pool, sauna or ladies-only area, and each branch. Explain what to expect, the level, the schedule and how to book. Coach profiles with qualifications and specialities help people choose a trainer.",
       },
+      { t: "img", photo: { id: "photo-1758875569256-f37c438cac65", alt: "Coach watching a woman lift a barbell in a bright gym", by: "Vitaly Gariev", user: "silverkblack" }, caption: "Pages that introduce coaches and show real sessions help visitors picture themselves training there." },
       { t: "h2", text: "Step 3: Clear membership options", id: "membership" },
       {
         t: "p",
@@ -408,6 +422,7 @@ export const HEALTH_POSTS: Post[] = [
         title: "Careful with transformation claims",
         text: "Meta and Google restrict weight-loss claims and before-and-after images in ads. Focus on coaching, community, facilities and how members feel, and only share member stories with written consent.",
       },
+      { t: "img", photo: { id: "photo-1738523686619-1b3b5d2405ee", alt: "Gym staff member chatting with a woman on the gym floor", by: "Sergio Kian", user: "sergiokian" }, caption: "A friendly welcome and a quick follow up call can turn a trial visit into a membership." },
       { t: "h2", text: "Step 5: Time campaigns to motivation peaks", id: "timing" },
       {
         t: "p",
