@@ -192,7 +192,13 @@ export default {
     if (url.hostname.startsWith("www.")) {
       url.hostname = url.hostname.slice(4);
       url.protocol = "https:";
-      return Response.redirect(url.toString(), 301);
+      return new Response(null, {
+        status: 301,
+        headers: {
+          "Location": url.toString(),
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        },
+      });
     }
 
     if (url.pathname.startsWith("/_private")) {

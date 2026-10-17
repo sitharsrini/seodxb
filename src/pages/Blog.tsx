@@ -18,6 +18,24 @@ export default function Blog() {
           who want to make better decisions, not just read about trends.
         </p>
       </PageHero>
+      <section className="bg-sand">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <div className="grid gap-6 sm:grid-cols-3 text-sm leading-relaxed text-ink-soft">
+            <div>
+              <p className="font-semibold text-ink">SEO and AI search</p>
+              <p className="mt-2">How to rank in Google, appear in AI-generated answers, build topical authority and earn citations that bring in leads month after month.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-ink">Performance advertising</p>
+              <p className="mt-2">Getting the most from Google Ads, Meta and LinkedIn: targeting, creative, bid strategy and tracking set up to show cost per lead, not just clicks.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-ink">Industry-specific playbooks</p>
+              <p className="mt-2">Deep guides for real estate, schools, clinics, hotels, law firms, business setup consultants and more. Each one covers the buyer journey specific to that sector in the UAE.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter articles by topic">
           {["All", ...categories].map((c) => {
