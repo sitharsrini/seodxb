@@ -21,7 +21,7 @@ function Bullet({ strong = false }: { strong?: boolean }) {
 export default function Services() {
   return (
     <>
-      <PageHero eyebrow="Services" title={<>Strategy first, then the channels that <span className="text-gradient">earn their budget</span></>}>
+      <PageHero lead="Marketing and SEO services in Dubai" title={<>Strategy first, then the channels that <span className="text-gradient">earn their budget</span></>}>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
           You can hire us for a single service, but most clients get the best results when one team owns the plan and the
           execution. Every engagement starts with the same question: what will bring qualified enquiries at a cost that

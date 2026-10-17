@@ -157,17 +157,32 @@ export function Layout({ path, children }: { path: string; children: ReactNode }
   );
 }
 
-export function PageHero({ eyebrow, title, children }: { eyebrow: string; title: ReactNode; children?: ReactNode }) {
+// The page's keyword-led heading (its <title> without the brand suffix), shown as the small line above a hero headline.
+export const pageHeading = (title: string) => title.replace(/\s*\|\s*SEODXB.*$/, "");
+
+// With `lead`, the small line above the headline is part of the H1, so the H1 carries the page's keyword
+// as well as the headline. A hidden ": " keeps the two readable as one heading.
+export function PageHero({ eyebrow, title, lead, children }: { eyebrow?: string; title: ReactNode; lead?: string; children?: ReactNode }) {
   return (
     <section className="relative overflow-hidden border-b border-line">
       <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div className="blob -left-24 -top-24 h-72 w-72 bg-brand/15" aria-hidden="true" />
       <div className="blob -right-16 top-10 h-64 w-64 bg-mint/70" style={{ animationDelay: "-6s" }} aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24" data-reveal-now>
-        <p className="eyebrow" data-reveal>{eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl" data-reveal style={delay(1)}>
-          {title}
-        </h1>
+        {lead ? (
+          <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            <span className="eyebrow font-sans leading-snug" data-reveal>{lead}</span>
+            <span className="sr-only">: </span>
+            <span className="mt-4 block" data-reveal style={delay(1)}>{title}</span>
+          </h1>
+        ) : (
+          <>
+            <p className="eyebrow" data-reveal>{eyebrow}</p>
+            <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl" data-reveal style={delay(1)}>
+              {title}
+            </h1>
+          </>
+        )}
         {children}
       </div>
     </section>

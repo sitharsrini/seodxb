@@ -57,13 +57,12 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.3fr_1fr] md:py-28" data-reveal-now>
           <div>
-            <p className="eyebrow" data-reveal>Marketing consultancy · Dubai</p>
-            <h1
-              className="mt-5 font-display text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl"
-              data-reveal
-              style={delay(1)}
-            >
-              Marketing planned around <span className="text-gradient">revenue</span>, not activity.
+            <h1 className="font-display text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
+              <span className="eyebrow font-sans leading-snug tracking-[0.18em]" data-reveal>Marketing consultancy &amp; SEO agency in Dubai</span>
+              <span className="sr-only">: </span>
+              <span className="mt-5 block" data-reveal style={delay(1)}>
+                Marketing planned around <span className="text-gradient">revenue</span>, not activity.
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
               SEODXB helps UAE businesses decide where to compete, then runs the strategy, search, ads, website and content

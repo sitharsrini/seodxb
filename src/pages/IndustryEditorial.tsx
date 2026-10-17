@@ -6,6 +6,7 @@ import { delay } from "../motion";
 import { Enquire, FaqList, OtherIndustries, TrustBand } from "./IndustryParts";
 import { INDUSTRY_PHOTOS } from "../images";
 import { PhotoFigure } from "../components/Photo";
+import { pageHeading } from "../components/Layout";
 
 const serviceName = (id: string) => SERVICES.find((s) => s.id === id)?.name ?? id;
 
@@ -24,12 +25,13 @@ export default function IndustryEditorial({ industry }: { industry: Industry }) 
         <div className="blob -right-24 -top-24 h-80 w-80 bg-mint/70" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 md:py-24 lg:grid-cols-[1.15fr_1fr]" data-reveal-now>
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand" data-reveal>
-              <span className="h-1.5 w-1.5 rounded-full bg-mint-strong" aria-hidden="true" />
-              {industry.name} marketing · UAE
-            </p>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl" data-reveal style={delay(1)}>
-              {industry.heroTitle}
+            <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 font-sans text-xs font-semibold uppercase leading-snug tracking-[0.16em] text-brand" data-reveal>
+                <span className="h-1.5 w-1.5 flex-none rounded-full bg-mint-strong" aria-hidden="true" />
+                {pageHeading(industry.title)}
+              </span>
+              <span className="sr-only">: </span>
+              <span className="mt-5 block" data-reveal style={delay(1)}>{industry.heroTitle}</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
               {industry.heroIntro}

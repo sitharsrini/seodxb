@@ -869,7 +869,7 @@ INDUSTRIES.push(
     name: "Healing & Holistic Therapists",
     title: "Holistic Therapist Marketing & SEO in the UAE | SEODXB",
     description:
-      "Trust-led marketing for reiki, sound healing, ayurveda, acupuncture and holistic therapists: local SEO, clear content and responsible ads.",
+      "Trust-led marketing for reiki, sound healing, ayurveda, acupuncture and holistic therapists in the UAE: local SEO, clear content and responsible ads.",
     heroTitle: "Reach clients who are looking for what you offer",
     heroIntro:
       "People searching for reiki, sound healing, breathwork, ayurveda or acupuncture want to understand the practice and trust the practitioner before they book. Clear, honest content and a strong local presence help the right clients find you.",
@@ -953,7 +953,7 @@ INDUSTRIES.push(
     name: "Mental Health Therapists",
     title: "Therapist & Psychologist Marketing in UAE | SEODXB",
     description:
-      "Ethical, privacy-first SEO and AI search visibility for therapists, psychologists, counsellors and clinics in the UAE.",
+      "Therapist marketing in the UAE: ethical, privacy-first SEO and AI search visibility for therapists, psychologists, counsellors and mental health clinics.",
     heroTitle: "Help the people who need you find you",
     heroIntro:
       "People looking for a therapist often search privately, late at night, unsure where to start. Clear, compassionate and ethical marketing helps them find a licensed professional who fits, and take the first step.",

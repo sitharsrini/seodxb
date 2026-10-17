@@ -114,7 +114,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "performance-advertising",
     title: "Google Ads & Meta Ads Agency in Dubai | SEODXB",
     description:
-      "Google, Meta, LinkedIn and TikTok ads managed against cost per qualified lead, with conversion tracking for forms, calls and WhatsApp.",
+      "Google Ads and Meta Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
     heroTitle: "Ads managed against cost per lead, not clicks",
     heroIntro:
       "Paid media is the fastest way to fill a pipeline, and the fastest way to waste money. We set up tracking first, launch focused campaigns, and scale only what produces qualified enquiries at a cost you can afford.",

@@ -6,14 +6,16 @@ import { POSTS } from "../blog/posts";
 export default function Industries() {
   return (
     <>
-      <PageHero eyebrow="Industries" title={<>Marketing built around <span className="text-gradient">how your customers buy</span></>}>
+      <PageHero lead="Industry marketing and SEO in Dubai and the UAE" title={<>Marketing built around <span className="text-gradient">how your customers buy</span></>}>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
           A family choosing a school, a developer shortlisting contractors and a tenant booking a move-out clean all search
           differently. We plan SEO, AI search, ads and content around the way buyers in your industry decide.
         </p>
       </PageHero>
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <p className="eyebrow" data-reveal>{INDUSTRIES.length} industries</p>
+        <h2 className="mt-3 font-display text-3xl font-semibold" data-reveal style={delay(1)}>Choose your industry</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {INDUSTRIES.map((ind, i) => (
             <a
               key={ind.slug}
@@ -22,7 +24,7 @@ export default function Industries() {
               data-reveal
               style={delay(i, 80)}
             >
-              <h2 className="font-display text-xl font-semibold transition-colors group-hover:text-brand">{ind.name}</h2>
+              <h3 className="font-display text-xl font-semibold transition-colors group-hover:text-brand">{ind.name}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{ind.heroTitle}</p>
               <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand">
                 See how we help

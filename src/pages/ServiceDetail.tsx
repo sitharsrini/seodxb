@@ -1,4 +1,4 @@
-import { PageHero } from "../components/Layout";
+import { PageHero, pageHeading } from "../components/Layout";
 import { Faq } from "../components/Faq";
 import { ContactForm } from "./Contact";
 import { SERVICE_PAGES, servicePath, type ServicePage } from "../service-pages";
@@ -21,7 +21,7 @@ export default function ServiceDetail({ page }: { page: ServicePage }) {
 
   return (
     <>
-      <PageHero eyebrow="Services · Dubai & UAE" title={page.heroTitle}>
+      <PageHero lead={pageHeading(page.title)} title={page.heroTitle}>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>{page.heroIntro}</p>
         <div className="mt-8 flex flex-wrap gap-3" data-reveal style={delay(3)}>
           <a href="#enquire" className="btn-primary px-6 py-3">Get a free review</a>

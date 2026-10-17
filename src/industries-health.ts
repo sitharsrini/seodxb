@@ -90,7 +90,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
     name: "Hospitals & Clinics",
     title: "Hospital & Clinic Marketing and SEO in UAE | SEODXB",
     description:
-      "Compliant healthcare SEO, doctor profiles, AI search visibility and appointment tracking for hospitals and clinics in the UAE.",
+      "Healthcare marketing for UAE hospitals and clinics: compliant SEO, doctor profiles, AI search visibility and appointment tracking patients can trust.",
     heroTitle: "Help patients find the right doctor, and book",
     heroIntro:
       "Patients search by symptom, specialty, doctor, insurance and location, and increasingly ask AI assistants. Hospitals and clinics that answer clearly and make booking easy earn their trust.",
@@ -175,7 +175,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
     name: "Dental Clinics",
     title: "SEO & Marketing for Dental Clinics in Dubai and the UAE | SEODXB",
     description:
-      "Attract more new patients for check-ups, implants, aligners and cosmetic dentistry. Compliant dental SEO, Google Maps, dentist profiles and booking.",
+      "More new patients for check-ups, implants, aligners and cosmetic dentistry. Compliant dental SEO, Google Maps and dentist profiles for Dubai clinics.",
     heroTitle: "More new patients, and patients who stay",
     heroIntro:
       "Most people choose a dentist close to home or work, often in a hurry when something hurts. Clinics that appear first in local search, look trustworthy and make booking easy win those patients, and keep them for years.",

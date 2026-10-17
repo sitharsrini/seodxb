@@ -94,8 +94,8 @@ export const REALESTATE_POSTS: Post[] = [
   },
   {
     slug: "dubai-community-pages-real-estate-seo",
-    title: "Community Pages That Rank: A Practical SEO Guide for Dubai Brokers",
-    seoTitle: "Community Pages That Rank: SEO Guide for Dubai Brokers",
+    title: "Real Estate Community Pages That Rank: An SEO Guide for Dubai Brokers",
+    seoTitle: "Real Estate Community Pages: SEO Guide for Dubai Brokers",
     description:
       "How Dubai brokers can build community and listing pages that rank for searches like JVC apartments for rent or Dubai Marina apartments for sale.",
     category: "Industry Guides",
