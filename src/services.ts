@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     name: "SEO, AEO & GEO",
     short: "Be found on Google, in answer boxes and inside AI tools like ChatGPT and Gemini.",
     intro:
-      "Your customers search in three places now. They use Google. They use answer boxes at the top of results. And they ask AI tools like ChatGPT. We build one programme that gets you found in all three. We start with the technical basics, then create pages that match what buyers are actually searching for.",
+      "Your customers now research in three places: Google results, direct answer boxes, and AI assistants like ChatGPT and Gemini. We build one search programme that covers all three, starting with the technical basics and the pages that match real buying intent.",
     includes: [
       "Technical SEO audit and fixes",
       "Keyword and intent research mapped to your services",
@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
     name: "Performance Advertising",
     short: "Google, Meta, LinkedIn and TikTok campaigns managed against cost per lead, not clicks.",
     intro:
-      "Paid ads can fill your pipeline fast. They can also waste your money fast. So we set up proper tracking first. Then we start small. We only spend more on campaigns that bring qualified leads at a cost that makes sense for your business.",
+      "Paid media is the fastest way to test demand and fill a pipeline. It is also the fastest way to waste money. We set up tracking first, launch small, and scale only what produces qualified enquiries at a cost you can afford.",
     includes: [
       "Conversion tracking and analytics setup",
       "Google Search, Performance Max and YouTube",

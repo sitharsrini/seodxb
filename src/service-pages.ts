@@ -117,7 +117,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       "Google Ads and Meta Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
     heroTitle: "Ads managed against cost per lead, not clicks",
     heroIntro:
-      "Paid ads are the fastest way to get leads. They are also the fastest way to waste money. We set up tracking first, launch focused campaigns, and only spend more on what brings qualified enquiries at a cost you can afford.",
+      "Paid media is the fastest way to test demand and fill a pipeline. It is also the fastest way to waste money. We set up tracking first, launch focused campaigns, and scale only what produces qualified enquiries at a cost you can afford.",
     answer:
       "Performance advertising means running paid campaigns on Google, Meta, LinkedIn and TikTok and judging them against real business results, like cost per qualified lead and revenue, not just clicks or impressions. SEODXB sets up tracking for forms, calls and WhatsApp before spending any money. Then we test, improve and grow campaigns for UAE businesses based on actual enquiry data.",
     signs: [
