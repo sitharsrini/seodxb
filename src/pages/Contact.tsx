@@ -121,8 +121,8 @@ export default function Contact() {
             Book a <span className="text-gradient">free consultation</span>
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
-            Tell us a little about your business. We reply within one working day to arrange a 30-minute call. No
-            obligation, and you will leave with at least one thing you can act on.
+            Tell us a bit about your business. We reply within one working day to set up a 30-minute call. There is no
+            obligation. You will leave the call with at least one thing you can act on right away.
           </p>
           <dl className="mt-10 space-y-4 text-sm">
             {[
@@ -164,7 +164,7 @@ export default function Contact() {
           },
           {
             title: "Your first 30 days, if we work together",
-            body: "An honest audit of your current marketing and tracking, a clear view of which channels can pay back in your market, and a 90-day plan with budget, priorities and KPIs.",
+            body: "We audit your current marketing and tracking honestly. We show you which channels can pay back in your market. You get a 90-day plan with a budget, priorities, and clear targets.",
           },
         ].map((step, i) => (
           <li key={step.title} className="rounded-2xl border border-line bg-white p-6" data-reveal style={delay(i + 2)}>

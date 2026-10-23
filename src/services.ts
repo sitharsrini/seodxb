@@ -14,7 +14,7 @@ export const SERVICES: Service[] = [
     name: "Marketing Strategy",
     short: "A clear plan for who you sell to, what you say and which channels earn their budget.",
     intro:
-      "Most marketing problems are strategy problems in disguise. Before spending on ads or content, we define your ideal customer, your position against competitors and the few channels most likely to pay back in your market.",
+      "Most marketing problems are actually strategy problems. Before you spend money on ads or content, we find your ideal customer. We check what your competitors are doing. Then we pick the channels most likely to bring you a return in your market.",
     includes: [
       "Market and competitor review for the UAE and your target regions",
       "Ideal customer profile and buying triggers",
@@ -22,7 +22,7 @@ export const SERVICES: Service[] = [
       "Channel plan with budget split and 90-day priorities",
       "KPI framework linking marketing activity to leads and revenue",
     ],
-    bestFor: "Businesses launching, entering the UAE, or spending on marketing without a clear return.",
+    bestFor: "Businesses that are just starting, entering the UAE, or spending on marketing without seeing a clear return.",
     measure: ["Cost per qualified lead", "Pipeline created", "Channel payback period"],
   },
   {
@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     name: "SEO, AEO & GEO",
     short: "Be found on Google, in answer boxes and inside AI tools like ChatGPT and Gemini.",
     intro:
-      "Buyers now research in three places: Google results, direct answers and AI assistants. We build one search programme that covers all three, starting with the technical basics and the pages that match real buying intent.",
+      "Your customers search in three places now. They use Google. They use answer boxes at the top of results. And they ask AI tools like ChatGPT. We build one programme that gets you found in all three. We start with the technical basics, then create pages that match what buyers are actually searching for.",
     includes: [
       "Technical SEO audit and fixes",
       "Keyword and intent research mapped to your services",
@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
     name: "Performance Advertising",
     short: "Google, Meta, LinkedIn and TikTok campaigns managed against cost per lead, not clicks.",
     intro:
-      "Paid media is the fastest way to test demand and fill a pipeline, and the fastest way to waste money. We set up tracking first, launch small, and scale only what produces qualified enquiries at a cost you can afford.",
+      "Paid ads can fill your pipeline fast. They can also waste your money fast. So we set up proper tracking first. Then we start small. We only spend more on campaigns that bring qualified leads at a cost that makes sense for your business.",
     includes: [
       "Conversion tracking and analytics setup",
       "Google Search, Performance Max and YouTube",
@@ -54,7 +54,7 @@ export const SERVICES: Service[] = [
       "Ad creative and landing page testing",
       "Weekly optimisation and monthly budget reviews",
     ],
-    bestFor: "Businesses that need enquiries this quarter while longer-term channels build up.",
+    bestFor: "Businesses that need leads now, while their SEO and content build up over time.",
     measure: ["Cost per qualified lead", "Return on ad spend", "Lead-to-sale rate by campaign"],
   },
   {
@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [
     name: "Websites, Content & Social",
     short: "Fast websites, useful content and consistent social presence that support every other channel.",
     intro:
-      "Every channel sends people somewhere. We build and improve websites that load fast and turn visitors into enquiries, then produce the content and social posts that keep your brand credible between sales conversations.",
+      "Every ad and search result sends people to your website. So the website has to work. We build and improve websites that load fast and turn visitors into enquiries. We also create the content and social posts that keep your brand visible between sales.",
     includes: [
       "Website design and development, or conversion fixes to your current site",
       "Landing pages for campaigns",

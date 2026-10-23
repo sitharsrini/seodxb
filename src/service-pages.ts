@@ -26,7 +26,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     heroIntro:
       "Before you spend on ads, SEO or content, you need to know who you are selling to, why they should choose you and which channels can realistically pay back. That is what a marketing strategy is for.",
     answer:
-      "A marketing strategy defines who your ideal customers are, how you are positioned against competitors, which channels will reach those customers at a cost you can afford, how much to spend and how success will be measured. SEODXB builds strategies for UAE businesses around revenue targets rather than activity, then helps execute them across search, ads, websites and content.",
+      "A marketing strategy tells you who your ideal customers are. It shows how you compare to competitors, which channels will reach those customers at a cost you can afford, how much to spend, and how you will measure success. SEODXB builds strategies for UAE businesses around real revenue targets, not just activity. We then help you run the plan across search, ads, websites and content.",
     signs: [
       "You spend on marketing every month but cannot say which channel brings customers.",
       "You are launching, entering the UAE or adding a new service.",
@@ -117,9 +117,9 @@ export const SERVICE_PAGES: ServicePage[] = [
       "Google Ads and Meta Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
     heroTitle: "Ads managed against cost per lead, not clicks",
     heroIntro:
-      "Paid media is the fastest way to fill a pipeline, and the fastest way to waste money. We set up tracking first, launch focused campaigns, and scale only what produces qualified enquiries at a cost you can afford.",
+      "Paid ads are the fastest way to get leads. They are also the fastest way to waste money. We set up tracking first, launch focused campaigns, and only spend more on what brings qualified enquiries at a cost you can afford.",
     answer:
-      "Performance advertising means running paid campaigns on platforms such as Google, Meta, LinkedIn and TikTok and managing them against business results like cost per qualified lead and revenue, rather than clicks or impressions. SEODXB sets up reliable tracking for forms, calls and WhatsApp before spending, then tests, optimises and scales campaigns for UAE businesses based on real enquiry data.",
+      "Performance advertising means running paid campaigns on Google, Meta, LinkedIn and TikTok and judging them against real business results, like cost per qualified lead and revenue, not just clicks or impressions. SEODXB sets up tracking for forms, calls and WhatsApp before spending any money. Then we test, improve and grow campaigns for UAE businesses based on actual enquiry data.",
     signs: [
       "Your ad platforms report conversions, but your sales team disagrees.",
       "You are not sure how many enquiries come from WhatsApp or calls.",
@@ -163,7 +163,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       "Fast, conversion-focused websites, content that earns trust and consistent social media management for businesses in Dubai and the UAE.",
     heroTitle: "Websites, content and social that turn attention into enquiries",
     heroIntro:
-      "Every channel sends people somewhere. We build websites that load fast and convert, content that answers what buyers ask, and social media that keeps your brand credible between sales conversations.",
+      "Every ad and search result sends people to your website. So the website has to work. We build websites that load fast and convert, content that answers real buyer questions, and social media that keeps your brand visible and trusted.",
     answer:
       "A business website should load quickly on mobile, explain clearly what you do and for whom, show proof that you can be trusted and make enquiring easy, including by WhatsApp. SEODXB designs and improves websites for UAE businesses, writes content that ranks and answers real buyer questions, and manages social media so every channel supports search and advertising.",
     signs: [

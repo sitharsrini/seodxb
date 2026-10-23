@@ -23,9 +23,9 @@ export default function Services() {
     <>
       <PageHero lead="Marketing and SEO services in Dubai" title={<>Strategy first, then the channels that <span className="text-gradient">earn their budget</span></>}>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
-          You can hire us for a single service, but most clients get the best results when one team owns the plan and the
-          execution. Every engagement starts with the same question: what will bring qualified enquiries at a cost that
-          makes sense?
+          You can hire us for just one service. But most clients get better results when one team handles both the plan
+          and the work. Every project starts with the same question: what will bring qualified leads at a cost that makes
+          sense for your business?
         </p>
         <nav className="mt-8 flex flex-wrap gap-2" aria-label="Services on this page" data-reveal style={delay(3)}>
           {SERVICES.map((s) => (
