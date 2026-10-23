@@ -5,10 +5,10 @@ import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
 
 const PRINCIPLES = [
-  { title: "Advice before invoices", body: "If a channel will not work for your business, we say so, even when it means a smaller engagement." },
-  { title: "One plan, one team", body: "Strategy, search, ads, website and content are planned together so no channel works against another." },
-  { title: "Numbers you can check", body: "You own your ad accounts, analytics and website. Everything we report on, you can verify yourself." },
-  { title: "Local knowledge", body: "We work in the UAE market every day: its search behaviour, its platforms and how buyers here decide." },
+  { title: "Advice before invoices", body: "If a channel is not right for your business, we will tell you. Even if that means a smaller project for us." },
+  { title: "One plan, one team", body: "We plan your strategy, search, ads, website, and content together. Every channel supports the others instead of working against them." },
+  { title: "Numbers you can check", body: "You own your ad accounts, analytics, and website. Everything we report on, you can verify yourself." },
+  { title: "Local knowledge", body: "We work in the UAE market every day. We know how people search here, which platforms they use, and how buyers make decisions." },
 ];
 
 export default function About() {
@@ -22,17 +22,18 @@ export default function About() {
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.2fr_1fr]">
         <div className="space-y-5 text-lg leading-relaxed text-ink-soft">
           <p data-reveal>
-            SEODXB started as a search agency. Working with businesses across the UAE, we kept seeing the same pattern:
-            good search work held back by unclear positioning, untracked ad spend and websites that did not convert.
+            SEODXB started as a search agency. While working with businesses across the UAE, we kept noticing the same
+            problem. Good search work was being held back by unclear positioning, untracked ad spend, and websites that
+            did not convert visitors into leads.
           </p>
           <p data-reveal style={delay(1)}>
-            So we became a marketing consultancy. We still do the hands-on work in search, ads, websites and content, but
-            every engagement now starts with strategy: who you sell to, what makes you the better choice and which channels
-            deserve your budget.
+            So we became a marketing consultancy. We still do the hands-on work in search, ads, websites, and content.
+            But now every project starts with strategy. We figure out who you are selling to, what makes you the better
+            choice, and which channels are worth your money.
           </p>
           <p data-reveal style={delay(2)}>
-            Our clients are mostly established small and mid-sized businesses in professional services, real estate,
-            healthcare, hospitality and ecommerce who want a senior partner rather than another supplier.
+            Our clients are mostly small and mid-sized businesses in professional services, real estate, healthcare,
+            hospitality, and ecommerce. They want a senior partner who takes responsibility, not just another supplier.
           </p>
         </div>
         <aside className="gradient-shift relative overflow-hidden rounded-3xl p-8 text-white shadow-2xl shadow-brand/20" data-reveal="scale" style={delay(1)}>
@@ -44,8 +45,8 @@ export default function About() {
             </p>
             <p className="mt-4 font-display text-2xl font-semibold leading-snug">SEODXB is powered by Listi</p>
             <p className="mt-4 text-sm leading-relaxed text-white/80">
-              Listi is a UAE business platform that helps companies get listed, found and contacted. SEODXB brings the
-              consultancy and hands-on marketing that help those businesses grow further.
+              Listi is a UAE business platform that helps companies get listed, found, and contacted online. SEODXB adds
+              the consultancy and hands-on marketing work that helps those businesses grow.
             </p>
             <a href={LISTI_URL} target="_blank" rel="noopener" className="btn-ghost-light mt-6 text-sm">
               Visit Listi
@@ -63,10 +64,10 @@ export default function About() {
             <p className="eyebrow">Who writes our guides</p>
             <h2 id="author-title" className="mt-2 font-display text-2xl font-semibold">{AUTHOR.name}</h2>
             <p className="mt-3 leading-relaxed text-ink-soft">
-              {AUTHOR.name} writes the SEODXB blog: practical guides on marketing strategy, SEO, AEO and GEO, performance
-              advertising and lead tracking for businesses in the UAE. {AUTHOR.name} is also the author of the Listonics guides
-              on office IT. Every guide opens with a short answer, shows when it was published and updated, and ends with
-              answers to common questions.
+              {AUTHOR.name} writes the SEODXB blog. The guides cover marketing strategy, SEO, AI search, paid advertising,
+              and lead tracking for businesses in the UAE. {AUTHOR.name} also writes the Listonics guides on office IT.
+              Every guide starts with a short answer, shows the publish and update date, and ends with answers to
+              common questions.
             </p>
             <a href="/blog" className="mt-4 inline-block text-sm font-semibold text-brand underline underline-offset-4">Read the guides</a>
           </div>

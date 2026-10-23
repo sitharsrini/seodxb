@@ -11,23 +11,23 @@ import { CORE_FAQS } from "../core-faqs";
 const PROBLEMS = [
   {
     title: "Spending without knowing what works",
-    body: "Ads, an agency retainer, a freelancer for social. Money goes out every month, but nobody can say which channel brought the last ten customers.",
+    body: "You pay for ads, an agency, and a freelancer every month. But no one can tell you which one actually brought in your last ten customers.",
   },
   {
     title: "Invisible where buyers search",
-    body: "Competitors show up on Google, in the map results and in ChatGPT answers. You only show up when someone already knows your name.",
+    body: "Your competitors show up on Google, Google Maps, and even in ChatGPT answers. You only appear when someone already knows your name.",
   },
   {
     title: "Too many suppliers, no plan",
-    body: "Separate people for the website, ads and content, each optimising their own piece. The result is activity, not growth.",
+    body: "Different people handle your website, ads, and content. Each one works on their own part. The result is a lot of activity but not much growth.",
   },
 ];
 
 const STEPS = [
-  { n: "01", title: "Diagnose", body: "We review your market, competitors, website, tracking and current spend, then show you where the gaps and quick wins are." },
-  { n: "02", title: "Plan", body: "A 90-day plan with priorities, budget per channel and the KPIs we will be judged on. Agreed before any spend." },
-  { n: "03", title: "Execute", body: "One team runs strategy, search, ads, website and content together, so every channel supports the others." },
-  { n: "04", title: "Measure", body: "Monthly reporting on leads, cost per lead and revenue impact. What works gets more budget. What does not gets cut." },
+  { n: "01", title: "Diagnose", body: "We look at your market, competitors, website, tracking, and current spending. Then we show you where the gaps are and what can be improved quickly." },
+  { n: "02", title: "Plan", body: "We build a 90-day plan with clear priorities, a budget for each channel, and the KPIs we will be measured on. You agree to it before any money is spent." },
+  { n: "03", title: "Execute", body: "One team handles your strategy, search, ads, website, and content. Everything works together so no channel pulls in a different direction." },
+  { n: "04", title: "Measure", body: "Every month we report on leads, cost per lead, and revenue impact. What is working gets more budget. What is not working gets cut." },
 ];
 
 const CHANNELS = ["Google Search", "Google Maps", "ChatGPT", "Gemini", "Perplexity", "Meta Ads", "Instagram", "LinkedIn", "TikTok", "YouTube", "Email", "Your website"];
@@ -65,8 +65,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>
-              SEODXB helps UAE businesses decide where to compete, then runs the strategy, search, ads, website and content
-              needed to turn that decision into a steady flow of qualified enquiries.
+              SEODXB helps businesses in the UAE decide where to focus. Then we run the strategy, search, ads, website,
+              and content needed to bring in a steady flow of qualified leads.
             </p>
             <p className="mt-5 text-base text-ink" data-reveal style={delay(3)}>
               One team for your <RotatingWord words={["strategy", "SEO & AI search", "Google Ads", "website", "content", "social media"]} />
