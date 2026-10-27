@@ -46,8 +46,8 @@ const ORG = {
   contactPoint: { "@type": "ContactPoint", telephone: "+971521551198", contactType: "customer service", areaServed: "AE", availableLanguage: ["English", "Arabic"] },
 };
 const WEBSITE_REF = { "@type": "WebSite", "@id": WEBSITE_ID, name: "SEODXB", url: SITE_URL };
-// Short reference for lists that would otherwise repeat the full ORG object dozens of times on one page.
-const ORG_REF = { "@type": "Organization", "@id": ORG_ID, name: "SEODXB" };
+// Bare @id reference to the ORG node on the same page; a typed stub would be validated as an incomplete Organization.
+const ORG_REF = { "@id": ORG_ID };
 
 
 const breadcrumbs = (items: { name: string; path: string }[]) => ({
