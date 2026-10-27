@@ -1,6 +1,6 @@
 // Build-only: every route with its title, description and structured data.
 import { POSTS, postPath, wordCount } from "./blog/posts";
-import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, type Route } from "./site";
+import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, CONTACT, type Route } from "./site";
 import { INDUSTRIES, industryPath } from "./industries";
 import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
@@ -36,7 +36,15 @@ const authorLd = () => ({
 });
 
 // Full organisation details live in index.html (on every page) under the same @id.
-const ORG = { "@type": "Organization", "@id": ORG_ID, name: "SEODXB", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png`, width: 512, height: 512 } };
+const ORG = {
+  "@type": "Organization",
+  "@id": ORG_ID,
+  name: "SEODXB",
+  url: SITE_URL,
+  logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png`, width: 512, height: 512 },
+  sameAs: [CONTACT.linkedin],
+  contactPoint: { "@type": "ContactPoint", telephone: "+971521551198", contactType: "customer service", areaServed: "AE", availableLanguage: ["English", "Arabic"] },
+};
 const WEBSITE_REF = { "@type": "WebSite", "@id": WEBSITE_ID, name: "SEODXB", url: SITE_URL };
 
 
@@ -305,7 +313,7 @@ const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => ({
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "What is included",
-        itemListElement: sp.deliverables.map((d) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: d.title, description: d.body } })),
+        itemListElement: sp.deliverables.map((d, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "Service", name: d.title, description: d.body } })),
       },
       url: SITE_URL + servicePath(sp),
     },
