@@ -7,6 +7,7 @@ import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
 import { SERVICES } from "../services";
+import { PAGES_UPDATED } from "../site";
 
 const check = (
   <span className="mt-0.5 grid h-5 w-5 flex-none place-items-center rounded-full bg-brand text-white" aria-hidden="true">
@@ -120,7 +121,7 @@ export default function ServiceDetail({ page }: { page: ServicePage }) {
         </section>
       )}
 
-      <Faq faqs={page.faqs} />
+      <Faq faqs={page.faqs} reviewed={PAGES_UPDATED} />
 
       <section id="enquire" className="relative scroll-mt-20 overflow-hidden bg-navy">
         <div className="blob -left-24 top-0 h-80 w-80 bg-brand/40" aria-hidden="true" />

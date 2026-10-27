@@ -4,6 +4,8 @@ import { delay } from "../motion";
 import { POSTS } from "../blog/posts";
 import { AuthorBox } from "../components/Trust";
 import { INDUSTRY_REVIEWED } from "../sources";
+import { Faq } from "../components/Faq";
+import { CORE_FAQS } from "../core-faqs";
 
 export default function Industries() {
   return (
@@ -58,6 +60,7 @@ export default function Industries() {
           </div>
         </div>
       </section>
+      <Faq faqs={CORE_FAQS["/industries"]} />
       <CtaBand />
     </>
   );

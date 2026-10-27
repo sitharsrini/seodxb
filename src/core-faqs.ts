@@ -23,6 +23,24 @@ export const CORE_FAQS: Record<string, FaqItem[]> = {
       a: "Book a free 30-minute consultation through the contact page, WhatsApp or phone. We review your market and current marketing and tell you plainly what we would do first.",
     },
   ],
+  "/industries": [
+    {
+      q: "Do you work with industries that are not listed here?",
+      a: "Yes. The industries on this page are the ones we have written detailed guides for. The same approach works for most business-to-business and consumer services in the UAE. Tell us what you sell and who buys it, and we will say honestly whether we can help.",
+    },
+    {
+      q: "Why does marketing need to be different for each industry?",
+      a: "Buyers in each industry search, compare and decide in different ways. A patient reads reviews and checks a clinic's licence. A developer shortlists contractors from a prequalification list. A tenant books a cleaner from Google Maps on their phone. The channels, content and tracking have to match how your buyers actually behave.",
+    },
+    {
+      q: "Which industries get the best results from SEO and AI search?",
+      a: "Industries where customers research before they contact a business: healthcare, professional services, education, property, home services and travel. Products with short decision cycles usually depend more on paid ads and social media, with search supporting them.",
+    },
+    {
+      q: "Do you follow the advertising rules for regulated industries?",
+      a: "Yes. Healthcare advertising in the UAE needs approval from the relevant health authority, and property advertising in Dubai needs a Trakheesi permit. We plan campaigns within those rules from the start, so approved ads are not paused later.",
+    },
+  ],
   "/services": [
     {
       q: "Can I hire SEODXB for just one service?",

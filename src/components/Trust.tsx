@@ -42,3 +42,13 @@ export function AuthorBox({ reviewed, className = "" }: { reviewed: string; clas
     </aside>
   );
 }
+
+export function ReviewedLine({ reviewed, className = "" }: { reviewed: string; className?: string }) {
+  return (
+    <p className={`text-sm text-ink-soft ${className}`}>
+      Page reviewed by{" "}
+      <a href="/about#author" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>. Last updated{" "}
+      <time dateTime={reviewed}>{formatDate(reviewed)}</time>.
+    </p>
+  );
+}

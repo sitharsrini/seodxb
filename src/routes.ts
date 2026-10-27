@@ -1,6 +1,6 @@
 // Build-only: every route with its title, description and structured data.
 import { POSTS, postPath, wordCount } from "./blog/posts";
-import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, CONTACT, type Route } from "./site";
+import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, CONTACT, PAGES_UPDATED, type Route } from "./site";
 import { INDUSTRIES, industryPath } from "./industries";
 import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
@@ -62,8 +62,26 @@ const faqLd = (faqs: { q: string; a: string }[]) => ({
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 });
 
+// Page node carrying the review date and reviewer shown in the byline on the core and service pages.
+const pageLd = (r: Pick<Route, "path" | "title" | "description">, type: string, extra: object = {}) => ({
+  "@context": "https://schema.org",
+  "@type": type,
+  "@id": SITE_URL + r.path,
+  url: SITE_URL + r.path,
+  name: r.title,
+  description: r.description,
+  isPartOf: WEBSITE_REF,
+  inLanguage: "en",
+  dateModified: PAGES_UPDATED,
+  lastReviewed: PAGES_UPDATED,
+  reviewedBy: authorLd(),
+  publisher: ORG,
+  ...extra,
+});
+const withPageLd = (r: Route, type: string, extra: object = {}): Route => ({ ...r, jsonLd: [pageLd(r, type, extra), ...(r.jsonLd ?? [])] });
+
 const PAGE_ROUTES: Route[] = [
-  {
+  withPageLd({
     path: "/",
     file: "index.html",
     title: "Marketing Consultancy & SEO Agency in Dubai | SEODXB",
@@ -83,8 +101,8 @@ const PAGE_ROUTES: Route[] = [
       },
       faqLd(CORE_FAQS["/"]),
     ],
-  },
-  {
+  }, "WebPage"),
+  withPageLd({
     path: "/services",
     file: "services.html",
     title: "Marketing & SEO Services in Dubai | SEODXB",
@@ -100,30 +118,22 @@ const PAGE_ROUTES: Route[] = [
       faqLd(CORE_FAQS["/services"]),
       breadcrumbs([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]),
     ],
-  },
-  {
+  }, "WebPage"),
+  withPageLd({
     path: "/results",
     file: "results.html",
     title: "How We Deliver Results | SEODXB",
     description:
       "How SEODXB plans, runs and measures marketing work: clear KPIs per channel, monthly reporting and decisions tied to leads and revenue.",
     jsonLd: [faqLd(CORE_FAQS["/results"])],
-  },
-  {
+  }, "WebPage"),
+  withPageLd({
     path: "/about",
     file: "about.html",
     title: "About SEODXB | Dubai Marketing Consultancy",
     description:
       "SEODXB is a Dubai marketing consultancy, powered by Listi, helping UAE businesses turn search, ads and content into a steady flow of enquiries.",
     jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "@id": `${SITE_URL}/about`,
-        url: `${SITE_URL}/about`,
-        isPartOf: WEBSITE_REF,
-        mainEntity: ORG,
-      },
       {
         "@context": "https://schema.org",
         ...authorLd(),
@@ -133,18 +143,15 @@ const PAGE_ROUTES: Route[] = [
       },
       faqLd(CORE_FAQS["/about"]),
     ],
-  },
-  {
+  }, "AboutPage", { mainEntity: ORG }),
+  withPageLd({
     path: "/contact",
     file: "contact.html",
     title: "Contact SEODXB | Book a Marketing Consultation",
     description:
       "Tell us about your business and goals. We reply within one working day with a clear next step. Call, WhatsApp or send an enquiry.",
-    jsonLd: [
-      { "@context": "https://schema.org", "@type": "ContactPage", "@id": `${SITE_URL}/contact`, url: `${SITE_URL}/contact`, isPartOf: WEBSITE_REF, about: ORG },
-      faqLd(CORE_FAQS["/contact"]),
-    ],
-  },
+    jsonLd: [faqLd(CORE_FAQS["/contact"])],
+  }, "ContactPage", { about: ORG }),
 ];
 
 const BLOG_ROUTES: Route[] = [
@@ -256,6 +263,7 @@ const INDUSTRY_ROUTES: Route[] = [
         name: "Industries served by SEODXB",
         itemListElement: INDUSTRIES.map((ind, i) => ({ "@type": "ListItem", position: i + 1, name: ind.name, url: SITE_URL + industryPath(ind) })),
       },
+      faqLd(CORE_FAQS["/industries"]),
       breadcrumbs([{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }]),
     ],
   },
@@ -319,7 +327,7 @@ const ADMIN_ROUTE: Route = {
   hidden: true,
 };
 
-const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => ({
+const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => withPageLd({
   path: servicePath(sp),
   file: `services/${sp.slug}.html`,
   title: sp.title,
@@ -349,7 +357,7 @@ const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => ({
       { name: sp.title.replace(/ \| SEODXB$/, ""), path: servicePath(sp) },
     ]),
   ],
-}));
+}, "WebPage", { about: { "@id": `${SITE_URL}${servicePath(sp)}#service` } }));
 
 // Keep the brand suffix only when the full title still fits in search results.
 const fitTitle = (t: string) => (t.length > 60 && t.endsWith(" | SEODXB") ? t.slice(0, -" | SEODXB".length) : t);

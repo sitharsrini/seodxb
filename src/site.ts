@@ -4,7 +4,7 @@ export const SITE_URL = "https://seodxb.com";
 
 // Date the core pages (home, services, about, contact, results) last changed in a meaningful way.
 // Used as their sitemap lastmod, so update it when those pages are edited.
-export const PAGES_UPDATED = "2026-10-01";
+export const PAGES_UPDATED = "2026-10-27";
 
 // Stable IDs that connect the structured data on every page into one graph.
 export const ORG_ID = `${SITE_URL}/#organization`;

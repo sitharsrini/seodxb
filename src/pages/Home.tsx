@@ -7,6 +7,7 @@ import { INDUSTRIES, industryPath } from "../industries";
 import { SERVICE_PAGES, servicePath } from "../service-pages";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
+import { PAGES_UPDATED } from "../site";
 
 const PROBLEMS = [
   {
@@ -255,7 +256,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Faq faqs={CORE_FAQS["/"]} />
+      <Faq faqs={CORE_FAQS["/"]} reviewed={PAGES_UPDATED} />
 
       <CtaBand />
     </>

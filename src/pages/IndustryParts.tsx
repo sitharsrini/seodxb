@@ -10,7 +10,7 @@ export function FaqList({ faqs }: { faqs: Industry["faqs"] }) {
       {faqs.map((f) => (
         <details key={f.q} className="group rounded-xl border border-line bg-white p-5 open:shadow-lg open:shadow-brand/5">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-ink">
-            {f.q}
+            <h3>{f.q}</h3>
             <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-sand text-brand transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
           </summary>
           <p className="mt-3 text-ink-soft">{f.a}</p>

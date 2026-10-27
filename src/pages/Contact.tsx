@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { CONTACT } from "../site";
+import { CONTACT, PAGES_UPDATED } from "../site";
 import { SERVICES } from "../services";
 import { delay } from "../motion";
 import { Faq } from "../components/Faq";
@@ -181,7 +181,7 @@ export default function Contact() {
         across Dubai, Abu Dhabi, Sharjah and the northern emirates, and with international companies entering the UAE.
       </p>
     </section>
-    <Faq faqs={CORE_FAQS["/contact"]} />
+    <Faq faqs={CORE_FAQS["/contact"]} reviewed={PAGES_UPDATED} />
     </>
   );
 }

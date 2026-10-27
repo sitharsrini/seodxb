@@ -2,6 +2,7 @@ import { CtaBand, PageHero } from "../components/Layout";
 import { delay } from "../motion";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
+import { PAGES_UPDATED } from "../site";
 
 const KPIS = [
   { channel: "Strategy", kpis: "Cost per qualified lead, pipeline value, payback period per channel" },
@@ -94,7 +95,7 @@ export default function Results() {
         </div>
       </section>
 
-      <Faq faqs={CORE_FAQS["/results"]} />
+      <Faq faqs={CORE_FAQS["/results"]} reviewed={PAGES_UPDATED} />
 
       <CtaBand />
     </>

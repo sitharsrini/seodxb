@@ -4,6 +4,7 @@ import { SERVICE_PAGES, servicePath } from "../service-pages";
 import { delay } from "../motion";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
+import { PAGES_UPDATED } from "../site";
 
 function Bullet({ strong = false }: { strong?: boolean }) {
   return (
@@ -85,7 +86,7 @@ export default function Services() {
         </section>
       ))}
 
-      <Faq faqs={CORE_FAQS["/services"]} />
+      <Faq faqs={CORE_FAQS["/services"]} reviewed={PAGES_UPDATED} />
 
       <CtaBand />
     </>
