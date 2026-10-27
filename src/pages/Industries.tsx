@@ -2,6 +2,8 @@ import { CtaBand, PageHero } from "../components/Layout";
 import { INDUSTRIES, industryPath } from "../industries";
 import { delay } from "../motion";
 import { POSTS } from "../blog/posts";
+import { AuthorBox } from "../components/Trust";
+import { INDUSTRY_REVIEWED } from "../sources";
 
 export default function Industries() {
   return (
@@ -51,6 +53,9 @@ export default function Industries() {
                 </li>
               ))}
           </ul>
+          <div className="mt-12 max-w-2xl" data-reveal>
+            <AuthorBox reviewed={INDUSTRY_REVIEWED} />
+          </div>
         </div>
       </section>
       <CtaBand />

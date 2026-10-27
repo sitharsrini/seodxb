@@ -46,6 +46,8 @@ const ORG = {
   contactPoint: { "@type": "ContactPoint", telephone: "+971521551198", contactType: "customer service", areaServed: "AE", availableLanguage: ["English", "Arabic"] },
 };
 const WEBSITE_REF = { "@type": "WebSite", "@id": WEBSITE_ID, name: "SEODXB", url: SITE_URL };
+// Short reference for lists that would otherwise repeat the full ORG object dozens of times on one page.
+const ORG_REF = { "@type": "Organization", "@id": ORG_ID, name: "SEODXB" };
 
 
 const breadcrumbs = (items: { name: string; path: string }[]) => ({
@@ -164,10 +166,14 @@ const BLOG_ROUTES: Route[] = [
         publisher: ORG,
         blogPost: POSTS.map((p) => ({
           "@type": "BlogPosting",
+          "@id": `${SITE_URL}${postPath(p)}#article`,
           headline: p.title,
           url: SITE_URL + postPath(p),
+          image: `${SITE_URL}/og/${p.slug}.jpg`,
           datePublished: p.date,
+          dateModified: p.updated,
           author: authorLd(),
+          publisher: ORG_REF,
         })),
       },
       breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
@@ -217,17 +223,36 @@ const BLOG_ROUTES: Route[] = [
   })),
 ];
 
+const INDUSTRIES_TITLE = "Industries We Serve | SEODXB Marketing Consultancy Dubai";
+const INDUSTRIES_DESCRIPTION = `SEO, AI search, ads and websites for ${INDUSTRIES.length} UAE industries: healthcare, home services, professional services, education, property, tourism and more.`;
+
 const INDUSTRY_ROUTES: Route[] = [
   {
     path: "/industries",
     file: "industries.html",
-    title: "Industries We Serve | SEODXB Marketing Consultancy Dubai",
-    description:
-      `SEO, AI search, ads and websites for ${INDUSTRIES.length} UAE industries: healthcare, home services, professional services, education, property, tourism and more.`,
+    title: INDUSTRIES_TITLE,
+    description: INDUSTRIES_DESCRIPTION,
     jsonLd: [
       {
         "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": `${SITE_URL}/industries`,
+        url: `${SITE_URL}/industries`,
+        name: INDUSTRIES_TITLE,
+        description: INDUSTRIES_DESCRIPTION,
+        isPartOf: WEBSITE_REF,
+        inLanguage: "en",
+        dateModified: INDUSTRY_REVIEWED,
+        lastReviewed: INDUSTRY_REVIEWED,
+        author: authorLd(),
+        reviewedBy: authorLd(),
+        publisher: ORG,
+        mainEntity: { "@id": `${SITE_URL}/industries#list` },
+      },
+      {
+        "@context": "https://schema.org",
         "@type": "ItemList",
+        "@id": `${SITE_URL}/industries#list`,
         name: "Industries served by SEODXB",
         itemListElement: INDUSTRIES.map((ind, i) => ({ "@type": "ListItem", position: i + 1, name: ind.name, url: SITE_URL + industryPath(ind) })),
       },
