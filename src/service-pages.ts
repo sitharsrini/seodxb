@@ -204,3 +204,8 @@ export const SERVICE_PAGES: ServicePage[] = [
 ];
 
 export const servicePath = (s: { slug: string }) => `/services/${s.slug}`;
+
+export const servicePathById = (id: string) => {
+  const sp = SERVICE_PAGES.find((s) => s.id === id);
+  return sp ? servicePath(sp) : `/services#${id}`;
+};

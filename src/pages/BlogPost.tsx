@@ -9,6 +9,18 @@ import { postSources } from "../citations";
 import { AuthorBox, Sources } from "../components/Trust";
 import { POST_PHOTOS } from "../images";
 import { PhotoFigure } from "../components/Photo";
+import { SERVICES } from "../services";
+import { servicePathById } from "../service-pages";
+import { INDUSTRIES, industryPath } from "../industries";
+
+const CATEGORY_SERVICE: Record<string, string> = {
+  Strategy: "strategy",
+  "SEO & AI Search": "search",
+  "Local SEO": "search",
+  "Performance Ads": "ads",
+  "Websites & Content": "web-content-social",
+  "Industry Guides": "search",
+};
 
 function ReadingProgress() {
   const [p, setP] = useState(0);
@@ -99,6 +111,8 @@ export default function BlogPost({ post }: { post: Post }) {
     ...others.filter((p) => linked.has(`/blog/${p.slug}`)),
     ...others.filter((p) => !linked.has(`/blog/${p.slug}`)).sort((a, b) => overlap(b) - overlap(a)),
   ].slice(0, 2);
+  const service = SERVICES.find((s) => s.id === CATEGORY_SERVICE[post.category]);
+  const industry = INDUSTRIES.find((i) => i.postSlug === post.slug || i.extraPostSlugs?.includes(post.slug));
 
   return (
     <>
@@ -166,6 +180,25 @@ export default function BlogPost({ post }: { post: Post }) {
             </section>
 
             {post.body.map(renderBlock)}
+
+            {(service || industry) && (
+              <aside className="mt-12 rounded-2xl border border-line bg-white p-6" aria-label="Related services">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Where this fits</p>
+                <ul className="mt-3 space-y-2">
+                  {service && (
+                    <li>
+                      Need help with this? See our{" "}
+                      <a href={servicePathById(service.id)} className="font-medium text-brand underline underline-offset-4">{service.name}</a> service.
+                    </li>
+                  )}
+                  {industry && (
+                    <li>
+                      <a href={industryPath(industry)} className="font-medium text-brand underline underline-offset-4">Marketing and SEO for {industry.name.toLowerCase()} in the UAE</a>
+                    </li>
+                  )}
+                </ul>
+              </aside>
+            )}
 
             <section className="mt-14" aria-labelledby="faq">
               <h2 id="faq" className="scroll-mt-24 font-display text-2xl font-semibold text-ink sm:text-3xl">Frequently asked questions</h2>

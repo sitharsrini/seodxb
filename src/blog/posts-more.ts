@@ -123,7 +123,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Local visibility is part of our [SEO, AEO and GEO service](/services#search). If your profile has been neglected or you are not sure who controls it, [get in touch](/contact) and we will review it with you.",
+        text: "Local visibility is part of our [SEO, AEO and GEO service](/services/seo-aeo-geo). If your profile has been neglected or you are not sure who controls it, [get in touch](/contact) and we will review it with you.",
       },
     ],
     faqs: [
@@ -224,7 +224,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Working through this calculation with owners is a normal part of our [marketing strategy service](/services#strategy). If you would like a second opinion on your numbers, [book a consultation](/contact).",
+        text: "Working through this calculation with owners is a normal part of our [marketing strategy service](/services/marketing-strategy). If you would like a second opinion on your numbers, [book a consultation](/contact).",
       },
     ],
     faqs: [
@@ -332,7 +332,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "We run both channels under one plan through our [SEO](/services#search) and [performance advertising](/services#ads) services. If you are weighing up where to start, [talk to us](/contact) and we will give you a straight answer for your situation.",
+        text: "We run both channels under one plan through our [SEO](/services/seo-aeo-geo) and [performance advertising](/services/performance-advertising) services. If you are weighing up where to start, [talk to us](/contact) and we will give you a straight answer for your situation.",
       },
     ],
     faqs: [
@@ -444,7 +444,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Bilingual structure and Arabic search are part of our [SEO service](/services#search), and we build or fix bilingual sites through our [website service](/services#web-content-social). If your Arabic pages are not pulling their weight, [ask us for an audit](/contact).",
+        text: "Bilingual structure and Arabic search are part of our [SEO service](/services/seo-aeo-geo), and we build or fix bilingual sites through our [website service](/services/websites-content-social). If your Arabic pages are not pulling their weight, [ask us for an audit](/contact).",
       },
     ],
     faqs: [
@@ -559,7 +559,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Improving conversion is part of our [website, content and social service](/services#web-content-social), and it is usually the first thing we look at before increasing any ad budget. If your site has visitors but no enquiries, [send us the address](/contact) and we will tell you what we see.",
+        text: "Improving conversion is part of our [website, content and social service](/services/websites-content-social), and it is usually the first thing we look at before increasing any ad budget. If your site has visitors but no enquiries, [send us the address](/contact) and we will tell you what we see.",
       },
     ],
     faqs: [

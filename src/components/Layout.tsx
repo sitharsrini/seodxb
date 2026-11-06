@@ -1,6 +1,8 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { CONTACT, LISTI_URL, NAV } from "../site";
 import { delay, useMotionEffects } from "../motion";
+import { SERVICES } from "../services";
+import { SERVICE_PAGES, servicePath } from "../service-pages";
 
 function Logo() {
   return (
@@ -100,7 +102,7 @@ function Footer() {
     <footer className="relative overflow-hidden bg-navy text-white/75">
       <div className="h-1 bg-gradient-to-r from-brand via-mint-strong to-brand" aria-hidden="true" />
       <div className="blob -right-32 -top-32 h-80 w-80 bg-brand/40" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div>
           <p className="font-display text-2xl font-semibold text-white">SEODXB</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed">
@@ -115,6 +117,16 @@ function Footer() {
             <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint-strong" aria-hidden="true" />
             Powered by <span className="font-semibold">Listi</span>
           </a>
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-white">Services</p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {SERVICE_PAGES.map((sp) => (
+              <li key={sp.id}>
+                <a href={servicePath(sp)} className="transition hover:pl-1 hover:text-mint">{SERVICES.find((s) => s.id === sp.id)?.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <p className="text-sm font-semibold text-white">Pages</p>

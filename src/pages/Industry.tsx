@@ -3,6 +3,7 @@ import { type Industry as IndustryData } from "../industries";
 import { Enquire, FaqList, OtherIndustries, TrustBand } from "./IndustryParts";
 import IndustryEditorial from "./IndustryEditorial";
 import { SERVICES } from "../services";
+import { servicePathById } from "../service-pages";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
@@ -84,7 +85,7 @@ export default function Industry({ industry }: { industry: IndustryData }) {
           {industry.plan.map((p, i) => (
             <div key={p.service} className="spotlight rounded-2xl border border-line bg-white p-7" data-reveal style={delay(i + 1, 110)}>
               <h3 className="font-display text-xl font-semibold">
-                <a href={`/services#${p.service}`} className="hover:text-brand">{serviceName(p.service)}</a>
+                <a href={servicePathById(p.service)} className="hover:text-brand">{serviceName(p.service)}</a>
               </h3>
               <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-soft">
                 {p.points.map((pt) => (

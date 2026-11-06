@@ -285,7 +285,7 @@ const FIRST_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "AI search visibility is part of our [SEO, AEO and GEO service](/services#search). If you want an outside view of where you stand today, [book a consultation](/contact).",
+        text: "AI search visibility is part of our [SEO, AEO and GEO service](/services/seo-aeo-geo). If you want an outside view of where you stand today, [book a consultation](/contact).",
       },
     ],
     faqs: [
@@ -408,7 +408,7 @@ const FIRST_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Tracking setup is part of our [performance advertising service](/services#ads), and it is always the first step. If you are unsure whether your current tracking is telling the truth, [talk to us](/contact).",
+        text: "Tracking setup is part of our [performance advertising service](/services/performance-advertising), and it is always the first step. If you are unsure whether your current tracking is telling the truth, [talk to us](/contact).",
       },
     ],
     faqs: [

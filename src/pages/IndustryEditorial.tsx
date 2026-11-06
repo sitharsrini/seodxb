@@ -1,5 +1,6 @@
 import { type Industry } from "../industries";
 import { SERVICES } from "../services";
+import { servicePathById } from "../service-pages";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
@@ -106,7 +107,7 @@ export default function IndustryEditorial({ industry }: { industry: Industry }) 
                 </span>
                 <div className="rounded-2xl border border-line bg-white p-6">
                   <h3 className="font-display text-xl font-semibold">
-                    <a href={`/services#${p.service}`} className="hover:text-brand">{serviceName(p.service)}</a>
+                    <a href={servicePathById(p.service)} className="hover:text-brand">{serviceName(p.service)}</a>
                   </h3>
                   <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-ink-soft md:grid-cols-3">
                     {p.points.map((pt) => (
