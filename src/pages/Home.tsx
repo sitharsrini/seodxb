@@ -59,7 +59,7 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.3fr_1fr] md:py-28" data-reveal-now>
           <div>
             <h1 className="font-display text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="eyebrow font-sans leading-snug tracking-[0.18em]" data-reveal>Marketing consultancy &amp; SEO agency in Dubai</span>
+              <span className="eyebrow font-sans leading-snug tracking-[0.18em]" data-reveal>Marketing agency &amp; consultancy in Dubai</span>
               <span className="sr-only">: </span>
               <span className="mt-5 block" data-reveal style={delay(1)}>
                 Marketing planned around <span className="text-gradient">revenue</span>, not activity.

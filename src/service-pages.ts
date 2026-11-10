@@ -19,9 +19,9 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "strategy",
     slug: "marketing-strategy",
-    title: "Marketing Strategy Consultant in Dubai | SEODXB",
+    title: "Marketing Consultant in Dubai for Growth Strategy | SEODXB",
     description:
-      "A marketing strategy built around revenue: positioning, ideal customer, channel plan, budget and KPIs for businesses in Dubai and the UAE.",
+      "Work with a marketing consultant in Dubai: positioning, ideal customer, channel plan, budget and KPIs, all built around revenue.",
     heroTitle: "Marketing strategy that tells you where to spend, and where not to",
     heroIntro:
       "Before you spend on ads, SEO or content, you need to know who you are selling to, why they should choose you and which channels can realistically pay back. That is what a marketing strategy is for.",
@@ -65,7 +65,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "search",
     slug: "seo-aeo-geo",
-    title: "SEO, AEO & GEO Agency in Dubai | SEODXB",
+    title: "SEO Agency in Dubai for Google and AI Search | SEODXB",
     description:
       "SEO services in Dubai that cover Google rankings, answer boxes and AI search visibility in ChatGPT, Gemini and Google AI Overviews.",
     heroTitle: "Be found on Google, in answers and inside AI tools",
@@ -112,9 +112,9 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "ads",
     slug: "performance-advertising",
-    title: "Google Ads & Meta Ads Agency in Dubai | SEODXB",
+    title: "PPC Agency in Dubai for Google Ads and Meta Ads | SEODXB",
     description:
-      "Google Ads and Meta Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
+      "PPC and Google Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
     heroTitle: "Ads managed against cost per lead, not clicks",
     heroIntro:
       "Paid media is the fastest way to test demand and fill a pipeline. It is also the fastest way to waste money. We set up tracking first, launch focused campaigns, and scale only what produces qualified enquiries at a cost you can afford.",
@@ -158,7 +158,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "web-content-social",
     slug: "websites-content-social",
-    title: "Website Design, Content & Social Media in Dubai | SEODXB",
+    title: "Website Design & Content Marketing Agency in Dubai | SEODXB",
     description:
       "Fast, conversion-focused websites, content that earns trust and consistent social media management for businesses in Dubai and the UAE.",
     heroTitle: "Websites, content and social that turn attention into enquiries",

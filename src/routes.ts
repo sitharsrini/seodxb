@@ -84,7 +84,7 @@ const PAGE_ROUTES: Route[] = [
   withPageLd({
     path: "/",
     file: "index.html",
-    title: "Marketing Consultancy & SEO Agency in Dubai | SEODXB",
+    title: "Marketing Agency & Consultancy in Dubai | SEODXB",
     description:
       "Dubai marketing consultancy for strategy, SEO and AI search, performance ads, websites, content and social. Plans built around revenue, not vanity metrics.",
     jsonLd: [
@@ -105,9 +105,9 @@ const PAGE_ROUTES: Route[] = [
   withPageLd({
     path: "/services",
     file: "services.html",
-    title: "Marketing & SEO Services in Dubai | SEODXB",
+    title: "Digital Marketing Services in Dubai | SEODXB",
     description:
-      "Marketing strategy, SEO, AEO and GEO, Google and Meta ads, websites, content and social media management for growing businesses in the UAE.",
+      "Digital marketing services in Dubai: strategy, SEO, AEO and GEO, Google and Meta ads, websites, content and social media for UAE businesses.",
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -158,7 +158,7 @@ const BLOG_ROUTES: Route[] = [
   {
     path: "/blog",
     file: "blog.html",
-    title: "Marketing Insights Blog | SEODXB Dubai",
+    title: "Digital Marketing & SEO Blog for UAE Businesses | SEODXB",
     description:
       "Practical guides on marketing strategy, SEO and AI search, performance ads and lead tracking for businesses in Dubai and the UAE.",
     jsonLd: [

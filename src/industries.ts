@@ -22,7 +22,7 @@ export const INDUSTRIES: Industry[] = [
   {
     slug: "real-estate",
     name: "Real Estate Brokers",
-    title: "Real Estate Broker Marketing & SEO in Dubai | SEODXB",
+    title: "Real Estate Marketing in Dubai for Brokers | SEODXB",
     description:
       "Buyer, investor and tenant leads beyond the portals. SEO, community pages, compliant ads and AI search visibility for Dubai real estate brokers.",
     heroTitle: "Property leads you own, not leads you rent from the portals",

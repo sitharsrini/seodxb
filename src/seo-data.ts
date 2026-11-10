@@ -196,9 +196,9 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
     ]
   },
   "/services/marketing-strategy": {
-    "main": "marketing strategy consultant dubai",
+    "main": "marketing consultant dubai",
     "secondary": [
-      "marketing consultant dubai",
+      "marketing strategy consultant dubai",
       "marketing strategy agency dubai"
     ]
   },
@@ -210,9 +210,9 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
     ]
   },
   "/services/performance-advertising": {
-    "main": "google ads agency dubai",
+    "main": "ppc agency dubai",
     "secondary": [
-      "ppc agency dubai",
+      "google ads agency dubai",
       "meta ads agency dubai"
     ]
   },
