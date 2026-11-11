@@ -1,5 +1,6 @@
 // Renders the glossy 3D objects used on the site (public/3d/*.webp) with three.js in headless Chromium.
-// Needs Playwright installed globally. Run: node scripts/render-3d.mjs
+// Needs Playwright installed globally and three.js (not a site dependency): npm i --no-save three
+// Run: node scripts/render-3d.mjs
 import { spawn, execSync } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
