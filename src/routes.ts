@@ -6,6 +6,7 @@ import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
 import { citationLd, industrySources, postSources } from "./citations";
 import { INDUSTRY_REVIEWED } from "./sources";
+import { PUBLISHED } from "./published";
 import { INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl, photographerUrl, type Photo } from "./images";
 import type { Post } from "./blog/types";
 
@@ -72,6 +73,7 @@ const pageLd = (r: Pick<Route, "path" | "title" | "description">, type: string, 
   description: r.description,
   isPartOf: WEBSITE_REF,
   inLanguage: "en",
+  datePublished: PUBLISHED[r.path] ?? PAGES_UPDATED,
   dateModified: PAGES_UPDATED,
   lastReviewed: PAGES_UPDATED,
   reviewedBy: authorLd(),
@@ -154,6 +156,8 @@ const PAGE_ROUTES: Route[] = [
   }, "ContactPage", { about: ORG }),
 ];
 
+const latestPost = POSTS.reduce((a, p) => (p.updated > a ? p.updated : a), "");
+
 const BLOG_ROUTES: Route[] = [
   {
     path: "/blog",
@@ -170,6 +174,8 @@ const BLOG_ROUTES: Route[] = [
         url: `${SITE_URL}/blog`,
         description: "Practical guides on marketing strategy, SEO and AI search, performance ads and lead tracking for businesses in Dubai and the UAE.",
         inLanguage: "en",
+        datePublished: PUBLISHED["/blog"],
+        dateModified: latestPost,
         publisher: ORG,
         blogPost: POSTS.map((p) => ({
           "@type": "BlogPosting",
@@ -249,6 +255,7 @@ const INDUSTRY_ROUTES: Route[] = [
         description: INDUSTRIES_DESCRIPTION,
         isPartOf: WEBSITE_REF,
         inLanguage: "en",
+        datePublished: PUBLISHED["/industries"],
         dateModified: INDUSTRY_REVIEWED,
         lastReviewed: INDUSTRY_REVIEWED,
         author: authorLd(),
@@ -296,6 +303,7 @@ const INDUSTRY_ROUTES: Route[] = [
         about: { "@id": `${SITE_URL}${industryPath(ind)}#service` },
         description: ind.description,
         inLanguage: "en",
+        datePublished: PUBLISHED[industryPath(ind)] ?? INDUSTRY_REVIEWED,
         dateModified: INDUSTRY_REVIEWED,
         lastReviewed: INDUSTRY_REVIEWED,
         author: authorLd(),
@@ -363,8 +371,17 @@ const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => withPageLd({
 // Keep the brand suffix only when the full title still fits in search results.
 const fitTitle = (t: string) => (t.length > 60 && t.endsWith(" | SEODXB") ? t.slice(0, -" | SEODXB".length) : t);
 
+const datesFor = (r: Route): Pick<Route, "published" | "modified"> => {
+  if (r.hidden) return {};
+  const post = POSTS.find((p) => postPath(p) === r.path);
+  if (post) return { published: post.date, modified: post.updated };
+  const modified = r.path.startsWith("/industries") ? INDUSTRY_REVIEWED : r.path === "/blog" ? latestPost : PAGES_UPDATED;
+  return { published: PUBLISHED[r.path] ?? modified, modified };
+};
+
 export const ROUTES: Route[] = [...PAGE_ROUTES, ...SERVICE_ROUTES, ...INDUSTRY_ROUTES, ...BLOG_ROUTES, ADMIN_ROUTE].map((r) => ({
   ...r,
   title: fitTitle(r.title),
+  ...datesFor(r),
 }));
 

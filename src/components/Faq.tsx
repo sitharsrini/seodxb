@@ -1,7 +1,7 @@
 import { delay } from "../motion";
 import { ReviewedLine } from "./Trust";
 
-export function Faq({ faqs, title = "Frequently asked questions", reviewed }: { faqs: { q: string; a: string }[]; title?: string; reviewed?: string }) {
+export function Faq({ faqs, title = "Frequently asked questions", reviewed, published }: { faqs: { q: string; a: string }[]; title?: string; reviewed?: string; published?: string }) {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6" aria-labelledby="faq-title">
       <h2 id="faq-title" className="font-display text-3xl font-semibold" data-reveal>
@@ -23,7 +23,7 @@ export function Faq({ faqs, title = "Frequently asked questions", reviewed }: { 
           </details>
         ))}
       </div>
-      {reviewed && <ReviewedLine reviewed={reviewed} className="mt-8" />}
+      {reviewed && <ReviewedLine reviewed={reviewed} published={published} className="mt-8" />}
     </section>
   );
 }

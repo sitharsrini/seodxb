@@ -1,5 +1,6 @@
 import { CtaBand, PageHero } from "../components/Layout";
 import { AUTHOR, LISTI_URL, PAGES_UPDATED } from "../site";
+import { PUBLISHED } from "../published";
 import { delay } from "../motion";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
@@ -89,7 +90,7 @@ export default function About() {
         </div>
       </section>
 
-      <Faq faqs={CORE_FAQS["/about"]} reviewed={PAGES_UPDATED} />
+      <Faq faqs={CORE_FAQS["/about"]} reviewed={PAGES_UPDATED} published={PUBLISHED["/about"]} />
 
       <CtaBand />
     </>

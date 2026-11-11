@@ -9,6 +9,7 @@ import { SERVICE_PAGES, servicePathById } from "../service-pages";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
 import { PAGES_UPDATED } from "../site";
+import { PUBLISHED } from "../published";
 import { ArrowUpRight, FanStack, PosterArt, ScrollWords, SpinRing, type RingItem } from "../components/fx";
 
 const industryLink = (slug: string) => {
@@ -433,7 +434,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Faq faqs={CORE_FAQS["/"]} reviewed={PAGES_UPDATED} />
+      <Faq faqs={CORE_FAQS["/"]} reviewed={PAGES_UPDATED} published={PUBLISHED["/"]} />
 
       <CtaBand />
     </>

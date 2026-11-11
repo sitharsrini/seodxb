@@ -6,7 +6,7 @@ const root = path.resolve(import.meta.dirname, "..");
 const out = path.join(root, "dist/public");
 const serverDir = path.join(root, "dist/server");
 
-type Route = { path: string; file: string; title: string; description: string; ogType?: string; image?: string; jsonLd?: object[]; hidden?: boolean };
+type Route = { path: string; file: string; title: string; description: string; ogType?: string; image?: string; jsonLd?: object[]; hidden?: boolean; published?: string; modified?: string };
 type Post = { slug: string; title: string; description: string; category: string; date: string; updated: string; answer: string; keywords: string[]; faqs: { q: string; a: string }[]; body: { t: string; photo?: Photo }[] };
 type Service = { id: string; name: string; short: string };
 type Industry = { slug: string; name: string; answer: string };
@@ -55,7 +55,7 @@ for (const r of ROUTES) {
     .replace(/(<meta property="og:url" content=")[^"]*"/, (_, a) => `${a}${url}"`)
     .replace(/(<meta property="og:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
     .replace(/(<meta name="twitter:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
-    .replace("</head>", () => `${r.hidden ? '<meta name="robots" content="noindex, nofollow" />\n    ' : ""}${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
+    .replace("</head>", () => `${r.hidden ? '<meta name="robots" content="noindex, nofollow" />\n    ' : ""}${r.published && r.modified ? `<meta property="article:published_time" content="${r.published}" />\n    <meta property="article:modified_time" content="${r.modified}" />\n    <meta property="og:updated_time" content="${r.modified}" />\n    ` : ""}${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
     .replace('<div id="root"></div>', () => `<div id="root">${render(r.path)}</div>`);
   const file = path.join(out, r.file);
   mkdirSync(path.dirname(file), { recursive: true });

@@ -6,6 +6,7 @@ import { delay } from "../motion";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
 import { PAGES_UPDATED } from "../site";
+import { PUBLISHED } from "../published";
 import { ArrowUpRight } from "../components/fx";
 
 function Bullet({ strong = false }: { strong?: boolean }) {
@@ -157,7 +158,7 @@ export default function Services() {
         );
       })}
 
-      <Faq faqs={CORE_FAQS["/services"]} reviewed={PAGES_UPDATED} />
+      <Faq faqs={CORE_FAQS["/services"]} reviewed={PAGES_UPDATED} published={PUBLISHED["/services"]} />
 
       <CtaBand />
     </>

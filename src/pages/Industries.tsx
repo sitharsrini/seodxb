@@ -4,6 +4,7 @@ import { delay } from "../motion";
 import { POSTS } from "../blog/posts";
 import { AuthorBox } from "../components/Trust";
 import { INDUSTRY_REVIEWED } from "../sources";
+import { PUBLISHED } from "../published";
 import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
 
@@ -56,7 +57,7 @@ export default function Industries() {
               ))}
           </ul>
           <div className="mt-12 max-w-2xl" data-reveal>
-            <AuthorBox reviewed={INDUSTRY_REVIEWED} />
+            <AuthorBox reviewed={INDUSTRY_REVIEWED} published={PUBLISHED["/industries"]} />
           </div>
         </div>
       </section>

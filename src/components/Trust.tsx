@@ -23,7 +23,7 @@ export function Sources({ sources, className = "" }: { sources: Source[]; classN
   );
 }
 
-export function AuthorBox({ reviewed, className = "" }: { reviewed: string; className?: string }) {
+export function AuthorBox({ reviewed, published, className = "" }: { reviewed: string; published?: string; className?: string }) {
   return (
     <aside className={`rounded-2xl border border-line bg-white p-6 ${className}`} aria-label="About the author">
       <div className="flex items-start gap-4">
@@ -35,7 +35,7 @@ export function AuthorBox({ reviewed, className = "" }: { reviewed: string; clas
           <a href="/about#author" rel="author" className="mt-1 block font-semibold text-ink hover:text-brand">{AUTHOR.name}</a>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             Marketing consultant working on SEO, AI search, advertising and lead tracking for UAE businesses, and author of the Listonics guides.
-            Last reviewed <time dateTime={reviewed}>{formatDate(reviewed)}</time>. Regulatory points are stated generally and should be confirmed with the relevant authority.
+            {published && published !== reviewed && (<>Published <time dateTime={published}>{formatDate(published)}</time>. </>)}Last reviewed <time dateTime={reviewed}>{formatDate(reviewed)}</time>. Regulatory points are stated generally and should be confirmed with the relevant authority.
           </p>
         </div>
       </div>
@@ -43,12 +43,25 @@ export function AuthorBox({ reviewed, className = "" }: { reviewed: string; clas
   );
 }
 
-export function ReviewedLine({ reviewed, className = "" }: { reviewed: string; className?: string }) {
+export function ReviewedLine({ reviewed, published, className = "" }: { reviewed: string; published?: string; className?: string }) {
   return (
     <p className={`text-sm text-ink-soft ${className}`}>
       Page reviewed by{" "}
-      <a href="/about#author" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>. Last updated{" "}
-      <time dateTime={reviewed}>{formatDate(reviewed)}</time>.
+      <a href="/about#author" rel="author" className="font-medium text-ink hover:text-brand">{AUTHOR.name}</a>.
+      {published && published === reviewed ? (
+        <>
+          {" "}Published <time dateTime={published}>{formatDate(published)}</time>.
+        </>
+      ) : (
+        <>
+          {published && (
+            <>
+              {" "}Published <time dateTime={published}>{formatDate(published)}</time>.
+            </>
+          )}{" "}
+          Last updated <time dateTime={reviewed}>{formatDate(reviewed)}</time>.
+        </>
+      )}
     </p>
   );
 }

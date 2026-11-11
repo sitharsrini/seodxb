@@ -2,6 +2,7 @@ import { ContactForm } from "./Contact";
 import { INDUSTRIES, industryPath, type Industry } from "../industries";
 import { industrySources } from "../citations";
 import { INDUSTRY_REVIEWED } from "../sources";
+import { PUBLISHED } from "../published";
 import { AuthorBox, Sources } from "../components/Trust";
 
 export function FaqList({ faqs }: { faqs: Industry["faqs"] }) {
@@ -26,7 +27,7 @@ export function TrustBand({ industry }: { industry: Industry }) {
     <section className="border-t border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1fr_1.2fr]">
         <div data-reveal="left">
-          <AuthorBox reviewed={INDUSTRY_REVIEWED} />
+          <AuthorBox reviewed={INDUSTRY_REVIEWED} published={PUBLISHED[industryPath(industry)]} />
         </div>
         <div data-reveal>
           <Sources sources={industrySources(industry.slug)} />

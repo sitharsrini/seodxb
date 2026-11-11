@@ -37,6 +37,9 @@ export interface Route {
   ogType?: "website" | "article";
   image?: string;
   jsonLd?: object[];
+  // ISO dates: when the page first shipped and when it last changed in a meaningful way.
+  published?: string;
+  modified?: string;
   // Private pages: noindex, and left out of the sitemap and llms.txt.
   hidden?: boolean;
 }
