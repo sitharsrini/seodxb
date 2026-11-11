@@ -766,6 +766,71 @@ h2.font-semibold {
     white-space: nowrap;
   }
 
+  /* ---------- Floating WhatsApp button ---------- */
+  .wa-float {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wa-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 9999px;
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 14px 30px -10px rgb(37 211 102 / 0.75), 0 4px 10px rgb(0 0 0 / 0.18);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+  }
+  .wa-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: #25d366;
+    z-index: -1;
+    animation: wa-pulse 2.6s ease-out infinite;
+  }
+  .wa-float:hover .wa-icon,
+  .wa-float:focus-visible .wa-icon {
+    transform: scale(1.08);
+  }
+  .wa-float:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 4px;
+    border-radius: 9999px;
+  }
+  .wa-label {
+    display: none;
+    border-radius: 9999px;
+    background: #fff;
+    padding: 0.6rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-ink);
+    box-shadow: 0 12px 30px -14px rgb(21 21 21 / 0.45);
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.25s, transform 0.25s;
+    white-space: nowrap;
+  }
+  @media (min-width: 768px) {
+    .wa-label {
+      display: block;
+    }
+    .wa-float:hover .wa-label,
+    .wa-float:focus-visible .wa-label {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   /* ---------- Scroll-lit statement ---------- */
   .js .sw-word {
     color: #d3d8e6;
@@ -875,6 +940,10 @@ h2.font-semibold {
 @keyframes pulse-dot {
   0% { box-shadow: 0 0 0 0 rgb(91 141 255 / 0.7); }
   100% { box-shadow: 0 0 0 10px rgb(91 141 255 / 0); }
+}
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  70%, 100% { transform: scale(1.55); opacity: 0; }
 }
 @keyframes mini-in {
   from { opacity: 0; }
