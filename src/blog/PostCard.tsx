@@ -4,12 +4,12 @@ import { POST_PHOTOS, photoUrl, photoSrcSet } from "../images";
 
 const TINTS: Record<string, string> = {
   Strategy: "from-brand to-brand-dark",
-  "SEO & AI Search": "from-brand-dark to-emerald-600",
+  "SEO & AI Search": "from-brand-dark to-brand",
   "Performance Ads": "from-sky-500 to-brand",
-  "Local SEO": "from-emerald-600 to-brand",
+  "Local SEO": "from-sky-500 to-brand-dark",
   "Websites & Content": "from-brand to-sky-400",
   "Industry Guides": "from-navy to-brand",
-  Partners: "from-navy to-emerald-600",
+  Partners: "from-navy to-brand-dark",
   "Agency Spotlights": "from-brand-dark to-navy",
 };
 

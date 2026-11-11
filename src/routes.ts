@@ -354,6 +354,7 @@ const SERVICE_ROUTES: Route[] = SERVICE_PAGES.map((sp) => withPageLd({
     breadcrumbs([
       { name: "Home", path: "/" },
       { name: "Services", path: "/services" },
+      ...(sp.parent ? (() => { const par = SERVICE_PAGES.find((s) => s.id === sp.parent); return par ? [{ name: par.title.replace(/ \| SEODXB$/, ""), path: servicePath(par) }] : []; })() : []),
       { name: sp.title.replace(/ \| SEODXB$/, ""), path: servicePath(sp) },
     ]),
   ],

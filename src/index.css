@@ -2,19 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0a1f44;
-  --color-ink-soft: #4b5d80;
+  --color-ink: #151515;
+  --color-ink-soft: #5e6068;
   --color-paper: #ffffff;
-  --color-sand: #f0f6ff;
-  --color-line: #dce6f7;
+  --color-sand: #f2f6ff;
+  --color-tint: #e0eaff;
+  --color-line: #e3e8f4;
   --color-brand: #1d5bff;
-  --color-brand-dark: #0b3fc7;
-  --color-navy: #071d52;
-  --color-mint: #bbf7d0;
-  --color-mint-strong: #4ade80;
-  --color-mint-dark: #047857;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-brand-dark: #0c3fd0;
+  --color-navy: #131417;
+  --color-mint: #dce7ff;
+  --color-mint-strong: #5b8dff;
+  --color-mint-dark: #0c3fd0;
+  --font-sans: "Roboto", "Roboto Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Roboto", "Roboto Fallback", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -23,55 +24,190 @@ html {
 }
 
 ::selection {
-  background: var(--color-mint);
-  color: var(--color-navy);
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* Headings: tight, medium-weight sans like the reference. Unlayered so it beats Tailwind's font-semibold. */
+h1,
+h2,
+h3,
+.font-display {
+  letter-spacing: -0.03em;
+}
+.font-display.font-semibold,
+h1.font-semibold,
+h2.font-semibold {
+  font-weight: 500;
 }
 
 @layer components {
+  /* ---------- Page background: soft dot grid ---------- */
+  .page-dots {
+    background-color: #fff;
+    background-image: radial-gradient(rgb(21 21 21 / 0.11) 1.3px, transparent 1.7px);
+    background-size: 44px 44px;
+    background-position: 22px 22px;
+  }
+  .dots-light {
+    background-image: radial-gradient(rgb(255 255 255 / 0.22) 1.3px, transparent 1.7px);
+    background-size: 36px 36px;
+  }
+  .dots-dark {
+    background-image: radial-gradient(rgb(21 21 21 / 0.08) 1.2px, transparent 1.6px);
+    background-size: 28px 28px;
+  }
+
+  /* ---------- Buttons: pills ---------- */
   .btn-primary,
+  .btn-dark,
   .btn-accent,
   .btn-ghost,
-  .btn-ghost-light {
-    @apply relative inline-flex items-center overflow-hidden rounded-full font-medium transition-all duration-300;
+  .btn-ghost-light,
+  .btn-outline {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 1rem 1.7rem;
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.3s,
+      background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s;
   }
   .btn-primary {
-    @apply bg-brand px-5 py-2.5 text-white shadow-lg shadow-brand/20 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-brand/40;
+    background: var(--color-brand);
+    color: #fff;
+    box-shadow: 0 10px 28px -8px rgb(29 91 255 / 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--color-brand-dark);
+    box-shadow: 0 16px 34px -8px rgb(29 91 255 / 0.6);
+  }
+  .btn-dark {
+    background: var(--color-ink);
+    color: #fff;
+    box-shadow: 0 10px 28px -10px rgb(21 21 21 / 0.5);
+  }
+  .btn-dark:hover {
+    transform: translateY(-2px);
+    background: #000;
   }
   .btn-accent {
-    @apply bg-mint-strong px-6 py-3 text-navy shadow-lg shadow-mint-strong/30 hover:-translate-y-0.5 hover:bg-mint hover:shadow-mint-strong/50;
+    background: #fff;
+    color: var(--color-ink);
+    box-shadow: 0 12px 30px -10px rgb(0 0 0 / 0.35);
   }
-  .btn-ghost {
-    @apply border border-brand/25 bg-white/70 px-6 py-3 text-ink backdrop-blur hover:-translate-y-0.5 hover:border-brand;
+  .btn-accent:hover {
+    transform: translateY(-2px);
+    background: var(--color-sand);
+  }
+  .btn-ghost,
+  .btn-outline {
+    border: 1px solid var(--color-line);
+    background: rgb(255 255 255 / 0.8);
+    color: var(--color-ink);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover,
+  .btn-outline:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-brand);
+    color: var(--color-brand);
   }
   .btn-ghost-light {
-    @apply border border-white/30 px-6 py-3 text-white hover:-translate-y-0.5 hover:border-mint hover:text-mint;
+    border: 1px solid rgb(255 255 255 / 0.4);
+    color: #fff;
   }
-  /* Light sweep across buttons on hover. */
-  .btn-primary::after,
-  .btn-accent::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.45) 50%, transparent 70%);
-    transform: translateX(-120%);
-    transition: transform 0.7s ease;
+  .btn-ghost-light:hover {
+    transform: translateY(-2px);
+    background: rgb(255 255 255 / 0.12);
+    border-color: #fff;
   }
-  .btn-primary:hover::after,
-  .btn-accent:hover::after {
-    transform: translateX(120%);
+
+  /* Round arrow button used on cards. */
+  .circle-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    background: var(--color-brand);
+    color: #fff;
+    box-shadow: 0 10px 24px -8px rgb(29 91 255 / 0.6);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s;
   }
+  .group:hover .circle-btn,
+  .circle-btn:hover {
+    transform: rotate(45deg) scale(1.06);
+    background: var(--color-brand-dark);
+  }
+
+  /* ---------- Labels ---------- */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: var(--color-brand);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    line-height: 1.15;
+    text-transform: uppercase;
   }
-  .eyebrow::before {
-    content: "";
-    @apply h-1.5 w-1.5 rounded-full bg-mint-strong;
+  .eyebrow-soft {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 1.1rem;
+    background: rgb(29 91 255 / 0.1);
+    color: var(--color-brand);
+    padding: 0.5rem 1rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-transform: uppercase;
   }
+  .eyebrow-dark {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
   .field {
-    @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/10;
+    width: 100%;
+    border-radius: 0.9rem;
+    border: 1px solid var(--color-line);
+    background: #fff;
+    padding: 0.9rem 1.1rem;
+    color: var(--color-ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 4px rgb(29 91 255 / 0.12);
   }
   .text-gradient {
-    background: linear-gradient(100deg, var(--color-brand) 0%, #3b82f6 45%, var(--color-mint-dark) 100%);
+    background: linear-gradient(100deg, #1d5bff 0%, #4f86ff 55%, #0c3fd0 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -79,7 +215,13 @@ html {
 
   /* Card with a glow that follows the cursor (position set from JS). */
   .spotlight {
-    @apply relative overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/10;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s;
+  }
+  .spotlight:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px -22px rgb(29 91 255 / 0.32);
   }
   .spotlight::before {
     content: "";
@@ -88,33 +230,34 @@ html {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s;
-    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(74 222 128 / 0.16), rgb(29 91 255 / 0.08) 40%, transparent 70%);
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(29 91 255 / 0.1), transparent 70%);
   }
   .spotlight:hover::before {
     opacity: 1;
   }
 
+  /* The old line grid is replaced by the page dot grid. */
   .hero-grid {
-    background-image:
-      linear-gradient(to right, rgb(29 91 255 / 0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(29 91 255 / 0.07) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 75%);
+    display: none;
   }
   .blob {
-    @apply pointer-events-none absolute rounded-full blur-3xl;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(64px);
+    opacity: 0.55;
     animation: blob 18s ease-in-out infinite alternate;
   }
   .float {
     animation: float 6s ease-in-out infinite;
   }
   .gradient-shift {
-    background: linear-gradient(120deg, var(--color-navy), var(--color-brand-dark), var(--color-brand), #0f766e, var(--color-navy));
+    background: linear-gradient(120deg, #0c3fd0, #1d5bff, #4f86ff, #1d5bff, #0c3fd0);
     background-size: 300% 300%;
     animation: gradient-shift 14s ease infinite;
   }
   .marquee {
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
   .marquee-track {
     animation: marquee 32s linear infinite;
@@ -129,31 +272,536 @@ html {
   .pulse-dot {
     animation: pulse-dot 2s ease-out infinite;
   }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding-top: 14px;
+    pointer-events: none;
+  }
+  .site-header > * {
+    pointer-events: auto;
+  }
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background: rgb(255 255 255 / 0.82);
+    padding: 6px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 14px 40px -24px rgb(21 21 21 / 0.35);
+  }
+  .nav-link {
+    border-radius: 9999px;
+    padding: 0.65rem 1.2rem;
+    font-size: 15px;
+    color: var(--color-ink-soft);
+    transition: background-color 0.25s, color 0.25s;
+  }
+  .nav-link:hover {
+    color: var(--color-ink);
+    background: rgb(21 21 21 / 0.04);
+  }
+  .nav-link[aria-current="page"] {
+    background: rgb(29 91 255 / 0.1);
+    color: var(--color-brand);
+    font-weight: 500;
+  }
+  .logo-word {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: var(--color-ink);
+  }
+  .logo-word b {
+    color: var(--color-brand);
+    font-weight: 700;
+  }
+
+  /* ---------- Hero: 3D ring of cards ---------- */
+  .ring-stage {
+    --cw: clamp(132px, 15.5vw, 216px);
+    --ch: calc(var(--cw) * 1.32);
+    --r: calc(var(--cw) * var(--rk, 1.55));
+    position: relative;
+    height: calc(var(--ch) * 1.5);
+    perspective: 1500px;
+    perspective-origin: 50% 30%;
+    touch-action: pan-y;
+    cursor: grab;
+    user-select: none;
+  }
+  .ring-stage:active {
+    cursor: grabbing;
+  }
+  .ring {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(-5deg) rotateY(var(--ry, 0deg));
+  }
+  .ring-card {
+    position: absolute;
+    left: calc(var(--cw) / -2);
+    top: calc(var(--ch) / -2);
+    width: var(--cw);
+    height: var(--ch);
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * var(--step))) translateZ(var(--r));
+  }
+  .ring-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 22px;
+    padding: 18px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 22px 44px -22px rgb(21 21 21 / 0.45);
+  }
+  .ring-face.back {
+    transform: rotateY(180deg);
+    pointer-events: none;
+  }
+  .ring-shadow {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    width: 78%;
+    height: 14%;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgb(29 91 255 / 0.22), transparent);
+    filter: blur(14px);
+    pointer-events: none;
+  }
+
+  /* ---------- Services: tinted cards with a 3D object ---------- */
+  .svc-card {
+    position: relative;
+    display: flex;
+    min-height: 430px;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #f4f7ff;
+    padding: 36px;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s;
+  }
+  .svc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 34px 60px -30px rgb(29 91 255 / 0.4);
+  }
+  .svc-circle {
+    position: absolute;
+    right: -70px;
+    bottom: -90px;
+    width: 340px;
+    height: 340px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 30%, #e6eeff, #d3e1ff);
+  }
+  .svc-obj {
+    position: absolute;
+    right: 18px;
+    bottom: 22px;
+    width: min(62%, 260px);
+    height: auto;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: drop-shadow(0 26px 22px rgb(29 91 255 / 0.3));
+  }
+  .svc-card:hover .svc-obj {
+    transform: translateY(-10px) rotate(8deg) scale(1.06);
+  }
+
+  /* Compact tinted card used in service directories. */
+  .svc-mini {
+    position: relative;
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: 22px;
+    background: #f4f7ff;
+    padding: 26px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s, background-color 0.3s;
+  }
+  .svc-mini:hover {
+    transform: translateY(-5px);
+    background: #eaf0ff;
+    box-shadow: 0 26px 46px -26px rgb(29 91 255 / 0.45);
+  }
+  .tab-pill {
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background: #fff;
+    padding: 0.6rem 1.1rem;
+    font-size: 14px;
+    color: var(--color-ink-soft);
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .tab-pill:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+  .tab-pill[aria-pressed="true"] {
+    border-color: var(--color-brand);
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  /* ---------- Full-bleed colour section: industries ---------- */
+  .ind-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-brand);
+    color: #fff;
+  }
+  .ind-section::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgb(255 255 255 / 0.28);
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .ind-section::before {
+      display: block;
+    }
+  }
+  .ind-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    color: rgb(255 255 255 / 0.45);
+    transition: color 0.3s, transform 0.3s;
+  }
+  .ind-btn:hover {
+    color: rgb(255 255 255 / 0.8);
+  }
+  .ind-btn[aria-selected="true"] {
+    color: #fff;
+    transform: translateX(6px);
+  }
+  .ind-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #17181c;
+    aspect-ratio: 1 / 0.92;
+  }
+  .mini-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    width: 46%;
+    height: 62%;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 18px;
+    padding: 18px;
+    animation: mini-in 0.55s ease both;
+    box-shadow: 0 30px 50px -24px rgb(0 0 0 / 0.6);
+  }
+
+  /* ---------- Stat cards ---------- */
+  .stat-card {
+    position: relative;
+    border-radius: 24px;
+    background: #f4f7ff;
+    padding: 44px 28px 40px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: clamp(54px, 7vw, 84px);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--color-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .badge-hot {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    border-radius: 9999px;
+    background: var(--color-brand);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+  }
+
+  /* ---------- Numbered process steps that stack as you scroll ---------- */
+  .step {
+    position: relative;
+    z-index: var(--z, 1);
+    overflow: hidden;
+    border-top: 1px solid var(--color-line);
+    background: #f4f7ff;
+  }
+  @media (min-width: 900px) {
+    .step {
+      position: sticky;
+      top: 0;
+      min-height: min(82vh, 760px);
+    }
+    .step::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--color-line);
+    }
+  }
+  .step-glow {
+    position: absolute;
+    left: -110px;
+    top: 28%;
+    width: 360px;
+    height: 360px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgb(29 91 255 / 0.42), transparent 68%);
+    filter: blur(34px);
+    pointer-events: none;
+  }
+  .step-num {
+    display: inline-grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .tag-card {
+    position: absolute;
+    right: -18px;
+    top: -22px;
+    display: flex;
+    width: 170px;
+    height: 160px;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    border-radius: 16px;
+    background: var(--color-brand);
+    padding: 18px 22px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.25;
+    box-shadow: 0 24px 40px -20px rgb(29 91 255 / 0.7);
+    transform: rotate(3deg);
+  }
+
+  /* ---------- Tilted bands ---------- */
+  .bands {
+    position: relative;
+    height: clamp(260px, 34vw, 400px);
+    overflow: hidden;
+  }
+  .band {
+    position: absolute;
+    left: -6%;
+    width: 112%;
+    overflow: hidden;
+    padding: 1.1rem 0;
+  }
+  .band-a {
+    top: 24%;
+    z-index: 2;
+    background: var(--color-brand);
+    color: #fff;
+    transform: rotate(-3deg);
+    box-shadow: 0 24px 50px -24px rgb(29 91 255 / 0.6);
+  }
+  .band-b {
+    top: 44%;
+    z-index: 1;
+    background: #e7eaf2;
+    color: var(--color-ink);
+    transform: rotate(2.4deg);
+  }
+  .band-track {
+    display: flex;
+    width: max-content;
+    gap: 3rem;
+    font-size: clamp(30px, 4.6vw, 62px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+    animation: marquee 38s linear infinite;
+  }
+  .band-b .band-track {
+    animation-direction: reverse;
+    animation-duration: 46s;
+  }
+
+  /* ---------- Fanned card stack ---------- */
+  .fan {
+    position: relative;
+    height: 400px;
+    overflow-x: clip;
+  }
+  .fan-card {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    display: flex;
+    width: min(100%, 520px);
+    min-height: 290px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 32px;
+    --dx: 34px;
+    --dy: -22px;
+    transform-origin: 20% 100%;
+    transform: translate(calc(var(--k) * var(--dx)), calc(var(--k) * var(--dy))) rotate(calc(var(--k) * 3.4deg)) scale(calc(1 - var(--k) * 0.045));
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s, background-color 0.4s;
+    z-index: calc(10 - var(--k));
+    opacity: calc(1 - var(--k) * 0.18);
+  }
+  @media (max-width: 640px) {
+    .fan-card {
+      --dx: 11px;
+      --dy: -16px;
+      width: calc(100% - 40px);
+      padding: 26px;
+    }
+  }
+  .fan-card[data-k="0"] {
+    background: var(--color-brand);
+    color: #fff;
+    box-shadow: 0 34px 60px -30px rgb(29 91 255 / 0.7);
+  }
+  .fan-card:not([data-k="0"]) {
+    background: #fff;
+    color: var(--color-ink);
+    border: 1px solid var(--color-line);
+    pointer-events: none;
+  }
+  .fan-card[data-k="4"],
+  .fan-card[data-k="5"],
+  .fan-card[data-k="6"] {
+    opacity: 0;
+  }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-navy);
+    color: rgb(255 255 255 / 0.72);
+  }
+  .foot-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.7rem 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-ink);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .foot-social a:hover {
+    background: var(--color-sand);
+    color: var(--color-brand);
+  }
+  .ribbon {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+  }
+  .ribbon-inner {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1440px;
+    height: 280px;
+    transform: translateX(-50%);
+  }
+  .ribbon-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 84px;
+    height: 104px;
+    margin: -52px 0 0 -42px;
+    border-radius: 14px;
+    offset-rotate: auto 0deg;
+    animation: ribbon-move 46s linear infinite;
+    animation-delay: calc(var(--i) * -5.1s);
+    box-shadow: 0 14px 26px -12px rgb(0 0 0 / 0.7);
+  }
+  .foot-wordmark {
+    font-size: clamp(54px, 13.6vw, 210px);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  /* ---------- Scroll-lit statement ---------- */
+  .js .sw-word {
+    color: #d3d8e6;
+    transition: color 0.25s;
+  }
+  .js .sw-word.lit {
+    color: var(--color-ink);
+  }
 }
 
 /* Scroll reveal. Hidden only when JS is running, so content is always visible to crawlers and no-JS users. */
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(30px);
+  filter: blur(7px);
   transition:
-    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
   transition-delay: var(--d, 0ms);
 }
 /* Above-the-fold content animates in immediately with CSS so the largest text paints without waiting for JavaScript. */
 .js [data-reveal-now] [data-reveal] {
   opacity: 1;
   transform: none;
-  animation: reveal-now 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  filter: none;
+  animation: reveal-now 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   animation-delay: var(--d, 0ms);
   transition: none;
 }
 @keyframes reveal-now {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 .js [data-reveal="left"] {
-  transform: translateX(-32px);
+  transform: translateX(-34px);
 }
 .js [data-reveal="scale"] {
   transform: scale(0.94);
@@ -161,9 +809,10 @@ html {
 .js [data-reveal].is-visible {
   opacity: 1;
   transform: none;
+  filter: none;
 }
 
-/* Process steps: the top rule draws in when revealed. */
+/* Process rows: the top rule draws in when revealed. */
 .step-line {
   position: relative;
 }
@@ -174,7 +823,7 @@ html {
   right: 0;
   top: -2px;
   height: 2px;
-  background: linear-gradient(to right, var(--color-brand), var(--color-mint-strong));
+  background: var(--color-brand);
   transform-origin: left;
 }
 .js .step-line::before {
@@ -224,8 +873,16 @@ html {
   to { opacity: 1; transform: none; filter: none; }
 }
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 rgb(74 222 128 / 0.7); }
-  100% { box-shadow: 0 0 0 10px rgb(74 222 128 / 0); }
+  0% { box-shadow: 0 0 0 0 rgb(91 141 255 / 0.7); }
+  100% { box-shadow: 0 0 0 10px rgb(91 141 255 / 0); }
+}
+@keyframes mini-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes ribbon-move {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -241,11 +898,15 @@ html {
   .js [data-reveal] {
     opacity: 1;
     transform: none;
+    filter: none;
   }
   .js .step-line::before {
     transform: scaleX(1);
   }
   .check-draw path {
     stroke-dashoffset: 0;
+  }
+  .js .sw-word {
+    color: var(--color-ink);
   }
 }

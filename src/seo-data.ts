@@ -217,10 +217,127 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
     ]
   },
   "/services/websites-content-social": {
+    "main": "websites content and social media dubai",
+    "secondary": [
+      "website and social media services uae"
+    ]
+  },
+  "/services/website-design-and-development": {
     "main": "website design dubai",
     "secondary": [
-      "social media agency dubai",
-      "content marketing agency dubai"
+      "website development company dubai",
+      "web design company dubai"
+    ]
+  },
+  "/services/landing-page-design": {
+    "main": "landing page design dubai",
+    "secondary": [
+      "landing page agency dubai"
+    ]
+  },
+  "/services/content-marketing-services": {
+    "main": "content marketing agency dubai",
+    "secondary": [
+      "content marketing services dubai"
+    ]
+  },
+  "/services/social-media-management": {
+    "main": "social media agency dubai",
+    "secondary": [
+      "social media management dubai"
+    ]
+  },
+  "/services/google-ads-management": {
+    "main": "google ads management dubai",
+    "secondary": [
+      "google ads agency dubai"
+    ]
+  },
+  "/services/meta-ads-management": {
+    "main": "meta ads agency dubai",
+    "secondary": [
+      "facebook ads agency dubai",
+      "instagram ads agency dubai"
+    ]
+  },
+  "/services/linkedin-ads-management": {
+    "main": "linkedin ads agency dubai",
+    "secondary": [
+      "linkedin marketing agency dubai"
+    ]
+  },
+  "/services/tiktok-ads-management": {
+    "main": "tiktok ads agency dubai",
+    "secondary": [
+      "tiktok marketing agency dubai"
+    ]
+  },
+  "/services/lead-tracking-and-attribution": {
+    "main": "lead tracking dubai",
+    "secondary": [
+      "whatsapp lead tracking uae",
+      "call tracking uae"
+    ]
+  },
+  "/services/technical-seo-services": {
+    "main": "technical seo dubai",
+    "secondary": [
+      "technical seo audit dubai"
+    ]
+  },
+  "/services/local-seo-services": {
+    "main": "local seo dubai",
+    "secondary": [
+      "local seo agency dubai"
+    ]
+  },
+  "/services/google-business-profile-management": {
+    "main": "google business profile management dubai",
+    "secondary": [
+      "google my business management dubai"
+    ]
+  },
+  "/services/generative-engine-optimization": {
+    "main": "generative engine optimization dubai",
+    "secondary": [
+      "geo agency dubai",
+      "what is geo"
+    ]
+  },
+  "/services/answer-engine-optimization": {
+    "main": "answer engine optimization dubai",
+    "secondary": [
+      "aeo agency dubai"
+    ]
+  },
+  "/services/arabic-seo-services": {
+    "main": "arabic seo",
+    "secondary": [
+      "arabic seo dubai"
+    ]
+  },
+  "/services/market-research-and-competitor-analysis": {
+    "main": "market research dubai",
+    "secondary": [
+      "competitor analysis dubai"
+    ]
+  },
+  "/services/conversion-rate-optimization": {
+    "main": "conversion rate optimization dubai",
+    "secondary": [
+      "website conversion rate"
+    ]
+  },
+  "/services/marketing-analytics-and-reporting": {
+    "main": "marketing analytics dubai",
+    "secondary": [
+      "marketing kpis"
+    ]
+  },
+  "/services/uae-market-entry-strategy": {
+    "main": "market entry strategy uae",
+    "secondary": [
+      "uae market entry marketing"
     ]
   },
   "/industries/real-estate": {

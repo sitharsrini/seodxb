@@ -1,13 +1,13 @@
 import { PageHero, pageHeading } from "../components/Layout";
 import { Faq } from "../components/Faq";
 import { ContactForm } from "./Contact";
-import { SERVICE_PAGES, servicePath, type ServicePage } from "../service-pages";
+import { SERVICE_PAGES, childPages, pillarPages, servicePath, serviceName, type ServicePage } from "../service-pages";
 import { INDUSTRIES, industryPath } from "../industries";
 import { POSTS } from "../blog/posts";
 import { PostCard } from "../blog/PostCard";
 import { delay } from "../motion";
-import { SERVICES } from "../services";
 import { PAGES_UPDATED } from "../site";
+import { ArrowUpRight } from "../components/fx";
 
 const check = (
   <span className="mt-0.5 grid h-5 w-5 flex-none place-items-center rounded-full bg-brand text-white" aria-hidden="true">
@@ -18,11 +18,24 @@ const check = (
 export default function ServiceDetail({ page }: { page: ServicePage }) {
   const posts = page.posts.map((s) => POSTS.find((p) => p.slug === s)).filter((p): p is NonNullable<typeof p> => Boolean(p));
   const industries = page.industries.map((s) => INDUSTRIES.find((i) => i.slug === s)).filter((i): i is NonNullable<typeof i> => Boolean(i));
-  const others = SERVICE_PAGES.filter((s) => s.slug !== page.slug);
+  const parentPage = page.parent ? SERVICE_PAGES.find((s) => s.id === page.parent) : undefined;
+  const children = page.parent ? [] : childPages(page.id);
+  const others = parentPage
+    ? [parentPage, ...childPages(parentPage.id).filter((s) => s.slug !== page.slug)]
+    : pillarPages().filter((s) => s.slug !== page.slug);
 
   return (
     <>
       <PageHero lead={pageHeading(page.title)} title={page.heroTitle}>
+        {parentPage && (
+          <nav className="mt-6 text-sm text-ink-soft" aria-label="Breadcrumb" data-reveal style={delay(2)}>
+            <a href="/services" className="hover:text-brand">Services</a>
+            <span className="mx-2" aria-hidden="true">/</span>
+            <a href={servicePath(parentPage)} className="hover:text-brand">{serviceName(parentPage)}</a>
+            <span className="mx-2" aria-hidden="true">/</span>
+            <span className="text-brand">{serviceName(page)}</span>
+          </nav>
+        )}
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft" data-reveal style={delay(2)}>{page.heroIntro}</p>
         <div className="mt-8 flex flex-wrap gap-3" data-reveal style={delay(3)}>
           <a href="#enquire" className="btn-primary px-6 py-3">Get a free review</a>
@@ -63,6 +76,24 @@ export default function ServiceDetail({ page }: { page: ServicePage }) {
           </div>
         </div>
       </section>
+
+      {children.length > 0 && (
+        <section className="mx-auto max-w-6xl px-4 pb-4 pt-16 sm:px-6" aria-labelledby="specialist">
+          <p className="eyebrow" data-reveal>Specialist services</p>
+          <h2 id="specialist" className="mt-3 font-display text-3xl font-semibold sm:text-4xl" data-reveal style={delay(1)}>
+            Go deeper on one service
+          </h2>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {children.map((c, i) => (
+              <a key={c.slug} href={servicePath(c)} className="svc-mini group" data-reveal style={delay(i, 80)}>
+                <h3 className="text-xl font-medium tracking-tight">{serviceName(c)}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{c.description}</p>
+                <span className="circle-btn mt-auto" aria-hidden="true"><ArrowUpRight size={18} /></span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow" data-reveal>How we work</p>
@@ -143,11 +174,11 @@ export default function ServiceDetail({ page }: { page: ServicePage }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="font-display text-2xl font-semibold" data-reveal>Other services</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+        <h2 className="font-display text-2xl font-semibold" data-reveal>{parentPage ? `More in ${serviceName(parentPage)}` : "Other services"}</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {others.map((o, i) => (
             <a key={o.slug} href={servicePath(o)} className="spotlight group rounded-2xl border border-line bg-white p-5" data-reveal style={delay(i, 80)}>
-              <span className="font-semibold group-hover:text-brand">{SERVICES.find((s) => s.id === o.id)?.name}</span>
+              <span className="font-semibold group-hover:text-brand">{serviceName(o)}{o.id === parentPage?.id ? " overview" : ""}</span>
               <span className="mt-1 block text-sm text-ink-soft">{o.heroTitle}</span>
               <span className="mt-2 block text-sm text-brand" aria-hidden="true">→</span>
             </a>

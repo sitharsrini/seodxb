@@ -1,4 +1,14 @@
+import { SERVICES } from "./services";
+import { STRATEGY_EXTRA } from "./service-pages-strategy";
+import { SEARCH_EXTRA } from "./service-pages-search";
+import { ADS_EXTRA } from "./service-pages-ads";
+import { WEB_EXTRA } from "./service-pages-web";
+
 export interface ServicePage {
+  /** Short display name for cards, the footer and breadcrumbs. The four pillar pages take theirs from SERVICES. */
+  name?: string;
+  /** SERVICES id of the pillar this page sits under. Pillar pages leave it unset. */
+  parent?: string;
   id: string;
   slug: string;
   title: string;
@@ -15,7 +25,7 @@ export interface ServicePage {
   posts: string[];
 }
 
-export const SERVICE_PAGES: ServicePage[] = [
+const PILLAR_PAGES: ServicePage[] = [
   {
     id: "strategy",
     slug: "marketing-strategy",
@@ -112,7 +122,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "ads",
     slug: "performance-advertising",
-    title: "PPC Agency in Dubai for Google Ads and Meta Ads | SEODXB",
+    title: "PPC Agency in Dubai for Search and Social Ads | SEODXB",
     description:
       "PPC and Google Ads management in Dubai: Google, Meta, LinkedIn and TikTok campaigns run against cost per qualified lead, with call and WhatsApp tracking.",
     heroTitle: "Ads managed against cost per lead, not clicks",
@@ -158,7 +168,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: "web-content-social",
     slug: "websites-content-social",
-    title: "Website Design & Content Marketing Agency in Dubai | SEODXB",
+    title: "Websites, Content and Social Media in the UAE | SEODXB",
     description:
       "Fast, conversion-focused websites, content that earns trust and consistent social media management for businesses in Dubai and the UAE.",
     heroTitle: "Websites, content and social that turn attention into enquiries",
@@ -203,7 +213,13 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
 ];
 
+export const SERVICE_PAGES: ServicePage[] = [...PILLAR_PAGES, ...STRATEGY_EXTRA, ...SEARCH_EXTRA, ...ADS_EXTRA, ...WEB_EXTRA];
+
 export const servicePath = (s: { slug: string }) => `/services/${s.slug}`;
+
+export const serviceName = (sp: ServicePage) => sp.name ?? SERVICES.find((s) => s.id === sp.id)?.name ?? sp.title.replace(/ \| SEODXB$/, "");
+export const pillarPages = () => SERVICE_PAGES.filter((s) => !s.parent);
+export const childPages = (pillarId: string) => SERVICE_PAGES.filter((s) => s.parent === pillarId);
 
 export const servicePathById = (id: string) => {
   const sp = SERVICE_PAGES.find((s) => s.id === id);
