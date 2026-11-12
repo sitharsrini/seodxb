@@ -26,6 +26,11 @@ import { BATCH2_B_POSTS } from "./posts-batch2-b";
 import { BATCH2_C_POSTS } from "./posts-batch2-c";
 import { BATCH2_D_POSTS } from "./posts-batch2-d";
 import { BATCH2_E_POSTS } from "./posts-batch2-e";
+import { EXAMPLE_DENTAL_POSTS } from "./posts-example-dental";
+import { EXAMPLE_REALESTATE_POSTS } from "./posts-example-realestate";
+import { EXAMPLE_HOMESERVICES_POSTS } from "./posts-example-homeservices";
+import { EXAMPLE_B2B_POSTS } from "./posts-example-b2b";
+import { EXAMPLE_AIVIS_POSTS } from "./posts-example-aivis";
 
 export type { Block, Post } from "./types";
 
@@ -428,6 +433,6 @@ const FIRST_POSTS: Post[] = [
   },
 ];
 
-export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS, ...TAX_POSTS, ...LAW_POSTS, ...INSURANCE_POSTS, ...TRAVEL_POSTS, ...EVENT_POSTS, ...MEP_POSTS, ...HOSPITAL_POSTS, ...SCHOOL_POSTS, ...PARTNER_POSTS, ...SPOTLIGHT_POSTS];
+export const POSTS: Post[] = [...FIRST_POSTS, ...MORE_POSTS, ...INDUSTRY_POSTS, ...WELLNESS_POSTS, ...HEALTH_POSTS, ...HOSPITALITY_POSTS, ...BATCH2_A_POSTS, ...BATCH2_B_POSTS, ...BATCH2_C_POSTS, ...BATCH2_D_POSTS, ...BATCH2_E_POSTS, ...BATCH3_POSTS, ...REALESTATE_POSTS, ...PROPERTY_POSTS, ...HOLIDAY_POSTS, ...COWORK_POSTS, ...BIZSETUP_POSTS, ...ACCOUNTING_POSTS, ...TAX_POSTS, ...LAW_POSTS, ...INSURANCE_POSTS, ...TRAVEL_POSTS, ...EVENT_POSTS, ...MEP_POSTS, ...HOSPITAL_POSTS, ...SCHOOL_POSTS, ...PARTNER_POSTS, ...SPOTLIGHT_POSTS, ...EXAMPLE_DENTAL_POSTS, ...EXAMPLE_REALESTATE_POSTS, ...EXAMPLE_HOMESERVICES_POSTS, ...EXAMPLE_B2B_POSTS, ...EXAMPLE_AIVIS_POSTS];
 
 export { postText, wordCount, readingMinutes, formatDate, postPath } from "./post-utils";

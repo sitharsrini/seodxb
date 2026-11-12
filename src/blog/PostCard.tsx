@@ -11,6 +11,7 @@ const TINTS: Record<string, string> = {
   "Industry Guides": "from-navy to-brand",
   Partners: "from-navy to-brand-dark",
   "Agency Spotlights": "from-brand-dark to-navy",
+  "Worked Examples": "from-brand to-navy",
 };
 
 export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
