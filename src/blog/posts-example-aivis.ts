@@ -388,7 +388,7 @@ export const EXAMPLE_AIVIS_POSTS: Post[] = [
         "**Set three cases and a checkpoint.** Decide now what result at month 6 would make you change course.",
       ),
       p(
-        "If you want help with any part, our [generative engine optimisation service](/services/generative-engine-optimization) covers the full plan, and our page on [marketing for business setup consultants](/industries/business-setup-consultants) explains how it fits with search and advertising in this sector. You can also [book a free consultation](/contact) and we will run a short version of the baseline test for your business and tell you plainly what we see.",
+        "If you want help with any part, our [generative engine optimisation service](/services/generative-engine-optimization) covers the full plan, and our page on [marketing for business setup consultants](/industries/business-setup-consultants) explains how it fits with search and advertising in this sector. You can also [book a free consultation](/contact) to talk through how a baseline test like this would work for your business.",
       ),
       p(
         "One last reminder. The figures in this example were chosen to make the arithmetic easy to follow. They describe a firm that does not exist. Use the method, and bring your own numbers.",

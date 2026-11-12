@@ -153,9 +153,9 @@ export const UNSPLASH_URL = `https://unsplash.com/?${UTM}`;
 
 // Worked examples reuse the cover photo of the industry they model.
 Object.assign(POST_PHOTOS, {
-  "worked-example-dental-clinic-local-seo-dubai": INDUSTRY_PHOTOS["dental-clinics"],
+  "worked-example-dental-clinic-local-seo-dubai": INDUSTRY_PHOTOS["hospitals-clinics"],
   "worked-example-real-estate-google-ads-lead-tracking-dubai": INDUSTRY_PHOTOS["real-estate"],
   "worked-example-ac-maintenance-company-leads-dubai": INDUSTRY_PHOTOS["ac-maintenance"],
   "worked-example-accounting-firm-b2b-marketing-plan-uae": INDUSTRY_PHOTOS["accounting-firms"],
-  "worked-example-ai-search-visibility-business-setup-consultant-dubai": INDUSTRY_PHOTOS["business-setup-consultants"],
+  "worked-example-ai-search-visibility-business-setup-consultant-dubai": POST_PHOTOS["get-recommended-by-chatgpt-google-ai-overviews"],
 });
