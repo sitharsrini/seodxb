@@ -15,6 +15,7 @@ const photoLd = (ph: Photo) => ({
   url: photoUrl(ph, 1200, 675),
   caption: ph.alt,
   creditText: `Photo by ${ph.by} on Unsplash`,
+  copyrightNotice: `© ${ph.by} / Unsplash`,
   creator: { "@type": "Person", name: ph.by, url: photographerUrl(ph) },
   license: "https://unsplash.com/license",
   acquireLicensePage: "https://unsplash.com/license",
