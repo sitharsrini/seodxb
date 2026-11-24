@@ -11,19 +11,24 @@ export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const AUTHOR_ID = `${SITE_URL}/about#author`;
 
-// sameAs: add the author's Listonics profile and LinkedIn URLs so search engines can link the same person across sites.
+// Author profiles (Person.sameAs). Leave empty until a real profile URL exists. Do not invent any.
 export const AUTHOR: { name: string; url: string; sameAs: string[] } = {
   name: "Srinivasan Ramachandran",
   url: `${SITE_URL}/about#author`,
   sameAs: [],
 };
 
+// Organisation profile URLs (Organization.sameAs, the footer, and llms.txt).
+// Add a URL only when it is a real profile. Do not invent any.
+export const ORG_PROFILES = ["https://www.linkedin.com/company/soegeodubai/"] as const;
+
+// Contact details for the site, JSON-LD and llms.txt. Change the email here only.
 export const CONTACT = {
   email: "hi@Listi.ae",
   phone: "+971 52 155 1198",
   phoneHref: "tel:+971521551198",
   whatsapp: "https://api.whatsapp.com/send?phone=971521551198",
-  linkedin: "https://www.linkedin.com/company/soegeodubai/",
+  linkedin: ORG_PROFILES[0],
   city: "Dubai, United Arab Emirates",
 };
 

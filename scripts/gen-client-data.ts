@@ -1,6 +1,7 @@
 // Splits post and industry content into small JSON files for the browser bundle.
 // The server render uses the full TypeScript data; the browser gets a light index
 // and loads only the current page's full content before hydrating.
+import "./hash-3d.ts";
 import { mkdirSync, readFileSync, writeFileSync, existsSync, rmSync } from "node:fs";
 import path from "node:path";
 import { POSTS, readingMinutes } from "../src/blog/posts";

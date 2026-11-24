@@ -347,6 +347,10 @@ h2.font-semibold {
     transform-style: preserve-3d;
     transform: rotateX(-5deg) rotateY(var(--ry, 0deg));
   }
+  .ring.is-spinning {
+    animation: ring-spin 33s linear infinite;
+    will-change: transform;
+  }
   .ring-card {
     position: absolute;
     left: calc(var(--cw) / -2);
@@ -368,6 +372,9 @@ h2.font-semibold {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     box-shadow: 0 22px 44px -22px rgb(21 21 21 / 0.45);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .ring-face.back {
     transform: rotateY(180deg);
@@ -929,6 +936,10 @@ h2.font-semibold {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
+@keyframes ring-spin {
+  from { transform: rotateX(-5deg) rotateY(0deg); }
+  to { transform: rotateX(-5deg) rotateY(-360deg); }
+}
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -977,5 +988,39 @@ h2.font-semibold {
   }
   .js .sw-word {
     color: var(--color-ink);
+  }
+  .ring-stage {
+    height: auto;
+    perspective: none;
+    cursor: default;
+  }
+  .ring,
+  .ring.is-spinning {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: grid;
+    width: min(1100px, calc(100% - 2rem));
+    height: auto;
+    margin: 0.5rem auto 0;
+    transform: none !important;
+    animation: none !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .ring-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    min-height: 220px;
+    aspect-ratio: 1 / 1.32;
+    transform: none !important;
+  }
+  .ring-face.back,
+  .ring-shadow,
+  .ring-spin-ui {
+    display: none;
   }
 }

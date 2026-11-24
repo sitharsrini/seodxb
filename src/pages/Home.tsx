@@ -10,34 +10,24 @@ import { Faq } from "../components/Faq";
 import { CORE_FAQS } from "../core-faqs";
 import { PAGES_UPDATED } from "../site";
 import { PUBLISHED } from "../published";
-import { ArrowUpRight, FanStack, PosterArt, ScrollWords, SpinRing, type RingItem } from "../components/fx";
+import { ArrowUpRight } from "../components/fx";
+import { FanStack, ScrollWords, SpinRing, type RingItem } from "../components/home-fx";
 
 const industryLink = (slug: string) => {
   const ind = INDUSTRIES.find((i) => i.slug === slug);
   return ind ? industryPath(ind) : "/industries";
 };
 
-const face = (kicker: string, title: string, sub: string, art: ReactNode) => (
-  <>
-    {art}
-    <span className="relative text-[10px] font-bold uppercase tracking-[0.18em] opacity-75">{kicker}</span>
-    <span className="relative">
-      <span className="block text-[clamp(19px,2.2vw,29px)] font-bold leading-[1.03] tracking-[-0.04em]">{title}</span>
-      <span className="mt-2 block text-[11px] leading-snug opacity-80">{sub}</span>
-    </span>
-  </>
-);
-
 const RING: RingItem[] = [
-  { key: "strategy", href: servicePathById("strategy"), label: "Marketing strategy", bg: "#1d5bff", fg: "#fff", face: face("Service 01", "Marketing strategy", "Who to sell to and where to spend", <PosterArt kind="rings" color="#fff" />) },
-  { key: "search", href: servicePathById("search"), label: "SEO, AEO and GEO", bg: "#151515", fg: "#fff", face: face("Service 02", "SEO, AEO & GEO", "Google, answers and AI search", <PosterArt kind="waves" color="#4f86ff" />) },
-  { key: "ads", href: servicePathById("ads"), label: "Performance advertising", bg: "#dce7ff", fg: "#0c3fd0", face: face("Service 03", "Performance ads", "Judged on cost per lead", <PosterArt kind="sun" color="#1d5bff" />) },
-  { key: "web", href: servicePathById("web-content-social"), label: "Websites, content and social", bg: "#f4f7ff", fg: "#151515", face: face("Service 04", "Websites & content", "Sites that turn visits into enquiries", <PosterArt kind="grid" color="#1d5bff" />) },
-  { key: "real-estate", href: industryLink("real-estate"), label: "Marketing for real estate brokers", bg: "#0c3fd0", fg: "#fff", face: face("Industry", "Real estate", "Leads beyond the portals", <PosterArt kind="arch" color="#8cb0ff" />) },
-  { key: "clinics", href: industryLink("hospitals-clinics"), label: "Marketing for hospitals and clinics", bg: "#ffffff", fg: "#151515", face: face("Industry", "Hospitals & clinics", "Patients who find and trust you", <PosterArt kind="rings" color="#1d5bff" />) },
-  { key: "education", href: industryLink("education"), label: "Marketing for schools and education", bg: "#101b3d", fg: "#fff", face: face("Industry", "Schools & education", "From enquiry to enrolment", <PosterArt kind="stripes" color="#1d5bff" />) },
-  { key: "hotels", href: industryLink("hotels"), label: "Marketing for hotels and resorts", bg: "#4f86ff", fg: "#fff", face: face("Industry", "Hotels & resorts", "More direct bookings", <PosterArt kind="sun" color="#ffffff" />) },
-  { key: "review", href: "/contact", label: "Book a free marketing review", bg: "#e6eeff", fg: "#0c3fd0", face: face("Free", "Free review", "30 minutes, no obligation", <PosterArt kind="grid" color="#0c3fd0" />) },
+  { key: "strategy", href: servicePathById("strategy"), kicker: "Service 01", title: "Marketing strategy", sub: "Who to sell to and where to spend", bg: "#1d5bff", fg: "#fff", art: "rings", artColor: "#fff" },
+  { key: "search", href: servicePathById("search"), kicker: "Service 02", title: "SEO, AEO & GEO", sub: "Google, answers and AI search", bg: "#151515", fg: "#fff", art: "waves", artColor: "#4f86ff" },
+  { key: "ads", href: servicePathById("ads"), kicker: "Service 03", title: "Performance ads", sub: "Judged on cost per lead", bg: "#dce7ff", fg: "#0c3fd0", art: "sun", artColor: "#1d5bff" },
+  { key: "web", href: servicePathById("web-content-social"), kicker: "Service 04", title: "Websites & content", sub: "Sites that turn visits into enquiries", bg: "#f4f7ff", fg: "#151515", art: "grid", artColor: "#1d5bff" },
+  { key: "real-estate", href: industryLink("real-estate"), kicker: "Industry", title: "Real estate", sub: "Leads beyond the portals", bg: "#0c3fd0", fg: "#fff", art: "arch", artColor: "#8cb0ff" },
+  { key: "clinics", href: industryLink("hospitals-clinics"), kicker: "Industry", title: "Hospitals & clinics", sub: "Patients who find and trust you", bg: "#ffffff", fg: "#151515", art: "rings", artColor: "#1d5bff" },
+  { key: "education", href: industryLink("education"), kicker: "Industry", title: "Schools & education", sub: "From enquiry to enrolment", bg: "#101b3d", fg: "#fff", art: "stripes", artColor: "#1d5bff" },
+  { key: "hotels", href: industryLink("hotels"), kicker: "Industry", title: "Hotels & resorts", sub: "More direct bookings", bg: "#4f86ff", fg: "#fff", art: "sun", artColor: "#ffffff" },
+  { key: "review", href: "/contact", kicker: "Free", title: "Free review", sub: "30 minutes, no obligation", bg: "#e6eeff", fg: "#0c3fd0", art: "grid", artColor: "#0c3fd0" },
 ];
 
 const TILES: { big: string; label: string; obj: ArtName; bg: string; fg: string }[] = [
@@ -224,7 +214,7 @@ export default function Home() {
               <div key={k} aria-hidden={k >= TILES.length} className="relative flex h-[170px] w-[320px] flex-none items-end overflow-hidden rounded-[22px] p-6" style={{ background: t.bg, color: t.fg }}>
                 <div>
                   <p className="text-[46px] font-medium leading-none tracking-[-0.05em]">{t.big}</p>
-                  <p className="mt-2 max-w-[150px] text-sm leading-snug opacity-80">{t.label}</p>
+                  <p className="mt-2 max-w-[150px] text-sm leading-snug">{t.label}</p>
                 </div>
                 <Obj name={t.obj} size={160} className="absolute -right-2 -top-2 w-[150px] drop-shadow-[0_18px_16px_rgba(0,0,0,0.25)]" />
               </div>
@@ -341,7 +331,7 @@ export default function Home() {
           ))}
         </div>
         <div className="marquee mt-14 overflow-hidden" aria-label="Channels we work in">
-          <div className="marquee-track flex w-max items-center gap-12 text-[clamp(22px,2.6vw,34px)] font-medium tracking-tight text-ink/80">
+          <div className="marquee-track flex w-max items-center gap-12 text-[clamp(22px,2.6vw,34px)] font-medium tracking-tight text-ink">
             {loop(CHANNELS).map((c, k) => (
               <span key={k} aria-hidden={k >= CHANNELS.length} className="whitespace-nowrap">{c}<span className="ml-12 text-brand" aria-hidden="true">+</span></span>
             ))}

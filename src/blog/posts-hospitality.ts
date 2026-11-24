@@ -51,7 +51,7 @@ export const HOSPITALITY_POSTS: Post[] = [
       {
         t: "callout",
         title: "Photos sell food",
-        text: "Real, well-lit photos of your signature dishes and dining room influence decisions more than any description. Update them when the menu changes.",
+        text: "Real, well-lit photos of your signature dishes and dining room influence decisions more than any description. Update them when the menu changes. For how a Dubai studio plans menu, delivery-app and social photography, see our profile of [Food On Focus Media](/blog/food-on-focus-media-fb-creative-agency-dubai).",
       },
       { t: "img", photo: { id: "photo-1735190093420-4ecee383badb", alt: "Printed menu card resting on a white plate beside a folded napkin and cutlery", by: "Hailey Tong", user: "haileytong" }, caption: "Publish the menu as real text on your website so search engines and diners can read it." },
       { t: "h2", text: "Step 3: Reviews, steadily", id: "reviews" },

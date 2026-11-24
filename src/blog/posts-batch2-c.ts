@@ -260,7 +260,7 @@ export const BATCH2_C_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "To see how we would approach this for your firm, read about [marketing for accounting and bookkeeping firms](/industries/accounting-firms).",
+        text: "To see the same decisions written out as a 12-month plan, with every figure labelled as an assumption you can replace, read the [accounting firm marketing worked example](/blog/worked-example-accounting-firm-b2b-marketing-plan-uae). To see how we would approach this for your firm, read about [marketing for accounting and bookkeeping firms](/industries/accounting-firms).",
       },
     ],
     faqs: [

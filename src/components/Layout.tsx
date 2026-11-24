@@ -1,7 +1,8 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { CONTACT, LISTI_URL, NAV } from "../site";
 import { delay, useMotionEffects } from "../motion";
-import { pillarPages, servicePath, serviceName } from "../service-pages";
+import { pillarNav } from "../service-nav";
+import { ART_SRC } from "../generated/art";
 import { ArrowUpRight, MailIcon, MenuIcon, Ribbon } from "./fx";
 
 const HEADER_NAV = [{ href: "/", label: "Home" }, ...NAV];
@@ -115,9 +116,9 @@ function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Services</p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {pillarPages().map((sp) => (
+              {pillarNav.map((sp) => (
                 <li key={sp.id}>
-                  <a href={servicePath(sp)} className="transition hover:pl-1 hover:text-white">{serviceName(sp)}</a>
+                  <a href={sp.href} className="transition hover:pl-1 hover:text-white">{sp.name}</a>
                 </li>
               ))}
               <li>
@@ -197,7 +198,7 @@ export type ArtName = (typeof ART)[number];
 
 // Purely decorative 3D render, drawn as a background so it is not an image element that needs alt text.
 export function Obj({ name, className = "" }: { name: ArtName; className?: string; size?: number }) {
-  return <span aria-hidden="true" className={`block aspect-square bg-contain bg-center bg-no-repeat ${className}`} style={{ backgroundImage: `url(/3d/${name}.webp)` }} />;
+  return <span aria-hidden="true" className={`block aspect-square bg-contain bg-center bg-no-repeat ${className}`} style={{ backgroundImage: `url(${ART_SRC[name]})` }} />;
 }
 
 // With `lead`, the small line above the headline is part of the H1, so the H1 carries the page's keyword

@@ -28,7 +28,7 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 const b64 = (file: string) => readFileSync(path.resolve(import.meta.dirname, "..", file)).toString("base64");
 const FONT = b64("public/fonts/roboto-latin.woff2");
 const SHAPES = ["torus", "knot", "capsules", "planet", "cube", "gem", "rings", "duo"];
-const SHAPE_DATA = Object.fromEntries(SHAPES.map((n) => [n, b64(`public/3d/${n}.webp`)]));
+const SHAPE_DATA = Object.fromEntries(SHAPES.map((n) => [n, b64(`assets/3d/${n}.webp`)]));
 const shapeFor = (key: string) => SHAPES[[...key].reduce((a, c) => a + c.charCodeAt(0), 0) % SHAPES.length];
 
 const card = (kicker: string, title: string, footer: string, key: string) => `<!doctype html><html><head><meta charset="utf-8"><style>
