@@ -1,6 +1,6 @@
 // Build-only: every route with its title, description and structured data.
 import { POSTS, postPath, wordCount } from "./blog/posts";
-import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, CONTACT, PAGES_UPDATED, type Route } from "./site";
+import { SITE_URL, AUTHOR, AUTHOR_ID, ORG_ID, WEBSITE_ID, ORG_PROFILES, PAGES_UPDATED, type Route } from "./site";
 import { INDUSTRIES, industryPath } from "./industries";
 import { SERVICE_PAGES, servicePath } from "./service-pages";
 import { CORE_FAQS } from "./core-faqs";
@@ -44,7 +44,7 @@ const ORG = {
   name: "SEODXB",
   url: SITE_URL,
   logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png`, width: 512, height: 512 },
-  sameAs: [CONTACT.linkedin],
+  sameAs: [...ORG_PROFILES],
   contactPoint: { "@type": "ContactPoint", telephone: "+971521551198", contactType: "customer service", areaServed: "AE", availableLanguage: ["English", "Arabic"] },
 };
 const WEBSITE_REF = { "@type": "WebSite", "@id": WEBSITE_ID, name: "SEODXB", url: SITE_URL };
@@ -83,6 +83,18 @@ const pageLd = (r: Pick<Route, "path" | "title" | "description">, type: string, 
 });
 const withPageLd = (r: Route, type: string, extra: object = {}): Route => ({ ...r, jsonLd: [pageLd(r, type, extra), ...(r.jsonLd ?? [])] });
 
+const WEBSITE_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  name: "SEODXB",
+  alternateName: "SEO DXB",
+  url: SITE_URL,
+  description: "Marketing consultancy in Dubai: strategy, SEO, AEO and GEO, performance advertising, websites, content and social media.",
+  inLanguage: "en",
+  publisher: ORG,
+};
+
 const PAGE_ROUTES: Route[] = [
   withPageLd({
     path: "/",
@@ -90,20 +102,7 @@ const PAGE_ROUTES: Route[] = [
     title: "Marketing Agency & Consultancy in Dubai | SEODXB",
     description:
       "Dubai marketing consultancy for strategy, SEO and AI search, performance ads, websites, content and social. Plans built around revenue, not vanity metrics.",
-    jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": WEBSITE_ID,
-        name: "SEODXB",
-        alternateName: "SEO DXB",
-        url: SITE_URL,
-        description: "Marketing consultancy in Dubai: strategy, SEO, AEO and GEO, performance advertising, websites, content and social media.",
-        inLanguage: "en",
-        publisher: ORG,
-      },
-      faqLd(CORE_FAQS["/"]),
-    ],
+    jsonLd: [WEBSITE_LD, faqLd(CORE_FAQS["/"])],
   }, "WebPage"),
   withPageLd({
     path: "/services",
@@ -125,10 +124,10 @@ const PAGE_ROUTES: Route[] = [
   withPageLd({
     path: "/results",
     file: "results.html",
-    title: "How We Deliver Results | SEODXB",
+    title: "Marketing Results and KPI Reporting in Dubai | SEODXB",
     description:
       "How SEODXB plans, runs and measures marketing work: clear KPIs per channel, monthly reporting and decisions tied to leads and revenue.",
-    jsonLd: [faqLd(CORE_FAQS["/results"])],
+    jsonLd: [faqLd(CORE_FAQS["/results"]), breadcrumbs([{ name: "Home", path: "/" }, { name: "Results", path: "/results" }])],
   }, "WebPage"),
   withPageLd({
     path: "/about",
@@ -145,6 +144,7 @@ const PAGE_ROUTES: Route[] = [
         knowsAbout: ["Marketing strategy", "Search engine optimization", "Generative engine optimization", "Performance advertising"],
       },
       faqLd(CORE_FAQS["/about"]),
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
     ],
   }, "AboutPage", { mainEntity: ORG }),
   withPageLd({
@@ -153,7 +153,7 @@ const PAGE_ROUTES: Route[] = [
     title: "Contact SEODXB | Book a Marketing Consultation",
     description:
       "Tell us about your business and goals. We reply within one working day with a clear next step. Call, WhatsApp or send an enquiry.",
-    jsonLd: [faqLd(CORE_FAQS["/contact"])],
+    jsonLd: [faqLd(CORE_FAQS["/contact"]), breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])],
   }, "ContactPage", { about: ORG }),
 ];
 
@@ -178,6 +178,7 @@ const BLOG_ROUTES: Route[] = [
         datePublished: PUBLISHED["/blog"],
         dateModified: latestPost,
         publisher: ORG,
+        isPartOf: { "@id": WEBSITE_ID },
         blogPost: POSTS.map((p) => ({
           "@type": "BlogPosting",
           "@id": `${SITE_URL}${postPath(p)}#article`,
@@ -191,6 +192,7 @@ const BLOG_ROUTES: Route[] = [
         })),
       },
       breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
+      WEBSITE_LD,
     ],
   },
   ...POSTS.map((p): Route => ({

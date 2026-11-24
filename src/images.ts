@@ -1,5 +1,7 @@
-// Stock photos from Unsplash (Unsplash Licence), hotlinked from Unsplash's image CDN
-// with photographer credit, as the Unsplash guidelines ask.
+// Stock photos from Unsplash (Unsplash Licence). Blog heroes are self-hosted, resized
+// copies (see scripts/host-photos.ts and photo-manifest.json). Photographer credit
+// stays on the page. Photos that are not in the manifest still load from Unsplash.
+import hostedPhotos from "./photo-manifest.json";
 export interface Photo {
   id: string;
   alt: string;
@@ -144,10 +146,68 @@ export const POST_PHOTOS: Record<string, Photo> = {
 };
 
 const UTM = "utm_source=seodxb&utm_medium=referral";
-export const photoUrl = (p: Photo, w: number, h?: number) =>
+
+interface HostedPhoto {
+  widths: number[];
+  avif: Record<string, string>;
+  webp: Record<string, string>;
+}
+const HOSTED = hostedPhotos as Record<string, HostedPhoto>;
+
+const unsplashUrl = (p: Photo, w: number, h?: number) =>
   `https://images.unsplash.com/${p.id}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ""}&q=70`;
-export const photoSrcSet = (p: Photo, widths: number[], ratio: number) =>
-  widths.map((w) => `${photoUrl(p, w, Math.round(w / ratio))} ${w}w`).join(", ");
+
+const pickWidth = (hosted: HostedPhoto, w: number) => hosted.widths.find((x) => x >= w) ?? hosted.widths[hosted.widths.length - 1];
+
+export const photoUrl = (p: Photo, w: number, h?: number) => {
+  const hosted = HOSTED[p.id];
+  if (!hosted) return unsplashUrl(p, w, h);
+  return hosted.webp[String(pickWidth(hosted, w))];
+};
+
+export const photoSrcSet = (p: Photo, widths: number[], ratio: number) => {
+  const hosted = HOSTED[p.id];
+  if (!hosted) return widths.map((w) => `${unsplashUrl(p, w, Math.round(w / ratio))} ${w}w`).join(", ");
+  return hosted.widths.map((w) => `${hosted.webp[String(w)]} ${w}w`).join(", ");
+};
+
+export interface HostedSources {
+  avif: string;
+  webp: string;
+  src: string;
+  width: number;
+  height: number;
+}
+
+// Self-hosted AVIF and WebP srcset for a blog hero. Null when the photo is still remote.
+export function hostedSources(p: Photo): HostedSources | null {
+  const hosted = HOSTED[p.id];
+  if (!hosted) return null;
+  const width = hosted.widths[hosted.widths.length - 1];
+  return {
+    avif: hosted.widths.map((w) => `${hosted.avif[String(w)]} ${w}w`).join(", "),
+    webp: hosted.widths.map((w) => `${hosted.webp[String(w)]} ${w}w`).join(", "),
+    src: hosted.webp[String(width)],
+    width,
+    height: Math.round(width / (16 / 9)),
+  };
+}
+
+// Sizes string used by the blog hero, the LCP image on article pages.
+export const BLOG_HERO_SIZES = "(min-width: 768px) 768px, 100vw";
+
+export function heroPreload(p: Photo, sizes = BLOG_HERO_SIZES) {
+  const hosted = HOSTED[p.id];
+  if (!hosted) return null;
+  const mid = hosted.widths[Math.min(1, hosted.widths.length - 1)];
+  return {
+    href: hosted.avif[String(mid)],
+    imagesrcset: hosted.widths.map((w) => `${hosted.avif[String(w)]} ${w}w`).join(", "),
+    imagesizes: sizes,
+    type: "image/avif",
+  };
+}
+
 export const photographerUrl = (p: Photo) => `https://unsplash.com/@${p.user}?${UTM}`;
 export const UNSPLASH_URL = `https://unsplash.com/?${UTM}`;
 

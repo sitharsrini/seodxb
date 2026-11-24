@@ -1,6 +1,6 @@
 import { formatDate, postPath, readingMinutes, type Post } from "./posts";
 import { delay } from "../motion";
-import { POST_PHOTOS, photoUrl, photoSrcSet } from "../images";
+import { hostedSources, POST_PHOTOS, photoSrcSet, photoUrl } from "../images";
 
 const TINTS: Record<string, string> = {
   Strategy: "from-brand to-brand-dark",
@@ -13,6 +13,35 @@ const TINTS: Record<string, string> = {
   "Agency Spotlights": "from-brand-dark to-navy",
   "Worked Examples": "from-brand to-navy",
 };
+
+const CARD_SIZES = "(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw";
+
+function CardPhoto({ photo }: { photo: NonNullable<(typeof POST_PHOTOS)[string]> }) {
+  const hosted = hostedSources(photo);
+  const className = "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105";
+  if (hosted) {
+    return (
+      <picture>
+        <source type="image/avif" srcSet={hosted.avif} sizes={CARD_SIZES} />
+        <source type="image/webp" srcSet={hosted.webp} sizes={CARD_SIZES} />
+        <img src={hosted.src} srcSet={hosted.webp} sizes={CARD_SIZES} alt={photo.alt} width={hosted.width} height={hosted.height} loading="lazy" decoding="async" className={className} />
+      </picture>
+    );
+  }
+  return (
+    <img
+      src={photoUrl(photo, 640, 288)}
+      srcSet={photoSrcSet(photo, [320, 480, 640, 800], 640 / 288)}
+      sizes={CARD_SIZES}
+      alt={photo.alt}
+      width={640}
+      height={288}
+      loading="lazy"
+      decoding="async"
+      className={className}
+    />
+  );
+}
 
 export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   return (
@@ -28,19 +57,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
           style={{ backgroundImage: "radial-gradient(rgb(255 255 255 / 0.7) 1px, transparent 1px)", backgroundSize: "18px 18px" }}
         />
         <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-mint/40 blur-2xl transition-transform duration-700 group-hover:scale-125" />
-        {POST_PHOTOS[post.slug] && (
-          <img
-            src={photoUrl(POST_PHOTOS[post.slug], 640, 288)}
-            srcSet={photoSrcSet(POST_PHOTOS[post.slug], [320, 480, 640, 800], 640 / 288)}
-            sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-            alt={POST_PHOTOS[post.slug].alt}
-            width={640}
-            height={288}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-        )}
+        {POST_PHOTOS[post.slug] && <CardPhoto photo={POST_PHOTOS[post.slug]} />}
         <span className="absolute bottom-4 left-5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-dark backdrop-blur">
           {post.category}
         </span>

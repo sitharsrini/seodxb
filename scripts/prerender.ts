@@ -18,6 +18,7 @@ const mod = (await import(pathToFileURL(path.join(serverDir, "entry-server.js"))
   SITE_URL: string;
   AUTHOR: { name: string; url: string };
   CONTACT: { email: string; phone: string; city: string };
+  ORG_PROFILES: readonly string[];
   POSTS: Post[];
   postPath: (p: Post) => string;
   postText: (p: Post) => string;
@@ -33,9 +34,12 @@ const mod = (await import(pathToFileURL(path.join(serverDir, "entry-server.js"))
   INDUSTRY_PHOTOS: Record<string, Photo>;
   POST_PHOTOS: Record<string, Photo>;
   photoUrl: (p: Photo, w: number, h?: number) => string;
+  heroPreload: (p: Photo) => { href: string; imagesrcset: string; imagesizes: string; type: string } | null;
 };
-const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath, SERVICE_PAGES, KEYWORD_TARGETS, KEYWORD_METRICS, SEMRUSH_SNAPSHOT, INDUSTRY_REVIEWED, PAGES_UPDATED, INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl } = mod;
-const template = readFileSync(path.join(out, "index.html"), "utf8");
+const { render, ROUTES, SITE_URL, AUTHOR, CONTACT, ORG_PROFILES, POSTS, postPath, postText, SERVICES, INDUSTRIES, industryPath, SERVICE_PAGES, KEYWORD_TARGETS, KEYWORD_METRICS, SEMRUSH_SNAPSHOT, INDUSTRY_REVIEWED, PAGES_UPDATED, INDUSTRY_PHOTOS, POST_PHOTOS, photoUrl, heroPreload } = mod;
+const template = readFileSync(path.join(out, "index.html"), "utf8")
+  .replace(/__CONTACT_EMAIL__/g, CONTACT.email)
+  .replace(/__ORG_SAME_AS__/g, JSON.stringify([...ORG_PROFILES]));
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const ld = (o: object) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`;
@@ -45,17 +49,24 @@ const h1s: Record<string, string> = {};
 for (const r of ROUTES) {
   const url = abs(r.path);
   const image = SITE_URL + (r.image ?? "/og/default.jpg");
-  const html = template
+  const postForHero = POSTS.find((p) => postPath(p) === r.path);
+  const preload = postForHero && POST_PHOTOS[postForHero.slug] ? heroPreload(POST_PHOTOS[postForHero.slug]) : null;
+  const preloadTag = preload
+    ? `<link rel="preload" as="image" href="${esc(preload.href)}" imagesrcset="${esc(preload.imagesrcset)}" imagesizes="${esc(preload.imagesizes)}" type="${preload.type}" fetchpriority="high" />\n    `
+    : "";
+  // A local hero is the LCP image, so do not spend the first connection on Unsplash.
+  const pageTemplate = preload ? template.replace(/\s*<link rel="preconnect" href="https:\/\/images\.unsplash\.com" \/>/, "") : template;
+  const html = pageTemplate
     .replace(/<title>.*?<\/title>/, () => `<title>${esc(r.title)}</title>`)
-    .replace(/(<meta name="description" content=")[^"]*"/, (_, a) => `${a}${esc(r.description)}"`)
-    .replace(/(<link rel="canonical" href=")[^"]*"/, (_, a) => `${a}${url}"`)
-    .replace(/(<meta property="og:type" content=")[^"]*"/, (_, a) => `${a}${r.ogType ?? "website"}"`)
-    .replace(/(<meta property="og:title" content=")[^"]*"/, (_, a) => `${a}${esc(r.title)}"`)
-    .replace(/(<meta property="og:description" content=")[^"]*"/, (_, a) => `${a}${esc(r.description)}"`)
-    .replace(/(<meta property="og:url" content=")[^"]*"/, (_, a) => `${a}${url}"`)
-    .replace(/(<meta property="og:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
-    .replace(/(<meta name="twitter:image" content=")[^"]*"/, (_, a) => `${a}${image}"`)
-    .replace("</head>", () => `${r.hidden ? '<meta name="robots" content="noindex, nofollow" />\n    ' : ""}${r.published && r.modified ? `<meta property="article:published_time" content="${r.published}" />\n    <meta property="article:modified_time" content="${r.modified}" />\n    <meta property="og:updated_time" content="${r.modified}" />\n    ` : ""}${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
+    .replace(/(<meta name="description" content=")[^"]*"/, (_: string, a: string) => `${a}${esc(r.description)}"`)
+    .replace(/(<link rel="canonical" href=")[^"]*"/, (_: string, a: string) => `${a}${url}"`)
+    .replace(/(<meta property="og:type" content=")[^"]*"/, (_: string, a: string) => `${a}${r.ogType ?? "website"}"`)
+    .replace(/(<meta property="og:title" content=")[^"]*"/, (_: string, a: string) => `${a}${esc(r.title)}"`)
+    .replace(/(<meta property="og:description" content=")[^"]*"/, (_: string, a: string) => `${a}${esc(r.description)}"`)
+    .replace(/(<meta property="og:url" content=")[^"]*"/, (_: string, a: string) => `${a}${url}"`)
+    .replace(/(<meta property="og:image" content=")[^"]*"/, (_: string, a: string) => `${a}${image}"`)
+    .replace(/(<meta name="twitter:image" content=")[^"]*"/, (_: string, a: string) => `${a}${image}"`)
+    .replace("</head>", () => `${preloadTag}${r.hidden ? '<meta name="robots" content="noindex, nofollow" />\n    ' : ""}${r.published && r.modified ? `<meta property="article:published_time" content="${r.published}" />\n    <meta property="article:modified_time" content="${r.modified}" />\n    <meta property="og:updated_time" content="${r.modified}" />\n    ` : ""}${(r.jsonLd ?? []).map(ld).join("\n    ")}\n  </head>`)
     .replace('<div id="root"></div>', () => `<div id="root">${render(r.path)}</div>`);
   const file = path.join(out, r.file);
   mkdirSync(path.dirname(file), { recursive: true });
@@ -141,7 +152,7 @@ writeFileSync(path.join(out, "feed.xml"), rss);
 const pageRoutes = ROUTES.filter((r) => !r.hidden && !r.path.startsWith("/blog") && !r.path.startsWith("/industries/") && !r.path.startsWith("/services/"));
 const SERVICE_URL: Record<string, string> = { strategy: "/services/marketing-strategy", search: "/services/seo-aeo-geo", ads: "/services/performance-advertising", "web-content-social": "/services/websites-content-social" };
 const llms =
-  `# SEODXB\n\n> Marketing consultancy in Dubai, United Arab Emirates. Services: marketing strategy, SEO / AEO / GEO (search and AI search visibility), performance advertising (Google, Meta, LinkedIn, TikTok), websites, content and social media. Powered by Listi. Contact: ${CONTACT.email}, ${CONTACT.phone}, ${CONTACT.city}.\n\n` +
+  `# SEODXB\n\n> Marketing consultancy in Dubai, United Arab Emirates. Services: marketing strategy, SEO / AEO / GEO (search and AI search visibility), performance advertising (Google, Meta, LinkedIn, TikTok), websites, content and social media. Powered by Listi. Contact: ${CONTACT.email}, ${CONTACT.phone}, ${CONTACT.city}.${ORG_PROFILES.length ? ` Profiles: ${ORG_PROFILES.join(", ")}.` : ""}\n\n` +
   `Articles are written by ${AUTHOR.name}. Every article opens with a short direct answer, followed by key takeaways, the full guide and an FAQ.\n\n` +
   `## Pages\n\n${pageRoutes.map((r) => `- [${r.title.replace(/ \| .*$/, "")}](${abs(r.path)}): ${r.description}`).join("\n")}\n\n` +
   `## Services\n\n${SERVICES.map((s) => `- [${s.name}](${SITE_URL}${SERVICE_URL[s.id] ?? "/services"}): ${s.short}`).join("\n")}\n\n` +

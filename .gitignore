@@ -12,3 +12,4 @@ functions-dist
 *.log
 .vite
 src/generated
+public/3d/

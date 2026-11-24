@@ -66,7 +66,7 @@ export const COWORK_POSTS: Post[] = [
       { t: "h2", text: "Keep members longer", id: "retention" },
       {
         t: "p",
-        text: "Monthly plans make it easy to leave. Community events, introductions between members, reliable internet and service, and easy upgrades from hot desk to private office all increase retention. A member who stays a year is worth far more than a new sign-up.",
+        text: "Monthly plans make it easy to leave. Community events, introductions between members, reliable internet and service, and easy upgrades from hot desk to private office all increase retention. A member who stays a year is worth far more than a new sign-up. Teams that then take an office of their own usually need cabling, Wi-Fi and day-to-day support. Our guide to [Listonics office IT services in Dubai](/blog/listonics-office-it-services-dubai) sets out that scope.",
       },
       {
         t: "p",
