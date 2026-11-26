@@ -426,7 +426,7 @@ export const MORE_POSTS: Post[] = [
       { t: "h2", text: "Local signals in both languages", id: "local" },
       {
         t: "p",
-        text: "Your Google Business Profile, directory listings and social profiles can carry both languages. Keep the business name consistent, and use the Arabic name only if it is the name on your licence and signage. AI assistants answering questions in Arabic draw on Arabic sources, so Arabic content and mentions matter for that visibility as much as English ones do for English queries.",
+        text: "Your Google Business Profile, directory listings and social profiles can carry both languages. Keep the business name consistent, and use the Arabic name only if it is the name on your licence and signage. [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) answering questions in Arabic draw on Arabic sources, so Arabic content and mentions matter for that visibility as much as English ones do for English queries.",
       },
       { t: "img", photo: { id: "photo-1776433246728-b85796861746", alt: "Blue street signs showing names in both Arabic and English script", by: "Maram Alkrdy", user: "maram_alkrdy" }, caption: "Local details such as addresses and area names should read naturally in both languages." },
       { t: "h2", text: "Launch checklist", id: "checklist" },
@@ -550,7 +550,7 @@ export const MORE_POSTS: Post[] = [
       { t: "h2", text: "9. Are you answering the questions visitors have?", id: "questions" },
       {
         t: "p",
-        text: "People hesitate because of unanswered questions: how much does it cost, how long does it take, do you serve my area, what happens after I contact you. Answer these on the page, in plain language. A short FAQ on each service page removes hesitation and also helps the page appear in search and AI answers.",
+        text: "People hesitate because of unanswered questions: how much does it cost, how long does it take, do you serve my area, what happens after I contact you. Answer these on the page, in plain language. A short FAQ on each service page removes hesitation and also helps the page appear in search and [AI answers](/blog/get-recommended-by-chatgpt-google-ai-overviews).",
       },
       { t: "h2", text: "10. What happens after they enquire?", id: "after" },
       {
@@ -559,7 +559,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Improving conversion is part of our [website, content and social service](/services/websites-content-social), and it is usually the first thing we look at before increasing any ad budget. If your site has visitors but no enquiries, [send us the address](/contact) and we will tell you what we see.",
+        text: "Improving conversion is part of our [website, content and social service](/services/websites-content-social), and it is usually the first thing we look at before increasing any [ad budget](/blog/how-much-should-a-uae-business-spend-on-marketing). If your site has visitors but no enquiries, [send us the address](/contact) and we will tell you what we see.",
       },
     ],
     faqs: [

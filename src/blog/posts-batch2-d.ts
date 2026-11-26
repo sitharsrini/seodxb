@@ -331,7 +331,7 @@ export const BATCH2_D_POSTS: Post[] = [
       { t: "h2", text: "Win the local search", id: "local" },
       {
         t: "p",
-        text: "Most parents want a centre near home or school, because they are driving after a long day. Set up a Google Business Profile for each branch with accurate hours (including exam-season extended hours), photos of real classrooms, the subjects you teach and the areas and schools you serve. Ask satisfied parents for reviews that mention the subject and how their child progressed, without asking for grades or personal details. Reply to every review, and keep the phone number and WhatsApp link the same everywhere your centre is listed.",
+        text: "Most parents want a centre near home or school, because they are driving after a long day. Set up a [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai) for each branch with accurate hours (including exam-season extended hours), photos of real classrooms, the subjects you teach and the areas and schools you serve. Ask satisfied parents for reviews that mention the subject and how their child progressed, without asking for grades or personal details. Reply to every review, and keep the phone number and WhatsApp link the same everywhere your centre is listed.",
       },
       { t: "h2", text: "Show parents they can trust you", id: "trust" },
       {

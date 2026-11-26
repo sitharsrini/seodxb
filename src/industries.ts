@@ -102,7 +102,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "seo-for-real-estate-companies-dubai",
-    extraPostSlugs: ["dubai-community-pages-real-estate-seo", "off-plan-property-marketing-dubai-brokers", "trakheesi-permit-property-advertising-dubai"],
+    extraPostSlugs: ["dubai-community-pages-real-estate-seo", "off-plan-property-marketing-dubai-brokers", "trakheesi-permit-property-advertising-dubai", "worked-example-real-estate-google-ads-lead-tracking-dubai"],
   },
   {
     slug: "construction",

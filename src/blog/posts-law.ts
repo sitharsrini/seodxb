@@ -146,13 +146,13 @@ export const LAW_POSTS: Post[] = [
       { t: "h2", text: "Write for the client, not the court", id: "language" },
       {
         t: "p",
-        text: "Use the words clients search with, such as \"my employer has not paid my salary\" rather than only the legal term. Explain any legal terms the first time you use them. If many clients in that area search in Arabic, publish a properly translated Arabic version.",
+        text: "Use the words clients search with, such as \"my employer has not paid my salary\" rather than only the legal term. Explain any legal terms the first time you use them. If many clients in that area search [in Arabic](/blog/arabic-english-bilingual-website-seo-uae), publish a properly translated Arabic version.",
       },
       { t: "img", photo: { id: "photo-1780733064275-d1ade9b83a3d", alt: "Two smiling men discussing documents across an office desk", by: "Md Ishak Rahman", user: "mdishakrahman" }, caption: "Write in the words clients use when they explain their problem, not in courtroom language." },
       { t: "h2", text: "Make pages easy for AI to cite", id: "ai" },
       {
         t: "p",
-        text: "AI assistants are increasingly asked questions such as \"what should I do if my employer does not pay me in Dubai\". Clear headings, short direct answers, a named reviewing lawyer and FAQ structured data make your page easier to quote. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more.",
+        text: "AI assistants are increasingly asked questions such as \"what should I do if my employer does not pay me in Dubai\". Clear headings, short [direct answers](/blog/seo-vs-aeo-vs-geo-explained), a named reviewing lawyer and FAQ structured data make your page easier to quote. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more.",
       },
       { t: "h2", text: "Link pages together", id: "links" },
       {

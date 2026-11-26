@@ -159,7 +159,7 @@ export const EXAMPLE_REALESTATE_POSTS: Post[] = [
       { t: "h3", text: "Phase 2: a small, focused launch (weeks 4 to 8)" },
       {
         t: "p",
-        text: "Launch a small number of search campaigns on the highest-intent searches, with a test budget below the full AED 30,000. The purpose of this phase is to replace assumptions with data. By the end of it the brokerage should know its real cost per click, its real landing page conversion rate and a first reading of lead quality.",
+        text: "Launch a small number of search campaigns on the highest-intent searches, with a test budget below the full AED 30,000. The purpose of this phase is to replace assumptions with data. By the end of it the brokerage should know its real cost per click, its real landing page [conversion rate](/blog/website-traffic-but-no-enquiries-conversion-checklist) and a first reading of lead quality.",
       },
       { t: "h3", text: "Phase 3: optimise on lead quality (weeks 9 to 16)" },
       {

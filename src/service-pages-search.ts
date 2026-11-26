@@ -163,7 +163,7 @@ export const SEARCH_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["dental-clinics", "restaurants", "cleaning-companies", "hospitals-clinics"],
-    posts: ["google-business-profile-setup-checklist-dubai", "hospital-local-seo-multiple-locations-departments", "seo-for-restaurants-dubai"],
+    posts: ["google-business-profile-setup-checklist-dubai", "worked-example-dental-clinic-local-seo-dubai", "hospital-local-seo-multiple-locations-departments"],
   },
   {
     id: "google-business-profile",
@@ -327,7 +327,7 @@ export const SEARCH_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["law-firms", "hospitals-clinics", "real-estate", "hotels"],
-    posts: ["get-recommended-by-chatgpt-google-ai-overviews", "seo-vs-aeo-vs-geo-explained", "medical-content-eeat-hospital-websites"],
+    posts: ["get-recommended-by-chatgpt-google-ai-overviews", "seo-vs-aeo-vs-geo-explained", "worked-example-ai-search-visibility-business-setup-consultant-dubai"],
   },
   {
     id: "aeo",

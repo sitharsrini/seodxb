@@ -358,7 +358,7 @@ export const EXAMPLE_AIVIS_POSTS: Post[] = [
 
       h2("Cost and time assumptions", "cost-and-time"),
       p(
-        "We do not quote prices here. A fair price depends on the state of the website, how much content exists, and how much the firm's own team can do. What we can show is the effort, in hours, so that you can cost it at your own rates whether you use staff, freelancers or an agency.",
+        "We do not quote prices here. A fair price depends on the state of the website, how much content exists, and how much the firm's own team can do. What we can show is the effort, in hours, so that you can cost it at your own rates whether you use staff, freelancers or [an agency](/blog/questions-to-ask-before-hiring-a-marketing-agency-dubai).",
       ),
       ul(
         "**Technical foundations:** we assume about 40 hours across months 1 and 2, most of it developer time.",

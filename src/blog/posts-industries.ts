@@ -159,7 +159,7 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h2", text: "Step 4: Ads for high-intent residential and fit-out work", id: "ads" },
       {
         t: "p",
-        text: "Searches like \"villa renovation company Dubai\" come from people ready to get quotes. Focused Google Ads with a strong landing page and call tracking can bring these enquiries quickly while SEO builds. Our guide on [SEO vs Google Ads](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
+        text: "Searches like \"villa renovation company Dubai\" come from people ready to get quotes. Focused Google Ads with a strong landing page and [call tracking](/blog/track-whatsapp-call-form-leads-uae) can bring these enquiries quickly while SEO builds. Our guide on [SEO vs Google Ads](/blog/seo-vs-google-ads-dubai-which-first) explains how to balance the two.",
       },
       { t: "img", photo: { id: "photo-1778074762022-c33cc42f79ae", alt: "Two workers in hard hats and safety vests reviewing plans on a tablet", by: "alan boyce", user: "abcpac" }, caption: "Paid search suits urgent residential and fit out jobs where people want quotes quickly." },
       { t: "h2", text: "Step 5: Track the pipeline", id: "pipeline" },
@@ -239,7 +239,7 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h2", text: "Step 2: Earn trust", id: "trust" },
       {
         t: "p",
-        text: "Used-car buyers fear hidden problems. Publish inspection reports, clearly state GCC or import specification, explain your warranty and return policy, and show genuine reviews. These details convert visitors and also make your pages more useful to AI assistants answering questions like \"where to buy a reliable used car in Dubai\".",
+        text: "Used-car buyers fear hidden problems. Publish inspection reports, clearly state GCC or import specification, explain your warranty and return policy, and show genuine reviews. These details [convert visitors](/blog/website-traffic-but-no-enquiries-conversion-checklist) and also make your pages more useful to AI assistants answering questions like \"where to buy a reliable used car in Dubai\".",
       },
       { t: "img", photo: { id: "photo-1561558287-6be7074f77ce", alt: "Man talking with a smiling woman seated in the driver's seat of a car", by: "Viral Vanani", user: "v4vanani" }, caption: "Honest listings, clear prices and real reviews help buyers feel confident enough to visit." },
       { t: "h2", text: "Step 3: Google Business Profile for every showroom", id: "gbp" },
@@ -422,7 +422,7 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h2", text: "Step 3: Local search and reviews", id: "local" },
       {
         t: "p",
-        text: "Optimise your Google Business Profile, list your service areas and ask every regular customer for a review. Recent reviews that mention reliability and the same cleaner each week are especially persuasive.",
+        text: "Optimise your [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai), list your service areas and ask every regular customer for a review. Recent reviews that mention reliability and the same cleaner each week are especially persuasive.",
       },
       { t: "h2", text: "Step 4: WhatsApp booking", id: "whatsapp" },
       {
@@ -433,7 +433,7 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h2", text: "Step 5: Focus on retention", id: "retention" },
       {
         t: "p",
-        text: "A family that books weekly for a year is worth many one-off bookings. Offer the same cleaner where possible, easy rescheduling, and a small incentive for referrals. Marketing spend becomes much more affordable when customers stay.",
+        text: "A family that books weekly for a year is worth many one-off bookings. Offer the same cleaner where possible, easy rescheduling, and a small incentive for referrals. [Marketing spend](/blog/how-much-should-a-uae-business-spend-on-marketing) becomes much more affordable when customers stay.",
       },
       {
         t: "p",
@@ -668,12 +668,12 @@ export const INDUSTRY_POSTS: Post[] = [
       { t: "h3", text: "1. Clear admissions and fees pages" },
       {
         t: "p",
-        text: "Parents want fees by year group, the admissions process, key dates, available places and what the fees include. Schools that make this easy to find get more qualified enquiries, and AI assistants can quote the information accurately.",
+        text: "Parents want fees by year group, the admissions process, key dates, available places and what the fees include. Schools that make this easy to find get more qualified enquiries, and [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) can quote the information accurately.",
       },
       { t: "h3", text: "2. Visibility for curriculum and area searches" },
       {
         t: "p",
-        text: "Rank for combinations such as curriculum plus area, and keep a complete Google Business Profile. Make sure your school's details are accurate on the directories and comparison sites parents use.",
+        text: "Rank for combinations such as curriculum plus area, and keep a complete [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai). Make sure your school's details are accurate on the directories and comparison sites parents use.",
       },
       { t: "h3", text: "3. Honest content about school life" },
       {
@@ -757,7 +757,7 @@ export const INDUSTRY_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Most parents search things like \"nursery near me\", \"British nursery in Mirdif\" or \"Montessori nursery JLT\", and increasingly ask AI assistants for recommendations in their area. Then they shortlist two or three and book tours.",
+        text: "Most parents search things like \"nursery near me\", \"British nursery in Mirdif\" or \"Montessori nursery JLT\", and increasingly ask [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) for recommendations in their area. Then they shortlist two or three and book tours.",
       },
       { t: "h2", text: "Step 1: Own your local search results", id: "local" },
       {

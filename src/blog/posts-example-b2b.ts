@@ -334,7 +334,7 @@ export const EXAMPLE_B2B_POSTS: Post[] = [
         "In the base case, we assume LinkedIn Ads produce 40 of the 100 enquiries, with the rest coming from organic search, LinkedIn organic activity, AI assistants and direct visits. We also assume a meaningful share of the paid leads are guide downloads from people who are not ready to buy. That is why the qualification rate for the whole model sits at 40 percent, not higher.",
       ),
       p(
-        "Lead forms inside LinkedIn usually produce more leads at a lower cost each. Landing pages on the firm's own site usually produce fewer leads that are more serious. The plan tests both and compares them on cost per qualified lead, never on cost per lead alone.",
+        "Lead forms inside LinkedIn usually produce more leads at a lower cost each. Landing pages on the firm's own site usually produce fewer leads that are more serious. The plan tests both and compares them on [cost per qualified lead](/blog/track-whatsapp-call-form-leads-uae), never on cost per lead alone.",
       ),
       { t: "img", photo: { id: "photo-1532622785990-d2c36a76f5a6", alt: "Two people planning a strategy on a whiteboard", by: "Kaleidico", user: "kaleidico" }, caption: "A named account list keeps LinkedIn spend on the companies that fit the ideal customer profile." },
       note(

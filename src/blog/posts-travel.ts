@@ -46,7 +46,7 @@ export const TRAVEL_POSTS: Post[] = [
       { t: "h2", text: "Step 2: Be clear about visas", id: "visas" },
       {
         t: "p",
-        text: "Visa questions are among the most common reasons residents contact an agency. Explain which services you offer, such as document checks, appointment booking and travel insurance, what the traveller needs to provide and typical timelines. Never promise approval: visa decisions belong to the relevant embassy or authority, and requirements depend on nationality and change often.",
+        text: "Visa questions are among the most common reasons residents contact [an agency](/blog/questions-to-ask-before-hiring-a-marketing-agency-dubai). Explain which services you offer, such as document checks, appointment booking and travel insurance, what the traveller needs to provide and typical timelines. Never promise approval: visa decisions belong to the relevant embassy or authority, and requirements depend on nationality and change often.",
       },
       {
         t: "callout",
@@ -148,7 +148,7 @@ export const TRAVEL_POSTS: Post[] = [
       { t: "h2", text: "Make pages easy for AI to quote", id: "ai" },
       {
         t: "p",
-        text: "People increasingly ask AI assistants where to travel from the UAE. Clear headings, short direct answers, dated information and structured data make your pages easier to cite. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more.",
+        text: "People increasingly ask AI assistants where to travel from the UAE. Clear headings, short [direct answers](/blog/seo-vs-aeo-vs-geo-explained), dated information and structured data make your pages easier to cite. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more.",
       },
       { t: "h2", text: "Keep pages current", id: "current" },
       {

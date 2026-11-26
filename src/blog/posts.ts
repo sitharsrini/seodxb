@@ -66,7 +66,7 @@ const FIRST_POSTS: Post[] = [
       { t: "h3", text: "1. Will we own all the accounts?" },
       {
         t: "p",
-        text: "Your Google Ads, Meta Business Manager, Google Analytics, Google Search Console, Google Business Profile, domain registrar and website hosting should all be registered to your company, with the agency added as a user. If an agency sets these up under its own name, you can lose years of data and campaign history the day you part ways.",
+        text: "Your Google Ads, Meta Business Manager, Google Analytics, Google Search Console, [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai), domain registrar and website hosting should all be registered to your company, with the agency added as a user. If an agency sets these up under its own name, you can lose years of data and campaign history the day you part ways.",
       },
       { t: "h3", text: "2. What happens to the website and content if we leave?" },
       {
@@ -148,7 +148,7 @@ const FIRST_POSTS: Post[] = [
       { t: "h2", text: "Choosing between a consultancy and an agency", id: "consultancy" },
       {
         t: "p",
-        text: "An agency usually sells channels: SEO, ads or social. A consultancy starts with the business question of where growth should come from, then decides which channels to use. If you are unsure where your budget should go, start with strategy. You can read how we approach this on our [services page](/services).",
+        text: "An agency usually sells channels: SEO, ads or social. A consultancy starts with the business question of where growth should come from, then decides which channels to use. If you are unsure where [your budget](/blog/how-much-should-a-uae-business-spend-on-marketing) should go, start with strategy. You can read how we approach this on our [services page](/services).",
       },
     ],
     faqs: [

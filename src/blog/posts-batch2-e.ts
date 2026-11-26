@@ -38,7 +38,7 @@ export const BATCH2_E_POSTS: Post[] = [
       { t: "h2", text: "Start from the exam calendar", id: "exam-calendar" },
       {
         t: "p",
-        text: "Learners do not enrol when your budget month starts. They enrol when an exam window or a new batch makes the decision feel urgent. Before you spend anything, write down every batch start date and relevant exam window for the next twelve months.",
+        text: "Learners do not enrol when [your budget](/blog/how-much-should-a-uae-business-spend-on-marketing) month starts. They enrol when an exam window or a new batch makes the decision feel urgent. Before you spend anything, write down every batch start date and relevant exam window for the next twelve months.",
       },
       {
         t: "ol",

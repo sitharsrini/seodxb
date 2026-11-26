@@ -309,7 +309,7 @@ export const EXAMPLE_DENTAL_POSTS: Post[] = [
       { t: "h3", text: "English and Arabic" },
       {
         t: "p",
-        text: "Many patients in Dubai search in English, and many search in Arabic. If the clinic serves Arabic-speaking patients, Arabic versions of the main pages are worth planning, written by a native speaker and built with the correct technical setup. In a 90-day plan we would start with English and add Arabic for the two location pages and the top treatments. Our [Arabic SEO](/services/arabic-seo-services) page covers how the two languages should be structured.",
+        text: "Many patients in Dubai search in English, and many search [in Arabic](/blog/arabic-english-bilingual-website-seo-uae). If the clinic serves Arabic-speaking patients, Arabic versions of the main pages are worth planning, written by a native speaker and built with the correct technical setup. In a 90-day plan we would start with English and add Arabic for the two location pages and the top treatments. Our [Arabic SEO](/services/arabic-seo-services) page covers how the two languages should be structured.",
       },
       { t: "h2", text: "Workstream 4: a location page for each branch", id: "location-pages" },
       {
@@ -428,7 +428,7 @@ export const EXAMPLE_DENTAL_POSTS: Post[] = [
       { t: "h3", text: "Reading the three cases" },
       {
         t: "p",
-        text: "Two points stand out. First, the booking rate matters as much as the enquiries. In the base case, if the booking rate had stayed at 40 percent, the result would be 150 x 0.40 = 60 new patients, not 66. Six extra patients a month come purely from answering faster and following up, with no marketing spend at all.",
+        text: "Two points stand out. First, the booking rate matters as much as the enquiries. In the base case, if the booking rate had stayed at 40 percent, the result would be 150 x 0.40 = 60 new patients, not 66. Six extra patients a month come purely from answering faster and following up, with no [marketing spend](/blog/how-much-should-a-uae-business-spend-on-marketing) at all.",
       },
       {
         t: "p",

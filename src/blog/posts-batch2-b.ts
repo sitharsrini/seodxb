@@ -171,7 +171,7 @@ export const BATCH2_B_POSTS: Post[] = [
       { t: "h2", text: "Start with licensing and trust", id: "licensing-and-trust" },
       {
         t: "p",
-        text: "Pest control companies in Dubai must be licensed and approved by Dubai Municipality and use approved pesticides. Many customers do not know this until something goes wrong, but facility managers and restaurant owners often ask. Make your approval visible: on your homepage, on every service page, in your Google Business Profile description and in your WhatsApp welcome message. Check the exact wording and current requirements with Dubai Municipality so everything you publish is accurate.",
+        text: "Pest control companies in Dubai must be licensed and approved by Dubai Municipality and use approved pesticides. Many customers do not know this until something goes wrong, but facility managers and restaurant owners often ask. Make your approval visible: on your homepage, on every service page, in your [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai) description and in your WhatsApp welcome message. Check the exact wording and current requirements with Dubai Municipality so everything you publish is accurate.",
       },
       {
         t: "p",
@@ -299,7 +299,7 @@ export const BATCH2_B_POSTS: Post[] = [
       { t: "h2", text: "Know where your enquiries really come from", id: "where-enquiries-come-from" },
       {
         t: "p",
-        text: "Many movers rely on comparison and quote sites. They can be useful, but the same lead is often sent to several companies, so you are competing on price from the first minute. Enquiries from your own search visibility, Google Business Profile, referrals and repeat customers tend to be warmer and less price-driven.",
+        text: "Many movers rely on comparison and quote sites. They can be useful, but the same lead is often sent to several companies, so you are competing on price from the first minute. Enquiries from your own search visibility, [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai), referrals and repeat customers tend to be warmer and less price-driven.",
       },
       {
         t: "p",

@@ -253,6 +253,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "dental-clinic-seo-dubai",
+    extraPostSlugs: ["worked-example-dental-clinic-local-seo-dubai"],
   },
   {
     slug: "cardiology-heart-clinics",

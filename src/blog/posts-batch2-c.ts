@@ -112,7 +112,7 @@ export const BATCH2_C_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Whatever you run, track WhatsApp clicks and calls as well as forms, and log every enquiry with its source, country and outcome. In this sector, form-only tracking makes your best campaigns look like failures. Judge channels on cost per qualified enquiry and signed client, not clicks.",
+        text: "Whatever you run, track [WhatsApp clicks](/blog/track-whatsapp-call-form-leads-uae) and calls as well as forms, and log every enquiry with its source, country and outcome. In this sector, form-only tracking makes your best campaigns look like failures. Judge channels on cost per qualified enquiry and signed client, not clicks.",
       },
       { t: "img", photo: { id: "photo-1790614108104-337c880ec536", alt: "Laptop and phone showing analytics charts on a wooden desk beside a coffee mug", by: "Vagaro", user: "vagaro" }, caption: "Judge paid search by the qualified enquiries it brings in, not by clicks alone." },
       { t: "h2", text: "A 90-day starting plan", id: "ninety-days" },
@@ -389,7 +389,7 @@ export const BATCH2_C_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "If you use Google Ads, bid on searches that signal a need for help, such as registration support and consultant searches, rather than broad learning terms that bring readers but rarely clients. Track calls and WhatsApp enquiries as well as forms so you know which deadline campaigns led to engagements.",
+        text: "If you use Google Ads, bid on searches that signal a need for help, such as registration support and consultant searches, rather than broad learning terms that bring readers but rarely clients. [Track calls](/blog/track-whatsapp-call-form-leads-uae) and WhatsApp enquiries as well as forms so you know which deadline campaigns led to engagements.",
       },
       { t: "img", photo: { id: "photo-1506784983877-45594efa4cbe", alt: "Cup of coffee resting on an open planner with monthly calendar pages", by: "Estée Janssens", user: "esteejanssens" }, caption: "Publishing helpful content ahead of known filing dates meets owners when they start searching." },
       { t: "h2", text: "Connect guides to services", id: "guides-to-services" },

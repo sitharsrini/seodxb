@@ -153,7 +153,7 @@ export const HEALTH_POSTS: Post[] = [
       { t: "h2", text: "Step 3: Insurance, locations and access", id: "access" },
       {
         t: "p",
-        text: "Publish the insurance networks you accept, keep them updated, and make each facility's address, hours, parking and contact details clear. Create a Google Business Profile for each facility, and make sure the same information appears on insurer and healthcare directories.",
+        text: "Publish the insurance networks you accept, keep them updated, and make each facility's address, hours, parking and contact details clear. Create a [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai) for each facility, and make sure the same information appears on insurer and healthcare directories.",
       },
       { t: "h2", text: "Step 4: Easy booking and privacy-first tracking", id: "booking" },
       {
@@ -324,7 +324,7 @@ export const HEALTH_POSTS: Post[] = [
       { t: "h2", text: "Step 3: Cardiologist profiles", id: "profiles" },
       {
         t: "p",
-        text: "Show each cardiologist's licensed title, qualifications, subspecialties such as electrophysiology or interventional cardiology, experience, languages and clinics. Add Physician structured data so search engines and AI assistants can connect doctors to your clinic.",
+        text: "Show each cardiologist's licensed title, qualifications, subspecialties such as electrophysiology or interventional cardiology, experience, languages and clinics. Add Physician structured data so search engines and [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) can connect doctors to your clinic.",
       },
       { t: "img", photo: { id: "photo-1631217873436-b0fa88e71f0a", alt: "Doctor showing a tablet to an older couple during a consultation", by: "National Cancer Institute", user: "nci" }, caption: "Patients want to know who will read their results and explain them in plain language." },
       { t: "h2", text: "Step 4: Access and insurance", id: "access" },

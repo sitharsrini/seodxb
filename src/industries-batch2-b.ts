@@ -93,6 +93,7 @@ export const BATCH2_B_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "ac-maintenance-company-marketing-dubai",
+    extraPostSlugs: ["worked-example-ac-maintenance-company-leads-dubai"],
   },
   {
     slug: "pest-control",

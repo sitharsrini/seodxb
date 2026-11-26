@@ -219,7 +219,7 @@ export const EXAMPLE_HOMESERVICES_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "A click is not a conversation. Some people tap the WhatsApp button and never send a message. So the model treats tracked clicks as an upper limit and relies on the lead log for the truth. The lead log is a shared sheet or a simple CRM, and our page on [lead tracking and attribution](/services/lead-tracking-and-attribution) explains the options, including call tracking for people who dial by hand. For each enquiry, the office records the date, the channel, the service asked for, the area, how the person found the company and what happened next. It takes under a minute per enquiry.",
+        text: "A click is not a conversation. Some people tap the WhatsApp button and never send a message. So the model treats tracked clicks as an upper limit and relies on the lead log for the truth. The lead log is a shared sheet or a simple CRM, and our page on [lead tracking and attribution](/services/lead-tracking-and-attribution) explains the options, including [call tracking](/blog/track-whatsapp-call-form-leads-uae) for people who dial by hand. For each enquiry, the office records the date, the channel, the service asked for, the area, how the person found the company and what happened next. It takes under a minute per enquiry.",
       },
       { t: "h3", text: "A pre-filled WhatsApp message" },
       {

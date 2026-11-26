@@ -93,7 +93,7 @@ export const BATCH2_C_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "business-setup-consultant-marketing-dubai",
-    extraPostSlugs: ["abu-dhabi-business-setup-leads", "marketing-company-formation-to-foreign-founders", "pro-services-marketing-dubai"],
+    extraPostSlugs: ["abu-dhabi-business-setup-leads", "marketing-company-formation-to-foreign-founders", "pro-services-marketing-dubai", "worked-example-ai-search-visibility-business-setup-consultant-dubai"],
   },
   {
     slug: "accounting-firms",
@@ -187,7 +187,7 @@ export const BATCH2_C_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "accounting-firm-marketing-dubai",
-    extraPostSlugs: ["audit-firm-marketing-dubai", "bookkeeping-services-marketing-dubai"],
+    extraPostSlugs: ["audit-firm-marketing-dubai", "bookkeeping-services-marketing-dubai", "worked-example-accounting-firm-b2b-marketing-plan-uae"],
   },
   {
     slug: "vat-corporate-tax-consultants",

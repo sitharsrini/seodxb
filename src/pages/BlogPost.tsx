@@ -22,6 +22,23 @@ const CATEGORY_SERVICE: Record<string, string> = {
   "Industry Guides": "search",
 };
 
+// General planning guides offered at the end of every article. Each article shows three, chosen by its slug, so the set varies across the site.
+const PLANNING_GUIDES = [
+  "how-much-should-a-uae-business-spend-on-marketing",
+  "questions-to-ask-before-hiring-a-marketing-agency-dubai",
+  "seo-vs-google-ads-dubai-which-first",
+  "seo-vs-aeo-vs-geo-explained",
+  "website-traffic-but-no-enquiries-conversion-checklist",
+  "arabic-english-bilingual-website-seo-uae",
+];
+const NO_PLANNING = new Set(["Partners", "Agency Spotlights"]);
+function planningGuides(post: Post, skip: Set<string>): Post[] {
+  if (NO_PLANNING.has(post.category)) return [];
+  const pool = PLANNING_GUIDES.filter((s) => s !== post.slug && !skip.has(`/blog/${s}`));
+  const start = [...post.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % Math.max(1, pool.length);
+  return [...pool.slice(start), ...pool.slice(0, start)].slice(0, 3).map((s) => POSTS.find((p) => p.slug === s)).filter((p): p is Post => Boolean(p));
+}
+
 function ReadingProgress() {
   const [p, setP] = useState(0);
   useEffect(() => {
@@ -113,6 +130,7 @@ export default function BlogPost({ post }: { post: Post }) {
   ].slice(0, 2);
   const service = SERVICES.find((s) => s.id === CATEGORY_SERVICE[post.category]);
   const industry = INDUSTRIES.find((i) => i.postSlug === post.slug || i.extraPostSlugs?.includes(post.slug));
+  const nextGuides = planningGuides(post, new Set([...linked, ...related.map((p) => `/blog/${p.slug}`)]));
 
   return (
     <>
@@ -196,6 +214,19 @@ export default function BlogPost({ post }: { post: Post }) {
                       <a href={industryPath(industry)} className="font-medium text-brand underline underline-offset-4">Marketing and SEO for {industry.name.toLowerCase()} in the UAE</a>
                     </li>
                   )}
+                </ul>
+              </aside>
+            )}
+
+            {nextGuides.length > 0 && (
+              <aside className="mt-6 rounded-2xl border border-line bg-white p-6" aria-label="Planning guides">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Planning your marketing</p>
+                <ul className="mt-3 space-y-2">
+                  {nextGuides.map((g) => (
+                    <li key={g.slug}>
+                      <a href={`/blog/${g.slug}`} className="font-medium text-brand underline underline-offset-4">{g.title}</a>
+                    </li>
+                  ))}
                 </ul>
               </aside>
             )}

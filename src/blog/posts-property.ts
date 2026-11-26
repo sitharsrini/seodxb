@@ -150,7 +150,7 @@ export const PROPERTY_POSTS: Post[] = [
       { t: "h2", text: "Why this helps with AI search", id: "ai" },
       {
         t: "p",
-        text: "When an owner asks ChatGPT or Google's AI Overviews how rent increases work in Dubai, those tools draw on clear, trustworthy explanations. Accurate, well-structured guides with short direct answers are more likely to be quoted and to mention your company. Our guide on [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains the signals involved.",
+        text: "When an owner asks ChatGPT or Google's AI Overviews how rent increases work in Dubai, those tools draw on clear, trustworthy explanations. Accurate, well-structured guides with short [direct answers](/blog/seo-vs-aeo-vs-geo-explained) are more likely to be quoted and to mention your company. Our guide on [getting recommended by ChatGPT and AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains the signals involved.",
       },
       { t: "h2", text: "Keep a review calendar", id: "review" },
       {

@@ -193,7 +193,7 @@ export const STRATEGY_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["dental-clinics", "real-estate", "car-dealers", "movers-packers"],
-    posts: ["website-traffic-but-no-enquiries-conversion-checklist", "track-whatsapp-call-form-leads-uae"],
+    posts: ["website-traffic-but-no-enquiries-conversion-checklist", "worked-example-ac-maintenance-company-leads-dubai", "track-whatsapp-call-form-leads-uae"],
   },
   {
     id: "analytics-reporting",

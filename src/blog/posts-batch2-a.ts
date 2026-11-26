@@ -345,7 +345,7 @@ export const BATCH2_A_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "Show your facility licence details where patients expect them, such as the footer and contact page. On your Google Business Profile, use real photos of the clinic and team rather than stock images, and reply to reviews professionally without discussing any patient's treatment.",
+        text: "Show your facility licence details where patients expect them, such as the footer and contact page. On your [Google Business Profile](/blog/google-business-profile-setup-checklist-dubai), use real photos of the clinic and team rather than stock images, and reply to reviews professionally without discussing any patient's treatment.",
       },
       { t: "h2", text: "Advertise consultations, not products", id: "advertising" },
       {

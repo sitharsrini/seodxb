@@ -222,7 +222,7 @@ export const WELLNESS_POSTS: Post[] = [
       { t: "h2", text: "Step 2: Show who you are", id: "practitioner" },
       {
         t: "p",
-        text: "Clients are choosing a person as much as a practice. Share your training, experience, approach and why you do this work, with a genuine photo. This is also exactly the kind of clear, verifiable information AI assistants rely on when recommending practitioners.",
+        text: "Clients are choosing a person as much as a practice. Share your training, experience, approach and why you do this work, with a genuine photo. This is also exactly the kind of clear, verifiable information [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) rely on when recommending practitioners.",
       },
       { t: "h2", text: "Step 3: Local visibility", id: "local" },
       {
@@ -308,7 +308,7 @@ export const WELLNESS_POSTS: Post[] = [
       { t: "h2", text: "Step 1: Pages that help people recognise the right support", id: "pages" },
       {
         t: "p",
-        text: "For each area you support, write a calm, accurate page: common experiences, how therapy can help, the approaches you use and what the first session looks like. Avoid diagnosing, guaranteeing outcomes or using fear. Clear pages rank for concern-based searches and help AI assistants describe your practice correctly.",
+        text: "For each area you support, write a calm, accurate page: common experiences, how therapy can help, the approaches you use and what the first session looks like. Avoid diagnosing, guaranteeing outcomes or using fear. Clear pages rank for concern-based searches and help [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) describe your practice correctly.",
       },
       { t: "h2", text: "Step 2: Therapist profiles that show fit", id: "profiles" },
       {

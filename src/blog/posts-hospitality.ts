@@ -46,7 +46,7 @@ export const HOSPITALITY_POSTS: Post[] = [
       { t: "h2", text: "Step 2: A menu search engines can read", id: "menu" },
       {
         t: "p",
-        text: "Put your menu on a normal web page with dish names, short descriptions, prices and dietary information, not only as a PDF or image. It loads faster on phones, ranks for dish and cuisine searches, and gives AI assistants accurate information about what you serve. Add Restaurant structured data with cuisine, price range, hours and menu link.",
+        text: "Put your menu on a normal web page with dish names, short descriptions, prices and dietary information, not only as a PDF or image. It loads faster on phones, ranks for dish and cuisine searches, and gives [AI assistants](/blog/get-recommended-by-chatgpt-google-ai-overviews) accurate information about what you serve. Add Restaurant structured data with cuisine, price range, hours and menu link.",
       },
       {
         t: "callout",
@@ -169,7 +169,7 @@ export const HOSPITALITY_POSTS: Post[] = [
       { t: "h2", text: "Measure what matters", id: "measure" },
       {
         t: "p",
-        text: "Track direct booking revenue, the share of bookings that are direct, booking engine conversion rate and the true cost of acquiring a direct booking compared with OTA commission. These numbers show whether the direct strategy is working.",
+        text: "Track direct booking revenue, the share of bookings that are direct, booking engine [conversion rate](/blog/website-traffic-but-no-enquiries-conversion-checklist) and the true cost of acquiring a direct booking compared with OTA commission. These numbers show whether the direct strategy is working.",
       },
       {
         t: "p",

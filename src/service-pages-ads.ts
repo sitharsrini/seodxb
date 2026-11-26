@@ -96,7 +96,7 @@ export const ADS_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["dental-clinics", "business-setup-consultants", "movers-packers", "car-rental"],
-    posts: ["seo-vs-google-ads-dubai-which-first", "how-much-should-a-uae-business-spend-on-marketing", "track-whatsapp-call-form-leads-uae"],
+    posts: ["seo-vs-google-ads-dubai-which-first", "how-much-should-a-uae-business-spend-on-marketing", "worked-example-real-estate-google-ads-lead-tracking-dubai"],
   },
   {
     id: "meta-ads",
@@ -290,7 +290,7 @@ export const ADS_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["business-setup-consultants", "law-firms", "accounting-firms", "recruitment-agencies"],
-    posts: ["how-law-firms-get-clients-dubai", "marketing-company-formation-to-foreign-founders", "how-recruitment-agencies-get-clients-uae"],
+    posts: ["worked-example-accounting-firm-b2b-marketing-plan-uae", "how-law-firms-get-clients-dubai", "how-recruitment-agencies-get-clients-uae"],
   },
   {
     id: "tiktok-ads",

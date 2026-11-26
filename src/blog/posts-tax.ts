@@ -161,7 +161,7 @@ export const TAX_POSTS: Post[] = [
       { t: "h2", text: "Step 6: Be quotable", id: "quotable" },
       {
         t: "p",
-        text: "New regulations are exactly the topics people ask AI assistants about. Short, direct answers, clear headings, dated updates and a named, qualified author make your pages easier to cite. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more. See our [tax consultant marketing plan](/industries/vat-corporate-tax-consultants).",
+        text: "New regulations are exactly the topics people ask AI assistants about. Short, [direct answers](/blog/seo-vs-aeo-vs-geo-explained), clear headings, dated updates and a named, qualified author make your pages easier to cite. Our guide to [getting recommended by ChatGPT and Google AI Overviews](/blog/get-recommended-by-chatgpt-google-ai-overviews) explains more. See our [tax consultant marketing plan](/industries/vat-corporate-tax-consultants).",
       },
     ],
     faqs: [
