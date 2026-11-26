@@ -117,7 +117,7 @@ const PILLAR_PAGES: ServicePage[] = [
       { q: "How do you measure AI search visibility?", a: "We regularly ask the main AI assistants the questions your customers ask and record whether you are mentioned, how you are described and which competitors appear, alongside traffic from AI tools where it can be measured." },
     ],
     industries: ["real-estate", "dental-clinics", "restaurants", "cleaning-companies"],
-    posts: ["seo-vs-aeo-vs-geo-explained", "get-recommended-by-chatgpt-google-ai-overviews", "google-business-profile-setup-checklist-dubai", "arabic-english-bilingual-website-seo-uae"],
+    posts: ["seo-cost-dubai", "seo-vs-aeo-vs-geo-explained", "get-recommended-by-chatgpt-google-ai-overviews", "google-business-profile-setup-checklist-dubai", "arabic-english-bilingual-website-seo-uae"],
   },
   {
     id: "ads",
@@ -163,7 +163,7 @@ const PILLAR_PAGES: ServicePage[] = [
       { q: "Do you track WhatsApp and phone leads?", a: "Yes. WhatsApp clicks, calls and forms are all tracked, and we recommend recording lead outcomes so campaigns are judged on real business results." },
     ],
     industries: ["car-dealers", "real-estate", "hotels", "gyms-fitness"],
-    posts: ["track-whatsapp-call-form-leads-uae", "seo-vs-google-ads-dubai-which-first", "how-much-should-a-uae-business-spend-on-marketing"],
+    posts: ["google-ads-cost-dubai", "track-whatsapp-call-form-leads-uae", "seo-vs-google-ads-dubai-which-first"],
   },
   {
     id: "web-content-social",
@@ -209,7 +209,7 @@ const PILLAR_PAGES: ServicePage[] = [
       { q: "How do you use AI in content creation?", a: "AI can help with research and drafts, but every piece is reviewed and edited by people who understand your business, and facts are checked before publishing." },
     ],
     industries: ["home-furniture", "beauty-salons", "education", "construction"],
-    posts: ["website-traffic-but-no-enquiries-conversion-checklist", "arabic-english-bilingual-website-seo-uae", "get-recommended-by-chatgpt-google-ai-overviews"],
+    posts: ["website-cost-dubai", "website-traffic-but-no-enquiries-conversion-checklist", "arabic-english-bilingual-website-seo-uae"],
   },
 ];
 

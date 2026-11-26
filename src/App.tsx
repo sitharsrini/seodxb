@@ -12,6 +12,9 @@ import Industry from "./pages/Industry";
 import { INDUSTRIES, industryPath } from "./industries";
 import { POSTS, postPath } from "./blog/posts";
 import ServiceDetail from "./pages/ServiceDetail";
+import FreeAudit from "./pages/FreeAudit";
+import BudgetCalculator from "./pages/BudgetCalculator";
+import AbuDhabi from "./pages/AbuDhabi";
 import { SERVICE_PAGES, servicePath } from "./service-pages";
 
 const PAGES: Record<string, () => React.JSX.Element> = {
@@ -23,6 +26,9 @@ const PAGES: Record<string, () => React.JSX.Element> = {
   "/blog": Blog,
   "/admin": Admin,
   "/industries": Industries,
+  "/free-marketing-audit": FreeAudit,
+  "/marketing-budget-calculator": BudgetCalculator,
+  "/marketing-agency-abu-dhabi": AbuDhabi,
 };
 
 export default function App({ path }: { path: string }) {

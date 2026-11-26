@@ -158,4 +158,9 @@ Object.assign(POST_PHOTOS, {
   "worked-example-ac-maintenance-company-leads-dubai": INDUSTRY_PHOTOS["ac-maintenance"],
   "worked-example-accounting-firm-b2b-marketing-plan-uae": INDUSTRY_PHOTOS["accounting-firms"],
   "worked-example-ai-search-visibility-business-setup-consultant-dubai": POST_PHOTOS["get-recommended-by-chatgpt-google-ai-overviews"],
+  "seo-cost-dubai": POST_PHOTOS["how-much-should-a-uae-business-spend-on-marketing"],
+  "website-cost-dubai": INDUSTRY_PHOTOS["interior-design"],
+  "google-ads-cost-dubai": POST_PHOTOS["seo-vs-google-ads-dubai-which-first"],
+  "dha-mohap-healthcare-advertising-rules-clinics": INDUSTRY_PHOTOS["hospitals-clinics"],
+  "uae-advertiser-permit-influencer-marketing-businesses": POST_PHOTOS["food-on-focus-media-fb-creative-agency-dubai"],
 });

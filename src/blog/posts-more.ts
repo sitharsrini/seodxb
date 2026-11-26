@@ -166,7 +166,7 @@ export const MORE_POSTS: Post[] = [
       },
       {
         t: "p",
-        text: "A better approach is to build the budget from the outcome you want. It takes twenty minutes with a spreadsheet, and it gives you a number you can explain to a partner, a board or yourself.",
+        text: "A better approach is to build the budget from the outcome you want. It takes twenty minutes with a spreadsheet, and it gives you a number you can explain to a partner, a board or yourself. Our [marketing budget calculator](/marketing-budget-calculator) does the arithmetic for you.",
       },
       { t: "h2", text: "Why percentage rules fail", id: "why-rules-fail" },
       {

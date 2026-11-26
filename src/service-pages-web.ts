@@ -48,7 +48,7 @@ export const WEB_EXTRA: ServicePage[] = [
       { q: "Which platform do you build on?", a: "We choose the platform that fits your needs, team and budget. Some businesses need a simple, fast site that is easy to edit, while others need custom features or an online shop. We explain the options plainly, including the upkeep each one needs, and we avoid locking you into anything you cannot move away from." },
     ],
     industries: ["real-estate", "hotels", "hospitals-clinics", "law-firms"],
-    posts: ["website-traffic-but-no-enquiries-conversion-checklist", "arabic-english-bilingual-website-seo-uae", "track-whatsapp-call-form-leads-uae"],
+    posts: ["website-cost-dubai", "website-traffic-but-no-enquiries-conversion-checklist", "arabic-english-bilingual-website-seo-uae"],
   },
   {
     id: "landing-pages",
@@ -195,6 +195,6 @@ export const WEB_EXTRA: ServicePage[] = [
       { q: "Can you run social media and paid ads together?", a: "Yes, and it usually works better that way. Organic content builds proof and gives your ads something credible to point to, while ads extend the reach of your best posts and reach people who already know you. One team keeps the messages consistent and the tracking connected." },
     ],
     industries: ["restaurants", "beauty-salons", "hotels", "gyms-fitness"],
-    posts: ["gym-marketing-dubai-more-members", "hotel-marketing-direct-bookings-uae", "track-whatsapp-call-form-leads-uae"],
+    posts: ["uae-advertiser-permit-influencer-marketing-businesses", "gym-marketing-dubai-more-members", "hotel-marketing-direct-bookings-uae"],
   },
 ];

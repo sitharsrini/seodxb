@@ -128,7 +128,7 @@ function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Pages</p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {[...NAV, { href: "/contact", label: "Contact" }].map((n) => (
+              {[...NAV, { href: "/contact", label: "Contact" }, { href: "/free-marketing-audit", label: "Free marketing audit" }, { href: "/marketing-budget-calculator", label: "Budget calculator" }].map((n) => (
                 <li key={n.href}>
                   <a href={n.href} className="transition hover:pl-1 hover:text-white">{n.label}</a>
                 </li>
@@ -148,7 +148,10 @@ function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 py-6 text-xs text-white/50">
           <p>© {new Date().getFullYear()} SEODXB. All rights reserved.</p>
-          <p>Marketing consultancy and SEO agency in Dubai, UAE</p>
+          <p>
+            Marketing consultancy and SEO agency in Dubai, UAE. Also serving{" "}
+            <a href="/marketing-agency-abu-dhabi" className="underline underline-offset-4 hover:text-white">Abu Dhabi</a>.
+          </p>
         </div>
       </div>
     </footer>

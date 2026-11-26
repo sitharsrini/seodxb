@@ -41,6 +41,72 @@ export const CORE_FAQS: Record<string, FaqItem[]> = {
       a: "Yes. Healthcare advertising in the UAE needs approval from the relevant health authority, and property advertising in Dubai needs a Trakheesi permit. We plan campaigns within those rules from the start, so approved ads are not paused later.",
     },
   ],
+  "/free-marketing-audit": [
+    {
+      q: "Is the marketing audit really free?",
+      a: "Yes. The first review and the 30-minute call are free and carry no obligation. If you want a full audit with access to your analytics, ad accounts and Search Console, that is part of a paid engagement and we will say so clearly before any work starts.",
+    },
+    {
+      q: "What do you need from me?",
+      a: "Your website address, a short description of what you sell and who you sell to, and what you want marketing to achieve. We do not need any logins for the first review, because it uses what is publicly visible.",
+    },
+    {
+      q: "How long does the audit take?",
+      a: "We reply within one working day to arrange the call. On the call we walk through what we found in each area and what we would fix first.",
+    },
+    {
+      q: "Will I get a written report?",
+      a: "The free review is delivered on the call, so you can ask questions as we go. A written audit with a prioritised fix list is part of the first 30 days when we work together.",
+    },
+    {
+      q: "Do you audit businesses outside Dubai?",
+      a: "Yes. We review businesses across the UAE, including Abu Dhabi, Sharjah and the northern emirates, and international companies entering the UAE market.",
+    },
+  ],
+  "/marketing-budget-calculator": [
+    {
+      q: "How do I calculate a marketing budget?",
+      a: "Start with the new revenue you want marketing to add. Divide it by the average value of a new customer to get customers needed, divide that by your close rate to get qualified leads needed, then multiply by your cost per qualified lead. The result is the media budget for the period.",
+    },
+    {
+      q: "What percentage of revenue should a UAE business spend on marketing?",
+      a: "There is no single right percentage. Two businesses with the same revenue can need very different budgets, because customer value, close rate and click costs differ. Working backwards from a revenue target gives a number you can explain and test.",
+    },
+    {
+      q: "What if I do not know my cost per qualified lead?",
+      a: "Use your own ad data if you have run campaigns. If you have not, enter a cautious guess, then run a short test campaign with tracking in place to replace the guess with a real number. Industry averages vary too much to rely on.",
+    },
+    {
+      q: "Does the result include agency or staff costs?",
+      a: "No. The calculator shows media spend only. Add the cost of the people or agency doing the work, plus content, design and tools, to get the full budget.",
+    },
+    {
+      q: "Is the result a forecast?",
+      a: "No. It is a model built from the numbers you enter. It shows what your target requires if those numbers hold, which makes it a good starting point for a plan and a test, not a promise of results.",
+    },
+  ],
+  "/marketing-agency-abu-dhabi": [
+    {
+      q: "Do you work with businesses in Abu Dhabi?",
+      a: "Yes. SEODXB is based in Dubai and works with businesses across the UAE, including Abu Dhabi and Al Ain. We plan around Abu Dhabi search areas, regulators and buyers, and we work by video call and phone.",
+    },
+    {
+      q: "How is marketing in Abu Dhabi different from Dubai?",
+      a: "The regulators are different, so advertising rules for sectors such as healthcare and education differ. People search by Abu Dhabi areas, many contracts go through procurement, and Arabic search often carries more weight. A campaign copied from Dubai usually needs changes.",
+    },
+    {
+      q: "Can you help us rank in Abu Dhabi map results?",
+      a: "Yes. Local visibility depends on an accurate Google Business Profile for your Abu Dhabi address, location pages for the areas you serve, consistent listings and reviews from local customers. Results depend on Google, so we commit to the work and to clear reporting.",
+    },
+    {
+      q: "Do you create Arabic content?",
+      a: "Yes. We research Arabic keywords separately from English ones and structure bilingual websites correctly. Arabic content is written or edited by native speakers, not machine translated.",
+    },
+    {
+      q: "How do we get started?",
+      a: "Send an enquiry or book a free 30-minute consultation. We reply within one working day. You can also request a free marketing audit, where we review your website, tracking and search visibility first.",
+    },
+  ],
   "/services": [
     {
       q: "Can I hire SEODXB for just one service?",

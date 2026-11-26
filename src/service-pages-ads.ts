@@ -96,7 +96,7 @@ export const ADS_EXTRA: ServicePage[] = [
       },
     ],
     industries: ["dental-clinics", "business-setup-consultants", "movers-packers", "car-rental"],
-    posts: ["seo-vs-google-ads-dubai-which-first", "how-much-should-a-uae-business-spend-on-marketing", "worked-example-real-estate-google-ads-lead-tracking-dubai"],
+    posts: ["google-ads-cost-dubai", "seo-vs-google-ads-dubai-which-first", "worked-example-real-estate-google-ads-lead-tracking-dubai"],
   },
   {
     id: "meta-ads",

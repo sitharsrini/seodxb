@@ -1,3 +1,9 @@
+import { GUIDE_SEOCOST_SOURCES } from "./blog/posts-guide-seocost";
+import { GUIDE_WEBCOST_SOURCES } from "./blog/posts-guide-webcost";
+import { GUIDE_ADSCOST_SOURCES } from "./blog/posts-guide-adscost";
+import { GUIDE_DHA_SOURCES } from "./blog/posts-guide-dha";
+import { GUIDE_PERMIT_SOURCES } from "./blog/posts-guide-permit";
+
 // Official and primary sources cited on industry pages and guides.
 // Guides inherit their industry's sources unless listed in POST_SOURCES.
 export interface Source {
@@ -137,6 +143,11 @@ export const POST_SOURCES: Record<string, Source[]> = {
   "exhibition-stand-builder-marketing-dubai": [S.dwtc, S.helpful, S.conv],
   "how-travel-agencies-get-more-bookings-uae": [S.det, S.icp, S.gbpRank, S.helpful],
   "corporate-travel-management-marketing-uae": [S.iata, S.helpful, S.conv],
+  "seo-cost-dubai": GUIDE_SEOCOST_SOURCES,
+  "website-cost-dubai": GUIDE_WEBCOST_SOURCES,
+  "google-ads-cost-dubai": GUIDE_ADSCOST_SOURCES,
+  "dha-mohap-healthcare-advertising-rules-clinics": GUIDE_DHA_SOURCES,
+  "uae-advertiser-permit-influencer-marketing-businesses": GUIDE_PERMIT_SOURCES,
 };
 
 // Date the industry pages were last reviewed for accuracy.

@@ -168,7 +168,7 @@ export const HEALTH_INDUSTRIES: Industry[] = [
       },
     ],
     postSlug: "healthcare-marketing-hospitals-clinics-uae",
-    extraPostSlugs: ["medical-tourism-marketing-uae-hospitals", "medical-content-eeat-hospital-websites", "hospital-local-seo-multiple-locations-departments"],
+    extraPostSlugs: ["medical-tourism-marketing-uae-hospitals", "medical-content-eeat-hospital-websites", "hospital-local-seo-multiple-locations-departments", "dha-mohap-healthcare-advertising-rules-clinics"],
   },
   {
     slug: "dental-clinics",

@@ -155,6 +155,39 @@ const PAGE_ROUTES: Route[] = [
       "Tell us about your business and goals. We reply within one working day with a clear next step. Call, WhatsApp or send an enquiry.",
     jsonLd: [faqLd(CORE_FAQS["/contact"])],
   }, "ContactPage", { about: ORG }),
+  withPageLd({
+    path: "/free-marketing-audit",
+    file: "free-marketing-audit.html",
+    title: "Free Marketing and SEO Audit in Dubai | SEODXB",
+    description:
+      "Request a free marketing audit in Dubai. We review your website, tracking, Google and AI search visibility and ads, then tell you what to fix first.",
+    jsonLd: [
+      faqLd(CORE_FAQS["/free-marketing-audit"]),
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "Free marketing audit", path: "/free-marketing-audit" }]),
+    ],
+  }, "WebPage"),
+  withPageLd({
+    path: "/marketing-budget-calculator",
+    file: "marketing-budget-calculator.html",
+    title: "Marketing Budget Calculator for UAE Businesses | SEODXB",
+    description:
+      "Free marketing budget calculator. Enter your revenue target, customer value, close rate and cost per lead to see the leads and budget you need.",
+    jsonLd: [
+      faqLd(CORE_FAQS["/marketing-budget-calculator"]),
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "Marketing budget calculator", path: "/marketing-budget-calculator" }]),
+    ],
+  }, "WebPage"),
+  withPageLd({
+    path: "/marketing-agency-abu-dhabi",
+    file: "marketing-agency-abu-dhabi.html",
+    title: "Marketing Agency for Abu Dhabi Businesses | SEODXB",
+    description:
+      "Marketing strategy, SEO, ads, websites and content for Abu Dhabi and Al Ain businesses, planned around local search areas, regulators and buyers.",
+    jsonLd: [
+      faqLd(CORE_FAQS["/marketing-agency-abu-dhabi"]),
+      breadcrumbs([{ name: "Home", path: "/" }, { name: "Abu Dhabi", path: "/marketing-agency-abu-dhabi" }]),
+    ],
+  }, "WebPage", { areaServed: { "@type": "City", name: "Abu Dhabi" } }),
 ];
 
 const latestPost = POSTS.reduce((a, p) => (p.updated > a ? p.updated : a), "");

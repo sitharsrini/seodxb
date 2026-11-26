@@ -195,6 +195,27 @@ export const KEYWORD_TARGETS: Record<string, { main: string | null; secondary: s
       "seo for small business dubai"
     ]
   },
+  "/free-marketing-audit": {
+    "main": "free marketing audit dubai",
+    "secondary": [
+      "free seo audit dubai",
+      "website audit dubai"
+    ]
+  },
+  "/marketing-budget-calculator": {
+    "main": "marketing budget calculator",
+    "secondary": [
+      "marketing budget uae",
+      "how to calculate marketing budget"
+    ]
+  },
+  "/marketing-agency-abu-dhabi": {
+    "main": "marketing agency abu dhabi",
+    "secondary": [
+      "seo agency abu dhabi",
+      "digital marketing abu dhabi"
+    ]
+  },
   "/services/marketing-strategy": {
     "main": "marketing consultant dubai",
     "secondary": [

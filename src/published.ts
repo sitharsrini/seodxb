@@ -73,4 +73,7 @@ export const PUBLISHED: Record<string, string> = {
   "/services/tiktok-ads-management": "2026-11-11",
   "/services/uae-market-entry-strategy": "2026-11-11",
   "/services/website-design-and-development": "2026-11-11",
+  "/free-marketing-audit": "2026-11-26",
+  "/marketing-budget-calculator": "2026-11-26",
+  "/marketing-agency-abu-dhabi": "2026-11-26",
 };
